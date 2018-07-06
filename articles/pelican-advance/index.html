@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>[高级] pelican 博客高级配置</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="写在前面 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric">
+        <meta name="keywords" content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+        <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PingBook的博客 Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css" />
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+          <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="../..">PingBook的博客 <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="../../">主页</a></li>
+
+                <li><a href="/categories">分类</a></li>
+                <li><a href="/archives">归档</a></li>
+                <li><a href="/tags">标签</a></li>
+
+              </ul>
+            </div>
+
+    <section id="content" class="body">
+
+        <div class="row">
+            <div class="eleven columns">
+
+
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/pelican-advance/" rel="bookmark"
+                           title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-07-06T23:47:26.447304+08:00">-->
+                    <!--2018 七月 06 日, 星期五-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        2018 七月 06 日, 星期五
+                            &nbsp;&nbsp;作者
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
+                            &nbsp;&nbsp;<p style="color:red;">码字比码代码还辛苦,转载请注明出处 <a href='https://pingbook.top'>PingBook</a></p>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                <div class="entry-content">
+                    <p><br></p>
+<h2>写在前面</h2>
+<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
+<h3>windows下的运行</h3>
+<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
+这个文件.<br>
+<code>fabfile</code>在上面的命令生成后发现里面的文件报了好多错,<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
+解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
+<span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
+</pre></div>
+                </div><!-- /.entry-content -->
+                <ul style="float:right;">
+                        <li>
+                            ◄&nbsp;&nbsp;<a href="../../articles/try-pelican/">
+                            [初级] pelican&nbsp;博客搭建
+                        </a>
+                        </li>
+                </ul>
+                <div class="comments">
+                    <h3>相关文章</h3>
+                        <ul>
+                                <li><a href="../../articles/try-pelican/">[初级] pelican&nbsp;博客搭建</a></li>
+                        </ul>
+                </div>
+                    <div class="comments">
+                        <h3>留言评论</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/pelican-advance/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                    </div>
+
+            </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>快捷导航</h4>
+        <ul>
+                <li><a href="/categories">分类</a></li>
+                <li><a href="/archives">归档</a></li>
+                <li><a href="/tags">标签</a></li>
+        </ul>
+    </nav>
+
+
+        <nav class="widget sidebarbg">
+            <h4>标签</h4>
+            <ul class="blank">
+                    <li class="tag-4"><a href="../../tag/pelican/">pelican</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>组织</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=来自PingBook的问题">邮箱</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>友情链接</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
+                    <li><a target="_blank" href="http://python.org/">Python.org</a></li>
+            </ul>
+        </nav>
+
+</div>        </div><!-- /.row -->
+
+
+    </section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row" style="margin-bottom: 0px">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Copyright © <script>document.write(new Date().getFullYear())</script>. 版权归PingBook所有.
+                    <!--<br />-->
+                       <!--码得了代码，调得了BUG。-->
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="../../theme/js/libs/gumby.min.js"></script>
+  <script src="../../theme/js/plugins.js"></script>
+</body>
+</html>

@@ -3,52 +3,58 @@
 <head>
 
         <title>[初级] pelican 博客搭建</title>
-        <meta charset="utf-8" />
-        <meta name="description" content="我真是太折腾了,也没能坚持下去,去年陆陆续续用hexo写了一段时间的博客,最终没能坚持下去! 关键字 pelican markdown  github 搭建步骤 最好的方式莫过于官方文档: 官方入坑道路. 下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤. // 如果需要使用markdown这个高逼格的语法去写博客 # pip install pelican markdown typogrify # mkdir pingbook.top # cd pingbook.top # pelican-quickstart 安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在pelicanconf.py修改,直接默认回车一路下去就好了!  pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。 1. Where do you want to create your new web site?[.] (你想在哪里创建你的网站，默认为当前目录) 2. What will be the title of this web site?(网站的标题是什么) 3. Who will be the author of this web site?(网站的作者是谁) 4. What will be the default language of this web site? [en] (网站的默认语言是),这里我们写'zh'中文 5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y 6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠'/'),http://moelove.info 7. Do you want to enable article pagination?(是否启用文章分页) 8. Do you want to generate a Makefile to easily manage …">
-        <meta name="keywords" content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+        <meta charset="utf-8"/>
+        <meta name="description" content="
 
 
-        <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PingBook博客 Full Atom Feed" />
+
+我真是太折腾了,也没能坚持下去,去年陆陆续续用hexo写了一段时间的博客,最终没能坚持下去! 关键字 pelican markdown  github 搭建步骤 最好的方式莫过于官方文档: 官方入坑道路. 下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤. // 如果需要使用markdown这个高逼格的语法去写博客 # pip install pelican markdown typogrify # mkdir pingbook.top # cd pingbook.top # pelican-quickstart 安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在pelicanconf.py修改,直接默认回车一路下去就好了!  pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。 1. Where do you want to create your new web site?[.] (你想在哪里创建你的网站，默认为当前目录) 2. What will be the title of this web site?(网站的标题是什么) 3. Who will be the author of this web site?(网站的作者是谁) 4. What will be the default language of this web site? [en] (网站的默认语言是),这里我们写'zh'中文 5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y 6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠'/'),http://moelove.info 7. Do you want to enable article pagination?(是否启用文章分页) 8. Do you want to generate a Makefile to easily manage …">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook博客 Full Atom Feed"/>
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="../../theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
 
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
-          <!---->
+        <!---->
 
 </head>
 
 <body id="index" class="home">
 
 
-    <div class="container">
+<div class="container">
 
-        <div class="row">
+    <div class="row">
 
-          <header id="banner" class="body">
-                  <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
-          </header><!-- /#banner -->
+        <header id="banner" class="body">
+            <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
+        </header><!-- /#banner -->
 
-            <div id="navigation" class="navbar row">
-              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-             
-              <ul class="columns">
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns">
                 <li><a href="../../">主页</a></li>
 
-                <li><a href="/categories">分类</a></li>
-                <li><a href="/archives">归档</a></li>
-                <li><a href="/tags">标签</a></li>
+                    <li><a href="/categories">分类</a></li>
+                    <li><a href="/archives">归档</a></li>
+                    <li><a href="/tags">标签</a></li>
 
-              </ul>
-            </div>
+            </ul>
+        </div>
 
     <section id="content" class="body">
 
@@ -77,7 +83,9 @@
                         2018 七月 06 日, 星期五
                             &nbsp;&nbsp;作者
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
-                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处articles/try-pelican/</p>
+
+                        <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处../../articles/try-pelican/</p>
                     </address>
                     <hr/>
                 </footer><!-- /.post-info -->
@@ -245,38 +253,43 @@
 
     </section>
 
-       </div><!-- /.row -->
-    </div><!-- /.container -->
+    </div><!-- /.row -->
+</div><!-- /.container -->
 
 
-       <div class="container.nopad bg">
-
-    
-        <footer id="credits" class="row" style="margin-bottom: 0px">
-          <div class="seven columns left-center">
-
-                   <address id="about" class="vcard body">
-                    Copyright © <script>document.write(new Date().getFullYear())</script>. 版权归PingBook所有.
-                    <!--<br />-->
-                       <!--码得了代码，调得了BUG。-->
-                    </address>
-          </div>
+<div class="container.nopad bg">
 
 
-          <div class="seven columns">
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                Copyright ©
+                <script>document.write(new Date().getFullYear())</script>
+                . 版权归PingBook所有.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>,
+                    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
             <div class="row">
-              <ul class="socbtns">
+                <ul class="socbtns">
 
 
 
 
 
-              </ul>
+                </ul>
             </div>
-          </div>
-        </footer>
+        </div>
+    </footer>
 
-    </div>
+</div>
 
 
 <script type="text/javascript">
@@ -288,8 +301,9 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-  <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="../../theme/js/libs/gumby.min.js"></script>
-  <script src="../../theme/js/plugins.js"></script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

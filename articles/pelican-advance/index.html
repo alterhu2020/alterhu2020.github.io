@@ -3,52 +3,58 @@
 <head>
 
         <title>[高级] pelican 博客高级配置</title>
-        <meta charset="utf-8" />
-        <meta name="description" content="写在前面 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric 百度站长不能收录 很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过). 加入浏览量统计 在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历, 感觉挺好玩的,里面提到了他们代码面试的工具: https://coderpad.io. 去玩了一下,感觉挺好玩.">
-        <meta name="keywords" content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+        <meta charset="utf-8"/>
+        <meta name="description" content="
 
 
-        <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PingBook博客 Full Atom Feed" />
+
+写在前面 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric 百度站长不能收录 很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过). 加入浏览量统计 在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历, 感觉挺好玩的,里面提到了他们代码面试的工具: https://coderpad.io. 去玩了一下,感觉挺好玩.">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook博客 Full Atom Feed"/>
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="../../theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
 
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
-          <!---->
+        <!---->
 
 </head>
 
 <body id="index" class="home">
 
 
-    <div class="container">
+<div class="container">
 
-        <div class="row">
+    <div class="row">
 
-          <header id="banner" class="body">
-                  <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
-          </header><!-- /#banner -->
+        <header id="banner" class="body">
+            <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
+        </header><!-- /#banner -->
 
-            <div id="navigation" class="navbar row">
-              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-             
-              <ul class="columns">
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns">
                 <li><a href="../../">主页</a></li>
 
-                <li><a href="/categories">分类</a></li>
-                <li><a href="/archives">归档</a></li>
-                <li><a href="/tags">标签</a></li>
+                    <li><a href="/categories">分类</a></li>
+                    <li><a href="/archives">归档</a></li>
+                    <li><a href="/tags">标签</a></li>
 
-              </ul>
-            </div>
+            </ul>
+        </div>
 
     <section id="content" class="body">
 
@@ -77,7 +83,9 @@
                         2018 七月 07 日, 星期六
                             &nbsp;&nbsp;作者
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
-                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处articles/pelican-advance/</p>
+
+                        <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处../../articles/pelican-advance/</p>
                     </address>
                     <hr/>
                 </footer><!-- /.post-info -->
@@ -176,38 +184,43 @@
 
     </section>
 
-       </div><!-- /.row -->
-    </div><!-- /.container -->
+    </div><!-- /.row -->
+</div><!-- /.container -->
 
 
-       <div class="container.nopad bg">
-
-    
-        <footer id="credits" class="row" style="margin-bottom: 0px">
-          <div class="seven columns left-center">
-
-                   <address id="about" class="vcard body">
-                    Copyright © <script>document.write(new Date().getFullYear())</script>. 版权归PingBook所有.
-                    <!--<br />-->
-                       <!--码得了代码，调得了BUG。-->
-                    </address>
-          </div>
+<div class="container.nopad bg">
 
 
-          <div class="seven columns">
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                Copyright ©
+                <script>document.write(new Date().getFullYear())</script>
+                . 版权归PingBook所有.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>,
+                    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
             <div class="row">
-              <ul class="socbtns">
+                <ul class="socbtns">
 
 
 
 
 
-              </ul>
+                </ul>
             </div>
-          </div>
-        </footer>
+        </div>
+    </footer>
 
-    </div>
+</div>
 
 
 <script type="text/javascript">
@@ -219,8 +232,9 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-  <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="../../theme/js/libs/gumby.min.js"></script>
-  <script src="../../theme/js/plugins.js"></script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

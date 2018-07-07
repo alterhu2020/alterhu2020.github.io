@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook的博客</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-06T23:47:26+08:00</updated><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-06T23:47:26+08:00</published><updated>2018-07-06T23:47:26+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-06:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook博客</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-07T13:22:10+08:00</updated><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-07T13:22:10+08:00</published><updated>2018-07-07T13:22:10+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-07:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;写在前面&lt;/h2&gt;
 &lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
 &lt;h3&gt;windows下的运行&lt;/h3&gt;
@@ -10,7 +10,16 @@
 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
 &lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
+&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
+感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;.&amp;nbsp;去玩了一下,感觉挺好玩.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;写在前面&lt;/h2&gt;
 &lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
 &lt;h3&gt;windows下的运行&lt;/h3&gt;
@@ -21,7 +30,16 @@
 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
 &lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-06T23:47:20+08:00</published><updated>2018-07-06T23:47:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-06:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
+&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
+感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;.&amp;nbsp;去玩了一下,感觉挺好玩.&lt;/p&gt;</content><category term="pelican"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-06T23:47:20+08:00</published><updated>2018-07-06T23:47:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-06:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
 &lt;/blockquote&gt;

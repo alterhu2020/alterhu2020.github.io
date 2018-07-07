@@ -4,11 +4,11 @@
 
         <title>[高级] pelican 博客高级配置</title>
         <meta charset="utf-8" />
-        <meta name="description" content="写在前面 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric">
+        <meta name="description" content="写在前面 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric 百度站长不能收录 很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过). 加入浏览量统计 在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历, 感觉挺好玩的,里面提到了他们代码面试的工具: https://coderpad.io. 去玩了一下,感觉挺好玩.">
         <meta name="keywords" content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
 
-        <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PingBook的博客 Full Atom Feed" />
+        <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PingBook博客 Full Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -34,7 +34,7 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="../..">PingBook的博客 <strong></strong></a></h1>
+                  <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
@@ -63,8 +63,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-06T23:47:26.447304+08:00">-->
-                    <!--2018 七月 06 日, 星期五-->
+                    <!--<abbr class="published" title="2018-07-07T13:22:10.339178+08:00">-->
+                    <!--2018 七月 07 日, 星期六-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -74,10 +74,10 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018 七月 06 日, 星期五
+                        2018 七月 07 日, 星期六
                             &nbsp;&nbsp;作者
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
-                            &nbsp;&nbsp;<p style="color:red;">码字比码代码还辛苦,转载请注明出处 <a href='https://pingbook.top'>PingBook</a></p>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处articles/pelican-advance/</p>
                     </address>
                     <hr/>
                 </footer><!-- /.post-info -->
@@ -94,6 +94,15 @@
 <div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
 <span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
 </pre></div>
+
+
+<h2>百度站长不能收录</h2>
+<blockquote>
+<p>很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).</p>
+</blockquote>
+<h2>加入浏览量统计</h2>
+<p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
+感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>.&nbsp;去玩了一下,感觉挺好玩.</p>
                 </div><!-- /.entry-content -->
                 <ul style="float:right;">
                         <li>
@@ -158,7 +167,7 @@
             <h4>友情链接</h4>
             <ul>
                     <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
-                    <li><a target="_blank" href="http://python.org/">Python.org</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">优秀博客</a></li>
             </ul>
         </nav>
 

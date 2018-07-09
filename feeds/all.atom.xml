@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook博客</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-09T23:10:47+08:00</updated><entry><title>[Linux环境搭建] Debian安装编译和安装nginx服务器</title><link href="https://pingbook.top/articles/pi-nginx/" rel="alternate"></link><published>2018-07-09T23:10:47+08:00</published><updated>2018-07-09T23:10:47+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pi-nginx/</id><summary type="html">&lt;h2&gt;Debian安装配置nginx服务器&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-10T00:10:13+08:00</updated><entry><title>[Linux环境搭建] Debian安装编译和安装nginx服务器</title><link href="https://pingbook.top/articles/pi-nginx/" rel="alternate"></link><published>2018-07-10T00:10:13+08:00</published><updated>2018-07-10T00:10:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-10:/articles/pi-nginx/</id><summary type="html">&lt;h2&gt;Debian安装配置nginx服务器&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;下载解压缩安装包&lt;/li&gt;
 &lt;/ul&gt;
@@ -37,13 +37,13 @@
 
 
 &lt;ul&gt;
-&lt;li&gt;安装nginx&lt;/li&gt;
+&lt;li&gt;安装nginx
+参考说明文档: &lt;a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04"&gt;https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1&lt;/span&gt;
 &lt;span class="code-line"&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;            --sbin-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/sbin/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --modules-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib/nginx/modules &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --conf-path&lt;span class="o"&gt;=&lt;/span&gt;/etc/nginx …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Debian安装配置nginx服务器&lt;/h2&gt;
+&lt;span class="code-line"&gt;            --modules-path …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Debian安装配置nginx服务器&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;下载解压缩安装包&lt;/li&gt;
 &lt;/ul&gt;
@@ -81,7 +81,8 @@
 
 
 &lt;ul&gt;
-&lt;li&gt;安装nginx&lt;/li&gt;
+&lt;li&gt;安装nginx
+参考说明文档: &lt;a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04"&gt;https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1&lt;/span&gt;
 &lt;span class="code-line"&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
@@ -137,7 +138,121 @@
 &lt;span class="code-line"&gt;$ make   &lt;span class="c1"&gt;#这个操作需要花费十分钟左右&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
 &lt;span class="code-line"&gt;$ sudo systemctl start nginx.service &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; nginx.service&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="nginx"></category></entry><entry><title>[Linux环境搭建] Debian如何安装配置Tomcat9</title><link href="https://pingbook.top/articles/pi-tomcat/" rel="alternate"></link><published>2018-07-09T22:46:39+08:00</published><updated>2018-07-09T22:46:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pi-tomcat/</id><summary type="html">&lt;h2&gt;安装&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;遇到的问题&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;nginx: [emerg] mkdir() &amp;quot;/var/lib/nginx/body&amp;quot; failed&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Just create directory
+&lt;code&gt;$ sudo mkdir -p /var/lib/nginx &amp;amp;&amp;amp; sudo nginx -t&lt;/code&gt;
+&lt;code&gt;$ sudo nano /lib/systemd/system/nginx.service&lt;/code&gt;
+输入如下内容&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# Stop dance for nginx&lt;/span&gt;
+&lt;span class="code-line"&gt;# =======================&lt;/span&gt;
+&lt;span class="code-line"&gt;#&lt;/span&gt;
+&lt;span class="code-line"&gt;# ExecStop sends SIGSTOP (graceful stop) to the nginx process.&lt;/span&gt;
+&lt;span class="code-line"&gt;# If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control&lt;/span&gt;
+&lt;span class="code-line"&gt;# and sends SIGTERM (fast shutdown) to the main process.&lt;/span&gt;
+&lt;span class="code-line"&gt;# After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends&lt;/span&gt;
+&lt;span class="code-line"&gt;# SIGKILL to all the remaining processes in the process group (KillMode=mixed).&lt;/span&gt;
+&lt;span class="code-line"&gt;#&lt;/span&gt;
+&lt;span class="code-line"&gt;# nginx signals reference doc:&lt;/span&gt;
+&lt;span class="code-line"&gt;# http://nginx.org/en/docs/control.html&lt;/span&gt;
+&lt;span class="code-line"&gt;#&lt;/span&gt;
+&lt;span class="code-line"&gt;[Unit]&lt;/span&gt;
+&lt;span class="code-line"&gt;Description=A high performance web server and a reverse proxy server&lt;/span&gt;
+&lt;span class="code-line"&gt;Documentation=man:nginx(8)&lt;/span&gt;
+&lt;span class="code-line"&gt;After=network.target&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;[Service]&lt;/span&gt;
+&lt;span class="code-line"&gt;Type=forking&lt;/span&gt;
+&lt;span class="code-line"&gt;PIDFile=/run/nginx.pid&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecStartPre=/usr/sbin/nginx -t -q -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecStart=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecReload=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39; -s reload&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid&lt;/span&gt;
+&lt;span class="code-line"&gt;TimeoutStopSec=5&lt;/span&gt;
+&lt;span class="code-line"&gt;KillMode=mixed&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;[Install]&lt;/span&gt;
+&lt;span class="code-line"&gt;WantedBy=multi-user.target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;重启nginx服务
+&lt;code&gt;sudo systemctl start nginx.service &amp;amp;&amp;amp; sudo systemctl enable nginx.service&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;check nginx service is&amp;nbsp;up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo systemctl status nginx.service&lt;/span&gt;
+&lt;span class="code-line"&gt;$ ps aux &lt;span class="p"&gt;|&lt;/span&gt; grep nginx&lt;/span&gt;
+&lt;span class="code-line"&gt;$ curl -I &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="nginx"></category></entry><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-09T23:35:52+08:00</published><updated>2018-07-09T23:35:52+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
+&lt;h3&gt;windows下的运行&lt;/h3&gt;
+&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
+这个文件.&lt;br&gt;
+&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
+解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
+&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
+&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
+感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
+后面发现这个是最好做浏览量统计的.&lt;br&gt;
+* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
+&lt;h3&gt;windows下的运行&lt;/h3&gt;
+&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
+这个文件.&lt;br&gt;
+&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
+解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
+&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
+&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
+感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
+后面发现这个是最好做浏览量统计的.&lt;br&gt;
+* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;</content><category term="pelican"></category></entry><entry><title>[Linux环境搭建] Debian如何安装配置Tomcat9</title><link href="https://pingbook.top/articles/pi-tomcat/" rel="alternate"></link><published>2018-07-09T22:46:39+08:00</published><updated>2018-07-09T22:46:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pi-tomcat/</id><summary type="html">&lt;h2&gt;安装&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考文档:&lt;br&gt;
 &lt;em&gt; &lt;a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/"&gt;https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/&lt;/a&gt;&lt;br&gt;
@@ -799,63 +914,7 @@
 &lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
 &lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-07T21:41:53+08:00</published><updated>2018-07-07T21:41:53+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-07:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;写在前面&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件.&lt;br&gt;
-&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
-&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
-&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.&lt;br&gt;
-* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;写在前面&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件.&lt;br&gt;
-&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
-&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
-&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.&lt;br&gt;
-* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-06T23:47:20+08:00</published><updated>2018-07-06T23:47:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-06:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-06T23:47:20+08:00</published><updated>2018-07-06T23:47:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-06:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
 &lt;/blockquote&gt;

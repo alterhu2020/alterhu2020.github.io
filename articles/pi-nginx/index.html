@@ -8,13 +8,13 @@
 
 
 
-Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz $ tar zxvf nginx-1.15.1.tar.gz 重新配置nginx的服务器名称servername和对应版本 $ cd nginx-1.15.1/ $ sudo nano src/http/ngx_http_header_filter_module.c $ sudo nano src/core/nginx.h $ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/ 安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and openssl $ sudo apt install build-essential -y $ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz $ tar zxvf pcre-8.41.tar.gz $ wget http://www.zlib.net/zlib-1.2.11.tar.gz $ tar -zxvf zlib-1.2.11.tar.gz $ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz $ tar zxvf openssl-1.1.0g.tar.gz $ cd openssl-1.1.0g $ ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)' $ make # 大约五六分钟左右 $ sudo make install $ openssl version -a 安装nginx $ cd nginx-1.15.1 $ ./configure --prefix=/usr/local/nginx \ --sbin-path=/usr/sbin/nginx \ --modules-path=/usr/lib/nginx/modules \ --conf-path=/etc/nginx …">
+Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz $ tar zxvf nginx-1.15.1.tar.gz 重新配置nginx的服务器名称servername和对应版本 $ cd nginx-1.15.1/ $ sudo nano src/http/ngx_http_header_filter_module.c $ sudo nano src/core/nginx.h $ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/ 安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and openssl $ sudo apt install build-essential -y $ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz $ tar zxvf pcre-8.41.tar.gz $ wget http://www.zlib.net/zlib-1.2.11.tar.gz $ tar -zxvf zlib-1.2.11.tar.gz $ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz $ tar zxvf openssl-1.1.0g.tar.gz $ cd openssl-1.1.0g $ ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)' $ make # 大约五六分钟左右 $ sudo make install $ openssl version -a 安装nginx 参考说明文档: https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04 $ cd nginx-1.15.1 $ ./configure --prefix=/usr/local/nginx \ --sbin-path=/usr/sbin/nginx \ --modules-path …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
 
             <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="PingBook博客 Full Atom Feed"/>
+                  title="PingBook Blog Full Atom Feed"/>
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -40,18 +40,18 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong></strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
             <ul class="columns">
-                <li><a href="../../">主页</a></li>
+                <li><a href="../../">Home</a></li>
 
-                    <li><a href="/categories">分类</a></li>
-                    <li><a href="/archives">归档</a></li>
-                    <li><a href="/tags">标签</a></li>
+                    <li><a href="/categories">Category</a></li>
+                    <li><a href="/archives">Archive</a></li>
+                    <li><a href="/tags">Tags</a></li>
 
             </ul>
         </div>
@@ -69,8 +69,8 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-09T23:10:47.787592+08:00">-->
-                    <!--2018 七月 09 日, 星期一-->
+                    <!--<abbr class="published" title="2018-07-10T00:10:13.067568+08:00">-->
+                    <!--2018 七月 10, 星期二-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -80,11 +80,11 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018 七月 09 日, 星期一
-                            &nbsp;&nbsp;<作者></作者>
+                        2018 七月 10, 星期二
+                            &nbsp;&nbsp; By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
-                        <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>
+                        <span id="busuanzi_container_page_pv">, Views:<span id="busuanzi_value_page_pv"></span></span>
                         &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处<a href="../../articles/pi-nginx/">../../articles/pi-nginx/</a></p>
                     </address>
                     <hr/>
@@ -128,7 +128,8 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
 
 
 <ul>
-<li>安装nginx</li>
+<li>安装nginx
+参考说明文档: <a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04">https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04</a></li>
 </ul>
 <div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1</span>
 <span class="code-line">$ ./configure --prefix<span class="o">=</span>/usr/local/nginx <span class="se">\</span></span>
@@ -185,19 +186,71 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
 <span class="code-line">$ sudo make install</span>
 <span class="code-line">$ sudo systemctl start nginx.service <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> nginx.service</span>
 </pre></div>
+
+
+<h2>遇到的问题</h2>
+<div class="highlight"><pre><span class="code-line"><span></span>nginx: [emerg] mkdir() &quot;/var/lib/nginx/body&quot; failed</span>
+</pre></div>
+
+
+<p>Just create directory
+<code>$ sudo mkdir -p /var/lib/nginx &amp;&amp; sudo nginx -t</code>
+<code>$ sudo nano /lib/systemd/system/nginx.service</code>
+输入如下内容</p>
+<div class="highlight"><pre><span class="code-line"><span></span># Stop dance for nginx</span>
+<span class="code-line"># =======================</span>
+<span class="code-line">#</span>
+<span class="code-line"># ExecStop sends SIGSTOP (graceful stop) to the nginx process.</span>
+<span class="code-line"># If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control</span>
+<span class="code-line"># and sends SIGTERM (fast shutdown) to the main process.</span>
+<span class="code-line"># After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends</span>
+<span class="code-line"># SIGKILL to all the remaining processes in the process group (KillMode=mixed).</span>
+<span class="code-line">#</span>
+<span class="code-line"># nginx signals reference doc:</span>
+<span class="code-line"># http://nginx.org/en/docs/control.html</span>
+<span class="code-line">#</span>
+<span class="code-line">[Unit]</span>
+<span class="code-line">Description=A high performance web server and a reverse proxy server</span>
+<span class="code-line">Documentation=man:nginx(8)</span>
+<span class="code-line">After=network.target</span>
+<span class="code-line"></span>
+<span class="code-line">[Service]</span>
+<span class="code-line">Type=forking</span>
+<span class="code-line">PIDFile=/run/nginx.pid</span>
+<span class="code-line">ExecStartPre=/usr/sbin/nginx -t -q -g &#39;daemon on; master_process on;&#39;</span>
+<span class="code-line">ExecStart=/usr/sbin/nginx -g &#39;daemon on; master_process on;&#39;</span>
+<span class="code-line">ExecReload=/usr/sbin/nginx -g &#39;daemon on; master_process on;&#39; -s reload</span>
+<span class="code-line">ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid</span>
+<span class="code-line">TimeoutStopSec=5</span>
+<span class="code-line">KillMode=mixed</span>
+<span class="code-line"></span>
+<span class="code-line">[Install]</span>
+<span class="code-line">WantedBy=multi-user.target</span>
+</pre></div>
+
+
+<ul>
+<li>重启nginx服务
+<code>sudo systemctl start nginx.service &amp;&amp; sudo systemctl enable nginx.service</code></li>
+<li>check nginx service is&nbsp;up</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo systemctl status nginx.service</span>
+<span class="code-line">$ ps aux <span class="p">|</span> grep nginx</span>
+<span class="code-line">$ curl -I <span class="m">127</span>.0.0.1</span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <ul style="float:right;">
                         <li>
-                            ◄&nbsp;&nbsp;<a href="../../articles/pi-tomcat/">
-                            [Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9
+                            ◄&nbsp;&nbsp;<a href="../../articles/pelican-advance/">
+                            [高级] pelican&nbsp;博客高级配置
                         </a>
                         </li>
                 </ul>
                 <div class="comments">
-                    <h3>相关文章</h3>
+                    <h3>Relate Articles</h3>
                 </div>
                     <div class="comments">
-                        <h3>留言评论</h3>
+                        <h3>Comments</h3>
                         <div id="disqus_thread"></div>
                         <script type="text/javascript">
                             var disqus_identifier = "articles/pi-nginx/";
@@ -215,16 +268,16 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
 
 <div class="three columns">
     <nav class="widget sidebarbg">
-        <h4>快捷导航</h4>
+        <h4>Navigation</h4>
         <ul>
-                <li><a href="/categories">分类</a></li>
-                <li><a href="/archives">归档</a></li>
-                <li><a href="/tags">标签</a></li>
+                <li><a href="/categories">Category</a></li>
+                <li><a href="/archives">Archive</a></li>
+                <li><a href="/tags">Tags</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
             <nav class="widget">
-                <h4>分类</h4>
+                <h4>Categories</h4>
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
@@ -234,7 +287,7 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
 
 
         <nav class="widget sidebarbg">
-            <h4>标签</h4>
+            <h4>Tags</h4>
             <ul class="blank">
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
@@ -252,18 +305,18 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
         <div class="social sidebarbg">
 
             <nav class="widget">
-                <h4>组织</h4>
+                <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=来自PingBook的问题">邮箱</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
             </nav>
         </div>
         <nav class="widget sidebarbg">
-            <h4>关注</h4>
+            <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
                     <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
             </ul>
         </nav>
@@ -284,13 +337,11 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                Copyright ©
-                <script>document.write(new Date().getFullYear())</script>
-                . 版权归PingBook所有.
+                 ©<script>document.write(new Date().getFullYear())</script> OpenBook.Inc.
                 <!--<br />-->
                 <div>
-                    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>,
-                    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+                    <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span>人</span>
                 </div>
             </address>
         </div>

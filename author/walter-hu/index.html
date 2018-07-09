@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>PingBook博客 -文章来自 Walter Hu</title>
+        <title>PingBook Blog -From Walter Hu</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
@@ -14,7 +14,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
             <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="PingBook博客 Full Atom Feed"/>
+                  title="PingBook Blog Full Atom Feed"/>
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -40,24 +40,24 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong></strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
             <ul class="columns">
-                <li><a href="../../">主页</a></li>
+                <li><a href="../../">Home</a></li>
 
-                    <li><a href="/categories">分类</a></li>
-                    <li><a href="/archives">归档</a></li>
-                    <li><a href="/tags">标签</a></li>
+                    <li><a href="/categories">Category</a></li>
+                    <li><a href="/archives">Archive</a></li>
+                    <li><a href="/tags">Tags</a></li>
 
             </ul>
         </div>
 
 <section id="content">
-<h2>作者Walter Hu</h2>
+<h2>By Walter Hu</h2>
 
 
    <div class="row">
@@ -68,8 +68,8 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                         <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-09T23:10:47.787592+08:00">
-                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-10T00:10:13.067568+08:00">
+                                        Post @ 2018 七月 10, 星期二,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -111,21 +111,74 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
 <ul>
-<li>安装nginx</li>
+<li>安装nginx
+参考说明文档: <a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04">https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04</a></li>
 </ul>
 <div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1</span>
 <span class="code-line">$ ./configure --prefix<span class="o">=</span>/usr/local/nginx <span class="se">\</span></span>
 <span class="code-line">            --sbin-path<span class="o">=</span>/usr/sbin/nginx <span class="se">\</span></span>
-<span class="code-line">            --modules-path<span class="o">=</span>/usr/lib/nginx/modules <span class="se">\</span></span>
-<span class="code-line">            --conf-path<span class="o">=</span>/etc/nginx …</span></pre></div> </div><!-- /.entry-content -->
+<span class="code-line">            --modules-path …</span></pre></div> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">阅读全文<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/nginx/">nginx</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T23:35:52.573294+08:00">
+                                        Post @ 2018 七月 09, 星期一,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<h2>写在前面</h2>
+<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
+<h3>windows下的运行</h3>
+<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
+这个文件.<br>
+<code>fabfile</code>在上面的命令生成后发现里面的文件报了好多错,<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
+解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
+<span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
+</pre></div>
+
+
+<h2>百度站长不能收录</h2>
+<blockquote>
+<p>很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).</p>
+</blockquote>
+<h2>加入浏览量统计</h2>
+<p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
+感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
+后面发现这个是最好做浏览量统计的.<br>
+* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
+<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
+</pre></div>
+
+
+<h2>增加搜索功能(2018-07-09)</h2> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/pelican/">pelican</a>
                                 </div>
 
 
@@ -135,7 +188,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T22:46:39.124456+08:00">
-                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018 七月 09, 星期一,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -189,7 +242,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/tomcat9/">Tomcat9</a>
                                 </div>
 
@@ -200,7 +253,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置">[Linux环境搭建]  svn&nbsp;安装配置</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T21:33:36.432567+08:00">
-                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018 七月 09, 星期一,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -276,7 +329,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/svn/">svn</a>
                                 </div>
 
@@ -287,7 +340,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T20:27:24.371368+08:00">
-                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018 七月 09, 星期一,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -353,7 +406,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/mysql/">mysql</a>
                                             <a class="danger label" href="../../tag/mysqlbei-fen/">mysql备份</a>
                                 </div>
@@ -365,7 +418,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T20:27:12.524805+08:00">
-                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018 七月 09, 星期一,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -408,7 +461,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
                                             <a class="danger label" href="../../tag/python3/">python3</a>
                                 </div>
@@ -420,7 +473,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-08T23:35:08.403457+08:00">
-                                        发表于2018 七月 08 日, 星期日,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018 七月 08, 星期日,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -467,7 +520,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
                                             <a class="danger label" href="../../tag/nat123/">nat123</a>
                                             <a class="danger label" href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a>
@@ -480,7 +533,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-08T23:18:44.834461+08:00">
-                                        发表于2018 七月 08 日, 星期日,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018 七月 08, 星期日,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -500,58 +553,8 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-07T21:41:53.739134+08:00">
-                                        发表于2018 七月 07 日, 星期六,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<h2>写在前面</h2>
-<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
-<h3>windows下的运行</h3>
-<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
-这个文件.<br>
-<code>fabfile</code>在上面的命令生成后发现里面的文件报了好多错,<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
-<span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
-</pre></div>
-
-
-<h2>百度站长不能收录</h2>
-<blockquote>
-<p>很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).</p>
-</blockquote>
-<h2>加入浏览量统计</h2>
-<p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.<br>
-* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
-<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
-<span class="code-line"></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
-</pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>关键字: </span>
-                                            <a class="danger label" href="../../tag/pelican/">pelican</a>
                                 </div>
 
 
@@ -561,7 +564,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-06T23:47:20.521679+08:00">
-                                        发表于2018 七月 06 日, 星期五,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018 七月 06, 星期五,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -599,7 +602,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                                 <div class="row tag-row">
-                                        <span>关键字: </span>
+                                        <span>Tags: </span>
                                             <a class="danger label" href="../../tag/pelican/">pelican</a>
                                 </div>
 
@@ -612,16 +615,16 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         
 <div class="three columns">
     <nav class="widget sidebarbg">
-        <h4>快捷导航</h4>
+        <h4>Navigation</h4>
         <ul>
-                <li><a href="/categories">分类</a></li>
-                <li><a href="/archives">归档</a></li>
-                <li><a href="/tags">标签</a></li>
+                <li><a href="/categories">Category</a></li>
+                <li><a href="/archives">Archive</a></li>
+                <li><a href="/tags">Tags</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
             <nav class="widget">
-                <h4>分类</h4>
+                <h4>Categories</h4>
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
@@ -631,7 +634,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
         <nav class="widget sidebarbg">
-            <h4>标签</h4>
+            <h4>Tags</h4>
             <ul class="blank">
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
@@ -649,18 +652,18 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="social sidebarbg">
 
             <nav class="widget">
-                <h4>组织</h4>
+                <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=来自PingBook的问题">邮箱</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
             </nav>
         </div>
         <nav class="widget sidebarbg">
-            <h4>关注</h4>
+            <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
                     <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
             </ul>
         </nav>
@@ -683,13 +686,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                Copyright ©
-                <script>document.write(new Date().getFullYear())</script>
-                . 版权归PingBook所有.
+                 ©<script>document.write(new Date().getFullYear())</script> OpenBook.Inc.
                 <!--<br />-->
                 <div>
-                    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>,
-                    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+                    <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span>人</span>
                 </div>
             </address>
         </div>

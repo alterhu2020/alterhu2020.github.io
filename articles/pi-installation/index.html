@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 
-        <title>[初级] pelican 博客搭建</title>
+        <title>树莓派3B安装</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
-我真是太折腾了,也没能坚持下去,去年陆陆续续用hexo写了一段时间的博客,最终没能坚持下去! 关键字 pelican markdown  github 搭建步骤 最好的方式莫过于官方文档: 官方入坑道路. 下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤. // 如果需要使用markdown这个高逼格的语法去写博客 # pip install pelican markdown typogrify # mkdir pingbook.top # cd pingbook.top # pelican-quickstart 安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在pelicanconf.py修改,直接默认回车一路下去就好了!  pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。 1. Where do you want to create your new web site?[.] (你想在哪里创建你的网站，默认为当前目录) 2. What will be the title of this web site?(网站的标题是什么) 3. Who will be the author of this web site?(网站的作者是谁) 4. What will be the default language of this web site? [en] (网站的默认语言是),这里我们写'zh'中文 5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y 6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠'/'),http://moelove.info 7. Do you want to enable article pagination?(是否启用文章分页) 8. Do you want to generate a Makefile to easily manage …">
+树莓派安装 安装完成后，TF卡被分成两个分区： 1. 67MB vfat格式的引导分区（系统启动后被挂载在/boot目录） 2. TF卡剩余空间 ext4格式的磁盘分区 由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format Tool（windows磁盘管理器无法处理ext4格式磁盘）。 安装的是Destop版本,lite 远程桌面工具,不是VNC 直接运行如下命令安装对应的远程桌面工具: $ sudo apt install -y xrdp">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -64,13 +64,13 @@
 
                 <header>
                     <h2 class="entry-title">
-                        <a href="../../articles/try-pelican/" rel="bookmark"
-                           title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2>
+                        <a href="../../articles/pi-installation/" rel="bookmark"
+                           title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-06T23:47:20.521679+08:00">-->
-                    <!--2018 七月 06 日, 星期五-->
+                    <!--<abbr class="published" title="2018-07-08T23:18:44.834461+08:00">-->
+                    <!--2018 七月 08 日, 星期日-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -80,125 +80,51 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018 七月 06 日, 星期五
+                        2018 七月 08 日, 星期日
                             &nbsp;&nbsp;<作者></作者>
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
                         <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>
-                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处<a href="../../articles/try-pelican/">../../articles/try-pelican/</a></p>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处<a href="../../articles/pi-installation/">../../articles/pi-installation/</a></p>
                     </address>
                     <hr/>
                 </footer><!-- /.post-info -->
                 <div class="entry-content">
-                    <p><br></p>
-<blockquote>
-<p>我真是太折腾了,也没能坚持下去,去年陆陆续续用<code>hexo</code>写了一段时间的博客,最终没能坚持下去!</p>
-</blockquote>
-<h2>关键字</h2>
-<blockquote>
-<p>pelican <br> markdown <br>&nbsp;github</p>
-</blockquote>
-<h2>搭建步骤</h2>
-<p>最好的方式莫过于官方文档: <a href="http://docs.getpelican.com/en/stable/install.html">官方入坑道路</a>.&nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.</p>
-<div class="highlight"><pre><span class="code-line"><span></span>// 如果需要使用markdown这个高逼格的语法去写博客</span>
-<span class="code-line"># pip install pelican markdown typogrify </span>
-<span class="code-line"></span>
-<span class="code-line"># mkdir pingbook.top</span>
-<span class="code-line"># cd pingbook.top</span>
-<span class="code-line"># pelican-quickstart</span>
-</pre></div>
-
-
-<p>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在<code>pelicanconf.py</code>修改,直接默认回车一路下去就好了! <br/>&nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</p>
-<div class="highlight"><pre><span class="code-line"><span></span>1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)</span>
-<span class="code-line">2. What will be the title of this web site?(网站的标题是什么)</span>
-<span class="code-line">3. Who will be the author of this web site?(网站的作者是谁)</span>
-<span class="code-line">4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&#39;zh&#39;中文</span>
-<span class="code-line">5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y</span>
-<span class="code-line">6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&#39;/&#39;),http://moelove.info</span>
-<span class="code-line">7. Do you want to enable article pagination?(是否启用文章分页)</span>
-<span class="code-line">8. Do you want to generate a Makefile to easily manage your website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))</span>
-<span class="code-line">9. Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)</span>
-<span class="code-line">10. Do you want to upload your website using FTP?</span>
-<span class="code-line">11. Do you want to upload your website using SSH?</span>
-<span class="code-line">12. Do you want to upload your website using Dropbox?</span>
-<span class="code-line">13. Do you want to upload your website using S3?</span>
-</pre></div>
-
-
-<h2>命令使用</h2>
-<blockquote>
-<p>由于本人使用的是windows,这里我使用了两个命令:</p>
-</blockquote>
-<div class="highlight"><pre><span class="code-line"><span></span># pelican content # 根据content中的内容，生成静态网站到output目下</span>
-<span class="code-line"># cd output &amp;&amp; python -m pelican.server</span>
-<span class="code-line"></span>
-<span class="code-line"># cd output &amp;&amp; python -m SimpleHTTPServer</span>
-</pre></div>
-
-
-<h2>主题和插件安装</h2>
-<h3>theme安装</h3>
-<p>下载主题文件,添加配置: <code>THEME = './pelican-themes/gum'</code></p>
-<h3>插件安装</h3>
-<p>下载插件文件,添加如下配置: </p>
-<div class="highlight"><pre><span class="code-line"><span></span>PLUGIN_PATHS = [u&quot;pelican-plugins&quot;]</span>
-<span class="code-line">PLUGINS = [u&quot;sitemap&quot;,u&quot;gzip_cache&quot;,u&quot;neighbors&quot;,u&quot;related_posts&quot;]</span>
-<span class="code-line">SITEMAP = {</span>
-<span class="code-line">    &#39;format&#39;: &#39;xml&#39;,</span>
-<span class="code-line">    &#39;priorities&#39;: {</span>
-<span class="code-line">        &#39;articles&#39;: 0.7,</span>
-<span class="code-line">        &#39;indexes&#39;: 0.5,</span>
-<span class="code-line">        &#39;pages&#39;: 0.3</span>
-<span class="code-line">    },</span>
-<span class="code-line">    &#39;changefreqs&#39;: {</span>
-<span class="code-line">        &#39;articles&#39;: &#39;weekly&#39;,</span>
-<span class="code-line">        &#39;indexes&#39;: &#39;daily&#39;,</span>
-<span class="code-line">        &#39;pages&#39;: &#39;monthly&#39;</span>
-<span class="code-line">    }</span>
-<span class="code-line">}</span>
-</pre></div>
-
-
-<h3>字体更改</h3>
-<p>在对应的主题的css文件中修改对应的google&nbsp;font切换到国内的镜像.</p>
-<h2>高级语法</h2>
-<h3>静态图片</h3>
-<p>新建一个目录在<code>content</code>下面,例如<code>images</code>,然后在<code>pelicanconf.py</code>设置如下:
-<code>STATIC_PATHS = ['images','downloads']</code>
-,在对应的md中可以这样写语法:</p>
-<p><img alt="测试图片显示" src="../../articles/try-pelican/test.png"></p>
-<h2>部署</h2>
-<h3>部署到github上</h3>
-<ul>
-<li>新建一个仓库,仓库名称和你的昵称相同或者创建一个组织</li>
-<li>使用如下命令上传</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>cd output</span>
-<span class="code-line">git init</span>
-<span class="code-line">git add .</span>
-<span class="code-line">git remote add origin 仓库git地址</span>
-<span class="code-line">git push -u origin master</span>
+                    <h2>树莓派安装</h2>
+<p>安装完成后，TF卡被分成两个分区：<br>
+1. <span class="caps">67MB</span> vfat格式的引导分区（系统启动后被挂载在/boot目录）
+2. TF卡剩余空间&nbsp;ext4格式的磁盘分区</p>
+<p>由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。</p>
+<h2>安装的是Destop版本,lite</h2>
+<h2>远程桌面工具,不是VNC</h2>
+<p>直接运行如下命令安装对应的远程桌面工具:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install -y xrdp</span>
 </pre></div>
                 </div><!-- /.entry-content -->
                 <ul style="float:right;">
                         <li>
-                            ►&nbsp;&nbsp;<a href="../../articles/pelican-advance/">
+                            ◄&nbsp;&nbsp;<a href="../../articles/pelican-advance/">
                             [高级] pelican&nbsp;博客高级配置
+                        </a>
+                        </li>
+                        <li>
+                            ►&nbsp;&nbsp;<a href="../../articles/pi-mirrors/">
+                            树莓派外部网站搭建
                         </a>
                         </li>
                 </ul>
                 <div class="comments">
                     <h3>相关文章</h3>
                         <ul>
-                                <li><a href="../../articles/pelican-advance/">[高级] pelican&nbsp;博客高级配置</a></li>
+                                <li><a href="../../articles/pi-python3/">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></li>
+                                <li><a href="../../articles/pi-mirrors/">树莓派外部网站搭建</a></li>
                         </ul>
                 </div>
                     <div class="comments">
                         <h3>留言评论</h3>
                         <div id="disqus_thread"></div>
                         <script type="text/javascript">
-                            var disqus_identifier = "articles/try-pelican/";
+                            var disqus_identifier = "articles/pi-installation/";
                             (function () {
                                 var dsq = document.createElement('script');
                                 dsq.type = 'text/javascript';

@@ -66,9 +66,451 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T23:10:47.787592+08:00">
+                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>Debian安装配置nginx服务器</h2>
+<ul>
+<li>下载解压缩安装包</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz</span>
+<span class="code-line">$ tar zxvf nginx-1.15.1.tar.gz </span>
+</pre></div>
+
+
+<ul>
+<li>重新配置nginx的服务器名称servername和对应版本</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1/</span>
+<span class="code-line">$ sudo nano  src/http/ngx_http_header_filter_module.c</span>
+<span class="code-line">$ sudo nano  src/core/nginx.h</span>
+<span class="code-line">$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/</span>
+</pre></div>
+
+
+<ul>
+<li>安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and&nbsp;openssl</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install build-essential -y</span>
+<span class="code-line">$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz</span>
+<span class="code-line">$ tar zxvf pcre-8.41.tar.gz</span>
+<span class="code-line">$ wget http://www.zlib.net/zlib-1.2.11.tar.gz</span>
+<span class="code-line">$ tar -zxvf zlib-1.2.11.tar.gz</span>
+<span class="code-line">$ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz </span>
+<span class="code-line">$ tar zxvf openssl-1.1.0g.tar.gz</span>
+<span class="code-line">$ <span class="nb">cd</span> openssl-1.1.0g</span>
+<span class="code-line">$ ./config -Wl,--enable-new-dtags,-rpath,<span class="s1">&#39;$(LIBRPATH)&#39;</span></span>
+<span class="code-line">$ make  <span class="c1"># 大约五六分钟左右</span></span>
+<span class="code-line">$ sudo make install</span>
+<span class="code-line">$ openssl version -a</span>
+</pre></div>
+
+
+<ul>
+<li>安装nginx</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1</span>
+<span class="code-line">$ ./configure --prefix<span class="o">=</span>/usr/local/nginx <span class="se">\</span></span>
+<span class="code-line">            --sbin-path<span class="o">=</span>/usr/sbin/nginx <span class="se">\</span></span>
+<span class="code-line">            --modules-path<span class="o">=</span>/usr/lib/nginx/modules <span class="se">\</span></span>
+<span class="code-line">            --conf-path<span class="o">=</span>/etc/nginx …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="./tag/nginx/">nginx</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T22:46:39.124456+08:00">
+                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>安装</h2>
+<blockquote>
+<p>参考文档:<br>
+<em> <a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/">https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/</a><br>
+</em> 推荐: <a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33">https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33</a></p>
+</blockquote>
+<ol>
+<li>安装JDK和配置环境变量(采用下面的配置环境变量/etc/profile), 注意截止到20180709,&nbsp;oracle没有提供debain的32位系统安装tar包,所以这里使用的是32位的jdk1.8</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ nano ~/.bashrc</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span></span>
+<span class="code-line">$ <span class="nb">source</span> ~/.bashrc</span>
+<span class="code-line">$ <span class="nb">echo</span> <span class="nv">$JAVA_HOME</span></span>
+</pre></div>
+
+
+<ol>
+<li>添加组和用户</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo groupadd tomcat</span>
+<span class="code-line">$ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat</span>
+</pre></div>
+
+
+<ul>
+<li>下载tomcat9</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ tar zxvf jdk1.8.0_171.tar.gz</span>
+<span class="code-line">$  sudo nano /etc/profile</span>
+<span class="code-line"><span class="nv">JAVA_HOME</span><span class="o">=</span>/home/pi/jdk1.8.0_171</span>
+<span class="code-line"><span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/lib/</span>
+<span class="code-line"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$JAVA_HOME</span>/bin</span>
+<span class="code-line"><span class="nb">export</span> PATH JAVA_HOME CLASSPATH</span>
+<span class="code-line">$ <span class="nb">source</span> /etc/profile</span>
+<span class="code-line">$ java 可能下载的是64位的jdk,但是系统只能运行32位的jdk</span>
+<span class="code-line">/bin/javac: cannot execute binary file: Exec format error</span>
+<span class="code-line"></span>
+<span class="code-line">$ <span class="nb">cd</span> /home/pi</span>
+<span class="code-line">$ sudo wget http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.10/bin/apache-tomcat-9.0.10.tar.gz</span>
+<span class="code-line">$  tar zxvf apache-tomcat-9.0.10.tar.gz </span>
+<span class="code-line">$ <span class="nb">cd</span> /home/pi/apache-tomcat-9.0.10/</span>
+<span class="code-line">$ sudo groupadd tomcat </span>
+<span class="code-line">$ sudo useradd -M -s /bin/nologin -g tomcat -d /home/pi/apache-tomcat-9.0 …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="./tag/tomcat9/">Tomcat9</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置">[Linux环境搭建]  svn&nbsp;安装配置</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T21:33:36.432567+08:00">
+                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2><span class="caps">SVN</span>&nbsp;安装</h2>
+<ol>
+<li>执行如下命令进行安装:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install subversion</span>
+</pre></div>
+
+
+<ol>
+<li>启动 <code>svn</code> 服务: </li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>d代表的是daemon 进程</span>
+<span class="code-line">$ svnserve -d</span>
+<span class="code-line">$ ps aux | grep svnserve</span>
+<span class="code-line">若出现如下内容：</span>
+<span class="code-line"></span>
+<span class="code-line">wkr 6537 0.0 0.0 13784 956 ? Ss 16:18 0:00 svnserve -d</span>
+<span class="code-line">wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 grep –color=auto svnserve</span>
+<span class="code-line"></span>
+<span class="code-line">表示服务已开启。（注意：一定要有第1行，只有第2行说明服务未启动）</span>
+</pre></div>
+
+
+<ol>
+<li>关闭<code>svn</code>服务:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$  killall svnserve</span>
+</pre></div>
+
+
+<ol>
+<li>重启 <code>svn</code>服务:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ svnserve -d -r /srv</span>
+</pre></div>
+
+
+<ol>
+<li>新建一个仓库:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo adduser --system --home /srv/svn --disabled-password --disabled-login --group svn</span>
+<span class="code-line">$ sudo svnadmin create /srv/svn</span>
+<span class="code-line">$ sudo chown -R svn:svn /srv/svn</span>
+<span class="code-line">change user, change group 改变文件对应的用户和用户组</span>
+</pre></div>
+
+
+<ol>
+<li>修改仓库配置文件<br>
+编辑配置文件:&nbsp;svnserve.conf</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /srv/svn/conf/svnserve.conf</span>
+<span class="code-line"><span class="o">[</span>general<span class="o">]</span></span>
+<span class="code-line">anon-access <span class="o">=</span> none</span>
+<span class="code-line">auth-access <span class="o">=</span> write</span>
+<span class="code-line">authz-db <span class="o">=</span> authz</span>
+</pre></div>
+
+
+<p>修改帐户文件<code>nano /srv/svn/conf/passwd</code> 和 <code>sudo nano /srv/svn/conf/authz</code>,&nbsp;此处忽略.</p>
+<ol>
+<li>配置svn开机自动启动</li>
+<li>新建一个svnserve配置文件在<code>/et/default/svnserve</code>文件,内容如下:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span># svnserve options</span>
+<span class="code-line">DAEMON_ARGS=&quot;--daemon --pid-file /run/svnserve/svnserve.pid --root /srv/svn --log-file …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="./tag/svn/">svn</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T20:27:24.371368+08:00">
+                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>安装</h2>
+<ol>
+<li>执行如下命令进行安装和基本的配置:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install mysql-server</span>
+<span class="code-line">$ sudo mysql_secure_installation</span>
+</pre></div>
+
+
+<p>第二条命令将会配置mysql的<code>root</code>密码,删除掉<code>test</code>数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令:
+<code>mysql -u root -p</code>, 这里的root不用输入密码,明明上面的已经设置了密码???<br>&nbsp;进行如下的命令进行配置:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo mysql -u root -p </span>
+<span class="code-line">$ use mysql<span class="p">;</span></span>
+<span class="code-line">$ update user <span class="nb">set</span> <span class="nv">plugin</span><span class="o">=</span><span class="s1">&#39;mysql_native_password&#39;</span> where <span class="nv">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span></span>
+<span class="code-line">$ flush privileges<span class="p">;</span> </span>
+<span class="code-line">$ quit<span class="p">;</span></span>
+</pre></div>
+
+
+<h2>配置</h2>
+<ol>
+<li><code>root</code>密码的更改,可以采用下面的操作步骤:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</span>
+<span class="code-line">增加一行代码: skip-grant-tables 参见 https://www.jb51.net/article/100925.htm</span>
+<span class="code-line">$ sudo mysql -u root -p </span>
+<span class="code-line">$ use mysql<span class="p">;</span></span>
+<span class="code-line">$ UPDATE mysql.user SET <span class="nv">Password</span><span class="o">=</span>PASSWORD<span class="o">(</span><span class="s1">&#39;YanZhi123!@#)0x&amp;*&#39;</span><span class="o">)</span> where <span class="nv">USER</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span></span>
+<span class="code-line">$ flush privileges<span class="p">;</span> </span>
+</pre></div>
+
+
+<ol>
+<li>增加用户名和授权远程登录:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</span>
+<span class="code-line">注释掉 bind-address          <span class="o">=</span> <span class="m">127</span>.0.0.1</span>
+<span class="code-line">$ sudo mysql -u root -p </span>
+<span class="code-line">$ use mysql<span class="p">;</span></span>
+<span class="code-line">$ CREATE USER <span class="s1">&#39;yanzhi&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;yanzhi123!@#&#39;</span><span class="p">;</span></span>
+<span class="code-line">$ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;yanzhi&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;yanzhi123!@#&#39;</span><span class="p">;</span>    -- 远程连接权限所有的数据库.</span>
+<span class="code-line">$ flush privileges<span class="p">;</span> </span>
+</pre></div>
+
+
+<ol>
+<li>创建数据库,支持中文:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="n">UTF8</span><span class="o">:</span> </span>
+<span class="code-line"><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">test2</span> <span class="n">DEFAULT</span> <span class="n">CHARACTER</span> <span class="n">SET</span> <span class="n">utf8</span> <span class="n">COLLATE</span> <span class="n">utf8_general_ci</span></span>
+</pre></div>
+
+
+<ol>
+<li>自动备份数据库,每天备份一次</li>
+<li>新建文件: <code>sudo nano /usr/sbin/mysqlbackup.sh</code>,内容如下 …</li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="./tag/mysql/">mysql</a>
+                                            <a class="danger label" href="./tag/mysqlbei-fen/">mysql备份</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T20:27:12.524805+08:00">
+                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>卸载命令</h2>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
+<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal<span class="sb">`</span>,<span class="sb">`</span>python3.5-venv<span class="sb">`</span></span>
+</pre></div>
+
+
+<h2>安装最新python3.7</h2>
+<p>因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,安装如下进行安装,
+参考文档: <a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6">https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6</a></p>
+<div class="highlight"><pre><span class="code-line"><span></span>安装依赖包</span>
+<span class="code-line">$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \</span>
+<span class="code-line">libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \</span>
+<span class="code-line">xz-utils tk-dev libffi-dev</span>
+<span class="code-line">$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz</span>
+<span class="code-line">$ tar xvf Python-3.7.0.tgz</span>
+<span class="code-line">$ ./configure --enable-optimizations --with-ensurepip=install</span>
+<span class="code-line">$ make -j8</span>
+<span class="code-line">$ sudo make altinstall</span>
+</pre></div>
+
+
+<h2>安装pip,pipenv并设置全局可用命令<code>pipenv</code></h2>
+<div class="highlight"><pre><span class="code-line"><span></span>$ wget https://bootstrap.pypa.io/get-pip.py</span>
+<span class="code-line">$ sudo python get-pip.py</span>
+<span class="code-line"></span>
+<span class="code-line">$ pip install --user pipenv</span>
+<span class="code-line"> /home/pi/.local/bin</span>
+<span class="code-line">$ python -m site --user-base</span>
+<span class="code-line">$ sudo nano ~/.profile</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span></span>
+<span class="code-line">$ sudo <span class="nb">source</span> ~/.profile</span>
+<span class="code-line">$ pipenv --update</span>
+</pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="./tag/python3/">python3</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-08T23:35:08.403457+08:00">
+                                        发表于2018 七月 08 日, 星期日,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<h2>前因</h2>
+<blockquote>
+<p>自己在Github&nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.</p>
+</blockquote>
+<h2>整理一下树莓派下安装nginx的过程</h2>
+<h3>1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to&nbsp;mirrors.tuna.tsinghua.edu.cn:80)</h3>
+<p>可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors<br>&nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list</span>
+</pre></div>
+
+
+<p>用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像：</p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="k">deb</span> <span class="s">https://mirrors.shu.edu.cn/raspbian/raspbian/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span> <span class="kp">rpi</span></span>
+<span class="code-line"><span class="k">deb-src</span> <span class="s">https://mirrors.shu.edu.cn/raspbian/raspbian/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span> <span class="kp">rpi</span></span>
+</pre></div>
+
+
+<p>使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为：</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list.d/raspi.list</span>
+</pre></div>
+
+
+<p>用#注释掉原文件内容，用以下内容取代：</p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="k">deb</span> <span class="s">https://mirrors.ustc.edu.cn/archive.raspberrypi.org/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">ui</span></span>
+<span class="code-line"><span class="k">deb-src</span> <span class="s">https://mirrors.ustc.edu.cn/archive.raspberrypi.org/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">ui</span></span>
+</pre></div>
+
+
+<blockquote>
+<p>注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。<br>
+编辑镜像站后，请使用<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>命令，更新软件源列表，同时检查您的编辑是否正确。
+使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装<code>apt-transport-https</code>.</p>
+</blockquote>
+<h3>树莓派安装</h3>
+<blockquote>
+<p>因为感觉空间越来越小了 …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="./tag/nat123/">nat123</a>
+                                            <a class="danger label" href="./tag/shu-mei-pai-jing-xiang/">树莓派镜像</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-08T23:18:44.834461+08:00">
+                                        发表于2018 七月 08 日, 星期日,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>树莓派安装</h2>
+<p>安装完成后，TF卡被分成两个分区：<br>
+1. <span class="caps">67MB</span> vfat格式的引导分区（系统启动后被挂载在/boot目录）
+2. TF卡剩余空间&nbsp;ext4格式的磁盘分区</p>
+<p>由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。</p>
+<h2>安装的是Destop版本,lite</h2>
+<h2>远程桌面工具,不是VNC</h2>
+<p>直接运行如下命令安装对应的远程桌面工具:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install -y xrdp</span>
+</pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="./articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-07T13:22:10.339178+08:00">
+                                    <abbr class="published" title="2018-07-07T21:41:53.739134+08:00">
                                         发表于2018 七月 07 日, 星期六,                                     作者                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
@@ -93,7 +535,15 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </blockquote>
 <h2>加入浏览量统计</h2>
 <p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>.&nbsp;去玩了一下,感觉挺好玩.</p> </div><!-- /.entry-content -->
+感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
+后面发现这个是最好做浏览量统计的.<br>
+* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
+<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
+</pre></div> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="./articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">阅读全文<i class="icon-arrow-right"></i></a></div>
 
@@ -169,12 +619,30 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/tags">标签</a></li>
         </ul>
     </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>分类</h4>
+                <ul class="blank">
+                        <li><a href="./category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="./category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
 
 
         <nav class="widget sidebarbg">
             <h4>标签</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="./tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="./tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="./tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="./tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="./tag/nat123/">nat123</a></li>
+                    <li class="tag-4"><a href="./tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="./tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="./tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="./tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="./tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="./tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
             </ul>
         </nav>
 
@@ -190,10 +658,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             </nav>
         </div>
         <nav class="widget sidebarbg">
-            <h4>友情链接</h4>
+            <h4>关注</h4>
             <ul>
                     <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">优秀博客</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
             </ul>
         </nav>
 
@@ -248,7 +716,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>

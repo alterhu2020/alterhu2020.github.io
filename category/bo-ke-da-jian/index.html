@@ -68,7 +68,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                         <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-07T13:22:10.339178+08:00">
+                                    <abbr class="published" title="2018-07-07T21:41:53.739134+08:00">
                                         发表于2018 七月 07 日, 星期六,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
@@ -93,7 +93,15 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </blockquote>
 <h2>加入浏览量统计</h2>
 <p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>.&nbsp;去玩了一下,感觉挺好玩.</p> </div><!-- /.entry-content -->
+感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
+后面发现这个是最好做浏览量统计的.<br>
+* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
+<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
+</pre></div> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">阅读全文<i class="icon-arrow-right"></i></a></div>
 
@@ -169,12 +177,30 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/tags">标签</a></li>
         </ul>
     </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>分类</h4>
+                <ul class="blank">
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
 
 
         <nav class="widget sidebarbg">
             <h4>标签</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../../tag/nat123/">nat123</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
             </ul>
         </nav>
 
@@ -190,10 +216,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             </nav>
         </div>
         <nav class="widget sidebarbg">
-            <h4>友情链接</h4>
+            <h4>关注</h4>
             <ul>
                     <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">优秀博客</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
             </ul>
         </nav>
 
@@ -248,7 +274,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>

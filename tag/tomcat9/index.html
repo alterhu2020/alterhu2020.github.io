@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>PingBook博客 - Tomcat9</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="
+
+
+
+PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vuejs、软件测试、测试自动化等的IT科技博客,希望大家一起交流学习!">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook博客 Full Atom Feed"/>
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+        <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+<div class="container">
+
+    <div class="row">
+
+        <header id="banner" class="body">
+            <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns">
+                <li><a href="../../">主页</a></li>
+
+                    <li><a href="/categories">分类</a></li>
+                    <li><a href="/archives">归档</a></li>
+                    <li><a href="/tags">标签</a></li>
+
+            </ul>
+        </div>
+
+<section id="content">
+
+
+
+   <div class="row">
+
+
+        <div class="eleven columns">
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T22:46:39.124456+08:00">
+                                        发表于2018 七月 09 日, 星期一,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>安装</h2>
+<blockquote>
+<p>参考文档:<br>
+<em> <a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/">https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/</a><br>
+</em> 推荐: <a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33">https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33</a></p>
+</blockquote>
+<ol>
+<li>安装JDK和配置环境变量(采用下面的配置环境变量/etc/profile), 注意截止到20180709,&nbsp;oracle没有提供debain的32位系统安装tar包,所以这里使用的是32位的jdk1.8</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ nano ~/.bashrc</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span></span>
+<span class="code-line">$ <span class="nb">source</span> ~/.bashrc</span>
+<span class="code-line">$ <span class="nb">echo</span> <span class="nv">$JAVA_HOME</span></span>
+</pre></div>
+
+
+<ol>
+<li>添加组和用户</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo groupadd tomcat</span>
+<span class="code-line">$ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat</span>
+</pre></div>
+
+
+<ul>
+<li>下载tomcat9</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ tar zxvf jdk1.8.0_171.tar.gz</span>
+<span class="code-line">$  sudo nano /etc/profile</span>
+<span class="code-line"><span class="nv">JAVA_HOME</span><span class="o">=</span>/home/pi/jdk1.8.0_171</span>
+<span class="code-line"><span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/lib/</span>
+<span class="code-line"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$JAVA_HOME</span>/bin</span>
+<span class="code-line"><span class="nb">export</span> PATH JAVA_HOME CLASSPATH</span>
+<span class="code-line">$ <span class="nb">source</span> /etc/profile</span>
+<span class="code-line">$ java 可能下载的是64位的jdk,但是系统只能运行32位的jdk</span>
+<span class="code-line">/bin/javac: cannot execute binary file: Exec format error</span>
+<span class="code-line"></span>
+<span class="code-line">$ <span class="nb">cd</span> /home/pi</span>
+<span class="code-line">$ sudo wget http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.10/bin/apache-tomcat-9.0.10.tar.gz</span>
+<span class="code-line">$  tar zxvf apache-tomcat-9.0.10.tar.gz </span>
+<span class="code-line">$ <span class="nb">cd</span> /home/pi/apache-tomcat-9.0.10/</span>
+<span class="code-line">$ sudo groupadd tomcat </span>
+<span class="code-line">$ sudo useradd -M -s /bin/nologin -g tomcat -d /home/pi/apache-tomcat-9.0 …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>关键字: </span>
+                                            <a class="danger label" href="../../tag/tomcat9/">Tomcat9</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>快捷导航</h4>
+        <ul>
+                <li><a href="/categories">分类</a></li>
+                <li><a href="/archives">归档</a></li>
+                <li><a href="/tags">标签</a></li>
+        </ul>
+    </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>分类</h4>
+                <ul class="blank">
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <nav class="widget sidebarbg">
+            <h4>标签</h4>
+            <ul class="blank">
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../../tag/nat123/">nat123</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>组织</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=来自PingBook的问题">邮箱</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>关注</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
+            </ul>
+        </nav>
+
+</div> </div><!-- /.row -->
+
+<p class="paginator">
+     第1页/共1页
+</p>
+</section><!-- /#content -->
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<div class="container.nopad bg">
+
+
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                Copyright ©
+                <script>document.write(new Date().getFullYear())</script>
+                . 版权归PingBook所有.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>,
+                    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
+            <div class="row">
+                <ul class="socbtns">
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>

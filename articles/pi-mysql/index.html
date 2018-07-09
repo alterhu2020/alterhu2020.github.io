@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>[Linux环境搭建] MYSQL 的安装配置</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="
+
+
+
+安装 执行如下命令进行安装和基本的配置: $ sudo apt-get -y install mysql-server $ sudo mysql_secure_installation 第二条命令将会配置mysql的root密码,删除掉test数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令: mysql -u root -p, 这里的root不用输入密码,明明上面的已经设置了密码??? 进行如下的命令进行配置: $ sudo mysql -u root -p $ use mysql; $ update user set plugin='mysql_native_password' where user='root'; $ flush privileges; $ quit; 配置 root密码的更改,可以采用下面的操作步骤: $ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf 增加一行代码: skip-grant-tables 参见 https://www.jb51.net/article/100925.htm $ sudo mysql -u root -p $ use mysql; $ UPDATE mysql.user SET Password=PASSWORD('YanZhi123!@#)0x&*') where USER='root'; $ flush privileges; 增加用户名和授权远程登录: $ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf 注释掉 bind-address = 127.0.0.1 $ sudo mysql -u root -p $ use mysql; $ CREATE USER 'yanzhi'@'%' IDENTIFIED BY 'yanzhi123!@#'; $ GRANT ALL PRIVILEGES ON *.* TO 'yanzhi'@'%' IDENTIFIED BY 'yanzhi123!@#'; -- 远程连接权限所有的数据库. $ flush privileges; 创建数据库,支持中文: UTF8: CREATE DATABASE test2 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci 自动备份数据库,每天备份一次 新建文件: sudo nano /usr/sbin/mysqlbackup.sh,内容如下 …">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook博客 Full Atom Feed"/>
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+        <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+<div class="container">
+
+    <div class="row">
+
+        <header id="banner" class="body">
+            <h1><a href="../..">PingBook博客 <strong></strong></a></h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns">
+                <li><a href="../../">主页</a></li>
+
+                    <li><a href="/categories">分类</a></li>
+                    <li><a href="/archives">归档</a></li>
+                    <li><a href="/tags">标签</a></li>
+
+            </ul>
+        </div>
+
+    <section id="content" class="body">
+
+        <div class="row">
+            <div class="eleven columns">
+
+
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/pi-mysql/" rel="bookmark"
+                           title="Permalink to [Linux环境搭建] MYSQL 的安装配置">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-07-09T20:27:24.371368+08:00">-->
+                    <!--2018 七月 09 日, 星期一-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        2018 七月 09 日, 星期一
+                            &nbsp;&nbsp;<作者></作者>
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
+
+                        <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处<a href="../../articles/pi-mysql/">../../articles/pi-mysql/</a></p>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                <div class="entry-content">
+                    <h2>安装</h2>
+<ol>
+<li>执行如下命令进行安装和基本的配置:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install mysql-server</span>
+<span class="code-line">$ sudo mysql_secure_installation</span>
+</pre></div>
+
+
+<p>第二条命令将会配置mysql的<code>root</code>密码,删除掉<code>test</code>数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令:
+<code>mysql -u root -p</code>, 这里的root不用输入密码,明明上面的已经设置了密码???<br>&nbsp;进行如下的命令进行配置:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo mysql -u root -p </span>
+<span class="code-line">$ use mysql<span class="p">;</span></span>
+<span class="code-line">$ update user <span class="nb">set</span> <span class="nv">plugin</span><span class="o">=</span><span class="s1">&#39;mysql_native_password&#39;</span> where <span class="nv">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span></span>
+<span class="code-line">$ flush privileges<span class="p">;</span> </span>
+<span class="code-line">$ quit<span class="p">;</span></span>
+</pre></div>
+
+
+<h2>配置</h2>
+<ol>
+<li><code>root</code>密码的更改,可以采用下面的操作步骤:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</span>
+<span class="code-line">增加一行代码: skip-grant-tables 参见 https://www.jb51.net/article/100925.htm</span>
+<span class="code-line">$ sudo mysql -u root -p </span>
+<span class="code-line">$ use mysql<span class="p">;</span></span>
+<span class="code-line">$ UPDATE mysql.user SET <span class="nv">Password</span><span class="o">=</span>PASSWORD<span class="o">(</span><span class="s1">&#39;YanZhi123!@#)0x&amp;*&#39;</span><span class="o">)</span> where <span class="nv">USER</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span></span>
+<span class="code-line">$ flush privileges<span class="p">;</span> </span>
+</pre></div>
+
+
+<ol>
+<li>增加用户名和授权远程登录:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</span>
+<span class="code-line">注释掉 bind-address          <span class="o">=</span> <span class="m">127</span>.0.0.1</span>
+<span class="code-line">$ sudo mysql -u root -p </span>
+<span class="code-line">$ use mysql<span class="p">;</span></span>
+<span class="code-line">$ CREATE USER <span class="s1">&#39;yanzhi&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;yanzhi123!@#&#39;</span><span class="p">;</span></span>
+<span class="code-line">$ GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;yanzhi&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;yanzhi123!@#&#39;</span><span class="p">;</span>    -- 远程连接权限所有的数据库.</span>
+<span class="code-line">$ flush privileges<span class="p">;</span> </span>
+</pre></div>
+
+
+<ol>
+<li>创建数据库,支持中文:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="n">UTF8</span><span class="o">:</span> </span>
+<span class="code-line"><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">test2</span> <span class="n">DEFAULT</span> <span class="n">CHARACTER</span> <span class="n">SET</span> <span class="n">utf8</span> <span class="n">COLLATE</span> <span class="n">utf8_general_ci</span></span>
+</pre></div>
+
+
+<ol>
+<li>自动备份数据库,每天备份一次</li>
+<li>新建文件: <code>sudo nano /usr/sbin/mysqlbackup.sh</code>,内容如下:</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="code-line">1</span>
+<span class="code-line">2</span>
+<span class="code-line">3</span>
+<span class="code-line">4</span>
+<span class="code-line">5</span>
+<span class="code-line">6</span>
+<span class="code-line">7</span>
+<span class="code-line">8</span>
+<span class="code-line">9</pre></div></td><td class="code"><div class="highlight"><pre><span class="code-line"><span></span><span class="ch">#!/bin/bash</span></span>
+<span class="code-line"><span class="c1"># Name:mysql_backup.sh</span></span>
+<span class="code-line"><span class="c1"># This is a ShellScript For Auto DB Backup and Delete old Backup</span></span>
+<span class="code-line"><span class="c1">#</span></span>
+<span class="code-line"><span class="nv">backupdir</span><span class="o">=</span>/www/backups</span>
+<span class="code-line"><span class="nv">time</span><span class="o">=</span><span class="sb">`</span>date +%Y-%m-%d_%H%M%S<span class="sb">`</span></span>
+<span class="code-line">/usr/bin/mysqldump --routines -u<span class="s1">&#39;test&#39;</span> -p<span class="s1">&#39;test!@#&#39;</span> pingbook <span class="p">|</span> gzip &gt; <span class="nv">$backupdir</span>/yanzhi<span class="nv">$time</span>.sql.gz</span>
+<span class="code-line"><span class="c1"># 删除七天前的备份</span></span>
+<span class="code-line">find <span class="nv">$backupdir</span> -name <span class="s2">&quot;*.sql.gz&quot;</span> -type f -mtime +7 -exec rm <span class="o">{}</span> <span class="se">\ </span>&gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span></span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>添加可执行权限对应sh文件.</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo chmod +x /usr/sbin/mysqlbackup.sh</span>
+</pre></div>
+
+
+<ul>
+<li>增加定时任务在<code>sudo nano /etc/crontab</code></li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>#创建一个mysql备份的操作</span>
+<span class="code-line">2 1   * * * root  /usr/sbin/mysqlbackup.sh &gt;&gt; /var/log/crontab/backup.log 2&gt;&amp;1  </span>
+</pre></div>
+
+
+<ul>
+<li>重启<code>crontab</code>以便生效
+<code>sudo systemctl restart cron.service</code></li>
+</ul>
+                </div><!-- /.entry-content -->
+                <ul style="float:right;">
+                        <li>
+                            ◄&nbsp;&nbsp;<a href="../../articles/pi-python3/">
+                            [Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上
+                        </a>
+                        </li>
+                        <li>
+                            ►&nbsp;&nbsp;<a href="../../articles/pi-svn/">
+                            [Linux环境搭建]  svn&nbsp;安装配置
+                        </a>
+                        </li>
+                </ul>
+                <div class="comments">
+                    <h3>相关文章</h3>
+                </div>
+                    <div class="comments">
+                        <h3>留言评论</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/pi-mysql/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                    </div>
+
+            </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>快捷导航</h4>
+        <ul>
+                <li><a href="/categories">分类</a></li>
+                <li><a href="/archives">归档</a></li>
+                <li><a href="/tags">标签</a></li>
+        </ul>
+    </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>分类</h4>
+                <ul class="blank">
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <nav class="widget sidebarbg">
+            <h4>标签</h4>
+            <ul class="blank">
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../../tag/nat123/">nat123</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>组织</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=来自PingBook的问题">邮箱</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>关注</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
+            </ul>
+        </nav>
+
+</div>        </div><!-- /.row -->
+
+
+    </section>
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<div class="container.nopad bg">
+
+
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                Copyright ©
+                <script>document.write(new Date().getFullYear())</script>
+                . 版权归PingBook所有.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>,
+                    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
+            <div class="row">
+                <ul class="socbtns">
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>

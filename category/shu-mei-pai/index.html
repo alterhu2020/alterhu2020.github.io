@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>PingBook博客 -文章来自 Walter Hu</title>
+        <title>PingBook博客</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
@@ -57,7 +57,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         </div>
 
 <section id="content">
-<h2>作者Walter Hu</h2>
+<h2>在树莓派分类下的所有文章</h2>
 
 
    <div class="row">
@@ -502,105 +502,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <div class="row tag-row">
                                         <span>关键字: </span>
                                             <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-07T21:41:53.739134+08:00">
-                                        发表于2018 七月 07 日, 星期六,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<h2>写在前面</h2>
-<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
-<h3>windows下的运行</h3>
-<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
-这个文件.<br>
-<code>fabfile</code>在上面的命令生成后发现里面的文件报了好多错,<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
-<span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
-</pre></div>
-
-
-<h2>百度站长不能收录</h2>
-<blockquote>
-<p>很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).</p>
-</blockquote>
-<h2>加入浏览量统计</h2>
-<p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.<br>
-* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
-<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
-<span class="code-line"></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
-</pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>关键字: </span>
-                                            <a class="danger label" href="../../tag/pelican/">pelican</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-06T23:47:20.521679+08:00">
-                                        发表于2018 七月 06 日, 星期五,                                     作者                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<blockquote>
-<p>我真是太折腾了,也没能坚持下去,去年陆陆续续用<code>hexo</code>写了一段时间的博客,最终没能坚持下去!</p>
-</blockquote>
-<h2>关键字</h2>
-<blockquote>
-<p>pelican <br> markdown <br>&nbsp;github</p>
-</blockquote>
-<h2>搭建步骤</h2>
-<p>最好的方式莫过于官方文档: <a href="http://docs.getpelican.com/en/stable/install.html">官方入坑道路</a>.&nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.</p>
-<div class="highlight"><pre><span class="code-line"><span></span>// 如果需要使用markdown这个高逼格的语法去写博客</span>
-<span class="code-line"># pip install pelican markdown typogrify </span>
-<span class="code-line"></span>
-<span class="code-line"># mkdir pingbook.top</span>
-<span class="code-line"># cd pingbook.top</span>
-<span class="code-line"># pelican-quickstart</span>
-</pre></div>
-
-
-<p>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在<code>pelicanconf.py</code>修改,直接默认回车一路下去就好了! <br/>&nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</p>
-<div class="highlight"><pre><span class="code-line"><span></span>1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)</span>
-<span class="code-line">2. What will be the title of this web site?(网站的标题是什么)</span>
-<span class="code-line">3. Who will be the author of this web site?(网站的作者是谁)</span>
-<span class="code-line">4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&#39;zh&#39;中文</span>
-<span class="code-line">5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y</span>
-<span class="code-line">6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&#39;/&#39;),http://moelove.info</span>
-<span class="code-line">7. Do you want to enable article pagination?(是否启用文章分页)</span>
-<span class="code-line">8. Do you want to generate a Makefile to easily manage …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>关键字: </span>
-                                            <a class="danger label" href="../../tag/pelican/">pelican</a>
                                 </div>
 
 

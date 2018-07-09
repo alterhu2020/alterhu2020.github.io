@@ -8,7 +8,7 @@
 
 
 
-写在前面 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric 百度站长不能收录 很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过). 加入浏览量统计 在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历, 感觉挺好玩的,里面提到了他们代码面试的工具: https://coderpad.io. 去玩了一下,感觉挺好玩.">
+写在前面 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric 百度站长不能收录 很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过). 加入浏览量统计 在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历, 感觉挺好玩的,里面提到了他们代码面试的工具: https://coderpad.io. 去玩了一下,感觉挺好玩. 后面发现这个是最好做浏览量统计的. * 工具不蒜子,代码也是超简单: <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>, <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span> <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -69,7 +69,7 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-07T13:22:10.339178+08:00">-->
+                    <!--<abbr class="published" title="2018-07-07T21:41:53.739134+08:00">-->
                     <!--2018 七月 07 日, 星期六-->
                     <!--</abbr>-->
                     <!---->
@@ -81,11 +81,11 @@
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
                         2018 七月 07 日, 星期六
-                            &nbsp;&nbsp;作者
+                            &nbsp;&nbsp;<作者></作者>
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
                         <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>
-                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处../../articles/pelican-advance/</p>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留出处<a href="../../articles/pelican-advance/">../../articles/pelican-advance/</a></p>
                     </address>
                     <hr/>
                 </footer><!-- /.post-info -->
@@ -110,12 +110,25 @@
 </blockquote>
 <h2>加入浏览量统计</h2>
 <p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>.&nbsp;去玩了一下,感觉挺好玩.</p>
+感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
+后面发现这个是最好做浏览量统计的.<br>
+* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
+<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
+<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <ul style="float:right;">
                         <li>
                             ◄&nbsp;&nbsp;<a href="../../articles/try-pelican/">
                             [初级] pelican&nbsp;博客搭建
+                        </a>
+                        </li>
+                        <li>
+                            ►&nbsp;&nbsp;<a href="../../articles/pi-installation/">
+                            树莓派3B安装
                         </a>
                         </li>
                 </ul>
@@ -151,12 +164,30 @@
                 <li><a href="/tags">标签</a></li>
         </ul>
     </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>分类</h4>
+                <ul class="blank">
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
 
 
         <nav class="widget sidebarbg">
             <h4>标签</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../../tag/nat123/">nat123</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
             </ul>
         </nav>
 
@@ -172,10 +203,10 @@
             </nav>
         </div>
         <nav class="widget sidebarbg">
-            <h4>友情链接</h4>
+            <h4>关注</h4>
             <ul>
                     <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">博客园</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">优秀博客</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
             </ul>
         </nav>
 
@@ -228,7 +259,7 @@
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>

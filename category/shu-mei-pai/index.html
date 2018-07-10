@@ -66,6 +66,36 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-10T13:36:03.437066+08:00">
+                                        Post @ 2018 七月 10, 星期二,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>安装步骤</h2>
+<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a>
+1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp<br>
+2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
+~~3. 安装<code>sudo apt-get  install  -y mono-complete</code>,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: <a href="https://pingbook.top/articles/pi-mirrors/">https://pingbook.top/articles/pi-mirrors/</a>~~
+4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123/nat123linux.sh  service  <span class="p">&amp;</span></span>
+</pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/nat123/">NAT123</a>
+                                            <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-10T00:10:13.067568+08:00">
@@ -525,6 +555,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <h4>Categories</h4>
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/mian-shi/">面试</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
                 </ul>
             </nav>
@@ -534,16 +565,19 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
+                    <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
-                    <li class="tag-4"><a href="../../tag/nat123/">nat123</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../../tag/mian-xiang-dui-xiang/">面向对象</a></li>
+                    <li class="tag-2"><a href="../../tag/mian-shi/">面试</a></li>
             </ul>
         </nav>
 
@@ -588,7 +622,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span>人</span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>

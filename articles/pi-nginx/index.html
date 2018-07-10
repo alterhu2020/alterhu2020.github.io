@@ -69,7 +69,7 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-10T00:10:13.067568+08:00">-->
+                    <!--<abbr class="published" title="2018-07-10T22:11:17.195355+08:00">-->
                     <!--2018 七月 10, 星期二-->
                     <!--</abbr>-->
                     <!---->
@@ -238,15 +238,119 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
 <span class="code-line">$ ps aux <span class="p">|</span> grep nginx</span>
 <span class="code-line">$ curl -I <span class="m">127</span>.0.0.1</span>
 </pre></div>
+
+
+<ul>
+<li>重启nginx出现<code>Directory index of "/www/pingbook.top/pingbook.top/output/" is forbidden,</code>
+解决方法是在location里面设置index&nbsp;index.html,如下: </li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>  location / {</span>
+<span class="code-line">     # 使用alias时，目录名后面一定要加”/“</span>
+<span class="code-line">     alias /www/pingbook.top/pingbook.top/output/;</span>
+<span class="code-line">     index index.html;</span>
+<span class="code-line">     try_files $uri $uri/ index.html last;</span>
+<span class="code-line">  }</span>
+</pre></div>
+
+
+<h2>Https&nbsp;加密你的网站</h2>
+<p>参考文档:&nbsp;https://certbot.eff.org/lets-encrypt/debianother-nginx</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$  sudo wget https://dl.eff.org/certbot-auto</span>
+<span class="code-line">$ sudo chmod a+x certbot-auto</span>
+<span class="code-line">$ <span class="c1"># 获取证书</span></span>
+<span class="code-line">$ sudo ./certbot-auto certonly --standalone --email alterhu2020@gmail.com -d pingbook.top -d www.pingbook.top</span>
+<span class="code-line"></span>
+<span class="code-line">报错如下,很多的依赖没有安装成功:</span>
+<span class="code-line">dpkg: error processing package python-zope.component <span class="o">(</span>--configure<span class="o">)</span>:</span>
+<span class="code-line"> dependency problems - leaving unconfigured</span>
+<span class="code-line">Setting up libaugeas0 <span class="o">(</span><span class="m">1</span>.8.0-1+deb9u1<span class="o">)</span> ...</span>
+<span class="code-line">dpkg: dependency problems prevent configuration of python-mock:</span>
+<span class="code-line"> python-mock depends on python-funcsigs <span class="o">(</span>&gt;<span class="o">=</span> <span class="m">1</span><span class="o">)</span><span class="p">;</span> however:</span>
+<span class="code-line">  Package python-funcsigs is not configured yet.</span>
+<span class="code-line"> python-mock depends on python-pbr <span class="o">(</span>&gt;<span class="o">=</span> <span class="m">1</span>.3<span class="o">)</span><span class="p">;</span> however:</span>
+<span class="code-line">  Package python-pbr is not configured yet.</span>
+<span class="code-line"> python-mock depends on python-six <span class="o">(</span>&gt;<span class="o">=</span> <span class="m">1</span>.9<span class="o">)</span><span class="p">;</span> however:</span>
+<span class="code-line">  Package python-six is not configured yet.</span>
+<span class="code-line"></span>
+<span class="code-line">dpkg: error processing package python-mock <span class="o">(</span>--configure<span class="o">)</span>:</span>
+<span class="code-line"> dependency problems - leaving unconfigured</span>
+<span class="code-line">dpkg: dependency problems prevent configuration of python-requests:</span>
+<span class="code-line"> python-requests depends on python-urllib3 <span class="o">(</span>&gt;<span class="o">=</span> <span class="m">1</span>.19.1<span class="o">)</span><span class="p">;</span> however:</span>
+<span class="code-line">  Package python-urllib3 is not configured yet.</span>
+<span class="code-line"> python-requests depends on python-chardet<span class="p">;</span> however:</span>
+<span class="code-line">  Package python-chardet is not configured yet.</span>
+<span class="code-line"> python-requests depends on python-urllib3 <span class="o">(</span><span class="s">&lt;&lt; 1.1</span><span class="m">9</span>.2<span class="o">)</span><span class="p">;</span> however:</span>
+<span class="code-line">  Package python-urllib3 is not configured yet.</span>
+<span class="code-line"></span>
+<span class="code-line">dpkg: error processing package python-requests <span class="o">(</span>--configure<span class="o">)</span>:</span>
+<span class="code-line"> dependency problems - leaving unconfigured</span>
+<span class="code-line">dpkg: dependency problems prevent configuration of certbot:</span>
+<span class="code-line"> certbot depends on python-certbot <span class="o">(=</span> <span class="m">0</span>.10.2-1<span class="o">)</span><span class="p">;</span> however:</span>
+<span class="code-line">  Package python-certbot is not configured yet.</span>
+<span class="code-line"></span>
+<span class="code-line">dpkg: error processing package certbot <span class="o">(</span>--configure<span class="o">)</span>:</span>
+<span class="code-line"> dependency problems - leaving unconfigured</span>
+<span class="code-line">Processing triggers <span class="k">for</span> libc-bin <span class="o">(</span><span class="m">2</span>.24-11+deb9u3<span class="o">)</span> ...</span>
+<span class="code-line">Errors were encountered <span class="k">while</span> processing:</span>
+<span class="code-line"> python-dnspython</span>
+<span class="code-line"> python-idna</span>
+<span class="code-line"> python-parsedatetime</span>
+<span class="code-line"> python-pyasn1</span>
+<span class="code-line"> python-tz</span>
+<span class="code-line"> python-pkg-resources</span>
+<span class="code-line"> python-configargparse</span>
+<span class="code-line"> python-six</span>
+<span class="code-line"> python-zope.interface</span>
+<span class="code-line"> python-psutil</span>
+<span class="code-line"> python-pbr</span>
+<span class="code-line"> python-enum34</span>
+<span class="code-line"> python-cryptography</span>
+<span class="code-line"> python-virtualenv</span>
+<span class="code-line"> python-funcsigs</span>
+<span class="code-line"> python-zope.hookable</span>
+<span class="code-line"> python-ipaddress</span>
+<span class="code-line"> python-pyicu</span>
+<span class="code-line"> python-zope.event</span>
+<span class="code-line"> python-rfc3339</span>
+<span class="code-line"> python-setuptools</span>
+<span class="code-line"> python-urllib3</span>
+<span class="code-line"> python-configobj</span>
+<span class="code-line"> python-chardet</span>
+<span class="code-line"> python-acme</span>
+<span class="code-line"> python-openssl</span>
+<span class="code-line"> python-certbot</span>
+<span class="code-line"> python-zope.component</span>
+<span class="code-line"> python-mock</span>
+<span class="code-line"> python-requests</span>
+<span class="code-line"> certbot</span>
+</pre></div>
+
+
+<p>Sub-process /usr/bin/dpkg returned an error code&nbsp;(1)</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> /var/cache/apt/</span>
+<span class="code-line">$ <span class="nb">cd</span> archives/</span>
+<span class="code-line">$ sudo rm -rf *</span>
+</pre></div>
+
+
+<p>所以我想起以前用的一个网友的脚本,不用安装一堆繁杂的包,地址:
+<a href="https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/README-CN.md">https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/<span class="caps">README</span>-<span class="caps">CN</span>.md</a></p>
+<p><span class="dquo">&#8220;</span>
+1.&nbsp;在nginx的配置文件里面配置location:</p>
+<p># https 的配置Let’s Encrypt
+ location ^~ /.well-known/acme-challenge/ {
+   allow all;
+   default_type &#8220;text/plain&#8221;;
+   root /www;&nbsp;}</p>
+<p>$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
+$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
+$ sudo chmod +x letsencrypt.sh
+$ sudo nano letsencrypt.conf
+$ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
                 </div><!-- /.entry-content -->
                 <ul style="float:right;">
                         <li>
-                            ◄&nbsp;&nbsp;<a href="../../articles/pelican-advance/">
-                            [高级] pelican&nbsp;博客高级配置
-                        </a>
-                        </li>
-                        <li>
-                            ►&nbsp;&nbsp;<a href="../../articles/pi-nat123/">
+                            ◄&nbsp;&nbsp;<a href="../../articles/pi-nat123/">
                             [Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署
                         </a>
                         </li>
@@ -383,7 +487,7 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
 </script>
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

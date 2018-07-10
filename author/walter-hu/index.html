@@ -66,6 +66,112 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-10T22:11:17.195355+08:00">
+                                        Post @ 2018 七月 10, 星期二,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>Debian安装配置nginx服务器</h2>
+<ul>
+<li>下载解压缩安装包</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz</span>
+<span class="code-line">$ tar zxvf nginx-1.15.1.tar.gz </span>
+</pre></div>
+
+
+<ul>
+<li>重新配置nginx的服务器名称servername和对应版本</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1/</span>
+<span class="code-line">$ sudo nano  src/http/ngx_http_header_filter_module.c</span>
+<span class="code-line">$ sudo nano  src/core/nginx.h</span>
+<span class="code-line">$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/</span>
+</pre></div>
+
+
+<ul>
+<li>安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and&nbsp;openssl</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install build-essential -y</span>
+<span class="code-line">$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz</span>
+<span class="code-line">$ tar zxvf pcre-8.41.tar.gz</span>
+<span class="code-line">$ wget http://www.zlib.net/zlib-1.2.11.tar.gz</span>
+<span class="code-line">$ tar -zxvf zlib-1.2.11.tar.gz</span>
+<span class="code-line">$ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz </span>
+<span class="code-line">$ tar zxvf openssl-1.1.0g.tar.gz</span>
+<span class="code-line">$ <span class="nb">cd</span> openssl-1.1.0g</span>
+<span class="code-line">$ ./config -Wl,--enable-new-dtags,-rpath,<span class="s1">&#39;$(LIBRPATH)&#39;</span></span>
+<span class="code-line">$ make  <span class="c1"># 大约五六分钟左右</span></span>
+<span class="code-line">$ sudo make install</span>
+<span class="code-line">$ openssl version -a</span>
+</pre></div>
+
+
+<ul>
+<li>安装nginx
+参考说明文档: <a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04">https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04</a></li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1</span>
+<span class="code-line">$ ./configure --prefix<span class="o">=</span>/usr/local/nginx <span class="se">\</span></span>
+<span class="code-line">            --sbin-path<span class="o">=</span>/usr/sbin/nginx <span class="se">\</span></span>
+<span class="code-line">            --modules-path …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/nginx/">nginx</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-10T20:47:02.674460+08:00">
+                                        Post @ 2018 七月 10, 星期二,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>安装步骤</h2>
+<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a>
+1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp<br>
+2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
+~~3. 安装<code>sudo apt-get  install  -y mono-complete</code>,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: <a href="https://pingbook.top/articles/pi-mirrors/">https://pingbook.top/articles/pi-mirrors/</a>~~
+4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123/nat123linux.sh  service  <span class="p">&amp;</span></span>
+</pre></div>
+
+
+<h3>采用如下方式进行安装<code>mono-complete</code></h3>
+<p>参考地址: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a></p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install apt-transport-https dirmngr</span>
+<span class="code-line">$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF</span>
+<span class="code-line">$ <span class="nb">echo</span> <span class="s2">&quot;deb https://download.mono-project.com/repo/debian stable-raspbianstretch main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/mono-official-stable.list</span>
+<span class="code-line">$ sudo apt update</span>
+<span class="code-line">$ sudo apt install mono-complete</span>
+</pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/nat123/">NAT123</a>
+                                            <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">[面试] 1.&nbsp;面向对象的相关概念</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-10T16:57:48.778724+08:00">
@@ -129,102 +235,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                         <span>Tags: </span>
                                             <a class="danger label" href="../../tag/mian-shi/">面试</a>
                                             <a class="danger label" href="../../tag/list/">list</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T13:36:03.437066+08:00">
-                                        Post @ 2018 七月 10, 星期二,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>安装步骤</h2>
-<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a>
-1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp<br>
-2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
-~~3. 安装<code>sudo apt-get  install  -y mono-complete</code>,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: <a href="https://pingbook.top/articles/pi-mirrors/">https://pingbook.top/articles/pi-mirrors/</a>~~
-4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123/nat123linux.sh  service  <span class="p">&amp;</span></span>
-</pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../../tag/nat123/">NAT123</a>
-                                            <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T00:10:13.067568+08:00">
-                                        Post @ 2018 七月 10, 星期二,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>Debian安装配置nginx服务器</h2>
-<ul>
-<li>下载解压缩安装包</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz</span>
-<span class="code-line">$ tar zxvf nginx-1.15.1.tar.gz </span>
-</pre></div>
-
-
-<ul>
-<li>重新配置nginx的服务器名称servername和对应版本</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1/</span>
-<span class="code-line">$ sudo nano  src/http/ngx_http_header_filter_module.c</span>
-<span class="code-line">$ sudo nano  src/core/nginx.h</span>
-<span class="code-line">$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/</span>
-</pre></div>
-
-
-<ul>
-<li>安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and&nbsp;openssl</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install build-essential -y</span>
-<span class="code-line">$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz</span>
-<span class="code-line">$ tar zxvf pcre-8.41.tar.gz</span>
-<span class="code-line">$ wget http://www.zlib.net/zlib-1.2.11.tar.gz</span>
-<span class="code-line">$ tar -zxvf zlib-1.2.11.tar.gz</span>
-<span class="code-line">$ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz </span>
-<span class="code-line">$ tar zxvf openssl-1.1.0g.tar.gz</span>
-<span class="code-line">$ <span class="nb">cd</span> openssl-1.1.0g</span>
-<span class="code-line">$ ./config -Wl,--enable-new-dtags,-rpath,<span class="s1">&#39;$(LIBRPATH)&#39;</span></span>
-<span class="code-line">$ make  <span class="c1"># 大约五六分钟左右</span></span>
-<span class="code-line">$ sudo make install</span>
-<span class="code-line">$ openssl version -a</span>
-</pre></div>
-
-
-<ul>
-<li>安装nginx
-参考说明文档: <a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04">https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04</a></li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1</span>
-<span class="code-line">$ ./configure --prefix<span class="o">=</span>/usr/local/nginx <span class="se">\</span></span>
-<span class="code-line">            --sbin-path<span class="o">=</span>/usr/sbin/nginx <span class="se">\</span></span>
-<span class="code-line">            --modules-path …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../../tag/nginx/">nginx</a>
                                 </div>
 
 
@@ -747,7 +757,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </script>
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

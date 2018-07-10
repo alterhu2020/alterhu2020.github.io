@@ -68,7 +68,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                         <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T13:36:03.437066+08:00">
+                                    <abbr class="published" title="2018-07-10T20:47:02.674460+08:00">
                                         Post @ 2018 七月 10, 星期二,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
@@ -80,6 +80,16 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 ~~3. 安装<code>sudo apt-get  install  -y mono-complete</code>,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: <a href="https://pingbook.top/articles/pi-mirrors/">https://pingbook.top/articles/pi-mirrors/</a>~~
 4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
 <div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123/nat123linux.sh  service  <span class="p">&amp;</span></span>
+</pre></div>
+
+
+<h3>采用如下方式进行安装<code>mono-complete</code></h3>
+<p>参考地址: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a></p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install apt-transport-https dirmngr</span>
+<span class="code-line">$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF</span>
+<span class="code-line">$ <span class="nb">echo</span> <span class="s2">&quot;deb https://download.mono-project.com/repo/debian stable-raspbianstretch main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/mono-official-stable.list</span>
+<span class="code-line">$ sudo apt update</span>
+<span class="code-line">$ sudo apt install mono-complete</span>
 </pre></div> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">阅读全文<i class="icon-arrow-right"></i></a></div>
@@ -359,7 +369,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </script>
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

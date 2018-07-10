@@ -8,7 +8,7 @@
 
 
 
-安装步骤 2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: http://www.mono-project.com/download/stable/#download-lin-raspbian 1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp 2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz ~~3. 安装sudo apt-get install -y mono-complete,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: https://pingbook.top/articles/pi-mirrors/~~ 4. 上面的momo-complete的安装需要一段时间,大约十分钟左右.~~ $ mono /home/pi/nat123/nat123linux.sh service &">
+安装步骤 2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: http://www.mono-project.com/download/stable/#download-lin-raspbian 1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp 2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz ~~3. 安装sudo apt-get install -y mono-complete,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: https://pingbook.top/articles/pi-mirrors/~~ 4. 上面的momo-complete的安装需要一段时间,大约十分钟左右.~~ $ mono /home/pi/nat123/nat123linux.sh service & 采用如下方式进行安装mono-complete 参考地址: http://www.mono-project.com/download/stable/#download-lin-raspbian $ sudo apt install apt-transport-https dirmngr $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF $ echo "deb https://download.mono-project.com/repo/debian stable-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list $ sudo apt update $ sudo apt install mono-complete">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -69,7 +69,7 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-10T13:36:03.437066+08:00">-->
+                    <!--<abbr class="published" title="2018-07-10T20:47:02.674460+08:00">-->
                     <!--2018 七月 10, 星期二-->
                     <!--</abbr>-->
                     <!---->
@@ -98,16 +98,26 @@
 4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
 <div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123/nat123linux.sh  service  <span class="p">&amp;</span></span>
 </pre></div>
+
+
+<h3>采用如下方式进行安装<code>mono-complete</code></h3>
+<p>参考地址: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a></p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install apt-transport-https dirmngr</span>
+<span class="code-line">$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF</span>
+<span class="code-line">$ <span class="nb">echo</span> <span class="s2">&quot;deb https://download.mono-project.com/repo/debian stable-raspbianstretch main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/mono-official-stable.list</span>
+<span class="code-line">$ sudo apt update</span>
+<span class="code-line">$ sudo apt install mono-complete</span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <ul style="float:right;">
                         <li>
-                            ◄&nbsp;&nbsp;<a href="../../articles/pi-nginx/">
-                            [Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器
+                            ◄&nbsp;&nbsp;<a href="../../articles/1-object-oriented-programming/">
+                            [面试] 1.&nbsp;面向对象的相关概念
                         </a>
                         </li>
                         <li>
-                            ►&nbsp;&nbsp;<a href="../../articles/2-list-methods/">
-                            [面试] 2.&nbsp;有关list及其方法的使用
+                            ►&nbsp;&nbsp;<a href="../../articles/pi-nginx/">
+                            [Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器
                         </a>
                         </li>
                 </ul>
@@ -248,7 +258,7 @@
 </script>
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

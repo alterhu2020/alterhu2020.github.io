@@ -66,6 +66,121 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-09T20:27:12.524805+08:00">
+                                        Post @ 2018 七月 09, 星期一,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>卸载命令</h2>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
+<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal<span class="sb">`</span>,<span class="sb">`</span>python3.5-venv<span class="sb">`</span></span>
+</pre></div>
+
+
+<h2>安装最新python3.7</h2>
+<p>因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,安装如下进行安装,
+参考文档: <a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6">https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6</a></p>
+<div class="highlight"><pre><span class="code-line"><span></span>安装依赖包</span>
+<span class="code-line">$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \</span>
+<span class="code-line">libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \</span>
+<span class="code-line">xz-utils tk-dev libffi-dev</span>
+<span class="code-line">$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz</span>
+<span class="code-line">$ tar xvf Python-3.7.0.tgz</span>
+<span class="code-line">$ ./configure --enable-optimizations --with-ensurepip=install</span>
+<span class="code-line">$ make -j8</span>
+<span class="code-line">$ sudo make altinstall</span>
+</pre></div>
+
+
+<h2>安装pip,pipenv并设置全局可用命令<code>pipenv</code></h2>
+<div class="highlight"><pre><span class="code-line"><span></span>$ wget https://bootstrap.pypa.io/get-pip.py</span>
+<span class="code-line">$ sudo python get-pip.py</span>
+<span class="code-line"></span>
+<span class="code-line">$ pip install --user pipenv</span>
+<span class="code-line"> /home/pi/.local/bin</span>
+<span class="code-line">$ python -m site --user-base</span>
+<span class="code-line">$ sudo nano ~/.profile</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span></span>
+<span class="code-line">$ sudo <span class="nb">source</span> ~/.profile</span>
+<span class="code-line">$ pipenv --update</span>
+</pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../../tag/python3/">python3</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-08T23:35:08.403457+08:00">
+                                        Post @ 2018 七月 08, 星期日,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<h2>前因</h2>
+<blockquote>
+<p>自己在Github&nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.</p>
+</blockquote>
+<h2>整理一下树莓派下安装nginx的过程</h2>
+<h3>1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to&nbsp;mirrors.tuna.tsinghua.edu.cn:80)</h3>
+<p>可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors<br>&nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list</span>
+</pre></div>
+
+
+<p>用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像：</p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="k">deb</span> <span class="s">https://mirrors.shu.edu.cn/raspbian/raspbian/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span> <span class="kp">rpi</span></span>
+<span class="code-line"><span class="k">deb-src</span> <span class="s">https://mirrors.shu.edu.cn/raspbian/raspbian/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span> <span class="kp">rpi</span></span>
+</pre></div>
+
+
+<p>使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为：</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list.d/raspi.list</span>
+</pre></div>
+
+
+<p>用#注释掉原文件内容，用以下内容取代：</p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="k">deb</span> <span class="s">https://mirrors.ustc.edu.cn/archive.raspberrypi.org/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">ui</span></span>
+<span class="code-line"><span class="k">deb-src</span> <span class="s">https://mirrors.ustc.edu.cn/archive.raspberrypi.org/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">ui</span></span>
+</pre></div>
+
+
+<blockquote>
+<p>注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。<br>
+编辑镜像站后，请使用<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>命令，更新软件源列表，同时检查您的编辑是否正确。
+使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装<code>apt-transport-https</code>.</p>
+</blockquote>
+<h3>树莓派安装</h3>
+<blockquote>
+<p>因为感觉空间越来越小了 …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../../tag/nat123/">nat123</a>
+                                            <a class="danger label" href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-08T23:18:44.834461+08:00">
@@ -174,6 +289,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <h4>Tags</h4>
             <ul class="blank">
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
+                    <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
@@ -184,8 +300,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="../../tag/ruan-jian-ce-shi/">软件测试</a></li>
                     <li class="tag-4"><a href="../../tag/mian-xiang-dui-xiang/">面向对象</a></li>
-                    <li class="tag-2"><a href="../../tag/mian-shi/">面试</a></li>
+                    <li class="tag-1"><a href="../../tag/mian-shi/">面试</a></li>
             </ul>
         </nav>
 
@@ -205,6 +323,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <ul>
                     <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
                     <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
             </ul>
         </nav>
 
@@ -227,7 +346,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> OpenBook.Inc.
+                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

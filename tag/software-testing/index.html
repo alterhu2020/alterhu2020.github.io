@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>PingBook Blog - Software Testing</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="
+
+
+
+PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vuejs、软件测试、测试自动化等的IT科技博客,希望大家一起交流学习!">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook Blog Full Atom Feed"/>
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+        <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+<div class="container">
+
+    <div class="row">
+
+        <header id="banner" class="body">
+            <h1><a href="../..">PingBook Blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns">
+                <li><a href="../../">Home</a></li>
+
+                    <li><a href="/categories">Category</a></li>
+                    <li><a href="/archives">Archive</a></li>
+                    <li><a href="/tags">Tags</a></li>
+
+            </ul>
+        </div>
+
+<section id="content">
+
+
+
+   <div class="row">
+
+
+        <div class="eleven columns">
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/software-testing-black/" rel="bookmark" title="Permalink to [面试] 黑盒测试需要注意的几个关注点">[面试]&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T08:53:46.726987+08:00">
+                                        Post @ 2018 七月 11, 星期三,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>基本理论概念</h2>
+<blockquote>
+<p>是软件工程中的一个非常重要的环节，是开发项目整体的一部分。<br>
+是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，<br>&nbsp;不可能发现全部缺陷，软件测试是有局限性的。</p>
+</blockquote>
+<h3>测试的目的</h3>
+<blockquote>
+<p>1）验证软件是否满足 软件开发合同 或者项目开发计划，系统/子系统设计文档，软件需求规格说明，软件产品说明等规定的软件质量要求<br>
+  2）通过测试，发现软件缺陷 <br>&nbsp;3）为软件产品的质量测量和评价提供依据</p>
+</blockquote>
+<h3>测试用例的设计规则</h3>
+<ul>
+<li>基于测试需求的原则 </li>
+<li>基于测试方法的原则</li>
+<li>兼顾 测试充分性 和&nbsp;效率的原则</li>
+</ul>
+<p>测试用例的方法有: <br>
+a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域 划分成 若干个部分，然后再每部分中选取 代表性数据 形成测试用例.
+* 步骤：<br>
+         a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 所构成的集合<br>
+         b)划分无效等价类，对 规格说明 是 无意义 不合理的 输入数据 所构成的集合<br>
+         c) 为每一个等价类 定义一个唯一的编号<br>
+         d）为每一个等价类 设计一组测试用例  确保&nbsp;覆盖相应的等价类</p>
+<p>b.边界值分析: 边界值分析法 是针对 边界值 进行测试的 使用 等于 大于 或者小于边界值的数据对程序进行测试的方法 就是边界值分析法。<br>
+* 步骤：<br>
+         a）通过分析 规格说明 找出 所有 可能的 边界条件<br>
+         b) 对每一个边界条件 给出 满足 和 不满足的输入数据<br>
+         c) 设计相应的&nbsp;测试用例  </p>
+<p>c. 错误推测法: 基于经验和直觉推测程序中所有可能存在的各种错误，从而有针对性的设计测试用例的方法。<br>
+d.&nbsp;因果图法</p>
+<blockquote>
+<p>等价类划分法和边界值分析方法都是着重考虑输入条件，但没有考虑输入条件的各种组合、输入条件之间的相互制约关系。这样虽然各种输入条件可能出错的情况已经测试到了，但多个输入条件组合起来可能出错的情况却被忽视了。    <br>&nbsp;如果在测试时必须考虑输入条件的各种组合，则可能的组合数目将是天文数字，因此必须考虑采用一种适合于描述多种条件的组合、相应产生多个动作的形式来进行测试用例的设计，这就需要利用因果图（逻辑模型）。</p>
+</blockquote>
+<p>e.&nbsp;判定表驱动法</p>
+<blockquote>
+<p>判定表是分析和表达多逻辑条件下执行不同操作的情况的工具。  </p>
+</blockquote>
+<p>f. 正交实验法
+*&nbsp;步骤  </p>
+<p>1&nbsp;提取功能说明,构造因子&#8212;状态表</p>
+<p>把影响实验指标的条件称为因子.而影响实验因子的条件叫因子的状态.利用正交实验设计方法来设计测试用例时,首先要根据被测试软件的规格说明书找出影响其功能实现的操作对象和外部因素,把他们当作因子,而把各个因子的取值当作状态.对软件需求规格说明中的功能要求进行划分,把整体的概要性的功能要求进行层层分解与展开,分解成具体的有相对独立性的基本的功能要求.这样就可以把被测试软件中所有的因子都确定下来,并为确定个因子的权值提供参考的依据.确定因子与状态是设计测试用例的关键.因此要求尽可能全面的正确的确定取值,以确保测试用例的设计作到完整与有效。</p>
+<p>2&nbsp;加权筛选,生成因素分析表</p>
+<p>对因子与状态的选择可按其重要程度分别加权.可根据各个因子及状态的作用大小,出现频率的大小以及测试的需要,确定权值的大小。</p>
+<p>3&nbsp;利用正交表构造测试数据集</p>
+<p>正交表的推导依据Galois理论（这里省略,需要时可查数理统计方面的教材）
+1 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/software-testing-black/" rel="bookmark" title="Permalink to [面试] 黑盒测试需要注意的几个关注点">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/software-testing/">Software Testing</a>
+                                            <a class="danger label" href="../../tag/mian-shi/">面试</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>Navigation</h4>
+        <ul>
+                <li><a href="/categories">Category</a></li>
+                <li><a href="/archives">Archive</a></li>
+                <li><a href="/tags">Tags</a></li>
+        </ul>
+    </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>Categories</h4>
+                <ul class="blank">
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <nav class="widget sidebarbg">
+            <h4>Tags</h4>
+            <ul class="blank">
+                    <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
+                    <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="../../tag/ruan-jian-ce-shi/">软件测试</a></li>
+                    <li class="tag-4"><a href="../../tag/mian-xiang-dui-xiang/">面向对象</a></li>
+                    <li class="tag-1"><a href="../../tag/mian-shi/">面试</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>Social</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>Friends</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+            </ul>
+        </nav>
+
+</div> </div><!-- /.row -->
+
+<p class="paginator">
+     第1页/共1页
+</p>
+</section><!-- /#content -->
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<div class="container.nopad bg">
+
+
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
+            <div class="row">
+                <ul class="socbtns">
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+</body>
+</html>

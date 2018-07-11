@@ -66,6 +66,133 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/software-testing-black/" rel="bookmark" title="Permalink to [面试] 黑盒测试需要注意的几个关注点">[面试]&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T08:53:46.726987+08:00">
+                                        Post @ 2018 七月 11, 星期三,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>基本理论概念</h2>
+<blockquote>
+<p>是软件工程中的一个非常重要的环节，是开发项目整体的一部分。<br>
+是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，<br>&nbsp;不可能发现全部缺陷，软件测试是有局限性的。</p>
+</blockquote>
+<h3>测试的目的</h3>
+<blockquote>
+<p>1）验证软件是否满足 软件开发合同 或者项目开发计划，系统/子系统设计文档，软件需求规格说明，软件产品说明等规定的软件质量要求<br>
+  2）通过测试，发现软件缺陷 <br>&nbsp;3）为软件产品的质量测量和评价提供依据</p>
+</blockquote>
+<h3>测试用例的设计规则</h3>
+<ul>
+<li>基于测试需求的原则 </li>
+<li>基于测试方法的原则</li>
+<li>兼顾 测试充分性 和&nbsp;效率的原则</li>
+</ul>
+<p>测试用例的方法有: <br>
+a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域 划分成 若干个部分，然后再每部分中选取 代表性数据 形成测试用例.
+* 步骤：<br>
+         a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 所构成的集合<br>
+         b)划分无效等价类，对 规格说明 是 无意义 不合理的 输入数据 所构成的集合<br>
+         c) 为每一个等价类 定义一个唯一的编号<br>
+         d）为每一个等价类 设计一组测试用例  确保&nbsp;覆盖相应的等价类</p>
+<p>b.边界值分析: 边界值分析法 是针对 边界值 进行测试的 使用 等于 大于 或者小于边界值的数据对程序进行测试的方法 就是边界值分析法。<br>
+* 步骤：<br>
+         a）通过分析 规格说明 找出 所有 可能的 边界条件<br>
+         b) 对每一个边界条件 给出 满足 和 不满足的输入数据<br>
+         c) 设计相应的&nbsp;测试用例  </p>
+<p>c. 错误推测法: 基于经验和直觉推测程序中所有可能存在的各种错误，从而有针对性的设计测试用例的方法。<br>
+d.&nbsp;因果图法</p>
+<blockquote>
+<p>等价类划分法和边界值分析方法都是着重考虑输入条件，但没有考虑输入条件的各种组合、输入条件之间的相互制约关系。这样虽然各种输入条件可能出错的情况已经测试到了，但多个输入条件组合起来可能出错的情况却被忽视了。    <br>&nbsp;如果在测试时必须考虑输入条件的各种组合，则可能的组合数目将是天文数字，因此必须考虑采用一种适合于描述多种条件的组合、相应产生多个动作的形式来进行测试用例的设计，这就需要利用因果图（逻辑模型）。</p>
+</blockquote>
+<p>e.&nbsp;判定表驱动法</p>
+<blockquote>
+<p>判定表是分析和表达多逻辑条件下执行不同操作的情况的工具。  </p>
+</blockquote>
+<p>f. 正交实验法
+*&nbsp;步骤  </p>
+<p>1&nbsp;提取功能说明,构造因子&#8212;状态表</p>
+<p>把影响实验指标的条件称为因子.而影响实验因子的条件叫因子的状态.利用正交实验设计方法来设计测试用例时,首先要根据被测试软件的规格说明书找出影响其功能实现的操作对象和外部因素,把他们当作因子,而把各个因子的取值当作状态.对软件需求规格说明中的功能要求进行划分,把整体的概要性的功能要求进行层层分解与展开,分解成具体的有相对独立性的基本的功能要求.这样就可以把被测试软件中所有的因子都确定下来,并为确定个因子的权值提供参考的依据.确定因子与状态是设计测试用例的关键.因此要求尽可能全面的正确的确定取值,以确保测试用例的设计作到完整与有效。</p>
+<p>2&nbsp;加权筛选,生成因素分析表</p>
+<p>对因子与状态的选择可按其重要程度分别加权.可根据各个因子及状态的作用大小,出现频率的大小以及测试的需要,确定权值的大小。</p>
+<p>3&nbsp;利用正交表构造测试数据集</p>
+<p>正交表的推导依据Galois理论（这里省略,需要时可查数理统计方面的教材）
+1 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/software-testing-black/" rel="bookmark" title="Permalink to [面试] 黑盒测试需要注意的几个关注点">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="./tag/software-testing/">Software Testing</a>
+                                            <a class="danger label" href="./tag/mian-shi/">面试</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T08:47:28.896015+08:00">
+                                        Post @ 2018 七月 11, 星期三,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>参考博客: <a href="https://www.cnblogs.com/molrang/p/6420918.html">https://www.cnblogs.com/molrang/p/6420918.html</a></p>
+<h2>自动化测试</h2>
+<h3>考虑的因素</h3>
+<p>①、项目的影响（能否帮助项目进度、覆盖率、风险）</p>
+<p>②、复杂度（是否容易实现，包括数据和其他环境等）</p>
+<p>③、时间（实现自动化需要多少时间）</p>
+<p>④、早期需求和代码的稳定性（需求或代码能否证明是在范围内变化的）</p>
+<p>⑤、维护工作量（代码能否能长期保持相对稳定）</p>
+<p>⑥、覆盖率（自动化测试能否覆盖程序的关键特性和功能）</p>
+<p>⑦、资源（是否拥有足够的人力、硬件和数据资源来运行自动化测试）</p>
+<p>⑧、执行（负责执行的人员是否有足够的技能和时间去运行）</p>
+<p>⑨、自动化测试管理</p>
+<h2>白盒测试</h2>
+<blockquote>
+<p>按照程序内部结构，逻辑驱动测试程序,目的是检测产品内部动作是否按照设计说明书的规范进行，检验程序的每条路径是否都能按照预定要求进行工作</p>
+</blockquote>
+<h3>白盒测试方法</h3>
+<p>①、静态测试&nbsp;静态测试是指不运行程序本身，仅通过分析程序文档结构，软件执行过程，检测程序的正确性，主要有变量，接口，递归等。</p>
+<p>②、动态测试&nbsp;动态方法是指运行程序，检查运行结果与预期结果对比差异，并分析抗压性，健壮性等，这种测试包括三部分：构造测试实例，执行程序，分析程序输出结果。</p>
+<div class="highlight"><pre><span class="code-line"><span></span>区别一：静态测试是用于预防的，动态测试是用于矫正的  </span>
+<span class="code-line">区别二：多次的静态测试比动态测试要效率和效益高  </span>
+<span class="code-line">区别三：静态测试综合测试程序代码  </span>
+<span class="code-line">区别四：在相当短的时间里，静态测试的覆盖度能达到100%，而动态测试经常是只能达到50%左右，原因动态测试发现的bug大部分只是在测试实际执行的那部分代码  </span>
+<span class="code-line">区别五：动态测试比静态测试更花时间  </span>
+<span class="code-line">区别六：静态测试比动态测试更能发现 bug  </span>
+<span class="code-line">区别七：静态测试的执行可以在程序编码编译前，动态测试只能在编译后才能执行  </span>
+<span class="code-line">区别八：静态测试能发现动态测试所不能发现的一些:&quot;Syntax error,code that hard to maintain,code that hard to test,code that does not confirm to coding standard, and ANSI violations&quot;</span>
+</pre></div>
+
+
+<p>白盒测试方法</p>
+<p>①、尽量先用自动化工具来进行静态解析</p>
+<p>②、建议先从静态测试开始（静态结构分析、代码走查、静态质量度量），然后进行动态测试（如覆盖率测试）</p>
+<p>③、以静态分析结果作为依据，再使用代码检查和动态测试方法对静态分析结果进行进一步确认，提高测试效率及准确性</p>
+<p>④、覆盖率测试是白盒测试的重要手段，在测试报告中可作为量化指标的依据，对于软件的重点模块，应使用多种覆盖率标准衡量代码的覆盖率</p>
+<p>包括的有代码检查,SQL语句的测试,</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">阅读全文<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="./tag/bai-he-ce-shi/">白盒测试</a>
+                                            <a class="danger label" href="./tag/ruan-jian-ce-shi/">软件测试</a>
+                                            <a class="danger label" href="./tag/mian-shi/">面试</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="./articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-10T22:11:17.195355+08:00">
@@ -523,121 +650,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-09T20:27:12.524805+08:00">
-                                        Post @ 2018 七月 09, 星期一,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>卸载命令</h2>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
-<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal<span class="sb">`</span>,<span class="sb">`</span>python3.5-venv<span class="sb">`</span></span>
-</pre></div>
-
-
-<h2>安装最新python3.7</h2>
-<p>因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,安装如下进行安装,
-参考文档: <a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6">https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6</a></p>
-<div class="highlight"><pre><span class="code-line"><span></span>安装依赖包</span>
-<span class="code-line">$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \</span>
-<span class="code-line">libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \</span>
-<span class="code-line">xz-utils tk-dev libffi-dev</span>
-<span class="code-line">$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz</span>
-<span class="code-line">$ tar xvf Python-3.7.0.tgz</span>
-<span class="code-line">$ ./configure --enable-optimizations --with-ensurepip=install</span>
-<span class="code-line">$ make -j8</span>
-<span class="code-line">$ sudo make altinstall</span>
-</pre></div>
-
-
-<h2>安装pip,pipenv并设置全局可用命令<code>pipenv</code></h2>
-<div class="highlight"><pre><span class="code-line"><span></span>$ wget https://bootstrap.pypa.io/get-pip.py</span>
-<span class="code-line">$ sudo python get-pip.py</span>
-<span class="code-line"></span>
-<span class="code-line">$ pip install --user pipenv</span>
-<span class="code-line"> /home/pi/.local/bin</span>
-<span class="code-line">$ python -m site --user-base</span>
-<span class="code-line">$ sudo nano ~/.profile</span>
-<span class="code-line"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span></span>
-<span class="code-line">$ sudo <span class="nb">source</span> ~/.profile</span>
-<span class="code-line">$ pipenv --update</span>
-</pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="./articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
-                                            <a class="danger label" href="./tag/python3/">python3</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-08T23:35:08.403457+08:00">
-                                        Post @ 2018 七月 08, 星期日,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<h2>前因</h2>
-<blockquote>
-<p>自己在Github&nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.</p>
-</blockquote>
-<h2>整理一下树莓派下安装nginx的过程</h2>
-<h3>1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to&nbsp;mirrors.tuna.tsinghua.edu.cn:80)</h3>
-<p>可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors<br>&nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list</span>
-</pre></div>
-
-
-<p>用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像：</p>
-<div class="highlight"><pre><span class="code-line"><span></span><span class="k">deb</span> <span class="s">https://mirrors.shu.edu.cn/raspbian/raspbian/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span> <span class="kp">rpi</span></span>
-<span class="code-line"><span class="k">deb-src</span> <span class="s">https://mirrors.shu.edu.cn/raspbian/raspbian/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span> <span class="kp">rpi</span></span>
-</pre></div>
-
-
-<p>使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为：</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list.d/raspi.list</span>
-</pre></div>
-
-
-<p>用#注释掉原文件内容，用以下内容取代：</p>
-<div class="highlight"><pre><span class="code-line"><span></span><span class="k">deb</span> <span class="s">https://mirrors.ustc.edu.cn/archive.raspberrypi.org/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">ui</span></span>
-<span class="code-line"><span class="k">deb-src</span> <span class="s">https://mirrors.ustc.edu.cn/archive.raspberrypi.org/</span> <span class="kp">stretch</span> <span class="kp">main</span> <span class="kp">ui</span></span>
-</pre></div>
-
-
-<blockquote>
-<p>注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。<br>
-编辑镜像站后，请使用<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>命令，更新软件源列表，同时检查您的编辑是否正确。
-使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装<code>apt-transport-https</code>.</p>
-</blockquote>
-<h3>树莓派安装</h3>
-<blockquote>
-<p>因为感觉空间越来越小了 …</p></blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="./articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
-                                            <a class="danger label" href="./tag/nat123/">nat123</a>
-                                            <a class="danger label" href="./tag/shu-mei-pai-jing-xiang/">树莓派镜像</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -667,6 +679,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <h4>Tags</h4>
             <ul class="blank">
                     <li class="tag-2"><a href="./tag/nat123/">NAT123</a></li>
+                    <li class="tag-4"><a href="./tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="./tag/tomcat9/">Tomcat9</a></li>
                     <li class="tag-4"><a href="./tag/list/">list</a></li>
                     <li class="tag-4"><a href="./tag/mysql/">mysql</a></li>
@@ -677,8 +690,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="./tag/svn/">svn</a></li>
                     <li class="tag-1"><a href="./tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="./tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="./tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="./tag/ruan-jian-ce-shi/">软件测试</a></li>
                     <li class="tag-4"><a href="./tag/mian-xiang-dui-xiang/">面向对象</a></li>
-                    <li class="tag-2"><a href="./tag/mian-shi/">面试</a></li>
+                    <li class="tag-1"><a href="./tag/mian-shi/">面试</a></li>
             </ul>
         </nav>
 
@@ -698,6 +713,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <ul>
                     <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
                     <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
             </ul>
         </nav>
 
@@ -720,7 +736,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> OpenBook.Inc.
+                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

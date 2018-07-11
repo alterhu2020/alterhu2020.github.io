@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>PingBook Blog - Tomcat9</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
+
 
 
 
@@ -24,6 +25,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
 
+
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
@@ -40,20 +42,41 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
 <section id="content">
@@ -69,7 +92,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T22:46:39.124456+08:00">
-                                        Post @ 周一, 09 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018-07-09 22:46:39,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -94,31 +117,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <li>添加组和用户</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo groupadd tomcat</span>
-<span class="code-line">$ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat</span>
-</pre></div>
+<span class="code-line">$ sudo useradd -s /bin/false …</span></pre></div> </div><!-- /.entry-content -->
 
-
-<ul>
-<li>下载tomcat9</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ tar zxvf jdk1.8.0_171.tar.gz</span>
-<span class="code-line">$  sudo nano /etc/profile</span>
-<span class="code-line"><span class="nv">JAVA_HOME</span><span class="o">=</span>/home/pi/jdk1.8.0_171</span>
-<span class="code-line"><span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/lib/</span>
-<span class="code-line"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$JAVA_HOME</span>/bin</span>
-<span class="code-line"><span class="nb">export</span> PATH JAVA_HOME CLASSPATH</span>
-<span class="code-line">$ <span class="nb">source</span> /etc/profile</span>
-<span class="code-line">$ java 可能下载的是64位的jdk,但是系统只能运行32位的jdk</span>
-<span class="code-line">/bin/javac: cannot execute binary file: Exec format error</span>
-<span class="code-line"></span>
-<span class="code-line">$ <span class="nb">cd</span> /home/pi</span>
-<span class="code-line">$ sudo wget http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.10/bin/apache-tomcat-9.0.10.tar.gz</span>
-<span class="code-line">$  tar zxvf apache-tomcat-9.0.10.tar.gz </span>
-<span class="code-line">$ <span class="nb">cd</span> /home/pi/apache-tomcat-9.0.10/</span>
-<span class="code-line">$ sudo groupadd tomcat </span>
-<span class="code-line">$ sudo useradd -M -s /bin/nologin -g tomcat -d /home/pi/apache-tomcat-9.0 …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">阅读全文<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -141,6 +142,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -149,7 +154,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -161,6 +168,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
@@ -182,7 +193,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <nav class="widget">
                 <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
@@ -191,9 +202,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
-                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
             </ul>
         </nav>
 
@@ -215,11 +227,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -253,13 +268,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-
 </body>
 </html>

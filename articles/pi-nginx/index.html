@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>[Linux环境搭建] Debian安装编译和安装nginx服务器</title>
@@ -8,7 +8,8 @@
 
 
 
-Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz $ tar zxvf nginx-1.15.1.tar.gz 重新配置nginx的服务器名称servername和对应版本 $ cd nginx-1.15.1/ $ sudo nano src/http/ngx_http_header_filter_module.c $ sudo nano src/core/nginx.h $ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/ 安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and openssl $ sudo apt install build-essential -y $ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz $ tar zxvf pcre-8.41.tar.gz $ wget http://www.zlib.net/zlib-1.2.11.tar.gz $ tar -zxvf zlib-1.2.11.tar.gz $ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz $ tar zxvf openssl-1.1.0g.tar.gz $ cd openssl-1.1.0g $ ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)' $ make # 大约五六分钟左右 $ sudo make install $ openssl version -a 安装nginx 参考说明文档: https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04 $ cd nginx-1.15.1 $ ./configure --prefix=/usr/local/nginx \ --sbin-path=/usr/sbin/nginx \ --modules-path …">
+
+Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz $ tar zxvf nginx-1.15.1.tar.gz 重新配置nginx的服务器名称servername和对应版本 $ cd nginx-1.15.1/ $ sudo nano src/http/ngx_http_header_filter_module.c $ sudo nano src/core/nginx.h $ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/ 安装对应的nginx的所有依赖的包, gcc环境 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -23,6 +24,7 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
         <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
 
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
@@ -40,20 +42,41 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
     <section id="content" class="body">
@@ -70,7 +93,7 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
                 </header>
                 <footer class="post-info">
                     <!--<abbr class="published" title="2018-07-10T22:11:17.195355+08:00">-->
-                    <!--周二, 10 七月 2018-->
+                    <!--2018-07-10 22:11:17-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -80,7 +103,7 @@ Debian安装配置nginx服务器 下载解压缩安装包 $ sudo wget https://ng
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        周二, 10 七月 2018
+                        2018-07-10 22:11:17
                             &nbsp;&nbsp; By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -348,23 +371,24 @@ $ sudo chmod +x letsencrypt.sh
 $ sudo nano letsencrypt.conf
 $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
                 </div><!-- /.entry-content -->
-                <ul style="float:right;">
-                        <li>
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: auto; margin-right: auto;">
                             ◄&nbsp;&nbsp;<a href="../../articles/pi-nat123/">
                             [Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署
                         </a>
                         </li>
-                        <li>
-                            ►&nbsp;&nbsp;<a href="../../articles/software-testing-white/">
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            ►&nbsp;&nbsp;<a href="../../articles/4-software-testing-white/">
                             [面试]&nbsp;白盒测试需要关注的知识点
                         </a>
                         </li>
                 </ul>
+                <br />
                 <div class="comments">
                     <h3>Relate Articles</h3>
                 </div>
                     <div class="comments">
-                        <h3>Comments from Disqus</h3>
+                        <h3>Comments</h3>
                         <div id="disqus_thread"></div>
                         <script type="text/javascript">
                             var disqus_identifier = "articles/pi-nginx/";
@@ -376,6 +400,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
                                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                             })();
                         </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
                     </div>
 
             </div><!-- /.eleven.columns -->
@@ -387,6 +412,10 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -395,7 +424,9 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -407,6 +438,10 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
@@ -428,7 +463,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
             <nav class="widget">
                 <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
@@ -437,9 +472,10 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
         <nav class="widget sidebarbg">
             <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
-                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
             </ul>
         </nav>
 
@@ -459,11 +495,14 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -497,13 +536,11 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;</p>
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-
 </body>
 </html>

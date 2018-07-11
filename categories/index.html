@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>PingBook Blog</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
+
 
 
 
@@ -24,6 +25,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <link rel="stylesheet" type="text/css" href="../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../theme/pygment.css"/>
 
+
         <script src="../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
@@ -40,27 +42,50 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
 <ul>
     <li class="nav-header"><h4><i class="icon-tags icon-large"></i>categories</h4></li>
-    <li><a href="../category/shu-mei-pai/">树莓派</a></li>
-    <li><a href="../category/mian-shi/">面试</a></li>
-    <li><a href="../category/bo-ke-da-jian/">博客搭建</a></li>
+    <li><a href="../category/shu-mei-pai/"><i class="icon-spotify icon-large"></i>树莓派</a></li>
+    <li><a href="../category/mian-shi/"><i class="icon-spotify icon-large"></i>面试</a></li>
+    <li><a href="../category/linux/"><i class="icon-spotify icon-large"></i>linux</a></li>
+    <li><a href="../category/bo-ke-da-jian/"><i class="icon-spotify icon-large"></i>博客搭建</a></li>
+    <li><a href="../category/bigdata/"><i class="icon-spotify icon-large"></i>bigdata</a></li>
 </ul>
 
     </div><!-- /.row -->
@@ -74,11 +99,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -112,13 +140,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <script src="../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../theme/js/plugins.js"></script>
-
 </body>
 </html>

@@ -1,135 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-11T10:31:20+08:00</updated><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-11T10:31:20+08:00</published><updated>2018-07-11T10:31:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-11T21:14:00+08:00</updated><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-11T21:14:00+08:00</published><updated>2018-07-11T21:14:00+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
+&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;
+&lt;p&gt;使用的插件是: &lt;a href=""&gt;Tipue_Search&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;windows下的运行&lt;/h3&gt;
+&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
+这个文件.&lt;br&gt;
+&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
+解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
+&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;关键字&lt;/h2&gt;
+&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
+&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;
+&lt;p&gt;使用的插件是: &lt;a href=""&gt;Tipue_Search&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;windows下的运行&lt;/h3&gt;
+&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
+这个文件.&lt;br&gt;
+&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
+解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
+&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
+&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;搭建步骤&lt;/h2&gt;
-&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
-&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
+&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
+&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
+感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
+后面发现这个是最好做浏览量统计的.&lt;br&gt;
+* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
-&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
-&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
-&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
-&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
-&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
-&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
-&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[面试] 1. 面向对象的相关概念</title><link href="https://pingbook.top/articles/1-object-oriented-programming/" rel="alternate"></link><published>2018-07-11T16:15:48+08:00</published><updated>2018-07-11T16:15:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/1-object-oriented-programming/</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;关键字&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;搭建步骤&lt;/h2&gt;
-&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
-&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
-&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
-&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
-&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
-&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
-&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
-&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
-&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage your website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))&lt;/span&gt;
-&lt;span class="code-line"&gt;9. Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)&lt;/span&gt;
-&lt;span class="code-line"&gt;10. Do you want to upload your website using FTP?&lt;/span&gt;
-&lt;span class="code-line"&gt;11. Do you want to upload your website using SSH?&lt;/span&gt;
-&lt;span class="code-line"&gt;12. Do you want to upload your website using Dropbox?&lt;/span&gt;
-&lt;span class="code-line"&gt;13. Do you want to upload your website using S3?&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;命令使用&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;由于本人使用的是windows,这里我使用了两个命令:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# pelican content # 根据content中的内容，生成静态网站到output目下&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m pelican.server&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m SimpleHTTPServer&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;主题和插件安装&lt;/h2&gt;
-&lt;h3&gt;theme安装&lt;/h3&gt;
-&lt;p&gt;下载主题文件,添加配置: &lt;code&gt;THEME = './pelican-themes/gum'&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;插件安装&lt;/h3&gt;
-&lt;p&gt;下载插件文件,添加如下配置: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;PLUGIN_PATHS = [u&amp;quot;pelican-plugins&amp;quot;]&lt;/span&gt;
-&lt;span class="code-line"&gt;PLUGINS = [u&amp;quot;sitemap&amp;quot;,u&amp;quot;gzip_cache&amp;quot;,u&amp;quot;neighbors&amp;quot;,u&amp;quot;related_posts&amp;quot;]&lt;/span&gt;
-&lt;span class="code-line"&gt;SITEMAP = {&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;format&amp;#39;: &amp;#39;xml&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;priorities&amp;#39;: {&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: 0.7,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: 0.5,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: 0.3&lt;/span&gt;
-&lt;span class="code-line"&gt;    },&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;changefreqs&amp;#39;: {&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: &amp;#39;weekly&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: &amp;#39;daily&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: &amp;#39;monthly&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;    }&lt;/span&gt;
-&lt;span class="code-line"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;字体更改&lt;/h3&gt;
-&lt;p&gt;1.下载字体文件,到网站的静态文件夹内,具体可以参考让wordpress主题绕开对google的依赖.不过此种方法也有些问题.把静态资源放到Github上加载时间也没别之前好多少.&lt;br&gt;
-2.把Google的静态公共库替换为国内的公共库.例如我的给替换成360的镜像地址.其实这种方法也有些弊端,例如国外用户访问就会出现加载过慢的问题.但是毕竟我们在&amp;#8217;朝内&amp;#8217;,所以就换成360的资源库吧.操作如下
-在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件&lt;code&gt;gumby.css&lt;/code&gt;,修改如下: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#static/css/目录下css文件中,例如gumby.css&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#替换为&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;国内其他开公共库: 百度CDN公共库; 新浪云计算CDN公共库; 又拍云JS库CDN服务;&amp;nbsp;七牛云静态文件CDN;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;高级语法&lt;/h2&gt;
-&lt;h3&gt;静态图片&lt;/h3&gt;
-&lt;p&gt;新建一个目录在&lt;code&gt;content&lt;/code&gt;下面,例如&lt;code&gt;images&lt;/code&gt;,然后在&lt;code&gt;pelicanconf.py&lt;/code&gt;设置如下:
-&lt;code&gt;STATIC_PATHS = ['images','downloads']&lt;/code&gt;
-,在对应的md中可以这样写语法:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/try-pelican/test.png"&gt;&lt;/p&gt;
-&lt;h2&gt;部署&lt;/h2&gt;
-&lt;h3&gt;部署到github上&lt;/h3&gt;
+&lt;h2&gt;达到的目的&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;新建一个仓库,仓库名称和你的昵称相同或者创建一个组织&lt;/li&gt;
-&lt;li&gt;使用如下命令上传&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd output&lt;/span&gt;
-&lt;span class="code-line"&gt;git init&lt;/span&gt;
-&lt;span class="code-line"&gt;git add .&lt;/span&gt;
-&lt;span class="code-line"&gt;git remote add origin 仓库git地址&lt;/span&gt;
-&lt;span class="code-line"&gt;git push -u origin master&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[面试] 黑盒测试需要注意的几个关注点</title><link href="https://pingbook.top/articles/software-testing-black/" rel="alternate"></link><published>2018-07-11T08:53:46+08:00</published><updated>2018-07-11T08:53:46+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/software-testing-black/</id><summary type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
+&lt;li&gt;面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&amp;nbsp;(Polymorphism) &lt;/li&gt;
+&lt;/ul&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;达到的目的&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&amp;nbsp;(Polymorphism) &lt;/li&gt;
+&lt;/ul&gt;</content><category term="面向对象"></category><category term="面试"></category><category term="java"></category></entry><entry><title>[面试] 2. 有关list及其方法的使用</title><link href="https://pingbook.top/articles/2-list-methods/" rel="alternate"></link><published>2018-07-11T16:15:15+08:00</published><updated>2018-07-11T16:15:15+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/2-list-methods/</id><summary type="html">&lt;h2&gt;解决的问题(Python/Java的list对比学习)&lt;/h2&gt;
+&lt;h3&gt;排序&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;java采用的是&lt;code&gt;Collections&lt;/code&gt;包中的两个方法: &lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;Collections.sort(list)   更复杂点可以是Collection.sort(list, new Comparator&amp;lt;Person&amp;gt;() {})&lt;/span&gt;
+&lt;span class="code-line"&gt;Collections.reverse(list)&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;or&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;list.sort(Collections.reverseOrder())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;python没有array,只有list,直接使用&lt;code&gt;sort&lt;/code&gt;方法即可,如果是倒序可以用reverse=True指定&lt;/li&gt;
+&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;解决的问题(Python/Java的list对比学习)&lt;/h2&gt;
+&lt;h3&gt;排序&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;java采用的是&lt;code&gt;Collections&lt;/code&gt;包中的两个方法: &lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;Collections.sort(list)   更复杂点可以是Collection.sort(list, new Comparator&amp;lt;Person&amp;gt;() {})&lt;/span&gt;
+&lt;span class="code-line"&gt;Collections.reverse(list)&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;or&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;list.sort(Collections.reverseOrder())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;python没有array,只有list,直接使用&lt;code&gt;sort&lt;/code&gt;方法即可,如果是倒序可以用reverse=True指定&lt;/li&gt;
+&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category><category term="java"></category></entry><entry><title>[整理] 一些常用的linux系统的操作命令</title><link href="https://pingbook.top/articles/basic-command/" rel="alternate"></link><published>2018-07-11T16:13:50+08:00</published><updated>2018-07-11T16:13:50+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/basic-command/</id><summary type="html">&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;h3&gt;性能相关的命令&lt;/h3&gt;</summary><content type="html">&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;h3&gt;性能相关的命令&lt;/h3&gt;</content><category term="linux"></category></entry><entry><title>大数据hadoop,spark,hbase,hive概念</title><link href="https://pingbook.top/articles/hadoop-spark-hbase-hive/" rel="alternate"></link><published>2018-07-11T16:11:13+08:00</published><updated>2018-07-11T16:11:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/hadoop-spark-hbase-hive/</id><summary type="html">&lt;h2&gt;Hadoop、Spark、HBase、Hive&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
+&lt;/blockquote&gt;</summary><content type="html">&lt;h2&gt;Hadoop、Spark、HBase、Hive&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="bigdata"></category><category term="hadoop"></category></entry><entry><title>树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-11T16:05:26+08:00</published><updated>2018-07-11T16:05:26+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/pi-installation/</id><summary type="html">&lt;h2&gt;树莓派安装&lt;/h2&gt;
+&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
+1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
+2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
+&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
+若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
+&lt;h2&gt;安装的是Destop版本,lite&lt;/h2&gt;
+&lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
+&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;树莓派安装&lt;/h2&gt;
+&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
+1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
+2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
+&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
+若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
+&lt;h2&gt;安装的是Destop版本,lite&lt;/h2&gt;
+&lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
+&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry><entry><title>[面试] 1. 黑盒测试需要注意的几个关注点</title><link href="https://pingbook.top/articles/3-software-testing-black/" rel="alternate"></link><published>2018-07-11T16:04:37+08:00</published><updated>2018-07-11T16:04:37+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/3-software-testing-black/</id><summary type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;是软件工程中的一个非常重要的环节，是开发项目整体的一部分。&lt;br&gt;
 是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，&lt;br&gt;&amp;nbsp;不可能发现全部缺陷，软件测试是有局限性的。&lt;/p&gt;
@@ -148,33 +138,7 @@
 &lt;p&gt;测试用例的方法有: &lt;br&gt;
 a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域 划分成 若干个部分，然后再每部分中选取 代表性数据 形成测试用例.
 * 步骤：&lt;br&gt;
-         a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 所构成的集合&lt;br&gt;
-         b)划分无效等价类，对 规格说明 是 无意义 不合理的 输入数据 所构成的集合&lt;br&gt;
-         c) 为每一个等价类 定义一个唯一的编号&lt;br&gt;
-         d）为每一个等价类 设计一组测试用例  确保&amp;nbsp;覆盖相应的等价类&lt;/p&gt;
-&lt;p&gt;b.边界值分析: 边界值分析法 是针对 边界值 进行测试的 使用 等于 大于 或者小于边界值的数据对程序进行测试的方法 就是边界值分析法。&lt;br&gt;
-* 步骤：&lt;br&gt;
-         a）通过分析 规格说明 找出 所有 可能的 边界条件&lt;br&gt;
-         b) 对每一个边界条件 给出 满足 和 不满足的输入数据&lt;br&gt;
-         c) 设计相应的&amp;nbsp;测试用例  &lt;/p&gt;
-&lt;p&gt;c. 错误推测法: 基于经验和直觉推测程序中所有可能存在的各种错误，从而有针对性的设计测试用例的方法。&lt;br&gt;
-d.&amp;nbsp;因果图法&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;等价类划分法和边界值分析方法都是着重考虑输入条件，但没有考虑输入条件的各种组合、输入条件之间的相互制约关系。这样虽然各种输入条件可能出错的情况已经测试到了，但多个输入条件组合起来可能出错的情况却被忽视了。    &lt;br&gt;&amp;nbsp;如果在测试时必须考虑输入条件的各种组合，则可能的组合数目将是天文数字，因此必须考虑采用一种适合于描述多种条件的组合、相应产生多个动作的形式来进行测试用例的设计，这就需要利用因果图（逻辑模型）。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;e.&amp;nbsp;判定表驱动法&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;判定表是分析和表达多逻辑条件下执行不同操作的情况的工具。  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;f. 正交实验法
-*&amp;nbsp;步骤  &lt;/p&gt;
-&lt;p&gt;1&amp;nbsp;提取功能说明,构造因子&amp;#8212;状态表&lt;/p&gt;
-&lt;p&gt;把影响实验指标的条件称为因子.而影响实验因子的条件叫因子的状态.利用正交实验设计方法来设计测试用例时,首先要根据被测试软件的规格说明书找出影响其功能实现的操作对象和外部因素,把他们当作因子,而把各个因子的取值当作状态.对软件需求规格说明中的功能要求进行划分,把整体的概要性的功能要求进行层层分解与展开,分解成具体的有相对独立性的基本的功能要求.这样就可以把被测试软件中所有的因子都确定下来,并为确定个因子的权值提供参考的依据.确定因子与状态是设计测试用例的关键.因此要求尽可能全面的正确的确定取值,以确保测试用例的设计作到完整与有效。&lt;/p&gt;
-&lt;p&gt;2&amp;nbsp;加权筛选,生成因素分析表&lt;/p&gt;
-&lt;p&gt;对因子与状态的选择可按其重要程度分别加权.可根据各个因子及状态的作用大小,出现频率的大小以及测试的需要,确定权值的大小。&lt;/p&gt;
-&lt;p&gt;3&amp;nbsp;利用正交表构造测试数据集&lt;/p&gt;
-&lt;p&gt;正交表的推导依据Galois理论（这里省略,需要时可查数理统计方面的教材）
-1 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
+         a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;是软件工程中的一个非常重要的环节，是开发项目整体的一部分。&lt;br&gt;
 是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，&lt;br&gt;&amp;nbsp;不可能发现全部缺陷，软件测试是有局限性的。&lt;/p&gt;
@@ -322,7 +286,130 @@ d.&amp;nbsp;因果图法&lt;/p&gt;
 &lt;p&gt;测试方法不同：单元测试属于白盒测试，集成测试属于灰盒测试，系统测试属于黑盒测试。&lt;/p&gt;
 &lt;p&gt;考察范围测试重点不同：单元测试注重单元内部的数据结构，逻辑控制，异常处理。&lt;/p&gt;
 &lt;p&gt;集成测试注重模块之间的接口及接口之间的数据传递，系统测试注重满足需求。&lt;/p&gt;
-&lt;p&gt;基准不同：单元测试主要的逻辑覆盖，集成测试主要是接口覆盖，系统测试是测试用例对需求规格的覆盖率。&lt;/p&gt;</content><category term="Software Testing"></category><category term="面试"></category></entry><entry><title>[面试] 白盒测试需要关注的知识点</title><link href="https://pingbook.top/articles/software-testing-white/" rel="alternate"></link><published>2018-07-11T08:47:28+08:00</published><updated>2018-07-11T08:47:28+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/software-testing-white/</id><summary type="html">&lt;p&gt;参考博客: &lt;a href="https://www.cnblogs.com/molrang/p/6420918.html"&gt;https://www.cnblogs.com/molrang/p/6420918.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;基准不同：单元测试主要的逻辑覆盖，集成测试主要是接口覆盖，系统测试是测试用例对需求规格的覆盖率。&lt;/p&gt;</content><category term="Software Testing"></category><category term="面试"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-11T10:31:20+08:00</published><updated>2018-07-11T10:31:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;关键字&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;搭建步骤&lt;/h2&gt;
+&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
+&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;关键字&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;搭建步骤&lt;/h2&gt;
+&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
+&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
+&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
+&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
+&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
+&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
+&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
+&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
+&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage your website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))&lt;/span&gt;
+&lt;span class="code-line"&gt;9. Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)&lt;/span&gt;
+&lt;span class="code-line"&gt;10. Do you want to upload your website using FTP?&lt;/span&gt;
+&lt;span class="code-line"&gt;11. Do you want to upload your website using SSH?&lt;/span&gt;
+&lt;span class="code-line"&gt;12. Do you want to upload your website using Dropbox?&lt;/span&gt;
+&lt;span class="code-line"&gt;13. Do you want to upload your website using S3?&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;命令使用&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于本人使用的是windows,这里我使用了两个命令:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# pelican content # 根据content中的内容，生成静态网站到output目下&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m pelican.server&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m SimpleHTTPServer&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;主题和插件安装&lt;/h2&gt;
+&lt;h3&gt;theme安装&lt;/h3&gt;
+&lt;p&gt;下载主题文件,添加配置: &lt;code&gt;THEME = './pelican-themes/gum'&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;插件安装&lt;/h3&gt;
+&lt;p&gt;下载插件文件,添加如下配置: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;PLUGIN_PATHS = [u&amp;quot;pelican-plugins&amp;quot;]&lt;/span&gt;
+&lt;span class="code-line"&gt;PLUGINS = [u&amp;quot;sitemap&amp;quot;,u&amp;quot;gzip_cache&amp;quot;,u&amp;quot;neighbors&amp;quot;,u&amp;quot;related_posts&amp;quot;]&lt;/span&gt;
+&lt;span class="code-line"&gt;SITEMAP = {&lt;/span&gt;
+&lt;span class="code-line"&gt;    &amp;#39;format&amp;#39;: &amp;#39;xml&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;    &amp;#39;priorities&amp;#39;: {&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: 0.7,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: 0.5,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: 0.3&lt;/span&gt;
+&lt;span class="code-line"&gt;    },&lt;/span&gt;
+&lt;span class="code-line"&gt;    &amp;#39;changefreqs&amp;#39;: {&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: &amp;#39;weekly&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: &amp;#39;daily&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: &amp;#39;monthly&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;    }&lt;/span&gt;
+&lt;span class="code-line"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;字体更改&lt;/h3&gt;
+&lt;p&gt;1.下载字体文件,到网站的静态文件夹内,具体可以参考让wordpress主题绕开对google的依赖.不过此种方法也有些问题.把静态资源放到Github上加载时间也没别之前好多少.&lt;br&gt;
+2.把Google的静态公共库替换为国内的公共库.例如我的给替换成360的镜像地址.其实这种方法也有些弊端,例如国外用户访问就会出现加载过慢的问题.但是毕竟我们在&amp;#8217;朝内&amp;#8217;,所以就换成360的资源库吧.操作如下
+在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件&lt;code&gt;gumby.css&lt;/code&gt;,修改如下: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#static/css/目录下css文件中,例如gumby.css&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#替换为&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;国内其他开公共库: 百度CDN公共库; 新浪云计算CDN公共库; 又拍云JS库CDN服务;&amp;nbsp;七牛云静态文件CDN;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;高级语法&lt;/h2&gt;
+&lt;h3&gt;静态图片&lt;/h3&gt;
+&lt;p&gt;新建一个目录在&lt;code&gt;content&lt;/code&gt;下面,例如&lt;code&gt;images&lt;/code&gt;,然后在&lt;code&gt;pelicanconf.py&lt;/code&gt;设置如下:
+&lt;code&gt;STATIC_PATHS = ['images','downloads']&lt;/code&gt;
+,在对应的md中可以这样写语法:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/try-pelican/test.png"&gt;&lt;/p&gt;
+&lt;h2&gt;部署&lt;/h2&gt;
+&lt;h3&gt;部署到github上&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;新建一个仓库,仓库名称和你的昵称相同或者创建一个组织&lt;/li&gt;
+&lt;li&gt;使用如下命令上传&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd output&lt;/span&gt;
+&lt;span class="code-line"&gt;git init&lt;/span&gt;
+&lt;span class="code-line"&gt;git add .&lt;/span&gt;
+&lt;span class="code-line"&gt;git remote add origin 仓库git地址&lt;/span&gt;
+&lt;span class="code-line"&gt;git push -u origin master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[面试] 白盒测试需要关注的知识点</title><link href="https://pingbook.top/articles/4-software-testing-white/" rel="alternate"></link><published>2018-07-11T08:47:28+08:00</published><updated>2018-07-11T08:47:28+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/4-software-testing-white/</id><summary type="html">&lt;p&gt;参考博客: &lt;a href="https://www.cnblogs.com/molrang/p/6420918.html"&gt;https://www.cnblogs.com/molrang/p/6420918.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;自动化测试&lt;/h2&gt;
 &lt;h3&gt;考虑的因素&lt;/h3&gt;
 &lt;p&gt;①、项目的影响（能否帮助项目进度、覆盖率、风险）&lt;/p&gt;
@@ -339,25 +426,7 @@ d.&amp;nbsp;因果图法&lt;/p&gt;
 &lt;p&gt;按照程序内部结构，逻辑驱动测试程序,目的是检测产品内部动作是否按照设计说明书的规范进行，检验程序的每条路径是否都能按照预定要求进行工作&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;白盒测试方法&lt;/h3&gt;
-&lt;p&gt;①、静态测试&amp;nbsp;静态测试是指不运行程序本身，仅通过分析程序文档结构，软件执行过程，检测程序的正确性，主要有变量，接口，递归等。&lt;/p&gt;
-&lt;p&gt;②、动态测试&amp;nbsp;动态方法是指运行程序，检查运行结果与预期结果对比差异，并分析抗压性，健壮性等，这种测试包括三部分：构造测试实例，执行程序，分析程序输出结果。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;区别一：静态测试是用于预防的，动态测试是用于矫正的  &lt;/span&gt;
-&lt;span class="code-line"&gt;区别二：多次的静态测试比动态测试要效率和效益高  &lt;/span&gt;
-&lt;span class="code-line"&gt;区别三：静态测试综合测试程序代码  &lt;/span&gt;
-&lt;span class="code-line"&gt;区别四：在相当短的时间里，静态测试的覆盖度能达到100%，而动态测试经常是只能达到50%左右，原因动态测试发现的bug大部分只是在测试实际执行的那部分代码  &lt;/span&gt;
-&lt;span class="code-line"&gt;区别五：动态测试比静态测试更花时间  &lt;/span&gt;
-&lt;span class="code-line"&gt;区别六：静态测试比动态测试更能发现 bug  &lt;/span&gt;
-&lt;span class="code-line"&gt;区别七：静态测试的执行可以在程序编码编译前，动态测试只能在编译后才能执行  &lt;/span&gt;
-&lt;span class="code-line"&gt;区别八：静态测试能发现动态测试所不能发现的一些:&amp;quot;Syntax error,code that hard to maintain,code that hard to test,code that does not confirm to coding standard, and ANSI violations&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;白盒测试方法&lt;/p&gt;
-&lt;p&gt;①、尽量先用自动化工具来进行静态解析&lt;/p&gt;
-&lt;p&gt;②、建议先从静态测试开始（静态结构分析、代码走查、静态质量度量），然后进行动态测试（如覆盖率测试）&lt;/p&gt;
-&lt;p&gt;③、以静态分析结果作为依据，再使用代码检查和动态测试方法对静态分析结果进行进一步确认，提高测试效率及准确性&lt;/p&gt;
-&lt;p&gt;④、覆盖率测试是白盒测试的重要手段，在测试报告中可作为量化指标的依据，对于软件的重点模块，应使用多种覆盖率标准衡量代码的覆盖率&lt;/p&gt;
-&lt;p&gt;包括的有代码检查,SQL语句的测试,&lt;/p&gt;</summary><content type="html">&lt;p&gt;参考博客: &lt;a href="https://www.cnblogs.com/molrang/p/6420918.html"&gt;https://www.cnblogs.com/molrang/p/6420918.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;①、静态测试&amp;nbsp;静态测试是指不运行程序本身 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;参考博客: &lt;a href="https://www.cnblogs.com/molrang/p/6420918.html"&gt;https://www.cnblogs.com/molrang/p/6420918.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;自动化测试&lt;/h2&gt;
 &lt;h3&gt;考虑的因素&lt;/h3&gt;
 &lt;p&gt;①、项目的影响（能否帮助项目进度、覆盖率、风险）&lt;/p&gt;
@@ -412,31 +481,7 @@ d.&amp;nbsp;因果图法&lt;/p&gt;
 
 
 &lt;ul&gt;
-&lt;li&gt;安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and&amp;nbsp;openssl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install build-essential -y&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf pcre-8.41.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget http://www.zlib.net/zlib-1.2.11.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar -zxvf zlib-1.2.11.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz &lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf openssl-1.1.0g.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; openssl-1.1.0g&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./config -Wl,--enable-new-dtags,-rpath,&lt;span class="s1"&gt;&amp;#39;$(LIBRPATH)&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make  &lt;span class="c1"&gt;# 大约五六分钟左右&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ openssl version -a&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;安装nginx
-参考说明文档: &lt;a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04"&gt;https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --sbin-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/sbin/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --modules-path …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Debian安装配置nginx服务器&lt;/h2&gt;
+&lt;li&gt;安装对应的nginx的所有依赖的包, gcc环境 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;Debian安装配置nginx服务器&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;下载解压缩安装包&lt;/li&gt;
 &lt;/ul&gt;
@@ -698,18 +743,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
 ~~3. 安装&lt;code&gt;sudo apt-get  install  -y mono-complete&lt;/code&gt;,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: &lt;a href="https://pingbook.top/articles/pi-mirrors/"&gt;https://pingbook.top/articles/pi-mirrors/&lt;/a&gt;~~
 4. 上面的&lt;code&gt;momo-complete&lt;/code&gt;的安装需要一段时间,大约十分钟左右.~~&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ mono  /home/pi/nat123/nat123linux.sh  service  &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;采用如下方式进行安装&lt;code&gt;mono-complete&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;参考地址: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download/stable/#download-lin-raspbian&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install apt-transport-https dirmngr&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deb https://download.mono-project.com/repo/debian stable-raspbianstretch main&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/mono-official-stable.list&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt update&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt install mono-complete&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;安装步骤&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ mono  /home/pi/nat123 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;安装步骤&lt;/h2&gt;
 &lt;p&gt;2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download/stable/#download-lin-raspbian&lt;/a&gt;
 1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp&lt;br&gt;
 2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
@@ -726,115 +760,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deb https://download.mono-project.com/repo/debian stable-raspbianstretch main&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/mono-official-stable.list&lt;/span&gt;
 &lt;span class="code-line"&gt;$ sudo apt update&lt;/span&gt;
 &lt;span class="code-line"&gt;$ sudo apt install mono-complete&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="NAT123"></category><category term="树莓派"></category></entry><entry><title>[面试] 1. 面向对象的相关概念</title><link href="https://pingbook.top/articles/1-object-oriented-programming/" rel="alternate"></link><published>2018-07-10T16:57:48+08:00</published><updated>2018-07-10T16:57:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-10:/articles/1-object-oriented-programming/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;达到的目的&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&amp;nbsp;(Polymorphism) &lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;达到的目的&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&amp;nbsp;(Polymorphism) &lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="面向对象"></category><category term="面试"></category></entry><entry><title>[面试] 2. 有关list及其方法的使用</title><link href="https://pingbook.top/articles/2-list-methods/" rel="alternate"></link><published>2018-07-10T16:55:28+08:00</published><updated>2018-07-10T16:55:28+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-10:/articles/2-list-methods/</id><summary type="html">&lt;h2&gt;解决的问题(Python/Java的list对比学习)&lt;/h2&gt;
-&lt;h3&gt;排序&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;java采用的是&lt;code&gt;Collections&lt;/code&gt;包中的两个方法: &lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;Collections.sort(list)   更复杂点可以是Collection.sort(list, new Comparator&amp;lt;Person&amp;gt;() {})&lt;/span&gt;
-&lt;span class="code-line"&gt;Collections.reverse(list)&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;or&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;list.sort(Collections.reverseOrder())&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;python没有array,只有list,直接使用&lt;code&gt;sort&lt;/code&gt;方法即可,如果是倒序可以用reverse=True指定&lt;/li&gt;
-&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;解决的问题(Python/Java的list对比学习)&lt;/h2&gt;
-&lt;h3&gt;排序&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;java采用的是&lt;code&gt;Collections&lt;/code&gt;包中的两个方法: &lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;Collections.sort(list)   更复杂点可以是Collection.sort(list, new Comparator&amp;lt;Person&amp;gt;() {})&lt;/span&gt;
-&lt;span class="code-line"&gt;Collections.reverse(list)&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;or&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;list.sort(Collections.reverseOrder())&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;python没有array,只有list,直接使用&lt;code&gt;sort&lt;/code&gt;方法即可,如果是倒序可以用reverse=True指定&lt;/li&gt;
-&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category></entry><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-09T23:35:52+08:00</published><updated>2018-07-09T23:35:52+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;写在前面&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件.&lt;br&gt;
-&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
-&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
-&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.&lt;br&gt;
-* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;写在前面&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件.&lt;br&gt;
-&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
-&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
-&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.&lt;br&gt;
-* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;</content><category term="pelican"></category></entry><entry><title>[Linux环境搭建] Debian如何安装配置Tomcat9</title><link href="https://pingbook.top/articles/pi-tomcat/" rel="alternate"></link><published>2018-07-09T22:46:39+08:00</published><updated>2018-07-09T22:46:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pi-tomcat/</id><summary type="html">&lt;h2&gt;安装&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="NAT123"></category><category term="树莓派"></category></entry><entry><title>[Linux环境搭建] Debian如何安装配置Tomcat9</title><link href="https://pingbook.top/articles/pi-tomcat/" rel="alternate"></link><published>2018-07-09T22:46:39+08:00</published><updated>2018-07-09T22:46:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pi-tomcat/</id><summary type="html">&lt;h2&gt;安装&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考文档:&lt;br&gt;
 &lt;em&gt; &lt;a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/"&gt;https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/&lt;/a&gt;&lt;br&gt;
@@ -855,29 +781,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;li&gt;添加组和用户&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo groupadd tomcat&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;下载tomcat9&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ tar zxvf jdk1.8.0_171.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$  sudo nano /etc/profile&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;JAVA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/pi/jdk1.8.0_171&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;CLASSPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;/lib/&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;/bin&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; PATH JAVA_HOME CLASSPATH&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile&lt;/span&gt;
-&lt;span class="code-line"&gt;$ java 可能下载的是64位的jdk,但是系统只能运行32位的jdk&lt;/span&gt;
-&lt;span class="code-line"&gt;/bin/javac: cannot execute binary file: Exec format error&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/pi&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo wget http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.10/bin/apache-tomcat-9.0.10.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$  tar zxvf apache-tomcat-9.0.10.tar.gz &lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/pi/apache-tomcat-9.0.10/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo groupadd tomcat &lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo useradd -M -s /bin/nologin -g tomcat -d /home/pi/apache-tomcat-9.0 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;安装&lt;/h2&gt;
+&lt;span class="code-line"&gt;$ sudo useradd -s /bin/false …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;安装&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考文档:&lt;br&gt;
 &lt;em&gt; &lt;a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/"&gt;https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/&lt;/a&gt;&lt;br&gt;
@@ -993,55 +897,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;span class="code-line"&gt;若出现如下内容：&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;wkr 6537 0.0 0.0 13784 956 ? Ss 16:18 0:00 svnserve -d&lt;/span&gt;
-&lt;span class="code-line"&gt;wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 grep –color=auto svnserve&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;表示服务已开启。（注意：一定要有第1行，只有第2行说明服务未启动）&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;关闭&lt;code&gt;svn&lt;/code&gt;服务:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$  killall svnserve&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;重启 &lt;code&gt;svn&lt;/code&gt;服务:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ svnserve -d -r /srv&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;新建一个仓库:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo adduser --system --home /srv/svn --disabled-password --disabled-login --group svn&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo svnadmin create /srv/svn&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R svn:svn /srv/svn&lt;/span&gt;
-&lt;span class="code-line"&gt;change user, change group 改变文件对应的用户和用户组&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;修改仓库配置文件&lt;br&gt;
-编辑配置文件:&amp;nbsp;svnserve.conf&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /srv/svn/conf/svnserve.conf&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;general&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;anon-access &lt;span class="o"&gt;=&lt;/span&gt; none&lt;/span&gt;
-&lt;span class="code-line"&gt;auth-access &lt;span class="o"&gt;=&lt;/span&gt; write&lt;/span&gt;
-&lt;span class="code-line"&gt;authz-db &lt;span class="o"&gt;=&lt;/span&gt; authz&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;修改帐户文件&lt;code&gt;nano /srv/svn/conf/passwd&lt;/code&gt; 和 &lt;code&gt;sudo nano /srv/svn/conf/authz&lt;/code&gt;,&amp;nbsp;此处忽略.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;配置svn开机自动启动&lt;/li&gt;
-&lt;li&gt;新建一个svnserve配置文件在&lt;code&gt;/et/default/svnserve&lt;/code&gt;文件,内容如下:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# svnserve options&lt;/span&gt;
-&lt;span class="code-line"&gt;DAEMON_ARGS=&amp;quot;--daemon --pid-file /run/svnserve/svnserve.pid --root /srv/svn --log-file …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;&lt;span class="caps"&gt;SVN&lt;/span&gt;&amp;nbsp;安装&lt;/h2&gt;
+&lt;span class="code-line"&gt;wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;&lt;span class="caps"&gt;SVN&lt;/span&gt;&amp;nbsp;安装&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;执行如下命令进行安装:&lt;/li&gt;
 &lt;/ol&gt;
@@ -1201,39 +1057,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;root&lt;/code&gt;密码的更改,可以采用下面的操作步骤:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
-&lt;span class="code-line"&gt;增加一行代码: skip-grant-tables 参见 https://www.jb51.net/article/100925.htm&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ UPDATE mysql.user SET &lt;span class="nv"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;YanZhi123!@#)0x&amp;amp;*&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;增加用户名和授权远程登录:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
-&lt;span class="code-line"&gt;注释掉 bind-address          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ CREATE USER &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ GRANT ALL PRIVILEGES ON *.* TO &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    -- 远程连接权限所有的数据库.&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;创建数据库,支持中文:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;UTF8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;test2&lt;/span&gt; &lt;span class="n"&gt;DEFAULT&lt;/span&gt; &lt;span class="n"&gt;CHARACTER&lt;/span&gt; &lt;span class="n"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="n"&gt;COLLATE&lt;/span&gt; &lt;span class="n"&gt;utf8_general_ci&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;自动备份数据库,每天备份一次&lt;/li&gt;
-&lt;li&gt;新建文件: &lt;code&gt;sudo nano /usr/sbin/mysqlbackup.sh&lt;/code&gt;,内容如下 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;安装&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;安装&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
 &lt;/ol&gt;
@@ -1341,26 +1165,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;span class="code-line"&gt;$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \&lt;/span&gt;
 &lt;span class="code-line"&gt;libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \&lt;/span&gt;
 &lt;span class="code-line"&gt;xz-utils tk-dev libffi-dev&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar xvf Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./configure --enable-optimizations --with-ensurepip=install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make -j8&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make altinstall&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;安装pip,pipenv并设置全局可用命令&lt;code&gt;pipenv&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ wget https://bootstrap.pypa.io/get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo python get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pip install --user pipenv&lt;/span&gt;
-&lt;span class="code-line"&gt; /home/pi/.local/bin&lt;/span&gt;
-&lt;span class="code-line"&gt;$ python -m site --user-base&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.local/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo &lt;span class="nb"&gt;source&lt;/span&gt; ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pipenv --update&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;卸载命令&lt;/h2&gt;
+&lt;span class="code-line"&gt;$ sudo wget https://www.python.org …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;卸载命令&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal&lt;span class="sb"&gt;`&lt;/span&gt;,&lt;span class="sb"&gt;`&lt;/span&gt;python3.5-venv&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1404,31 +1209,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/apt/sources.list.d/raspi.list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;用#注释掉原文件内容，用以下内容取代：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。&lt;br&gt;
-编辑镜像站后，请使用&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;命令，更新软件源列表，同时检查您的编辑是否正确。
-使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装&lt;code&gt;apt-transport-https&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;树莓派安装&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;因为感觉空间越来越小了 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;前因&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
@@ -1478,22 +1259,4 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 
 &lt;h3&gt;3.&amp;nbsp;安装远程桌面,不使用VNC操作&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category><category term="nat123"></category><category term="树莓派镜像"></category></entry><entry><title>树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-08T23:18:44+08:00</published><updated>2018-07-08T23:18:44+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-08:/articles/pi-installation/</id><summary type="html">&lt;h2&gt;树莓派安装&lt;/h2&gt;
-&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
-1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
-2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
-&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
-&lt;h2&gt;安装的是Destop版本,lite&lt;/h2&gt;
-&lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
-&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;树莓派安装&lt;/h2&gt;
-&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
-1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
-2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
-&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
-&lt;h2&gt;安装的是Destop版本,lite&lt;/h2&gt;
-&lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
-&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category><category term="nat123"></category><category term="树莓派镜像"></category></entry></feed>

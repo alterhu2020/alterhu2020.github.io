@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>PingBook Blog - svn</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
+
 
 
 
@@ -24,6 +25,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
 
+
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
@@ -40,20 +42,41 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
 <section id="content">
@@ -69,7 +92,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置">[Linux环境搭建]  svn&nbsp;安装配置</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T21:33:36.432567+08:00">
-                                        Post @ 周一, 09 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018-07-09 21:33:36,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -90,57 +113,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <span class="code-line">若出现如下内容：</span>
 <span class="code-line"></span>
 <span class="code-line">wkr 6537 0.0 0.0 13784 956 ? Ss 16:18 0:00 svnserve -d</span>
-<span class="code-line">wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 grep –color=auto svnserve</span>
-<span class="code-line"></span>
-<span class="code-line">表示服务已开启。（注意：一定要有第1行，只有第2行说明服务未启动）</span>
-</pre></div>
+<span class="code-line">wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 …</span></pre></div> </div><!-- /.entry-content -->
 
-
-<ol>
-<li>关闭<code>svn</code>服务:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$  killall svnserve</span>
-</pre></div>
-
-
-<ol>
-<li>重启 <code>svn</code>服务:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ svnserve -d -r /srv</span>
-</pre></div>
-
-
-<ol>
-<li>新建一个仓库:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo adduser --system --home /srv/svn --disabled-password --disabled-login --group svn</span>
-<span class="code-line">$ sudo svnadmin create /srv/svn</span>
-<span class="code-line">$ sudo chown -R svn:svn /srv/svn</span>
-<span class="code-line">change user, change group 改变文件对应的用户和用户组</span>
-</pre></div>
-
-
-<ol>
-<li>修改仓库配置文件<br>
-编辑配置文件:&nbsp;svnserve.conf</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /srv/svn/conf/svnserve.conf</span>
-<span class="code-line"><span class="o">[</span>general<span class="o">]</span></span>
-<span class="code-line">anon-access <span class="o">=</span> none</span>
-<span class="code-line">auth-access <span class="o">=</span> write</span>
-<span class="code-line">authz-db <span class="o">=</span> authz</span>
-</pre></div>
-
-
-<p>修改帐户文件<code>nano /srv/svn/conf/passwd</code> 和 <code>sudo nano /srv/svn/conf/authz</code>,&nbsp;此处忽略.</p>
-<ol>
-<li>配置svn开机自动启动</li>
-<li>新建一个svnserve配置文件在<code>/et/default/svnserve</code>文件,内容如下:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span># svnserve options</span>
-<span class="code-line">DAEMON_ARGS=&quot;--daemon --pid-file /run/svnserve/svnserve.pid --root /srv/svn --log-file …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置">阅读全文<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -163,6 +138,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -171,7 +150,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -183,6 +164,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
@@ -204,7 +189,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <nav class="widget">
                 <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
@@ -213,9 +198,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
-                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
             </ul>
         </nav>
 
@@ -237,11 +223,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -275,13 +264,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-
 </body>
 </html>

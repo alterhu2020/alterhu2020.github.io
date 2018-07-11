@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>[初级] pelican 博客搭建</title>
@@ -8,7 +8,8 @@
 
 
 
-我真是太折腾了,也没能坚持下去,去年陆陆续续用hexo写了一段时间的博客,最终没能坚持下去! 关键字 pelican markdown  github 搭建步骤 最好的方式莫过于官方文档: 官方入坑道路. 下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤. // 如果需要使用markdown这个高逼格的语法去写博客 # pip install pelican markdown typogrify # mkdir pingbook.top # cd pingbook.top # pelican-quickstart 安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在pelicanconf.py修改,直接默认回车一路下去就好了!  pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。 1. Where do you want to create your new web site?[.] (你想在哪里创建你的网站，默认为当前目录) 2. What will be the title of this web site?(网站的标题是什么) 3. Who will be the author of this web site?(网站的作者是谁) 4. What will be the default language of this web site? [en] (网站的默认语言是),这里我们写'zh'中文 5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y 6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠'/'),http://moelove.info 7. Do you want to enable article pagination?(是否启用文章分页) 8. Do you want to generate a Makefile to easily manage …">
+
+我真是太折腾了,也没能坚持下去,去年陆陆续续用hexo写了一段时间的博客,最终没能坚持下去! 关键字 pelican markdown  github 搭建步骤 最好的方式莫过于官方文档: 官方入坑道路. 下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤. // 如果需要使用markdown这个高逼格的语法去写博客 # pip install pelican markdown typogrify # mkdir pingbook.top # cd pingbook.top # pelican-quickstart 安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在pelicanconf.py修改,直接默认回车一路下去就好了!  pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。 1. Where do you want to …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -23,6 +24,7 @@
         <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
 
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
@@ -40,20 +42,41 @@
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
     <section id="content" class="body">
@@ -70,7 +93,7 @@
                 </header>
                 <footer class="post-info">
                     <!--<abbr class="published" title="2018-07-11T10:31:20.038709+08:00">-->
-                    <!--周三, 11 七月 2018-->
+                    <!--2018-07-11 10:31:20-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -80,7 +103,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        周三, 11 七月 2018
+                        2018-07-11 10:31:20
                             &nbsp;&nbsp; By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -195,13 +218,19 @@
 <span class="code-line">git push -u origin master</span>
 </pre></div>
                 </div><!-- /.entry-content -->
-                <ul style="float:right;">
-                        <li>
-                            ◄&nbsp;&nbsp;<a href="../../articles/software-testing-black/">
-                            [面试]&nbsp;黑盒测试需要注意的几个关注点
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: auto; margin-right: auto;">
+                            ◄&nbsp;&nbsp;<a href="../../articles/4-software-testing-white/">
+                            [面试]&nbsp;白盒测试需要关注的知识点
+                        </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            ►&nbsp;&nbsp;<a href="../../articles/3-software-testing-black/">
+                            [面试] 1.&nbsp;黑盒测试需要注意的几个关注点
                         </a>
                         </li>
                 </ul>
+                <br />
                 <div class="comments">
                     <h3>Relate Articles</h3>
                         <ul>
@@ -209,7 +238,7 @@
                         </ul>
                 </div>
                     <div class="comments">
-                        <h3>Comments from Disqus</h3>
+                        <h3>Comments</h3>
                         <div id="disqus_thread"></div>
                         <script type="text/javascript">
                             var disqus_identifier = "articles/try-pelican/";
@@ -221,6 +250,7 @@
                                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                             })();
                         </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
                     </div>
 
             </div><!-- /.eleven.columns -->
@@ -232,6 +262,10 @@
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -240,7 +274,9 @@
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -252,6 +288,10 @@
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
@@ -273,7 +313,7 @@
             <nav class="widget">
                 <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
@@ -282,9 +322,10 @@
         <nav class="widget sidebarbg">
             <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
-                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
             </ul>
         </nav>
 
@@ -304,11 +345,14 @@
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -342,13 +386,11 @@
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-
 </body>
 </html>

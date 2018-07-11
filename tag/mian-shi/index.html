@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>PingBook Blog - 面试</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
+
 
 
 
@@ -24,6 +25,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
 
+
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
@@ -40,20 +42,41 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
 <section id="content">
@@ -66,10 +89,80 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/software-testing-black/" rel="bookmark" title="Permalink to [面试] 黑盒测试需要注意的几个关注点">[面试]&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">[面试] 1.&nbsp;面向对象的相关概念</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T08:53:46.726987+08:00">
-                                        Post @ 周三, 11 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-11T16:15:48.433884+08:00">
+                                        Post @ 2018-07-11 16:15:48,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <blockquote>
+<p>这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.</p>
+</blockquote>
+<h2>达到的目的</h2>
+<ul>
+<li>面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&nbsp;(Polymorphism) </li>
+</ul> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/mian-xiang-dui-xiang/">面向对象</a>
+                                            <a class="danger label" href="../../tag/mian-shi/">面试</a>
+                                            <a class="danger label" href="../../tag/java/">java</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用">[面试] 2.&nbsp;有关list及其方法的使用</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T16:15:15.211102+08:00">
+                                        Post @ 2018-07-11 16:15:15,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>解决的问题(Python/Java的list对比学习)</h2>
+<h3>排序</h3>
+<ol>
+<li>java采用的是<code>Collections</code>包中的两个方法: </li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>Collections.sort(list)   更复杂点可以是Collection.sort(list, new Comparator&lt;Person&gt;() {})</span>
+<span class="code-line">Collections.reverse(list)</span>
+<span class="code-line"></span>
+<span class="code-line">or</span>
+<span class="code-line"></span>
+<span class="code-line">list.sort(Collections.reverseOrder())</span>
+</pre></div>
+
+
+<ol>
+<li>python没有array,只有list,直接使用<code>sort</code>方法即可,如果是倒序可以用reverse=True指定</li>
+</ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/mian-shi/">面试</a>
+                                            <a class="danger label" href="../../tag/list/">list</a>
+                                            <a class="danger label" href="../../tag/java/">java</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点">[面试] 1.&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T16:04:37.279819+08:00">
+                                        Post @ 2018-07-11 16:04:37,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -92,35 +185,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <p>测试用例的方法有: <br>
 a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域 划分成 若干个部分，然后再每部分中选取 代表性数据 形成测试用例.
 * 步骤：<br>
-         a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 所构成的集合<br>
-         b)划分无效等价类，对 规格说明 是 无意义 不合理的 输入数据 所构成的集合<br>
-         c) 为每一个等价类 定义一个唯一的编号<br>
-         d）为每一个等价类 设计一组测试用例  确保&nbsp;覆盖相应的等价类</p>
-<p>b.边界值分析: 边界值分析法 是针对 边界值 进行测试的 使用 等于 大于 或者小于边界值的数据对程序进行测试的方法 就是边界值分析法。<br>
-* 步骤：<br>
-         a）通过分析 规格说明 找出 所有 可能的 边界条件<br>
-         b) 对每一个边界条件 给出 满足 和 不满足的输入数据<br>
-         c) 设计相应的&nbsp;测试用例  </p>
-<p>c. 错误推测法: 基于经验和直觉推测程序中所有可能存在的各种错误，从而有针对性的设计测试用例的方法。<br>
-d.&nbsp;因果图法</p>
-<blockquote>
-<p>等价类划分法和边界值分析方法都是着重考虑输入条件，但没有考虑输入条件的各种组合、输入条件之间的相互制约关系。这样虽然各种输入条件可能出错的情况已经测试到了，但多个输入条件组合起来可能出错的情况却被忽视了。    <br>&nbsp;如果在测试时必须考虑输入条件的各种组合，则可能的组合数目将是天文数字，因此必须考虑采用一种适合于描述多种条件的组合、相应产生多个动作的形式来进行测试用例的设计，这就需要利用因果图（逻辑模型）。</p>
-</blockquote>
-<p>e.&nbsp;判定表驱动法</p>
-<blockquote>
-<p>判定表是分析和表达多逻辑条件下执行不同操作的情况的工具。  </p>
-</blockquote>
-<p>f. 正交实验法
-*&nbsp;步骤  </p>
-<p>1&nbsp;提取功能说明,构造因子&#8212;状态表</p>
-<p>把影响实验指标的条件称为因子.而影响实验因子的条件叫因子的状态.利用正交实验设计方法来设计测试用例时,首先要根据被测试软件的规格说明书找出影响其功能实现的操作对象和外部因素,把他们当作因子,而把各个因子的取值当作状态.对软件需求规格说明中的功能要求进行划分,把整体的概要性的功能要求进行层层分解与展开,分解成具体的有相对独立性的基本的功能要求.这样就可以把被测试软件中所有的因子都确定下来,并为确定个因子的权值提供参考的依据.确定因子与状态是设计测试用例的关键.因此要求尽可能全面的正确的确定取值,以确保测试用例的设计作到完整与有效。</p>
-<p>2&nbsp;加权筛选,生成因素分析表</p>
-<p>对因子与状态的选择可按其重要程度分别加权.可根据各个因子及状态的作用大小,出现频率的大小以及测试的需要,确定权值的大小。</p>
-<p>3&nbsp;利用正交表构造测试数据集</p>
-<p>正交表的推导依据Galois理论（这里省略,需要时可查数理统计方面的教材）
-1 …</p> </div><!-- /.entry-content -->
+         a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 …</p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../../articles/software-testing-black/" rel="bookmark" title="Permalink to [面试] 黑盒测试需要注意的几个关注点">阅读全文<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -134,10 +201,10 @@ d.&nbsp;因果图法</p>
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T08:47:28.896015+08:00">
-                                        Post @ 周三, 11 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018-07-11 08:47:28,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -158,27 +225,9 @@ d.&nbsp;因果图法</p>
 <p>按照程序内部结构，逻辑驱动测试程序,目的是检测产品内部动作是否按照设计说明书的规范进行，检验程序的每条路径是否都能按照预定要求进行工作</p>
 </blockquote>
 <h3>白盒测试方法</h3>
-<p>①、静态测试&nbsp;静态测试是指不运行程序本身，仅通过分析程序文档结构，软件执行过程，检测程序的正确性，主要有变量，接口，递归等。</p>
-<p>②、动态测试&nbsp;动态方法是指运行程序，检查运行结果与预期结果对比差异，并分析抗压性，健壮性等，这种测试包括三部分：构造测试实例，执行程序，分析程序输出结果。</p>
-<div class="highlight"><pre><span class="code-line"><span></span>区别一：静态测试是用于预防的，动态测试是用于矫正的  </span>
-<span class="code-line">区别二：多次的静态测试比动态测试要效率和效益高  </span>
-<span class="code-line">区别三：静态测试综合测试程序代码  </span>
-<span class="code-line">区别四：在相当短的时间里，静态测试的覆盖度能达到100%，而动态测试经常是只能达到50%左右，原因动态测试发现的bug大部分只是在测试实际执行的那部分代码  </span>
-<span class="code-line">区别五：动态测试比静态测试更花时间  </span>
-<span class="code-line">区别六：静态测试比动态测试更能发现 bug  </span>
-<span class="code-line">区别七：静态测试的执行可以在程序编码编译前，动态测试只能在编译后才能执行  </span>
-<span class="code-line">区别八：静态测试能发现动态测试所不能发现的一些:&quot;Syntax error,code that hard to maintain,code that hard to test,code that does not confirm to coding standard, and ANSI violations&quot;</span>
-</pre></div>
+<p>①、静态测试&nbsp;静态测试是指不运行程序本身 …</p> </div><!-- /.entry-content -->
 
-
-<p>白盒测试方法</p>
-<p>①、尽量先用自动化工具来进行静态解析</p>
-<p>②、建议先从静态测试开始（静态结构分析、代码走查、静态质量度量），然后进行动态测试（如覆盖率测试）</p>
-<p>③、以静态分析结果作为依据，再使用代码检查和动态测试方法对静态分析结果进行进一步确认，提高测试效率及准确性</p>
-<p>④、覆盖率测试是白盒测试的重要手段，在测试报告中可作为量化指标的依据，对于软件的重点模块，应使用多种覆盖率标准衡量代码的覆盖率</p>
-<p>包括的有代码检查,SQL语句的测试,</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">阅读全文<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -187,75 +236,6 @@ d.&nbsp;因果图法</p>
                                             <a class="danger label" href="../../tag/bai-he-ce-shi/">白盒测试</a>
                                             <a class="danger label" href="../../tag/ruan-jian-ce-shi/">软件测试</a>
                                             <a class="danger label" href="../../tag/mian-shi/">面试</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">[面试] 1.&nbsp;面向对象的相关概念</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T16:57:48.778724+08:00">
-                                        Post @ 周二, 10 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <blockquote>
-<p>这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.</p>
-</blockquote>
-<h2>达到的目的</h2>
-<ul>
-<li>面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&nbsp;(Polymorphism) </li>
-<li></li>
-</ul> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../../tag/mian-xiang-dui-xiang/">面向对象</a>
-                                            <a class="danger label" href="../../tag/mian-shi/">面试</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用">[面试] 2.&nbsp;有关list及其方法的使用</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T16:55:28.356217+08:00">
-                                        Post @ 周二, 10 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>解决的问题(Python/Java的list对比学习)</h2>
-<h3>排序</h3>
-<ol>
-<li>java采用的是<code>Collections</code>包中的两个方法: </li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>Collections.sort(list)   更复杂点可以是Collection.sort(list, new Comparator&lt;Person&gt;() {})</span>
-<span class="code-line">Collections.reverse(list)</span>
-<span class="code-line"></span>
-<span class="code-line">or</span>
-<span class="code-line"></span>
-<span class="code-line">list.sort(Collections.reverseOrder())</span>
-</pre></div>
-
-
-<ol>
-<li>python没有array,只有list,直接使用<code>sort</code>方法即可,如果是倒序可以用reverse=True指定</li>
-</ol> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../../tag/mian-shi/">面试</a>
-                                            <a class="danger label" href="../../tag/list/">list</a>
                                 </div>
 
 
@@ -272,6 +252,10 @@ d.&nbsp;因果图法</p>
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -280,7 +264,9 @@ d.&nbsp;因果图法</p>
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -292,6 +278,10 @@ d.&nbsp;因果图法</p>
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
@@ -313,7 +303,7 @@ d.&nbsp;因果图法</p>
             <nav class="widget">
                 <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
@@ -322,9 +312,10 @@ d.&nbsp;因果图法</p>
         <nav class="widget sidebarbg">
             <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
-                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
             </ul>
         </nav>
 
@@ -346,11 +337,14 @@ d.&nbsp;因果图法</p>
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -384,13 +378,11 @@ d.&nbsp;因果图法</p>
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-
 </body>
 </html>

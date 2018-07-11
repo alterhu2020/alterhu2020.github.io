@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>树莓派外部网站搭建</title>
@@ -8,7 +8,8 @@
 
 
 
-前因 自己在Github Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了. 整理一下树莓派下安装nginx的过程 1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80) 可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors 使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为： $ sudo nano /etc/apt/sources.list 用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像： deb https://mirrors.shu.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi deb-src https://mirrors.shu.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi 使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为： $ sudo nano /etc/apt/sources.list.d/raspi.list 用#注释掉原文件内容，用以下内容取代： deb https://mirrors.ustc.edu.cn/archive.raspberrypi.org/ stretch main ui deb-src https://mirrors.ustc.edu.cn/archive.raspberrypi.org/ stretch main ui 注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。 编辑镜像站后，请使用sudo apt update && sudo apt upgrade -y命令，更新软件源列表，同时检查您的编辑是否正确。 使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装apt-transport-https. 树莓派安装 因为感觉空间越来越小了 …">
+
+前因 自己在Github Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了. 整理一下树莓派下安装nginx的过程 1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80) 可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors 使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为： $ sudo nano /etc/apt/sources.list 用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -23,6 +24,7 @@
         <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
 
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
@@ -40,20 +42,41 @@
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
     <section id="content" class="body">
@@ -70,7 +93,7 @@
                 </header>
                 <footer class="post-info">
                     <!--<abbr class="published" title="2018-07-08T23:35:08.403457+08:00">-->
-                    <!--周日, 08 七月 2018-->
+                    <!--2018-07-08 23:35:08-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -80,7 +103,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        周日, 08 七月 2018
+                        2018-07-08 23:35:08
                             &nbsp;&nbsp; By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -142,28 +165,24 @@
 <div class="highlight"><pre><span class="code-line"><span></span>sudo apt-get install xrdp</span>
 </pre></div>
                 </div><!-- /.entry-content -->
-                <ul style="float:right;">
-                        <li>
-                            ◄&nbsp;&nbsp;<a href="../../articles/pi-installation/">
-                            树莓派3B安装
-                        </a>
-                        </li>
-                        <li>
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
                             ►&nbsp;&nbsp;<a href="../../articles/pi-python3/">
                             [Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上
                         </a>
                         </li>
                 </ul>
+                <br />
                 <div class="comments">
                     <h3>Relate Articles</h3>
                         <ul>
                                 <li><a href="../../articles/pi-nat123/">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></li>
-                                <li><a href="../../articles/pi-python3/">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></li>
                                 <li><a href="../../articles/pi-installation/">树莓派3B安装</a></li>
+                                <li><a href="../../articles/pi-python3/">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></li>
                         </ul>
                 </div>
                     <div class="comments">
-                        <h3>Comments from Disqus</h3>
+                        <h3>Comments</h3>
                         <div id="disqus_thread"></div>
                         <script type="text/javascript">
                             var disqus_identifier = "articles/pi-mirrors/";
@@ -175,6 +194,7 @@
                                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                             })();
                         </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
                     </div>
 
             </div><!-- /.eleven.columns -->
@@ -186,6 +206,10 @@
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -194,7 +218,9 @@
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -206,6 +232,10 @@
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
@@ -227,7 +257,7 @@
             <nav class="widget">
                 <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
@@ -236,9 +266,10 @@
         <nav class="widget sidebarbg">
             <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
-                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
             </ul>
         </nav>
 
@@ -258,11 +289,14 @@
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -296,13 +330,11 @@
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-
 </body>
 </html>

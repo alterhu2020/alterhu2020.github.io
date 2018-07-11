@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>PingBook Blog - pelican</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
+
 
 
 
@@ -24,6 +25,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
 
+
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
@@ -40,20 +42,41 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
 <section id="content">
@@ -66,10 +89,50 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T21:14:00.720348+08:00">
+                                        Post @ 2018-07-11 21:14:00,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<h2>前言</h2>
+<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
+<h2>增加搜索功能(2018-07-09)</h2>
+<p>使用的插件是: <a href="">Tipue_Search</a></p>
+<h3>windows下的运行</h3>
+<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
+这个文件.<br>
+<code>fabfile</code>在上面的命令生成后发现里面的文件报了好多错,<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
+解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
+<span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
+</pre></div>
+
+
+<h2>百度站长不能收录</h2>
+<blockquote>
+<p>很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理 …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/pelican/">pelican</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T10:31:20.038709+08:00">
-                                        Post @ 周三, 11 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 2018-07-11 10:31:20,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -93,69 +156,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
 <p>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在<code>pelicanconf.py</code>修改,直接默认回车一路下去就好了! <br/>&nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</p>
-<div class="highlight"><pre><span class="code-line"><span></span>1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)</span>
-<span class="code-line">2. What will be the title of this web site?(网站的标题是什么)</span>
-<span class="code-line">3. Who will be the author of this web site?(网站的作者是谁)</span>
-<span class="code-line">4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&#39;zh&#39;中文</span>
-<span class="code-line">5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y</span>
-<span class="code-line">6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&#39;/&#39;),http://moelove.info</span>
-<span class="code-line">7. Do you want to enable article pagination?(是否启用文章分页)</span>
-<span class="code-line">8. Do you want to generate a Makefile to easily manage …</span></pre></div> </div><!-- /.entry-content -->
+<div class="highlight"><pre><span class="code-line"><span></span>1. Where do you want to …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">阅读全文<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../../tag/pelican/">pelican</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-09T23:35:52.573294+08:00">
-                                        Post @ 周一, 09 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<h2>写在前面</h2>
-<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
-<h3>windows下的运行</h3>
-<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
-这个文件.<br>
-<code>fabfile</code>在上面的命令生成后发现里面的文件报了好多错,<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
-<span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
-</pre></div>
-
-
-<h2>百度站长不能收录</h2>
-<blockquote>
-<p>很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).</p>
-</blockquote>
-<h2>加入浏览量统计</h2>
-<p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.<br>
-* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
-<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
-<span class="code-line"></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
-</pre></div>
-
-
-<h2>增加搜索功能(2018-07-09)</h2> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">阅读全文<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -178,6 +181,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -186,7 +193,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -198,6 +207,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
@@ -219,7 +232,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <nav class="widget">
                 <h4>Social</h4>
                 <ul class="blank">
-                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">GMail</a></li>
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
                         <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
                         <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
                 </ul>
@@ -228,9 +241,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Friends</h4>
             <ul>
-                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">cnblogs</a></li>
-                    <li><a target="_blank" href="http://xiaohanyu.me/about/">Xiao Hanyu</a></li>
-                    <li><a target="_blank" href="http://huangxuan.me/">黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
             </ul>
         </nav>
 
@@ -252,11 +266,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -290,13 +307,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
-
 </body>
 </html>

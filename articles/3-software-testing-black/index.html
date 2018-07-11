@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+
+        <title>[面试] 1. 黑盒测试需要注意的几个关注点</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="
+
+
+
+
+基本理论概念 是软件工程中的一个非常重要的环节，是开发项目整体的一部分。 是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的， 不可能发现全部缺陷，软件测试是有局限性的。 测试的目的 1）验证软件是否满足 软件开发合同 或者项目开发计划，系统/子系统设计文档，软件需求规格说明，软件产品说明等规定的软件质量要求 2）通过测试，发现软件缺陷  3）为软件产品的质量测量和评价提供依据 测试用例的设计规则 基于测试需求的原则 基于测试方法的原则 兼顾 测试充分性 和 效率的原则 测试用例的方法有: a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域 划分成 若干个部分，然后再每部分中选取 代表性数据 形成测试用例. * 步骤： a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 …">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook Blog Full Atom Feed"/>
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+        <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+<div class="container">
+
+    <div class="row">
+
+        <header id="banner" class="body">
+            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns" style="width: 100%">
+                <li><a href="../../">Home</a></li>
+
+                    <li><a href="/categories">Category</a></li>
+                    <li><a href="/archives">Archive</a></li>
+                    <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
+
+            </ul>
+
+
+        </div>
+
+    <section id="content" class="body">
+
+        <div class="row">
+            <div class="eleven columns">
+
+
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/3-software-testing-black/" rel="bookmark"
+                           title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点">[面试] 1.&nbsp;黑盒测试需要注意的几个关注点</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-07-11T16:04:37.279819+08:00">-->
+                    <!--2018-07-11 16:04:37-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        2018-07-11 16:04:37
+                            &nbsp;&nbsp; By
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
+
+                        <span id="busuanzi_container_page_pv">, Views <span id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留<a href="../../articles/3-software-testing-black/">文章链接</a></p>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                <div class="entry-content">
+                    <h2>基本理论概念</h2>
+<blockquote>
+<p>是软件工程中的一个非常重要的环节，是开发项目整体的一部分。<br>
+是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，<br>&nbsp;不可能发现全部缺陷，软件测试是有局限性的。</p>
+</blockquote>
+<h3>测试的目的</h3>
+<blockquote>
+<p>1）验证软件是否满足 软件开发合同 或者项目开发计划，系统/子系统设计文档，软件需求规格说明，软件产品说明等规定的软件质量要求<br>
+  2）通过测试，发现软件缺陷 <br>&nbsp;3）为软件产品的质量测量和评价提供依据</p>
+</blockquote>
+<h3>测试用例的设计规则</h3>
+<ul>
+<li>基于测试需求的原则 </li>
+<li>基于测试方法的原则</li>
+<li>兼顾 测试充分性 和&nbsp;效率的原则</li>
+</ul>
+<p>测试用例的方法有: <br>
+a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域 划分成 若干个部分，然后再每部分中选取 代表性数据 形成测试用例.
+* 步骤：<br>
+         a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 所构成的集合<br>
+         b)划分无效等价类，对 规格说明 是 无意义 不合理的 输入数据 所构成的集合<br>
+         c) 为每一个等价类 定义一个唯一的编号<br>
+         d）为每一个等价类 设计一组测试用例  确保&nbsp;覆盖相应的等价类</p>
+<p>b.边界值分析: 边界值分析法 是针对 边界值 进行测试的 使用 等于 大于 或者小于边界值的数据对程序进行测试的方法 就是边界值分析法。<br>
+* 步骤：<br>
+         a）通过分析 规格说明 找出 所有 可能的 边界条件<br>
+         b) 对每一个边界条件 给出 满足 和 不满足的输入数据<br>
+         c) 设计相应的&nbsp;测试用例  </p>
+<p>c. 错误推测法: 基于经验和直觉推测程序中所有可能存在的各种错误，从而有针对性的设计测试用例的方法。<br>
+d.&nbsp;因果图法</p>
+<blockquote>
+<p>等价类划分法和边界值分析方法都是着重考虑输入条件，但没有考虑输入条件的各种组合、输入条件之间的相互制约关系。这样虽然各种输入条件可能出错的情况已经测试到了，但多个输入条件组合起来可能出错的情况却被忽视了。    <br>&nbsp;如果在测试时必须考虑输入条件的各种组合，则可能的组合数目将是天文数字，因此必须考虑采用一种适合于描述多种条件的组合、相应产生多个动作的形式来进行测试用例的设计，这就需要利用因果图（逻辑模型）。</p>
+</blockquote>
+<p>e.&nbsp;判定表驱动法</p>
+<blockquote>
+<p>判定表是分析和表达多逻辑条件下执行不同操作的情况的工具。  </p>
+</blockquote>
+<p>f. 正交实验法
+*&nbsp;步骤  </p>
+<p>1&nbsp;提取功能说明,构造因子&#8212;状态表</p>
+<p>把影响实验指标的条件称为因子.而影响实验因子的条件叫因子的状态.利用正交实验设计方法来设计测试用例时,首先要根据被测试软件的规格说明书找出影响其功能实现的操作对象和外部因素,把他们当作因子,而把各个因子的取值当作状态.对软件需求规格说明中的功能要求进行划分,把整体的概要性的功能要求进行层层分解与展开,分解成具体的有相对独立性的基本的功能要求.这样就可以把被测试软件中所有的因子都确定下来,并为确定个因子的权值提供参考的依据.确定因子与状态是设计测试用例的关键.因此要求尽可能全面的正确的确定取值,以确保测试用例的设计作到完整与有效。</p>
+<p>2&nbsp;加权筛选,生成因素分析表</p>
+<p>对因子与状态的选择可按其重要程度分别加权.可根据各个因子及状态的作用大小,出现频率的大小以及测试的需要,确定权值的大小。</p>
+<p>3&nbsp;利用正交表构造测试数据集</p>
+<p>正交表的推导依据Galois理论（这里省略,需要时可查数理统计方面的教材）
+1. Dr. Genichi Taguchi 设计的正交表: https://www.york.ac.uk/depts/maths/tables/orthogonal.htm
+2. Technical Support ( support.sas.com ) com 提供的&nbsp;http://support.sas.com/techsup/technote/ts723_Designs.txt</p>
+<p>利用正交实验设计方法设计测试用例,比使用等价类划分,边界值分析,因果图等方法有以下优点:节省测试工作工时；可控制生成的测试用例数量；测试用例具有一定的覆盖率。</p>
+<p>g.&nbsp;场景图法  </p>
+<blockquote>
+<p>现在的软件几乎都是用事件触发来控制流程的，事件触发时的情景便形成了场景，而同一事件不同的触发顺序和处理结果就形成事件流。&nbsp;这种在软件设计方面的思想也可以引入到软件测试中，可以比较生动地描绘出事件触发时的情景，有利于测试设计者设计测试用例，同时使测试用例更容易理解和执行。          </p>
+</blockquote>
+<h3>软件的内部质量</h3>
+<ul>
+<li>
+<p>功能性：当软件在指定条件下使用时，软件产品 提供 满足&nbsp;明确的和隐含的能力，包括适合性，准确性，互操作性，安全保密性，依从性</p>
+</li>
+<li>
+<p>可靠性：在指定条件下使用时&nbsp;软件产品维持规定的性能级别的能力；包括，成熟性，容错性，易恢复性，依从性</p>
+</li>
+<li>
+<p>易用性：在指定条件下使用 软件产品被理解被学习 使用和 吸引用户的能力  包括 易学性 易操作性 吸引性&nbsp;依从性</p>
+</li>
+<li>
+<p>效率性：在规定条件下 软件产品执行其功能时使用合适数量和类别资源的能力；包括 资源利用性 和效率依从性&nbsp;、  </p>
+</li>
+<li>
+<p>维护性：软件产品 可以被修改的能力可能包括 纠正 改进 软件对环境 需求 和功能规格说明变化的适应&nbsp;包括，易分析性，易改变性，稳定性，易测试性，依从性</p>
+</li>
+<li>
+<p>可移植性：软件产品&nbsp;从一种环境迁移到另外一种环境的能力，包括，适应性，易安装性，共存性，易替换性，可移植性的依从性。</p>
+</li>
+<li>兼容性: 什么是兼容性测试?兼容性测试侧重哪些方面?&nbsp;主要检验的是软件的可移植性，检查软件在不同的硬件平台软件平台上是否可以正常的运行。细分会有：平台的兼容，网络兼容，数据库兼容，数据格式的兼容等。</li>
+</ul>
+<h3>测试的生命周期</h3>
+<blockquote>
+<p>单元测试，集成测试，确认测试(Certify Testing)，系统测试，验收测试, 回归测试(Regression&nbsp;Testing).</p>
+</blockquote>
+<ul>
+<li>单元测试:&nbsp;软件设计文档</li>
+<li>集成测试：软件结构设计文档</li>
+<li>配置项测试：需求规格说明书（接口需求规格说明）</li>
+<li>系统测试：用户需求（研制合同或系统需求）</li>
+<li>验收测试：软件研制合同（用户需求或系统需求）</li>
+</ul>
+<h3>测试方法</h3>
+<blockquote>
+<p>黑盒测试，白盒测试, 静态测试和动态测试，手工测试和动态测试，回归测试，公测
+ * 白盒 
+逻辑测试或者基于程序的测试，这种测试 应了解软件程序的内部构造，并且根据内部构造 来设计测试用例。发生在单元测试,集成测试或确认测试.
+黑盒测试是功能性测试，一般采用穷举输入测试.
+ * 黑盒
+又称功能测试，数据驱动测试，或者基于规格说明的测试，这种测试不必要了解 对象的内部逻辑结构，而是根据需求说明书中的功能来设计测试用例.
+白盒测试是结构测试，一般是穷举路径测试，检测内部逻辑驱动结构
+ * 灰盒&nbsp;持续的集成测试</p>
+</blockquote>
+<h3>冒烟测试</h3>
+<blockquote>
+<p>一段时间内 针对某个模块【刚新增的模块&nbsp;或者刚刚修改完的模块】开展某个专项测试（功能测试），</p>
+</blockquote>
+<h3>回归测试</h3>
+<blockquote>
+<p>长时间，针对某个指定的版本【刚新增的模块&nbsp;以及与他相关的其他模块，进行专项的测试活动】</p>
+</blockquote>
+<h3>功能测试</h3>
+<p>1．           测试需求：测试的规格说明书，主要作用是定义待测试的模块 和&nbsp;功能模块的测试要点</p>
+<p>2．&nbsp;测试计划：测试过程中的纲领性文件，对测试活动中的测试环境，测试方法，测试时间人员安排。</p>
+<p>3．&nbsp;测试用例：是测试需求的细化，是一群元素的集合，主要包含，用例编号，操作步骤/测试数据，预期结果，实际结果，判定，覆盖需求。</p>
+<p>4．           缺陷报告：将软件的实际情况 和&nbsp;测试用例的预期结果相比较，记录问题报告单。</p>
+<p>5．&nbsp;测试的基本过程：四个过程，测试策划，测试设计，测试执行，测试总结</p>
+<p>6．&nbsp;测试所需要的文档：测试需求，测试计划，测试用例，缺陷报告，测试报告（可能编写）</p>
+<h3>可能的面试题目</h3>
+<ol>
+<li>Beta测试与Alpha测试有什么区别?</li>
+</ol>
+<p>Beta是用户实际使用的测试，没有开发者在场，Alpha测试是公司内部测试，有开发者监控。</p>
+<ol>
+<li>什么是桩模块？什么是驱动模块？</li>
+</ol>
+<p>集成测试前要为被测模块编辑一些模拟其下级功能的子模块的替身，以代替被测模块的借口，接受或者传递数据，这些假模块被称为桩模块。</p>
+<p>驱动模块一般为主程序，它接收测试数据并将这些数据传递到被测试模块。</p>
+<ol>
+<li>什么是扇入和扇出？</li>
+</ol>
+<p>扇入是指该模块被调用的次数，扇入大，说明该模块的复用性好。</p>
+<p>扇出是指该模块调用其他模块的个数，扇出大，说明该模块的业务逻辑复杂。</p>
+<ol>
+<li>你认为做好测试工作的的关键是什么？</li>
+</ol>
+<p>目的，管理，规范。</p>
+<ol>
+<li>简述一下缺陷的生命周期?</li>
+</ol>
+<p>提交-&gt;确认-&gt;分配-&gt;修复-&gt;验证-&gt;关闭</p>
+<ol>
+<li>软件的安全性应该从哪几个方面去测试？</li>
+</ol>
+<p>1，用户认证机制，</p>
+<p>2，加密机制</p>
+<p>3，安全防护策略，安全日志等，</p>
+<p>4，数据备份和恢复</p>
+<p>5，防病毒系统。</p>
+<ol>
+<li>单元测试，集成测试，系统测试的区别？</li>
+</ol>
+<p>测试方法不同：单元测试属于白盒测试，集成测试属于灰盒测试，系统测试属于黑盒测试。</p>
+<p>考察范围测试重点不同：单元测试注重单元内部的数据结构，逻辑控制，异常处理。</p>
+<p>集成测试注重模块之间的接口及接口之间的数据传递，系统测试注重满足需求。</p>
+<p>基准不同：单元测试主要的逻辑覆盖，集成测试主要是接口覆盖，系统测试是测试用例对需求规格的覆盖率。</p>
+                </div><!-- /.entry-content -->
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: auto; margin-right: auto;">
+                            ◄&nbsp;&nbsp;<a href="../../articles/try-pelican/">
+                            [初级] pelican&nbsp;博客搭建
+                        </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            ►&nbsp;&nbsp;<a href="../../articles/pi-installation/">
+                            树莓派3B安装
+                        </a>
+                        </li>
+                </ul>
+                <br />
+                <div class="comments">
+                    <h3>Relate Articles</h3>
+                        <ul>
+                                <li><a href="../../articles/1-object-oriented-programming/">[面试] 1.&nbsp;面向对象的相关概念</a></li>
+                                <li><a href="../../articles/2-list-methods/">[面试] 2.&nbsp;有关list及其方法的使用</a></li>
+                                <li><a href="../../articles/4-software-testing-white/">[面试]&nbsp;白盒测试需要关注的知识点</a></li>
+                        </ul>
+                </div>
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/3-software-testing-black/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
+                    </div>
+
+            </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>Navigation</h4>
+        <ul>
+                <li><a href="/categories">Category</a></li>
+                <li><a href="/archives">Archive</a></li>
+                <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="../../pages/about.html">About</a>
+                    </li>
+        </ul>
+    </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>Categories</h4>
+                <ul class="blank">
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">linux</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../../category/bigdata/">bigdata</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <nav class="widget sidebarbg">
+            <h4>Tags</h4>
+            <ul class="blank">
+                    <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
+                    <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
+                    <li class="tag-4"><a href="../../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="../../tag/ruan-jian-ce-shi/">软件测试</a></li>
+                    <li class="tag-4"><a href="../../tag/mian-xiang-dui-xiang/">面向对象</a></li>
+                    <li class="tag-1"><a href="../../tag/mian-shi/">面试</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>Social</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>Friends</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
+            </ul>
+        </nav>
+
+</div>        </div><!-- /.row -->
+
+
+    </section>
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<div class="container.nopad bg">
+
+
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
+            <div class="row">
+                <ul class="socbtns">
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script>
+    function validateForm(query) {
+        return (query.length > 0);
+    }
+</script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+</body>
+</html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
 
         <title>PingBook Blog</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
+
 
 
 
@@ -24,6 +25,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <link rel="stylesheet" type="text/css" href="../theme/style.css"/>
         <link rel="stylesheet" type="text/css" href="../theme/pygment.css"/>
 
+
         <script src="../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
@@ -40,121 +42,146 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
+            <h1><a href="..">PingBook Blog <strong>import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
-            <ul class="columns">
+            <ul class="columns" style="width: 100%">
                 <li><a href="../">Home</a></li>
 
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="../pages/about.html">About</a></li>
+
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
 
             </ul>
+
+
         </div>
 
-<ul class="tagcloud">
-<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tag Cloud</h4></li>
-<li class="tag-2">
-	<a href="../tag/nat123/">
-		<i class="icon-tag icon-large"></i>NAT123
-            <span class="badge">2</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/software-testing/">
-		<i class="icon-tag icon-large"></i>Software Testing
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/tomcat9/">
-		<i class="icon-tag icon-large"></i>Tomcat9
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/list/">
-		<i class="icon-tag icon-large"></i>list
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/mysql/">
-		<i class="icon-tag icon-large"></i>mysql
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/mysqlbei-fen/">
-		<i class="icon-tag icon-large"></i>mysql备份
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/nginx/">
-		<i class="icon-tag icon-large"></i>nginx
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-2">
-	<a href="../tag/pelican/">
-		<i class="icon-tag icon-large"></i>pelican
-            <span class="badge">2</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/python3/">
-		<i class="icon-tag icon-large"></i>python3
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/svn/">
-		<i class="icon-tag icon-large"></i>svn
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-1">
-	<a href="../tag/shu-mei-pai/">
-		<i class="icon-tag icon-large"></i>树莓派
-            <span class="badge">4</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/shu-mei-pai-jing-xiang/">
-		<i class="icon-tag icon-large"></i>树莓派镜像
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/bai-he-ce-shi/">
-		<i class="icon-tag icon-large"></i>白盒测试
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/ruan-jian-ce-shi/">
-		<i class="icon-tag icon-large"></i>软件测试
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-4">
-	<a href="../tag/mian-xiang-dui-xiang/">
-		<i class="icon-tag icon-large"></i>面向对象
-            <span class="badge">1</span>
-	</a>
-</li>
-<li class="tag-1">
-	<a href="../tag/mian-shi/">
-		<i class="icon-tag icon-large"></i>面试
-            <span class="badge">4</span>
-	</a>
-</li>
-</ul>
+    <ul>
+        <li class="nav-header" ><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+            <li class="tag-2" style="display: inline; margin-left: 50px;">
+                <a href="../tag/nat123/">
+                    <i class="icon-tag icon-large"></i>NAT123
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/software-testing/">
+                    <i class="icon-tag icon-large"></i>Software Testing
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/tomcat9/">
+                    <i class="icon-tag icon-large"></i>Tomcat9
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/bigdata/">
+                    <i class="icon-tag icon-large"></i>bigdata
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/hadoop/">
+                    <i class="icon-tag icon-large"></i>hadoop
+                </a>
+            </li>
+            <li class="tag-2" style="display: inline; margin-left: 50px;">
+                <a href="../tag/java/">
+                    <i class="icon-tag icon-large"></i>java
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/linux/">
+                    <i class="icon-tag icon-large"></i>linux
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/list/">
+                    <i class="icon-tag icon-large"></i>list
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/mysql/">
+                    <i class="icon-tag icon-large"></i>mysql
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/mysqlbei-fen/">
+                    <i class="icon-tag icon-large"></i>mysql备份
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/nginx/">
+                    <i class="icon-tag icon-large"></i>nginx
+                </a>
+            </li>
+            <li class="tag-2" style="display: inline; margin-left: 50px;">
+                <a href="../tag/pelican/">
+                    <i class="icon-tag icon-large"></i>pelican
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/python3/">
+                    <i class="icon-tag icon-large"></i>python3
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/svn/">
+                    <i class="icon-tag icon-large"></i>svn
+                </a>
+            </li>
+            <li class="tag-1" style="display: inline; margin-left: 50px;">
+                <a href="../tag/shu-mei-pai/">
+                    <i class="icon-tag icon-large"></i>树莓派
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/shu-mei-pai-jing-xiang/">
+                    <i class="icon-tag icon-large"></i>树莓派镜像
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/bai-he-ce-shi/">
+                    <i class="icon-tag icon-large"></i>白盒测试
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/ruan-jian-ce-shi/">
+                    <i class="icon-tag icon-large"></i>软件测试
+                </a>
+            </li>
+            <li class="tag-4" style="display: inline; margin-left: 50px;">
+                <a href="../tag/mian-xiang-dui-xiang/">
+                    <i class="icon-tag icon-large"></i>面向对象
+                </a>
+            </li>
+            <li class="tag-1" style="display: inline; margin-left: 50px;">
+                <a href="../tag/mian-shi/">
+                    <i class="icon-tag icon-large"></i>面试
+                </a>
+            </li>
+    </ul>
 
     </div><!-- /.row -->
 </div><!-- /.container -->
@@ -167,11 +194,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
-                 ©<script>document.write(new Date().getFullYear())</script> PingBook.Inc.
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
-                    <span id="busuanzi_container_site_uv">Total Vistors: <span id="busuanzi_value_site_uv"></span></span>
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
                 </div>
             </address>
         </div>
@@ -205,13 +235,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <script src="../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../theme/js/libs/gumby.min.js"></script>
 <script>
-    function validateForm(query)
-    {
+    function validateForm(query) {
         return (query.length > 0);
     }
 </script>
 <script async src="../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../theme/js/plugins.js"></script>
-
 </body>
 </html>

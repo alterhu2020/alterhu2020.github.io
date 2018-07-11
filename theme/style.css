@@ -223,3 +223,30 @@ a:focus { color: #34495E; }
 @media only screen and (max-width: 600px) {
   #banner h1 a {font-size:22px!important; line-height:24px;}
 }
+
+
+
+.navbar-search {
+  position: relative;
+  /*float: right !important;*/
+  margin-right: 10px;
+  width: auto;
+  margin-top: 8px;
+  padding-bottom: 0;
+  padding: 3px 5px;
+}
+
+.navbar-search .search-query {
+  font: 13px/1.6 'open sans', sans-serif;
+  color: #333;
+  padding: 12px 12px 12px 40px;
+  width: 170px;
+  border: 1px solid #e2e2e2;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: 0;
+  margin: 0;
+  background: #fff url(https://cdnjs.cloudflare.com/ajax/libs/Tipue-Search/5.0.0/img/search.png) no-repeat 15px 15px;
+}

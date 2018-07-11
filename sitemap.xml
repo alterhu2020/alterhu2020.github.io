@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-07-11T23:35:06-00:00</lastmod>
+<lastmod>2018-07-11T23:51:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-07-11T23:35:06-00:00</lastmod>
+<lastmod>2018-07-11T23:51:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -22,20 +22,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2018-07-11T19:12:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/change-log</loc>
-<lastmod>2018-07-11T22:15:10+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.3</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/articles/pelican-advance/</loc>
-<lastmod>2018-07-11T21:27:19+08:00</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.7</priority>
 </url>
 
 <url>
@@ -166,7 +152,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/bo-ke-da-jian/</loc>
-<lastmod>2018-07-11T21:27:19+08:06</lastmod>
+<lastmod>2018-07-11T10:31:20+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -174,13 +160,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/category/bigdata/</loc>
 <lastmod>2018-07-11T16:11:13+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/tag/pelican/</loc>
-<lastmod>2018-07-11T21:27:19+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -244,6 +223,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/tag/software-testing/</loc>
 <lastmod>2018-07-11T16:04:37+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/pelican/</loc>
+<lastmod>2018-07-11T10:31:20+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -1,54 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-11T21:27:19+08:00</updated><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-11T21:27:19+08:00</published><updated>2018-07-11T21:27:19+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h2&gt;添加google和百度的SEO&amp;nbsp;(2018-07-09)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;谷歌的收录比较简单,直接登录到这里: &lt;a href="https://www.google.com/webmasters"&gt;https://www.google.com/webmasters&lt;/a&gt;&amp;nbsp;,安装提示添加自己的网站即可&lt;/li&gt;
-&lt;li&gt;百度的可以通过进入百度站长&lt;a href="http://zhanzhang.baidu.com"&gt;http://zhanzhang.baidu.com&lt;/a&gt;,方法同上面的谷歌添加网站,验证即可.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;
-&lt;p&gt;使用的插件是: &lt;a href=""&gt;Tipue_Search&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件.&lt;br&gt;
-&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h2&gt;添加google和百度的SEO&amp;nbsp;(2018-07-09)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;谷歌的收录比较简单,直接登录到这里: &lt;a href="https://www.google.com/webmasters"&gt;https://www.google.com/webmasters&lt;/a&gt;&amp;nbsp;,安装提示添加自己的网站即可&lt;/li&gt;
-&lt;li&gt;百度的可以通过进入百度站长&lt;a href="http://zhanzhang.baidu.com"&gt;http://zhanzhang.baidu.com&lt;/a&gt;,方法同上面的谷歌添加网站,验证即可.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;
-&lt;p&gt;使用的插件是: &lt;a href=""&gt;Tipue_Search&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件.&lt;br&gt;
-&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
-&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
-&lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.&lt;br&gt;
-* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[面试] 1. 面向对象的相关概念</title><link href="https://pingbook.top/articles/1-object-oriented-programming/" rel="alternate"></link><published>2018-07-11T16:15:48+08:00</published><updated>2018-07-11T16:15:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/1-object-oriented-programming/</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-11T16:15:48+08:00</updated><entry><title>[面试] 1. 面向对象的相关概念</title><link href="https://pingbook.top/articles/1-object-oriented-programming/" rel="alternate"></link><published>2018-07-11T16:15:48+08:00</published><updated>2018-07-11T16:15:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/1-object-oriented-programming/</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;达到的目的&lt;/h2&gt;

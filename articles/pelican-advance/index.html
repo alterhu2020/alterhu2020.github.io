@@ -9,7 +9,7 @@
 
 
 
-前言 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. 增加搜索功能(2018-07-09) 使用的插件是: Tipue_Search windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env,local 解决方法很简单,执行下面的命令进行安装相关的依赖包就好了: pip install pycryptodome pip install Fabric3 # 注意这里是Fabric3,不要使用fabric 百度站长不能收录 很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理 …">
+前言 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. 添加google和百度的SEO (2018-07-09) 谷歌的收录比较简单,直接登录到这里: https://www.google.com/webmasters ,安装提示添加自己的网站即可 百度的可以通过进入百度站长http://zhanzhang.baidu.com,方法同上面的谷歌添加网站,验证即可. 增加搜索功能(2018-07-09) 使用的插件是: Tipue_Search windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件. fabfile在上面的命令生成后发现里面的文件报了好多错,from fabric.api import *,类似no module found env …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -28,6 +28,13 @@
 
         <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "ca-pub-1893384651266286",
+                    enable_page_level_ads: true
+                });
+            </script>
 
 
         <!---->
@@ -42,20 +49,28 @@
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong>import this</strong></a></h1>
+
+            <h1><a href="../..">PingBook Blog <strong>import __hello__ import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-
+                <a href="../.." class="avatar-container pull-left">
+                    <div class="avatar  animate ">
+                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
+                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
+                    </div>
+                </a>
             <ul class="columns" style="width: 100%">
-                <li><a href="../../">Home</a></li>
 
-                    <li><a href="/categories">Category</a></li>
-                    <li><a href="/archives">Archive</a></li>
-                    <li><a href="/tags">Tags</a></li>
+                    <li ><a href="/">Home</a></li>
+                    <li ><a href="/categories">Category</a></li>
+                    <li ><a href="/archives">Archive</a></li>
+                    <li ><a href="/tags">Tags</a></li>
                         <li><a
-                                href="../../pages/about.html">About</a></li>
+                                href="../../about">About</a></li>
+                        <li><a
+                                href="../../change-log">Changes</a></li>
 
             <li >
                 <div style="display: block;
@@ -82,6 +97,16 @@
     <section id="content" class="body">
 
         <div class="row">
+            <div class="two columns">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234561"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+            </div>
+
             <div class="eleven columns">
 
 
@@ -92,8 +117,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-11T21:14:00.720348+08:00">-->
-                    <!--2018-07-11 21:14:00-->
+                    <!--<abbr class="published" title="2018-07-11T21:27:19.264985+08:00">-->
+                    <!--2018-07-11 21:27:19-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -103,19 +128,31 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-11 21:14:00
+                        2018-07-11 21:27:19
                             &nbsp;&nbsp; By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
-                        <span id="busuanzi_container_page_pv">, Views <span id="busuanzi_value_page_pv"></span></span>
+                        <span id="busuanzi_container_page_pv">, <i class="icon-eye icon-large"></i><span id="busuanzi_value_page_pv"></span></span>
                         &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook博客</a>,转载请务必保留<a href="../../articles/pelican-advance/">文章链接</a></p>
                     </address>
                     <hr/>
                 </footer><!-- /.post-info -->
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234565"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 <div class="entry-content">
                     <p><br></p>
 <h2>前言</h2>
 <p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
+<h2>添加google和百度的SEO&nbsp;(2018-07-09)</h2>
+<ul>
+<li>谷歌的收录比较简单,直接登录到这里: <a href="https://www.google.com/webmasters">https://www.google.com/webmasters</a>&nbsp;,安装提示添加自己的网站即可</li>
+<li>百度的可以通过进入百度站长<a href="http://zhanzhang.baidu.com">http://zhanzhang.baidu.com</a>,方法同上面的谷歌添加网站,验证即可.</li>
+</ul>
 <h2>增加搜索功能(2018-07-09)</h2>
 <p>使用的插件是: <a href="">Tipue_Search</a></p>
 <h3>windows下的运行</h3>
@@ -145,6 +182,7 @@
 <span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
 </pre></div>
                 </div><!-- /.entry-content -->
+                <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: auto; margin-right: auto;">
                             ◄&nbsp;&nbsp;<a href="../../articles/1-object-oriented-programming/">
@@ -152,13 +190,21 @@
                         </a>
                         </li>
                 </ul>
-                <br />
+                <hr/>
                 <div class="comments">
                     <h3>Relate Articles</h3>
                         <ul>
                                 <li><a href="../../articles/try-pelican/">[初级] pelican&nbsp;博客搭建</a></li>
                         </ul>
                 </div>
+                <hr/>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234566"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                     <div class="comments">
                         <h3>Comments</h3>
                         <div id="disqus_thread"></div>
@@ -181,12 +227,17 @@
     <nav class="widget sidebarbg">
         <h4>Navigation</h4>
         <ul>
+                <li><a href="/">Home</a></li>
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                     <li
 ><a
-                            href="../../pages/about.html">About</a>
+                            href="../../about">About</a>
+                    </li>
+                    <li
+><a
+                            href="../../change-log">Changes</a>
                     </li>
         </ul>
     </nav>

@@ -1,5 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-11T08:53:46+08:00</updated><entry><title>[面试] 黑盒测试需要注意的几个关注点</title><link href="https://pingbook.top/articles/software-testing-black/" rel="alternate"></link><published>2018-07-11T08:53:46+08:00</published><updated>2018-07-11T08:53:46+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/software-testing-black/</id><summary type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-11T10:31:20+08:00</updated><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-11T10:31:20+08:00</published><updated>2018-07-11T10:31:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;关键字&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;搭建步骤&lt;/h2&gt;
+&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
+&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
+&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
+&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
+&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
+&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
+&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
+&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
+&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;关键字&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;搭建步骤&lt;/h2&gt;
+&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
+&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
+&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
+&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
+&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
+&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
+&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
+&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
+&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage your website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))&lt;/span&gt;
+&lt;span class="code-line"&gt;9. Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)&lt;/span&gt;
+&lt;span class="code-line"&gt;10. Do you want to upload your website using FTP?&lt;/span&gt;
+&lt;span class="code-line"&gt;11. Do you want to upload your website using SSH?&lt;/span&gt;
+&lt;span class="code-line"&gt;12. Do you want to upload your website using Dropbox?&lt;/span&gt;
+&lt;span class="code-line"&gt;13. Do you want to upload your website using S3?&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;命令使用&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于本人使用的是windows,这里我使用了两个命令:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# pelican content # 根据content中的内容，生成静态网站到output目下&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m pelican.server&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m SimpleHTTPServer&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;主题和插件安装&lt;/h2&gt;
+&lt;h3&gt;theme安装&lt;/h3&gt;
+&lt;p&gt;下载主题文件,添加配置: &lt;code&gt;THEME = './pelican-themes/gum'&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;插件安装&lt;/h3&gt;
+&lt;p&gt;下载插件文件,添加如下配置: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;PLUGIN_PATHS = [u&amp;quot;pelican-plugins&amp;quot;]&lt;/span&gt;
+&lt;span class="code-line"&gt;PLUGINS = [u&amp;quot;sitemap&amp;quot;,u&amp;quot;gzip_cache&amp;quot;,u&amp;quot;neighbors&amp;quot;,u&amp;quot;related_posts&amp;quot;]&lt;/span&gt;
+&lt;span class="code-line"&gt;SITEMAP = {&lt;/span&gt;
+&lt;span class="code-line"&gt;    &amp;#39;format&amp;#39;: &amp;#39;xml&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;    &amp;#39;priorities&amp;#39;: {&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: 0.7,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: 0.5,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: 0.3&lt;/span&gt;
+&lt;span class="code-line"&gt;    },&lt;/span&gt;
+&lt;span class="code-line"&gt;    &amp;#39;changefreqs&amp;#39;: {&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: &amp;#39;weekly&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: &amp;#39;daily&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: &amp;#39;monthly&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;    }&lt;/span&gt;
+&lt;span class="code-line"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;字体更改&lt;/h3&gt;
+&lt;p&gt;1.下载字体文件,到网站的静态文件夹内,具体可以参考让wordpress主题绕开对google的依赖.不过此种方法也有些问题.把静态资源放到Github上加载时间也没别之前好多少.&lt;br&gt;
+2.把Google的静态公共库替换为国内的公共库.例如我的给替换成360的镜像地址.其实这种方法也有些弊端,例如国外用户访问就会出现加载过慢的问题.但是毕竟我们在&amp;#8217;朝内&amp;#8217;,所以就换成360的资源库吧.操作如下
+在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件&lt;code&gt;gumby.css&lt;/code&gt;,修改如下: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#static/css/目录下css文件中,例如gumby.css&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#替换为&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;国内其他开公共库: 百度CDN公共库; 新浪云计算CDN公共库; 又拍云JS库CDN服务;&amp;nbsp;七牛云静态文件CDN;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;高级语法&lt;/h2&gt;
+&lt;h3&gt;静态图片&lt;/h3&gt;
+&lt;p&gt;新建一个目录在&lt;code&gt;content&lt;/code&gt;下面,例如&lt;code&gt;images&lt;/code&gt;,然后在&lt;code&gt;pelicanconf.py&lt;/code&gt;设置如下:
+&lt;code&gt;STATIC_PATHS = ['images','downloads']&lt;/code&gt;
+,在对应的md中可以这样写语法:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/try-pelican/test.png"&gt;&lt;/p&gt;
+&lt;h2&gt;部署&lt;/h2&gt;
+&lt;h3&gt;部署到github上&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;新建一个仓库,仓库名称和你的昵称相同或者创建一个组织&lt;/li&gt;
+&lt;li&gt;使用如下命令上传&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd output&lt;/span&gt;
+&lt;span class="code-line"&gt;git init&lt;/span&gt;
+&lt;span class="code-line"&gt;git add .&lt;/span&gt;
+&lt;span class="code-line"&gt;git remote add origin 仓库git地址&lt;/span&gt;
+&lt;span class="code-line"&gt;git push -u origin master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[面试] 黑盒测试需要注意的几个关注点</title><link href="https://pingbook.top/articles/software-testing-black/" rel="alternate"></link><published>2018-07-11T08:53:46+08:00</published><updated>2018-07-11T08:53:46+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/software-testing-black/</id><summary type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;是软件工程中的一个非常重要的环节，是开发项目整体的一部分。&lt;br&gt;
 是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，&lt;br&gt;&amp;nbsp;不可能发现全部缺陷，软件测试是有局限性的。&lt;/p&gt;
@@ -1366,120 +1496,4 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
 &lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-06T23:47:20+08:00</published><updated>2018-07-06T23:47:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-06:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;关键字&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;搭建步骤&lt;/h2&gt;
-&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
-&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
-&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
-&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
-&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
-&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
-&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
-&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
-&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;关键字&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;搭建步骤&lt;/h2&gt;
-&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
-&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
-&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
-&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
-&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
-&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
-&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
-&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
-&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage your website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))&lt;/span&gt;
-&lt;span class="code-line"&gt;9. Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)&lt;/span&gt;
-&lt;span class="code-line"&gt;10. Do you want to upload your website using FTP?&lt;/span&gt;
-&lt;span class="code-line"&gt;11. Do you want to upload your website using SSH?&lt;/span&gt;
-&lt;span class="code-line"&gt;12. Do you want to upload your website using Dropbox?&lt;/span&gt;
-&lt;span class="code-line"&gt;13. Do you want to upload your website using S3?&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;命令使用&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;由于本人使用的是windows,这里我使用了两个命令:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# pelican content # 根据content中的内容，生成静态网站到output目下&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m pelican.server&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m SimpleHTTPServer&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;主题和插件安装&lt;/h2&gt;
-&lt;h3&gt;theme安装&lt;/h3&gt;
-&lt;p&gt;下载主题文件,添加配置: &lt;code&gt;THEME = './pelican-themes/gum'&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;插件安装&lt;/h3&gt;
-&lt;p&gt;下载插件文件,添加如下配置: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;PLUGIN_PATHS = [u&amp;quot;pelican-plugins&amp;quot;]&lt;/span&gt;
-&lt;span class="code-line"&gt;PLUGINS = [u&amp;quot;sitemap&amp;quot;,u&amp;quot;gzip_cache&amp;quot;,u&amp;quot;neighbors&amp;quot;,u&amp;quot;related_posts&amp;quot;]&lt;/span&gt;
-&lt;span class="code-line"&gt;SITEMAP = {&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;format&amp;#39;: &amp;#39;xml&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;priorities&amp;#39;: {&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: 0.7,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: 0.5,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: 0.3&lt;/span&gt;
-&lt;span class="code-line"&gt;    },&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;changefreqs&amp;#39;: {&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: &amp;#39;weekly&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: &amp;#39;daily&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: &amp;#39;monthly&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;    }&lt;/span&gt;
-&lt;span class="code-line"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;字体更改&lt;/h3&gt;
-&lt;p&gt;在对应的主题的css文件中修改对应的google&amp;nbsp;font切换到国内的镜像.&lt;/p&gt;
-&lt;h2&gt;高级语法&lt;/h2&gt;
-&lt;h3&gt;静态图片&lt;/h3&gt;
-&lt;p&gt;新建一个目录在&lt;code&gt;content&lt;/code&gt;下面,例如&lt;code&gt;images&lt;/code&gt;,然后在&lt;code&gt;pelicanconf.py&lt;/code&gt;设置如下:
-&lt;code&gt;STATIC_PATHS = ['images','downloads']&lt;/code&gt;
-,在对应的md中可以这样写语法:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/try-pelican/test.png"&gt;&lt;/p&gt;
-&lt;h2&gt;部署&lt;/h2&gt;
-&lt;h3&gt;部署到github上&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;新建一个仓库,仓库名称和你的昵称相同或者创建一个组织&lt;/li&gt;
-&lt;li&gt;使用如下命令上传&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd output&lt;/span&gt;
-&lt;span class="code-line"&gt;git init&lt;/span&gt;
-&lt;span class="code-line"&gt;git add .&lt;/span&gt;
-&lt;span class="code-line"&gt;git remote add origin 仓库git地址&lt;/span&gt;
-&lt;span class="code-line"&gt;git push -u origin master&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry></feed>

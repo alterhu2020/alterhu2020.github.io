@@ -69,8 +69,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-06T23:47:20.521679+08:00">-->
-                    <!--2018 七月 06, 星期五-->
+                    <!--<abbr class="published" title="2018-07-11T10:31:20.038709+08:00">-->
+                    <!--2018 七月 11, 星期三-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -80,7 +80,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018 七月 06, 星期五
+                        2018 七月 11, 星期三
                             &nbsp;&nbsp; By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -161,7 +161,21 @@
 
 
 <h3>字体更改</h3>
-<p>在对应的主题的css文件中修改对应的google&nbsp;font切换到国内的镜像.</p>
+<p>1.下载字体文件,到网站的静态文件夹内,具体可以参考让wordpress主题绕开对google的依赖.不过此种方法也有些问题.把静态资源放到Github上加载时间也没别之前好多少.<br>
+2.把Google的静态公共库替换为国内的公共库.例如我的给替换成360的镜像地址.其实这种方法也有些弊端,例如国外用户访问就会出现加载过慢的问题.但是毕竟我们在&#8217;朝内&#8217;,所以就换成360的资源库吧.操作如下
+在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件<code>gumby.css</code>,修改如下: </p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="c1">#static/css/目录下css文件中,例如gumby.css</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">googleapi</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">Overlock</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">700</span><span class="p">,</span><span class="mi">900</span><span class="p">);</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">googleapi</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">PT</span><span class="o">+</span><span class="n">Mono</span><span class="p">);</span></span>
+<span class="code-line"><span class="c1">#替换为</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">useso</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">Overlock</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">700</span><span class="p">,</span><span class="mi">900</span><span class="p">);</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">useso</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">PT</span><span class="o">+</span><span class="n">Mono</span><span class="p">);</span></span>
+</pre></div>
+
+
+<blockquote>
+<p>国内其他开公共库: 百度CDN公共库; 新浪云计算CDN公共库; 又拍云JS库CDN服务;&nbsp;七牛云静态文件CDN;</p>
+</blockquote>
 <h2>高级语法</h2>
 <h3>静态图片</h3>
 <p>新建一个目录在<code>content</code>下面,例如<code>images</code>,然后在<code>pelicanconf.py</code>设置如下:
@@ -183,8 +197,8 @@
                 </div><!-- /.entry-content -->
                 <ul style="float:right;">
                         <li>
-                            ►&nbsp;&nbsp;<a href="../../articles/pi-installation/">
-                            树莓派3B安装
+                            ◄&nbsp;&nbsp;<a href="../../articles/software-testing-black/">
+                            [面试]&nbsp;黑盒测试需要注意的几个关注点
                         </a>
                         </li>
                 </ul>

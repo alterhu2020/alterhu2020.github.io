@@ -40,7 +40,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="..">PingBook Blog <strong></strong></a></h1>
+            <h1><a href="..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
@@ -52,39 +52,40 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                    <li><form class="navbar-search" action="../search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
 
             </ul>
         </div>
 
     <br>
 <dl>
-    <dt>2018 七月 11, 星期三</dt>
+    <dt>周三, 11 七月 2018</dt>
     <dd><a href="../articles/try-pelican/">[初级] pelican&nbsp;博客搭建</a></dd>
-    <dt>2018 七月 11, 星期三</dt>
+    <dt>周三, 11 七月 2018</dt>
     <dd><a href="../articles/software-testing-black/">[面试]&nbsp;黑盒测试需要注意的几个关注点</a></dd>
-    <dt>2018 七月 11, 星期三</dt>
+    <dt>周三, 11 七月 2018</dt>
     <dd><a href="../articles/software-testing-white/">[面试]&nbsp;白盒测试需要关注的知识点</a></dd>
-    <dt>2018 七月 10, 星期二</dt>
+    <dt>周二, 10 七月 2018</dt>
     <dd><a href="../articles/pi-nginx/">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></dd>
-    <dt>2018 七月 10, 星期二</dt>
+    <dt>周二, 10 七月 2018</dt>
     <dd><a href="../articles/pi-nat123/">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></dd>
-    <dt>2018 七月 10, 星期二</dt>
+    <dt>周二, 10 七月 2018</dt>
     <dd><a href="../articles/1-object-oriented-programming/">[面试] 1.&nbsp;面向对象的相关概念</a></dd>
-    <dt>2018 七月 10, 星期二</dt>
+    <dt>周二, 10 七月 2018</dt>
     <dd><a href="../articles/2-list-methods/">[面试] 2.&nbsp;有关list及其方法的使用</a></dd>
-    <dt>2018 七月 09, 星期一</dt>
+    <dt>周一, 09 七月 2018</dt>
     <dd><a href="../articles/pelican-advance/">[高级] pelican&nbsp;博客高级配置</a></dd>
-    <dt>2018 七月 09, 星期一</dt>
+    <dt>周一, 09 七月 2018</dt>
     <dd><a href="../articles/pi-tomcat/">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></dd>
-    <dt>2018 七月 09, 星期一</dt>
+    <dt>周一, 09 七月 2018</dt>
     <dd><a href="../articles/pi-svn/">[Linux环境搭建]  svn&nbsp;安装配置</a></dd>
-    <dt>2018 七月 09, 星期一</dt>
+    <dt>周一, 09 七月 2018</dt>
     <dd><a href="../articles/pi-mysql/">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></dd>
-    <dt>2018 七月 09, 星期一</dt>
+    <dt>周一, 09 七月 2018</dt>
     <dd><a href="../articles/pi-python3/">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></dd>
-    <dt>2018 七月 08, 星期日</dt>
+    <dt>周日, 08 七月 2018</dt>
     <dd><a href="../articles/pi-mirrors/">树莓派外部网站搭建</a></dd>
-    <dt>2018 七月 08, 星期日</dt>
+    <dt>周日, 08 七月 2018</dt>
     <dd><a href="../articles/pi-installation/">树莓派3B安装</a></dd>
 </dl>
 
@@ -136,7 +137,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </script>
 <script src="../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../theme/js/libs/gumby.min.js"></script>
+<script>
+    function validateForm(query)
+    {
+        return (query.length > 0);
+    }
+</script>
 <script async src="../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../theme/js/plugins.js"></script>
+
 </body>
 </html>

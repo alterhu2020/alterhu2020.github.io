@@ -40,7 +40,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     <div class="row">
 
         <header id="banner" class="body">
-            <h1><a href="../..">PingBook Blog <strong></strong></a></h1>
+            <h1><a href="../..">PingBook Blog <strong>Code More, Learn More</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
@@ -52,6 +52,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li><a href="/categories">Category</a></li>
                     <li><a href="/archives">Archive</a></li>
                     <li><a href="/tags">Tags</a></li>
+                    <li><form class="navbar-search" action="../../search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
 
             </ul>
         </div>
@@ -69,7 +70,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <header> <h2 class="entry-title"><a href="../../articles/software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T08:47:28.896015+08:00">
-                                        Post @ 2018 七月 11, 星期三,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                        Post @ 周三, 11 七月 2018,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -246,7 +247,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </script>
 <script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
 <script src="../../theme/js/libs/gumby.min.js"></script>
+<script>
+    function validateForm(query)
+    {
+        return (query.length > 0);
+    }
+</script>
 <script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
 <script src="../../theme/js/plugins.js"></script>
+
 </body>
 </html>

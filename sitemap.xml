@@ -5,23 +5,16 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-07-11T23:51:01-00:00</lastmod>
+<lastmod>2018-07-11T23:57:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-07-11T23:51:01-00:00</lastmod>
+<lastmod>2018-07-11T23:57:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/about</loc>
-<lastmod>2018-07-11T19:12:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.3</priority>
 </url>
 
 <url>

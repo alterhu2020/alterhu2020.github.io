@@ -1154,52 +1154,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;&lt;/p&gt;</content
 &lt;ul&gt;
 &lt;li&gt;重启&lt;code&gt;crontab&lt;/code&gt;以便生效
 &lt;code&gt;sudo systemctl restart cron.service&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="mysql"></category><category term="mysql备份"></category></entry><entry><title>[Linux环境搭建] 如何完整卸载python2/3 在debain上</title><link href="https://pingbook.top/articles/pi-python3/" rel="alternate"></link><published>2018-07-09T20:27:12+08:00</published><updated>2018-07-09T20:27:12+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-09:/articles/pi-python3/</id><summary type="html">&lt;h2&gt;卸载命令&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal&lt;span class="sb"&gt;`&lt;/span&gt;,&lt;span class="sb"&gt;`&lt;/span&gt;python3.5-venv&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;安装最新python3.7&lt;/h2&gt;
-&lt;p&gt;因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,安装如下进行安装,
-参考文档: &lt;a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6"&gt;https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;安装依赖包&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;xz-utils tk-dev libffi-dev&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo wget https://www.python.org …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;卸载命令&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal&lt;span class="sb"&gt;`&lt;/span&gt;,&lt;span class="sb"&gt;`&lt;/span&gt;python3.5-venv&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;安装最新python3.7&lt;/h2&gt;
-&lt;p&gt;因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,安装如下进行安装,
-参考文档: &lt;a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6"&gt;https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;安装依赖包&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;xz-utils tk-dev libffi-dev&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar xvf Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./configure --enable-optimizations --with-ensurepip=install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make -j8&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make altinstall&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;安装pip,pipenv并设置全局可用命令&lt;code&gt;pipenv&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ wget https://bootstrap.pypa.io/get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo python get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pip install --user pipenv&lt;/span&gt;
-&lt;span class="code-line"&gt; /home/pi/.local/bin&lt;/span&gt;
-&lt;span class="code-line"&gt;$ python -m site --user-base&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.local/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo &lt;span class="nb"&gt;source&lt;/span&gt; ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pipenv --update&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category><category term="python3"></category></entry><entry><title>树莓派外部网站搭建</title><link href="https://pingbook.top/articles/pi-mirrors/" rel="alternate"></link><published>2018-07-08T23:35:08+08:00</published><updated>2018-07-08T23:35:08+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-08:/articles/pi-mirrors/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="mysql"></category><category term="mysql备份"></category></entry><entry><title>树莓派外部网站搭建</title><link href="https://pingbook.top/articles/pi-mirrors/" rel="alternate"></link><published>2018-07-08T23:35:08+08:00</published><updated>2018-07-08T23:35:08+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-08:/articles/pi-mirrors/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;前因&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;

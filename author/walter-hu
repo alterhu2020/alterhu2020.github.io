@@ -2,7 +2,8 @@
 <html lang="zh_cn">
 <head>
 
-        <title>PingBook Blog</title>
+        <title>    Articles by Walter Hu
+</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
@@ -21,12 +22,12 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="./theme/gumby.css"/>
-        <link rel="stylesheet" type="text/css" href="./theme/style.css"/>
-        <link rel="stylesheet" type="text/css" href="./theme/pygment.css"/>
+        <link rel="stylesheet" type="text/css" href="../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../theme/pygment.css"/>
 
 
-        <script src="./theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <script>
@@ -68,12 +69,12 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <header id="banner" class="body">
 
-            <h1><a href=".">PingBook Blog <strong>import __hello__ import this</strong></a></h1>
+            <h1><a href="..">PingBook Blog <strong>import __hello__ import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="." class="avatar-container pull-left">
+                <a href=".." class="avatar-container pull-left">
                     <div class="avatar  animate ">
                         <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
                             <div class="side back"><p class="text-center">Might come with a beard</p></div>
@@ -86,7 +87,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                         <li><a
-                                href="./about">About</a></li>
+                                href="../about">About</a></li>
 
             <li >
                 <div style="display: block;
@@ -98,7 +99,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     line-height: 58px;
     font-size: 16px;
     font-size: 1rem;">
-                <form class="navbar-search" action="./search.html"
+                <form class="navbar-search" action="../search.html"
                       onsubmit="return validateForm(this.elements['q'].value);">
                     <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
                 </form>
@@ -119,10 +120,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T23:39:35.632250+08:00">
-                                        Posted @ 2018-07-11 23:39:35,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 23:39:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -142,23 +143,23 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
 这个文件 …</p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/pelican/">pelican</a>
+                                            <a class="danger label" href="../tag/pelican/">pelican</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">[面试] 1.&nbsp;面向对象的相关概念</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">[面试] 1.&nbsp;面向对象的相关概念</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T16:15:48.433884+08:00">
-                                        Posted @ 2018-07-11 16:15:48,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 16:15:48,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -170,25 +171,25 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <li>面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&nbsp;(Polymorphism) </li>
 </ul> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/mian-xiang-dui-xiang/">面向对象</a>
-                                            <a class="danger label" href="./tag/mian-shi/">面试</a>
-                                            <a class="danger label" href="./tag/java/">java</a>
+                                            <a class="danger label" href="../tag/mian-xiang-dui-xiang/">面向对象</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
+                                            <a class="danger label" href="../tag/java/">java</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用">[面试] 2.&nbsp;有关list及其方法的使用</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用">[面试] 2.&nbsp;有关list及其方法的使用</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T16:15:15.211102+08:00">
-                                        Posted @ 2018-07-11 16:15:15,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 16:15:15,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -210,48 +211,48 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <li>python没有array,只有list,直接使用<code>sort</code>方法即可,如果是倒序可以用reverse=True指定</li>
 </ol> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/mian-shi/">面试</a>
-                                            <a class="danger label" href="./tag/list/">list</a>
-                                            <a class="danger label" href="./tag/java/">java</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
+                                            <a class="danger label" href="../tag/list/">list</a>
+                                            <a class="danger label" href="../tag/java/">java</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令">[整理]&nbsp;一些常用的linux系统的操作命令</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令">[整理]&nbsp;一些常用的linux系统的操作命令</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T16:13:50.400268+08:00">
-                                        Posted @ 2018-07-11 16:13:50,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 16:13:50,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <h2>常用命令</h2>
 <h3>性能相关的命令</h3> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/linux/">linux</a>
+                                            <a class="danger label" href="../tag/linux/">linux</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念">大数据hadoop,spark,hbase,hive概念</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念">大数据hadoop,spark,hbase,hive概念</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T16:11:13.338983+08:00">
-                                        Posted @ 2018-07-11 16:11:13,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 16:11:13,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -260,24 +261,24 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <p>到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.</p>
 </blockquote> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/bigdata/">bigdata</a>
-                                            <a class="danger label" href="./tag/hadoop/">hadoop</a>
+                                            <a class="danger label" href="../tag/bigdata/">bigdata</a>
+                                            <a class="danger label" href="../tag/hadoop/">hadoop</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T16:05:26.868315+08:00">
-                                        Posted @ 2018-07-11 16:05:26,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 16:05:26,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -293,23 +294,23 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install -y xrdp</span>
 </pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点">[面试] 1.&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点">[面试] 1.&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T16:04:37.279819+08:00">
-                                        Posted @ 2018-07-11 16:04:37,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 16:04:37,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -334,24 +335,24 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
 * 步骤：<br>
          a)划分有效等价类，对规格说明 是 有意义 合理的 输入数据 …</p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/software-testing/">Software Testing</a>
-                                            <a class="danger label" href="./tag/mian-shi/">面试</a>
+                                            <a class="danger label" href="../tag/software-testing/">Software Testing</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T10:31:20.038709+08:00">
-                                        Posted @ 2018-07-11 10:31:20,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 10:31:20,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -377,23 +378,23 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
 <p>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在<code>pelicanconf.py</code>修改,直接默认回车一路下去就好了! <br/>&nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</p>
 <div class="highlight"><pre><span class="code-line"><span></span>1. Where do you want to …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/pelican/">pelican</a>
+                                            <a class="danger label" href="../tag/pelican/">pelican</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T08:47:28.896015+08:00">
-                                        Posted @ 2018-07-11 08:47:28,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-11 08:47:28,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -416,25 +417,25 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
 <h3>白盒测试方法</h3>
 <p>①、静态测试&nbsp;静态测试是指不运行程序本身 …</p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/bai-he-ce-shi/">白盒测试</a>
-                                            <a class="danger label" href="./tag/ruan-jian-ce-shi/">软件测试</a>
-                                            <a class="danger label" href="./tag/mian-shi/">面试</a>
+                                            <a class="danger label" href="../tag/bai-he-ce-shi/">白盒测试</a>
+                                            <a class="danger label" href="../tag/ruan-jian-ce-shi/">软件测试</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-10T22:11:17.195355+08:00">
-                                        Posted @ 2018-07-10 22:11:17,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-10 22:11:17,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -460,13 +461,13 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
 <ul>
 <li>安装对应的nginx的所有依赖的包, gcc环境 …</li></ul> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/nginx/">nginx</a>
+                                            <a class="danger label" href="../tag/nginx/">nginx</a>
                                 </div>
 
 
@@ -486,7 +487,7 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
                 <li><a href="/tags">Tags</a></li>
                     <li
 ><a
-                            href="./about">About</a>
+                            href="../about">About</a>
                     </li>
         </ul>
     </nav>
@@ -494,11 +495,11 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
-                        <li><a href="./category/shu-mei-pai/">树莓派</a></li>
-                        <li><a href="./category/mian-shi/">面试</a></li>
-                        <li><a href="./category/linux/">linux</a></li>
-                        <li><a href="./category/bo-ke-da-jian/">博客搭建</a></li>
-                        <li><a href="./category/bigdata/">bigdata</a></li>
+                        <li><a href="../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../category/mian-shi/">面试</a></li>
+                        <li><a href="../category/linux/">linux</a></li>
+                        <li><a href="../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -507,25 +508,25 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-2"><a href="./tag/nat123/">NAT123</a></li>
-                    <li class="tag-4"><a href="./tag/software-testing/">Software Testing</a></li>
-                    <li class="tag-4"><a href="./tag/tomcat9/">Tomcat9</a></li>
-                    <li class="tag-4"><a href="./tag/bigdata/">bigdata</a></li>
-                    <li class="tag-4"><a href="./tag/hadoop/">hadoop</a></li>
-                    <li class="tag-2"><a href="./tag/java/">java</a></li>
-                    <li class="tag-4"><a href="./tag/linux/">linux</a></li>
-                    <li class="tag-4"><a href="./tag/list/">list</a></li>
-                    <li class="tag-4"><a href="./tag/mysql/">mysql</a></li>
-                    <li class="tag-4"><a href="./tag/mysqlbei-fen/">mysql备份</a></li>
-                    <li class="tag-4"><a href="./tag/nginx/">nginx</a></li>
-                    <li class="tag-2"><a href="./tag/pelican/">pelican</a></li>
-                    <li class="tag-4"><a href="./tag/svn/">svn</a></li>
-                    <li class="tag-1"><a href="./tag/shu-mei-pai/">树莓派</a></li>
-                    <li class="tag-4"><a href="./tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
-                    <li class="tag-4"><a href="./tag/bai-he-ce-shi/">白盒测试</a></li>
-                    <li class="tag-4"><a href="./tag/ruan-jian-ce-shi/">软件测试</a></li>
-                    <li class="tag-4"><a href="./tag/mian-xiang-dui-xiang/">面向对象</a></li>
-                    <li class="tag-1"><a href="./tag/mian-shi/">面试</a></li>
+                    <li class="tag-2"><a href="../tag/nat123/">NAT123</a></li>
+                    <li class="tag-4"><a href="../tag/software-testing/">Software Testing</a></li>
+                    <li class="tag-4"><a href="../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../tag/linux/">linux</a></li>
+                    <li class="tag-4"><a href="../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="../tag/ruan-jian-ce-shi/">软件测试</a></li>
+                    <li class="tag-4"><a href="../tag/mian-xiang-dui-xiang/">面向对象</a></li>
+                    <li class="tag-1"><a href="../tag/mian-shi/">面试</a></li>
             </ul>
         </nav>
 
@@ -555,7 +556,7 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
 
 <p class="paginator">
      第1页/共2页
-        <a href="./index2.html"><i class="icon-arrow-right"></i></a>
+        <a href="../author/walter-hu2.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->
 
@@ -608,14 +609,14 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-<script src="./theme/js/libs/jquery-1.9.1.min.js"></script>
-<script src="./theme/js/libs/gumby.min.js"></script>
+<script src="../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../theme/js/libs/gumby.min.js"></script>
 <script>
     function validateForm(query) {
         return (query.length > 0);
     }
 </script>
-<script async src="./theme/js/libs/busuanzi.pure.mini.js"></script>
-<script src="./theme/js/plugins.js"></script>
+<script async src="../theme/js/libs/busuanzi.pure.mini.js"></script>
+<script src="../theme/js/plugins.js"></script>
 </body>
 </html>

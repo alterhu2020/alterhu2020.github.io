@@ -2,7 +2,8 @@
 <html lang="zh_cn">
 <head>
 
-        <title>PingBook Blog</title>
+        <title>    Articles by Walter Hu
+</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
@@ -21,12 +22,12 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="./theme/gumby.css"/>
-        <link rel="stylesheet" type="text/css" href="./theme/style.css"/>
-        <link rel="stylesheet" type="text/css" href="./theme/pygment.css"/>
+        <link rel="stylesheet" type="text/css" href="../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../theme/pygment.css"/>
 
 
-        <script src="./theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="../theme/js/libs/modernizr-2.6.2.min.js"></script>
 
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <script>
@@ -58,12 +59,12 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <header id="banner" class="body">
 
-            <h1><a href=".">PingBook Blog <strong>import __hello__ import this</strong></a></h1>
+            <h1><a href="..">PingBook Blog <strong>import __hello__ import this</strong></a></h1>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="." class="avatar-container pull-left">
+                <a href=".." class="avatar-container pull-left">
                     <div class="avatar  animate ">
                         <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
                             <div class="side back"><p class="text-center">Might come with a beard</p></div>
@@ -76,7 +77,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                         <li><a
-                                href="./about">About</a></li>
+                                href="../about">About</a></li>
 
             <li >
                 <div style="display: block;
@@ -88,7 +89,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
     line-height: 58px;
     font-size: 16px;
     font-size: 1rem;">
-                <form class="navbar-search" action="./search.html"
+                <form class="navbar-search" action="../search.html"
                       onsubmit="return validateForm(this.elements['q'].value);">
                     <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
                 </form>
@@ -109,10 +110,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-10T20:47:02.674460+08:00">
-                                        Posted @ 2018-07-10 20:47:02,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-10 20:47:02,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -124,24 +125,24 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
 <div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123 …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/nat123/">NAT123</a>
-                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../tag/nat123/">NAT123</a>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T22:46:39.124456+08:00">
-                                        Posted @ 2018-07-09 22:46:39,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-09 22:46:39,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -168,23 +169,23 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo groupadd tomcat</span>
 <span class="code-line">$ sudo useradd -s /bin/false …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/tomcat9/">Tomcat9</a>
+                                            <a class="danger label" href="../tag/tomcat9/">Tomcat9</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置">[Linux环境搭建]  svn&nbsp;安装配置</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置">[Linux环境搭建]  svn&nbsp;安装配置</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T21:33:36.432567+08:00">
-                                        Posted @ 2018-07-09 21:33:36,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-09 21:33:36,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -207,23 +208,23 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <span class="code-line">wkr 6537 0.0 0.0 13784 956 ? Ss 16:18 0:00 svnserve -d</span>
 <span class="code-line">wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-svn/" rel="bookmark" title="Permalink to [Linux环境搭建] svn 安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/svn/">svn</a>
+                                            <a class="danger label" href="../tag/svn/">svn</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T20:27:24.371368+08:00">
-                                        Posted @ 2018-07-09 20:27:24,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-09 20:27:24,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -252,24 +253,24 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/mysql/">mysql</a>
-                                            <a class="danger label" href="./tag/mysqlbei-fen/">mysql备份</a>
+                                            <a class="danger label" href="../tag/mysql/">mysql</a>
+                                            <a class="danger label" href="../tag/mysqlbei-fen/">mysql备份</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-09T20:27:12.524805+08:00">
-                                        Posted @ 2018-07-09 20:27:12,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-09 20:27:12,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -288,24 +289,24 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <span class="code-line">xz-utils tk-dev libffi-dev</span>
 <span class="code-line">$ sudo wget https://www.python.org …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
-                                            <a class="danger label" href="./tag/python3/">python3</a>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../tag/python3/">python3</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-08T23:35:08.403457+08:00">
-                                        Posted @ 2018-07-08 23:35:08,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+                                        Posted @ 2018-07-08 23:35:08,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -323,15 +324,15 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 <p>用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn …</p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="./articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tags: </span>
-                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
-                                            <a class="danger label" href="./tag/nat123/">nat123</a>
-                                            <a class="danger label" href="./tag/shu-mei-pai-jing-xiang/">树莓派镜像</a>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../tag/nat123/">nat123</a>
+                                            <a class="danger label" href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a>
                                 </div>
 
 
@@ -351,7 +352,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/tags">Tags</a></li>
                     <li
 ><a
-                            href="./about">About</a>
+                            href="../about">About</a>
                     </li>
         </ul>
     </nav>
@@ -359,11 +360,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
-                        <li><a href="./category/shu-mei-pai/">树莓派</a></li>
-                        <li><a href="./category/mian-shi/">面试</a></li>
-                        <li><a href="./category/linux/">linux</a></li>
-                        <li><a href="./category/bo-ke-da-jian/">博客搭建</a></li>
-                        <li><a href="./category/bigdata/">bigdata</a></li>
+                        <li><a href="../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../category/mian-shi/">面试</a></li>
+                        <li><a href="../category/linux/">linux</a></li>
+                        <li><a href="../category/bo-ke-da-jian/">博客搭建</a></li>
+                        <li><a href="../category/bigdata/">bigdata</a></li>
                 </ul>
             </nav>
         </div>
@@ -372,26 +373,26 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-2"><a href="./tag/nat123/">NAT123</a></li>
-                    <li class="tag-4"><a href="./tag/software-testing/">Software Testing</a></li>
-                    <li class="tag-4"><a href="./tag/tomcat9/">Tomcat9</a></li>
-                    <li class="tag-4"><a href="./tag/bigdata/">bigdata</a></li>
-                    <li class="tag-4"><a href="./tag/hadoop/">hadoop</a></li>
-                    <li class="tag-2"><a href="./tag/java/">java</a></li>
-                    <li class="tag-4"><a href="./tag/linux/">linux</a></li>
-                    <li class="tag-4"><a href="./tag/list/">list</a></li>
-                    <li class="tag-4"><a href="./tag/mysql/">mysql</a></li>
-                    <li class="tag-4"><a href="./tag/mysqlbei-fen/">mysql备份</a></li>
-                    <li class="tag-4"><a href="./tag/nginx/">nginx</a></li>
-                    <li class="tag-2"><a href="./tag/pelican/">pelican</a></li>
-                    <li class="tag-4"><a href="./tag/python3/">python3</a></li>
-                    <li class="tag-4"><a href="./tag/svn/">svn</a></li>
-                    <li class="tag-1"><a href="./tag/shu-mei-pai/">树莓派</a></li>
-                    <li class="tag-4"><a href="./tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
-                    <li class="tag-4"><a href="./tag/bai-he-ce-shi/">白盒测试</a></li>
-                    <li class="tag-4"><a href="./tag/ruan-jian-ce-shi/">软件测试</a></li>
-                    <li class="tag-4"><a href="./tag/mian-xiang-dui-xiang/">面向对象</a></li>
-                    <li class="tag-1"><a href="./tag/mian-shi/">面试</a></li>
+                    <li class="tag-2"><a href="../tag/nat123/">NAT123</a></li>
+                    <li class="tag-4"><a href="../tag/software-testing/">Software Testing</a></li>
+                    <li class="tag-4"><a href="../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-2"><a href="../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../tag/linux/">linux</a></li>
+                    <li class="tag-4"><a href="../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-4"><a href="../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../tag/svn/">svn</a></li>
+                    <li class="tag-1"><a href="../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="../tag/ruan-jian-ce-shi/">软件测试</a></li>
+                    <li class="tag-4"><a href="../tag/mian-xiang-dui-xiang/">面向对象</a></li>
+                    <li class="tag-1"><a href="../tag/mian-shi/">面试</a></li>
             </ul>
         </nav>
 
@@ -420,7 +421,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </div> </div><!-- /.row -->
 
 <p class="paginator">
-            <a href="./index.html"><i class="icon-arrow-left"></i></a>
+            <a href="../author/walter-hu.html"><i class="icon-arrow-left"></i></a>
      第2页/共2页
 </p>
 </section><!-- /#content -->
@@ -474,14 +475,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-<script src="./theme/js/libs/jquery-1.9.1.min.js"></script>
-<script src="./theme/js/libs/gumby.min.js"></script>
+<script src="../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../theme/js/libs/gumby.min.js"></script>
 <script>
     function validateForm(query) {
         return (query.length > 0);
     }
 </script>
-<script async src="./theme/js/libs/busuanzi.pure.mini.js"></script>
-<script src="./theme/js/plugins.js"></script>
+<script async src="../theme/js/libs/busuanzi.pure.mini.js"></script>
+<script src="../theme/js/plugins.js"></script>
 </body>
 </html>

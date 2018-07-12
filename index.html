@@ -75,6 +75,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/categories">Category</a></li>
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
+                        <li><a
+                                href="./about">About</a></li>
+                        <li><a
+                                href="./change-log">Changes</a></li>
 
             <li >
                 <div style="display: block;
@@ -106,6 +110,42 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div class="eleven columns">
                  <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="./articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T23:39:35.632250+08:00">
+                                        Posted @ 2018-07-11 23:39:35,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<h2>前言</h2>
+<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
+<h2>添加google和百度的SEO&nbsp;(2018-07-09)</h2>
+<ul>
+<li>谷歌的收录比较简单,直接登录到这里: <a href="https://www.google.com/webmasters">https://www.google.com/webmasters</a>&nbsp;,安装提示添加自己的网站即可</li>
+<li>百度的可以通过进入百度站长<a href="http://zhanzhang.baidu.com">http://zhanzhang.baidu.com</a>,方法同上面的谷歌添加网站,验证即可.</li>
+<li>加入谷歌广告:<a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home">https://www.google.com/adsense/new/u/0/pub-1893384651266286/home</a></li>
+</ul>
+<h2>增加搜索功能(2018-07-09)</h2>
+<p>使用的插件是: <a href="">Tipue_Search</a></p>
+<h3>windows下的运行</h3>
+<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
+你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
+这个文件 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="./articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="./tag/pelican/">pelican</a>
+                                </div>
+
+
+
+                        </article></li>
                         <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="./articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">[面试] 1.&nbsp;面向对象的相关概念</a></h2> </header>
                                 <footer class="post-info">
@@ -424,35 +464,6 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="./articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T20:47:02.674460+08:00">
-                                        Posted @ 2018-07-10 20:47:02,                                     By                                     <a class="url fn" href="./author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>安装步骤</h2>
-<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a>
-1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp<br>
-2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
-~~3. 安装<code>sudo apt-get  install  -y mono-complete</code>,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: <a href="https://pingbook.top/articles/pi-mirrors/">https://pingbook.top/articles/pi-mirrors/</a>~~
-4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123 …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="./articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="./tag/nat123/">NAT123</a>
-                                            <a class="danger label" href="./tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -465,6 +476,14 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
+                    <li
+><a
+                            href="./about">About</a>
+                    </li>
+                    <li
+><a
+                            href="./change-log">Changes</a>
+                    </li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -495,7 +514,7 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
                     <li class="tag-4"><a href="./tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="./tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="./tag/nginx/">nginx</a></li>
-                    <li class="tag-4"><a href="./tag/pelican/">pelican</a></li>
+                    <li class="tag-2"><a href="./tag/pelican/">pelican</a></li>
                     <li class="tag-4"><a href="./tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="./tag/svn/">svn</a></li>
                     <li class="tag-1"><a href="./tag/shu-mei-pai/">树莓派</a></li>

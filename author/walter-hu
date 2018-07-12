@@ -86,9 +86,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/categories">Category</a></li>
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
-                        <li><a
-                                href="../about">About</a></li>
-
+                    <li ><a href="/about">About</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -120,28 +118,72 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T00:01:02.776753+08:00">
+                                        Posted @ 2018-07-13 00:01:02,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">树莓派安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>安装完成后，TF卡被分成两个分区：<br>
+1. <span class="caps">67MB</span> vfat格式的引导分区（系统启动后被挂载在/boot目录）
+2. TF卡剩余空间&nbsp;ext4格式的磁盘分区</p>
+<p>由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
+若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。</p>
+<h2 id="lite">安装的是lite版本<a class="headerlink" href="#lite" title="Permanent link">&para;</a></h2>
+<p>在没有显示屏网线的情况下可以通过如下方式进行远程操作.
+1. 新建一个没有后缀的文件<code>ssh</code>到boot目录也就是上面可以在windows上显示的SD卡.
+2. 新建一个文件<code>wpa_supplicant.conf</code>,输入以下的内容,按照你的环境进行配置对应的wifi名称和密码:
+&#8220;`
+ctrl_interface=<span class="caps">DIR</span>=/var/run/wpa_supplicant <span class="caps">GROUP</span>=netdev
+update_config=1
+country=<span class="caps">CN</span></p>
+<p>network={
+    ssid=&rdquo;MiniWifi&rdquo;
+    psk=&rdquo;L0ngh …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置">[高级] pelican&nbsp;博客高级配置</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T23:39:35.632250+08:00">
-                                        Posted @ 2018-07-11 23:39:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-12T23:55:55.515092+08:00">
+                                        Posted @ 2018-07-12 23:55:55,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <p><br></p>
-<h2>前言</h2>
-<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
-<h2>添加google和百度的SEO&nbsp;(2018-07-09)</h2>
+<h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>继续上一篇的基本配置后,这里我将记录下涉及到的一些高级pelican的使用方法,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
+<h2 id="_2">关键字<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<ol>
+<li>Google&nbsp;adsense  </li>
+<li>百度站长  </li>
+<li>Google&nbsp;Console</li>
+<li>Tipue&nbsp;Search</li>
+<li>fabfile</li>
+<li>不蒜子,浏览量统计</li>
+</ol>
+</blockquote>
+<h2 id="googleseo-2018-07-09">添加google和百度的SEO (2018-07-09)<a class="headerlink" href="#googleseo-2018-07-09" title="Permanent link">&para;</a></h2>
 <ul>
-<li>谷歌的收录比较简单,直接登录到这里: <a href="https://www.google.com/webmasters">https://www.google.com/webmasters</a>&nbsp;,安装提示添加自己的网站即可</li>
+<li>谷歌的收录比较简单,直接登录到这里: <a href="https://www.google.com/webmasters">https://www.google.com/webmasters</a> ,按照提示添加自己&nbsp;的网站即可,添加对应的sitemap,robots.txt即可.</li>
 <li>百度的可以通过进入百度站长<a href="http://zhanzhang.baidu.com">http://zhanzhang.baidu.com</a>,方法同上面的谷歌添加网站,验证即可.</li>
-<li>加入谷歌广告:<a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home">https://www.google.com/adsense/new/u/0/pub-1893384651266286/home</a></li>
+<li>为了网站的长期可持续发展,添加一些广告也是没办法的:<a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home">https://www.google.com/adsense/new/u/0/pub-1893384651266286/home</a></li>
 </ul>
-<h2>增加搜索功能(2018-07-09)</h2>
-<p>使用的插件是: <a href="">Tipue_Search</a></p>
-<h3>windows下的运行</h3>
-<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
-这个文件 …</p> </div><!-- /.entry-content -->
+<h2 id="2018-07-09">增加搜索功能 …</h2> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [高级] pelican 博客高级配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
@@ -150,6 +192,185 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <div class="row tag-row">
                                         <span>Tags: </span>
                                             <a class="danger label" href="../tag/pelican/">pelican</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to tensorflow的基础学习">tensorflow的基础学习</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-12T23:29:01.772049+08:00">
+                                        Posted @ 2018-07-12 23:29:01,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
+<p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
+<h3 id="tensorflow_1">安装依赖的包和对应的tensorflow的包<a class="headerlink" href="#tensorflow_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: <a href="https://pingbook.top/articles/pi-python3">python3安装</a></li>
+<li>新建一个virtual environment(推荐使用<code>pipenv</code>)用于存放对应的pip的包,执行如下命令:
+<code>$ sudo mkdir venvBigData
+$ cd venBigData
+$ sudo apt install -y libatlas-base-dev  # 安装numpy需要依赖的包
+$ export PIPENV_VENV_IN_PROJECT=1
+$ pipenv shell
+$ pipenv install tensorflow
+$ python  # 接下来是命令行验证tensorflow安装正确与否
+$ import tensorflow as tf   
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf …</code></li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/tensorflow/">tensorflow</a>
+                                            <a class="danger label" href="../tag/machine-learning/">machine learning</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令">[整理]&nbsp;一些常用的linux系统的操作命令</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-12T23:28:09.635334+08:00">
+                                        Posted @ 2018-07-12 23:28:09,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>free</code></li>
+<li><code>top</code></li>
+</ol>
+<h3 id="_2">性能相关的命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>pass</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/linux/">linux</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念">大数据hadoop,spark,hbase,hive概念</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-12T23:28:03.188154+08:00">
+                                        Posted @ 2018-07-12 23:28:03,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="hadoopsparkhbasehive">Hadoop、Spark、HBase、Hive<a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.</p>
+</blockquote>
+<h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>hadoop</li>
+<li>spark</li>
+<li>hbase</li>
+<li>hive</li>
+<li>hdfs</li>
+</ol>
+<h2 id="_2">基本概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>pass</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/bigdata/">bigdata</a>
+                                            <a class="danger label" href="../tag/hadoop/">hadoop</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-12T23:23:08.867019+08:00">
+                                        Posted @ 2018-07-12 23:23:08,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<blockquote>
+<p>我真是太折腾了,也没能坚持下去,去年陆陆续续用<code>hexo</code>写了一段时间的博客,最终没能坚持下去! 这个博客建立算是建立起来了,&nbsp;我会认真的去写博客,坚持到最后!</p>
+</blockquote>
+<h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>pelican <br> markdown <br>&nbsp;github</p>
+</blockquote>
+<h2 id="_2">搭建步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>最好的方式莫过于官方文档: <a href="http://docs.getpelican.com/en/stable/install.html">官方入坑道路</a>.
+下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤
+&#8220;`
+//&nbsp;如果需要使用markdown这个高逼格的语法去写博客,请安装一下的包</p>
+<h1 id="pip-install-pelican-markdown-typogrify">pip install pelican markdown typogrify<a class="headerlink" href="#pip-install-pelican-markdown-typogrify" title="Permanent link">&para;</a></h1>
+<h1 id="mkdir-pingbooktop">mkdir pingbook.top<a class="headerlink" href="#mkdir-pingbooktop" title="Permanent link">&para;</a></h1>
+<h1 id="cd-pingbooktop">cd pingbook.top<a class="headerlink" href="#cd-pingbooktop" title="Permanent link">&para;</a></h1>
+<h1 id="pelican-quickstart">pelican-quickstart<a class="headerlink" href="#pelican-quickstart" title="Permanent link">&para;</a></h1>
+<p><code>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在`pelicanconf.py`修改,直接默认回车一路下去就好了! &lt;br/&gt;
+pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</code></p>
+<ol>
+<li>Where …</li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/pelican/">pelican</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-12T21:40:26.473588+08:00">
+                                        Posted @ 2018-07-12 21:40:26,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
+<p><code>$ sudo apt-get remove 'python3.*'
+其实这里的python的包是: `python3.5-minimal`,`python3.5-venv`</code></p>
+<h2 id="install-python37">安装 install python3.7<a class="headerlink" href="#install-python37" title="Permanent link">&para;</a></h2>
+<p>因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
+参考文档: <a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6">https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6</a></p>
+<p>需要用到的命令如下:
+&#8220;`
+安装依赖包
+$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev
+$ sudo …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../tag/python3/">python3</a>
                                 </div>
 
 
@@ -226,87 +447,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令">[整理]&nbsp;一些常用的linux系统的操作命令</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T16:13:50.400268+08:00">
-                                        Posted @ 2018-07-11 16:13:50,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>常用命令</h2>
-<h3>性能相关的命令</h3> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [整理] 一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/linux/">linux</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念">大数据hadoop,spark,hbase,hive概念</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T16:11:13.338983+08:00">
-                                        Posted @ 2018-07-11 16:11:13,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>Hadoop、Spark、HBase、Hive</h2>
-<blockquote>
-<p>到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.</p>
-</blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to 大数据hadoop,spark,hbase,hive概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/bigdata/">bigdata</a>
-                                            <a class="danger label" href="../tag/hadoop/">hadoop</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T16:05:26.868315+08:00">
-                                        Posted @ 2018-07-11 16:05:26,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>树莓派安装</h2>
-<p>安装完成后，TF卡被分成两个分区：<br>
-1. <span class="caps">67MB</span> vfat格式的引导分区（系统启动后被挂载在/boot目录）
-2. TF卡剩余空间&nbsp;ext4格式的磁盘分区</p>
-<p>由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
-若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。</p>
-<h2>安装的是Destop版本,lite</h2>
-<h2>远程桌面工具,不是VNC</h2>
-<p>直接运行如下命令安装对应的远程桌面工具:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install -y xrdp</span>
-</pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 1. 黑盒测试需要注意的几个关注点">[面试] 1.&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-11T16:04:37.279819+08:00">
@@ -348,131 +488,6 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T10:31:20.038709+08:00">
-                                        Posted @ 2018-07-11 10:31:20,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<blockquote>
-<p>我真是太折腾了,也没能坚持下去,去年陆陆续续用<code>hexo</code>写了一段时间的博客,最终没能坚持下去!</p>
-</blockquote>
-<h2>关键字</h2>
-<blockquote>
-<p>pelican <br> markdown <br>&nbsp;github</p>
-</blockquote>
-<h2>搭建步骤</h2>
-<p>最好的方式莫过于官方文档: <a href="http://docs.getpelican.com/en/stable/install.html">官方入坑道路</a>.&nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.</p>
-<div class="highlight"><pre><span class="code-line"><span></span>// 如果需要使用markdown这个高逼格的语法去写博客</span>
-<span class="code-line"># pip install pelican markdown typogrify </span>
-<span class="code-line"></span>
-<span class="code-line"># mkdir pingbook.top</span>
-<span class="code-line"># cd pingbook.top</span>
-<span class="code-line"># pelican-quickstart</span>
-</pre></div>
-
-
-<p>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在<code>pelicanconf.py</code>修改,直接默认回车一路下去就好了! <br/>&nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</p>
-<div class="highlight"><pre><span class="code-line"><span></span>1. Where do you want to …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [初级] pelican 博客搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/pelican/">pelican</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T08:47:28.896015+08:00">
-                                        Posted @ 2018-07-11 08:47:28,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>参考博客: <a href="https://www.cnblogs.com/molrang/p/6420918.html">https://www.cnblogs.com/molrang/p/6420918.html</a></p>
-<h2>自动化测试</h2>
-<h3>考虑的因素</h3>
-<p>①、项目的影响（能否帮助项目进度、覆盖率、风险）</p>
-<p>②、复杂度（是否容易实现，包括数据和其他环境等）</p>
-<p>③、时间（实现自动化需要多少时间）</p>
-<p>④、早期需求和代码的稳定性（需求或代码能否证明是在范围内变化的）</p>
-<p>⑤、维护工作量（代码能否能长期保持相对稳定）</p>
-<p>⑥、覆盖率（自动化测试能否覆盖程序的关键特性和功能）</p>
-<p>⑦、资源（是否拥有足够的人力、硬件和数据资源来运行自动化测试）</p>
-<p>⑧、执行（负责执行的人员是否有足够的技能和时间去运行）</p>
-<p>⑨、自动化测试管理</p>
-<h2>白盒测试</h2>
-<blockquote>
-<p>按照程序内部结构，逻辑驱动测试程序,目的是检测产品内部动作是否按照设计说明书的规范进行，检验程序的每条路径是否都能按照预定要求进行工作</p>
-</blockquote>
-<h3>白盒测试方法</h3>
-<p>①、静态测试&nbsp;静态测试是指不运行程序本身 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/bai-he-ce-shi/">白盒测试</a>
-                                            <a class="danger label" href="../tag/ruan-jian-ce-shi/">软件测试</a>
-                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T22:11:17.195355+08:00">
-                                        Posted @ 2018-07-10 22:11:17,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>Debian安装配置nginx服务器</h2>
-<ul>
-<li>下载解压缩安装包</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz</span>
-<span class="code-line">$ tar zxvf nginx-1.15.1.tar.gz </span>
-</pre></div>
-
-
-<ul>
-<li>重新配置nginx的服务器名称servername和对应版本</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1/</span>
-<span class="code-line">$ sudo nano  src/http/ngx_http_header_filter_module.c</span>
-<span class="code-line">$ sudo nano  src/core/nginx.h</span>
-<span class="code-line">$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/</span>
-</pre></div>
-
-
-<ul>
-<li>安装对应的nginx的所有依赖的包, gcc环境 …</li></ul> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/nginx/">nginx</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -485,10 +500,7 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
-                    <li
-><a
-                            href="../about">About</a>
-                    </li>
+                <li><a href="/about">About</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -497,6 +509,7 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
                 <ul class="blank">
                         <li><a href="../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../category/mian-shi/">面试</a></li>
+                        <li><a href="../category/machine-learning/">machine learning</a></li>
                         <li><a href="../category/linux/">linux</a></li>
                         <li><a href="../category/bo-ke-da-jian/">博客搭建</a></li>
                         <li><a href="../category/bigdata/">bigdata</a></li>
@@ -516,11 +529,14 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
                     <li class="tag-2"><a href="../tag/java/">java</a></li>
                     <li class="tag-4"><a href="../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../tag/machine-learning/">machine learning</a></li>
                     <li class="tag-4"><a href="../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../tag/svn/">svn</a></li>
+                    <li class="tag-4"><a href="../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-1"><a href="../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
                     <li class="tag-4"><a href="../tag/bai-he-ce-shi/">白盒测试</a></li>
@@ -573,7 +589,7 @@ a. 等价类: 是在 分析 需求规格说明 基础上，把程序的输入域
             <address id="about" class="vcard body">
                 ©
                 <script>document.write(new Date().getFullYear())</script>
-                PingBook.Inc.
+                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

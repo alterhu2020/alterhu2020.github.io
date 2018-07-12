@@ -86,9 +86,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/categories">Category</a></li>
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
-                        <li><a
-                                href="../about">About</a></li>
-
+                    <li ><a href="/about">About</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -119,6 +117,89 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div class="eleven columns">
                  <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点">[面试]&nbsp;白盒测试需要关注的知识点</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-11T08:47:28.896015+08:00">
+                                        Posted @ 2018-07-11 08:47:28,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>参考博客: <a href="https://www.cnblogs.com/molrang/p/6420918.html">https://www.cnblogs.com/molrang/p/6420918.html</a></p>
+<h2>自动化测试</h2>
+<h3>考虑的因素</h3>
+<p>①、项目的影响（能否帮助项目进度、覆盖率、风险）</p>
+<p>②、复杂度（是否容易实现，包括数据和其他环境等）</p>
+<p>③、时间（实现自动化需要多少时间）</p>
+<p>④、早期需求和代码的稳定性（需求或代码能否证明是在范围内变化的）</p>
+<p>⑤、维护工作量（代码能否能长期保持相对稳定）</p>
+<p>⑥、覆盖率（自动化测试能否覆盖程序的关键特性和功能）</p>
+<p>⑦、资源（是否拥有足够的人力、硬件和数据资源来运行自动化测试）</p>
+<p>⑧、执行（负责执行的人员是否有足够的技能和时间去运行）</p>
+<p>⑨、自动化测试管理</p>
+<h2>白盒测试</h2>
+<blockquote>
+<p>按照程序内部结构，逻辑驱动测试程序,目的是检测产品内部动作是否按照设计说明书的规范进行，检验程序的每条路径是否都能按照预定要求进行工作</p>
+</blockquote>
+<h3>白盒测试方法</h3>
+<p>①、静态测试&nbsp;静态测试是指不运行程序本身 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 白盒测试需要关注的知识点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/bai-he-ce-shi/">白盒测试</a>
+                                            <a class="danger label" href="../tag/ruan-jian-ce-shi/">软件测试</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-10T22:11:17.195355+08:00">
+                                        Posted @ 2018-07-10 22:11:17,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>Debian安装配置nginx服务器</h2>
+<ul>
+<li>下载解压缩安装包</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz</span>
+<span class="code-line">$ tar zxvf nginx-1.15.1.tar.gz </span>
+</pre></div>
+
+
+<ul>
+<li>重新配置nginx的服务器名称servername和对应版本</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1/</span>
+<span class="code-line">$ sudo nano  src/http/ngx_http_header_filter_module.c</span>
+<span class="code-line">$ sudo nano  src/core/nginx.h</span>
+<span class="code-line">$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/</span>
+</pre></div>
+
+
+<ul>
+<li>安装对应的nginx的所有依赖的包, gcc环境 …</li></ul> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/nginx/">nginx</a>
+                                </div>
+
+
+
+                        </article></li>
                         <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
                                 <footer class="post-info">
@@ -324,10 +405,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
-                    <li
-><a
-                            href="../about">About</a>
-                    </li>
+                <li><a href="/about">About</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -336,6 +414,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <ul class="blank">
                         <li><a href="../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../category/mian-shi/">面试</a></li>
+                        <li><a href="../category/machine-learning/">machine learning</a></li>
                         <li><a href="../category/linux/">linux</a></li>
                         <li><a href="../category/bo-ke-da-jian/">博客搭建</a></li>
                         <li><a href="../category/bigdata/">bigdata</a></li>
@@ -355,11 +434,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../tag/java/">java</a></li>
                     <li class="tag-4"><a href="../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../tag/machine-learning/">machine learning</a></li>
                     <li class="tag-4"><a href="../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../tag/svn/">svn</a></li>
+                    <li class="tag-4"><a href="../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-1"><a href="../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
                     <li class="tag-4"><a href="../tag/bai-he-ce-shi/">白盒测试</a></li>
@@ -412,7 +494,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <address id="about" class="vcard body">
                 ©
                 <script>document.write(new Date().getFullYear())</script>
-                PingBook.Inc.
+                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

@@ -1,55 +1,356 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-11T23:39:35+08:00</updated><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-11T23:39:35+08:00</published><updated>2018-07-11T23:39:35+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h2&gt;添加google和百度的SEO&amp;nbsp;(2018-07-09)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;谷歌的收录比较简单,直接登录到这里: &lt;a href="https://www.google.com/webmasters"&gt;https://www.google.com/webmasters&lt;/a&gt;&amp;nbsp;,安装提示添加自己的网站即可&lt;/li&gt;
-&lt;li&gt;百度的可以通过进入百度站长&lt;a href="http://zhanzhang.baidu.com"&gt;http://zhanzhang.baidu.com&lt;/a&gt;,方法同上面的谷歌添加网站,验证即可.&lt;/li&gt;
-&lt;li&gt;加入谷歌广告:&lt;a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home"&gt;https://www.google.com/adsense/new/u/0/pub-1893384651266286/home&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;
-&lt;p&gt;使用的插件是: &lt;a href=""&gt;Tipue_Search&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;p&gt;继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
-&lt;h2&gt;添加google和百度的SEO&amp;nbsp;(2018-07-09)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;谷歌的收录比较简单,直接登录到这里: &lt;a href="https://www.google.com/webmasters"&gt;https://www.google.com/webmasters&lt;/a&gt;&amp;nbsp;,安装提示添加自己的网站即可&lt;/li&gt;
-&lt;li&gt;百度的可以通过进入百度站长&lt;a href="http://zhanzhang.baidu.com"&gt;http://zhanzhang.baidu.com&lt;/a&gt;,方法同上面的谷歌添加网站,验证即可.&lt;/li&gt;
-&lt;li&gt;加入谷歌广告:&lt;a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home"&gt;https://www.google.com/adsense/new/u/0/pub-1893384651266286/home&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;增加搜索功能(2018-07-09)&lt;/h2&gt;
-&lt;p&gt;使用的插件是: &lt;a href=""&gt;Tipue_Search&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;windows下的运行&lt;/h3&gt;
-&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你生成了
-这个文件.&lt;br&gt;
-&lt;code&gt;fabfile&lt;/code&gt;在上面的命令生成后发现里面的文件报了好多错,&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;pip install pycryptodome&lt;/span&gt;
-&lt;span class="code-line"&gt;pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;百度站长不能收录&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-13T00:01:02+08:00</updated><entry><title>树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-13T00:01:02+08:00</published><updated>2018-07-13T00:01:02+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-installation/</id><summary type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
+1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
+2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
+&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
+若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
+&lt;h2 id="lite"&gt;安装的是lite版本&lt;a class="headerlink" href="#lite" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在没有显示屏网线的情况下可以通过如下方式进行远程操作.
+1. 新建一个没有后缀的文件&lt;code&gt;ssh&lt;/code&gt;到boot目录也就是上面可以在windows上显示的SD卡.
+2. 新建一个文件&lt;code&gt;wpa_supplicant.conf&lt;/code&gt;,输入以下的内容,按照你的环境进行配置对应的wifi名称和密码:
+&amp;#8220;`
+ctrl_interface=&lt;span class="caps"&gt;DIR&lt;/span&gt;=/var/run/wpa_supplicant &lt;span class="caps"&gt;GROUP&lt;/span&gt;=netdev
+update_config=1
+country=&lt;span class="caps"&gt;CN&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;network={
+    ssid=&amp;rdquo;MiniWifi&amp;rdquo;
+    psk=&amp;rdquo;L0ngh …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
+1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
+2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
+&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
+若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
+&lt;h2 id="lite"&gt;安装的是lite版本&lt;a class="headerlink" href="#lite" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在没有显示屏网线的情况下可以通过如下方式进行远程操作.
+1. 新建一个没有后缀的文件&lt;code&gt;ssh&lt;/code&gt;到boot目录也就是上面可以在windows上显示的SD卡.
+2. 新建一个文件&lt;code&gt;wpa_supplicant.conf&lt;/code&gt;,输入以下的内容,按照你的环境进行配置对应的wifi名称和密码:
+&amp;#8220;`
+ctrl_interface=&lt;span class="caps"&gt;DIR&lt;/span&gt;=/var/run/wpa_supplicant &lt;span class="caps"&gt;GROUP&lt;/span&gt;=netdev
+update_config=1
+country=&lt;span class="caps"&gt;CN&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;network={
+    ssid=&amp;rdquo;MiniWifi&amp;rdquo;
+    psk=&amp;rdquo;L0ngh)171130AVb&amp;rdquo;
+    key_mgmt=&lt;span class="caps"&gt;WPA&lt;/span&gt;-&lt;span class="caps"&gt;PSK&lt;/span&gt;&amp;nbsp;}&lt;/p&gt;
+&lt;p&gt;network={
+    ssid=&amp;rdquo;&lt;span class="caps"&gt;GDS&lt;/span&gt;-&lt;span class="caps"&gt;GUEST&lt;/span&gt;&amp;rdquo;
+    psk=&amp;rdquo;Gr33nD0t!&amp;rdquo;&amp;nbsp;}&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;``
+3. 安装完成后,需要登录到电脑,这个电脑和你的树莓派需要在一个局域网里面. 有很多人统建使用&lt;/code&gt;advanced ip scanner`这个工具,
+我也使用了一段时间,开始还好,后面发现有时候扫描不到你的树莓派. 在网上搜索了一阵发现还有同款的一个扫描类的软件&lt;a href="https://angryip.org/download/#windows"&gt;angry ip scanner&lt;/a&gt;
+之所以选择他是因为他对不同的局域网环境都能正确的扫描到树莓派对应的机器名称和机器ip&amp;nbsp;address.&lt;/p&gt;
+&lt;h2 id="vnc"&gt;远程桌面工具,不是VNC&lt;a class="headerlink" href="#vnc" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:
+&lt;code&gt;$ sudo apt install -y xrdp&lt;/code&gt;&lt;/p&gt;</content><category term="树莓派"></category></entry><entry><title>[高级] pelican 博客高级配置</title><link href="https://pingbook.top/articles/pelican-advance/" rel="alternate"></link><published>2018-07-12T23:55:55+08:00</published><updated>2018-07-12T23:55:55+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-12:/articles/pelican-advance/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;继续上一篇的基本配置后,这里我将记录下涉及到的一些高级pelican的使用方法,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
+&lt;h2 id="_2"&gt;关键字&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Google&amp;nbsp;adsense  &lt;/li&gt;
+&lt;li&gt;百度站长  &lt;/li&gt;
+&lt;li&gt;Google&amp;nbsp;Console&lt;/li&gt;
+&lt;li&gt;Tipue&amp;nbsp;Search&lt;/li&gt;
+&lt;li&gt;fabfile&lt;/li&gt;
+&lt;li&gt;不蒜子,浏览量统计&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;加入浏览量统计&lt;/h2&gt;
+&lt;h2 id="googleseo-2018-07-09"&gt;添加google和百度的SEO (2018-07-09)&lt;a class="headerlink" href="#googleseo-2018-07-09" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;谷歌的收录比较简单,直接登录到这里: &lt;a href="https://www.google.com/webmasters"&gt;https://www.google.com/webmasters&lt;/a&gt; ,按照提示添加自己&amp;nbsp;的网站即可,添加对应的sitemap,robots.txt即可.&lt;/li&gt;
+&lt;li&gt;百度的可以通过进入百度站长&lt;a href="http://zhanzhang.baidu.com"&gt;http://zhanzhang.baidu.com&lt;/a&gt;,方法同上面的谷歌添加网站,验证即可.&lt;/li&gt;
+&lt;li&gt;为了网站的长期可持续发展,添加一些广告也是没办法的:&lt;a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home"&gt;https://www.google.com/adsense/new/u/0/pub-1893384651266286/home&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2018-07-09"&gt;增加搜索功能 …&lt;/h2&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;继续上一篇的基本配置后,这里我将记录下涉及到的一些高级pelican的使用方法,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.&lt;/p&gt;
+&lt;h2 id="_2"&gt;关键字&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Google&amp;nbsp;adsense  &lt;/li&gt;
+&lt;li&gt;百度站长  &lt;/li&gt;
+&lt;li&gt;Google&amp;nbsp;Console&lt;/li&gt;
+&lt;li&gt;Tipue&amp;nbsp;Search&lt;/li&gt;
+&lt;li&gt;fabfile&lt;/li&gt;
+&lt;li&gt;不蒜子,浏览量统计&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="googleseo-2018-07-09"&gt;添加google和百度的SEO (2018-07-09)&lt;a class="headerlink" href="#googleseo-2018-07-09" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;谷歌的收录比较简单,直接登录到这里: &lt;a href="https://www.google.com/webmasters"&gt;https://www.google.com/webmasters&lt;/a&gt; ,按照提示添加自己&amp;nbsp;的网站即可,添加对应的sitemap,robots.txt即可.&lt;/li&gt;
+&lt;li&gt;百度的可以通过进入百度站长&lt;a href="http://zhanzhang.baidu.com"&gt;http://zhanzhang.baidu.com&lt;/a&gt;,方法同上面的谷歌添加网站,验证即可.&lt;/li&gt;
+&lt;li&gt;为了网站的长期可持续发展,添加一些广告也是没办法的:&lt;a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home"&gt;https://www.google.com/adsense/new/u/0/pub-1893384651266286/home&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2018-07-09"&gt;增加搜索功能(2018-07-09)&lt;a class="headerlink" href="#2018-07-09" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;使用的插件是: &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search"&gt;Tipue_Search&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="_3"&gt;自动化部署&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;看了一下官方的自动化部署相关的文章&lt;a href="http://docs.getpelican.com/en/stable/publish.html"&gt;fabric/Make&lt;/a&gt;, 提到在linux下
+你可以很方便的使用&lt;code&gt;make&lt;/code&gt;命令来操作相关的自动化,它对应的是&lt;code&gt;makefile&lt;/code&gt;,你在使用&lt;code&gt;pelican-quickstart&lt;/code&gt;命令的时候会提示你是否需要生成
+这个文件.&lt;br&gt;
+执行命令&lt;code&gt;pelican-quickstart&lt;/code&gt;的时候也会生成一个文件&lt;code&gt;fabfile.py&lt;/code&gt;,这个文件同&lt;code&gt;makefile&lt;/code&gt;是一样的,只不过一个是用python实现的,一个是基于linux shell
+实现的. 在window下打开这个文件,发现里面的文件报了好多错,定位到&lt;code&gt;from fabric.api import *&lt;/code&gt;,类似&lt;code&gt;no module found env,local&lt;/code&gt;
+由于对&lt;code&gt;fabfile&lt;/code&gt;不太熟悉,到网上找了一圈解决方法,发现缺少对应的包导致报错命令无法执行. 执行下面的命令完成对应的安装操作.
+&lt;code&gt;pip install pycryptodome
+pip install Fabric3 # 注意这里是Fabric3,不要使用fabric&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="_4"&gt;百度站长不能收录&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;按照官网提示,下载了对应的html文件到pelican的目录下面使用附件的形式复制到对应的output目录下面,推荐不要使用&lt;code&gt;cname&lt;/code&gt;的方式.
+例如我下载的html文件是: &lt;code&gt;baidu_verify_TVrRxDNlTJ.html&lt;/code&gt;,完整的配置在&lt;code&gt;pelican.conf&lt;/code&gt;文件中,如下:&amp;nbsp;&amp;#8220;`&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;STATIC_PATHS = [&amp;lsquo;static&amp;rsquo;,
+                &amp;lsquo;extra/&lt;span class="caps"&gt;README&lt;/span&gt;.md&amp;rsquo;,
+                &amp;lsquo;extra/robots.txt&amp;rsquo;,
+                &amp;lsquo;extra/&lt;span class="caps"&gt;CNAME&lt;/span&gt;&amp;rsquo;,
+                &amp;lsquo;extra/favicon.ico&amp;rsquo;,
+                &amp;lsquo;extra/baidu_verify_TVrRxDNlTJ.html&amp;rsquo;,
+                &amp;lsquo;extra/google9db45b3da980c919.html&amp;rsquo;]
+EXTRA_PATH_METADATA = {
+    &amp;lsquo;extra/&lt;span class="caps"&gt;README&lt;/span&gt;.md&amp;rsquo;: {&amp;lsquo;path&amp;rsquo;: &amp;lsquo;&lt;span class="caps"&gt;README&lt;/span&gt;.md&amp;rsquo;},
+    &amp;lsquo;extra/robots.txt&amp;rsquo;: {&amp;lsquo;path&amp;rsquo;: &amp;lsquo;robots.txt&amp;rsquo;},
+    &amp;lsquo;extra/&lt;span class="caps"&gt;CNAME&lt;/span&gt;&amp;rsquo;: {&amp;lsquo;path&amp;rsquo;: &amp;lsquo;&lt;span class="caps"&gt;CNAME&lt;/span&gt;&amp;rsquo;},
+    &amp;lsquo;extra/favicon.ico&amp;rsquo;: {&amp;lsquo;path&amp;rsquo;: &amp;lsquo;favicon.ico&amp;rsquo;},
+    &amp;lsquo;extra/baidu_verify_TVrRxDNlTJ.html&amp;rsquo;: {&amp;lsquo;path&amp;rsquo;: &amp;lsquo;baidu_verify_TVrRxDNlTJ.html&amp;rsquo;},
+    &amp;lsquo;extra/google9db45b3da980c919.html&amp;rsquo;: {&amp;lsquo;path&amp;rsquo;: &amp;lsquo;google9db45b3da980c919.html&amp;rsquo;}&amp;nbsp;}&lt;/p&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;
+&lt;h2 id="_5"&gt;加入浏览量统计&lt;a class="headerlink" href="#_5" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.&lt;br&gt;
-* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是超简单:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="err"&gt;async&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访问量&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;,&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;总访客&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_site_uv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;人&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_container_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, 浏览量:&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;busuanzi_value_page_pv&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[面试] 1. 面向对象的相关概念</title><link href="https://pingbook.top/articles/1-object-oriented-programming/" rel="alternate"></link><published>2018-07-11T16:15:48+08:00</published><updated>2018-07-11T16:15:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/1-object-oriented-programming/</id><summary type="html">&lt;blockquote&gt;
+感觉挺好玩的,里面提到了他们代码面试的工具: &lt;a href="https://coderpad.io"&gt;https://coderpad.io&lt;/a&gt;. 去玩了一下,感觉挺好玩.&amp;nbsp;好吧,扯远了&amp;#8230;..&lt;/p&gt;
+&lt;p&gt;言归正文,推荐一个好用简单的统计页面浏览量和网站浏览量的插件.&lt;br&gt;
+* 工具&lt;a href="http://busuanzi.ibruce.info/"&gt;不蒜子&lt;/a&gt;,代码也是只需要简简单单的几号就可以了,把这四行代码放到页面中你想要放的地址:
+&amp;#8220;`
+ &lt;script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="busuanzi_container_site_pv"&gt;总访问量&lt;span id="busuanzi_value_site_pv"&gt;&lt;/span&gt;次&lt;/span&gt;,
+  &lt;span id="busuanzi_container_site_uv"&gt;总访客&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;人&lt;/span&gt;
+  &lt;span id="busuanzi_container_page_pv"&gt;, 浏览量:&lt;span id="busuanzi_value_page_pv"&gt;&lt;/span&gt;&lt;/span&gt;&amp;nbsp;&amp;#8220;`&lt;/p&gt;</content><category term="pelican"></category></entry><entry><title>tensorflow的基础学习</title><link href="https://pingbook.top/articles/tensorflow-basic/" rel="alternate"></link><published>2018-07-12T23:29:01+08:00</published><updated>2018-07-12T23:29:01+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-12:/articles/tensorflow-basic/</id><summary type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="tensorflow_1"&gt;安装依赖的包和对应的tensorflow的包&lt;a class="headerlink" href="#tensorflow_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: &lt;a href="https://pingbook.top/articles/pi-python3"&gt;python3安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新建一个virtual environment(推荐使用&lt;code&gt;pipenv&lt;/code&gt;)用于存放对应的pip的包,执行如下命令:
+&lt;code&gt;$ sudo mkdir venvBigData
+$ cd venBigData
+$ sudo apt install -y libatlas-base-dev  # 安装numpy需要依赖的包
+$ export PIPENV_VENV_IN_PROJECT=1
+$ pipenv shell
+$ pipenv install tensorflow
+$ python  # 接下来是命令行验证tensorflow安装正确与否
+$ import tensorflow as tf   
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf …&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="tensorflow_1"&gt;安装依赖的包和对应的tensorflow的包&lt;a class="headerlink" href="#tensorflow_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: &lt;a href="https://pingbook.top/articles/pi-python3"&gt;python3安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新建一个virtual environment(推荐使用&lt;code&gt;pipenv&lt;/code&gt;)用于存放对应的pip的包,执行如下命令:
+&lt;code&gt;$ sudo mkdir venvBigData
+$ cd venBigData
+$ sudo apt install -y libatlas-base-dev  # 安装numpy需要依赖的包
+$ export PIPENV_VENV_IN_PROJECT=1
+$ pipenv shell
+$ pipenv install tensorflow
+$ python  # 接下来是命令行验证tensorflow安装正确与否
+$ import tensorflow as tf   
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="_1"&gt;基础入门&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;</content><category term="tensorflow"></category><category term="machine learning"></category></entry><entry><title>[整理] 一些常用的linux系统的操作命令</title><link href="https://pingbook.top/articles/basic-command/" rel="alternate"></link><published>2018-07-12T23:28:09+08:00</published><updated>2018-07-12T23:28:09+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-12:/articles/basic-command/</id><summary type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="_2"&gt;性能相关的命令&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;pass&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="_2"&gt;性能相关的命令&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;pass&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>大数据hadoop,spark,hbase,hive概念</title><link href="https://pingbook.top/articles/hadoop-spark-hbase-hive/" rel="alternate"></link><published>2018-07-12T23:28:03+08:00</published><updated>2018-07-12T23:28:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-12:/articles/hadoop-spark-hbase-hive/</id><summary type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;hadoop&lt;/li&gt;
+&lt;li&gt;spark&lt;/li&gt;
+&lt;li&gt;hbase&lt;/li&gt;
+&lt;li&gt;hive&lt;/li&gt;
+&lt;li&gt;hdfs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="_2"&gt;基本概念&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;pass&lt;/p&gt;</summary><content type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;hadoop&lt;/li&gt;
+&lt;li&gt;spark&lt;/li&gt;
+&lt;li&gt;hbase&lt;/li&gt;
+&lt;li&gt;hive&lt;/li&gt;
+&lt;li&gt;hdfs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="_2"&gt;基本概念&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;pass&lt;/p&gt;</content><category term="bigdata"></category><category term="hadoop"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-12T23:23:08+08:00</published><updated>2018-07-12T23:23:08+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-12:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去! 这个博客建立算是建立起来了,&amp;nbsp;我会认真的去写博客,坚持到最后!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_2"&gt;搭建步骤&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.
+下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤
+&amp;#8220;`
+//&amp;nbsp;如果需要使用markdown这个高逼格的语法去写博客,请安装一下的包&lt;/p&gt;
+&lt;h1 id="pip-install-pelican-markdown-typogrify"&gt;pip install pelican markdown typogrify&lt;a class="headerlink" href="#pip-install-pelican-markdown-typogrify" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="mkdir-pingbooktop"&gt;mkdir pingbook.top&lt;a class="headerlink" href="#mkdir-pingbooktop" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="cd-pingbooktop"&gt;cd pingbook.top&lt;a class="headerlink" href="#cd-pingbooktop" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="pelican-quickstart"&gt;pelican-quickstart&lt;a class="headerlink" href="#pelican-quickstart" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在`pelicanconf.py`修改,直接默认回车一路下去就好了! &amp;lt;br/&amp;gt;
+pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Where …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去! 这个博客建立算是建立起来了,&amp;nbsp;我会认真的去写博客,坚持到最后!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_2"&gt;搭建步骤&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.
+下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤
+&amp;#8220;`
+//&amp;nbsp;如果需要使用markdown这个高逼格的语法去写博客,请安装一下的包&lt;/p&gt;
+&lt;h1 id="pip-install-pelican-markdown-typogrify"&gt;pip install pelican markdown typogrify&lt;a class="headerlink" href="#pip-install-pelican-markdown-typogrify" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="mkdir-pingbooktop"&gt;mkdir pingbook.top&lt;a class="headerlink" href="#mkdir-pingbooktop" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="cd-pingbooktop"&gt;cd pingbook.top&lt;a class="headerlink" href="#cd-pingbooktop" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="pelican-quickstart"&gt;pelican-quickstart&lt;a class="headerlink" href="#pelican-quickstart" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在`pelicanconf.py`修改,直接默认回车一路下去就好了! &amp;lt;br/&amp;gt;
+pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Where do you want to create your new web site?[.]&amp;nbsp;(你想在哪里创建你的网站，默认为当前目录)&lt;/li&gt;
+&lt;li&gt;What will be the title of this web&amp;nbsp;site?(网站的标题是什么)&lt;/li&gt;
+&lt;li&gt;Who will be the author of this web&amp;nbsp;site?(网站的作者是谁)&lt;/li&gt;
+&lt;li&gt;What will be the default language of this web site? [en]&amp;nbsp;(网站的默认语言是),这里我们写&amp;rsquo;zh&amp;rsquo;中文&lt;/li&gt;
+&lt;li&gt;Do you want to specify a &lt;span class="caps"&gt;URL&lt;/span&gt; prefix? e.g., http://example.com(Y/n)&amp;nbsp;(是否指定域名),Y&lt;/li&gt;
+&lt;li&gt;What is your &lt;span class="caps"&gt;URL&lt;/span&gt; prefix?(see above example; no trailing&amp;nbsp;slash)(输入域名，不能包含反斜杠&amp;rsquo;/&amp;rsquo;),http://moelove.info&lt;/li&gt;
+&lt;li&gt;Do you want to enable article&amp;nbsp;pagination?(是否启用文章分页)&lt;/li&gt;
+&lt;li&gt;Do you want to generate a Makefile to easily manage your&amp;nbsp;website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))&lt;/li&gt;
+&lt;li&gt;Do you want an auto-reload &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; simpleHTTP script to assist with theme and site&amp;nbsp;development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using &lt;span class="caps"&gt;FTP&lt;/span&gt;?&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using &lt;span class="caps"&gt;SSH&lt;/span&gt;?&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using&amp;nbsp;Dropbox?&lt;/li&gt;
+&lt;li&gt;Do you want to upload your website using S3?&amp;nbsp;&amp;#8220;`&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="_3"&gt;命令使用&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于本人使用的是windows,这里我使用了两个命令:&amp;nbsp;&amp;#8220;`&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="pelican-content-contentoutput"&gt;pelican content # 根据content中的内容，生成静态网站到output目下&lt;a class="headerlink" href="#pelican-content-contentoutput" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="cd-output-python-m-pelicanserver"&gt;cd output &amp;amp;&amp;amp; python -m pelican.server&lt;a class="headerlink" href="#cd-output-python-m-pelicanserver" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="cd-output-python-m-simplehttpserver"&gt;cd output &amp;amp;&amp;amp; python -m SimpleHTTPServer&lt;a class="headerlink" href="#cd-output-python-m-simplehttpserver" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;
+&lt;h2 id="_4"&gt;主题和插件安装&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="theme"&gt;theme安装&lt;a class="headerlink" href="#theme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;下载主题文件,添加配置: &lt;code&gt;THEME = './pelican-themes/gum'&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="_5"&gt;插件安装&lt;a class="headerlink" href="#_5" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;下载插件文件,添加如下配置: 
+&lt;code&gt;PLUGIN_PATHS = [u"pelican-plugins"]
+PLUGINS = [u"sitemap",u"gzip_cache",u"neighbors",u"related_posts"]
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.7,
+        'indexes': 0.5,
+        'pages': 0.3
+    },
+    'changefreqs': {
+        'articles': 'weekly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="_6"&gt;字体更改&lt;a class="headerlink" href="#_6" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;1.下载字体文件,到网站的静态文件夹内,具体可以参考让wordpress主题绕开对google的依赖.不过此种方法也有些问题.把静态资源放到Github上加载时间也没别之前好多少.&lt;br&gt;
+2.把Google的静态公共库替换为国内的公共库.例如我的给替换成360的镜像地址.其实这种方法也有些弊端,例如国外用户访问就会出现加载过慢的问题.但是毕竟我们在&amp;rsquo;朝内&amp;rsquo;,所以就换成360的资源库吧.操作如下
+在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件&lt;code&gt;gumby.css&lt;/code&gt;,修改如下:&amp;nbsp;&amp;#8220;`&lt;/p&gt;
+&lt;h1 id="staticcsscssgumbycss"&gt;static/css/目录下css文件中,例如gumby.css&lt;a class="headerlink" href="#staticcsscssgumbycss" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;@import url(//fonts.googleapi.com/css?family=Overlock:400,700,900);
+@import url(//fonts.googleapi.com/css?family=&lt;span class="caps"&gt;PT&lt;/span&gt;+Mono);&lt;/p&gt;
+&lt;h1 id="_7"&gt;替换为&lt;a class="headerlink" href="#_7" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;@import url(//fonts.useso.com/css?family=Overlock:400,700,900);
+@import url(//fonts.useso.com/css?family=&lt;span class="caps"&gt;PT&lt;/span&gt;+Mono);&amp;nbsp;&amp;#8220;`&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;国内其他开公共库: 百度CDN公共库; 新浪云计算CDN公共库; 又拍云JS库CDN服务;&amp;nbsp;七牛云静态文件CDN;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_8"&gt;高级语法&lt;a class="headerlink" href="#_8" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="_9"&gt;静态图片&lt;a class="headerlink" href="#_9" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;新建一个目录在&lt;code&gt;content&lt;/code&gt;下面,例如&lt;code&gt;images&lt;/code&gt;,然后在&lt;code&gt;pelicanconf.py&lt;/code&gt;设置如下:
+&lt;code&gt;STATIC_PATHS = ['images','downloads']&lt;/code&gt;
+,在对应的md中可以这样写语法对应图片:
+&lt;code&gt;![测试图片显示]({attach}/static/images/test.png)&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="_10"&gt;部署&lt;a class="headerlink" href="#_10" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="github"&gt;部署到github上&lt;a class="headerlink" href="#github" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;新建一个仓库repository,仓库名称和你的github昵称相同,例如你的名称是abc,那么创建的仓库名称是: &lt;code&gt;abc.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;也可以创建一个组织organization,在组织下面在创建一个仓库repository,仓库名称和你的组织也可以创建一个组织organization名称相同,
+   例如你的organization名称是abc,那么创建的仓库名称是: &lt;code&gt;abc.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;完成以上的操作后上传对应的源码到github上,这里省略,命令如下:
+&lt;code&gt;cd output
+git init
+git add .
+git remote add origin 仓库git地址
+git push -u origin master&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pelican"></category></entry><entry><title>[Linux环境搭建] 如何完整卸载python2/3 在debain上</title><link href="https://pingbook.top/articles/pi-python3/" rel="alternate"></link><published>2018-07-12T21:40:26+08:00</published><updated>2018-07-12T21:40:26+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-12:/articles/pi-python3/</id><summary type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;$ sudo apt-get remove 'python3.*'
+其实这里的python的包是: `python3.5-minimal`,`python3.5-venv`&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="install-python37"&gt;安装 install python3.7&lt;a class="headerlink" href="#install-python37" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
+参考文档: &lt;a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6"&gt;https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需要用到的命令如下:
+&amp;#8220;`
+安装依赖包
+$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev
+$ sudo …&lt;/p&gt;</summary><content type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;$ sudo apt-get remove 'python3.*'
+其实这里的python的包是: `python3.5-minimal`,`python3.5-venv`&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="install-python37"&gt;安装 install python3.7&lt;a class="headerlink" href="#install-python37" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
+参考文档: &lt;a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6"&gt;https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需要用到的命令如下:
+&amp;#8220;`
+安装依赖包
+$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev
+$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+$ tar xvf Python-3.7.0.tgz
+// 下面的步骤安装会跑测试来判定机器的性能,从而进行性能的提高
+$ ./configure &amp;ndash;enable-optimizations &amp;ndash;with-ensurepip=install
+$ make -j8
+$ sudo make altinstall
+$ sudo update-alternatives &amp;ndash;install /usr/bin/python python /usr/bin/python3.7 50
+$ sudo update-alternatives &amp;ndash;install /usr/bin/python3 python3 /usr/bin/python3.7&amp;nbsp;50&lt;/p&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;
+&lt;h2 id="pippipenvpipenv"&gt;安装pip,pipenv并设置全局可用命令&lt;code&gt;pipenv&lt;/code&gt;&lt;a class="headerlink" href="#pippipenvpipenv" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`
+$ wget https://bootstrap.pypa.io/get-pip.py
+$ sudo python&amp;nbsp;get-pip.py&lt;/p&gt;
+&lt;p&gt;$ pip install &amp;ndash;user pipenv
+ /home/pi/.local/bin
+$ python -m site &amp;ndash;user-base
+$ sudo nano ~/.profile
+export &lt;span class="caps"&gt;PATH&lt;/span&gt;=&amp;rdquo;$&lt;span class="caps"&gt;HOME&lt;/span&gt;/.local/bin:$&lt;span class="caps"&gt;PATH&lt;/span&gt;&amp;rdquo;
+$ sudo source ~/.profile
+$ pipenv&amp;nbsp;&amp;ndash;update&lt;/p&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="树莓派"></category><category term="python3"></category></entry><entry><title>[面试] 1. 面向对象的相关概念</title><link href="https://pingbook.top/articles/1-object-oriented-programming/" rel="alternate"></link><published>2018-07-11T16:15:48+08:00</published><updated>2018-07-11T16:15:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/1-object-oriented-programming/</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;达到的目的&lt;/h2&gt;
@@ -93,35 +394,7 @@
 
 &lt;ol&gt;
 &lt;li&gt;python没有array,只有list,直接使用&lt;code&gt;sort&lt;/code&gt;方法即可,如果是倒序可以用reverse=True指定&lt;/li&gt;
-&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category><category term="java"></category></entry><entry><title>[整理] 一些常用的linux系统的操作命令</title><link href="https://pingbook.top/articles/basic-command/" rel="alternate"></link><published>2018-07-11T16:13:50+08:00</published><updated>2018-07-11T16:13:50+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/basic-command/</id><summary type="html">&lt;h2&gt;常用命令&lt;/h2&gt;
-&lt;h3&gt;性能相关的命令&lt;/h3&gt;</summary><content type="html">&lt;h2&gt;常用命令&lt;/h2&gt;
-&lt;h3&gt;性能相关的命令&lt;/h3&gt;</content><category term="linux"></category></entry><entry><title>大数据hadoop,spark,hbase,hive概念</title><link href="https://pingbook.top/articles/hadoop-spark-hbase-hive/" rel="alternate"></link><published>2018-07-11T16:11:13+08:00</published><updated>2018-07-11T16:11:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/hadoop-spark-hbase-hive/</id><summary type="html">&lt;h2&gt;Hadoop、Spark、HBase、Hive&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
-&lt;/blockquote&gt;</summary><content type="html">&lt;h2&gt;Hadoop、Spark、HBase、Hive&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="bigdata"></category><category term="hadoop"></category></entry><entry><title>树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-11T16:05:26+08:00</published><updated>2018-07-11T16:05:26+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/pi-installation/</id><summary type="html">&lt;h2&gt;树莓派安装&lt;/h2&gt;
-&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
-1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
-2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
-&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
-若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
-&lt;h2&gt;安装的是Destop版本,lite&lt;/h2&gt;
-&lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
-&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;树莓派安装&lt;/h2&gt;
-&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;br&gt;
-1. &lt;span class="caps"&gt;67MB&lt;/span&gt; vfat格式的引导分区（系统启动后被挂载在/boot目录）
-2. TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/p&gt;
-&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
-若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
-&lt;h2&gt;安装的是Destop版本,lite&lt;/h2&gt;
-&lt;h2&gt;远程桌面工具,不是VNC&lt;/h2&gt;
-&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry><entry><title>[面试] 1. 黑盒测试需要注意的几个关注点</title><link href="https://pingbook.top/articles/3-software-testing-black/" rel="alternate"></link><published>2018-07-11T16:04:37+08:00</published><updated>2018-07-11T16:04:37+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/3-software-testing-black/</id><summary type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category><category term="java"></category></entry><entry><title>[面试] 1. 黑盒测试需要注意的几个关注点</title><link href="https://pingbook.top/articles/3-software-testing-black/" rel="alternate"></link><published>2018-07-11T16:04:37+08:00</published><updated>2018-07-11T16:04:37+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/3-software-testing-black/</id><summary type="html">&lt;h2&gt;基本理论概念&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;是软件工程中的一个非常重要的环节，是开发项目整体的一部分。&lt;br&gt;
 是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，&lt;br&gt;&amp;nbsp;不可能发现全部缺陷，软件测试是有局限性的。&lt;/p&gt;
@@ -288,130 +561,7 @@ d.&amp;nbsp;因果图法&lt;/p&gt;
 &lt;p&gt;测试方法不同：单元测试属于白盒测试，集成测试属于灰盒测试，系统测试属于黑盒测试。&lt;/p&gt;
 &lt;p&gt;考察范围测试重点不同：单元测试注重单元内部的数据结构，逻辑控制，异常处理。&lt;/p&gt;
 &lt;p&gt;集成测试注重模块之间的接口及接口之间的数据传递，系统测试注重满足需求。&lt;/p&gt;
-&lt;p&gt;基准不同：单元测试主要的逻辑覆盖，集成测试主要是接口覆盖，系统测试是测试用例对需求规格的覆盖率。&lt;/p&gt;</content><category term="Software Testing"></category><category term="面试"></category></entry><entry><title>[初级] pelican 博客搭建</title><link href="https://pingbook.top/articles/try-pelican/" rel="alternate"></link><published>2018-07-11T10:31:20+08:00</published><updated>2018-07-11T10:31:20+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/try-pelican/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;关键字&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;搭建步骤&lt;/h2&gt;
-&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
-&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我真是太折腾了,也没能坚持下去,去年陆陆续续用&lt;code&gt;hexo&lt;/code&gt;写了一段时间的博客,最终没能坚持下去!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;关键字&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;pelican &lt;br&gt; markdown &lt;br&gt;&amp;nbsp;github&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;搭建步骤&lt;/h2&gt;
-&lt;p&gt;最好的方式莫过于官方文档: &lt;a href="http://docs.getpelican.com/en/stable/install.html"&gt;官方入坑道路&lt;/a&gt;.&amp;nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;// 如果需要使用markdown这个高逼格的语法去写博客&lt;/span&gt;
-&lt;span class="code-line"&gt;# pip install pelican markdown typogrify &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# mkdir pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;# pelican-quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在&lt;code&gt;pelicanconf.py&lt;/code&gt;修改,直接默认回车一路下去就好了! &lt;br/&gt;&amp;nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)&lt;/span&gt;
-&lt;span class="code-line"&gt;2. What will be the title of this web site?(网站的标题是什么)&lt;/span&gt;
-&lt;span class="code-line"&gt;3. Who will be the author of this web site?(网站的作者是谁)&lt;/span&gt;
-&lt;span class="code-line"&gt;4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&amp;#39;zh&amp;#39;中文&lt;/span&gt;
-&lt;span class="code-line"&gt;5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y&lt;/span&gt;
-&lt;span class="code-line"&gt;6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&amp;#39;/&amp;#39;),http://moelove.info&lt;/span&gt;
-&lt;span class="code-line"&gt;7. Do you want to enable article pagination?(是否启用文章分页)&lt;/span&gt;
-&lt;span class="code-line"&gt;8. Do you want to generate a Makefile to easily manage your website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))&lt;/span&gt;
-&lt;span class="code-line"&gt;9. Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)&lt;/span&gt;
-&lt;span class="code-line"&gt;10. Do you want to upload your website using FTP?&lt;/span&gt;
-&lt;span class="code-line"&gt;11. Do you want to upload your website using SSH?&lt;/span&gt;
-&lt;span class="code-line"&gt;12. Do you want to upload your website using Dropbox?&lt;/span&gt;
-&lt;span class="code-line"&gt;13. Do you want to upload your website using S3?&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;命令使用&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;由于本人使用的是windows,这里我使用了两个命令:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# pelican content # 根据content中的内容，生成静态网站到output目下&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m pelican.server&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;# cd output &amp;amp;&amp;amp; python -m SimpleHTTPServer&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;主题和插件安装&lt;/h2&gt;
-&lt;h3&gt;theme安装&lt;/h3&gt;
-&lt;p&gt;下载主题文件,添加配置: &lt;code&gt;THEME = './pelican-themes/gum'&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;插件安装&lt;/h3&gt;
-&lt;p&gt;下载插件文件,添加如下配置: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;PLUGIN_PATHS = [u&amp;quot;pelican-plugins&amp;quot;]&lt;/span&gt;
-&lt;span class="code-line"&gt;PLUGINS = [u&amp;quot;sitemap&amp;quot;,u&amp;quot;gzip_cache&amp;quot;,u&amp;quot;neighbors&amp;quot;,u&amp;quot;related_posts&amp;quot;]&lt;/span&gt;
-&lt;span class="code-line"&gt;SITEMAP = {&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;format&amp;#39;: &amp;#39;xml&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;priorities&amp;#39;: {&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: 0.7,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: 0.5,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: 0.3&lt;/span&gt;
-&lt;span class="code-line"&gt;    },&lt;/span&gt;
-&lt;span class="code-line"&gt;    &amp;#39;changefreqs&amp;#39;: {&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;articles&amp;#39;: &amp;#39;weekly&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;indexes&amp;#39;: &amp;#39;daily&amp;#39;,&lt;/span&gt;
-&lt;span class="code-line"&gt;        &amp;#39;pages&amp;#39;: &amp;#39;monthly&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;    }&lt;/span&gt;
-&lt;span class="code-line"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;字体更改&lt;/h3&gt;
-&lt;p&gt;1.下载字体文件,到网站的静态文件夹内,具体可以参考让wordpress主题绕开对google的依赖.不过此种方法也有些问题.把静态资源放到Github上加载时间也没别之前好多少.&lt;br&gt;
-2.把Google的静态公共库替换为国内的公共库.例如我的给替换成360的镜像地址.其实这种方法也有些弊端,例如国外用户访问就会出现加载过慢的问题.但是毕竟我们在&amp;#8217;朝内&amp;#8217;,所以就换成360的资源库吧.操作如下
-在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件&lt;code&gt;gumby.css&lt;/code&gt;,修改如下: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#static/css/目录下css文件中,例如gumby.css&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;googleapi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#替换为&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Overlock&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;900&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;useso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;PT&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;国内其他开公共库: 百度CDN公共库; 新浪云计算CDN公共库; 又拍云JS库CDN服务;&amp;nbsp;七牛云静态文件CDN;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;高级语法&lt;/h2&gt;
-&lt;h3&gt;静态图片&lt;/h3&gt;
-&lt;p&gt;新建一个目录在&lt;code&gt;content&lt;/code&gt;下面,例如&lt;code&gt;images&lt;/code&gt;,然后在&lt;code&gt;pelicanconf.py&lt;/code&gt;设置如下:
-&lt;code&gt;STATIC_PATHS = ['images','downloads']&lt;/code&gt;
-,在对应的md中可以这样写语法:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/try-pelican/test.png"&gt;&lt;/p&gt;
-&lt;h2&gt;部署&lt;/h2&gt;
-&lt;h3&gt;部署到github上&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;新建一个仓库,仓库名称和你的昵称相同或者创建一个组织&lt;/li&gt;
-&lt;li&gt;使用如下命令上传&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd output&lt;/span&gt;
-&lt;span class="code-line"&gt;git init&lt;/span&gt;
-&lt;span class="code-line"&gt;git add .&lt;/span&gt;
-&lt;span class="code-line"&gt;git remote add origin 仓库git地址&lt;/span&gt;
-&lt;span class="code-line"&gt;git push -u origin master&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category></entry><entry><title>[面试] 白盒测试需要关注的知识点</title><link href="https://pingbook.top/articles/4-software-testing-white/" rel="alternate"></link><published>2018-07-11T08:47:28+08:00</published><updated>2018-07-11T08:47:28+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/4-software-testing-white/</id><summary type="html">&lt;p&gt;参考博客: &lt;a href="https://www.cnblogs.com/molrang/p/6420918.html"&gt;https://www.cnblogs.com/molrang/p/6420918.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;基准不同：单元测试主要的逻辑覆盖，集成测试主要是接口覆盖，系统测试是测试用例对需求规格的覆盖率。&lt;/p&gt;</content><category term="Software Testing"></category><category term="面试"></category></entry><entry><title>[面试] 白盒测试需要关注的知识点</title><link href="https://pingbook.top/articles/4-software-testing-white/" rel="alternate"></link><published>2018-07-11T08:47:28+08:00</published><updated>2018-07-11T08:47:28+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-11:/articles/4-software-testing-white/</id><summary type="html">&lt;p&gt;参考博客: &lt;a href="https://www.cnblogs.com/molrang/p/6420918.html"&gt;https://www.cnblogs.com/molrang/p/6420918.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;自动化测试&lt;/h2&gt;
 &lt;h3&gt;考虑的因素&lt;/h3&gt;
 &lt;p&gt;①、项目的影响（能否帮助项目进度、覆盖率、风险）&lt;/p&gt;

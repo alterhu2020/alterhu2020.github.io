@@ -9,7 +9,7 @@
 
 
 
-前言 继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. 添加google和百度的SEO (2018-07-09) 谷歌的收录比较简单,直接登录到这里: https://www.google.com/webmasters ,安装提示添加自己的网站即可 百度的可以通过进入百度站长http://zhanzhang.baidu.com,方法同上面的谷歌添加网站,验证即可. 加入谷歌广告:https://www.google.com/adsense/new/u/0/pub-1893384651266286/home 增加搜索功能(2018-07-09) 使用的插件是: Tipue_Search windows下的运行 看了一下官方的自动化部署相关的文章fabric/Make, 提到在linux下 你可以很方便的使用make 命令来操作相关的自动化,它对应的是makefile,你在使用pelican-quickstart命令的时候会提示你生成了 这个文件 …">
+前言¶ 继续上一篇的基本配置后,这里我将记录下涉及到的一些高级pelican的使用方法,也是自己摸索的一些网上的经验,还有一些自己自定义的功能. 关键字¶ Google adsense 百度站长 Google Console Tipue Search fabfile 不蒜子,浏览量统计 添加google和百度的SEO (2018-07-09)¶ 谷歌的收录比较简单,直接登录到这里: https://www.google.com/webmasters ,按照提示添加自己 的网站即可,添加对应的sitemap,robots.txt即可. 百度的可以通过进入百度站长http://zhanzhang.baidu.com,方法同上面的谷歌添加网站,验证即可. 为了网站的长期可持续发展,添加一些广告也是没办法的:https://www.google.com/adsense/new/u/0/pub-1893384651266286/home 增加搜索功能 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -85,9 +85,7 @@
                     <li ><a href="/categories">Category</a></li>
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
-                        <li><a
-                                href="../../about">About</a></li>
-
+                    <li ><a href="/about">About</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -129,8 +127,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-11T23:39:35.632250+08:00">-->
-                    <!--2018-07-11 23:39:35-->
+                    <!--<abbr class="published" title="2018-07-12T23:55:55.515092+08:00">-->
+                    <!--2018-07-12 23:55:55-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -140,7 +138,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-11 23:39:35
+                        2018-07-12 23:55:55
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -160,49 +158,78 @@
                     </script>
                 <div class="entry-content">
                     <p><br></p>
-<h2>前言</h2>
-<p>继续上一篇的基本配置后,这里我将涉及到一些高级的使用,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
-<h2>添加google和百度的SEO&nbsp;(2018-07-09)</h2>
-<ul>
-<li>谷歌的收录比较简单,直接登录到这里: <a href="https://www.google.com/webmasters">https://www.google.com/webmasters</a>&nbsp;,安装提示添加自己的网站即可</li>
-<li>百度的可以通过进入百度站长<a href="http://zhanzhang.baidu.com">http://zhanzhang.baidu.com</a>,方法同上面的谷歌添加网站,验证即可.</li>
-<li>加入谷歌广告:<a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home">https://www.google.com/adsense/new/u/0/pub-1893384651266286/home</a></li>
-</ul>
-<h2>增加搜索功能(2018-07-09)</h2>
-<p>使用的插件是: <a href="">Tipue_Search</a></p>
-<h3>windows下的运行</h3>
-<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
-你可以很方便的使用make 命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你生成了
-这个文件.<br>
-<code>fabfile</code>在上面的命令生成后发现里面的文件报了好多错,<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
-解决方法很简单,执行下面的命令进行安装相关的依赖包就好了:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>pip install pycryptodome</span>
-<span class="code-line">pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</span>
-</pre></div>
-
-
-<h2>百度站长不能收录</h2>
+<h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>继续上一篇的基本配置后,这里我将记录下涉及到的一些高级pelican的使用方法,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
+<h2 id="_2">关键字<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>很遗憾,还没有找到好的方法,网上说的一些方法,比如DNSPod设置,nginx代理(不符合要求),CDN代理(没有尝试过).</p>
+<ol>
+<li>Google&nbsp;adsense  </li>
+<li>百度站长  </li>
+<li>Google&nbsp;Console</li>
+<li>Tipue&nbsp;Search</li>
+<li>fabfile</li>
+<li>不蒜子,浏览量统计</li>
+</ol>
 </blockquote>
-<h2>加入浏览量统计</h2>
+<h2 id="googleseo-2018-07-09">添加google和百度的SEO (2018-07-09)<a class="headerlink" href="#googleseo-2018-07-09" title="Permanent link">&para;</a></h2>
+<ul>
+<li>谷歌的收录比较简单,直接登录到这里: <a href="https://www.google.com/webmasters">https://www.google.com/webmasters</a> ,按照提示添加自己&nbsp;的网站即可,添加对应的sitemap,robots.txt即可.</li>
+<li>百度的可以通过进入百度站长<a href="http://zhanzhang.baidu.com">http://zhanzhang.baidu.com</a>,方法同上面的谷歌添加网站,验证即可.</li>
+<li>为了网站的长期可持续发展,添加一些广告也是没办法的:<a href="https://www.google.com/adsense/new/u/0/pub-1893384651266286/home">https://www.google.com/adsense/new/u/0/pub-1893384651266286/home</a></li>
+</ul>
+<h2 id="2018-07-09">增加搜索功能(2018-07-09)<a class="headerlink" href="#2018-07-09" title="Permanent link">&para;</a></h2>
+<p>使用的插件是: <a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search">Tipue_Search</a></p>
+<h2 id="_3">自动化部署<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>看了一下官方的自动化部署相关的文章<a href="http://docs.getpelican.com/en/stable/publish.html">fabric/Make</a>, 提到在linux下
+你可以很方便的使用<code>make</code>命令来操作相关的自动化,它对应的是<code>makefile</code>,你在使用<code>pelican-quickstart</code>命令的时候会提示你是否需要生成
+这个文件.<br>
+执行命令<code>pelican-quickstart</code>的时候也会生成一个文件<code>fabfile.py</code>,这个文件同<code>makefile</code>是一样的,只不过一个是用python实现的,一个是基于linux shell
+实现的. 在window下打开这个文件,发现里面的文件报了好多错,定位到<code>from fabric.api import *</code>,类似<code>no module found env,local</code>
+由于对<code>fabfile</code>不太熟悉,到网上找了一圈解决方法,发现缺少对应的包导致报错命令无法执行. 执行下面的命令完成对应的安装操作.
+<code>pip install pycryptodome
+pip install Fabric3 # 注意这里是Fabric3,不要使用fabric</code></p>
+<h2 id="_4">百度站长不能收录<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>按照官网提示,下载了对应的html文件到pelican的目录下面使用附件的形式复制到对应的output目录下面,推荐不要使用<code>cname</code>的方式.
+例如我下载的html文件是: <code>baidu_verify_TVrRxDNlTJ.html</code>,完整的配置在<code>pelican.conf</code>文件中,如下:&nbsp;&#8220;`</p>
+</blockquote>
+<p>STATIC_PATHS = [&lsquo;static&rsquo;,
+                &lsquo;extra/<span class="caps">README</span>.md&rsquo;,
+                &lsquo;extra/robots.txt&rsquo;,
+                &lsquo;extra/<span class="caps">CNAME</span>&rsquo;,
+                &lsquo;extra/favicon.ico&rsquo;,
+                &lsquo;extra/baidu_verify_TVrRxDNlTJ.html&rsquo;,
+                &lsquo;extra/google9db45b3da980c919.html&rsquo;]
+EXTRA_PATH_METADATA = {
+    &lsquo;extra/<span class="caps">README</span>.md&rsquo;: {&lsquo;path&rsquo;: &lsquo;<span class="caps">README</span>.md&rsquo;},
+    &lsquo;extra/robots.txt&rsquo;: {&lsquo;path&rsquo;: &lsquo;robots.txt&rsquo;},
+    &lsquo;extra/<span class="caps">CNAME</span>&rsquo;: {&lsquo;path&rsquo;: &lsquo;<span class="caps">CNAME</span>&rsquo;},
+    &lsquo;extra/favicon.ico&rsquo;: {&lsquo;path&rsquo;: &lsquo;favicon.ico&rsquo;},
+    &lsquo;extra/baidu_verify_TVrRxDNlTJ.html&rsquo;: {&lsquo;path&rsquo;: &lsquo;baidu_verify_TVrRxDNlTJ.html&rsquo;},
+    &lsquo;extra/google9db45b3da980c919.html&rsquo;: {&lsquo;path&rsquo;: &lsquo;google9db45b3da980c919.html&rsquo;}&nbsp;}</p>
+<p><span class="dquo">&#8220;</span>`</p>
+<h2 id="_5">加入浏览量统计<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>在谷歌上溜达了一圈,找到了一个博客: http://xiaohanyu.me/about/,随便看了一下作者的博客,看到了他去面试的谷歌和Facebook的面试经历,
-感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.
-后面发现这个是最好做浏览量统计的.<br>
-* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是超简单:</p>
-<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;script</span> <span class="err">async</span> <span class="na">src=</span><span class="s">&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
-<span class="code-line"></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_pv&quot;</span><span class="nt">&gt;</span>总访问量<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>次<span class="nt">&lt;/span&gt;</span>,</span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_site_uv&quot;</span><span class="nt">&gt;</span>总访客<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_site_uv&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>人<span class="nt">&lt;/span&gt;</span></span>
-<span class="code-line">  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_container_page_pv&quot;</span><span class="nt">&gt;</span>, 浏览量:<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;busuanzi_value_page_pv&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span></span>
-</pre></div>
+感觉挺好玩的,里面提到了他们代码面试的工具: <a href="https://coderpad.io">https://coderpad.io</a>. 去玩了一下,感觉挺好玩.&nbsp;好吧,扯远了&#8230;..</p>
+<p>言归正文,推荐一个好用简单的统计页面浏览量和网站浏览量的插件.<br>
+* 工具<a href="http://busuanzi.ibruce.info/">不蒜子</a>,代码也是只需要简简单单的几号就可以了,把这四行代码放到页面中你想要放的地址:
+&#8220;`
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></p>
+<p><span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>,
+  <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+  <span id="busuanzi_container_page_pv">, 浏览量:<span id="busuanzi_value_page_pv"></span></span>&nbsp;&#8220;`</p>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
-                        <li style="display: inline;margin-left: auto; margin-right: auto;">
-                            ◄&nbsp;&nbsp;<a href="../../articles/1-object-oriented-programming/">
-                            [面试] 1.&nbsp;面向对象的相关概念
-                        </a>
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/tensorflow-basic/">
+                                ◄&nbsp;&nbsp;tensorflow的基础学习
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/pi-installation/">
+                                树莓派3B安装&nbsp;&nbsp;►
+                            </a>
                         </li>
                 </ul>
                 <hr/>
@@ -248,10 +275,7 @@
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
-                    <li
-><a
-                            href="../../about">About</a>
-                    </li>
+                <li><a href="/about">About</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -260,6 +284,7 @@
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/machine-learning/">machine learning</a></li>
                         <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
                         <li><a href="../../category/bigdata/">bigdata</a></li>
@@ -279,11 +304,14 @@
                     <li class="tag-2"><a href="../../tag/java/">java</a></li>
                     <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../../tag/machine-learning/">machine learning</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
                     <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
@@ -333,7 +361,7 @@
             <address id="about" class="vcard body">
                 ©
                 <script>document.write(new Date().getFullYear())</script>
-                PingBook.Inc.
+                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

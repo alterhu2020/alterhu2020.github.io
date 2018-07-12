@@ -9,7 +9,7 @@
 
 
 
-树莓派安装 安装完成后，TF卡被分成两个分区： 1. 67MB vfat格式的引导分区（系统启动后被挂载在/boot目录） 2. TF卡剩余空间 ext4格式的磁盘分区 由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。 若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format Tool（windows磁盘管理器无法处理ext4格式磁盘）。 安装的是Destop版本,lite 远程桌面工具,不是VNC 直接运行如下命令安装对应的远程桌面工具: $ sudo apt install -y xrdp">
+树莓派安装¶ 安装完成后，TF卡被分成两个分区： 1. 67MB vfat格式的引导分区（系统启动后被挂载在/boot目录） 2. TF卡剩余空间 ext4格式的磁盘分区 由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。 若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format Tool（windows磁盘管理器无法处理ext4格式磁盘）。 安装的是lite版本¶ 在没有显示屏网线的情况下可以通过如下方式进行远程操作. 1. 新建一个没有后缀的文件ssh到boot目录也就是上面可以在windows上显示的SD卡. 2. 新建一个文件wpa_supplicant.conf,输入以下的内容,按照你的环境进行配置对应的wifi名称和密码: “` ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 country=CN network={ ssid=”MiniWifi” psk=”L0ngh …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -85,9 +85,7 @@
                     <li ><a href="/categories">Category</a></li>
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
-                        <li><a
-                                href="../../about">About</a></li>
-
+                    <li ><a href="/about">About</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -129,8 +127,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-11T16:05:26.868315+08:00">-->
-                    <!--2018-07-11 16:05:26-->
+                    <!--<abbr class="published" title="2018-07-13T00:01:02.776753+08:00">-->
+                    <!--2018-07-13 00:01:02-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -140,7 +138,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-11 16:05:26
+                        2018-07-13 00:01:02
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -159,35 +157,48 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 <div class="entry-content">
-                    <h2>树莓派安装</h2>
+                    <h2 id="_1">树莓派安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>安装完成后，TF卡被分成两个分区：<br>
 1. <span class="caps">67MB</span> vfat格式的引导分区（系统启动后被挂载在/boot目录）
 2. TF卡剩余空间&nbsp;ext4格式的磁盘分区</p>
 <p>由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
 若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。</p>
-<h2>安装的是Destop版本,lite</h2>
-<h2>远程桌面工具,不是VNC</h2>
-<p>直接运行如下命令安装对应的远程桌面工具:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install -y xrdp</span>
-</pre></div>
+<h2 id="lite">安装的是lite版本<a class="headerlink" href="#lite" title="Permanent link">&para;</a></h2>
+<p>在没有显示屏网线的情况下可以通过如下方式进行远程操作.
+1. 新建一个没有后缀的文件<code>ssh</code>到boot目录也就是上面可以在windows上显示的SD卡.
+2. 新建一个文件<code>wpa_supplicant.conf</code>,输入以下的内容,按照你的环境进行配置对应的wifi名称和密码:
+&#8220;`
+ctrl_interface=<span class="caps">DIR</span>=/var/run/wpa_supplicant <span class="caps">GROUP</span>=netdev
+update_config=1
+country=<span class="caps">CN</span></p>
+<p>network={
+    ssid=&rdquo;MiniWifi&rdquo;
+    psk=&rdquo;L0ngh)171130AVb&rdquo;
+    key_mgmt=<span class="caps">WPA</span>-<span class="caps">PSK</span>&nbsp;}</p>
+<p>network={
+    ssid=&rdquo;<span class="caps">GDS</span>-<span class="caps">GUEST</span>&rdquo;
+    psk=&rdquo;Gr33nD0t!&rdquo;&nbsp;}</p>
+<p><code>``
+3. 安装完成后,需要登录到电脑,这个电脑和你的树莓派需要在一个局域网里面. 有很多人统建使用</code>advanced ip scanner`这个工具,
+我也使用了一段时间,开始还好,后面发现有时候扫描不到你的树莓派. 在网上搜索了一阵发现还有同款的一个扫描类的软件<a href="https://angryip.org/download/#windows">angry ip scanner</a>
+之所以选择他是因为他对不同的局域网环境都能正确的扫描到树莓派对应的机器名称和机器ip&nbsp;address.</p>
+<h2 id="vnc">远程桌面工具,不是VNC<a class="headerlink" href="#vnc" title="Permanent link">&para;</a></h2>
+<p>直接运行如下命令安装对应的远程桌面工具:
+<code>$ sudo apt install -y xrdp</code></p>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
-                        <li style="display: inline;margin-left: auto; margin-right: auto;">
-                            ◄&nbsp;&nbsp;<a href="../../articles/3-software-testing-black/">
-                            [面试] 1.&nbsp;黑盒测试需要注意的几个关注点
-                        </a>
-                        </li>
-                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            ►&nbsp;&nbsp;<a href="../../articles/hadoop-spark-hbase-hive/">
-                            大数据hadoop,spark,hbase,hive概念
-                        </a>
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/pelican-advance/">
+                                ◄&nbsp;&nbsp;[高级] pelican&nbsp;博客高级配置
+                            </a>
                         </li>
                 </ul>
                 <hr/>
                 <div class="comments">
                     <h3>Relate Articles</h3>
                         <ul>
+                                <li><a href="../../articles/pi-python3/">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></li>
                                 <li><a href="../../articles/pi-nat123/">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></li>
                                 <li><a href="../../articles/pi-mirrors/">树莓派外部网站搭建</a></li>
                         </ul>
@@ -228,10 +239,7 @@
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
-                    <li
-><a
-                            href="../../about">About</a>
-                    </li>
+                <li><a href="/about">About</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -240,6 +248,7 @@
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/machine-learning/">machine learning</a></li>
                         <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
                         <li><a href="../../category/bigdata/">bigdata</a></li>
@@ -259,11 +268,14 @@
                     <li class="tag-2"><a href="../../tag/java/">java</a></li>
                     <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../../tag/machine-learning/">machine learning</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
                     <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
@@ -313,7 +325,7 @@
             <address id="about" class="vcard body">
                 ©
                 <script>document.write(new Date().getFullYear())</script>
-                PingBook.Inc.
+                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

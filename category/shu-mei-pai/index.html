@@ -85,9 +85,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/categories">Category</a></li>
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
-                        <li><a
-                                href="../../about">About</a></li>
-
+                    <li ><a href="/about">About</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -121,22 +119,28 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                         <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装">树莓派3B安装</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-11T16:05:26.868315+08:00">
-                                        Posted @ 2018-07-11 16:05:26,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T00:01:02.776753+08:00">
+                                        Posted @ 2018-07-13 00:01:02,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>树莓派安装</h2>
+                                <div class="entry-content"> <h2 id="_1">树莓派安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>安装完成后，TF卡被分成两个分区：<br>
 1. <span class="caps">67MB</span> vfat格式的引导分区（系统启动后被挂载在/boot目录）
 2. TF卡剩余空间&nbsp;ext4格式的磁盘分区</p>
 <p>由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
 若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。</p>
-<h2>安装的是Destop版本,lite</h2>
-<h2>远程桌面工具,不是VNC</h2>
-<p>直接运行如下命令安装对应的远程桌面工具:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt install -y xrdp</span>
-</pre></div> </div><!-- /.entry-content -->
+<h2 id="lite">安装的是lite版本<a class="headerlink" href="#lite" title="Permanent link">&para;</a></h2>
+<p>在没有显示屏网线的情况下可以通过如下方式进行远程操作.
+1. 新建一个没有后缀的文件<code>ssh</code>到boot目录也就是上面可以在windows上显示的SD卡.
+2. 新建一个文件<code>wpa_supplicant.conf</code>,输入以下的内容,按照你的环境进行配置对应的wifi名称和密码:
+&#8220;`
+ctrl_interface=<span class="caps">DIR</span>=/var/run/wpa_supplicant <span class="caps">GROUP</span>=netdev
+update_config=1
+country=<span class="caps">CN</span></p>
+<p>network={
+    ssid=&rdquo;MiniWifi&rdquo;
+    psk=&rdquo;L0ngh …</p> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="../../articles/pi-installation/" rel="bookmark" title="Permalink to 树莓派3B安装"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
@@ -145,6 +149,41 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <div class="row tag-row">
                                         <span>Tags: </span>
                                             <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-12T21:40:26.473588+08:00">
+                                        Posted @ 2018-07-12 21:40:26,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
+<p><code>$ sudo apt-get remove 'python3.*'
+其实这里的python的包是: `python3.5-minimal`,`python3.5-venv`</code></p>
+<h2 id="install-python37">安装 install python3.7<a class="headerlink" href="#install-python37" title="Permanent link">&para;</a></h2>
+<p>因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
+参考文档: <a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6">https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6</a></p>
+<p>需要用到的命令如下:
+&#8220;`
+安装依赖包
+$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev
+$ sudo …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../../tag/python3/">python3</a>
                                 </div>
 
 
@@ -397,10 +436,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/categories">Category</a></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
-                    <li
-><a
-                            href="../../about">About</a>
-                    </li>
+                <li><a href="/about">About</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -409,6 +445,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <ul class="blank">
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/machine-learning/">machine learning</a></li>
                         <li><a href="../../category/linux/">linux</a></li>
                         <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
                         <li><a href="../../category/bigdata/">bigdata</a></li>
@@ -428,11 +465,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../../tag/java/">java</a></li>
                     <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../../tag/machine-learning/">machine learning</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
                     <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
@@ -484,7 +524,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <address id="about" class="vcard body">
                 ©
                 <script>document.write(new Date().getFullYear())</script>
-                PingBook.Inc.
+                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

@@ -73,12 +73,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -117,36 +113,20 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器">[Linux环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器">[环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T22:11:17.195355+08:00">
-                                        Posted @ 2018-07-10 22:11:17,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T19:29:12.251387+08:00">
+                                        Posted @ 2018-07-13 19:29:12,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>Debian安装配置nginx服务器</h2>
+                                <div class="entry-content"> <h2 id="debiannginx">Debian安装配置nginx服务器<a class="headerlink" href="#debiannginx" title="Permanent link">&para;</a></h2>
 <ul>
 <li>下载解压缩安装包</li>
 </ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz</span>
-<span class="code-line">$ tar zxvf nginx-1.15.1.tar.gz </span>
-</pre></div>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15 …</span></pre></div> </div><!-- /.entry-content -->
 
-
-<ul>
-<li>重新配置nginx的服务器名称servername和对应版本</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> nginx-1.15.1/</span>
-<span class="code-line">$ sudo nano  src/http/ngx_http_header_filter_module.c</span>
-<span class="code-line">$ sudo nano  src/core/nginx.h</span>
-<span class="code-line">$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/</span>
-</pre></div>
-
-
-<ul>
-<li>安装对应的nginx的所有依赖的包, gcc环境 …</li></ul> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian安装编译和安装nginx服务器"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -171,6 +151,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -204,6 +185,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

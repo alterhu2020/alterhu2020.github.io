@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>[Linux环境搭建] Debian如何安装配置Tomcat9</title>
+        <title>[环境搭建] Debian如何安装配置Tomcat9</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-安装 参考文档: https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/ 推荐: https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33 安装JDK和配置环境变量(采用下面的配置环境变量/etc/profile), 注意截止到20180709, oracle没有提供debain的32位系统安装tar包,所以这里使用的是32位的jdk1.8 $ nano ~/.bashrc export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt export PATH=$JAVA_HOME/bin:$PATH $ source ~/.bashrc $ echo $JAVA_HOME 添加组和用户 $ sudo groupadd tomcat $ sudo useradd -s /bin/false …">
+安装¶ 参考文档: https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/ 推荐: https …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -73,12 +73,7 @@
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -123,12 +119,12 @@
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/pi-tomcat/" rel="bookmark"
-                           title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2>
+                           title="Permalink to [环境搭建] Debian如何安装配置Tomcat9">[环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-09T22:46:39.124456+08:00">-->
-                    <!--2018-07-09 22:46:39-->
+                    <!--<abbr class="published" title="2018-07-13T19:29:26.471011+08:00">-->
+                    <!--2018-07-13 19:29:26-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -138,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-09 22:46:39
+                        2018-07-13 19:29:26
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -157,7 +153,7 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 <div class="entry-content">
-                    <h2>安装</h2>
+                    <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>参考文档:<br>
 <em> <a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/">https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/</a><br>
@@ -174,7 +170,7 @@
 </pre></div>
 
 
-<ol>
+<ol start="2">
 <li>添加组和用户</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo groupadd tomcat</span>
@@ -213,7 +209,7 @@
 </pre></div>
 
 
-<h2>配置&nbsp;tomcat开机启动</h2>
+<h2 id="tomcat">配置 tomcat开机启动<a class="headerlink" href="#tomcat" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/systemd/system/tomcat.service</span>
 <span class="code-line"><span class="c1"># Systemd unit file for tomcat</span></span>
 <span class="code-line"><span class="o">[</span>Unit<span class="o">]</span></span>
@@ -240,7 +236,7 @@
 </pre></div>
 
 
-<h2>Configure Apache Tomcat&nbsp;User</h2>
+<h2 id="configure-apache-tomcat-user">Configure Apache Tomcat User<a class="headerlink" href="#configure-apache-tomcat-user" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span class="code-line"><span></span>$ <span class="nb">cd</span> /home/pi/apache-tomcat-9.0.10/conf/</span>
 <span class="code-line">$ sudo nano tomcat-users.xml</span>
 <span class="code-line">&lt;role <span class="nv">rolename</span><span class="o">=</span><span class="s2">&quot;manager-gui&quot;</span>/&gt;</span>
@@ -262,12 +258,12 @@
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
                             <a href="../../articles/pi-svn/">
-                                ◄&nbsp;&nbsp;[Linux环境搭建]  svn&nbsp;安装配置
+                                ◄&nbsp;&nbsp;[环境搭建]  svn&nbsp;安装配置
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/pi-nat123/">
-                                [Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署&nbsp;&nbsp;►
+                            <a href="../../articles/basic-command/">
+                                [Linux]&nbsp;一些常用的linux系统的操作命令&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -312,6 +308,7 @@
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -345,6 +342,7 @@
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

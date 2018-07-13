@@ -255,7 +255,7 @@ a:focus { color: #34495E; }
 
 /* Card flip inspired by https://learn.shayhowe.com/advanced-html-css/transitions-animations */
 /* Possible alternative: use https://github.com/mintchaos/flippant.js */
-#navigation .avatar-container {
+#banner .avatar-container {
   z-index: 10;
   width: 80px;
   height: 80px;
@@ -267,7 +267,7 @@ a:focus { color: #34495E; }
   -o-perspective: 600;
   perspective: 600;
 }
-#navigation .avatar {
+#banner .avatar {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -282,7 +282,7 @@ a:focus { color: #34495E; }
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
-#navigation .avatar .side {
+#banner .avatar .side {
   border: solid 3px white;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
   border-radius: 16px;
@@ -296,17 +296,17 @@ a:focus { color: #34495E; }
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-#navigation .avatar.animate:hover, .page-header .avatar.animate .back {
+#banner .avatar.animate:hover, .page-header .avatar.animate .back {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-#navigation .avatar .side:hover, .page-header .avatar .back {
+#banner .avatar .side:hover, .page-header .avatar .back {
   border-color: #005580;
 }
-#navigation .avatar .back {
+#banner .avatar .back {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(#eeeeee, #dddddd);
   background-image: -moz-linear-gradient(#eeeeee, #dddddd);
@@ -318,7 +318,7 @@ a:focus { color: #34495E; }
   font-size: 13px;
   line-height: 20px;
 }
-#navigation .avatar .back p {
+#banner .avatar .back p {
   padding-top: 8px;
 }
 

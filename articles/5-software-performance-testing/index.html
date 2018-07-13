@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>PingBook Blog - Software Testing</title>
+        <title>[面试] 5. 性能测试相关的涉及内容</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vuejs、软件测试、测试自动化等的IT科技博客,希望大家一起交流学习!">
+前言¶ 今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈, 因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -104,48 +104,118 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         </div>
 
-<section id="content">
+    <section id="content" class="body">
 
+        <div class="row">
 
+            <div class="eleven columns">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234561"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/5-software-performance-testing/" rel="bookmark"
+                           title="Permalink to [面试] 5. 性能测试相关的涉及内容">[面试] 5.&nbsp;性能测试相关的涉及内容</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-07-13T19:27:57.616141+08:00">-->
+                    <!--2018-07-13 19:27:57-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        2018-07-13 19:27:57
+                            &nbsp;&nbsp;By
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
-   <div class="row">
-
-        <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 3. 黑盒测试需要注意的几个关注点">[面试] 3.&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:27:48.885060+08:00">
-                                        Posted @ 2018-07-13 19:27:48,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">基本理论概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                        <span id="busuanzi_container_page_pv">, <i class="icon-eye icon-large"></i><span
+                                id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook Blog</a>,转载请务必保留<a
+                            href="../../articles/5-software-performance-testing/">文章链接</a></p>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234565"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <div class="entry-content">
+                    <h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>是软件工程中的一个非常重要的环节，是开发项目整体的一部分。<br>
-是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，<br>&nbsp;不可能发现全部缺陷，软件测试是有局限性的。</p>
+<p>今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点.</p>
 </blockquote>
-<h3 id="_2">测试的目的<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>1 …</p></blockquote> </div><!-- /.entry-content -->
+<h2 id="_2">关键字<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><span class="caps">TPS</span>(Transaction Per&nbsp;Second)</li>
+<li><span class="caps">PV</span>(Page&nbsp;View)</li>
+<li><span class="caps">PR</span>(Page&nbsp;Response)</li>
+<li></li>
+</ul>
+                </div><!-- /.entry-content -->
+                <hr/>
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/4-software-testing-white/">
+                                ◄&nbsp;&nbsp;[面试] 4.&nbsp;白盒测试需要关注的知识点
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/try-pelican/">
+                                [Pelican初级] pelican&nbsp;博客搭建&nbsp;&nbsp;►
+                            </a>
+                        </li>
+                </ul>
+                <hr/>
+                <div class="comments">
+                    <h3>Relate Articles</h3>
+                        <ul>
+                                <li><a href="../../articles/4-software-testing-white/">[面试] 4.&nbsp;白盒测试需要关注的知识点</a></li>
+                                <li><a href="../../articles/3-software-testing-black/">[面试] 3.&nbsp;黑盒测试需要注意的几个关注点</a></li>
+                                <li><a href="../../articles/1-object-oriented-programming/">[面试] 1.&nbsp;面向对象的相关概念</a></li>
+                                <li><a href="../../articles/2-list-methods/">[面试] 2.&nbsp;有关list及其方法的使用</a></li>
+                        </ul>
+                </div>
+                <hr/>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234566"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/5-software-performance-testing/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus</a>.
+                        </noscript>
+                    </div>
 
-                                <div class="medium primary btn"><a href="../../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 3. 黑盒测试需要注意的几个关注点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+            </div><!-- /.eleven.columns -->
 
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../../tag/software-testing/">Software Testing</a>
-                                            <a class="danger label" href="../../tag/mian-shi/">面试</a>
-                                </div>
-
-
-
-                        </article></li>
-                </ol><!-- /#posts-list -->
-
-        </div><!-- /.eleven.columns -->
-        
 <div class="three columns">
     <nav class="widget sidebarbg">
         <h4>Navigation</h4>
@@ -224,12 +294,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             </ul>
         </nav>
 
-</div> </div><!-- /.row -->
+</div>        </div><!-- /.row -->
 
-<p class="paginator">
-     第1页/共1页
-</p>
-</section><!-- /#content -->
+
+    </section>
 
     </div><!-- /.row -->
 </div><!-- /.container -->

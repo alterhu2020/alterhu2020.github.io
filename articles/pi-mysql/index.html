@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>[Linux环境搭建] MYSQL 的安装配置</title>
+        <title>[环境搭建] MYSQL 的安装配置</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-安装 执行如下命令进行安装和基本的配置: $ sudo apt-get -y install mysql-server $ sudo mysql_secure_installation 第二条命令将会配置mysql的root密码,删除掉test数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令: mysql -u root -p, 这里的root不用输入密码,明明上面的已经设置了密码??? 进行如下的命令进行配置: $ sudo mysql -u root -p $ use mysql; $ update user set plugin='mysql_native_password' where user='root'; $ flush privileges; $ quit; 配置 root密码的更改,可以采用下面的操作步骤: $ sudo nano …">
+安装¶ 执行如下命令进行安装和基本的配置: $ sudo apt-get -y install mysql-server $ sudo mysql_secure_installation 第二条命令将会配置mysql的 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -73,12 +73,7 @@
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -123,12 +119,12 @@
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/pi-mysql/" rel="bookmark"
-                           title="Permalink to [Linux环境搭建] MYSQL 的安装配置">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2>
+                           title="Permalink to [环境搭建] MYSQL 的安装配置">[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-09T20:27:24.371368+08:00">-->
-                    <!--2018-07-09 20:27:24-->
+                    <!--<abbr class="published" title="2018-07-13T19:28:56.666940+08:00">-->
+                    <!--2018-07-13 19:28:56-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -138,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-09 20:27:24
+                        2018-07-13 19:28:56
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -157,7 +153,7 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 <div class="entry-content">
-                    <h2>安装</h2>
+                    <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>执行如下命令进行安装和基本的配置:</li>
 </ol>
@@ -176,8 +172,8 @@
 </pre></div>
 
 
-<h2>配置</h2>
-<ol>
+<h2 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol start="2">
 <li><code>root</code>密码的更改,可以采用下面的操作步骤:</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</span>
@@ -189,7 +185,7 @@
 </pre></div>
 
 
-<ol>
+<ol start="3">
 <li>增加用户名和授权远程登录:</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</span>
@@ -202,7 +198,7 @@
 </pre></div>
 
 
-<ol>
+<ol start="4">
 <li>创建数据库,支持中文:</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span><span class="n">UTF8</span><span class="o">:</span> </span>
@@ -210,9 +206,9 @@
 </pre></div>
 
 
-<ol>
-<li>自动备份数据库,每天备份一次</li>
-<li>新建文件: <code>sudo nano /usr/sbin/mysqlbackup.sh</code>,内容如下:</li>
+<ol start="5">
+<li>自动备份数据库,每天备份一次
+* 新建文件: <code>sudo nano /usr/sbin/mysqlbackup.sh</code>,内容如下:</li>
 </ol>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="code-line">1</span>
 <span class="code-line">2</span>
@@ -258,12 +254,12 @@
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
                             <a href="../../articles/pi-mirrors/">
-                                ◄&nbsp;&nbsp;树莓派外部网站搭建
+                                ◄&nbsp;&nbsp;[树莓派]&nbsp;树莓派外部网站搭建
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/pi-svn/">
-                                [Linux环境搭建]  svn&nbsp;安装配置&nbsp;&nbsp;►
+                            <a href="../../articles/pi-nat123/">
+                                [环境搭建]&nbsp;配置采用NAT123进行树莓派部署&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -308,6 +304,7 @@
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -341,6 +338,7 @@
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

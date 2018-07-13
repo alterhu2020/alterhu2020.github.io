@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>[Linux环境搭建] svn 安装配置</title>
+        <title>[环境搭建] svn 安装配置</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion 启动 svn 服务: d代表的是daemon 进程 $ svnserve -d $ ps aux | grep svnserve 若出现如下内容： wkr 6537 0.0 0.0 13784 956 ? Ss 16:18 0:00 svnserve -d wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 …">
+SVN 安装¶ 执行如下命令进行安装: $ sudo apt-get -y install subversion 启动 svn …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -73,12 +73,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -123,12 +119,12 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/pi-svn/" rel="bookmark"
-                           title="Permalink to [Linux环境搭建] svn 安装配置">[Linux环境搭建]  svn&nbsp;安装配置</a></h2>
+                           title="Permalink to [环境搭建] svn 安装配置">[环境搭建]  svn&nbsp;安装配置</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-09T21:33:36.432567+08:00">-->
-                    <!--2018-07-09 21:33:36-->
+                    <!--<abbr class="published" title="2018-07-13T19:29:21.212442+08:00">-->
+                    <!--2018-07-13 19:29:21-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -138,7 +134,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-09 21:33:36
+                        2018-07-13 19:29:21
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -157,7 +153,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 <div class="entry-content">
-                    <h2><span class="caps">SVN</span>&nbsp;安装</h2>
+                    <h2 id="svn"><span class="caps">SVN</span> 安装<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h2>
 <ol>
 <li>执行如下命令进行安装:</li>
 </ol>
@@ -165,7 +161,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 </pre></div>
 
 
-<ol>
+<ol start="2">
 <li>启动 <code>svn</code> 服务: </li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>d代表的是daemon 进程</span>
@@ -180,21 +176,21 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 </pre></div>
 
 
-<ol>
+<ol start="3">
 <li>关闭<code>svn</code>服务:</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$  killall svnserve</span>
 </pre></div>
 
 
-<ol>
+<ol start="4">
 <li>重启 <code>svn</code>服务:</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ svnserve -d -r /srv</span>
 </pre></div>
 
 
-<ol>
+<ol start="4">
 <li>新建一个仓库:</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo adduser --system --home /srv/svn --disabled-password --disabled-login --group svn</span>
@@ -204,7 +200,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 </pre></div>
 
 
-<ol>
+<ol start="5">
 <li>修改仓库配置文件<br>
 编辑配置文件:&nbsp;svnserve.conf</li>
 </ol>
@@ -217,7 +213,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 
 
 <p>修改帐户文件<code>nano /srv/svn/conf/passwd</code> 和 <code>sudo nano /srv/svn/conf/authz</code>,&nbsp;此处忽略.</p>
-<ol>
+<ol start="6">
 <li>配置svn开机自动启动</li>
 <li>新建一个svnserve配置文件在<code>/et/default/svnserve</code>文件,内容如下:</li>
 </ol>
@@ -226,7 +222,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 </pre></div>
 
 
-<ol>
+<ol start="2">
 <li><strong>注意</strong> 新建log文件,这些是<code>/etc/default/svnserve</code>中的文件的配置涉及的几个文件,如果执行<code>sudo systemctl restart svnserve.service</code>失败,会自动删除文件夹<code>/run/svnserve</code></li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo mkdir /run/svnserve</span>
@@ -238,7 +234,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 </pre></div>
 
 
-<ol>
+<ol start="3">
 <li>新建service启动服务文件</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/systemd/system/svnserve.service</span>
@@ -280,7 +276,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
 </pre></div>
 
 
-<ol>
+<ol start="4">
 <li>checkout一份代码到nginx服务器,保持web同步,注意checkout的目录用户要是svn的用户和组,这样hook才能有权限读写</li>
 </ol>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo svn co svn://localhost/svn /www/pingbook.top --username <span class="s2">&quot;hr&quot;</span></span>
@@ -299,13 +295,13 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/pi-mysql/">
-                                ◄&nbsp;&nbsp;[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置
+                            <a href="../../articles/pi-python3/">
+                                ◄&nbsp;&nbsp;[环境搭建] 如何完整卸载python2/3&nbsp;在debain上
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
                             <a href="../../articles/pi-tomcat/">
-                                [Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9&nbsp;&nbsp;►
+                                [环境搭建]&nbsp;Debian如何安装配置Tomcat9&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -350,6 +346,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -383,6 +380,7 @@ SVN 安装 执行如下命令进行安装: $ sudo apt-get -y install subversion
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

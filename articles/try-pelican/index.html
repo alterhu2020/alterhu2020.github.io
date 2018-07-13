@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>[初级] pelican 博客搭建</title>
+        <title>[Pelican初级] pelican 博客搭建</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-我真是太折腾了,也没能坚持下去,去年陆陆续续用hexo写了一段时间的博客,最终没能坚持下去! 这个博客建立算是建立起来了, 我会认真的去写博客,坚持到最后! 关键字¶ pelican markdown  github 搭建步骤¶ 最好的方式莫过于官方文档: 官方入坑道路. 下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤 “` // 如果需要使用markdown这个高逼格的语法去写博客,请安装一下的包 pip install pelican markdown typogrify¶ mkdir pingbook.top¶ cd pingbook.top¶ pelican-quickstart¶ 安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在`pelicanconf.py`修改,直接默认回车一路下去就好了! <br/> pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。 Where …">
+我真是太折腾了,也没能坚持下去,去年陆陆续续用hexo写了一段时间的博客,最终没能坚持下去! 这个博客建立算是建立起来了, 我会认真的去写博客,坚持到最后! 关键字 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -73,12 +73,7 @@
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -123,12 +119,12 @@
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/try-pelican/" rel="bookmark"
-                           title="Permalink to [初级] pelican 博客搭建">[初级] pelican&nbsp;博客搭建</a></h2>
+                           title="Permalink to [Pelican初级] pelican 博客搭建">[Pelican初级] pelican&nbsp;博客搭建</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-12T23:23:08.867019+08:00">-->
-                    <!--2018-07-12 23:23:08-->
+                    <!--<abbr class="published" title="2018-07-13T19:28:22.628744+08:00">-->
+                    <!--2018-07-13 19:28:22-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -138,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-12 23:23:08
+                        2018-07-13 19:28:22
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -166,102 +162,117 @@
 <p>pelican <br> markdown <br>&nbsp;github</p>
 </blockquote>
 <h2 id="_2">搭建步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>最好的方式莫过于官方文档: <a href="http://docs.getpelican.com/en/stable/install.html">官方入坑道路</a>.
-下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤
-&#8220;`
-//&nbsp;如果需要使用markdown这个高逼格的语法去写博客,请安装一下的包</p>
-<h1 id="pip-install-pelican-markdown-typogrify">pip install pelican markdown typogrify<a class="headerlink" href="#pip-install-pelican-markdown-typogrify" title="Permanent link">&para;</a></h1>
-<h1 id="mkdir-pingbooktop">mkdir pingbook.top<a class="headerlink" href="#mkdir-pingbooktop" title="Permanent link">&para;</a></h1>
-<h1 id="cd-pingbooktop">cd pingbook.top<a class="headerlink" href="#cd-pingbooktop" title="Permanent link">&para;</a></h1>
-<h1 id="pelican-quickstart">pelican-quickstart<a class="headerlink" href="#pelican-quickstart" title="Permanent link">&para;</a></h1>
-<p><code>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在`pelicanconf.py`修改,直接默认回车一路下去就好了! &lt;br/&gt;
-pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</code></p>
-<ol>
-<li>Where do you want to create your new web site?[.]&nbsp;(你想在哪里创建你的网站，默认为当前目录)</li>
-<li>What will be the title of this web&nbsp;site?(网站的标题是什么)</li>
-<li>Who will be the author of this web&nbsp;site?(网站的作者是谁)</li>
-<li>What will be the default language of this web site? [en]&nbsp;(网站的默认语言是),这里我们写&rsquo;zh&rsquo;中文</li>
-<li>Do you want to specify a <span class="caps">URL</span> prefix? e.g., http://example.com(Y/n)&nbsp;(是否指定域名),Y</li>
-<li>What is your <span class="caps">URL</span> prefix?(see above example; no trailing&nbsp;slash)(输入域名，不能包含反斜杠&rsquo;/&rsquo;),http://moelove.info</li>
-<li>Do you want to enable article&nbsp;pagination?(是否启用文章分页)</li>
-<li>Do you want to generate a Makefile to easily manage your&nbsp;website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))</li>
-<li>Do you want an auto-reload <span class="amp">&amp;</span> simpleHTTP script to assist with theme and site&nbsp;development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)</li>
-<li>Do you want to upload your website using <span class="caps">FTP</span>?</li>
-<li>Do you want to upload your website using <span class="caps">SSH</span>?</li>
-<li>Do you want to upload your website using&nbsp;Dropbox?</li>
-<li>Do you want to upload your website using S3?&nbsp;&#8220;`</li>
-</ol>
+<p>最好的方式莫过于官方文档: <a href="http://docs.getpelican.com/en/stable/install.html">官方入坑道路</a>.&nbsp;下面的步骤都是很简单,网上一堆教程,我这里就不多说了,记下这些步骤</p>
+<div class="highlight"><pre><span class="code-line"><span></span>// 如果需要使用markdown这个高逼格的语法去写博客,请安装一下的包</span>
+<span class="code-line"># pip install pelican markdown typogrify </span>
+<span class="code-line"></span>
+<span class="code-line"># mkdir pingbook.top</span>
+<span class="code-line"># cd pingbook.top</span>
+<span class="code-line"># pelican-quickstart</span>
+</pre></div>
+
+
+<p>安装上面的步骤操作下来后,弹出如下的提示让你配置,这些配置都可以以后在<code>pelicanconf.py</code>修改,直接默认回车一路下去就好了! <br/>&nbsp;pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择。</p>
+<div class="highlight"><pre><span class="code-line"><span></span>1. Where do you want to create your new web site?[.]  (你想在哪里创建你的网站，默认为当前目录)</span>
+<span class="code-line">2. What will be the title of this web site?(网站的标题是什么)</span>
+<span class="code-line">3. Who will be the author of this web site?(网站的作者是谁)</span>
+<span class="code-line">4. What will be the default language of this web site? [en]   (网站的默认语言是),这里我们写&#39;zh&#39;中文</span>
+<span class="code-line">5. Do you want to specify a URL prefix? e.g., http://example.com(Y/n) (是否指定域名),Y</span>
+<span class="code-line">6. What is your URL prefix?(see above example; no trailing slash)(输入域名，不能包含反斜杠&#39;/&#39;),http://moelove.info</span>
+<span class="code-line">7. Do you want to enable article pagination?(是否启用文章分页)</span>
+<span class="code-line">8. Do you want to generate a Makefile to easily manage your website?(是否生成一个Makefile来管理网站(这里我建议生成，因为会比较方便的))</span>
+<span class="code-line">9. Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development?(是否想有一个自动加载的小型http脚本用来修改主题和站点开发)</span>
+<span class="code-line">10. Do you want to upload your website using FTP?</span>
+<span class="code-line">11. Do you want to upload your website using SSH?</span>
+<span class="code-line">12. Do you want to upload your website using Dropbox?</span>
+<span class="code-line">13. Do you want to upload your website using S3?</span>
+</pre></div>
+
+
 <h2 id="_3">命令使用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>由于本人使用的是windows,这里我使用了两个命令:&nbsp;&#8220;`</p>
+<p>由于本人使用的是windows,这里我使用了两个命令:</p>
 </blockquote>
-<h1 id="pelican-content-contentoutput">pelican content # 根据content中的内容，生成静态网站到output目下<a class="headerlink" href="#pelican-content-contentoutput" title="Permanent link">&para;</a></h1>
-<h1 id="cd-output-python-m-pelicanserver">cd output &amp;&amp; python -m pelican.server<a class="headerlink" href="#cd-output-python-m-pelicanserver" title="Permanent link">&para;</a></h1>
-<h1 id="cd-output-python-m-simplehttpserver">cd output &amp;&amp; python -m SimpleHTTPServer<a class="headerlink" href="#cd-output-python-m-simplehttpserver" title="Permanent link">&para;</a></h1>
-<p><span class="dquo">&#8220;</span>`</p>
+<div class="highlight"><pre><span class="code-line"><span></span># pelican content # 根据content中的内容，生成静态网站到output目下</span>
+<span class="code-line"># cd output &amp;&amp; python -m pelican.server</span>
+<span class="code-line"></span>
+<span class="code-line"># cd output &amp;&amp; python -m SimpleHTTPServer</span>
+</pre></div>
+
+
 <h2 id="_4">主题和插件安装<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="theme">theme安装<a class="headerlink" href="#theme" title="Permanent link">&para;</a></h3>
 <p>下载主题文件,添加配置: <code>THEME = './pelican-themes/gum'</code></p>
 <h3 id="_5">插件安装<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>下载插件文件,添加如下配置: 
-<code>PLUGIN_PATHS = [u"pelican-plugins"]
-PLUGINS = [u"sitemap",u"gzip_cache",u"neighbors",u"related_posts"]
-SITEMAP = {
-    'format': 'xml',
-    'priorities': {
-        'articles': 0.7,
-        'indexes': 0.5,
-        'pages': 0.3
-    },
-    'changefreqs': {
-        'articles': 'weekly',
-        'indexes': 'daily',
-        'pages': 'monthly'
-    }
-}</code></p>
+<p>下载插件文件,添加如下配置: </p>
+<div class="highlight"><pre><span class="code-line"><span></span>PLUGIN_PATHS = [u&quot;pelican-plugins&quot;]</span>
+<span class="code-line">PLUGINS = [u&quot;sitemap&quot;,u&quot;gzip_cache&quot;,u&quot;neighbors&quot;,u&quot;related_posts&quot;]</span>
+<span class="code-line">SITEMAP = {</span>
+<span class="code-line">    &#39;format&#39;: &#39;xml&#39;,</span>
+<span class="code-line">    &#39;priorities&#39;: {</span>
+<span class="code-line">        &#39;articles&#39;: 0.7,</span>
+<span class="code-line">        &#39;indexes&#39;: 0.5,</span>
+<span class="code-line">        &#39;pages&#39;: 0.3</span>
+<span class="code-line">    },</span>
+<span class="code-line">    &#39;changefreqs&#39;: {</span>
+<span class="code-line">        &#39;articles&#39;: &#39;weekly&#39;,</span>
+<span class="code-line">        &#39;indexes&#39;: &#39;daily&#39;,</span>
+<span class="code-line">        &#39;pages&#39;: &#39;monthly&#39;</span>
+<span class="code-line">    }</span>
+<span class="code-line">}</span>
+</pre></div>
+
+
 <h3 id="_6">字体更改<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>1.下载字体文件,到网站的静态文件夹内,具体可以参考让wordpress主题绕开对google的依赖.不过此种方法也有些问题.把静态资源放到Github上加载时间也没别之前好多少.<br>
 2.把Google的静态公共库替换为国内的公共库.例如我的给替换成360的镜像地址.其实这种方法也有些弊端,例如国外用户访问就会出现加载过慢的问题.但是毕竟我们在&rsquo;朝内&rsquo;,所以就换成360的资源库吧.操作如下
-在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件<code>gumby.css</code>,修改如下:&nbsp;&#8220;`</p>
-<h1 id="staticcsscssgumbycss">static/css/目录下css文件中,例如gumby.css<a class="headerlink" href="#staticcsscssgumbycss" title="Permanent link">&para;</a></h1>
-<p>@import url(//fonts.googleapi.com/css?family=Overlock:400,700,900);
-@import url(//fonts.googleapi.com/css?family=<span class="caps">PT</span>+Mono);</p>
-<h1 id="_7">替换为<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
-<p>@import url(//fonts.useso.com/css?family=Overlock:400,700,900);
-@import url(//fonts.useso.com/css?family=<span class="caps">PT</span>+Mono);&nbsp;&#8220;`</p>
+在对应的主题的css文件中修改对应的google font切换到国内的镜像.例如本周使用的是gum主题,转到对应的css文件<code>gumby.css</code>,修改如下: </p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="c1">#static/css/目录下css文件中,例如gumby.css</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">googleapi</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">Overlock</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">700</span><span class="p">,</span><span class="mi">900</span><span class="p">);</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">googleapi</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">PT</span><span class="o">+</span><span class="n">Mono</span><span class="p">);</span></span>
+<span class="code-line"><span class="c1">#替换为</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">useso</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">Overlock</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">700</span><span class="p">,</span><span class="mi">900</span><span class="p">);</span></span>
+<span class="code-line"><span class="nd">@import</span> <span class="n">url</span><span class="p">(</span><span class="o">//</span><span class="n">fonts</span><span class="o">.</span><span class="n">useso</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">css</span><span class="err">?</span><span class="n">family</span><span class="o">=</span><span class="n">PT</span><span class="o">+</span><span class="n">Mono</span><span class="p">);</span></span>
+</pre></div>
+
+
 <blockquote>
 <p>国内其他开公共库: 百度CDN公共库; 新浪云计算CDN公共库; 又拍云JS库CDN服务;&nbsp;七牛云静态文件CDN;</p>
 </blockquote>
-<h2 id="_8">高级语法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="_9">静态图片<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="_7">高级语法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">静态图片<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>新建一个目录在<code>content</code>下面,例如<code>images</code>,然后在<code>pelicanconf.py</code>设置如下:
 <code>STATIC_PATHS = ['images','downloads']</code>
-,在对应的md中可以这样写语法对应图片:
-<code>![测试图片显示]({attach}/static/images/test.png)</code></p>
-<h2 id="_10">部署<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+,在对应的md中可以这样写语法对应图片:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>![测试图片显示]({attach}/static/images/test.png)</span>
+</pre></div>
+
+
+<h2 id="_9">部署<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="github">部署到github上<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
 <ul>
 <li>新建一个仓库repository,仓库名称和你的github昵称相同,例如你的名称是abc,那么创建的仓库名称是: <code>abc.github.io</code></li>
 <li>也可以创建一个组织organization,在组织下面在创建一个仓库repository,仓库名称和你的组织也可以创建一个组织organization名称相同,
    例如你的organization名称是abc,那么创建的仓库名称是: <code>abc.github.io</code></li>
-<li>完成以上的操作后上传对应的源码到github上,这里省略,命令如下:
-<code>cd output
-git init
-git add .
-git remote add origin 仓库git地址
-git push -u origin master</code></li>
+<li>完成以上的操作后上传对应的源码到github上,这里省略,命令如下:</li>
 </ul>
+<div class="highlight"><pre><span class="code-line"><span></span>cd output</span>
+<span class="code-line">git init</span>
+<span class="code-line">git add .</span>
+<span class="code-line">git remote add origin 仓库git地址</span>
+<span class="code-line">git push -u origin master</span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/pi-python3/">
-                                ◄&nbsp;&nbsp;[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上
+                            <a href="../../articles/5-software-performance-testing/">
+                                ◄&nbsp;&nbsp;[面试] 5.&nbsp;性能测试相关的涉及内容
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/hadoop-spark-hbase-hive/">
-                                大数据hadoop,spark,hbase,hive概念&nbsp;&nbsp;►
+                            <a href="../../articles/pelican-advance/">
+                                [Pelican高级] pelican&nbsp;博客高级配置&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -269,7 +280,7 @@ git push -u origin master</code></li>
                 <div class="comments">
                     <h3>Relate Articles</h3>
                         <ul>
-                                <li><a href="../../articles/pelican-advance/">[高级] pelican&nbsp;博客高级配置</a></li>
+                                <li><a href="../../articles/pelican-advance/">[Pelican高级] pelican&nbsp;博客高级配置</a></li>
                         </ul>
                 </div>
                 <hr/>
@@ -309,6 +320,7 @@ git push -u origin master</code></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -342,6 +354,7 @@ git push -u origin master</code></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

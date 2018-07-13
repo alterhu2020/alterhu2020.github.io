@@ -73,12 +73,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -117,10 +113,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/tensorflow-basic/" rel="bookmark" title="Permalink to tensorflow的基础学习">tensorflow的基础学习</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-12T23:29:01.772049+08:00">
-                                        Posted @ 2018-07-12 23:29:01,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T19:29:48.891368+08:00">
+                                        Posted @ 2018-07-13 19:29:48,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
@@ -128,20 +124,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
 <h3 id="tensorflow_1">安装依赖的包和对应的tensorflow的包<a class="headerlink" href="#tensorflow_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: <a href="https://pingbook.top/articles/pi-python3">python3安装</a></li>
-<li>新建一个virtual environment(推荐使用<code>pipenv</code>)用于存放对应的pip的包,执行如下命令:
-<code>$ sudo mkdir venvBigData
-$ cd venBigData
-$ sudo apt install -y libatlas-base-dev  # 安装numpy需要依赖的包
-$ export PIPENV_VENV_IN_PROJECT=1
-$ pipenv shell
-$ pipenv install tensorflow
-$ python  # 接下来是命令行验证tensorflow安装正确与否
-$ import tensorflow as tf   
-hello = tf.constant('Hello, TensorFlow!')
-sess = tf …</code></li></ol> </div><!-- /.entry-content -->
+<li>Python,pip环境的搭建这里就不罗嗦了 …</li></ol> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../../articles/tensorflow-basic/" rel="bookmark" title="Permalink to tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -167,6 +152,7 @@ sess = tf …</code></li></ol> </div><!-- /.entry-content -->
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -200,6 +186,7 @@ sess = tf …</code></li></ol> </div><!-- /.entry-content -->
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

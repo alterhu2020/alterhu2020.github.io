@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>树莓派外部网站搭建</title>
+        <title>[树莓派] 树莓派外部网站搭建</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-前因 自己在Github Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了. 整理一下树莓派下安装nginx的过程 1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80) 可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors 使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为： $ sudo nano /etc/apt/sources.list 用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn …">
+前因¶ 自己在Github Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了. 整理一下树莓派下安装nginx的过程¶ 1. 为树莓派更换国内镜像源¶ (2018-07-07更新 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -73,12 +73,7 @@
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -123,12 +119,12 @@
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/pi-mirrors/" rel="bookmark"
-                           title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2>
+                           title="Permalink to [树莓派] 树莓派外部网站搭建">[树莓派]&nbsp;树莓派外部网站搭建</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-08T23:35:08.403457+08:00">-->
-                    <!--2018-07-08 23:35:08-->
+                    <!--<abbr class="published" title="2018-07-13T19:28:48.489880+08:00">-->
+                    <!--2018-07-13 19:28:48-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -138,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-08 23:35:08
+                        2018-07-13 19:28:48
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -158,13 +154,16 @@
                     </script>
                 <div class="entry-content">
                     <p><br></p>
-<h2>前因</h2>
+<h2 id="_1">前因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>自己在Github&nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.</p>
 </blockquote>
-<h2>整理一下树莓派下安装nginx的过程</h2>
-<h3>1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to&nbsp;mirrors.tuna.tsinghua.edu.cn:80)</h3>
-<p>可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors<br>&nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：</p>
+<h2 id="nginx">整理一下树莓派下安装nginx的过程<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 为树莓派更换国内镜像源<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80)
+可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors<br>&nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：</p>
+</blockquote>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list</span>
 </pre></div>
 
@@ -191,29 +190,23 @@
 编辑镜像站后，请使用<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>命令，更新软件源列表，同时检查您的编辑是否正确。
 使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装<code>apt-transport-https</code>.</p>
 </blockquote>
-<h3>树莓派安装</h3>
-<blockquote>
-<p>因为感觉空间越来越小了,不能使用现在的需要了,所以决定重新安装系统.
-1. 下载镜像
-2. 新建一个空文件没有后缀名: ssh, 然后放到 /boot 文件夹里面.&nbsp;这两个文件在启动的时候会自动复制到指定的目录里面.</p>
-</blockquote>
-<h3>2.&nbsp;删除已经安装的nginx</h3>
+<h3 id="2-nginx">2. 删除已经安装的nginx<a class="headerlink" href="#2-nginx" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span class="code-line"><span></span># sudo apt update &amp;&amp; sudo apt upgrade -y  # update all package index</span>
 <span class="code-line"># sudo apt-get purge nginx nginx-common # Removes everything.</span>
 <span class="code-line">nginx 采用的C语言编写的,需要对应的C编译器(GCC):</span>
 <span class="code-line"># sudo apt install build-essential -y</span>
 </pre></div>
-
-
-<h3>3.&nbsp;安装远程桌面,不使用VNC操作</h3>
-<div class="highlight"><pre><span class="code-line"><span></span>sudo apt-get install xrdp</span>
-</pre></div>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/pi-installation/">
+                                ◄&nbsp;&nbsp;[树莓派]&nbsp;树莓派3B安装
+                            </a>
+                        </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
                             <a href="../../articles/pi-mysql/">
-                                [Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置&nbsp;&nbsp;►
+                                [环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -221,9 +214,9 @@
                 <div class="comments">
                     <h3>Relate Articles</h3>
                         <ul>
-                                <li><a href="../../articles/pi-nat123/">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></li>
-                                <li><a href="../../articles/pi-installation/">树莓派3B安装</a></li>
-                                <li><a href="../../articles/pi-python3/">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></li>
+                                <li><a href="../../articles/pi-nat123/">[环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></li>
+                                <li><a href="../../articles/pi-python3/">[环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></li>
+                                <li><a href="../../articles/pi-installation/">[树莓派]&nbsp;树莓派3B安装</a></li>
                         </ul>
                 </div>
                 <hr/>
@@ -263,6 +256,7 @@
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -296,6 +290,7 @@
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

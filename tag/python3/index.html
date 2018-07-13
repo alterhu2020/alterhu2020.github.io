@@ -73,12 +73,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -117,28 +113,18 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上">[环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-12T21:40:26.473588+08:00">
-                                        Posted @ 2018-07-12 21:40:26,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T19:29:16.893700+08:00">
+                                        Posted @ 2018-07-13 19:29:16,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
-<p><code>$ sudo apt-get remove 'python3.*'
-其实这里的python的包是: `python3.5-minimal`,`python3.5-venv`</code></p>
-<h2 id="install-python37">安装 install python3.7<a class="headerlink" href="#install-python37" title="Permanent link">&para;</a></h2>
-<p>因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
-参考文档: <a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6">https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6</a></p>
-<p>需要用到的命令如下:
-&#8220;`
-安装依赖包
-$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev libffi-dev
-$ sudo …</p> </div><!-- /.entry-content -->
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
+<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -164,6 +150,7 @@ $ sudo …</p> </div><!-- /.entry-content -->
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -197,6 +184,7 @@ $ sudo …</p> </div><!-- /.entry-content -->
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

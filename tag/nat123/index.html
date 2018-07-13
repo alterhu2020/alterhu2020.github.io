@@ -73,12 +73,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -117,22 +113,17 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署">[环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-10T20:47:02.674460+08:00">
-                                        Posted @ 2018-07-10 20:47:02,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T19:29:03.055243+08:00">
+                                        Posted @ 2018-07-13 19:29:03,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>安装步骤</h2>
-<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download/stable/#download-lin-raspbian</a>
-1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp<br>
-2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
-~~3. 安装<code>sudo apt-get  install  -y mono-complete</code>,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: <a href="https://pingbook.top/articles/pi-mirrors/">https://pingbook.top/articles/pi-mirrors/</a>~~
-4. 上面的<code>momo-complete</code>的安装需要一段时间,大约十分钟左右.~~</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ mono  /home/pi/nat123 …</span></pre></div> </div><!-- /.entry-content -->
+                                <div class="entry-content"> <h2 id="_1">安装步骤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download …</a></p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [Linux环境搭建] 配置采用NAT123进行树莓派部署"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -146,28 +137,24 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建">树莓派外部网站搭建</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-mirrors/" rel="bookmark" title="Permalink to [树莓派] 树莓派外部网站搭建">[树莓派]&nbsp;树莓派外部网站搭建</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-08T23:35:08.403457+08:00">
-                                        Posted @ 2018-07-08 23:35:08,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T19:28:48.489880+08:00">
+                                        Posted @ 2018-07-13 19:28:48,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <p><br></p>
-<h2>前因</h2>
+<h2 id="_1">前因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>自己在Github&nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.</p>
 </blockquote>
-<h2>整理一下树莓派下安装nginx的过程</h2>
-<h3>1. 为树莓派更换国内镜像源 -(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to&nbsp;mirrors.tuna.tsinghua.edu.cn:80)</h3>
-<p>可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors<br>&nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano /etc/apt/sources.list</span>
-</pre></div>
+<h2 id="nginx">整理一下树莓派下安装nginx的过程<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 为树莓派更换国内镜像源<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>(2018-07-07更新 …</p></blockquote> </div><!-- /.entry-content -->
 
-
-<p>用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-mirrors/" rel="bookmark" title="Permalink to 树莓派外部网站搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-mirrors/" rel="bookmark" title="Permalink to [树莓派] 树莓派外部网站搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -194,6 +181,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -227,6 +215,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

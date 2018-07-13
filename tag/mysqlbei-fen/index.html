@@ -73,12 +73,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -117,14 +113,14 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置">[Linux环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置">[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-09T20:27:24.371368+08:00">
-                                        Posted @ 2018-07-09 20:27:24,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T19:28:56.666940+08:00">
+                                        Posted @ 2018-07-13 19:28:56,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>安装</h2>
+                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>执行如下命令进行安装和基本的配置:</li>
 </ol>
@@ -133,23 +129,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </pre></div>
 
 
-<p>第二条命令将会配置mysql的<code>root</code>密码,删除掉<code>test</code>数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令:
-<code>mysql -u root -p</code>, 这里的root不用输入密码,明明上面的已经设置了密码???<br>&nbsp;进行如下的命令进行配置:</p>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo mysql -u root -p </span>
-<span class="code-line">$ use mysql<span class="p">;</span></span>
-<span class="code-line">$ update user <span class="nb">set</span> <span class="nv">plugin</span><span class="o">=</span><span class="s1">&#39;mysql_native_password&#39;</span> where <span class="nv">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span></span>
-<span class="code-line">$ flush privileges<span class="p">;</span> </span>
-<span class="code-line">$ quit<span class="p">;</span></span>
-</pre></div>
+<p>第二条命令将会配置mysql的 …</p> </div><!-- /.entry-content -->
 
-
-<h2>配置</h2>
-<ol>
-<li><code>root</code>密码的更改,可以采用下面的操作步骤:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo nano …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-mysql/" rel="bookmark" title="Permalink to [Linux环境搭建] MYSQL 的安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -175,6 +157,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -208,6 +191,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

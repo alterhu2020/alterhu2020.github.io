@@ -73,12 +73,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -117,37 +113,20 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9">[Linux环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9">[环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-07-09T22:46:39.124456+08:00">
-                                        Posted @ 2018-07-09 22:46:39,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-07-13T19:29:26.471011+08:00">
+                                        Posted @ 2018-07-13 19:29:26,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>安装</h2>
+                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>参考文档:<br>
 <em> <a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/">https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/</a><br>
-</em> 推荐: <a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33">https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33</a></p>
-</blockquote>
-<ol>
-<li>安装JDK和配置环境变量(采用下面的配置环境变量/etc/profile), 注意截止到20180709,&nbsp;oracle没有提供debain的32位系统安装tar包,所以这里使用的是32位的jdk1.8</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ nano ~/.bashrc</span>
-<span class="code-line"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt</span>
-<span class="code-line"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span></span>
-<span class="code-line">$ <span class="nb">source</span> ~/.bashrc</span>
-<span class="code-line">$ <span class="nb">echo</span> <span class="nv">$JAVA_HOME</span></span>
-</pre></div>
+</em> 推荐: <a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33">https …</a></p></blockquote> </div><!-- /.entry-content -->
 
-
-<ol>
-<li>添加组和用户</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo groupadd tomcat</span>
-<span class="code-line">$ sudo useradd -s /bin/false …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [Linux环境搭建] Debian如何安装配置Tomcat9"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -172,6 +151,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -205,6 +185,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

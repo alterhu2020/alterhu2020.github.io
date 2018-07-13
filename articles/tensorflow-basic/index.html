@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>tensorflow的基础学习</title>
+        <title>[环境搭建] tensorflow的基础学习</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on Raspbian 安装依赖的包和对应的tensorflow的包¶ Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: python3安装 新建一个virtual environment(推荐使用pipenv)用于存放对应的pip的包,执行如下命令: $ sudo mkdir venvBigData $ cd venBigData $ sudo apt install -y libatlas-base-dev # 安装numpy需要依赖的包 $ export PIPENV_VENV_IN_PROJECT=1 $ pipenv shell $ pipenv install tensorflow $ python # 接下来是命令行验证tensorflow安装正确与否 $ import tensorflow as tf hello = tf.constant('Hello, TensorFlow!') sess = tf …">
+tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on Raspbian 安装依赖的包和对应的tensorflow的包¶ Python,pip环境的搭建这里就不罗嗦了 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -73,12 +73,7 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -123,12 +119,12 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/tensorflow-basic/" rel="bookmark"
-                           title="Permalink to tensorflow的基础学习">tensorflow的基础学习</a></h2>
+                           title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-12T23:29:01.772049+08:00">-->
-                    <!--2018-07-12 23:29:01-->
+                    <!--<abbr class="published" title="2018-07-13T19:29:48.891368+08:00">-->
+                    <!--2018-07-13 19:29:48-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -138,7 +134,7 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-12 23:29:01
+                        2018-07-13 19:29:48
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -162,31 +158,34 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
 <h3 id="tensorflow_1">安装依赖的包和对应的tensorflow的包<a class="headerlink" href="#tensorflow_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: <a href="https://pingbook.top/articles/pi-python3">python3安装</a></li>
-<li>新建一个virtual environment(推荐使用<code>pipenv</code>)用于存放对应的pip的包,执行如下命令:
-<code>$ sudo mkdir venvBigData
-$ cd venBigData
-$ sudo apt install -y libatlas-base-dev  # 安装numpy需要依赖的包
-$ export PIPENV_VENV_IN_PROJECT=1
-$ pipenv shell
-$ pipenv install tensorflow
-$ python  # 接下来是命令行验证tensorflow安装正确与否
-$ import tensorflow as tf   
-hello = tf.constant('Hello, TensorFlow!')
-sess = tf.Session()
-print(sess.run(hello))</code></li>
+<li>新建一个virtual environment(推荐使用<code>pipenv</code>)用于存放对应的pip的包,执行如下命令:</li>
 </ol>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="err">$</span> <span class="n">sudo</span> <span class="n">mkdir</span> <span class="n">venvBigData</span></span>
+<span class="code-line"><span class="err">$</span> <span class="n">cd</span> <span class="n">venBigData</span></span>
+<span class="code-line"><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libatlas</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">dev</span>  <span class="c1"># 安装numpy需要依赖的包</span></span>
+<span class="code-line"><span class="err">$</span> <span class="n">export</span> <span class="n">PIPENV_VENV_IN_PROJECT</span><span class="o">=</span><span class="mi">1</span></span>
+<span class="code-line"><span class="err">$</span> <span class="n">pipenv</span> <span class="n">shell</span></span>
+<span class="code-line"><span class="err">$</span> <span class="n">pipenv</span> <span class="n">install</span> <span class="n">tensorflow</span></span>
+<span class="code-line"><span class="err">$</span> <span class="n">python</span>  <span class="c1"># 接下来是命令行验证tensorflow安装正确与否</span></span>
+<span class="code-line"><span class="err">$</span> <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>   </span>
+<span class="code-line"><span class="n">hello</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="s1">&#39;Hello, TensorFlow!&#39;</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span></span>
+<span class="code-line"><span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span></span>
+</pre></div>
+
+
 <h3 id="_1">基础入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
                             <a href="../../articles/basic-command/">
-                                ◄&nbsp;&nbsp;[整理]&nbsp;一些常用的linux系统的操作命令
+                                ◄&nbsp;&nbsp;[Linux]&nbsp;一些常用的linux系统的操作命令
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/pelican-advance/">
-                                [高级] pelican&nbsp;博客高级配置&nbsp;&nbsp;►
+                            <a href="../../articles/hadoop-spark-hbase-hive/">
+                                [环境搭建]&nbsp;大数据hadoop,spark,hbase,hive概念&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -231,6 +230,7 @@ print(sess.run(hello))</code></li>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -264,6 +264,7 @@ print(sess.run(hello))</code></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>[Linux环境搭建] 如何完整卸载python2/3 在debain上</title>
+        <title>[环境搭建] 如何完整卸载python2/3 在debain上</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-卸载 remove python3¶ $ sudo apt-get remove 'python3.*' 其实这里的python的包是: `python3.5-minimal`,`python3.5-venv` 安装 install python3.7¶ 因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装, 参考文档: https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6 需要用到的命令如下: “` 安装依赖包 $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \ xz-utils tk-dev libffi-dev $ sudo …">
+卸载 remove python3¶ $ sudo apt-get remove 'python3.*' 其实这里的python的包是: `python3.5-minimal …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -73,12 +73,7 @@
 
         <div id="navigation" class="navbar row">
             <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
-                <a href="../.." class="avatar-container pull-left">
-                    <div class="avatar  animate ">
-                        <div class="side"><img src="/static/images/profile.jpg" class="img-responsive"/></div>
-                            <div class="side back"><p class="text-center">Might come with a beard</p></div>
-                    </div>
-                </a>
+
             <ul class="columns" style="width: 100%">
 
                     <li ><a href="/">Home</a></li>
@@ -86,6 +81,7 @@
                     <li ><a href="/archives">Archive</a></li>
                     <li ><a href="/tags">Tags</a></li>
                     <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
             <li >
                 <div style="display: block;
     padding: 0 16px;
@@ -123,12 +119,12 @@
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/pi-python3/" rel="bookmark"
-                           title="Permalink to [Linux环境搭建] 如何完整卸载python2/3 在debain上">[Linux环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2>
+                           title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上">[环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-12T21:40:26.473588+08:00">-->
-                    <!--2018-07-12 21:40:26-->
+                    <!--<abbr class="published" title="2018-07-13T19:29:16.893700+08:00">-->
+                    <!--2018-07-13 19:29:16-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -138,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-12 21:40:26
+                        2018-07-13 19:29:16
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -158,49 +154,53 @@
                     </script>
                 <div class="entry-content">
                     <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
-<p><code>$ sudo apt-get remove 'python3.*'
-其实这里的python的包是: `python3.5-minimal`,`python3.5-venv`</code></p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
+<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal<span class="sb">`</span>,<span class="sb">`</span>python3.5-venv<span class="sb">`</span></span>
+</pre></div>
+
+
 <h2 id="install-python37">安装 install python3.7<a class="headerlink" href="#install-python37" title="Permanent link">&para;</a></h2>
 <p>因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
 参考文档: <a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6">https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6</a></p>
-<p>需要用到的命令如下:
-&#8220;`
-安装依赖包
-$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev libffi-dev
-$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
-$ tar xvf Python-3.7.0.tgz
-// 下面的步骤安装会跑测试来判定机器的性能,从而进行性能的提高
-$ ./configure &ndash;enable-optimizations &ndash;with-ensurepip=install
-$ make -j8
-$ sudo make altinstall
-$ sudo update-alternatives &ndash;install /usr/bin/python python /usr/bin/python3.7 50
-$ sudo update-alternatives &ndash;install /usr/bin/python3 python3 /usr/bin/python3.7&nbsp;50</p>
-<p><span class="dquo">&#8220;</span>`</p>
+<p>需要用到的命令如下:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>安装依赖包</span>
+<span class="code-line">$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \</span>
+<span class="code-line">libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \</span>
+<span class="code-line">xz-utils tk-dev libffi-dev</span>
+<span class="code-line">$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz</span>
+<span class="code-line">$ tar xvf Python-3.7.0.tgz</span>
+<span class="code-line">// 下面的步骤安装会跑测试来判定机器的性能,从而进行性能的提高</span>
+<span class="code-line">$ ./configure --enable-optimizations --with-ensurepip=install</span>
+<span class="code-line">$ make -j8</span>
+<span class="code-line">$ sudo make altinstall</span>
+<span class="code-line">$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 50</span>
+<span class="code-line">$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 50</span>
+</pre></div>
+
+
 <h2 id="pippipenvpipenv">安装pip,pipenv并设置全局可用命令<code>pipenv</code><a class="headerlink" href="#pippipenvpipenv" title="Permanent link">&para;</a></h2>
-<p><span class="dquo">&#8220;</span>`
-$ wget https://bootstrap.pypa.io/get-pip.py
-$ sudo python&nbsp;get-pip.py</p>
-<p>$ pip install &ndash;user pipenv
- /home/pi/.local/bin
-$ python -m site &ndash;user-base
-$ sudo nano ~/.profile
-export <span class="caps">PATH</span>=&rdquo;$<span class="caps">HOME</span>/.local/bin:$<span class="caps">PATH</span>&rdquo;
-$ sudo source ~/.profile
-$ pipenv&nbsp;&ndash;update</p>
-<p><span class="dquo">&#8220;</span>`</p>
+<div class="highlight"><pre><span class="code-line"><span></span>$ wget https://bootstrap.pypa.io/get-pip.py</span>
+<span class="code-line">$ sudo python get-pip.py</span>
+<span class="code-line"></span>
+<span class="code-line">$ pip install --user pipenv</span>
+<span class="code-line"> /home/pi/.local/bin</span>
+<span class="code-line">$ python -m site --user-base</span>
+<span class="code-line">$ sudo nano ~/.profile</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span></span>
+<span class="code-line">$ sudo <span class="nb">source</span> ~/.profile</span>
+<span class="code-line">$ pipenv --update</span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/1-object-oriented-programming/">
-                                ◄&nbsp;&nbsp;[面试] 1.&nbsp;面向对象的相关概念
+                            <a href="../../articles/pi-nginx/">
+                                ◄&nbsp;&nbsp;[环境搭建]&nbsp;Debian安装编译和安装nginx服务器
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/try-pelican/">
-                                [初级] pelican&nbsp;博客搭建&nbsp;&nbsp;►
+                            <a href="../../articles/pi-svn/">
+                                [环境搭建]  svn&nbsp;安装配置&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -208,9 +208,9 @@ $ pipenv&nbsp;&ndash;update</p>
                 <div class="comments">
                     <h3>Relate Articles</h3>
                         <ul>
-                                <li><a href="../../articles/pi-installation/">树莓派3B安装</a></li>
-                                <li><a href="../../articles/pi-nat123/">[Linux环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></li>
-                                <li><a href="../../articles/pi-mirrors/">树莓派外部网站搭建</a></li>
+                                <li><a href="../../articles/pi-nat123/">[环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></li>
+                                <li><a href="../../articles/pi-mirrors/">[树莓派]&nbsp;树莓派外部网站搭建</a></li>
+                                <li><a href="../../articles/pi-installation/">[树莓派]&nbsp;树莓派3B安装</a></li>
                         </ul>
                 </div>
                 <hr/>
@@ -250,6 +250,7 @@ $ pipenv&nbsp;&ndash;update</p>
                 <li><a href="/archives">Archive</a></li>
                 <li><a href="/tags">Tags</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
         </ul>
     </nav>
         <div class="sidebarbg">
@@ -283,6 +284,7 @@ $ pipenv&nbsp;&ndash;update</p>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
                     <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>

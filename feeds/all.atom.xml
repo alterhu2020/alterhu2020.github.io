@@ -1,5 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-13T19:29:59+08:00</updated><entry><title>[环境搭建] 大数据hadoop,spark,hbase,hive概念</title><link href="https://pingbook.top/articles/hadoop-spark-hbase-hive/" rel="alternate"></link><published>2018-07-13T19:29:59+08:00</published><updated>2018-07-13T19:29:59+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/hadoop-spark-hbase-hive/</id><summary type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-13T20:45:03+08:00</updated><entry><title>[树莓派] 树莓派国内镜像</title><link href="https://pingbook.top/articles/pi-mirrors/" rel="alternate"></link><published>2018-07-13T20:45:03+08:00</published><updated>2018-07-13T20:45:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-mirrors/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;前因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="_2"&gt;为树莓派更换国内镜像源&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(2018-07-07更新: 清华的镜像源已经不能使用: Cannot …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;前因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="_2"&gt;为树莓派更换国内镜像源&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80)
+可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors&lt;br&gt;&amp;nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/apt/sources.list&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/apt/sources.list.d/raspi.list&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;用#注释掉原文件内容，用以下内容取代：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。&lt;br&gt;
+编辑镜像站后，请使用&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;命令，更新软件源列表，同时检查您的编辑是否正确。
+使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装&lt;code&gt;apt-transport-https&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="树莓派"></category><category term="nat123"></category><category term="树莓派镜像"></category></entry><entry><title>[环境搭建] Debian安装编译和安装nginx服务器</title><link href="https://pingbook.top/articles/pi-nginx/" rel="alternate"></link><published>2018-07-13T20:44:35+08:00</published><updated>2018-07-13T20:44:35+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nginx/</id><summary type="html">&lt;h2 id="debiannginx"&gt;Debian安装配置nginx服务器&lt;a class="headerlink" href="#debiannginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;下载解压缩安装包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://nginx.org/download/nginx-1.15 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="debiannginx"&gt;Debian安装配置nginx服务器&lt;a class="headerlink" href="#debiannginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;下载解压缩安装包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ tar zxvf nginx-1.15.1.tar.gz &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;重新配置nginx的服务器名称servername和对应版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1/&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano  src/http/ngx_http_header_filter_module.c&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano  src/core/nginx.h&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and&amp;nbsp;openssl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install build-essential -y&lt;/span&gt;
+&lt;span class="code-line"&gt;$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ tar zxvf pcre-8.41.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ wget http://www.zlib.net/zlib-1.2.11.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ tar -zxvf zlib-1.2.11.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz &lt;/span&gt;
+&lt;span class="code-line"&gt;$ tar zxvf openssl-1.1.0g.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; openssl-1.1.0g&lt;/span&gt;
+&lt;span class="code-line"&gt;$ ./config -Wl,--enable-new-dtags,-rpath,&lt;span class="s1"&gt;&amp;#39;$(LIBRPATH)&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ make  &lt;span class="c1"&gt;# 大约五六分钟左右&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
+&lt;span class="code-line"&gt;$ openssl version -a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;安装nginx
+参考说明文档: &lt;a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04"&gt;https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1&lt;/span&gt;
+&lt;span class="code-line"&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --sbin-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/sbin/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --modules-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib/nginx/modules &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --conf-path&lt;span class="o"&gt;=&lt;/span&gt;/etc/nginx/nginx.conf &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --error-log-path&lt;span class="o"&gt;=&lt;/span&gt;/var/log/nginx/error.log &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --http-log-path&lt;span class="o"&gt;=&lt;/span&gt;/var/log/nginx/access.log &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --pid-path&lt;span class="o"&gt;=&lt;/span&gt;/run/nginx.pid &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --lock-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lock/nginx.lock &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --user&lt;span class="o"&gt;=&lt;/span&gt;www-data &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --group&lt;span class="o"&gt;=&lt;/span&gt;www-data &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --http-client-body-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/body &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --http-fastcgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/fastcgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --http-proxy-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/proxy &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --http-scgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/scgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --http-uwsgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/uwsgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-openssl&lt;span class="o"&gt;=&lt;/span&gt;../openssl-1.1.0g &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;enable-ec_nistp_64_gcc_128 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-nextprotoneg &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-weak-ssl-ciphers &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-ssl3 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-pcre&lt;span class="o"&gt;=&lt;/span&gt;../pcre-8.41 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-pcre-jit &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-zlib&lt;span class="o"&gt;=&lt;/span&gt;../zlib-1.2.11 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-compat &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-file-aio &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-threads &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_addition_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_auth_request_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_dav_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_flv_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_gunzip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_gzip_static_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_mp4_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_random_index_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_realip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_slice_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_sub_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_stub_status_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_v2_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-http_secure_link_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-mail &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-mail_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-stream &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-stream_realip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-stream_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-stream_ssl_preread_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-debug &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-cc-opt&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            --with-ld-opt&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ make   &lt;span class="c1"&gt;#这个操作需要花费十分钟左右&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo systemctl start nginx.service &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; nginx.service&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_1"&gt;遇到的问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;nginx: [emerg] mkdir() &amp;quot;/var/lib/nginx/body&amp;quot; failed&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Just create directory
+&lt;code&gt;$ sudo mkdir -p /var/lib/nginx &amp;amp;&amp;amp; sudo nginx -t&lt;/code&gt;
+&lt;code&gt;$ sudo nano /lib/systemd/system/nginx.service&lt;/code&gt;
+输入如下内容&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# Stop dance for nginx&lt;/span&gt;
+&lt;span class="code-line"&gt;# =======================&lt;/span&gt;
+&lt;span class="code-line"&gt;#&lt;/span&gt;
+&lt;span class="code-line"&gt;# ExecStop sends SIGSTOP (graceful stop) to the nginx process.&lt;/span&gt;
+&lt;span class="code-line"&gt;# If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control&lt;/span&gt;
+&lt;span class="code-line"&gt;# and sends SIGTERM (fast shutdown) to the main process.&lt;/span&gt;
+&lt;span class="code-line"&gt;# After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends&lt;/span&gt;
+&lt;span class="code-line"&gt;# SIGKILL to all the remaining processes in the process group (KillMode=mixed).&lt;/span&gt;
+&lt;span class="code-line"&gt;#&lt;/span&gt;
+&lt;span class="code-line"&gt;# nginx signals reference doc:&lt;/span&gt;
+&lt;span class="code-line"&gt;# http://nginx.org/en/docs/control.html&lt;/span&gt;
+&lt;span class="code-line"&gt;#&lt;/span&gt;
+&lt;span class="code-line"&gt;[Unit]&lt;/span&gt;
+&lt;span class="code-line"&gt;Description=A high performance web server and a reverse proxy server&lt;/span&gt;
+&lt;span class="code-line"&gt;Documentation=man:nginx(8)&lt;/span&gt;
+&lt;span class="code-line"&gt;After=network.target&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;[Service]&lt;/span&gt;
+&lt;span class="code-line"&gt;Type=forking&lt;/span&gt;
+&lt;span class="code-line"&gt;PIDFile=/run/nginx.pid&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecStartPre=/usr/sbin/nginx -t -q -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecStart=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecReload=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39; -s reload&lt;/span&gt;
+&lt;span class="code-line"&gt;ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid&lt;/span&gt;
+&lt;span class="code-line"&gt;TimeoutStopSec=5&lt;/span&gt;
+&lt;span class="code-line"&gt;KillMode=mixed&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;[Install]&lt;/span&gt;
+&lt;span class="code-line"&gt;WantedBy=multi-user.target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;重启nginx服务
+&lt;code&gt;sudo systemctl start nginx.service &amp;amp;&amp;amp; sudo systemctl enable nginx.service&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;check nginx service is&amp;nbsp;up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo systemctl status nginx.service&lt;/span&gt;
+&lt;span class="code-line"&gt;$ ps aux &lt;span class="p"&gt;|&lt;/span&gt; grep nginx&lt;/span&gt;
+&lt;span class="code-line"&gt;$ curl -I &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;重启nginx出现&lt;code&gt;Directory index of "/www/pingbook.top/pingbook.top/output/" is forbidden,&lt;/code&gt;
+解决方法是在location里面设置index&amp;nbsp;index.html,如下: &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;  location / {&lt;/span&gt;
+&lt;span class="code-line"&gt;     # 使用alias时，目录名后面一定要加”/“&lt;/span&gt;
+&lt;span class="code-line"&gt;     alias /www/pingbook.top/pingbook.top/output/;&lt;/span&gt;
+&lt;span class="code-line"&gt;     index index.html;&lt;/span&gt;
+&lt;span class="code-line"&gt;     try_files $uri $uri/ index.html last;&lt;/span&gt;
+&lt;span class="code-line"&gt;  }&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="https"&gt;Https 加密你的网站&lt;a class="headerlink" href="#https" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;参考文档:&amp;nbsp;https://certbot.eff.org/lets-encrypt/debianother-nginx&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$  sudo wget https://dl.eff.org/certbot-auto&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo chmod a+x certbot-auto&lt;/span&gt;
+&lt;span class="code-line"&gt;$ &lt;span class="c1"&gt;# 获取证书&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo ./certbot-auto certonly --standalone --email alterhu2020@gmail.com -d pingbook.top -d www.pingbook.top&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;报错如下,很多的依赖没有安装成功:&lt;/span&gt;
+&lt;span class="code-line"&gt;dpkg: error processing package python-zope.component &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
+&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
+&lt;span class="code-line"&gt;Setting up libaugeas0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.8.0-1+deb9u1&lt;span class="o"&gt;)&lt;/span&gt; ...&lt;/span&gt;
+&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of python-mock:&lt;/span&gt;
+&lt;span class="code-line"&gt; python-mock depends on python-funcsigs &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
+&lt;span class="code-line"&gt;  Package python-funcsigs is not configured yet.&lt;/span&gt;
+&lt;span class="code-line"&gt; python-mock depends on python-pbr &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.3&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
+&lt;span class="code-line"&gt;  Package python-pbr is not configured yet.&lt;/span&gt;
+&lt;span class="code-line"&gt; python-mock depends on python-six &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.9&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
+&lt;span class="code-line"&gt;  Package python-six is not configured yet.&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;dpkg: error processing package python-mock &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
+&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
+&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of python-requests:&lt;/span&gt;
+&lt;span class="code-line"&gt; python-requests depends on python-urllib3 &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.19.1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
+&lt;span class="code-line"&gt;  Package python-urllib3 is not configured yet.&lt;/span&gt;
+&lt;span class="code-line"&gt; python-requests depends on python-chardet&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
+&lt;span class="code-line"&gt;  Package python-chardet is not configured yet.&lt;/span&gt;
+&lt;span class="code-line"&gt; python-requests depends on python-urllib3 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt; 1.1&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;.2&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
+&lt;span class="code-line"&gt;  Package python-urllib3 is not configured yet.&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;dpkg: error processing package python-requests &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
+&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
+&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of certbot:&lt;/span&gt;
+&lt;span class="code-line"&gt; certbot depends on python-certbot &lt;span class="o"&gt;(=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;.10.2-1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
+&lt;span class="code-line"&gt;  Package python-certbot is not configured yet.&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;dpkg: error processing package certbot &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
+&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
+&lt;span class="code-line"&gt;Processing triggers &lt;span class="k"&gt;for&lt;/span&gt; libc-bin &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.24-11+deb9u3&lt;span class="o"&gt;)&lt;/span&gt; ...&lt;/span&gt;
+&lt;span class="code-line"&gt;Errors were encountered &lt;span class="k"&gt;while&lt;/span&gt; processing:&lt;/span&gt;
+&lt;span class="code-line"&gt; python-dnspython&lt;/span&gt;
+&lt;span class="code-line"&gt; python-idna&lt;/span&gt;
+&lt;span class="code-line"&gt; python-parsedatetime&lt;/span&gt;
+&lt;span class="code-line"&gt; python-pyasn1&lt;/span&gt;
+&lt;span class="code-line"&gt; python-tz&lt;/span&gt;
+&lt;span class="code-line"&gt; python-pkg-resources&lt;/span&gt;
+&lt;span class="code-line"&gt; python-configargparse&lt;/span&gt;
+&lt;span class="code-line"&gt; python-six&lt;/span&gt;
+&lt;span class="code-line"&gt; python-zope.interface&lt;/span&gt;
+&lt;span class="code-line"&gt; python-psutil&lt;/span&gt;
+&lt;span class="code-line"&gt; python-pbr&lt;/span&gt;
+&lt;span class="code-line"&gt; python-enum34&lt;/span&gt;
+&lt;span class="code-line"&gt; python-cryptography&lt;/span&gt;
+&lt;span class="code-line"&gt; python-virtualenv&lt;/span&gt;
+&lt;span class="code-line"&gt; python-funcsigs&lt;/span&gt;
+&lt;span class="code-line"&gt; python-zope.hookable&lt;/span&gt;
+&lt;span class="code-line"&gt; python-ipaddress&lt;/span&gt;
+&lt;span class="code-line"&gt; python-pyicu&lt;/span&gt;
+&lt;span class="code-line"&gt; python-zope.event&lt;/span&gt;
+&lt;span class="code-line"&gt; python-rfc3339&lt;/span&gt;
+&lt;span class="code-line"&gt; python-setuptools&lt;/span&gt;
+&lt;span class="code-line"&gt; python-urllib3&lt;/span&gt;
+&lt;span class="code-line"&gt; python-configobj&lt;/span&gt;
+&lt;span class="code-line"&gt; python-chardet&lt;/span&gt;
+&lt;span class="code-line"&gt; python-acme&lt;/span&gt;
+&lt;span class="code-line"&gt; python-openssl&lt;/span&gt;
+&lt;span class="code-line"&gt; python-certbot&lt;/span&gt;
+&lt;span class="code-line"&gt; python-zope.component&lt;/span&gt;
+&lt;span class="code-line"&gt; python-mock&lt;/span&gt;
+&lt;span class="code-line"&gt; python-requests&lt;/span&gt;
+&lt;span class="code-line"&gt; certbot&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Sub-process /usr/bin/dpkg returned an error code&amp;nbsp;(1)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /var/cache/apt/&lt;/span&gt;
+&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; archives/&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo rm -rf *&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;所以我想起以前用的一个网友的脚本,不用安装一堆繁杂的包,地址:
+&lt;a href="https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/README-CN.md"&gt;https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/&lt;span class="caps"&gt;README&lt;/span&gt;-&lt;span class="caps"&gt;CN&lt;/span&gt;.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;
+1. 在nginx的配置文件里面配置location:
+ &amp;#8220;`
+  # https 配置Let’s&amp;nbsp;Encrypt&lt;/p&gt;
+&lt;p&gt;location ^~ /.well-known/acme-challenge/ {
+   allow all;
+   default_type &amp;ldquo;text/plain&amp;rdquo;;
+   root /www;&amp;nbsp;}&lt;/p&gt;
+&lt;p&gt;$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
+$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
+$ sudo chmod +x letsencrypt.sh
+$ sudo nano letsencrypt.conf
+$ sudo ./letsencrypt.sh&amp;nbsp;letsencrypt.conf&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;###  删除已经安装的nginx&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id="sudo-apt-update-sudo-apt-upgrade-y-update-all-package-index"&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y  # update all package index&lt;a class="headerlink" href="#sudo-apt-update-sudo-apt-upgrade-y-update-all-package-index" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="sudo-apt-get-purge-nginx-nginx-common-removes-everything"&gt;sudo apt-get purge nginx nginx-common # Removes everything.&lt;a class="headerlink" href="#sudo-apt-get-purge-nginx-nginx-common-removes-everything" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;nginx 采用的C语言编写的,需要对应的C编译器(&lt;span class="caps"&gt;GCC&lt;/span&gt;):&lt;/p&gt;
+&lt;h1 id="sudo-apt-install-build-essential-y"&gt;sudo apt install build-essential -y&lt;a class="headerlink" href="#sudo-apt-install-build-essential-y" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="nginx"></category></entry><entry><title>[环境搭建] 大数据hadoop,spark,hbase,hive概念</title><link href="https://pingbook.top/articles/hadoop-spark-hbase-hive/" rel="alternate"></link><published>2018-07-13T19:29:59+08:00</published><updated>2018-07-13T19:29:59+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/hadoop-spark-hbase-hive/</id><summary type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -342,268 +654,7 @@
 &lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.local/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;$ sudo &lt;span class="nb"&gt;source&lt;/span&gt; ~/.profile&lt;/span&gt;
 &lt;span class="code-line"&gt;$ pipenv --update&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category><category term="python3"></category></entry><entry><title>[环境搭建] Debian安装编译和安装nginx服务器</title><link href="https://pingbook.top/articles/pi-nginx/" rel="alternate"></link><published>2018-07-13T19:29:12+08:00</published><updated>2018-07-13T19:29:12+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nginx/</id><summary type="html">&lt;h2 id="debiannginx"&gt;Debian安装配置nginx服务器&lt;a class="headerlink" href="#debiannginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;下载解压缩安装包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://nginx.org/download/nginx-1.15 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="debiannginx"&gt;Debian安装配置nginx服务器&lt;a class="headerlink" href="#debiannginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;下载解压缩安装包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf nginx-1.15.1.tar.gz &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重新配置nginx的服务器名称servername和对应版本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano  src/http/ngx_http_header_filter_module.c&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano  src/core/nginx.h&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and&amp;nbsp;openssl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install build-essential -y&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf pcre-8.41.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget http://www.zlib.net/zlib-1.2.11.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar -zxvf zlib-1.2.11.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz &lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf openssl-1.1.0g.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; openssl-1.1.0g&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./config -Wl,--enable-new-dtags,-rpath,&lt;span class="s1"&gt;&amp;#39;$(LIBRPATH)&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make  &lt;span class="c1"&gt;# 大约五六分钟左右&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ openssl version -a&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;安装nginx
-参考说明文档: &lt;a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04"&gt;https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --sbin-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/sbin/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --modules-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib/nginx/modules &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --conf-path&lt;span class="o"&gt;=&lt;/span&gt;/etc/nginx/nginx.conf &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --error-log-path&lt;span class="o"&gt;=&lt;/span&gt;/var/log/nginx/error.log &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-log-path&lt;span class="o"&gt;=&lt;/span&gt;/var/log/nginx/access.log &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --pid-path&lt;span class="o"&gt;=&lt;/span&gt;/run/nginx.pid &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --lock-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lock/nginx.lock &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --user&lt;span class="o"&gt;=&lt;/span&gt;www-data &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --group&lt;span class="o"&gt;=&lt;/span&gt;www-data &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-client-body-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/body &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-fastcgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/fastcgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-proxy-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/proxy &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-scgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/scgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-uwsgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/uwsgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl&lt;span class="o"&gt;=&lt;/span&gt;../openssl-1.1.0g &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;enable-ec_nistp_64_gcc_128 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-nextprotoneg &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-weak-ssl-ciphers &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-ssl3 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-pcre&lt;span class="o"&gt;=&lt;/span&gt;../pcre-8.41 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-pcre-jit &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-zlib&lt;span class="o"&gt;=&lt;/span&gt;../zlib-1.2.11 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-compat &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-file-aio &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-threads &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_addition_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_auth_request_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_dav_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_flv_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_gunzip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_gzip_static_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_mp4_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_random_index_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_realip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_slice_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_sub_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_stub_status_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_v2_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_secure_link_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-mail &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-mail_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream_realip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream_ssl_preread_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-debug &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-cc-opt&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-ld-opt&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make   &lt;span class="c1"&gt;#这个操作需要花费十分钟左右&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo systemctl start nginx.service &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; nginx.service&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="_1"&gt;遇到的问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;nginx: [emerg] mkdir() &amp;quot;/var/lib/nginx/body&amp;quot; failed&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Just create directory
-&lt;code&gt;$ sudo mkdir -p /var/lib/nginx &amp;amp;&amp;amp; sudo nginx -t&lt;/code&gt;
-&lt;code&gt;$ sudo nano /lib/systemd/system/nginx.service&lt;/code&gt;
-输入如下内容&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# Stop dance for nginx&lt;/span&gt;
-&lt;span class="code-line"&gt;# =======================&lt;/span&gt;
-&lt;span class="code-line"&gt;#&lt;/span&gt;
-&lt;span class="code-line"&gt;# ExecStop sends SIGSTOP (graceful stop) to the nginx process.&lt;/span&gt;
-&lt;span class="code-line"&gt;# If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control&lt;/span&gt;
-&lt;span class="code-line"&gt;# and sends SIGTERM (fast shutdown) to the main process.&lt;/span&gt;
-&lt;span class="code-line"&gt;# After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends&lt;/span&gt;
-&lt;span class="code-line"&gt;# SIGKILL to all the remaining processes in the process group (KillMode=mixed).&lt;/span&gt;
-&lt;span class="code-line"&gt;#&lt;/span&gt;
-&lt;span class="code-line"&gt;# nginx signals reference doc:&lt;/span&gt;
-&lt;span class="code-line"&gt;# http://nginx.org/en/docs/control.html&lt;/span&gt;
-&lt;span class="code-line"&gt;#&lt;/span&gt;
-&lt;span class="code-line"&gt;[Unit]&lt;/span&gt;
-&lt;span class="code-line"&gt;Description=A high performance web server and a reverse proxy server&lt;/span&gt;
-&lt;span class="code-line"&gt;Documentation=man:nginx(8)&lt;/span&gt;
-&lt;span class="code-line"&gt;After=network.target&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;[Service]&lt;/span&gt;
-&lt;span class="code-line"&gt;Type=forking&lt;/span&gt;
-&lt;span class="code-line"&gt;PIDFile=/run/nginx.pid&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecStartPre=/usr/sbin/nginx -t -q -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecStart=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecReload=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39; -s reload&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid&lt;/span&gt;
-&lt;span class="code-line"&gt;TimeoutStopSec=5&lt;/span&gt;
-&lt;span class="code-line"&gt;KillMode=mixed&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;[Install]&lt;/span&gt;
-&lt;span class="code-line"&gt;WantedBy=multi-user.target&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重启nginx服务
-&lt;code&gt;sudo systemctl start nginx.service &amp;amp;&amp;amp; sudo systemctl enable nginx.service&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;check nginx service is&amp;nbsp;up&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo systemctl status nginx.service&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ps aux &lt;span class="p"&gt;|&lt;/span&gt; grep nginx&lt;/span&gt;
-&lt;span class="code-line"&gt;$ curl -I &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重启nginx出现&lt;code&gt;Directory index of "/www/pingbook.top/pingbook.top/output/" is forbidden,&lt;/code&gt;
-解决方法是在location里面设置index&amp;nbsp;index.html,如下: &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;  location / {&lt;/span&gt;
-&lt;span class="code-line"&gt;     # 使用alias时，目录名后面一定要加”/“&lt;/span&gt;
-&lt;span class="code-line"&gt;     alias /www/pingbook.top/pingbook.top/output/;&lt;/span&gt;
-&lt;span class="code-line"&gt;     index index.html;&lt;/span&gt;
-&lt;span class="code-line"&gt;     try_files $uri $uri/ index.html last;&lt;/span&gt;
-&lt;span class="code-line"&gt;  }&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="https"&gt;Https 加密你的网站&lt;a class="headerlink" href="#https" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;参考文档:&amp;nbsp;https://certbot.eff.org/lets-encrypt/debianother-nginx&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$  sudo wget https://dl.eff.org/certbot-auto&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod a+x certbot-auto&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="c1"&gt;# 获取证书&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo ./certbot-auto certonly --standalone --email alterhu2020@gmail.com -d pingbook.top -d www.pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;报错如下,很多的依赖没有安装成功:&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package python-zope.component &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;Setting up libaugeas0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.8.0-1+deb9u1&lt;span class="o"&gt;)&lt;/span&gt; ...&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of python-mock:&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock depends on python-funcsigs &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-funcsigs is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock depends on python-pbr &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.3&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-pbr is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock depends on python-six &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.9&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-six is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package python-mock &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of python-requests:&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests depends on python-urllib3 &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.19.1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-urllib3 is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests depends on python-chardet&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-chardet is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests depends on python-urllib3 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt; 1.1&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;.2&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-urllib3 is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package python-requests &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of certbot:&lt;/span&gt;
-&lt;span class="code-line"&gt; certbot depends on python-certbot &lt;span class="o"&gt;(=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;.10.2-1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-certbot is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package certbot &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;Processing triggers &lt;span class="k"&gt;for&lt;/span&gt; libc-bin &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.24-11+deb9u3&lt;span class="o"&gt;)&lt;/span&gt; ...&lt;/span&gt;
-&lt;span class="code-line"&gt;Errors were encountered &lt;span class="k"&gt;while&lt;/span&gt; processing:&lt;/span&gt;
-&lt;span class="code-line"&gt; python-dnspython&lt;/span&gt;
-&lt;span class="code-line"&gt; python-idna&lt;/span&gt;
-&lt;span class="code-line"&gt; python-parsedatetime&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pyasn1&lt;/span&gt;
-&lt;span class="code-line"&gt; python-tz&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pkg-resources&lt;/span&gt;
-&lt;span class="code-line"&gt; python-configargparse&lt;/span&gt;
-&lt;span class="code-line"&gt; python-six&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.interface&lt;/span&gt;
-&lt;span class="code-line"&gt; python-psutil&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pbr&lt;/span&gt;
-&lt;span class="code-line"&gt; python-enum34&lt;/span&gt;
-&lt;span class="code-line"&gt; python-cryptography&lt;/span&gt;
-&lt;span class="code-line"&gt; python-virtualenv&lt;/span&gt;
-&lt;span class="code-line"&gt; python-funcsigs&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.hookable&lt;/span&gt;
-&lt;span class="code-line"&gt; python-ipaddress&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pyicu&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.event&lt;/span&gt;
-&lt;span class="code-line"&gt; python-rfc3339&lt;/span&gt;
-&lt;span class="code-line"&gt; python-setuptools&lt;/span&gt;
-&lt;span class="code-line"&gt; python-urllib3&lt;/span&gt;
-&lt;span class="code-line"&gt; python-configobj&lt;/span&gt;
-&lt;span class="code-line"&gt; python-chardet&lt;/span&gt;
-&lt;span class="code-line"&gt; python-acme&lt;/span&gt;
-&lt;span class="code-line"&gt; python-openssl&lt;/span&gt;
-&lt;span class="code-line"&gt; python-certbot&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.component&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests&lt;/span&gt;
-&lt;span class="code-line"&gt; certbot&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Sub-process /usr/bin/dpkg returned an error code&amp;nbsp;(1)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /var/cache/apt/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; archives/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo rm -rf *&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;所以我想起以前用的一个网友的脚本,不用安装一堆繁杂的包,地址:
-&lt;a href="https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/README-CN.md"&gt;https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/&lt;span class="caps"&gt;README&lt;/span&gt;-&lt;span class="caps"&gt;CN&lt;/span&gt;.md&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;
-1. 在nginx的配置文件里面配置location:
- &amp;#8220;`
-  # https 配置Let’s&amp;nbsp;Encrypt&lt;/p&gt;
-&lt;p&gt;location ^~ /.well-known/acme-challenge/ {
-   allow all;
-   default_type &amp;ldquo;text/plain&amp;rdquo;;
-   root /www;&amp;nbsp;}&lt;/p&gt;
-&lt;p&gt;$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
-$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
-$ sudo chmod +x letsencrypt.sh
-$ sudo nano letsencrypt.conf
-$ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;`&lt;/p&gt;</content><category term="nginx"></category></entry><entry><title>[环境搭建] 配置采用NAT123进行树莓派部署</title><link href="https://pingbook.top/articles/pi-nat123/" rel="alternate"></link><published>2018-07-13T19:29:03+08:00</published><updated>2018-07-13T19:29:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nat123/</id><summary type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category><category term="python3"></category></entry><entry><title>[环境搭建] 配置采用NAT123进行树莓派部署</title><link href="https://pingbook.top/articles/pi-nat123/" rel="alternate"></link><published>2018-07-13T19:29:03+08:00</published><updated>2018-07-13T19:29:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nat123/</id><summary type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download/stable/#download-lin-raspbian&lt;/a&gt;
 1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp&lt;br&gt;
@@ -725,57 +776,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&amp;nbsp;&amp;#8220;`&lt;/p&gt;</conten
 &lt;ul&gt;
 &lt;li&gt;重启&lt;code&gt;crontab&lt;/code&gt;以便生效
 &lt;code&gt;sudo systemctl restart cron.service&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="mysql"></category><category term="mysql备份"></category></entry><entry><title>[树莓派] 树莓派外部网站搭建</title><link href="https://pingbook.top/articles/pi-mirrors/" rel="alternate"></link><published>2018-07-13T19:28:48+08:00</published><updated>2018-07-13T19:28:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-mirrors/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2 id="_1"&gt;前因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="nginx"&gt;整理一下树莓派下安装nginx的过程&lt;a class="headerlink" href="#nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1"&gt;1. 为树莓派更换国内镜像源&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;(2018-07-07更新 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2 id="_1"&gt;前因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="nginx"&gt;整理一下树莓派下安装nginx的过程&lt;a class="headerlink" href="#nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1"&gt;1. 为树莓派更换国内镜像源&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80)
-可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors&lt;br&gt;&amp;nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/apt/sources.list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/apt/sources.list.d/raspi.list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;用#注释掉原文件内容，用以下内容取代：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。&lt;br&gt;
-编辑镜像站后，请使用&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;命令，更新软件源列表，同时检查您的编辑是否正确。
-使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装&lt;code&gt;apt-transport-https&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id="2-nginx"&gt;2. 删除已经安装的nginx&lt;a class="headerlink" href="#2-nginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y  # update all package index&lt;/span&gt;
-&lt;span class="code-line"&gt;# sudo apt-get purge nginx nginx-common # Removes everything.&lt;/span&gt;
-&lt;span class="code-line"&gt;nginx 采用的C语言编写的,需要对应的C编译器(GCC):&lt;/span&gt;
-&lt;span class="code-line"&gt;# sudo apt install build-essential -y&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category><category term="nat123"></category><category term="树莓派镜像"></category></entry><entry><title>[树莓派] 树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-13T19:28:39+08:00</published><updated>2018-07-13T19:28:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-installation/</id><summary type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/ul&gt;</content><category term="mysql"></category><category term="mysql备份"></category></entry><entry><title>[树莓派] 树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-13T19:28:39+08:00</published><updated>2018-07-13T19:28:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-installation/</id><summary type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;因为感觉空间越来越小了,不能使用现在的需要了,所以决定重新安装系统.&lt;/p&gt;
 &lt;/blockquote&gt;

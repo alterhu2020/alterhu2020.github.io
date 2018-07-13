@@ -123,8 +123,8 @@ Debian安装配置nginx服务器¶ 下载解压缩安装包 $ sudo wget https://
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-13T19:29:12.251387+08:00">-->
-                    <!--2018-07-13 19:29:12-->
+                    <!--<abbr class="published" title="2018-07-13T20:44:35.606241+08:00">-->
+                    <!--2018-07-13 20:44:35-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@ Debian安装配置nginx服务器¶ 下载解压缩安装包 $ sudo wget https://
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-13 19:29:12
+                        2018-07-13 20:44:35
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -410,18 +410,27 @@ Debian安装配置nginx服务器¶ 下载解压缩安装包 $ sudo wget https://
 $ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
 $ sudo chmod +x letsencrypt.sh
 $ sudo nano letsencrypt.conf
-$ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;`</p>
+$ sudo ./letsencrypt.sh&nbsp;letsencrypt.conf</p>
+<div class="highlight"><pre><span class="code-line"><span></span>###  删除已经安装的nginx</span>
+</pre></div>
+
+
+<h1 id="sudo-apt-update-sudo-apt-upgrade-y-update-all-package-index">sudo apt update &amp;&amp; sudo apt upgrade -y  # update all package index<a class="headerlink" href="#sudo-apt-update-sudo-apt-upgrade-y-update-all-package-index" title="Permanent link">&para;</a></h1>
+<h1 id="sudo-apt-get-purge-nginx-nginx-common-removes-everything">sudo apt-get purge nginx nginx-common # Removes everything.<a class="headerlink" href="#sudo-apt-get-purge-nginx-nginx-common-removes-everything" title="Permanent link">&para;</a></h1>
+<p>nginx 采用的C语言编写的,需要对应的C编译器(<span class="caps">GCC</span>):</p>
+<h1 id="sudo-apt-install-build-essential-y">sudo apt install build-essential -y<a class="headerlink" href="#sudo-apt-install-build-essential-y" title="Permanent link">&para;</a></h1>
+<p><span class="dquo">&#8220;</span>`</p>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/pi-nat123/">
-                                ◄&nbsp;&nbsp;[环境搭建]&nbsp;配置采用NAT123进行树莓派部署
+                            <a href="../../articles/hadoop-spark-hbase-hive/">
+                                ◄&nbsp;&nbsp;[环境搭建]&nbsp;大数据hadoop,spark,hbase,hive概念
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/pi-python3/">
-                                [环境搭建] 如何完整卸载python2/3&nbsp;在debain上&nbsp;&nbsp;►
+                            <a href="../../articles/pi-mirrors/">
+                                [树莓派]&nbsp;树莓派国内镜像&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -487,7 +496,6 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;`</p>
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
                     <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
@@ -498,6 +506,7 @@ $ sudo ./letsencrypt.sh letsencrypt.conf&nbsp;&#8220;`</p>
                     <li class="tag-4"><a href="../../tag/machine-learning/">machine learning</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-2"><a href="../../tag/nat123/">nat123</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
                     <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>

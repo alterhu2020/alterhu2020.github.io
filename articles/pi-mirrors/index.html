@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>[树莓派] 树莓派外部网站搭建</title>
+        <title>[树莓派] 树莓派国内镜像</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-前因¶ 自己在Github Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了. 整理一下树莓派下安装nginx的过程¶ 1. 为树莓派更换国内镜像源¶ (2018-07-07更新 …">
+前因¶ 自己在Github Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了. 为树莓派更换国内镜像源¶ (2018-07-07更新: 清华的镜像源已经不能使用: Cannot …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -119,12 +119,12 @@
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/pi-mirrors/" rel="bookmark"
-                           title="Permalink to [树莓派] 树莓派外部网站搭建">[树莓派]&nbsp;树莓派外部网站搭建</a></h2>
+                           title="Permalink to [树莓派] 树莓派国内镜像">[树莓派]&nbsp;树莓派国内镜像</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-13T19:28:48.489880+08:00">-->
-                    <!--2018-07-13 19:28:48-->
+                    <!--<abbr class="published" title="2018-07-13T20:45:03.821442+08:00">-->
+                    <!--2018-07-13 20:45:03-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-13 19:28:48
+                        2018-07-13 20:45:03
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -158,8 +158,7 @@
 <blockquote>
 <p>自己在Github&nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.</p>
 </blockquote>
-<h2 id="nginx">整理一下树莓派下安装nginx的过程<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 为树莓派更换国内镜像源<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h3 id="_2">为树莓派更换国内镜像源<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80)
 可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors<br>&nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：</p>
@@ -190,23 +189,12 @@
 编辑镜像站后，请使用<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>命令，更新软件源列表，同时检查您的编辑是否正确。
 使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装<code>apt-transport-https</code>.</p>
 </blockquote>
-<h3 id="2-nginx">2. 删除已经安装的nginx<a class="headerlink" href="#2-nginx" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span class="code-line"><span></span># sudo apt update &amp;&amp; sudo apt upgrade -y  # update all package index</span>
-<span class="code-line"># sudo apt-get purge nginx nginx-common # Removes everything.</span>
-<span class="code-line">nginx 采用的C语言编写的,需要对应的C编译器(GCC):</span>
-<span class="code-line"># sudo apt install build-essential -y</span>
-</pre></div>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/pi-installation/">
-                                ◄&nbsp;&nbsp;[树莓派]&nbsp;树莓派3B安装
-                            </a>
-                        </li>
-                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/pi-mysql/">
-                                [环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置&nbsp;&nbsp;►
+                            <a href="../../articles/pi-nginx/">
+                                ◄&nbsp;&nbsp;[环境搭建]&nbsp;Debian安装编译和安装nginx服务器
                             </a>
                         </li>
                 </ul>
@@ -277,7 +265,6 @@
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-2"><a href="../../tag/nat123/">NAT123</a></li>
                     <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
                     <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
@@ -288,6 +275,7 @@
                     <li class="tag-4"><a href="../../tag/machine-learning/">machine learning</a></li>
                     <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
                     <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-2"><a href="../../tag/nat123/">nat123</a></li>
                     <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
                     <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>

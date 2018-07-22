@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>[Linux] 一些常用的linux系统的操作命令</title>
+        <title>[Linux] (持续更新中)一些常用的linux系统的操作命令</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-关键字¶ free top 性能相关的命令¶ pass">
+关键字¶ free top 防火墙操作¶ 显示防火墙状态 $ sudo iptables -L 关闭防火墙 $ sudo …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -119,12 +119,12 @@
                 <header>
                     <h2 class="entry-title">
                         <a href="../../articles/basic-command/" rel="bookmark"
-                           title="Permalink to [Linux] 一些常用的linux系统的操作命令">[Linux]&nbsp;一些常用的linux系统的操作命令</a></h2>
+                           title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令">[Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令</a></h2>
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-13T19:29:36.743956+08:00">-->
-                    <!--2018-07-13 19:29:36-->
+                    <!--<abbr class="published" title="2018-07-22T10:51:13.891948+08:00">-->
+                    <!--2018-07-22 10:51:13-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-13 19:29:36
+                        2018-07-22 10:51:13
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -158,14 +158,91 @@
 <li><code>free</code></li>
 <li><code>top</code></li>
 </ol>
-<h3 id="_2">性能相关的命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>pass</p>
+<h2 id="_2">防火墙操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>显示防火墙状态</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo iptables -L</span>
+</pre></div>
+
+
+<ol start="2">
+<li>关闭防火墙</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo iptables -F  <span class="c1">#flush  清空所有的规则</span></span>
+</pre></div>
+
+
+<ol start="3">
+<li>添加到防火墙中</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo iptables -A FIREWALL -p tcp -m tcp –dport <span class="m">80</span> –syn -j ACCEPT</span>
+<span class="code-line"><span class="c1"># -A append</span></span>
+<span class="code-line"><span class="c1"># -p protocol</span></span>
+<span class="code-line"><span class="c1"># -m match</span></span>
+<span class="code-line"><span class="c1"># -d destination</span></span>
+<span class="code-line"><span class="c1"># -j jump</span></span>
+<span class="code-line"></span>
+<span class="code-line">$ sudo iptables -A FIREWALL -p tcp -m tcp --dport <span class="m">22</span> --syn -j ACCEPT  <span class="c1"># 打开22端口</span></span>
+<span class="code-line">$ sudo iptables-save &gt; /etc/firewall-rules</span>
+</pre></div>
+
+
+<h3 id="_3">性能相关的命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>与<code>df</code>不一样的是，du会直接到文件系统内查找所有的文件数据。</p>
+<div class="highlight"><pre><span class="code-line"><span></span># df -lh  # 查看磁盘空间</span>
+<span class="code-line"># du -ah --max-depth=1     这个是我想要的结果  a表示显示目录下所有的文件和文件夹（不含子目录），h表示以人类能看懂的方式，max-depth表示目录的深度。</span>
+<span class="code-line"></span>
+<span class="code-line">````</span>
+<span class="code-line"></span>
+<span class="code-line">### 统计文件个数</span>
+<span class="code-line"></span>
+<span class="code-line">统计当前文件夹下文件的个数，包括子文件夹里的  </span>
+<span class="code-line">`ls -lR|grep &quot;^-&quot;|wc -l`  </span>
+<span class="code-line">统计文件夹下目录的个数，包括子文件夹里的  </span>
+<span class="code-line">`ls -lR|grep &quot;^d&quot;|wc -l`  </span>
+<span class="code-line">统计当前文件夹下文件的个数  </span>
+<span class="code-line">`ls -l |grep &quot;^-&quot;|wc -l`  </span>
+<span class="code-line">统计当前文件夹下目录的个数  </span>
+<span class="code-line">`ls -l |grep &quot;^d&quot;|wc -l`  </span>
+<span class="code-line"></span>
+<span class="code-line">附：</span>
+<span class="code-line">统计输出信息的行数  </span>
+<span class="code-line">`wc -l`  </span>
+<span class="code-line">将长列表输出信息过滤一部分，只保留一般文件，如果只保留目录就是 ^d  </span>
+<span class="code-line">`grep &quot;^-&quot;`</span>
+<span class="code-line"></span>
+<span class="code-line"></span>
+<span class="code-line">### 切换语言环境为英文</span>
+<span class="code-line">参考文章: https://blog.csdn.net/yygydjkthh/article/details/47694747</span>
+</pre></div>
+
+
+<p>$ sudo export <span class="caps">LANG</span>=en_US.<span class="caps">UTF</span>-8
+$ dpkg-reconfigure locales   # 点击空格选择en_US_UTF-8,点击空格去掉zh_CN_UTF-8
+$ locale&nbsp;-a</p>
+<div class="highlight"><pre><span class="code-line"><span></span>### 磁盘管理,加载新的磁盘</span>
+<span class="code-line">参加文档: https://www.fujieace.com/linux/no-partition-is-defined-yet.html</span>
+<span class="code-line">阿里云的帮助文档,注意ext3格式,实际的系统格式是ext4:https://help.aliyun.com/document_detail/25426.html?spm=a2c4g.11186623.2.9.u398NC</span>
+<span class="code-line">No partition is defined yet!</span>
+<span class="code-line">Could not delete partition 1</span>
+<span class="code-line"></span>
+<span class="code-line">&gt; 删除磁盘 `fdisk d`的时候一定要注意清空文件 `/etc/fstab`里面的内容,否则容易出现很大的问题.</span>
+</pre></div>
+
+
+<h1 id="fdisk-l">fdisk -l<a class="headerlink" href="#fdisk-l" title="Permanent link">&para;</a></h1>
+<h1 id="fdisk-devsdb">fdisk /dev/sdb<a class="headerlink" href="#fdisk-devsdb" title="Permanent link">&para;</a></h1>
+<h1 id="mkfsext4-devsdb1">mkfs.ext4 /dev/sdb1<a class="headerlink" href="#mkfsext4-devsdb1" title="Permanent link">&para;</a></h1>
+<h1 id="nano-etcfstab">nano /etc/fstab  这里加上对应的需要加载的磁盘的信息<a class="headerlink" href="#nano-etcfstab" title="Permanent link">&para;</a></h1>
+<h1 id="mount-devsdb1">mount /dev/sdb1<a class="headerlink" href="#mount-devsdb1" title="Permanent link">&para;</a></h1>
+<p><span class="dquo">&#8220;</span>`</p>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/pi-tomcat/">
-                                ◄&nbsp;&nbsp;[环境搭建]&nbsp;Debian如何安装配置Tomcat9
+                            <a href="../../articles/pi-mysql/">
+                                ◄&nbsp;&nbsp;[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
@@ -222,6 +299,7 @@
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
+                        <li><a href="../../category/vuejs/">vuejs</a></li>
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
                         <li><a href="../../category/machine-learning/">machine learning</a></li>

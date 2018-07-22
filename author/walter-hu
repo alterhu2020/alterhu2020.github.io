@@ -114,6 +114,175 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-22T10:51:35.407017+08:00">
+                                        Posted @ 2018-07-22 10:51:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
+<p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
+<h3 id="source">source 安装编译<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/tensorflow/">tensorflow</a>
+                                            <a class="danger label" href="../tag/machine-learning/">machine learning</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令">[Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-22T10:51:13.891948+08:00">
+                                        Posted @ 2018-07-22 10:51:13,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>free</code></li>
+<li><code>top</code></li>
+</ol>
+<h2 id="_2">防火墙操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>显示防火墙状态</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo iptables -L</span>
+</pre></div>
+
+
+<ol start="2">
+<li>关闭防火墙</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/linux/">linux</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置">[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-22T10:49:36.649682+08:00">
+                                        Posted @ 2018-07-22 10:49:36,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>执行如下命令进行安装和基本的配置:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install mysql-server</span>
+<span class="code-line">$ sudo mysql_secure_installation</span>
+</pre></div>
+
+
+<p>第二条命令将会配置mysql的 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/mysql/">mysql</a>
+                                            <a class="danger label" href="../tag/mysqlbei-fen/">mysql备份</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">vuejs中使用的一些重要技巧</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-22T10:49:36.627622+08:00">
+                                        Posted @ 2018-07-22 10:49:36,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="stylebackground-color-background-image">style中配置<code>background-color</code>, <code>background-image</code> 变量<a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link">&para;</a></h2>
+<p>代码如下</p>
+<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;v-btn</span> <span class="na">color=</span><span class="s">&quot;primary&quot;</span> <span class="err">fab</span> <span class="err">dark …</span></span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上">[环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-19T20:36:43.635322+08:00">
+                                        Posted @ 2018-07-19 20:36:43,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
+<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../tag/python3/">python3</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念">[环境搭建]&nbsp;大数据hadoop,spark,hbase,hive概念</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-14T08:20:49.224912+08:00">
+                                        Posted @ 2018-07-14 08:20:49,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="hadoopsparkhbasehive">Hadoop、Spark、HBase、Hive<a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.
+  <span class="caps">AI</span> = <span class="caps">ML …</span></p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/bigdata/">bigdata</a>
+                                            <a class="danger label" href="../tag/hadoop/">hadoop</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/pi-mirrors/" rel="bookmark" title="Permalink to [树莓派] 树莓派国内镜像">[树莓派]&nbsp;树莓派国内镜像</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-13T20:45:03.821442+08:00">
@@ -165,90 +334,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <div class="row tag-row">
                                         <span>Tags: </span>
                                             <a class="danger label" href="../tag/nginx/">nginx</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念">[环境搭建]&nbsp;大数据hadoop,spark,hbase,hive概念</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:29:59.205660+08:00">
-                                        Posted @ 2018-07-13 19:29:59,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="hadoopsparkhbasehive">Hadoop、Spark、HBase、Hive<a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.</p>
-</blockquote>
-<h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>hadoop …</li></ol> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/bigdata/">bigdata</a>
-                                            <a class="danger label" href="../tag/hadoop/">hadoop</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:29:48.891368+08:00">
-                                        Posted @ 2018-07-13 19:29:48,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
-<p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
-<h3 id="tensorflow_1">安装依赖的包和对应的tensorflow的包<a class="headerlink" href="#tensorflow_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Python,pip环境的搭建这里就不罗嗦了 …</li></ol> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/tensorflow/">tensorflow</a>
-                                            <a class="danger label" href="../tag/machine-learning/">machine learning</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] 一些常用的linux系统的操作命令">[Linux]&nbsp;一些常用的linux系统的操作命令</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:29:36.743956+08:00">
-                                        Posted @ 2018-07-13 19:29:36,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li><code>free</code></li>
-<li><code>top</code></li>
-</ol>
-<h3 id="_2">性能相关的命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>pass</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] 一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/linux/">linux</a>
                                 </div>
 
 
@@ -311,87 +396,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上">[环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:29:16.893700+08:00">
-                                        Posted @ 2018-07-13 19:29:16,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
-<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
-                                            <a class="danger label" href="../tag/python3/">python3</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署">[环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:29:03.055243+08:00">
-                                        Posted @ 2018-07-13 19:29:03,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">安装步骤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download …</a></p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/nat123/">NAT123</a>
-                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置">[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:28:56.666940+08:00">
-                                        Posted @ 2018-07-13 19:28:56,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>执行如下命令进行安装和基本的配置:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install mysql-server</span>
-<span class="code-line">$ sudo mysql_secure_installation</span>
-</pre></div>
-
-
-<p>第二条命令将会配置mysql的 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/mysql/">mysql</a>
-                                            <a class="danger label" href="../tag/mysqlbei-fen/">mysql备份</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -412,6 +416,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
+                        <li><a href="../category/vuejs/">vuejs</a></li>
                         <li><a href="../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../category/mian-shi/">面试</a></li>
                         <li><a href="../category/machine-learning/">machine learning</a></li>

@@ -123,8 +123,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-13T19:28:56.666940+08:00">-->
-                    <!--2018-07-13 19:28:56-->
+                    <!--<abbr class="published" title="2018-07-22T10:49:36.649682+08:00">-->
+                    <!--2018-07-22 10:49:36-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-13 19:28:56
+                        2018-07-22 10:49:36
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -249,17 +249,25 @@
 <li>重启<code>crontab</code>以便生效
 <code>sudo systemctl restart cron.service</code></li>
 </ul>
+<h2 id="mysql-startup-error">mysql startup error<a class="headerlink" href="#mysql-startup-error" title="Permanent link">&para;</a></h2>
+<p>https://blog.csdn.net/mr_raptor/article/details/70576117
+[<span class="caps">ERROR</span>] Can&rsquo;t init tc log
+ innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to <span class="caps">20MB</span>.</p>
+<p>解决方法是删除mysql的log文件,因为磁盘满了不能写log了:
+ <code>$ cd /var/lib/mysql
+ $ rm -f ib_logfile*
+ $ rm -f tc.log</code></p>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/pi-installation/">
-                                ◄&nbsp;&nbsp;[树莓派]&nbsp;树莓派3B安装
+                            <a href="../../articles/best-tips/">
+                                ◄&nbsp;&nbsp;vuejs中使用的一些重要技巧
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/pi-nat123/">
-                                [环境搭建]&nbsp;配置采用NAT123进行树莓派部署&nbsp;&nbsp;►
+                            <a href="../../articles/basic-command/">
+                                [Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -311,6 +319,7 @@
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
+                        <li><a href="../../category/vuejs/">vuejs</a></li>
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
                         <li><a href="../../category/machine-learning/">machine learning</a></li>

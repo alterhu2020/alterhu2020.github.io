@@ -9,7 +9,7 @@
 
 
 
-tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on Raspbian 安装依赖的包和对应的tensorflow的包¶ Python,pip环境的搭建这里就不罗嗦了 …">
+tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on Raspbian source 安装编译¶ $ sudo …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -123,8 +123,8 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-13T19:29:48.891368+08:00">-->
-                    <!--2018-07-13 19:29:48-->
+                    <!--<abbr class="published" title="2018-07-22T10:51:35.407017+08:00">-->
+                    <!--2018-07-22 10:51:35-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-13 19:29:48
+                        2018-07-22 10:51:35
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -155,7 +155,17 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
                 <div class="entry-content">
                     <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
 <p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
-<h3 id="tensorflow_1">安装依赖的包和对应的tensorflow的包<a class="headerlink" href="#tensorflow_1" title="Permanent link">&para;</a></h3>
+<h3 id="source">source 安装编译<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get install - git</span>
+<span class="code-line">$ sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel</span>
+<span class="code-line">$ git clone https://github.com/tensorflow/tensorflow </span>
+<span class="code-line">$ <span class="nb">cd</span> tensorflow</span>
+<span class="code-line">$  git checkout master</span>
+<span class="code-line">未完待续</span>
+</pre></div>
+
+
+<h3 id="python-pip">python pip安装<a class="headerlink" href="#python-pip" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: <a href="https://pingbook.top/articles/pi-python3">python3安装</a></li>
 <li>新建一个virtual environment(推荐使用<code>pipenv</code>)用于存放对应的pip的包,执行如下命令:</li>
@@ -172,20 +182,12 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
 <span class="code-line"><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span></span>
 <span class="code-line"><span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span></span>
 </pre></div>
-
-
-<h3 id="_1">基础入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
                             <a href="../../articles/basic-command/">
-                                ◄&nbsp;&nbsp;[Linux]&nbsp;一些常用的linux系统的操作命令
-                            </a>
-                        </li>
-                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/hadoop-spark-hbase-hive/">
-                                [环境搭建]&nbsp;大数据hadoop,spark,hbase,hive概念&nbsp;&nbsp;►
+                                ◄&nbsp;&nbsp;[Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令
                             </a>
                         </li>
                 </ul>
@@ -237,6 +239,7 @@ tensorflow 安装¶ 这里参考的是官方的文档: Installing TensorFlow on�
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
+                        <li><a href="../../category/vuejs/">vuejs</a></li>
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
                         <li><a href="../../category/machine-learning/">machine learning</a></li>

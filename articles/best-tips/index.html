@@ -2,14 +2,14 @@
 <html lang="zh_cn">
 <head>
 
-        <title>PingBook Blog</title>
+        <title>vuejs中使用的一些重要技巧</title>
         <meta charset="utf-8"/>
         <meta name="description" content="
 
 
 
 
-PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vuejs、软件测试、测试自动化等的IT科技博客,希望大家一起交流学习!">
+style中配置background-color, background-image 变量¶ 代码如下 <v-btn color="primary" fab dark …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -104,44 +104,142 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
         </div>
 
-<section id="content">
-<h2>All articles of machine learning</h2>
+    <section id="content" class="body">
+
+        <div class="row">
+
+            <div class="eleven columns">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234561"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/best-tips/" rel="bookmark"
+                           title="Permalink to vuejs中使用的一些重要技巧">vuejs中使用的一些重要技巧</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-07-22T10:49:36.627622+08:00">-->
+                    <!--2018-07-22 10:49:36-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        2018-07-22 10:49:36
+                            &nbsp;&nbsp;By
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
+
+                        <span id="busuanzi_container_page_pv">, <i class="icon-eye icon-large"></i><span
+                                id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook Blog</a>,转载请务必保留<a
+                            href="../../articles/best-tips/">文章链接</a></p>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234565"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <div class="entry-content">
+                    <h2 id="stylebackground-color-background-image">style中配置<code>background-color</code>, <code>background-image</code> 变量<a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link">&para;</a></h2>
+<p>代码如下</p>
+<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;v-btn</span> <span class="na">color=</span><span class="s">&quot;primary&quot;</span> <span class="err">fab</span> <span class="err">dark</span></span>
+<span class="code-line">           <span class="na">class=</span><span class="s">&quot;checkbtn&quot;</span></span>
+<span class="code-line">           <span class="na">:style=</span><span class="s">&quot;{</span></span>
+<span class="code-line"><span class="s">                      marginTop: &#39;8%&#39;,</span></span>
+<span class="code-line"><span class="s">                      height: &#39;240px&#39;,</span></span>
+<span class="code-line"><span class="s">                      width: &#39;240px&#39;,</span></span>
+<span class="code-line"><span class="s">                      backgroundColor: backgroundcolor,</span></span>
+<span class="code-line"><span class="s">                      backgroundRepeat: &#39;no-repeat&#39;,</span></span>
+<span class="code-line"><span class="s">                      backgroundPosition: &#39;center&#39;,</span></span>
+<span class="code-line"><span class="s">                      backgroundSize: &#39;180px auto&#39;,</span></span>
+<span class="code-line"><span class="s">                      backgroundImage: &#39;url(&#39; + backgroundimage + &#39;)&#39;}&quot;</span></span>
+<span class="code-line">           <span class="err">@</span><span class="na">click.native=</span><span class="s">&quot;submitCheckin&quot;</span></span>
+<span class="code-line">           <span class="na">:disabled=</span><span class="s">&quot;AlreadyCheckin&quot;</span><span class="nt">&gt;</span></span>
+<span class="code-line">      <span class="cp">{{</span><span class="nv">checkinContent</span><span class="cp">}}</span></span>
+<span class="code-line">    <span class="nt">&lt;/v-btn&gt;</span></span>
+<span class="code-line"></span>
+<span class="code-line">export default {</span>
+<span class="code-line">  name: &#39;CheckingIn&#39;,</span>
+<span class="code-line">  data () {</span>
+<span class="code-line">    return {</span>
+<span class="code-line">      checkinContent: &#39;&#39;,</span>
+<span class="code-line">      AlreadyCheckin: false,</span>
+<span class="code-line">      backgroundcolor: &#39;green&#39;,</span>
+<span class="code-line">      backgroundimage: require(&#39;../assets/img/finger.png&#39;),</span>
+<span class="code-line">      checkinNote: &#39;&#39;</span>
+<span class="code-line">    }</span>
+<span class="code-line">  },</span>
+</pre></div>
 
 
-   <div class="row">
+<h2 id="foreachindex"><code>foreach</code>获得<code>index</code><a class="headerlink" href="#foreachindex" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span class="code-line"><span></span>[].foreach((item,index)=&gt;{</span>
+<span class="code-line"></span>
+<span class="code-line">})</span>
+<span class="code-line"></span>
+<span class="code-line">同vue的for循环一致,比如下面的</span>
+<span class="code-line"><span class="nt">&lt;template</span> <span class="na">v-for=</span><span class="s">&quot;(task,index) in tasks&quot;</span><span class="nt">&gt;</span></span>
+<span class="code-line"><span class="nt">&lt;/template&gt;</span></span>
+</pre></div>
+                </div><!-- /.entry-content -->
+                <hr/>
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/pi-python3/">
+                                ◄&nbsp;&nbsp;[环境搭建] 如何完整卸载python2/3&nbsp;在debain上
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/pi-mysql/">
+                                [环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置&nbsp;&nbsp;►
+                            </a>
+                        </li>
+                </ul>
+                <hr/>
+                <div class="comments">
+                    <h3>Relate Articles</h3>
+                </div>
+                <hr/>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234566"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/best-tips/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus</a>.
+                        </noscript>
+                    </div>
 
-        <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-22T10:51:35.407017+08:00">
-                                        Posted @ 2018-07-22 10:51:35,                                     By                                     <a class="url fn" href="../../author/walter-hu"> Walter Hu</a>
+            </div><!-- /.eleven.columns -->
 
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
-<p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
-<h3 id="source">source 安装编译<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../../tag/tensorflow/">tensorflow</a>
-                                            <a class="danger label" href="../../tag/machine-learning/">machine learning</a>
-                                </div>
-
-
-
-                        </article></li>
-                </ol><!-- /#posts-list -->
-
-        </div><!-- /.eleven.columns -->
-        
 <div class="three columns">
     <nav class="widget sidebarbg">
         <h4>Navigation</h4>
@@ -221,12 +319,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             </ul>
         </nav>
 
-</div> </div><!-- /.row -->
+</div>        </div><!-- /.row -->
 
-<p class="paginator">
-     第1页/共1页
-</p>
-</section><!-- /#content -->
+
+    </section>
 
     </div><!-- /.row -->
 </div><!-- /.container -->

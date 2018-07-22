@@ -1,5 +1,421 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-13T20:45:03+08:00</updated><entry><title>[树莓派] 树莓派国内镜像</title><link href="https://pingbook.top/articles/pi-mirrors/" rel="alternate"></link><published>2018-07-13T20:45:03+08:00</published><updated>2018-07-13T20:45:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-mirrors/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-22T10:51:35+08:00</updated><entry><title>[环境搭建] tensorflow的基础学习</title><link href="https://pingbook.top/articles/tensorflow-basic/" rel="alternate"></link><published>2018-07-22T10:51:35+08:00</published><updated>2018-07-22T10:51:35+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/tensorflow-basic/</id><summary type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="source"&gt;source 安装编译&lt;a class="headerlink" href="#source" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="source"&gt;source 安装编译&lt;a class="headerlink" href="#source" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get install - git&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel&lt;/span&gt;
+&lt;span class="code-line"&gt;$ git clone https://github.com/tensorflow/tensorflow &lt;/span&gt;
+&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; tensorflow&lt;/span&gt;
+&lt;span class="code-line"&gt;$  git checkout master&lt;/span&gt;
+&lt;span class="code-line"&gt;未完待续&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="python-pip"&gt;python pip安装&lt;a class="headerlink" href="#python-pip" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: &lt;a href="https://pingbook.top/articles/pi-python3"&gt;python3安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新建一个virtual environment(推荐使用&lt;code&gt;pipenv&lt;/code&gt;)用于存放对应的pip的包,执行如下命令:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;venvBigData&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;venBigData&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;libatlas&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="c1"&gt;# 安装numpy需要依赖的包&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PIPENV_VENV_IN_PROJECT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pipenv&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pipenv&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;  &lt;span class="c1"&gt;# 接下来是命令行验证tensorflow安装正确与否&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tensorflow&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tf&lt;/span&gt;   &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello, TensorFlow!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="n"&gt;sess&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="tensorflow"></category><category term="machine learning"></category></entry><entry><title>[Linux] (持续更新中)一些常用的linux系统的操作命令</title><link href="https://pingbook.top/articles/basic-command/" rel="alternate"></link><published>2018-07-22T10:51:13+08:00</published><updated>2018-07-22T10:51:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/basic-command/</id><summary type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="_2"&gt;防火墙操作&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;显示防火墙状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -L&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="2"&gt;
+&lt;li&gt;关闭防火墙&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="_2"&gt;防火墙操作&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;显示防火墙状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -L&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="2"&gt;
+&lt;li&gt;关闭防火墙&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -F  &lt;span class="c1"&gt;#flush  清空所有的规则&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="3"&gt;
+&lt;li&gt;添加到防火墙中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -A FIREWALL -p tcp -m tcp –dport &lt;span class="m"&gt;80&lt;/span&gt; –syn -j ACCEPT&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -A append&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -p protocol&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -m match&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -d destination&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -j jump&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo iptables -A FIREWALL -p tcp -m tcp --dport &lt;span class="m"&gt;22&lt;/span&gt; --syn -j ACCEPT  &lt;span class="c1"&gt;# 打开22端口&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo iptables-save &amp;gt; /etc/firewall-rules&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="_3"&gt;性能相关的命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;与&lt;code&gt;df&lt;/code&gt;不一样的是，du会直接到文件系统内查找所有的文件数据。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# df -lh  # 查看磁盘空间&lt;/span&gt;
+&lt;span class="code-line"&gt;# du -ah --max-depth=1     这个是我想要的结果  a表示显示目录下所有的文件和文件夹（不含子目录），h表示以人类能看懂的方式，max-depth表示目录的深度。&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;````&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;### 统计文件个数&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;统计当前文件夹下文件的个数，包括子文件夹里的  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -lR|grep &amp;quot;^-&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;统计文件夹下目录的个数，包括子文件夹里的  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -lR|grep &amp;quot;^d&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;统计当前文件夹下文件的个数  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -l |grep &amp;quot;^-&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;统计当前文件夹下目录的个数  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -l |grep &amp;quot;^d&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;附：&lt;/span&gt;
+&lt;span class="code-line"&gt;统计输出信息的行数  &lt;/span&gt;
+&lt;span class="code-line"&gt;`wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;将长列表输出信息过滤一部分，只保留一般文件，如果只保留目录就是 ^d  &lt;/span&gt;
+&lt;span class="code-line"&gt;`grep &amp;quot;^-&amp;quot;`&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;### 切换语言环境为英文&lt;/span&gt;
+&lt;span class="code-line"&gt;参考文章: https://blog.csdn.net/yygydjkthh/article/details/47694747&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$ sudo export &lt;span class="caps"&gt;LANG&lt;/span&gt;=en_US.&lt;span class="caps"&gt;UTF&lt;/span&gt;-8
+$ dpkg-reconfigure locales   # 点击空格选择en_US_UTF-8,点击空格去掉zh_CN_UTF-8
+$ locale&amp;nbsp;-a&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;### 磁盘管理,加载新的磁盘&lt;/span&gt;
+&lt;span class="code-line"&gt;参加文档: https://www.fujieace.com/linux/no-partition-is-defined-yet.html&lt;/span&gt;
+&lt;span class="code-line"&gt;阿里云的帮助文档,注意ext3格式,实际的系统格式是ext4:https://help.aliyun.com/document_detail/25426.html?spm=a2c4g.11186623.2.9.u398NC&lt;/span&gt;
+&lt;span class="code-line"&gt;No partition is defined yet!&lt;/span&gt;
+&lt;span class="code-line"&gt;Could not delete partition 1&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&amp;gt; 删除磁盘 `fdisk d`的时候一定要注意清空文件 `/etc/fstab`里面的内容,否则容易出现很大的问题.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id="fdisk-l"&gt;fdisk -l&lt;a class="headerlink" href="#fdisk-l" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="fdisk-devsdb"&gt;fdisk /dev/sdb&lt;a class="headerlink" href="#fdisk-devsdb" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="mkfsext4-devsdb1"&gt;mkfs.ext4 /dev/sdb1&lt;a class="headerlink" href="#mkfsext4-devsdb1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="nano-etcfstab"&gt;nano /etc/fstab  这里加上对应的需要加载的磁盘的信息&lt;a class="headerlink" href="#nano-etcfstab" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="mount-devsdb1"&gt;mount /dev/sdb1&lt;a class="headerlink" href="#mount-devsdb1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>[环境搭建] MYSQL 的安装配置</title><link href="https://pingbook.top/articles/pi-mysql/" rel="alternate"></link><published>2018-07-22T10:49:36+08:00</published><updated>2018-07-22T10:49:36+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/pi-mysql/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install mysql-server&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo mysql_secure_installation&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;第二条命令将会配置mysql的 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install mysql-server&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo mysql_secure_installation&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;第二条命令将会配置mysql的&lt;code&gt;root&lt;/code&gt;密码,删除掉&lt;code&gt;test&lt;/code&gt;数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令:
+&lt;code&gt;mysql -u root -p&lt;/code&gt;, 这里的root不用输入密码,明明上面的已经设置了密码???&lt;br&gt;&amp;nbsp;进行如下的命令进行配置:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo mysql -u root -p &lt;/span&gt;
+&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ update user &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mysql_native_password&amp;#39;&lt;/span&gt; where &lt;span class="nv"&gt;user&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
+&lt;span class="code-line"&gt;$ quit&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;&lt;code&gt;root&lt;/code&gt;密码的更改,可以采用下面的操作步骤:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
+&lt;span class="code-line"&gt;增加一行代码: skip-grant-tables 参见 https://www.jb51.net/article/100925.htm&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
+&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ UPDATE mysql.user SET &lt;span class="nv"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;YanZhi123!@#)0x&amp;amp;*&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="3"&gt;
+&lt;li&gt;增加用户名和授权远程登录:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
+&lt;span class="code-line"&gt;注释掉 bind-address          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
+&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ CREATE USER &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ GRANT ALL PRIVILEGES ON *.* TO &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    -- 远程连接权限所有的数据库.&lt;/span&gt;
+&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="4"&gt;
+&lt;li&gt;创建数据库,支持中文:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;UTF8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;test2&lt;/span&gt; &lt;span class="n"&gt;DEFAULT&lt;/span&gt; &lt;span class="n"&gt;CHARACTER&lt;/span&gt; &lt;span class="n"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="n"&gt;COLLATE&lt;/span&gt; &lt;span class="n"&gt;utf8_general_ci&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="5"&gt;
+&lt;li&gt;自动备份数据库,每天备份一次
+* 新建文件: &lt;code&gt;sudo nano /usr/sbin/mysqlbackup.sh&lt;/code&gt;,内容如下:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;1&lt;/span&gt;
+&lt;span class="code-line"&gt;2&lt;/span&gt;
+&lt;span class="code-line"&gt;3&lt;/span&gt;
+&lt;span class="code-line"&gt;4&lt;/span&gt;
+&lt;span class="code-line"&gt;5&lt;/span&gt;
+&lt;span class="code-line"&gt;6&lt;/span&gt;
+&lt;span class="code-line"&gt;7&lt;/span&gt;
+&lt;span class="code-line"&gt;8&lt;/span&gt;
+&lt;span class="code-line"&gt;9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# Name:mysql_backup.sh&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# This is a ShellScript For Auto DB Backup and Delete old Backup&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nv"&gt;backupdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/www/backups&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date +%Y-%m-%d_%H%M%S&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;/usr/bin/mysqldump --routines -u&lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; -p&lt;span class="s1"&gt;&amp;#39;test!@#&amp;#39;&lt;/span&gt; pingbook &lt;span class="p"&gt;|&lt;/span&gt; gzip &amp;gt; &lt;span class="nv"&gt;$backupdir&lt;/span&gt;/yanzhi&lt;span class="nv"&gt;$time&lt;/span&gt;.sql.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# 删除七天前的备份&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;find &lt;span class="nv"&gt;$backupdir&lt;/span&gt; -name &lt;span class="s2"&gt;&amp;quot;*.sql.gz&amp;quot;&lt;/span&gt; -type f -mtime +7 -exec rm &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;&amp;gt; /dev/null &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;添加可执行权限对应sh文件.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo chmod +x /usr/sbin/mysqlbackup.sh&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;增加定时任务在&lt;code&gt;sudo nano /etc/crontab&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;#创建一个mysql备份的操作&lt;/span&gt;
+&lt;span class="code-line"&gt;2 1   * * * root  /usr/sbin/mysqlbackup.sh &amp;gt;&amp;gt; /var/log/crontab/backup.log 2&amp;gt;&amp;amp;1  &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;重启&lt;code&gt;crontab&lt;/code&gt;以便生效
+&lt;code&gt;sudo systemctl restart cron.service&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="mysql-startup-error"&gt;mysql startup error&lt;a class="headerlink" href="#mysql-startup-error" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;https://blog.csdn.net/mr_raptor/article/details/70576117
+[&lt;span class="caps"&gt;ERROR&lt;/span&gt;] Can&amp;rsquo;t init tc log
+ innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to &lt;span class="caps"&gt;20MB&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;解决方法是删除mysql的log文件,因为磁盘满了不能写log了:
+ &lt;code&gt;$ cd /var/lib/mysql
+ $ rm -f ib_logfile*
+ $ rm -f tc.log&lt;/code&gt;&lt;/p&gt;</content><category term="mysql"></category><category term="mysql备份"></category></entry><entry><title>vuejs中使用的一些重要技巧</title><link href="https://pingbook.top/articles/best-tips/" rel="alternate"></link><published>2018-07-22T10:49:36+08:00</published><updated>2018-07-22T10:49:36+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/best-tips/</id><summary type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;代码如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;v-btn&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;primary&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;fab&lt;/span&gt; &lt;span class="err"&gt;dark …&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;代码如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;v-btn&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;primary&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;fab&lt;/span&gt; &lt;span class="err"&gt;dark&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;           &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;checkbtn&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;           &lt;span class="na"&gt;:style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      marginTop: &amp;#39;8%&amp;#39;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      height: &amp;#39;240px&amp;#39;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      width: &amp;#39;240px&amp;#39;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      backgroundColor: backgroundcolor,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      backgroundRepeat: &amp;#39;no-repeat&amp;#39;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      backgroundPosition: &amp;#39;center&amp;#39;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      backgroundSize: &amp;#39;180px auto&amp;#39;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s"&gt;                      backgroundImage: &amp;#39;url(&amp;#39; + backgroundimage + &amp;#39;)&amp;#39;}&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;           &lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="na"&gt;click.native=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;submitCheckin&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;           &lt;span class="na"&gt;:disabled=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;AlreadyCheckin&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;      &lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="nv"&gt;checkinContent&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="nt"&gt;&amp;lt;/v-btn&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;export default {&lt;/span&gt;
+&lt;span class="code-line"&gt;  name: &amp;#39;CheckingIn&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;  data () {&lt;/span&gt;
+&lt;span class="code-line"&gt;    return {&lt;/span&gt;
+&lt;span class="code-line"&gt;      checkinContent: &amp;#39;&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;      AlreadyCheckin: false,&lt;/span&gt;
+&lt;span class="code-line"&gt;      backgroundcolor: &amp;#39;green&amp;#39;,&lt;/span&gt;
+&lt;span class="code-line"&gt;      backgroundimage: require(&amp;#39;../assets/img/finger.png&amp;#39;),&lt;/span&gt;
+&lt;span class="code-line"&gt;      checkinNote: &amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;    }&lt;/span&gt;
+&lt;span class="code-line"&gt;  },&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="foreachindex"&gt;&lt;code&gt;foreach&lt;/code&gt;获得&lt;code&gt;index&lt;/code&gt;&lt;a class="headerlink" href="#foreachindex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;[].foreach((item,index)=&amp;gt;{&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;})&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;同vue的for循环一致,比如下面的&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;template&lt;/span&gt; &lt;span class="na"&gt;v-for=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;(task,index) in tasks&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>[环境搭建] 如何完整卸载python2/3 在debain上</title><link href="https://pingbook.top/articles/pi-python3/" rel="alternate"></link><published>2018-07-19T20:36:43+08:00</published><updated>2018-07-19T20:36:43+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-19:/articles/pi-python3/</id><summary type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal&lt;span class="sb"&gt;`&lt;/span&gt;,&lt;span class="sb"&gt;`&lt;/span&gt;python3.5-venv&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="install-python37"&gt;安装 install python3.7&lt;a class="headerlink" href="#install-python37" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
+参考文档: &lt;a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6"&gt;https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需要用到的命令如下:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;安装依赖包&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \&lt;/span&gt;
+&lt;span class="code-line"&gt;libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \&lt;/span&gt;
+&lt;span class="code-line"&gt;xz-utils tk-dev libffi-dev&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ tar xvf Python-3.7.0.tgz&lt;/span&gt;
+&lt;span class="code-line"&gt;// 下面的步骤安装会跑测试来判定机器的性能,从而进行性能的提高&lt;/span&gt;
+&lt;span class="code-line"&gt;$ ./configure --enable-optimizations --with-ensurepip=install&lt;/span&gt;
+&lt;span class="code-line"&gt;$ make -j8&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo make altinstall&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 50&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 50&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="pippipenvpipenv"&gt;安装pip,pipenv并设置全局可用命令&lt;code&gt;pipenv&lt;/code&gt;&lt;a class="headerlink" href="#pippipenvpipenv" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ wget https://bootstrap.pypa.io/get-pip.py&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo python get-pip.py&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ pip install --user pipenv&lt;/span&gt;
+&lt;span class="code-line"&gt; /home/pi/.local/bin&lt;/span&gt;
+&lt;span class="code-line"&gt;$ python -m site --user-base&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano ~/.profile&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.local/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo &lt;span class="nb"&gt;source&lt;/span&gt; ~/.profile&lt;/span&gt;
+&lt;span class="code-line"&gt;$ pipenv --update&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="uwsgi"&gt;uwsgi 配置详解&lt;a class="headerlink" href="#uwsgi" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;问题是我们的服务器后台部署在uwsgi上,今天突然有很大量的用户访问,结果导致了发到&lt;code&gt;uwsgi&lt;/code&gt;的所有请求都是&lt;code&gt;Pending&lt;/code&gt;的状态.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="_1"&gt;概念&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;emperor翻译为中文的意思其实就是皇帝的意思，那么既然有皇帝，那就肯定有“臣子”（vassals），其中“臣子”就是指实际运行的一个app实例，在这里就是uwsgi_test.ini配置文件了。&lt;/p&gt;
+&lt;p&gt;emperor模式开启的命令是：&lt;/p&gt;
+&lt;p&gt;sudo uwsgi &amp;ndash;emperor /path/to/vassals/ 
+其中，vassals文件夹里包含了各个app的配置文件，这个文件夹将会被emperor一直监视，只要有配置文件的修改或新建，app实例就会被重新加载或新建，可以通过软链接将实际项目中的配置文件链接到vassal文件夹目录下.&amp;nbsp;在文档中，emperor监视的是配置文件目录，但是问题来了，笔者希望每次Git仓库更新一次就重新启动实例，而如果这次更新并没有对配置文件进行修改，实例自然就不会重新启动了。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;uwsgi是用c语言写的一个webserver，可以启动多个进程，进程里面可以启动多个线程来服务。进程分为主进程和worker进程，worker里面可以有多个线程。&lt;/li&gt;
+&lt;/ol&gt;</content><category term="树莓派"></category><category term="python3"></category></entry><entry><title>[环境搭建] 大数据hadoop,spark,hbase,hive概念</title><link href="https://pingbook.top/articles/hadoop-spark-hbase-hive/" rel="alternate"></link><published>2018-07-14T08:20:49+08:00</published><updated>2018-07-14T08:20:49+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-14:/articles/hadoop-spark-hbase-hive/</id><summary type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.
+  &lt;span class="caps"&gt;AI&lt;/span&gt; = &lt;span class="caps"&gt;ML …&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.
+  &lt;span class="caps"&gt;AI&lt;/span&gt; = &lt;span class="caps"&gt;ML&lt;/span&gt; +&amp;nbsp;BigData&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;hadoop&lt;/li&gt;
+&lt;li&gt;spark&lt;/li&gt;
+&lt;li&gt;hbase&lt;/li&gt;
+&lt;li&gt;hive&lt;/li&gt;
+&lt;li&gt;hdfs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="hadoop"&gt;hadoop 安装&lt;a class="headerlink" href="#hadoop" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;参考博客: &lt;a href="https://www.cnblogs.com/jing1996/p/8038219.html"&gt;https://www.cnblogs.com/jing1996/p/8038219.html&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget http://mirrors.shu.edu.cn/apache/hadoop/common/hadoop-3.0.3/hadoop-3.0.3.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ tar zxvf hadoop-3.0.3.tar.gz&lt;/span&gt;
+&lt;span class="code-line"&gt;$ cd hadoop-3.0.3/etc/hadoop&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano hadoop-env.sh　&lt;/span&gt;
+&lt;span class="code-line"&gt;修改其中的 JAVA_HOME路径指向对应的JAVA_HOME路径&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano core-site.xml&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;fs.defaultFS&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;value&amp;gt;&lt;/span&gt;hdfs://localhost:9000&lt;span class="nt"&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;hadoop.tmp.dir&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;value&amp;gt;&lt;/span&gt;/home/pi/hadoop-3.0.3/tmp&lt;span class="nt"&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;　　　　　　　　　 &lt;span class="nt"&gt;&amp;lt;description&amp;gt;&lt;/span&gt;namenode上本地的hadoop临时文件夹&lt;span class="nt"&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano hdfs-site.xml&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;dfs.replication&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;value&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;             &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;dfs.namenode.name.dir&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;             &lt;span class="nt"&gt;&amp;lt;value&amp;gt;&lt;/span&gt;/home/pi/hadoop-3.0.3/dfs/name&lt;span class="nt"&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;　　　　　　　　&lt;span class="nt"&gt;&amp;lt;description&amp;gt;&lt;/span&gt;namenode上存储hdfs名字空间元数据&lt;span class="nt"&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;             &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;dfs.datanode.data.dir&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;             &lt;span class="nt"&gt;&amp;lt;value&amp;gt;&lt;/span&gt;/home/pi/hadoop-3.0.3/hdfs/data&lt;span class="nt"&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;　　　　　　　　&lt;span class="nt"&gt;&amp;lt;description&amp;gt;&lt;/span&gt;datanode上数据块的物理存储位置&lt;span class="nt"&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano mapred-site.xml&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;mapreduce.framework.name&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;value&amp;gt;&lt;/span&gt;yarn&lt;span class="nt"&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano yarn-site.xml&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;yarn.nodemanager.aux-services&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                &lt;span class="nt"&gt;&amp;lt;value&amp;gt;&lt;/span&gt;mapreduce_shuffle&lt;span class="nt"&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;# 配置对应的环境变量&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano /etc/profile&lt;/span&gt;
+&lt;span class="code-line"&gt;# 配置hadoop的环境变量&lt;/span&gt;
+&lt;span class="code-line"&gt;export HADOOP_HOME=/home/pi/hadoop-3.0.3&lt;/span&gt;
+&lt;span class="code-line"&gt;EXPORT PATH=&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HADOOP_HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/bin:&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HADOOP_HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/sbin:&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo source /etc/profile&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo chown -R pi /home/pi/hadoop-3.0.3&lt;/span&gt;
+&lt;span class="code-line"&gt;修改权限&lt;/span&gt;
+&lt;span class="code-line"&gt;$  chown -R pi /home/pi/hadoop-3.0.3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_2"&gt;基本概念&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;pass&lt;/p&gt;</content><category term="bigdata"></category><category term="hadoop"></category></entry><entry><title>[树莓派] 树莓派国内镜像</title><link href="https://pingbook.top/articles/pi-mirrors/" rel="alternate"></link><published>2018-07-13T20:45:03+08:00</published><updated>2018-07-13T20:45:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-mirrors/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id="_1"&gt;前因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
@@ -311,63 +727,7 @@ $ sudo ./letsencrypt.sh&amp;nbsp;letsencrypt.conf&lt;/p&gt;
 &lt;h1 id="sudo-apt-get-purge-nginx-nginx-common-removes-everything"&gt;sudo apt-get purge nginx nginx-common # Removes everything.&lt;a class="headerlink" href="#sudo-apt-get-purge-nginx-nginx-common-removes-everything" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;nginx 采用的C语言编写的,需要对应的C编译器(&lt;span class="caps"&gt;GCC&lt;/span&gt;):&lt;/p&gt;
 &lt;h1 id="sudo-apt-install-build-essential-y"&gt;sudo apt install build-essential -y&lt;a class="headerlink" href="#sudo-apt-install-build-essential-y" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="nginx"></category></entry><entry><title>[环境搭建] 大数据hadoop,spark,hbase,hive概念</title><link href="https://pingbook.top/articles/hadoop-spark-hbase-hive/" rel="alternate"></link><published>2018-07-13T19:29:59+08:00</published><updated>2018-07-13T19:29:59+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/hadoop-spark-hbase-hive/</id><summary type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;hadoop …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2 id="hadoopsparkhbasehive"&gt;Hadoop、Spark、HBase、Hive&lt;a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;hadoop&lt;/li&gt;
-&lt;li&gt;spark&lt;/li&gt;
-&lt;li&gt;hbase&lt;/li&gt;
-&lt;li&gt;hive&lt;/li&gt;
-&lt;li&gt;hdfs&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="_2"&gt;基本概念&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;pass&lt;/p&gt;</content><category term="bigdata"></category><category term="hadoop"></category></entry><entry><title>[环境搭建] tensorflow的基础学习</title><link href="https://pingbook.top/articles/tensorflow-basic/" rel="alternate"></link><published>2018-07-13T19:29:48+08:00</published><updated>2018-07-13T19:29:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/tensorflow-basic/</id><summary type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id="tensorflow_1"&gt;安装依赖的包和对应的tensorflow的包&lt;a class="headerlink" href="#tensorflow_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Python,pip环境的搭建这里就不罗嗦了 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id="tensorflow_1"&gt;安装依赖的包和对应的tensorflow的包&lt;a class="headerlink" href="#tensorflow_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: &lt;a href="https://pingbook.top/articles/pi-python3"&gt;python3安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;新建一个virtual environment(推荐使用&lt;code&gt;pipenv&lt;/code&gt;)用于存放对应的pip的包,执行如下命令:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;venvBigData&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;venBigData&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;libatlas&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="c1"&gt;# 安装numpy需要依赖的包&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PIPENV_VENV_IN_PROJECT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pipenv&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pipenv&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;  &lt;span class="c1"&gt;# 接下来是命令行验证tensorflow安装正确与否&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tensorflow&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tf&lt;/span&gt;   &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello, TensorFlow!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="n"&gt;sess&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="_1"&gt;基础入门&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;</content><category term="tensorflow"></category><category term="machine learning"></category></entry><entry><title>[Linux] 一些常用的linux系统的操作命令</title><link href="https://pingbook.top/articles/basic-command/" rel="alternate"></link><published>2018-07-13T19:29:36+08:00</published><updated>2018-07-13T19:29:36+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/basic-command/</id><summary type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="_2"&gt;性能相关的命令&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;pass&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="_2"&gt;性能相关的命令&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;pass&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>[环境搭建] Debian如何安装配置Tomcat9</title><link href="https://pingbook.top/articles/pi-tomcat/" rel="alternate"></link><published>2018-07-13T19:29:26+08:00</published><updated>2018-07-13T19:29:26+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-tomcat/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="nginx"></category></entry><entry><title>[环境搭建] Debian如何安装配置Tomcat9</title><link href="https://pingbook.top/articles/pi-tomcat/" rel="alternate"></link><published>2018-07-13T19:29:26+08:00</published><updated>2018-07-13T19:29:26+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-tomcat/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考文档:&lt;br&gt;
 &lt;em&gt; &lt;a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/"&gt;https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/&lt;/a&gt;&lt;br&gt;
@@ -616,45 +976,7 @@ $ sudo ./letsencrypt.sh&amp;nbsp;letsencrypt.conf&lt;/p&gt;
 
 
 &lt;p&gt;如果commit的时候发现&lt;code&gt;hook&lt;/code&gt;的&lt;code&gt;post-commit&lt;/code&gt;总是报错: &lt;code&gt;post-commit hook failed (exit code 255) with no output&lt;/code&gt;,需要检查对应的文件的读写权限.
-1. 检查对应的&lt;code&gt;post-commit&lt;/code&gt;的用户组是&lt;code&gt;svn&lt;/code&gt;,对应的文件有执行权限: &lt;code&gt;sudo chmod g+e /srv/svn/hook/post-commit&lt;/code&gt;&lt;/p&gt;</content><category term="svn"></category></entry><entry><title>[环境搭建] 如何完整卸载python2/3 在debain上</title><link href="https://pingbook.top/articles/pi-python3/" rel="alternate"></link><published>2018-07-13T19:29:16+08:00</published><updated>2018-07-13T19:29:16+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-python3/</id><summary type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal&lt;span class="sb"&gt;`&lt;/span&gt;,&lt;span class="sb"&gt;`&lt;/span&gt;python3.5-venv&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="install-python37"&gt;安装 install python3.7&lt;a class="headerlink" href="#install-python37" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
-参考文档: &lt;a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6"&gt;https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;需要用到的命令如下:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;安装依赖包&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;xz-utils tk-dev libffi-dev&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar xvf Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;// 下面的步骤安装会跑测试来判定机器的性能,从而进行性能的提高&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./configure --enable-optimizations --with-ensurepip=install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make -j8&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make altinstall&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 50&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 50&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="pippipenvpipenv"&gt;安装pip,pipenv并设置全局可用命令&lt;code&gt;pipenv&lt;/code&gt;&lt;a class="headerlink" href="#pippipenvpipenv" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ wget https://bootstrap.pypa.io/get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo python get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pip install --user pipenv&lt;/span&gt;
-&lt;span class="code-line"&gt; /home/pi/.local/bin&lt;/span&gt;
-&lt;span class="code-line"&gt;$ python -m site --user-base&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.local/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo &lt;span class="nb"&gt;source&lt;/span&gt; ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pipenv --update&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category><category term="python3"></category></entry><entry><title>[环境搭建] 配置采用NAT123进行树莓派部署</title><link href="https://pingbook.top/articles/pi-nat123/" rel="alternate"></link><published>2018-07-13T19:29:03+08:00</published><updated>2018-07-13T19:29:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nat123/</id><summary type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+1. 检查对应的&lt;code&gt;post-commit&lt;/code&gt;的用户组是&lt;code&gt;svn&lt;/code&gt;,对应的文件有执行权限: &lt;code&gt;sudo chmod g+e /srv/svn/hook/post-commit&lt;/code&gt;&lt;/p&gt;</content><category term="svn"></category></entry><entry><title>[环境搭建] 配置采用NAT123进行树莓派部署</title><link href="https://pingbook.top/articles/pi-nat123/" rel="alternate"></link><published>2018-07-13T19:29:03+08:00</published><updated>2018-07-13T19:29:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nat123/</id><summary type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download/stable/#download-lin-raspbian&lt;/a&gt;
 1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp&lt;br&gt;
@@ -672,111 +994,7 @@ $ sudo ./letsencrypt.sh&amp;nbsp;letsencrypt.conf&lt;/p&gt;
 &lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deb https://download.mono-project.com/repo/debian stable-raspbianstretch main&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/mono-official-stable.list&lt;/span&gt;
 &lt;span class="code-line"&gt;$ sudo apt update&lt;/span&gt;
 &lt;span class="code-line"&gt;$ sudo apt install mono-complete&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="NAT123"></category><category term="树莓派"></category></entry><entry><title>[环境搭建] MYSQL 的安装配置</title><link href="https://pingbook.top/articles/pi-mysql/" rel="alternate"></link><published>2018-07-13T19:28:56+08:00</published><updated>2018-07-13T19:28:56+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-mysql/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install mysql-server&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql_secure_installation&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;第二条命令将会配置mysql的 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install mysql-server&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql_secure_installation&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;第二条命令将会配置mysql的&lt;code&gt;root&lt;/code&gt;密码,删除掉&lt;code&gt;test&lt;/code&gt;数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令:
-&lt;code&gt;mysql -u root -p&lt;/code&gt;, 这里的root不用输入密码,明明上面的已经设置了密码???&lt;br&gt;&amp;nbsp;进行如下的命令进行配置:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ update user &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mysql_native_password&amp;#39;&lt;/span&gt; where &lt;span class="nv"&gt;user&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;span class="code-line"&gt;$ quit&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;&lt;code&gt;root&lt;/code&gt;密码的更改,可以采用下面的操作步骤:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
-&lt;span class="code-line"&gt;增加一行代码: skip-grant-tables 参见 https://www.jb51.net/article/100925.htm&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ UPDATE mysql.user SET &lt;span class="nv"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;YanZhi123!@#)0x&amp;amp;*&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="3"&gt;
-&lt;li&gt;增加用户名和授权远程登录:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
-&lt;span class="code-line"&gt;注释掉 bind-address          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ CREATE USER &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ GRANT ALL PRIVILEGES ON *.* TO &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    -- 远程连接权限所有的数据库.&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="4"&gt;
-&lt;li&gt;创建数据库,支持中文:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;UTF8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;test2&lt;/span&gt; &lt;span class="n"&gt;DEFAULT&lt;/span&gt; &lt;span class="n"&gt;CHARACTER&lt;/span&gt; &lt;span class="n"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="n"&gt;COLLATE&lt;/span&gt; &lt;span class="n"&gt;utf8_general_ci&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="5"&gt;
-&lt;li&gt;自动备份数据库,每天备份一次
-* 新建文件: &lt;code&gt;sudo nano /usr/sbin/mysqlbackup.sh&lt;/code&gt;,内容如下:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;1&lt;/span&gt;
-&lt;span class="code-line"&gt;2&lt;/span&gt;
-&lt;span class="code-line"&gt;3&lt;/span&gt;
-&lt;span class="code-line"&gt;4&lt;/span&gt;
-&lt;span class="code-line"&gt;5&lt;/span&gt;
-&lt;span class="code-line"&gt;6&lt;/span&gt;
-&lt;span class="code-line"&gt;7&lt;/span&gt;
-&lt;span class="code-line"&gt;8&lt;/span&gt;
-&lt;span class="code-line"&gt;9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# Name:mysql_backup.sh&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# This is a ShellScript For Auto DB Backup and Delete old Backup&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;backupdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/www/backups&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date +%Y-%m-%d_%H%M%S&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;/usr/bin/mysqldump --routines -u&lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; -p&lt;span class="s1"&gt;&amp;#39;test!@#&amp;#39;&lt;/span&gt; pingbook &lt;span class="p"&gt;|&lt;/span&gt; gzip &amp;gt; &lt;span class="nv"&gt;$backupdir&lt;/span&gt;/yanzhi&lt;span class="nv"&gt;$time&lt;/span&gt;.sql.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# 删除七天前的备份&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;find &lt;span class="nv"&gt;$backupdir&lt;/span&gt; -name &lt;span class="s2"&gt;&amp;quot;*.sql.gz&amp;quot;&lt;/span&gt; -type f -mtime +7 -exec rm &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;&amp;gt; /dev/null &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;ul&gt;
-&lt;li&gt;添加可执行权限对应sh文件.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo chmod +x /usr/sbin/mysqlbackup.sh&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;增加定时任务在&lt;code&gt;sudo nano /etc/crontab&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;#创建一个mysql备份的操作&lt;/span&gt;
-&lt;span class="code-line"&gt;2 1   * * * root  /usr/sbin/mysqlbackup.sh &amp;gt;&amp;gt; /var/log/crontab/backup.log 2&amp;gt;&amp;amp;1  &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重启&lt;code&gt;crontab&lt;/code&gt;以便生效
-&lt;code&gt;sudo systemctl restart cron.service&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="mysql"></category><category term="mysql备份"></category></entry><entry><title>[树莓派] 树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-13T19:28:39+08:00</published><updated>2018-07-13T19:28:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-installation/</id><summary type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="NAT123"></category><category term="树莓派"></category></entry><entry><title>[树莓派] 树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-13T19:28:39+08:00</published><updated>2018-07-13T19:28:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-installation/</id><summary type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;因为感觉空间越来越小了,不能使用现在的需要了,所以决定重新安装系统.&lt;/p&gt;
 &lt;/blockquote&gt;

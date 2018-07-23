@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+
+        <title>[SQL]收集的一些好的SQL snippets</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="
+
+
+
+
+MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverflow.com/questions/11754781 …">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook Blog Full Atom Feed"/>
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "ca-pub-1893384651266286",
+                    enable_page_level_ads: true
+                });
+            </script>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122219517-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-122219517-1');
+            </script>
+
+
+        <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+<div class="container">
+    <div class="row">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle ads-responsive"
+                 data-ad-client="ca-pub-1893384651266286"
+                 data-ad-slot="1234561"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+    </div>
+    <div class="row">
+
+        <header id="banner" class="body">
+
+            <h1><a href="../..">PingBook Blog <strong>Code change the world</strong></a></h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns" style="width: 100%">
+
+                    <li ><a href="/">Home</a></li>
+                    <li ><a href="/categories">Category</a></li>
+                    <li ><a href="/archives">Archive</a></li>
+                    <li ><a href="/tags">Tags</a></li>
+                    <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
+
+            </ul>
+
+
+        </div>
+
+    <section id="content" class="body">
+
+        <div class="row">
+
+            <div class="eleven columns">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234561"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/sql-best-tips/" rel="bookmark"
+                           title="Permalink to [SQL]收集的一些好的SQL snippets">[<span class="caps">SQL</span>]收集的一些好的SQL&nbsp;snippets</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-07-23T12:58:43.813275+08:00">-->
+                    <!--2018-07-23 12:58:43-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        2018-07-23 12:58:43
+                            &nbsp;&nbsp;By
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
+
+                        <span id="busuanzi_container_page_pv">, <i class="icon-eye icon-large"></i><span
+                                id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook Blog</a>,转载请务必保留<a
+                            href="../../articles/sql-best-tips/">文章链接</a></p>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234565"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <div class="entry-content">
+                    <h3 id="mysql"><span class="caps">MYSQL</span> 用户变量,系统变量,局部变量<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
+<p>参考文档: https://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql
+1. 用户变量: 基于会话变量实现的, 可以暂存值, 并传递给同一连接里的下一条sql使用的变量.当客户端连接退出时,变量会被释放。只针对当前的存储过程或者当前的执行环境有效.<br>
+<strong>对于SET，可以使用=或:=来赋值，对于SELECT只能使用:=来赋值.</strong>
+    我们可以使用一条简单的select语句查询定义的用户变量的值。
+2. 系统变量: MySQL可以访问许多系统变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET <span class="caps">GLOBAL</span> var_name语句，可以动态更改这些全局变量。
+3. 局部变量:&nbsp;作用范围在begin到end语句块之间。在该语句块里设置的变量成为局部变量。</p>
+<h3 id="_1">基本的排序显示<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>-- MYSQL 方式</span>
+<span class="code-line">SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 3; </span>
+<span class="code-line">-- SQL SERVER 方式</span>
+<span class="code-line">SELECT TOP 3 * FROM SCore s ORDER BY s.score DESC;  </span>
+</pre></div>
+
+
+<ol>
+<li>查询分数排名第二的人(排序第二)</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>-- MYSQL方式, LIMIT第一参数是查询的条数,第二个数是查询的索引值,从0开始</span>
+<span class="code-line">SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 1,1; </span>
+<span class="code-line">-- SQL Server 方式</span>
+<span class="code-line">SELECT TOP 1 * FROM Score s WHERE s.id NOT IN (</span>
+<span class="code-line">    SELECT TOP 1 * FROM Score ORDER BY s.score DESC</span>
+<span class="code-line">) ORDER BY s.score DESC;   </span>
+</pre></div>
+
+
+<ol start="2">
+<li>显示排名名次或者说对应的行号</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="nt">--</span> <span class="nt">MYSQL方式</span></span>
+<span class="code-line"><span class="nt">SELECT</span> <span class="nt">s</span><span class="p">.</span><span class="nc">username</span><span class="o">,</span> <span class="nt">s</span><span class="p">.</span><span class="nc">score</span><span class="o">,</span><span class="p">@</span><span class="k">rank</span><span class="o">:=</span><span class="p">@</span><span class="k">rank</span><span class="o">+</span><span class="nt">1</span> <span class="nt">FROM</span> <span class="nt">Score</span> <span class="nt">s</span> <span class="nt">join</span> <span class="o">(</span><span class="nt">SELECT</span> <span class="p">@</span><span class="k">ranK</span><span class="o">:=</span><span class="nt">0</span><span class="o">)</span> <span class="nt">r</span> <span class="nt">order</span> <span class="nt">by</span> <span class="nt">1</span> <span class="nt">DESC</span><span class="p">;</span></span>
+</pre></div>
+                </div><!-- /.entry-content -->
+                <hr/>
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/algorithm-best/">
+                                ◄&nbsp;&nbsp;需要知道的一些算法
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/2-list-methods/">
+                                [面试] 2.&nbsp;有关list及其方法的使用&nbsp;&nbsp;►
+                            </a>
+                        </li>
+                </ul>
+                <hr/>
+                <div class="comments">
+                    <h3>Relate Articles</h3>
+                </div>
+                <hr/>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234566"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/sql-best-tips/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus</a>.
+                        </noscript>
+                    </div>
+
+            </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>Navigation</h4>
+        <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Category</a></li>
+                <li><a href="/archives">Archive</a></li>
+                <li><a href="/tags">Tags</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
+        </ul>
+    </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>Categories</h4>
+                <ul class="blank">
+                        <li><a href="../../category/sql/">SQL</a></li>
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/python/">Python</a></li>
+                        <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">Linux</a></li>
+                        <li><a href="../../category/javascript/">JavaScript</a></li>
+                        <li><a href="../../category/java/">Java</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <nav class="widget sidebarbg">
+            <h4>Tags</h4>
+            <ul class="blank">
+                    <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-1"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
+                    <li class="tag-4"><a href="../../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../../tag/machine-learning/">machine learning</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-2"><a href="../../tag/nat123/">nat123</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>
+                    <li class="tag-4"><a href="../../tag/uninstall-netframework/">uninstall .netframework</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="../../tag/ruan-jian-ce-shi/">软件测试</a></li>
+                    <li class="tag-4"><a href="../../tag/mian-xiang-dui-xiang/">面向对象</a></li>
+                    <li class="tag-1"><a href="../../tag/mian-shi/">面试</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>Social</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>Friends</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
+                    <li><a target="_blank" href="https://kevin.deldycke.com/">[Python]Data Engineer</a></li>
+            </ul>
+        </nav>
+
+</div>        </div><!-- /.row -->
+
+
+    </section>
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<div class="container.nopad bg">
+
+
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
+            <div class="row">
+                <ul class="socbtns">
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script>
+    function validateForm(query) {
+        return (query.length > 0);
+    }
+</script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+</body>
+</html>

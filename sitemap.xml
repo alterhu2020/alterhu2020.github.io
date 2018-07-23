@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-07-23T21:30:42-00:00</lastmod>
+<lastmod>2018-07-23T22:46:16-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-07-23T21:30:42-00:00</lastmod>
+<lastmod>2018-07-23T22:46:16-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -29,6 +29,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2018-07-13T21:17:55+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/vuejs-best-tips/</loc>
+<lastmod>2018-07-23T22:26:58+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/1-object-oriented-programming/</loc>
+<lastmod>2018-07-23T22:26:23+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/2-list-methods/</loc>
+<lastmod>2018-07-23T22:26:05+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -68,13 +89,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/articles/pi-mysql/</loc>
-<lastmod>2018-07-22T10:49:36+08:00</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/articles/best-tips/</loc>
 <lastmod>2018-07-22T10:49:36+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
@@ -172,20 +186,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://pingbook.top/articles/1-object-oriented-programming/</loc>
-<lastmod>2018-07-13T15:06:50+08:00</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/articles/2-list-methods/</loc>
-<lastmod>2018-07-11T16:15:15+08:00</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
 <loc>https://pingbook.top/category/sql/</loc>
 <lastmod>2018-07-23T12:58:43+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -222,14 +222,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/javascript/</loc>
-<lastmod>2018-07-22T10:49:36+08:06</lastmod>
+<lastmod>2018-07-23T22:26:58+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/category/java/</loc>
-<lastmod>2018-07-23T12:13:20+08:06</lastmod>
+<lastmod>2018-07-23T22:26:23+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -242,8 +242,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pingbook.top/tag/mian-xiang-dui-xiang/</loc>
+<lastmod>2018-07-23T22:26:23+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/mian-shi/</loc>
+<lastmod>2018-07-23T22:26:23+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://pingbook.top/tag/java/</loc>
-<lastmod>2018-07-23T12:13:20+08:06</lastmod>
+<lastmod>2018-07-23T22:26:23+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/list/</loc>
+<lastmod>2018-07-23T22:26:05+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -382,13 +403,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://pingbook.top/tag/mian-shi/</loc>
-<lastmod>2018-07-13T19:27:57+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://pingbook.top/tag/bai-he-ce-shi/</loc>
 <lastmod>2018-07-13T19:27:53+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -410,22 +424,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://pingbook.top/tag/mian-xiang-dui-xiang/</loc>
-<lastmod>2018-07-13T15:06:50+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/tag/list/</loc>
-<lastmod>2018-07-11T16:15:15+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://pingbook.top/author/walter-hu</loc>
-<lastmod>2018-07-23T12:58:43+08:06</lastmod>
+<lastmod>2018-07-23T22:26:58+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

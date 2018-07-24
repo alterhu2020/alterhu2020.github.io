@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+
+        <title>分层自动化测试</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="
+
+
+
+
+这是第一次听到这个理念,其实描述的是各个阶段的测试.传统的自动化测试更关注的产品UI层的自动化测试，而分层的自动化测试 倡导产品的不同阶段（层次）都需要自动化测试. 能够帮助测试人员从重复、枯燥的手工测试中解放出来。 最早是google进行的实践 …">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook Blog Full Atom Feed"/>
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "ca-pub-1893384651266286",
+                    enable_page_level_ads: true
+                });
+            </script>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122219517-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-122219517-1');
+            </script>
+
+
+        <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+<div class="container">
+    <div class="row">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle ads-responsive"
+                 data-ad-client="ca-pub-1893384651266286"
+                 data-ad-slot="1234561"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+    </div>
+    <div class="row">
+
+        <header id="banner" class="body">
+
+            <h1><a href="../..">PingBook Blog <strong>Code change the world</strong></a></h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+            <ul class="columns" style="width: 100%">
+
+                    <li ><a href="/">Home</a></li>
+                    <li ><a href="/categories">Category</a></li>
+                    <li ><a href="/archives">Archive</a></li>
+                    <li ><a href="/tags">Tags</a></li>
+                    <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
+
+            </ul>
+
+
+        </div>
+
+    <section id="content" class="body">
+
+        <div class="row">
+
+            <div class="eleven columns">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234561"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/fen-ceng/" rel="bookmark"
+                           title="Permalink to 分层自动化测试">分层自动化测试</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-07-24T20:10:36.729161+08:00">-->
+                    <!--2018-07-24 20:10:36-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        2018-07-24 20:10:36
+                            &nbsp;&nbsp;By
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
+
+                        <span id="busuanzi_container_page_pv">, <i class="icon-eye icon-large"></i><span
+                                id="busuanzi_value_page_pv"></span></span>
+                        &nbsp;&nbsp;<p style="color:red;">本文出自<a href="https://pingbook.top">PingBook Blog</a>,转载请务必保留<a
+                            href="../../articles/fen-ceng/">文章链接</a></p>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234565"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <div class="entry-content">
+                    <p>这是第一次听到这个理念,其实描述的是各个阶段的测试.传统的自动化测试更关注的产品UI层的自动化测试，而分层的自动化测试
+倡导产品的不同阶段（层次）都需要自动化测试.&nbsp;能够帮助测试人员从重复、枯燥的手工测试中解放出来。</p>
+<p>最早是google进行的实践，google在测试之初就做了非常优秀的测试覆盖，单元测试，接口测试，而web测试方面，他们只进行了很少的自动化，&nbsp;甚至是全手工测试页面。这种模式的效率很高，效果也很好，产品质量高，而且上线迅速。这种模式逐渐被百度接受。</p>
+<p>1、把传统的UI测试逐步弱化
+2、增加接口测试，白盒测试的比重&nbsp;3、利用系统级mock技术解耦</p>
+<ol>
+<li>自动化测试越底层收益越大,做分层,需要结合缺陷等数据,做最有价值的区域.</li>
+<li>不要为了持续集成而集成,注重基础建设;</li>
+<li>将能够自动的都部署到CI上,更有价值;</li>
+</ol>
+<p>UI最好是手工测试。接口非常适合自动化。</p>
+<p><a href="http://www.docin.com/p-315021205.html">参考阿里PPT</a>
+<img alt="测试的模型" src="https://img-blog.csdn.net/20150715162114375?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
+<p>参考: <a href="https://yq.aliyun.com/articles/65308?utm_campaign=xiangqing&amp;utm_medium=images&amp;utm_source=csdn&amp;utm_content=m_8133">如何做好自动化测试，揭秘阿里巴巴分层自动化实践之路</a>
+1. 单元测试（unit）：它可以通过mock框架，模拟各种异常场景，外部依赖最少，且可以做到测试粒度到最小的一种测试方法。
+也因为依赖少，可方便随时随地执行，也让问题排查很简单。这是一切测试的地基。
+2. 接口测试（service）：这里要求测试人员对系统的结构和系统间的调度非常清楚，同时要了解接口逻辑关系，否则接口测试代码很
+容易遗漏一些异常场景。这一层由于含有一些业务逻辑和多接口的一个集成，所以相对单元测试来说，多了一些外界依赖，导致问题定位
+不会有单元测试层那么准确。因此投入会比单元测试多一些。
+3. 页面测试（<span class="caps">UI</span>）：是常见的黑盒自动化测试场景。它最接近用户真实场景，也容易发现问题，但它的实现成本最高且太容易受外部依赖，&nbsp;影响脚本成功率，所以处在金字塔的顶端，但它不是金字塔的全部。自动化测试的劣势，其中80%都是因为UI自动化。</p>
+<p>分层自动化测试倡导的就是，将系统分层，不同层次用合适的自动化方法进行测试的一种测试策略。某个项目是否都能用自动化覆盖，&nbsp;那就要看测试负责人的分层策略是否合理、全面。</p>
+<p>自动化用的好可以大幅提升效率，降低成本投入，用不好则可能成为测试鸡肋，妨碍测试进程。</p>
+<ol>
+<li>集成、接口测试对于不少测试新手来说不太容易理解，单元测试关注代码的实现逻辑，例如一个if 分支或一个for循环的实现；
+那么集成、接口测试关注的一是个函数、类（方法）所提供的接口是否可靠。例如，我定义一个add()函数用于计算两个参数的
+结果并返回，那么我需要调用add()并传参，并比较返回值是否两个参数相加。当然，接口测试也可以是url的形式进行传递。
+例如，我们通过get方式向服务器发送请求，那么我们发送的内容做为URL的一部分传递到服务器端。但比如 Web service
+ 技术对外提供的一个公共接口，需要通过soapUI&nbsp;等工具对其进行测试。 </li>
+<li>UI层的自动化测试，这个大家应该再熟悉不过了，大部分测试人员的大部分工作都是对UI层的功能进行测试。例如，我们不断重复的对
+一个表单提交，结果查询等功能进行测试，我们可以通过相应的自动化测试工具来模拟这些操作，从而解放重复的劳动。
+UI层的自动化测试工具非常多，比较主流的是QTP，Robot Framework、watir、selenium&nbsp;等。</li>
+</ol>
+<p>这是为了表示不同阶段所投入自动化测试的比例。如果一个产品从没有做单元测试与接口测试，只做UI层的自动化测试是不科学的，
+从而很难从本质上保证产品的质量。如果你妄图实现全面的UI层的自动化测试，那更是一个劳民伤财的举动，投入了大量人力时间，
+最终获得的收益可能会远远低于所支付的成本。因为越往上层，其维护成本越高。尤其是UI层的元素会时常的发生改变。所以，我们应该把更多的&nbsp;自动化测试放在单元测试与接口测试阶段进行。</p>
+<p>既然UI层的自动化测试这么劳民伤财，那我们只做单元测试与接口测试好了。<span class="caps">NO</span>! 因为不管什么样的产品，最终呈现给用户的是UI层。所以，
+测试人员应该更多的精力放在UI层。那么也正是因为测试人员在UI层投入大量的精力，所以，我们有必要通过自动化的方式帮助我们“部分解放”&nbsp;重复的劳动。</p>
+<p>在自动化测试中最怕的是变化，因为变化的直接结果就是导致测试用例的运行失败，那么就需要对自动化脚本进行维护；如何控制失败，降低维护
+成本对自化的成败至关重要。反过来讲，一份永远都运行成功的自动化测试用例是没有价值`。 <br>
+至于在金字塔中三种测试的比例要根据实际的项目需求来划分。在《google 测试之道》一书，对于google产品，70%的投入为单元测试，
+20%为集成、接口测试，10%&nbsp;为UI层的自动化测试。</p>
+<p>因为测试门槛的降低,从测试人员自身的发展来说，我其实非常需要通过自动化技术来增加自己有竞争力。&nbsp;当然，做到一定年限测试人员会选择转管理或其它岗位，这又是另一个话题了。</p>
+<h3 id="_1">是否该自动化测试???<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>首先考考虑产品是否适合做自动化测试。这方法比较普遍的共识是从三个方面进行权衡。
+1.&nbsp;软件需求变动不频繁</p>
+<p>测试脚本的稳定性决定了自动化测试的维护成本。如果软件需求变动过于频繁，测试人员需要根据变动的需求来更新测试用例以及相关的测试脚本，
+而脚本的维护本身就是一个代码开发的过程，需要修改、调试，必要的时候还要修改自动化测试的框架，如果所花费的成本不低于利用其节省的测试成本，那么自动化测试便是失败的。
+2.&nbsp;项目周期较长</p>
+<p>由于自动化测试需求的确定、自动化测试框架的设计、测试脚本的编写与调试均需要相当长的时间来完成。这样的过程本身就是一个测试软件的开&nbsp;发过程，需要较长的时间来完成。如果项目的周期比较短，没有足够的时间去支持这样一个过程，那么自动化测试便成为笑谈。</p>
+<ol start="3">
+<li>自动化测试脚本可重复使用</li>
+</ol>
+<p>自动化测试脚本的重复使用要从三个方面来考量，一方面所测试的项目之间是否很大的差异性（如C/S系统和B/S系统的差异）；所选择的测试工具是否适应这种差异；&nbsp;最后，测试人员是否有能力开发出适应这种差异的自动化测试框架。</p>
+<h3 id="_2">选择什么工具进行自动化测试<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>首先要先确认你所测试的产品是桌面程序（C/S）还是web应用（B/S）。</p>
+<p>桌面程序的工具有：<span class="caps">QTP</span>、&nbsp;AutoRunner</p>
+<p>web应用的工具有：<span class="caps">QTP</span>、AutoRunner、Robot&nbsp;Framework、watir、selenium</p>
+<h3 id="selenium">selenium 用前须知<a class="headerlink" href="#selenium" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://images0.cnblogs.com/i/311516/201404/091114425599381.jpg"></p>
+<p>在selenium 2.0 中主推的是WebDriver ，WebDriver 是selenium <span class="caps">RC</span> 的替代品，因为 selenium 为了向下兼容性，所以selenium <span class="caps">RC</span> 并没有彻底抛弃，
+如果你使用selenium开发一个新自动化测试项目，强列推荐使用WebDriver 。那么selenium <span class="caps">RC</span> 与webdriver&nbsp;主要有什么区别呢？</p>
+<ul>
+<li>
+<p>selenium <span class="caps">RC</span> 在浏览器中运行JavaScript应用，使用浏览器内置的JavaScript 翻译器来翻译和执行selenese命令（selenese&nbsp;是selenium命令集合）。</p>
+</li>
+<li>
+<p>WebDriver通过原生浏览器支持或者浏览器扩展直接控制浏览器。WebDriver针对各个浏览器而开发，取代了嵌入到被测Web应用中的JavaScript。&nbsp;与浏览器的紧密集成支持创建更高级的测试，避免了JavaScript安全模型导致的限制。除了来自浏览器厂商的支持，WebDriver还利用操作系统级的调用模拟用户输入。</p>
+</li>
+</ul>
+                </div><!-- /.entry-content -->
+                <hr/>
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/technique-question/">
+                                ◄&nbsp;&nbsp;[面试]技术智力考核问题
+                            </a>
+                        </li>
+                </ul>
+                <hr/>
+                <div class="comments">
+                    <h3>Relate Articles</h3>
+                </div>
+                <hr/>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle ads-responsive"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1234566"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/fen-ceng/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus</a>.
+                        </noscript>
+                    </div>
+
+            </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>Navigation</h4>
+        <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Category</a></li>
+                <li><a href="/archives">Archive</a></li>
+                <li><a href="/tags">Tags</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
+        </ul>
+    </nav>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>Categories</h4>
+                <ul class="blank">
+                        <li><a href="../../category/sql/">SQL</a></li>
+                        <li><a href="../../category/softwaretesting/">SoftwareTesting</a></li>
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/python/">Python</a></li>
+                        <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">Linux</a></li>
+                        <li><a href="../../category/javascript/">JavaScript</a></li>
+                        <li><a href="../../category/java/">Java</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <nav class="widget sidebarbg">
+            <h4>Tags</h4>
+            <ul class="blank">
+                    <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
+                    <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
+                    <li class="tag-1"><a href="../../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../../tag/license/">license</a></li>
+                    <li class="tag-4"><a href="../../tag/linux/">linux</a></li>
+                    <li class="tag-4"><a href="../../tag/list/">list</a></li>
+                    <li class="tag-4"><a href="../../tag/machine-learning/">machine learning</a></li>
+                    <li class="tag-4"><a href="../../tag/mysql/">mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/mysqlbei-fen/">mysql备份</a></li>
+                    <li class="tag-2"><a href="../../tag/nat123/">nat123</a></li>
+                    <li class="tag-4"><a href="../../tag/nginx/">nginx</a></li>
+                    <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
+                    <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
+                    <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
+                    <li class="tag-2"><a href="../../tag/review/">review</a></li>
+                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
+                    <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>
+                    <li class="tag-4"><a href="../../tag/uninstall-netframework/">uninstall .netframework</a></li>
+                    <li class="tag-4"><a href="../../tag/fen-ceng/">分层</a></li>
+                    <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
+                    <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
+                    <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
+                    <li class="tag-4"><a href="../../tag/ruan-jian-ce-shi/">软件测试</a></li>
+                    <li class="tag-4"><a href="../../tag/mian-xiang-dui-xiang/">面向对象</a></li>
+                    <li class="tag-1"><a href="../../tag/mian-shi/">面试</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>Social</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="http://github.com/pingbook">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>Friends</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
+                    <li><a target="_blank" href="https://kevin.deldycke.com/">[Python]Data Engineer</a></li>
+            </ul>
+        </nav>
+
+</div>        </div><!-- /.row -->
+
+
+    </section>
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<div class="container.nopad bg">
+
+
+    <footer id="credits" class="row" style="margin-bottom: 0px">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
+            <div class="row">
+                <ul class="socbtns">
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script>
+    function validateForm(query) {
+        return (query.length > 0);
+    }
+</script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+</body>
+</html>

@@ -114,6 +114,106 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/fen-ceng/" rel="bookmark" title="Permalink to 分层自动化测试">分层自动化测试</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T20:10:36.729161+08:00">
+                                        Posted @ 2018-07-24 20:10:36,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>这是第一次听到这个理念,其实描述的是各个阶段的测试.传统的自动化测试更关注的产品UI层的自动化测试，而分层的自动化测试
+倡导产品的不同阶段（层次）都需要自动化测试.&nbsp;能够帮助测试人员从重复、枯燥的手工测试中解放出来。</p>
+<p>最早是google进行的实践 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/fen-ceng/" rel="bookmark" title="Permalink to 分层自动化测试"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/fen-ceng/">分层</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/technique-question/" rel="bookmark" title="Permalink to [面试]技术智力考核问题">[面试]技术智力考核问题</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T19:31:42.125639+08:00">
+                                        Posted @ 2018-07-24 19:31:42,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <ol>
+<li>有A、B两个水杯，都没有刻度，也不允许做刻度。A杯装满水是5升，B杯装满水是3升。&nbsp;不借助别的任何工具，只用这两个杯子如何精确的得到4升水？</li>
+</ol>
+<blockquote>
+<p>把装满3升的水倒进5升的杯子里面，再把装满3升的水倒到5升的杯子 …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/technique-question/" rel="bookmark" title="Permalink to [面试]技术智力考核问题"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/review/">review</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/review-questions/" rel="bookmark" title="Permalink to [面试]测试面试的问题整理">[面试]测试面试的问题整理</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T19:25:08.713970+08:00">
+                                        Posted @ 2018-07-24 19:25:08,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>1、问：你在测试中发现了一个bug，但是开发经理认为这不是一个bug，你应该怎样解决？</p>
+<p>首先，将问题提交到缺陷管理库里面进行备案。</p>
+<p>然后，要获取判断的依据和标准：</p>
+<p>根据需求说明书 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/review-questions/" rel="bookmark" title="Permalink to [面试]测试面试的问题整理"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/review/">Review</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/jetbrain-idea-licenseserver/" rel="bookmark" title="Permalink to Available license server">Available license&nbsp;server</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T14:29:22.667889+08:00">
+                                        Posted @ 2018-07-24 14:29:22,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="license-servers">license servers<a class="headerlink" href="#license-servers" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>http://xidea.online/servers.html</p>
+</blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/jetbrain-idea-licenseserver/" rel="bookmark" title="Permalink to Available license server"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/license/">license</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">vuejs中使用的一些重要技巧</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-23T22:26:58.365000+08:00">
@@ -266,127 +366,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-22T10:51:35.407017+08:00">
-                                        Posted @ 2018-07-22 10:51:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
-<p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
-<h3 id="source">source 安装编译<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/tensorflow/">tensorflow</a>
-                                            <a class="danger label" href="../tag/machine-learning/">machine learning</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令">[Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-22T10:51:13.891948+08:00">
-                                        Posted @ 2018-07-22 10:51:13,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li><code>free</code></li>
-<li><code>top</code></li>
-</ol>
-<h2 id="_2">防火墙操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ol>
-<li>显示防火墙状态</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo iptables -L</span>
-</pre></div>
-
-
-<ol start="2">
-<li>关闭防火墙</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/linux/">linux</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置">[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-22T10:49:36.649682+08:00">
-                                        Posted @ 2018-07-22 10:49:36,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>执行如下命令进行安装和基本的配置:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install mysql-server</span>
-<span class="code-line">$ sudo mysql_secure_installation</span>
-</pre></div>
-
-
-<p>第二条命令将会配置mysql的 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/mysql/">mysql</a>
-                                            <a class="danger label" href="../tag/mysqlbei-fen/">mysql备份</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上">[环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-19T20:36:43.635322+08:00">
-                                        Posted @ 2018-07-19 20:36:43,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
-<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
-                                            <a class="danger label" href="../tag/python3/">python3</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -408,6 +387,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <h4>Categories</h4>
                 <ul class="blank">
                         <li><a href="../category/sql/">SQL</a></li>
+                        <li><a href="../category/softwaretesting/">SoftwareTesting</a></li>
                         <li><a href="../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../category/python/">Python</a></li>
                         <li><a href="../category/mian-shi/">面试</a></li>
@@ -430,6 +410,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../tag/hadoop/">hadoop</a></li>
                     <li class="tag-1"><a href="../tag/java/">java</a></li>
+                    <li class="tag-4"><a href="../tag/license/">license</a></li>
                     <li class="tag-4"><a href="../tag/linux/">linux</a></li>
                     <li class="tag-4"><a href="../tag/list/">list</a></li>
                     <li class="tag-4"><a href="../tag/machine-learning/">machine learning</a></li>
@@ -440,9 +421,11 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../tag/pelican/">pelican</a></li>
                     <li class="tag-4"><a href="../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../tag/python3/">python3</a></li>
+                    <li class="tag-2"><a href="../tag/review/">review</a></li>
                     <li class="tag-4"><a href="../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-4"><a href="../tag/uninstall-netframework/">uninstall .netframework</a></li>
+                    <li class="tag-4"><a href="../tag/fen-ceng/">分层</a></li>
                     <li class="tag-1"><a href="../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
                     <li class="tag-4"><a href="../tag/bai-he-ce-shi/">白盒测试</a></li>

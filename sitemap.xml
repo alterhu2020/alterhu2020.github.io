@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-07-23T22:46:16-00:00</lastmod>
+<lastmod>2018-07-24T20:12:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-07-23T22:46:16-00:00</lastmod>
+<lastmod>2018-07-24T20:12:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/about</loc>
-<lastmod>2018-07-13T19:32:16+08:00</lastmod>
+<lastmod>2018-07-23T23:52:24+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
@@ -29,6 +29,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2018-07-13T21:17:55+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/fen-ceng/</loc>
+<lastmod>2018-07-24T20:10:36+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/technique-question/</loc>
+<lastmod>2018-07-24T19:31:42+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/review-questions/</loc>
+<lastmod>2018-07-24T19:25:08+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/jetbrain-idea-licenseserver/</loc>
+<lastmod>2018-07-24T14:29:22+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -193,6 +221,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pingbook.top/category/softwaretesting/</loc>
+<lastmod>2018-07-24T20:10:36+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://pingbook.top/category/shu-mei-pai/</loc>
 <lastmod>2018-07-22T10:49:36+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -229,7 +264,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/java/</loc>
-<lastmod>2018-07-23T22:26:23+08:06</lastmod>
+<lastmod>2018-07-24T14:29:22+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -237,6 +272,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/category/bo-ke-da-jian/</loc>
 <lastmod>2018-07-13T19:28:28+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/fen-ceng/</loc>
+<lastmod>2018-07-24T20:10:36+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/review/</loc>
+<lastmod>2018-07-24T19:31:42+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/license/</loc>
+<lastmod>2018-07-24T14:29:22+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -425,7 +481,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/author/walter-hu</loc>
-<lastmod>2018-07-23T22:26:58+08:06</lastmod>
+<lastmod>2018-07-24T20:10:36+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

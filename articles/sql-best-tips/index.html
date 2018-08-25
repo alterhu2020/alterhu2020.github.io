@@ -123,8 +123,8 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-23T12:58:43.813275+08:00">-->
-                    <!--2018-07-23 12:58:43-->
+                    <!--<abbr class="published" title="2018-07-25T23:46:15.923671+08:00">-->
+                    <!--2018-07-25 23:46:15-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-07-23 12:58:43
+                        2018-07-25 23:46:15
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -186,17 +186,45 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
 <div class="highlight"><pre><span class="code-line"><span></span><span class="nt">--</span> <span class="nt">MYSQL方式</span></span>
 <span class="code-line"><span class="nt">SELECT</span> <span class="nt">s</span><span class="p">.</span><span class="nc">username</span><span class="o">,</span> <span class="nt">s</span><span class="p">.</span><span class="nc">score</span><span class="o">,</span><span class="p">@</span><span class="k">rank</span><span class="o">:=</span><span class="p">@</span><span class="k">rank</span><span class="o">+</span><span class="nt">1</span> <span class="nt">FROM</span> <span class="nt">Score</span> <span class="nt">s</span> <span class="nt">join</span> <span class="o">(</span><span class="nt">SELECT</span> <span class="p">@</span><span class="k">ranK</span><span class="o">:=</span><span class="nt">0</span><span class="o">)</span> <span class="nt">r</span> <span class="nt">order</span> <span class="nt">by</span> <span class="nt">1</span> <span class="nt">DESC</span><span class="p">;</span></span>
 </pre></div>
+
+
+<ol start="4">
+<li>查询父节点下的所有子节点集合</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>CREATE DEFINER = &#39;test&#39;@&#39;%&#39;</span>
+<span class="code-line">FUNCTION test.func_getMyFollowings(inputuserKey INT(11))</span>
+<span class="code-line">  RETURNS varchar(5000) CHARSET utf8</span>
+<span class="code-line">BEGIN</span>
+<span class="code-line">  DECLARE rootNode varchar(100);</span>
+<span class="code-line">  DECLARE tempChilds varchar(5000);</span>
+<span class="code-line">  SET tempChilds =&#39;&#39;;</span>
+<span class="code-line">  SET rootNode=CAST(inputuserKey AS CHAR);</span>
+<span class="code-line"></span>
+<span class="code-line">  WHILE rootNode IS NOT NULL DO   -- 遍历节点操作</span>
+<span class="code-line">     SET tempChilds = concat(tempChilds,rootNode,&#39;,&#39;);</span>
+<span class="code-line">      SELECT group_concat(um.EmployeeUserKey) INTO rootNode </span>
+<span class="code-line">      FROM UserManager um where FIND_IN_SET(um.ManagerSUserKey,rootNode)&gt;0;  -- 找到当前节点的子节点</span>
+<span class="code-line"></span>
+<span class="code-line"> END WHILE;</span>
+<span class="code-line"> RETURN tempChilds;</span>
+<span class="code-line">END</span>
+</pre></div>
+
+
+<ol start="5">
+<li>MYSQL中的<code>concat</code>和<code>concat_ws</code>和<code>group_concat</code>的区别</li>
+</ol>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/install-dbforgesql/">
-                                ◄&nbsp;&nbsp;安装dbforge <span class="caps">SQL</span>&nbsp;8.0
+                            <a href="../../articles/jetbrain-idea-licenseserver/">
+                                ◄&nbsp;&nbsp;Available license&nbsp;server
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/2-list-methods/">
-                                [面试] 2.&nbsp;有关list及其方法的使用&nbsp;&nbsp;►
+                            <a href="../../articles/5-software-performance-testing/">
+                                [面试] 5.&nbsp;性能测试相关的涉及内容&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -267,10 +295,13 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
             <ul class="blank">
                     <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
                     <li class="tag-4"><a href="../../tag/review/">Review</a></li>
-                    <li class="tag-4"><a href="../../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../../tag/vuejs/">Vuejs</a></li>
                     <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/electron/">electron</a></li>
+                    <li class="tag-4"><a href="../../tag/electron-builder/">electron-builder</a></li>
                     <li class="tag-4"><a href="../../tag/hadoop/">hadoop</a></li>
                     <li class="tag-1"><a href="../../tag/java/">java</a></li>
                     <li class="tag-4"><a href="../../tag/license/">license</a></li>
@@ -284,14 +315,12 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
                     <li class="tag-2"><a href="../../tag/pelican/">pelican</a></li>
                     <li class="tag-4"><a href="../../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../../tag/python3/">python3</a></li>
-                    <li class="tag-4"><a href="../../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-4"><a href="../../tag/uninstall-netframework/">uninstall .netframework</a></li>
+                    <li class="tag-4"><a href="../../tag/vsftpd/">vsftpd</a></li>
                     <li class="tag-4"><a href="../../tag/fen-ceng/">分层</a></li>
                     <li class="tag-1"><a href="../../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
-                    <li class="tag-4"><a href="../../tag/bai-he-ce-shi/">白盒测试</a></li>
-                    <li class="tag-4"><a href="../../tag/ruan-jian-ce-shi/">软件测试</a></li>
                     <li class="tag-4"><a href="../../tag/mian-xiang-dui-xiang/">面向对象</a></li>
                     <li class="tag-1"><a href="../../tag/mian-shi/">面试</a></li>
             </ul>

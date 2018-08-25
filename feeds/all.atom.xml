@@ -1,5 +1,375 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-07-24T20:39:58+08:00</updated><entry><title>分层自动化测试</title><link href="https://pingbook.top/articles/fen-ceng/" rel="alternate"></link><published>2018-07-24T20:39:58+08:00</published><updated>2018-07-24T20:39:58+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-24:/articles/fen-ceng/</id><summary type="html">&lt;p&gt;这是第一次听到这个理念,其实描述的是各个阶段的测试.传统的自动化测试更关注的产品UI层的自动化测试，而分层的自动化测试
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-08-25T23:18:47+08:00</updated><entry><title>How to make Vuejs project to mobile App or electron desktop</title><link href="https://pingbook.top/articles/vue-to-mobileapp-electron/" rel="alternate"></link><published>2018-08-25T23:18:47+08:00</published><updated>2018-08-25T23:18:47+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-25:/articles/vue-to-mobileapp-electron/</id><summary type="html">&lt;h2 id="how-to-build-android-or-ios-app-from-vue-project"&gt;How to build android or &lt;span class="caps"&gt;IOS&lt;/span&gt; app from Vue project …&lt;/h2&gt;</summary><content type="html">&lt;h2 id="how-to-build-android-or-ios-app-from-vue-project"&gt;How to build android or &lt;span class="caps"&gt;IOS&lt;/span&gt; app from Vue project&lt;a class="headerlink" href="#how-to-build-android-or-ios-app-from-vue-project" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="1-cordova"&gt;1. &lt;code&gt;cordova&lt;/code&gt; 环境准备&lt;a class="headerlink" href="#1-cordova" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id="11-java-jdk"&gt;1.1 Java &lt;span class="caps"&gt;JDK&lt;/span&gt; 安装(省略)&lt;a class="headerlink" href="#11-java-jdk" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="12-android-sdk"&gt;1.2 Android &lt;span class="caps"&gt;SDK&lt;/span&gt; 安装配置&lt;a class="headerlink" href="#12-android-sdk" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;首先，下载Android &lt;span class="caps"&gt;SDK&lt;/span&gt; Tools，翻过墙的朋友可以去Google Android的官网上下载（http://developer.android.com/sdk/index.html）,&amp;nbsp;选择一个最新的版本就行了。如下图所示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install.jpg"&gt;
+*&amp;nbsp;按照提示一步步的安装完成后,回到安装目录如下:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install_folder.jpg"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;然后就双击“&lt;span class="caps"&gt;SDK&lt;/span&gt; Manager.exe”，启动SDK&amp;nbsp;Manager，如图所示：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install_select.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;这里我只说几个必须要安装的，如上图所示的，Tools文件夹里面的Android &lt;span class="caps"&gt;SDK&lt;/span&gt; Tools（这个我们在之前的一步已经下载好了的，一般不会让你再安装了，不过有可能会让你更新），然后就是Android &lt;span class="caps"&gt;SDK&lt;/span&gt; Platform-tools和Android SDKBuild-tools，注意只需要下载最新的版本就行了。
+然后就是API的选择了。我们可以看到这里提供了很多很多从Android 2.2到Android 5.x的很多版本的API，那么怎么选择呢。这里我建议，新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了（因为下载安装的速度实在太慢啦。。。）。所以如上图所示，这里我只选择了下载当前最新的Android 5.1.1(&lt;span class="caps"&gt;API&lt;/span&gt; 22)。这里需要说明的是，如果你以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装“system&amp;nbsp;images“了。不过新手的话，不知道怎么选择，还是建议直接全部勾上吧.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最后就是extras文件夹中的东西了，如下图所示:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install_select_extra.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;理论上来说，extras中的东西如果网速允许，时间充沛的话，就都下载了。不过一开始安装的话，可以只用安装上图中的三个，即Android Support Repository、Android SupportLibrary和Google &lt;span class="caps"&gt;USB&lt;/span&gt; Driver。其他的以后有时间再慢慢下载吧。接下来就可以进行安装了,要注意，由于这些东西都是在google&amp;nbsp;的服务器上下载的。由于俺们天朝有墙，所以可能会出现连接不上的情况，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install_select_error.jpg"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;切换到国内镜像进行安装
+遇到上面的安装错误,我们可以通过有Android SDK的国内镜像服务器来下载安装，这里推荐几个,参考这里的: &lt;a href="http://tools.android-studio.org/index.php/proxy"&gt;http://tools.android-studio.org/index.php/proxy&lt;/a&gt;&amp;nbsp;随便选择一个就行啦。这里我选择的是第三个站点，即大连东软的镜像，使用方法如下：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install_select_proxy.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;然后在弹出的对话框中，填写HTTP Proxy Server为mirrors.neusoft.edu.cn（镜像服务器的地址，注意前面不要加http），然后填写HTTP Proxy Port为80 （端口号）。最后在勾选下面的『Forcehttps://&amp;hellip; sources to be fetched using&amp;nbsp;http://&amp;hellip;』复选框，如下图所示:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install_select_proxy_options.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;接着点击close，关闭对话框，再&lt;strong&gt;重新启动SDK Manager&lt;/strong&gt;就行啦。&lt;br&gt;
+经过漫长的下载安装过程后（建议在晚上睡觉的时候下载。。。），我们可以看到，之前选中安装的项目后面的状态都由之前的“Not&amp;nbsp;installed”变为了如今的“Installed”，这就表示我们已经安装成功了！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SDK环境变量设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;右键我的电脑，打开属性，点击高级系统设置，打开环境变量.&amp;nbsp;新建一个环境变量名称为ANDROID_HOME，变量值为当前安装SDK的目录,例如SDK装在D:\androidSDK中，则环境变量为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_config_1.png"&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;把%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools添加到Path环境变量中。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;检测SDK 安装是否成功&lt;br&gt;
+ 1. win+R，输入cmd，打开命令提示符面板,输入&lt;code&gt;android&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_config_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;弹出类似以下界面：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_config_3.png"&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;输入&lt;code&gt;abd&lt;/code&gt;
+弹出类似以下界面：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_config_4.png"&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;输入&lt;code&gt;android -h&lt;/code&gt;
+弹出类似以下界面说明安装完成.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_config_5.png"&gt;&lt;/p&gt;
+&lt;p&gt;直至所有的Android&amp;nbsp;Sdk的环境配置部分都没有问题了.&lt;/p&gt;
+&lt;h4 id="13-gradle"&gt;1.3 Gradle 环境配置&lt;a class="headerlink" href="#13-gradle" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;下载gradle
+1. 进入&lt;a href="https://gradle.org/"&gt;点击打开链接&lt;/a&gt;官网首页,点击&lt;code&gt;install gradle&lt;/code&gt;,如下:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/gradle_install_1.png"&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;进入新的页面之后，找到并点击下载完整版本（英文看不懂可以先将网站翻译成中文）,如下:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/gradle_install_2.png"&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;下载完成之后，解压后放入自己想要放入的指定文件夹，我放入了C:\WorkSoftware\gradle-4.5,如下:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/gradle_install_3.png"&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;
+&lt;p&gt;同上安装android SDK一样,新建一个环境变量: &lt;code&gt;GRADLE_HOME&lt;/code&gt;,设置为: &lt;code&gt;C:\WorkSoftware\gradle-4.5&lt;/code&gt;, 然后&lt;code&gt;path&lt;/code&gt;环境变量中添加: &lt;code&gt;%GRADLE_HOME%\bin&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测试&lt;code&gt;gradle&lt;/code&gt;命令:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/gradle_install_4.png"&gt;&lt;/p&gt;
+&lt;p&gt;如图显示对应的gradle的信息,说明gradle的配置成功!&lt;/p&gt;</content><category term="Vuejs"></category><category term="electron"></category><category term="electron-builder"></category><category term="cordova"></category></entry><entry><title>Linux安装包遇到的问题</title><link href="https://pingbook.top/articles/python-error/" rel="alternate"></link><published>2018-08-11T22:08:13+08:00</published><updated>2018-08-11T22:08:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-11:/articles/python-error/</id><summary type="html">&lt;h3 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;在尝试安装samba的时候,服务器端总是报如下的错误:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;error processing package python-dnspython&lt;/span&gt;
+&lt;span class="code-line"&gt; Sub-process /usr/bin …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;在尝试安装samba的时候,服务器端总是报如下的错误:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;error processing package python-dnspython&lt;/span&gt;
+&lt;span class="code-line"&gt; Sub-process /usr/bin/dpkg returned an error code (1)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="_2"&gt;解决方法&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;参考博客：https://www.cnblogs.com/anpengapple/p/5098960.html&amp;nbsp;中说是dpkg目录中的info目录异常，然而直接删除这个目录会导致一些问题(苦逼的这个问题可能就是我把Ubuntu中的默认python由2改到3，然后在纠正之后出现的一系列问题中越走越远。。。。)，所以先备份，更新一下这个目录：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;sudo mv /var/lib/dpkg/info/ /var/lib/dpkg/info_backup/&lt;/span&gt;
+&lt;span class="code-line"&gt;sudo mkdir /var/lib/dpkg/info/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="xlwt-flask"&gt;xlwt flask&lt;a class="headerlink" href="#xlwt-flask" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xlwt 中文&amp;rsquo;latin-1&amp;rsquo; codec can&amp;rsquo;t encode characters in&amp;nbsp;positio&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; response = make_response(send_from_directory(directory, filename, as_attachment=True))&lt;/span&gt;
+&lt;span class="code-line"&gt;                response.headers[&amp;quot;Content-Disposition&amp;quot;] = &amp;quot;attachment; filename={0}&amp;quot;.format(filename.encode(&amp;#39;utf-8&amp;#39;))&lt;/span&gt;
+&lt;span class="code-line"&gt;                response.direct_passthrough = False&lt;/span&gt;
+&lt;span class="code-line"&gt;                return response&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;                注意返回的中文名称需要转码为utf-8&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>[Linux] (持续更新中)一些常用的linux系统的操作命令</title><link href="https://pingbook.top/articles/basic-command/" rel="alternate"></link><published>2018-08-11T09:30:31+08:00</published><updated>2018-08-11T09:30:31+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-11:/articles/basic-command/</id><summary type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="_2"&gt;防火墙操作&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;显示防火墙状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -L&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="2"&gt;
+&lt;li&gt;关闭防火墙&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="_2"&gt;防火墙操作&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;显示防火墙状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -L&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="2"&gt;
+&lt;li&gt;关闭防火墙&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -F  &lt;span class="c1"&gt;#flush  清空所有的规则&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="3"&gt;
+&lt;li&gt;添加到防火墙中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -A FIREWALL -p tcp -m tcp –dport &lt;span class="m"&gt;80&lt;/span&gt; –syn -j ACCEPT&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -A append&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -p protocol&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -m match&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -d destination&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -j jump&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo iptables -A FIREWALL -p tcp -m tcp --dport &lt;span class="m"&gt;22&lt;/span&gt; --syn -j ACCEPT  &lt;span class="c1"&gt;# 打开22端口&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo iptables-save &amp;gt; /etc/firewall-rules&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="_3"&gt;性能相关的命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;与&lt;code&gt;df&lt;/code&gt;不一样的是，du会直接到文件系统内查找所有的文件数据。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# df -lh  # 查看磁盘空间&lt;/span&gt;
+&lt;span class="code-line"&gt;# du -ah --max-depth=1     这个是我想要的结果  a表示显示目录下所有的文件和文件夹（不含子目录），h表示以人类能看懂的方式，max-depth表示目录的深度。&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;````&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;### 统计文件个数&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;统计当前文件夹下文件的个数，包括子文件夹里的  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -lR|grep &amp;quot;^-&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;统计文件夹下目录的个数，包括子文件夹里的  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -lR|grep &amp;quot;^d&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;统计当前文件夹下文件的个数  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -l |grep &amp;quot;^-&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;统计当前文件夹下目录的个数  &lt;/span&gt;
+&lt;span class="code-line"&gt;`ls -l |grep &amp;quot;^d&amp;quot;|wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;附：&lt;/span&gt;
+&lt;span class="code-line"&gt;统计输出信息的行数  &lt;/span&gt;
+&lt;span class="code-line"&gt;`wc -l`  &lt;/span&gt;
+&lt;span class="code-line"&gt;将长列表输出信息过滤一部分，只保留一般文件，如果只保留目录就是 ^d  &lt;/span&gt;
+&lt;span class="code-line"&gt;`grep &amp;quot;^-&amp;quot;`&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;### 切换语言环境为英文&lt;/span&gt;
+&lt;span class="code-line"&gt;参考文章: https://blog.csdn.net/yygydjkthh/article/details/47694747&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$ sudo export &lt;span class="caps"&gt;LANG&lt;/span&gt;=en_US.&lt;span class="caps"&gt;UTF&lt;/span&gt;-8
+$ dpkg-reconfigure locales   # 点击空格选择en_US_UTF-8,点击空格去掉zh_CN_UTF-8
+$ locale&amp;nbsp;-a&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;### 磁盘管理,加载新的磁盘&lt;/span&gt;
+&lt;span class="code-line"&gt;参加文档: https://www.fujieace.com/linux/no-partition-is-defined-yet.html&lt;/span&gt;
+&lt;span class="code-line"&gt;阿里云的帮助文档,注意ext3格式,实际的系统格式是ext4:https://help.aliyun.com/document_detail/25426.html?spm=a2c4g.11186623.2.9.u398NC&lt;/span&gt;
+&lt;span class="code-line"&gt;No partition is defined yet!&lt;/span&gt;
+&lt;span class="code-line"&gt;Could not delete partition 1&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&amp;gt; 删除磁盘 `fdisk d`的时候一定要注意清空文件 `/etc/fstab`里面的内容,否则容易出现很大的问题.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id="fdisk-l"&gt;fdisk -l&lt;a class="headerlink" href="#fdisk-l" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="fdisk-devsdb"&gt;fdisk /dev/sdb&lt;a class="headerlink" href="#fdisk-devsdb" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="mkfsext4-devsdb1"&gt;mkfs.ext4 /dev/sdb1&lt;a class="headerlink" href="#mkfsext4-devsdb1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="nano-etcfstab"&gt;nano /etc/fstab  这里加上对应的需要加载的磁盘的信息&lt;a class="headerlink" href="#nano-etcfstab" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="mount-devsdb1"&gt;mount /dev/sdb1&lt;a class="headerlink" href="#mount-devsdb1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;### install ZH_CN.UTF-8语言支持&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;查看当前配置语言环境
+$ locale -a
+安装语言包
+$ sudo  apt-get install locales
+配置选择语言,按空格选择对应的字符集
+$ sudo dpkg-reconfigure locales
+locale的设定：
+LC_ALL和LANG优先级的关系：LC_ALL &amp;gt; LC_* &amp;gt; &lt;span class="caps"&gt;LANG&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;修改文件(debian系列)：/etc/default/locale&amp;nbsp;修改文件(redhat系列)：/etc/sysconfig/i18n&lt;/p&gt;
+&lt;p&gt;1、如果需要一个纯中文的系统的话，设定LC_ALL=zh_CN.&lt;span class="caps"&gt;XXXX&lt;/span&gt;，或者LANG=zh_CN.XXXX都可以。
+2、如果只想要一个可以输入中文的环境，而保持菜单、标题，系统信息等等为英文界面，那么只需要设定 LC_CTYPE=zh_CN.&lt;span class="caps"&gt;XXXX&lt;/span&gt;，&lt;span class="caps"&gt;LANG&lt;/span&gt;=en_US.XXXX就可以了。
+3、假如什么也不做的话，也就是LC_ALL，LC_*和LANG均不指定特定值的话，系统将采用POSIX作为lcoale，也就是C&amp;nbsp;locale。&lt;/p&gt;
+&lt;p&gt;$ sudo nano&amp;nbsp;/etc/default/locale&lt;/p&gt;
+&lt;p&gt;临时设定编码：[nick@ubuntu~]$ export LC_ALL=&amp;rdquo;zh_CN.&lt;span class="caps"&gt;GBK&lt;/span&gt;&amp;rdquo;
+2、永久设定编码：修改文件/etc/profile（对所有用户有效）或者~/.bash_profile。在文件尾加入export LC_ALL=zh_CN.&lt;span class="caps"&gt;GBK&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$ sudo nano&amp;nbsp;/etc/profile&lt;/p&gt;
+&lt;p&gt;命令行中英文切换,本地安装的是中文字符集
+$ export LC_ALL=C&lt;br&gt;
+$ unset&amp;nbsp;LC_ALL&lt;/p&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>How to build the ftp system</title><link href="https://pingbook.top/articles/vsftp_setup/" rel="alternate"></link><published>2018-08-10T11:41:48+08:00</published><updated>2018-08-10T11:41:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-10:/articles/vsftp_setup/</id><summary type="html">&lt;h1 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
+参考博客:&amp;nbsp;https://www.conum.cn/os/linux …&lt;/p&gt;</summary><content type="html">&lt;h1 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
+参考博客:&amp;nbsp;https://www.conum.cn/os/linux/210.html&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. 安装vsftpd&lt;/span&gt;
+&lt;span class="code-line"&gt;$ apt-get install vsftpd &lt;/span&gt;
+&lt;span class="code-line"&gt;安装完成后,会新建一个用户组ftp和对应的用户名ftp,通过下面的命令查看他的配置&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano /etc/passwd &lt;/span&gt;
+&lt;span class="code-line"&gt;已经设置成了/srv/ftp目录,这里把它改成 /ftp目录&lt;/span&gt;
+&lt;span class="code-line"&gt;$ aptitude search db | grep util&lt;/span&gt;
+&lt;span class="code-line"&gt;$ aptitude install db5.3-util&lt;/span&gt;
+&lt;span class="code-line"&gt;$ db5.3_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/vsftpd_login.db&lt;/span&gt;
+&lt;span class="code-line"&gt;$ chmod 600 /etc/vsftpd/ftpusers.db&lt;/span&gt;
+&lt;span class="code-line"&gt;2. 查看log&lt;/span&gt;
+&lt;span class="code-line"&gt;$ tail -f -n 50 /var/log/auth.log&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;http://www.cnblogs.com/sunky/p/9418730.html
+ useradd -d /srv/ftp/shares yaoliang
+ passwd yaoliang
+ usermod -s /sbin/nologin yaoliang
+ usermod -s /sbin/bash yaoliang
+ usermod -d /srv/ftp/shares yaoliang
+ walterhu
+ 123456
+yaoliang&lt;br&gt;
+123456
+zhouruoting
+123456
+wangguorong
+123456
+shidajiang
+123456
+liyixuan
+123456
+zhengze&amp;nbsp;123456&lt;/p&gt;
+&lt;p&gt;查看端口号&lt;/p&gt;
+&lt;p&gt;netstat&amp;nbsp;-npl&lt;/p&gt;</content><category term="vsftpd"></category></entry><entry><title>[面试] 5. 性能测试相关的涉及内容</title><link href="https://pingbook.top/articles/5-software-performance-testing/" rel="alternate"></link><published>2018-07-26T21:40:09+08:00</published><updated>2018-07-26T21:40:09+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-26:/articles/5-software-performance-testing/</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&amp;nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&amp;nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_2"&gt;关键字&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="caps"&gt;TPS&lt;/span&gt;(Transaction Per&amp;nbsp;Second)&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;PV&lt;/span&gt;(Page&amp;nbsp;View)&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;PR&lt;/span&gt;(Page&amp;nbsp;Response)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2017-07-26"&gt;2017-07-26 反馈&lt;a class="headerlink" href="#2017-07-26" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;深拷贝和浅拷贝的区别?&lt;/li&gt;
+&lt;li&gt;Appinum的使用,能在测试吗?&lt;/li&gt;
+&lt;li&gt;静态方法中可以使用&lt;code&gt;this&lt;/code&gt;和&lt;code&gt;super&lt;/code&gt;吗?&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="2017-07-25"&gt;2017-07-25 反馈&lt;a class="headerlink" href="#2017-07-25" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class="caps"&gt;UI&lt;/span&gt;&amp;nbsp;测试用到哪些工具?&lt;/li&gt;
+&lt;li&gt;你对所列到的python和java语言哪种最擅长?&lt;/li&gt;
+&lt;li&gt;Http和接口有什么区别?&lt;/li&gt;
+&lt;li&gt;抽象类和普通类有什么区别?&lt;/li&gt;
+&lt;li&gt;java的overload和override的区别?&lt;/li&gt;
+&lt;li&gt;java中的Error和Exception的区别?&lt;/li&gt;
+&lt;li&gt;给一个测试方法,里面有十个入参,每个参数都有十种不同的值,按照普通的思路可能会涉及10*10的测试用例,怎么设计测试用例可以用最少的用例覆盖更多的功能?&lt;/li&gt;
+&lt;li&gt;给一个数组,然后返回一个没有重复的新的数组,要求不借助其他任何第三方包或者库(包括Set,ArrayList)?&lt;/li&gt;
+&lt;li&gt;Python中的装饰器谈谈你的理解?&lt;/li&gt;
+&lt;li&gt;java中的顶级类是什么?&lt;/li&gt;
+&lt;li&gt;Python中的list,tuple,set,dict的区别作用,写出对应的他们的增删改查操作?&lt;/li&gt;
+&lt;/ol&gt;</content><category term="performance testing"></category><category term="面试"></category></entry><entry><title>[SQL]收集的一些好的SQL snippets</title><link href="https://pingbook.top/articles/sql-best-tips/" rel="alternate"></link><published>2018-07-25T23:46:15+08:00</published><updated>2018-07-25T23:46:15+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-25:/articles/sql-best-tips/</id><summary type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql
+1. 用户变量: 基于会话变量实现的, 可以暂存值, 并传递给同一连接里的下一条sql使用的变量.当客户端连接退出时,变量会被释放。只针对当前的存储过程或者当前的执行环境有效.&lt;br&gt;
+&lt;strong&gt;对于SET，可以使用=或:=来赋值，对于SELECT只能使用:=来赋值.&lt;/strong&gt;
+    我们可以使用一条简单的select语句查询定义的用户变量的值。
+2. 系统变量: MySQL可以访问许多系统变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET &lt;span class="caps"&gt;GLOBAL&lt;/span&gt; var_name语句，可以动态更改这些全局变量。
+3. 局部变量:&amp;nbsp;作用范围在begin到end语句块之间。在该语句块里设置的变量成为局部变量。&lt;/p&gt;
+&lt;h3 id="_1"&gt;基本的排序显示&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 3; &lt;/span&gt;
+&lt;span class="code-line"&gt;-- SQL SERVER 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT TOP 3 * FROM SCore s ORDER BY s.score DESC;  &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;查询分数排名第二的人(排序第二)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL方式, LIMIT第一参数是查询的条数,第二个数是查询的索引值,从0开始&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 1,1; &lt;/span&gt;
+&lt;span class="code-line"&gt;-- SQL Server 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT TOP 1 * FROM Score s WHERE s.id NOT IN (&lt;/span&gt;
+&lt;span class="code-line"&gt;    SELECT TOP 1 * FROM Score ORDER BY s.score DESC&lt;/span&gt;
+&lt;span class="code-line"&gt;) ORDER BY s.score DESC;   &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="2"&gt;
+&lt;li&gt;显示排名名次或者说对应的行号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;--&lt;/span&gt; &lt;span class="nt"&gt;MYSQL方式&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;username&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;score&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;FROM&lt;/span&gt; &lt;span class="nt"&gt;Score&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt; &lt;span class="nt"&gt;join&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;ranK&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;r&lt;/span&gt; &lt;span class="nt"&gt;order&lt;/span&gt; &lt;span class="nt"&gt;by&lt;/span&gt; &lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="4"&gt;
+&lt;li&gt;查询父节点下的所有子节点集合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;CREATE DEFINER = &amp;#39;test&amp;#39;@&amp;#39;%&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;FUNCTION test.func_getMyFollowings(inputuserKey INT(11))&lt;/span&gt;
+&lt;span class="code-line"&gt;  RETURNS varchar(5000) CHARSET utf8&lt;/span&gt;
+&lt;span class="code-line"&gt;BEGIN&lt;/span&gt;
+&lt;span class="code-line"&gt;  DECLARE rootNode varchar(100);&lt;/span&gt;
+&lt;span class="code-line"&gt;  DECLARE tempChilds varchar(5000);&lt;/span&gt;
+&lt;span class="code-line"&gt;  SET tempChilds =&amp;#39;&amp;#39;;&lt;/span&gt;
+&lt;span class="code-line"&gt;  SET rootNode=CAST(inputuserKey AS CHAR);&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  WHILE rootNode IS NOT NULL DO   -- 遍历节点操作&lt;/span&gt;
+&lt;span class="code-line"&gt;     SET tempChilds = concat(tempChilds,rootNode,&amp;#39;,&amp;#39;);&lt;/span&gt;
+&lt;span class="code-line"&gt;      SELECT group_concat(um.EmployeeUserKey) INTO rootNode &lt;/span&gt;
+&lt;span class="code-line"&gt;      FROM UserManager um where FIND_IN_SET(um.ManagerSUserKey,rootNode)&amp;gt;0;  -- 找到当前节点的子节点&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt; END WHILE;&lt;/span&gt;
+&lt;span class="code-line"&gt; RETURN tempChilds;&lt;/span&gt;
+&lt;span class="code-line"&gt;END&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="5"&gt;
+&lt;li&gt;MYSQL中的&lt;code&gt;concat&lt;/code&gt;和&lt;code&gt;concat_ws&lt;/code&gt;和&lt;code&gt;group_concat&lt;/code&gt;的区别&lt;/li&gt;
+&lt;/ol&gt;</content></entry><entry><title>Available license server</title><link href="https://pingbook.top/articles/jetbrain-idea-licenseserver/" rel="alternate"></link><published>2018-07-25T21:40:38+08:00</published><updated>2018-07-25T21:40:38+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-25:/articles/jetbrain-idea-licenseserver/</id><summary type="html">&lt;h2 id="license-servers"&gt;license servers&lt;a class="headerlink" href="#license-servers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;http://xidea.online/servers.html&lt;/p&gt;
+&lt;p&gt;[Available&amp;nbsp;2018-07-25]https …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h2 id="license-servers"&gt;license servers&lt;a class="headerlink" href="#license-servers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;http://xidea.online/servers.html&lt;/p&gt;
+&lt;p&gt;[Available&amp;nbsp;2018-07-25]https://blog.csdn.net/zajule/article/details/80479988&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="license"></category></entry><entry><title>分层自动化测试</title><link href="https://pingbook.top/articles/fen-ceng/" rel="alternate"></link><published>2018-07-24T20:39:58+08:00</published><updated>2018-07-24T20:39:58+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-24:/articles/fen-ceng/</id><summary type="html">&lt;p&gt;这是第一次听到这个理念,其实描述的是各个阶段的测试.传统的自动化测试更关注的产品UI层的自动化测试，而分层的自动化测试
 倡导产品的不同阶段（层次）都需要自动化测试.&amp;nbsp;能够帮助测试人员从重复、枯燥的手工测试中解放出来。&lt;/p&gt;
 &lt;p&gt;最早是google进行的实践 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;这是第一次听到这个理念,其实描述的是各个阶段的测试.传统的自动化测试更关注的产品UI层的自动化测试，而分层的自动化测试
 倡导产品的不同阶段（层次）都需要自动化测试.&amp;nbsp;能够帮助测试人员从重复、枯燥的手工测试中解放出来。&lt;/p&gt;
@@ -522,13 +892,7 @@ how—如何去做，使用哪些测试工具以及测试方法进行测试&amp;
 &lt;p&gt;关键是测试脚本的录制，测试时候测试环境的干净。 &lt;/p&gt;
 &lt;p&gt;100、.您以往所从事的软件测试工作中，是否使用了一些工具来进行软件缺陷(Bug)的管理?如果有，请结合该工具描述软件缺陷(Bug)跟踪管理的流程。 &lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;CQ&lt;/span&gt;，也可以使用BugFree等免费工具。 &lt;/p&gt;
-&lt;p&gt;101、.您如何看待软件过程改进?在您曾经工作过的企业中，是否有一些需要改进的东西呢?您期望的理想的测试人员的工作环境是怎样的?&lt;/p&gt;</content><category term="Review"></category></entry><entry><title>Available license server</title><link href="https://pingbook.top/articles/jetbrain-idea-licenseserver/" rel="alternate"></link><published>2018-07-24T14:29:22+08:00</published><updated>2018-07-24T14:29:22+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-24:/articles/jetbrain-idea-licenseserver/</id><summary type="html">&lt;h2 id="license-servers"&gt;license servers&lt;a class="headerlink" href="#license-servers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;http://xidea.online/servers.html&lt;/p&gt;
-&lt;/blockquote&gt;</summary><content type="html">&lt;h2 id="license-servers"&gt;license servers&lt;a class="headerlink" href="#license-servers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;http://xidea.online/servers.html&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="license"></category></entry><entry><title>vuejs中使用的一些重要技巧</title><link href="https://pingbook.top/articles/vuejs-best-tips/" rel="alternate"></link><published>2018-07-23T22:26:58+08:00</published><updated>2018-07-23T22:26:58+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-23:/articles/vuejs-best-tips/</id><summary type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;101、.您如何看待软件过程改进?在您曾经工作过的企业中，是否有一些需要改进的东西呢?您期望的理想的测试人员的工作环境是怎样的?&lt;/p&gt;</content><category term="Review"></category></entry><entry><title>vuejs中使用的一些重要技巧</title><link href="https://pingbook.top/articles/vuejs-best-tips/" rel="alternate"></link><published>2018-07-23T22:26:58+08:00</published><updated>2018-07-23T22:26:58+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-23:/articles/vuejs-best-tips/</id><summary type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;代码如下&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;v-btn&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;primary&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;fab&lt;/span&gt; &lt;span class="err"&gt;dark …&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;代码如下&lt;/p&gt;
@@ -591,40 +955,7 @@ how—如何去做，使用哪些测试工具以及测试方法进行测试&amp;
 
 &lt;ol start="2"&gt;
 &lt;li&gt;python没有array,只有list,直接使用&lt;code&gt;sort&lt;/code&gt;方法即可,如果是倒序可以用reverse=True指定&lt;/li&gt;
-&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category><category term="java"></category></entry><entry><title>[SQL]收集的一些好的SQL snippets</title><link href="https://pingbook.top/articles/sql-best-tips/" rel="alternate"></link><published>2018-07-23T12:58:43+08:00</published><updated>2018-07-23T12:58:43+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-23:/articles/sql-best-tips/</id><summary type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql
-1. 用户变量: 基于会话变量实现的, 可以暂存值, 并传递给同一连接里的下一条sql使用的变量.当客户端连接退出时,变量会被释放。只针对当前的存储过程或者当前的执行环境有效.&lt;br&gt;
-&lt;strong&gt;对于SET，可以使用=或:=来赋值，对于SELECT只能使用:=来赋值.&lt;/strong&gt;
-    我们可以使用一条简单的select语句查询定义的用户变量的值。
-2. 系统变量: MySQL可以访问许多系统变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET &lt;span class="caps"&gt;GLOBAL&lt;/span&gt; var_name语句，可以动态更改这些全局变量。
-3. 局部变量:&amp;nbsp;作用范围在begin到end语句块之间。在该语句块里设置的变量成为局部变量。&lt;/p&gt;
-&lt;h3 id="_1"&gt;基本的排序显示&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 3; &lt;/span&gt;
-&lt;span class="code-line"&gt;-- SQL SERVER 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT TOP 3 * FROM SCore s ORDER BY s.score DESC;  &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;查询分数排名第二的人(排序第二)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL方式, LIMIT第一参数是查询的条数,第二个数是查询的索引值,从0开始&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 1,1; &lt;/span&gt;
-&lt;span class="code-line"&gt;-- SQL Server 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT TOP 1 * FROM Score s WHERE s.id NOT IN (&lt;/span&gt;
-&lt;span class="code-line"&gt;    SELECT TOP 1 * FROM Score ORDER BY s.score DESC&lt;/span&gt;
-&lt;span class="code-line"&gt;) ORDER BY s.score DESC;   &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;显示排名名次或者说对应的行号&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;--&lt;/span&gt; &lt;span class="nt"&gt;MYSQL方式&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;username&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;score&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;FROM&lt;/span&gt; &lt;span class="nt"&gt;Score&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt; &lt;span class="nt"&gt;join&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;ranK&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;r&lt;/span&gt; &lt;span class="nt"&gt;order&lt;/span&gt; &lt;span class="nt"&gt;by&lt;/span&gt; &lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>安装dbforge SQL 8.0</title><link href="https://pingbook.top/articles/install-dbforgesql/" rel="alternate"></link><published>2018-07-22T14:19:31+08:00</published><updated>2018-07-22T14:19:31+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/install-dbforgesql/</id><summary type="html">&lt;h2 id="dbforge-mysql"&gt;安装dbforge Mysql&lt;a class="headerlink" href="#dbforge-mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category><category term="java"></category></entry><entry><title>安装dbforge SQL 8.0</title><link href="https://pingbook.top/articles/install-dbforgesql/" rel="alternate"></link><published>2018-07-22T14:19:31+08:00</published><updated>2018-07-22T14:19:31+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/install-dbforgesql/</id><summary type="html">&lt;h2 id="dbforge-mysql"&gt;安装dbforge Mysql&lt;a class="headerlink" href="#dbforge-mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;安装最新的dbforge Mysql: &lt;a href="https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe"&gt;https://www.devart.com/dbforge/mysql …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="dbforge-mysql"&gt;安装dbforge Mysql&lt;a class="headerlink" href="#dbforge-mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;安装最新的dbforge Mysql: &lt;a href="https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe"&gt;https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe&lt;/a&gt;,总是弹出一个错误 &lt;code&gt;Application requires .NET Framework 4.5.2 or higher. currently installed version is 4.5.1 or less.&lt;/code&gt;.
 于是我就直接到官方下载最新的.&lt;span class="caps"&gt;NET&lt;/span&gt; Frameowrk 安装,但是安装总是失败. &lt;br&gt;
@@ -689,106 +1020,7 @@ Visit Windows Update again, and then check for and install&amp;nbsp;updates.&lt;
 &lt;span class="code-line"&gt;&lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello, TensorFlow!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;span class="n"&gt;sess&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="tensorflow"></category><category term="machine learning"></category></entry><entry><title>[Linux] (持续更新中)一些常用的linux系统的操作命令</title><link href="https://pingbook.top/articles/basic-command/" rel="alternate"></link><published>2018-07-22T10:51:13+08:00</published><updated>2018-07-22T10:51:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/basic-command/</id><summary type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="_2"&gt;防火墙操作&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;显示防火墙状态&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -L&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;关闭防火墙&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="_1"&gt;关键字&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;free&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="_2"&gt;防火墙操作&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;显示防火墙状态&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -L&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;关闭防火墙&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -F  &lt;span class="c1"&gt;#flush  清空所有的规则&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="3"&gt;
-&lt;li&gt;添加到防火墙中&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo iptables -A FIREWALL -p tcp -m tcp –dport &lt;span class="m"&gt;80&lt;/span&gt; –syn -j ACCEPT&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -A append&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -p protocol&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -m match&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -d destination&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# -j jump&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo iptables -A FIREWALL -p tcp -m tcp --dport &lt;span class="m"&gt;22&lt;/span&gt; --syn -j ACCEPT  &lt;span class="c1"&gt;# 打开22端口&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo iptables-save &amp;gt; /etc/firewall-rules&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="_3"&gt;性能相关的命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;与&lt;code&gt;df&lt;/code&gt;不一样的是，du会直接到文件系统内查找所有的文件数据。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# df -lh  # 查看磁盘空间&lt;/span&gt;
-&lt;span class="code-line"&gt;# du -ah --max-depth=1     这个是我想要的结果  a表示显示目录下所有的文件和文件夹（不含子目录），h表示以人类能看懂的方式，max-depth表示目录的深度。&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;````&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;### 统计文件个数&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;统计当前文件夹下文件的个数，包括子文件夹里的  &lt;/span&gt;
-&lt;span class="code-line"&gt;`ls -lR|grep &amp;quot;^-&amp;quot;|wc -l`  &lt;/span&gt;
-&lt;span class="code-line"&gt;统计文件夹下目录的个数，包括子文件夹里的  &lt;/span&gt;
-&lt;span class="code-line"&gt;`ls -lR|grep &amp;quot;^d&amp;quot;|wc -l`  &lt;/span&gt;
-&lt;span class="code-line"&gt;统计当前文件夹下文件的个数  &lt;/span&gt;
-&lt;span class="code-line"&gt;`ls -l |grep &amp;quot;^-&amp;quot;|wc -l`  &lt;/span&gt;
-&lt;span class="code-line"&gt;统计当前文件夹下目录的个数  &lt;/span&gt;
-&lt;span class="code-line"&gt;`ls -l |grep &amp;quot;^d&amp;quot;|wc -l`  &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;附：&lt;/span&gt;
-&lt;span class="code-line"&gt;统计输出信息的行数  &lt;/span&gt;
-&lt;span class="code-line"&gt;`wc -l`  &lt;/span&gt;
-&lt;span class="code-line"&gt;将长列表输出信息过滤一部分，只保留一般文件，如果只保留目录就是 ^d  &lt;/span&gt;
-&lt;span class="code-line"&gt;`grep &amp;quot;^-&amp;quot;`&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;### 切换语言环境为英文&lt;/span&gt;
-&lt;span class="code-line"&gt;参考文章: https://blog.csdn.net/yygydjkthh/article/details/47694747&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;$ sudo export &lt;span class="caps"&gt;LANG&lt;/span&gt;=en_US.&lt;span class="caps"&gt;UTF&lt;/span&gt;-8
-$ dpkg-reconfigure locales   # 点击空格选择en_US_UTF-8,点击空格去掉zh_CN_UTF-8
-$ locale&amp;nbsp;-a&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;### 磁盘管理,加载新的磁盘&lt;/span&gt;
-&lt;span class="code-line"&gt;参加文档: https://www.fujieace.com/linux/no-partition-is-defined-yet.html&lt;/span&gt;
-&lt;span class="code-line"&gt;阿里云的帮助文档,注意ext3格式,实际的系统格式是ext4:https://help.aliyun.com/document_detail/25426.html?spm=a2c4g.11186623.2.9.u398NC&lt;/span&gt;
-&lt;span class="code-line"&gt;No partition is defined yet!&lt;/span&gt;
-&lt;span class="code-line"&gt;Could not delete partition 1&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&amp;gt; 删除磁盘 `fdisk d`的时候一定要注意清空文件 `/etc/fstab`里面的内容,否则容易出现很大的问题.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1 id="fdisk-l"&gt;fdisk -l&lt;a class="headerlink" href="#fdisk-l" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id="fdisk-devsdb"&gt;fdisk /dev/sdb&lt;a class="headerlink" href="#fdisk-devsdb" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id="mkfsext4-devsdb1"&gt;mkfs.ext4 /dev/sdb1&lt;a class="headerlink" href="#mkfsext4-devsdb1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id="nano-etcfstab"&gt;nano /etc/fstab  这里加上对应的需要加载的磁盘的信息&lt;a class="headerlink" href="#nano-etcfstab" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id="mount-devsdb1"&gt;mount /dev/sdb1&lt;a class="headerlink" href="#mount-devsdb1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>[环境搭建] MYSQL 的安装配置</title><link href="https://pingbook.top/articles/pi-mysql/" rel="alternate"></link><published>2018-07-22T10:49:36+08:00</published><updated>2018-07-22T10:49:36+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/pi-mysql/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="tensorflow"></category><category term="machine learning"></category></entry><entry><title>[环境搭建] MYSQL 的安装配置</title><link href="https://pingbook.top/articles/pi-mysql/" rel="alternate"></link><published>2018-07-22T10:49:36+08:00</published><updated>2018-07-22T10:49:36+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/pi-mysql/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
 &lt;/ol&gt;
@@ -1344,318 +1576,4 @@ $ sudo ./letsencrypt.sh&amp;nbsp;letsencrypt.conf&lt;/p&gt;
 &lt;h1 id="sudo-apt-get-purge-nginx-nginx-common-removes-everything"&gt;sudo apt-get purge nginx nginx-common # Removes everything.&lt;a class="headerlink" href="#sudo-apt-get-purge-nginx-nginx-common-removes-everything" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;nginx 采用的C语言编写的,需要对应的C编译器(&lt;span class="caps"&gt;GCC&lt;/span&gt;):&lt;/p&gt;
 &lt;h1 id="sudo-apt-install-build-essential-y"&gt;sudo apt install build-essential -y&lt;a class="headerlink" href="#sudo-apt-install-build-essential-y" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="nginx"></category></entry><entry><title>[环境搭建] Debian如何安装配置Tomcat9</title><link href="https://pingbook.top/articles/pi-tomcat/" rel="alternate"></link><published>2018-07-13T19:29:26+08:00</published><updated>2018-07-13T19:29:26+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-tomcat/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;参考文档:&lt;br&gt;
-&lt;em&gt; &lt;a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/"&gt;https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/&lt;/a&gt;&lt;br&gt;
-&lt;/em&gt; 推荐: &lt;a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33"&gt;https …&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;参考文档:&lt;br&gt;
-&lt;em&gt; &lt;a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/"&gt;https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/&lt;/a&gt;&lt;br&gt;
-&lt;/em&gt; 推荐: &lt;a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33"&gt;https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;安装JDK和配置环境变量(采用下面的配置环境变量/etc/profile), 注意截止到20180709,&amp;nbsp;oracle没有提供debain的32位系统安装tar包,所以这里使用的是32位的jdk1.8&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ nano ~/.bashrc&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;JAVA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; ~/.bashrc&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;添加组和用户&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo groupadd tomcat&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;下载tomcat9&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ tar zxvf jdk1.8.0_171.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$  sudo nano /etc/profile&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;JAVA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/pi/jdk1.8.0_171&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;CLASSPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;/lib/&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;/bin&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; PATH JAVA_HOME CLASSPATH&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile&lt;/span&gt;
-&lt;span class="code-line"&gt;$ java 可能下载的是64位的jdk,但是系统只能运行32位的jdk&lt;/span&gt;
-&lt;span class="code-line"&gt;/bin/javac: cannot execute binary file: Exec format error&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/pi&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo wget http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.10/bin/apache-tomcat-9.0.10.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$  tar zxvf apache-tomcat-9.0.10.tar.gz &lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/pi/apache-tomcat-9.0.10/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo groupadd tomcat &lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo useradd -M -s /bin/nologin -g tomcat -d /home/pi/apache-tomcat-9.0.10 tomcat&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chgrp -R tomcat conf&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod g+rwx conf&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod g+r conf/*&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R tomcat webapps/ work/ temp/ logs/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R tomcat:tomcat *&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R tomcat:tomcat /home/pi/apache-tomcat-9.0.10&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod -R &lt;span class="m"&gt;757&lt;/span&gt; conf/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod -R &lt;span class="m"&gt;757&lt;/span&gt; logs/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod -R &lt;span class="m"&gt;757&lt;/span&gt; webapps/&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="tomcat"&gt;配置 tomcat开机启动&lt;a class="headerlink" href="#tomcat" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/systemd/system/tomcat.service&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# Systemd unit file for tomcat&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;Unit&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Apache Tomcat Web Application Container&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;After&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;syslog.target network.target&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;Service&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;forking&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;JAVA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/pi/jdk1.8.0_171&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;CATALINA_PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/pi/apache-tomcat-9.0.10/temp/tomcat.pid&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;CATALINA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/pi/apache-tomcat-9.0.10&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;CATALINA_BASE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/pi/apache-tomcat-9.0.10&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CATALINA_OPTS=-Xms512M -Xmx824M -server -XX:+UseParallelGC&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/pi/apache-tomcat-9.0.10/bin/startup.sh&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;ExecStop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/bin/kill -15 &lt;span class="nv"&gt;$MAINPID&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tomcat&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Group&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tomcat&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;Install&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;multi-user.target&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo systemctl daemon-reload&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo systemctl start tomcat&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; tomcat&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="configure-apache-tomcat-user"&gt;Configure Apache Tomcat User&lt;a class="headerlink" href="#configure-apache-tomcat-user" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/pi/apache-tomcat-9.0.10/conf/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano tomcat-users.xml&lt;/span&gt;
-&lt;span class="code-line"&gt;&amp;lt;role &lt;span class="nv"&gt;rolename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;manager-gui&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&amp;lt;user &lt;span class="nv"&gt;username&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;admin&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;admin&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;roles&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;manager-gui,admin-gui&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; webapps/manager/META-INF/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano context.xml&lt;/span&gt;
-&lt;span class="code-line"&gt;comment:&lt;/span&gt;
-&lt;span class="code-line"&gt;&amp;lt;!--  &amp;lt;Valve &lt;span class="nv"&gt;className&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;org.apache.catalina.valves.RemoteAddrValve&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;         &lt;span class="nv"&gt;allow&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1&amp;quot;&lt;/span&gt; /&amp;gt; --&amp;gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;$cd&lt;/span&gt; webapps/host-manager/META-INF/&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#sudo nano context.xml&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;comment:&lt;/span&gt;
-&lt;span class="code-line"&gt;&amp;lt;!--  &amp;lt;Valve &lt;span class="nv"&gt;className&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;org.apache.catalina.valves.RemoteAddrValve&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;         &lt;span class="nv"&gt;allow&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1&amp;quot;&lt;/span&gt; /&amp;gt; --&amp;gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo systemctl restart tomcat.service&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Tomcat9"></category></entry><entry><title>[环境搭建] svn 安装配置</title><link href="https://pingbook.top/articles/pi-svn/" rel="alternate"></link><published>2018-07-13T19:29:21+08:00</published><updated>2018-07-13T19:29:21+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-svn/</id><summary type="html">&lt;h2 id="svn"&gt;&lt;span class="caps"&gt;SVN&lt;/span&gt; 安装&lt;a class="headerlink" href="#svn" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;执行如下命令进行安装:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install subversion&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;启动 &lt;code&gt;svn …&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2 id="svn"&gt;&lt;span class="caps"&gt;SVN&lt;/span&gt; 安装&lt;a class="headerlink" href="#svn" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;执行如下命令进行安装:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install subversion&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;启动 &lt;code&gt;svn&lt;/code&gt; 服务: &lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;d代表的是daemon 进程&lt;/span&gt;
-&lt;span class="code-line"&gt;$ svnserve -d&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ps aux | grep svnserve&lt;/span&gt;
-&lt;span class="code-line"&gt;若出现如下内容：&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;wkr 6537 0.0 0.0 13784 956 ? Ss 16:18 0:00 svnserve -d&lt;/span&gt;
-&lt;span class="code-line"&gt;wkr 7593 0.0 0.0 5784 864 pts/0 S+ 21:57 0:00 grep –color=auto svnserve&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;表示服务已开启。（注意：一定要有第1行，只有第2行说明服务未启动）&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="3"&gt;
-&lt;li&gt;关闭&lt;code&gt;svn&lt;/code&gt;服务:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$  killall svnserve&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="4"&gt;
-&lt;li&gt;重启 &lt;code&gt;svn&lt;/code&gt;服务:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ svnserve -d -r /srv&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="4"&gt;
-&lt;li&gt;新建一个仓库:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo adduser --system --home /srv/svn --disabled-password --disabled-login --group svn&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo svnadmin create /srv/svn&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R svn:svn /srv/svn&lt;/span&gt;
-&lt;span class="code-line"&gt;change user, change group 改变文件对应的用户和用户组&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="5"&gt;
-&lt;li&gt;修改仓库配置文件&lt;br&gt;
-编辑配置文件:&amp;nbsp;svnserve.conf&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /srv/svn/conf/svnserve.conf&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;general&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;anon-access &lt;span class="o"&gt;=&lt;/span&gt; none&lt;/span&gt;
-&lt;span class="code-line"&gt;auth-access &lt;span class="o"&gt;=&lt;/span&gt; write&lt;/span&gt;
-&lt;span class="code-line"&gt;authz-db &lt;span class="o"&gt;=&lt;/span&gt; authz&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;修改帐户文件&lt;code&gt;nano /srv/svn/conf/passwd&lt;/code&gt; 和 &lt;code&gt;sudo nano /srv/svn/conf/authz&lt;/code&gt;,&amp;nbsp;此处忽略.&lt;/p&gt;
-&lt;ol start="6"&gt;
-&lt;li&gt;配置svn开机自动启动&lt;/li&gt;
-&lt;li&gt;新建一个svnserve配置文件在&lt;code&gt;/et/default/svnserve&lt;/code&gt;文件,内容如下:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# svnserve options&lt;/span&gt;
-&lt;span class="code-line"&gt;DAEMON_ARGS=&amp;quot;--daemon --pid-file /run/svnserve/svnserve.pid --root /srv/svn --log-file /var/log/svn/svnserve.log&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt; 新建log文件,这些是&lt;code&gt;/etc/default/svnserve&lt;/code&gt;中的文件的配置涉及的几个文件,如果执行&lt;code&gt;sudo systemctl restart svnserve.service&lt;/code&gt;失败,会自动删除文件夹&lt;code&gt;/run/svnserve&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo mkdir /run/svnserve&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R svn:svn /run/svnserve/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod -R &lt;span class="m"&gt;777&lt;/span&gt; /run/svnserve/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mkdir /var/log/svn&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R svn:svn /var/log/svn/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod -R &lt;span class="m"&gt;777&lt;/span&gt; /var/log/svn/&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="3"&gt;
-&lt;li&gt;新建service启动服务文件&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/systemd/system/svnserve.service&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;Unit&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Subversion protocol daemon&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;After&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;syslog.target network.target&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;Service&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;forking&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;RuntimeDirectory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;svnserve&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;PIDFile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/run/svnserve/svnserve.pid&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;EnvironmentFile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/default/svnserve&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/svnserve &lt;span class="nv"&gt;$DAEMON_ARGS&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;svn&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Group&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;svn&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;KillMode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;control-group&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;on-failure&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="o"&gt;[&lt;/span&gt;Install&lt;span class="o"&gt;]&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;multi-user.target&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;重启机器后出现这个错误:(原因是上面的第一个操作我没有做,就是没有创建一个文件&lt;code&gt;/etc/default/svnserve&lt;/code&gt;,或者其中涉及到的文件&lt;code&gt;/var/log/svn&lt;/code&gt;,&lt;code&gt;/run/svnserve&lt;/code&gt;没有新建,或者没有配置可写权限对于用户&lt;code&gt;svn&lt;/code&gt;)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;pingbook&lt;/span&gt;&lt;span class="o"&gt;:~$&lt;/span&gt; &lt;span class="nt"&gt;systemctl&lt;/span&gt; &lt;span class="nt"&gt;status&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt; &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;●&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt; &lt;span class="nt"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Subversion&lt;/span&gt; &lt;span class="nt"&gt;protocol&lt;/span&gt; &lt;span class="nt"&gt;daemon&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;   &lt;span class="nt"&gt;Loaded&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;loaded&lt;/span&gt; &lt;span class="o"&gt;(/&lt;/span&gt;&lt;span class="nt"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;enabled&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;vendor&lt;/span&gt; &lt;span class="nt"&gt;preset&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;enabled&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;   &lt;span class="nt"&gt;Active&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;failed&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;Result&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;resources&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;since&lt;/span&gt; &lt;span class="nt"&gt;Sun&lt;/span&gt; &lt;span class="nt"&gt;2018-07-08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;CST&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;28s&lt;/span&gt; &lt;span class="nt"&gt;ago&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Failed&lt;/span&gt; &lt;span class="nt"&gt;to&lt;/span&gt; &lt;span class="nt"&gt;start&lt;/span&gt; &lt;span class="nt"&gt;Subversion&lt;/span&gt; &lt;span class="nt"&gt;protocol&lt;/span&gt; &lt;span class="nt"&gt;daemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Unit&lt;/span&gt; &lt;span class="nt"&gt;entered&lt;/span&gt; &lt;span class="nt"&gt;failed&lt;/span&gt; &lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Failed&lt;/span&gt; &lt;span class="nt"&gt;with&lt;/span&gt; &lt;span class="nt"&gt;result&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;resources&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Service&lt;/span&gt; &lt;span class="nt"&gt;hold-off&lt;/span&gt; &lt;span class="nt"&gt;time&lt;/span&gt; &lt;span class="nt"&gt;over&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;scheduling&lt;/span&gt; &lt;span class="nt"&gt;restart&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Stopped&lt;/span&gt; &lt;span class="nt"&gt;Subversion&lt;/span&gt; &lt;span class="nt"&gt;protocol&lt;/span&gt; &lt;span class="nt"&gt;daemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Start&lt;/span&gt; &lt;span class="nt"&gt;request&lt;/span&gt; &lt;span class="nt"&gt;repeated&lt;/span&gt; &lt;span class="nt"&gt;too&lt;/span&gt; &lt;span class="nt"&gt;quickly&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Failed&lt;/span&gt; &lt;span class="nt"&gt;to&lt;/span&gt; &lt;span class="nt"&gt;start&lt;/span&gt; &lt;span class="nt"&gt;Subversion&lt;/span&gt; &lt;span class="nt"&gt;protocol&lt;/span&gt; &lt;span class="nt"&gt;daemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Unit&lt;/span&gt; &lt;span class="nt"&gt;entered&lt;/span&gt; &lt;span class="nt"&gt;failed&lt;/span&gt; &lt;span class="nt"&gt;state&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;7月&lt;/span&gt; &lt;span class="nt"&gt;08&lt;/span&gt; &lt;span class="nt"&gt;20&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;56&lt;/span&gt; &lt;span class="nt"&gt;pingbook&lt;/span&gt; &lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;svnserve&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Failed&lt;/span&gt; &lt;span class="nt"&gt;with&lt;/span&gt; &lt;span class="nt"&gt;result&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;resources&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="4"&gt;
-&lt;li&gt;checkout一份代码到nginx服务器,保持web同步,注意checkout的目录用户要是svn的用户和组,这样hook才能有权限读写&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo svn co svn://localhost/svn /www/pingbook.top --username &lt;span class="s2"&gt;&amp;quot;hr&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /www/pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R svn:svn *&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chown -R svn:svn /www/pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod -R &lt;span class="m"&gt;757&lt;/span&gt; /www/pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod -R &lt;span class="m"&gt;757&lt;/span&gt; /www/pingbook.top/.svn   &lt;span class="c1"&gt;# 配置svn数据仓库 &lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo svn cleanup&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果commit的时候发现&lt;code&gt;hook&lt;/code&gt;的&lt;code&gt;post-commit&lt;/code&gt;总是报错: &lt;code&gt;post-commit hook failed (exit code 255) with no output&lt;/code&gt;,需要检查对应的文件的读写权限.
-1. 检查对应的&lt;code&gt;post-commit&lt;/code&gt;的用户组是&lt;code&gt;svn&lt;/code&gt;,对应的文件有执行权限: &lt;code&gt;sudo chmod g+e /srv/svn/hook/post-commit&lt;/code&gt;&lt;/p&gt;</content><category term="svn"></category></entry><entry><title>[环境搭建] 配置采用NAT123进行树莓派部署</title><link href="https://pingbook.top/articles/pi-nat123/" rel="alternate"></link><published>2018-07-13T19:29:03+08:00</published><updated>2018-07-13T19:29:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nat123/</id><summary type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;安装步骤&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download/stable/#download-lin-raspbian&lt;/a&gt;
-1. 下载对应的linux版本的nat123安装包: http://www.nat123.com/Pages_2_32.jsp&lt;br&gt;
-2. 解压缩到一个目录里面: tar zxvf nat123linux20180627.tar.gz
-~~3. 安装&lt;code&gt;sudo apt-get  install  -y mono-complete&lt;/code&gt;,如果安装失败,请参见另外的一篇文章设置对应的国内镜像: &lt;a href="https://pingbook.top/articles/pi-mirrors/"&gt;https://pingbook.top/articles/pi-mirrors/&lt;/a&gt;~~
-4. 上面的&lt;code&gt;momo-complete&lt;/code&gt;的安装需要一段时间,大约十分钟左右.~~&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ mono  /home/pi/nat123/nat123linux.sh  service  &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="mono-complete"&gt;采用如下方式进行安装&lt;code&gt;mono-complete&lt;/code&gt;&lt;a class="headerlink" href="#mono-complete" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;参考地址: &lt;a href="http://www.mono-project.com/download/stable/#download-lin-raspbian"&gt;http://www.mono-project.com/download/stable/#download-lin-raspbian&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install apt-transport-https dirmngr&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deb https://download.mono-project.com/repo/debian stable-raspbianstretch main&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/mono-official-stable.list&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt update&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt install mono-complete&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="NAT123"></category><category term="树莓派"></category></entry><entry><title>[树莓派] 树莓派3B安装</title><link href="https://pingbook.top/articles/pi-installation/" rel="alternate"></link><published>2018-07-13T19:28:39+08:00</published><updated>2018-07-13T19:28:39+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-installation/</id><summary type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;因为感觉空间越来越小了,不能使用现在的需要了,所以决定重新安装系统.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;span class="caps"&gt;67MB&lt;/span&gt;&amp;nbsp;vfat格式的引导分区（系统启动后被挂载在/boot目录 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2 id="_1"&gt;树莓派安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;因为感觉空间越来越小了,不能使用现在的需要了,所以决定重新安装系统.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;安装完成后，TF卡被分成两个分区：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;span class="caps"&gt;67MB&lt;/span&gt;&amp;nbsp;vfat格式的引导分区（系统启动后被挂载在/boot目录）&lt;/li&gt;
-&lt;li&gt;TF卡剩余空间&amp;nbsp;ext4格式的磁盘分区&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;由于Windows下不识别ext4格式的磁盘，在资源管理器中查看TF卡只显示一个67MB大小、名字为boot的盘符。
-若想恢复TF卡整个空间为windows可识别的fat32/exfat格式，需要使用低级格式化工具HDD Low Level Format&amp;nbsp;Tool（windows磁盘管理器无法处理ext4格式磁盘）。&lt;/p&gt;
-&lt;h2 id="lite"&gt;安装版本为lite版本&lt;a class="headerlink" href="#lite" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在没有显示屏网线的情况下可以通过如下方式进行远程操作.
-1. 下载镜像
-2. 新建一个空文件没有后缀名: ssh, 然后放到 /boot 文件夹里面. 这两个文件在启动的时候会自动复制到指定的目录里面.
-3. 新建一个文件&lt;code&gt;wpa_supplicant.conf&lt;/code&gt;,输入以下的内容,按照你的环境进行配置对应的wifi名称和密码:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev&lt;/span&gt;
-&lt;span class="code-line"&gt;update_config=1&lt;/span&gt;
-&lt;span class="code-line"&gt;country=CN&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;network={&lt;/span&gt;
-&lt;span class="code-line"&gt;    ssid=&amp;quot;MiniWifi&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;    psk=&amp;quot;L0ngh)171130AVb&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;    key_mgmt=WPA-PSK&lt;/span&gt;
-&lt;span class="code-line"&gt;}&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;network={&lt;/span&gt;
-&lt;span class="code-line"&gt;    ssid=&amp;quot;GDS-GUEST&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;    psk=&amp;quot;Gr33nD0t!&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="3"&gt;
-&lt;li&gt;安装完成后,需要登录到电脑,这个电脑和你的树莓派需要在一个局域网里面. 有很多人统建使用&lt;code&gt;advanced ip scanner&lt;/code&gt;这个工具,
-我也使用了一段时间,开始还好,后面发现有时候扫描不到你的树莓派. 在网上搜索了一阵发现还有同款的一个扫描类的软件&lt;a href="https://angryip.org/download/#windows"&gt;angry ip scanner&lt;/a&gt;
-之所以选择他是因为他对不同的局域网环境都能正确的扫描到树莓派对应的机器名称和机器ip&amp;nbsp;address.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="vnc"&gt;远程桌面工具,不是VNC&lt;a class="headerlink" href="#vnc" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;直接运行如下命令安装对应的远程桌面工具:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install -y xrdp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="树莓派"></category></entry></feed>
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="nginx"></category></entry></feed>

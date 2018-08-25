@@ -114,6 +114,187 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to How to make Vuejs project to mobile App or electron desktop">How to make Vuejs project to mobile App or electron&nbsp;desktop</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-25T23:18:47.876163+08:00">
+                                        Posted @ 2018-08-25 23:18:47,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="how-to-build-android-or-ios-app-from-vue-project">How to build android or <span class="caps">IOS</span> app from Vue project …</h2> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to How to make Vuejs project to mobile App or electron desktop"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
+                                            <a class="danger label" href="../tag/electron/">electron</a>
+                                            <a class="danger label" href="../tag/electron-builder/">electron-builder</a>
+                                            <a class="danger label" href="../tag/cordova/">cordova</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/python-error/" rel="bookmark" title="Permalink to Linux安装包遇到的问题">Linux安装包遇到的问题</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-11T22:08:13.622607+08:00">
+                                        Posted @ 2018-08-11 22:08:13,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在尝试安装samba的时候,服务器端总是报如下的错误:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>error processing package python-dnspython</span>
+<span class="code-line"> Sub-process /usr/bin …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/python-error/" rel="bookmark" title="Permalink to Linux安装包遇到的问题"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令">[Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-11T09:30:31.280688+08:00">
+                                        Posted @ 2018-08-11 09:30:31,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>free</code></li>
+<li><code>top</code></li>
+</ol>
+<h2 id="_2">防火墙操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>显示防火墙状态</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo iptables -L</span>
+</pre></div>
+
+
+<ol start="2">
+<li>关闭防火墙</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/linux/">linux</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">How to build the ftp&nbsp;system</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-10T11:41:48.584929+08:00">
+                                        Posted @ 2018-08-10 11:41:48,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h1 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
+参考博客:&nbsp;https://www.conum.cn/os/linux …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/vsftpd/">vsftpd</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/5-software-performance-testing/" rel="bookmark" title="Permalink to [面试] 5. 性能测试相关的涉及内容">[面试] 5.&nbsp;性能测试相关的涉及内容</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-26T21:40:09.531297+08:00">
+                                        Posted @ 2018-07-26 21:40:09,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点 …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/5-software-performance-testing/" rel="bookmark" title="Permalink to [面试] 5. 性能测试相关的涉及内容"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/performance-testing/">performance testing</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/sql-best-tips/" rel="bookmark" title="Permalink to [SQL]收集的一些好的SQL snippets">[<span class="caps">SQL</span>]收集的一些好的SQL&nbsp;snippets</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-25T23:46:15.923671+08:00">
+                                        Posted @ 2018-07-25 23:46:15,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="mysql"><span class="caps">MYSQL</span> 用户变量,系统变量,局部变量<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
+<p>参考文档: https://stackoverflow.com/questions/11754781 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/sql-best-tips/" rel="bookmark" title="Permalink to [SQL]收集的一些好的SQL snippets"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/jetbrain-idea-licenseserver/" rel="bookmark" title="Permalink to Available license server">Available license&nbsp;server</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-25T21:40:38.097936+08:00">
+                                        Posted @ 2018-07-25 21:40:38,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="license-servers">license servers<a class="headerlink" href="#license-servers" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>http://xidea.online/servers.html</p>
+<p>[Available&nbsp;2018-07-25]https …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/jetbrain-idea-licenseserver/" rel="bookmark" title="Permalink to Available license server"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/license/">license</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/fen-ceng/" rel="bookmark" title="Permalink to 分层自动化测试">分层自动化测试</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-24T20:39:58.482745+08:00">
@@ -195,178 +376,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/review-questions/" rel="bookmark" title="Permalink to [面试]测试面试的问题整理">[面试]测试面试的问题整理</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-24T19:25:08.713970+08:00">
-                                        Posted @ 2018-07-24 19:25:08,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>1、问：你在测试中发现了一个bug，但是开发经理认为这不是一个bug，你应该怎样解决？</p>
-<p>首先，将问题提交到缺陷管理库里面进行备案。</p>
-<p>然后，要获取判断的依据和标准：</p>
-<p>根据需求说明书 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/review-questions/" rel="bookmark" title="Permalink to [面试]测试面试的问题整理"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/review/">Review</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/jetbrain-idea-licenseserver/" rel="bookmark" title="Permalink to Available license server">Available license&nbsp;server</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-24T14:29:22.667889+08:00">
-                                        Posted @ 2018-07-24 14:29:22,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="license-servers">license servers<a class="headerlink" href="#license-servers" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>http://xidea.online/servers.html</p>
-</blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/jetbrain-idea-licenseserver/" rel="bookmark" title="Permalink to Available license server"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/license/">license</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">vuejs中使用的一些重要技巧</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-23T22:26:58.365000+08:00">
-                                        Posted @ 2018-07-23 22:26:58,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="stylebackground-color-background-image">style中配置<code>background-color</code>, <code>background-image</code> 变量<a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link">&para;</a></h2>
-<p>代码如下</p>
-<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;v-btn</span> <span class="na">color=</span><span class="s">&quot;primary&quot;</span> <span class="err">fab</span> <span class="err">dark …</span></span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用">[面试] 2.&nbsp;有关list及其方法的使用</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-23T22:26:05.430000+08:00">
-                                        Posted @ 2018-07-23 22:26:05,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="pythonjavalist">解决的问题(Python/Java的list对比学习)<a class="headerlink" href="#pythonjavalist" title="Permanent link">&para;</a></h2>
-<h3 id="_1">排序<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>java采用的是<code>Collections</code>包中的两个方法: </li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>Collections.sort(list …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/2-list-methods/" rel="bookmark" title="Permalink to [面试] 2. 有关list及其方法的使用"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
-                                            <a class="danger label" href="../tag/list/">list</a>
-                                            <a class="danger label" href="../tag/java/">java</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/sql-best-tips/" rel="bookmark" title="Permalink to [SQL]收集的一些好的SQL snippets">[<span class="caps">SQL</span>]收集的一些好的SQL&nbsp;snippets</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-23T12:58:43.813275+08:00">
-                                        Posted @ 2018-07-23 12:58:43,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h3 id="mysql"><span class="caps">MYSQL</span> 用户变量,系统变量,局部变量<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
-<p>参考文档: https://stackoverflow.com/questions/11754781 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/sql-best-tips/" rel="bookmark" title="Permalink to [SQL]收集的一些好的SQL snippets"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/install-dbforgesql/" rel="bookmark" title="Permalink to 安装dbforge SQL 8.0">安装dbforge <span class="caps">SQL</span>&nbsp;8.0</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-22T14:19:31.581736+08:00">
-                                        Posted @ 2018-07-22 14:19:31,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="dbforge-mysql">安装dbforge Mysql<a class="headerlink" href="#dbforge-mysql" title="Permanent link">&para;</a></h2>
-<p>安装最新的dbforge Mysql: <a href="https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe">https://www.devart.com/dbforge/mysql …</a></p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/install-dbforgesql/" rel="bookmark" title="Permalink to 安装dbforge SQL 8.0"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/dbforge-mysql/">dbforge mysql</a>
-                                            <a class="danger label" href="../tag/uninstall-netframework/">uninstall .netframework</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-22T10:51:35.407017+08:00">
-                                        Posted @ 2018-07-22 10:51:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
-<p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
-<h3 id="source">source 安装编译<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/tensorflow/">tensorflow</a>
-                                            <a class="danger label" href="../tag/machine-learning/">machine learning</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -406,10 +415,13 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <ul class="blank">
                     <li class="tag-4"><a href="../tag/algorithm/">Algorithm</a></li>
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
-                    <li class="tag-4"><a href="../tag/software-testing/">Software Testing</a></li>
                     <li class="tag-4"><a href="../tag/tomcat9/">Tomcat9</a></li>
+                    <li class="tag-4"><a href="../tag/vuejs/">Vuejs</a></li>
                     <li class="tag-4"><a href="../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-4"><a href="../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../tag/dbforge-mysql/">dbforge mysql</a></li>
+                    <li class="tag-4"><a href="../tag/electron/">electron</a></li>
+                    <li class="tag-4"><a href="../tag/electron-builder/">electron-builder</a></li>
                     <li class="tag-4"><a href="../tag/hadoop/">hadoop</a></li>
                     <li class="tag-1"><a href="../tag/java/">java</a></li>
                     <li class="tag-4"><a href="../tag/license/">license</a></li>
@@ -423,14 +435,12 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../tag/pelican/">pelican</a></li>
                     <li class="tag-4"><a href="../tag/performance-testing/">performance testing</a></li>
                     <li class="tag-4"><a href="../tag/python3/">python3</a></li>
-                    <li class="tag-4"><a href="../tag/svn/">svn</a></li>
                     <li class="tag-4"><a href="../tag/tensorflow/">tensorflow</a></li>
                     <li class="tag-4"><a href="../tag/uninstall-netframework/">uninstall .netframework</a></li>
+                    <li class="tag-4"><a href="../tag/vsftpd/">vsftpd</a></li>
                     <li class="tag-4"><a href="../tag/fen-ceng/">分层</a></li>
                     <li class="tag-1"><a href="../tag/shu-mei-pai/">树莓派</a></li>
                     <li class="tag-4"><a href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
-                    <li class="tag-4"><a href="../tag/bai-he-ce-shi/">白盒测试</a></li>
-                    <li class="tag-4"><a href="../tag/ruan-jian-ce-shi/">软件测试</a></li>
                     <li class="tag-4"><a href="../tag/mian-xiang-dui-xiang/">面向对象</a></li>
                     <li class="tag-1"><a href="../tag/mian-shi/">面试</a></li>
             </ul>

@@ -9,7 +9,7 @@
 
 
 
-起因¶ 需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取. 参考博客: https://www.conum.cn/os/linux …">
+起因¶ 需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取. 参考博客: 1. (smbd配置,忽略)https://www.conum …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -123,8 +123,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-08-10T11:41:48.584929+08:00">-->
-                    <!--2018-08-10 11:41:48-->
+                    <!--<abbr class="published" title="2018-08-27T16:06:29.708097+08:00">-->
+                    <!--2018-08-27 16:06:29-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-08-10 11:41:48
+                        2018-08-27 16:06:29
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -155,53 +155,51 @@
                 <div class="entry-content">
                     <h1 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
-参考博客:&nbsp;https://www.conum.cn/os/linux/210.html</p>
+参考博客: 
+1. (smbd配置,忽略)https://www.conum.cn/os/linux/210.html
+2. (vsftpdp配置)http://www.cnblogs.com/sunky/p/9418730.html&nbsp;用到的操作命令如下:</p>
 <div class="highlight"><pre><span class="code-line"><span></span>1. 安装vsftpd</span>
 <span class="code-line">$ apt-get install vsftpd </span>
 <span class="code-line">安装完成后,会新建一个用户组ftp和对应的用户名ftp,通过下面的命令查看他的配置</span>
 <span class="code-line">$ sudo nano /etc/passwd </span>
 <span class="code-line">已经设置成了/srv/ftp目录,这里把它改成 /ftp目录</span>
+<span class="code-line">2. 安装用户名和密码存放的数据库文件</span>
 <span class="code-line">$ aptitude search db | grep util</span>
 <span class="code-line">$ aptitude install db5.3-util</span>
 <span class="code-line">$ db5.3_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/vsftpd_login.db</span>
-<span class="code-line">$ chmod 600 /etc/vsftpd/ftpusers.db</span>
-<span class="code-line">2. 查看log</span>
+<span class="code-line">3. 查看log</span>
 <span class="code-line">$ tail -f -n 50 /var/log/auth.log</span>
+<span class="code-line">4. 增加用户</span>
+<span class="code-line">4.1 先在login.txt文件中增加一行用户名记录,再另起一行加上对应的密码,保存.</span>
+<span class="code-line">4.2 然后在/etc/vsftpd/confs/ 文件夹中新建一个文件,文件名称是该用户名,例如用户名是`test`,那么执行如下命令:</span>
+<span class="code-line">sudo nano test  # 加入下面的配置代码</span>
+<span class="code-line">local_root=/ftp/vsftp/foldername</span>
+<span class="code-line">anon_world_readable_only=NO</span>
+<span class="code-line">write_enable=YES</span>
+<span class="code-line">anon_mkdir_write_enable=YES</span>
+<span class="code-line">anon_upload_enable=YES</span>
+<span class="code-line">anon_other_write_enable=YES</span>
 </pre></div>
 
 
-<p>http://www.cnblogs.com/sunky/p/9418730.html
- useradd -d /srv/ftp/shares yaoliang
- passwd yaoliang
- usermod -s /sbin/nologin yaoliang
- usermod -s /sbin/bash yaoliang
- usermod -d /srv/ftp/shares yaoliang
- walterhu
- 123456
-yaoliang<br>
-123456
-zhouruoting
-123456
-wangguorong
-123456
-shidajiang
-123456
-liyixuan
-123456
-zhengze&nbsp;123456</p>
-<p>查看端口号</p>
-<p>netstat&nbsp;-npl</p>
+<h3 id="_2">常见错误<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="500-oops-bad-bool-value-in-config-file-for-anon_world_readable_only">500 <span class="caps">OOPS</span>: bad bool value in config file for: anon_world_readable_only<a class="headerlink" href="#500-oops-bad-bool-value-in-config-file-for-anon_world_readable_only" title="Permanent link">&para;</a></h4>
+<p>原因是你的配置文件中带有空格,使用下面的命令去除空格:</p>
+<div class="highlight"><pre><span class="code-line"><span></span># sed -i &#39;s,\r,,;s, *$,,&#39; /etc/vsfttpd/confs/yourusername</span>
+<span class="code-line"># db5.3_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/vsftpd_login.db</span>
+<span class="code-line"># systemctl restart vsftpd.service</span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/5-software-performance-testing/">
-                                ◄&nbsp;&nbsp;[面试] 5.&nbsp;性能测试相关的涉及内容
+                            <a href="../../articles/cordova-android/">
+                                ◄&nbsp;&nbsp;Vue项目转成Cordova项目的注意事项和技巧
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/basic-command/">
-                                [Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令&nbsp;&nbsp;►
+                            <a href="../../articles/vue-to-mobileapp-electron/">
+                                vuejs項目转为android/<span class="caps">IOS</span>&nbsp;App(Cordova)&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -253,6 +251,7 @@ zhengze&nbsp;123456</p>
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
+                        <li><a href="../../category/tools/">Tools</a></li>
                         <li><a href="../../category/sql/">SQL</a></li>
                         <li><a href="../../category/softwaretesting/">SoftwareTesting</a></li>
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
@@ -273,9 +272,9 @@ zhengze&nbsp;123456</p>
                     <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
                     <li class="tag-4"><a href="../../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
-                    <li class="tag-4"><a href="../../tag/vuejs/">Vuejs</a></li>
+                    <li class="tag-2"><a href="../../tag/vuejs/">Vuejs</a></li>
                     <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
-                    <li class="tag-4"><a href="../../tag/cordova/">cordova</a></li>
+                    <li class="tag-2"><a href="../../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../../tag/electron/">electron</a></li>
                     <li class="tag-4"><a href="../../tag/electron-builder/">electron-builder</a></li>

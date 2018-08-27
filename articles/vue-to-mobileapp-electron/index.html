@@ -123,8 +123,8 @@ How to build android or IOS app from Vue project …">
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-08-25T23:41:42.822815+08:00">-->
-                    <!--2018-08-25 23:41:42-->
+                    <!--<abbr class="published" title="2018-08-27T17:19:43.105619+08:00">-->
+                    <!--2018-08-27 17:19:43-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@ How to build android or IOS app from Vue project …">
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        2018-08-25 23:41:42
+                        2018-08-27 17:19:43
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -167,8 +167,13 @@ How to build android or IOS app from Vue project …">
 <li>然后就双击“<span class="caps">SDK</span> Manager.exe”，启动SDK&nbsp;Manager，如图所示：</li>
 </ul>
 <p><img alt="测试图片显示" src="../../articles/vue-to-mobileapp-electron/sdk_install_select.jpg"></p>
-<p>这里我只说几个必须要安装的，如上图所示的，Tools文件夹里面的Android <span class="caps">SDK</span> Tools（这个我们在之前的一步已经下载好了的，一般不会让你再安装了，不过有可能会让你更新），然后就是Android <span class="caps">SDK</span> Platform-tools和Android SDKBuild-tools，注意只需要下载最新的版本就行了。
-然后就是API的选择了。我们可以看到这里提供了很多很多从Android 2.2到Android 5.x的很多版本的API，那么怎么选择呢。这里我建议，新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了（因为下载安装的速度实在太慢啦。。。）。所以如上图所示，这里我只选择了下载当前最新的Android 5.1.1(<span class="caps">API</span> 22)。这里需要说明的是，如果你以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装“system&nbsp;images“了。不过新手的话，不知道怎么选择，还是建议直接全部勾上吧.</p>
+<p>这里我只说几个必须要安装的，如上图所示的，Tools文件夹里面的Android <span class="caps">SDK</span> Tools（这个我们在之前的一步已经下载好了的，
+一般不会让你再安装了，不过有可能会让你更新），然后就是Android <span class="caps">SDK</span> Platform-tools和Android SDKBuild-tools，
+注意只需要下载最新的版本就行了。
+然后就是API的选择了。我们可以看到这里提供了很多很多从Android 2.2到Android 5.x的很多版本的API，那么怎么选择呢。
+这里我建议，新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了
+（因为下载安装的速度实在太慢啦。。。）。所以如上图所示，这里我只选择了下载当前最新的Android 5.1.1(<span class="caps">API</span> 22)。
+这里需要说明的是，如果你以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装“system images“了。&nbsp;不过新手的话，不知道怎么选择，还是建议直接全部勾上吧.</p>
 <ul>
 <li>最后就是extras文件夹中的东西了，如下图所示:</li>
 </ul>
@@ -236,18 +241,32 @@ How to build android or IOS app from Vue project …">
 </ol>
 <p><img alt="测试图片显示" src="../../articles/vue-to-mobileapp-electron/gradle_install_4.png"></p>
 <p>如图显示对应的gradle的信息,说明gradle的配置成功!</p>
+<h4 id="14-genymotion">1.4 genymotion虚拟设备配置<a class="headerlink" href="#14-genymotion" title="Permanent link">&para;</a></h4>
+<p>关于安装<code>genymotion</code>的步骤这里就不再赘余了,网上一搜一大堆.这里主要记录一些遇到的问题.
+1. <code>genymotion</code>安装成功后需要登录,这样才能使用它的增加device,下载镜像和设备android sdk的操作.
+2. 针对`android <span class="caps">SDK</span> <span class="caps">API</span>&gt;=28以上,安装apk文件直接闪退,网上说的是genymotion是基于intel&nbsp;pentium设计的,</p>
+<div class="highlight"><pre><span class="code-line"><span></span>An error occured while deploying the file. </span>
+<span class="code-line">This probably means that the app contains ARM native code and your Genymotion device cannot run ARM instructions. You should either build your native code to x86 or install an ARM translation tool in your device.</span>
+</pre></div>
+
+
+<p>国内的就不要搜索, 都是一堆说使用<code>ARM_Translation.zip</code>,结果版本要不就是 android 5.0的就是6.0的,拖进去模拟器中.再次安装app还是直接闪退不能运行.<br>
+<a href="https://pan.baidu.com/s/1KvCbjCprPlMFEQs65xf5aA">ARM_Translation_oreo for&nbsp;android8.0安装包下载</a></p>
                 </div><!-- /.entry-content -->
                 <hr/>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/python-error/">
-                                ◄&nbsp;&nbsp;Linux安装包遇到的问题
+                            <a href="../../articles/vsftp_setup/">
+                                ◄&nbsp;&nbsp;How to build the ftp&nbsp;system
                             </a>
                         </li>
                 </ul>
                 <hr/>
                 <div class="comments">
                     <h3>Relate Articles</h3>
+                        <ul>
+                                <li><a href="../../articles/cordova-android/">Vue项目转成Cordova项目的注意事项和技巧</a></li>
+                        </ul>
                 </div>
                 <hr/>
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -293,6 +312,7 @@ How to build android or IOS app from Vue project …">
             <nav class="widget">
                 <h4>Categories</h4>
                 <ul class="blank">
+                        <li><a href="../../category/tools/">Tools</a></li>
                         <li><a href="../../category/sql/">SQL</a></li>
                         <li><a href="../../category/softwaretesting/">SoftwareTesting</a></li>
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
@@ -313,9 +333,9 @@ How to build android or IOS app from Vue project …">
                     <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
                     <li class="tag-4"><a href="../../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../../tag/tomcat9/">Tomcat9</a></li>
-                    <li class="tag-4"><a href="../../tag/vuejs/">Vuejs</a></li>
+                    <li class="tag-2"><a href="../../tag/vuejs/">Vuejs</a></li>
                     <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
-                    <li class="tag-4"><a href="../../tag/cordova/">cordova</a></li>
+                    <li class="tag-2"><a href="../../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../../tag/electron/">electron</a></li>
                     <li class="tag-4"><a href="../../tag/electron-builder/">electron-builder</a></li>

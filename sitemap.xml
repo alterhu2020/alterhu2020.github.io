@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-08-25T23:42:33-00:00</lastmod>
+<lastmod>2018-08-27T17:20:02-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-08-25T23:42:33-00:00</lastmod>
+<lastmod>2018-08-27T17:20:02-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -33,7 +33,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/articles/vue-to-mobileapp-electron/</loc>
-<lastmod>2018-08-25T23:41:42+08:00</lastmod>
+<lastmod>2018-08-27T17:19:43+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/vsftp_setup/</loc>
+<lastmod>2018-08-27T16:06:29+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/cordova-android/</loc>
+<lastmod>2018-08-27T14:33:07+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/how-resize-image/</loc>
+<lastmod>2018-08-27T13:18:11+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -48,13 +69,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/articles/basic-command/</loc>
 <lastmod>2018-08-11T09:30:31+08:00</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/articles/vsftp_setup/</loc>
-<lastmod>2018-08-10T11:41:48+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -228,6 +242,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pingbook.top/category/tools/</loc>
+<lastmod>2018-08-27T13:18:11+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://pingbook.top/category/sql/</loc>
 <lastmod>2018-07-25T23:46:15+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -264,14 +285,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/linux/</loc>
-<lastmod>2018-08-11T09:30:31+08:06</lastmod>
+<lastmod>2018-08-27T16:06:29+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/category/javascript/</loc>
-<lastmod>2018-08-25T23:41:42+08:06</lastmod>
+<lastmod>2018-08-27T17:19:43+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -292,28 +313,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/tag/vuejs/</loc>
-<lastmod>2018-08-25T23:41:42+08:06</lastmod>
+<lastmod>2018-08-27T17:19:43+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/tag/electron/</loc>
-<lastmod>2018-08-25T23:41:42+08:06</lastmod>
+<lastmod>2018-08-27T17:19:43+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/tag/electron-builder/</loc>
-<lastmod>2018-08-25T23:41:42+08:06</lastmod>
+<lastmod>2018-08-27T17:19:43+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/tag/cordova/</loc>
-<lastmod>2018-08-25T23:41:42+08:06</lastmod>
+<lastmod>2018-08-27T17:19:43+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/vsftpd/</loc>
+<lastmod>2018-08-27T16:06:29+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -321,13 +349,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/tag/linux/</loc>
 <lastmod>2018-08-11T09:30:31+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/tag/vsftpd/</loc>
-<lastmod>2018-08-10T11:41:48+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -530,7 +551,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/author/walter-hu</loc>
-<lastmod>2018-08-25T23:41:42+08:06</lastmod>
+<lastmod>2018-08-27T17:19:43+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-08-25T23:41:42+08:00</updated><entry><title>vuejs項目转为android/IOS App(Cordova)</title><link href="https://pingbook.top/articles/vue-to-mobileapp-electron/" rel="alternate"></link><published>2018-08-25T23:41:42+08:00</published><updated>2018-08-25T23:41:42+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-25:/articles/vue-to-mobileapp-electron/</id><summary type="html">&lt;h2 id="how-to-build-android-or-ios-app-from-vue-project"&gt;How to build android or &lt;span class="caps"&gt;IOS&lt;/span&gt; app from Vue project …&lt;/h2&gt;</summary><content type="html">&lt;h2 id="how-to-build-android-or-ios-app-from-vue-project"&gt;How to build android or &lt;span class="caps"&gt;IOS&lt;/span&gt; app from Vue project&lt;a class="headerlink" href="#how-to-build-android-or-ios-app-from-vue-project" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-08-27T17:19:43+08:00</updated><entry><title>vuejs項目转为android/IOS App(Cordova)</title><link href="https://pingbook.top/articles/vue-to-mobileapp-electron/" rel="alternate"></link><published>2018-08-27T17:19:43+08:00</published><updated>2018-08-27T17:19:43+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-27:/articles/vue-to-mobileapp-electron/</id><summary type="html">&lt;h2 id="how-to-build-android-or-ios-app-from-vue-project"&gt;How to build android or &lt;span class="caps"&gt;IOS&lt;/span&gt; app from Vue project …&lt;/h2&gt;</summary><content type="html">&lt;h2 id="how-to-build-android-or-ios-app-from-vue-project"&gt;How to build android or &lt;span class="caps"&gt;IOS&lt;/span&gt; app from Vue project&lt;a class="headerlink" href="#how-to-build-android-or-ios-app-from-vue-project" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="1-cordova"&gt;1. &lt;code&gt;cordova&lt;/code&gt; 环境准备&lt;a class="headerlink" href="#1-cordova" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;h4 id="11-java-jdk"&gt;1.1 Java &lt;span class="caps"&gt;JDK&lt;/span&gt; 安装(省略)&lt;a class="headerlink" href="#11-java-jdk" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;h4 id="12-android-sdk"&gt;1.2 Android &lt;span class="caps"&gt;SDK&lt;/span&gt; 安装配置&lt;a class="headerlink" href="#12-android-sdk" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
@@ -13,8 +13,13 @@
 &lt;li&gt;然后就双击“&lt;span class="caps"&gt;SDK&lt;/span&gt; Manager.exe”，启动SDK&amp;nbsp;Manager，如图所示：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/sdk_install_select.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;这里我只说几个必须要安装的，如上图所示的，Tools文件夹里面的Android &lt;span class="caps"&gt;SDK&lt;/span&gt; Tools（这个我们在之前的一步已经下载好了的，一般不会让你再安装了，不过有可能会让你更新），然后就是Android &lt;span class="caps"&gt;SDK&lt;/span&gt; Platform-tools和Android SDKBuild-tools，注意只需要下载最新的版本就行了。
-然后就是API的选择了。我们可以看到这里提供了很多很多从Android 2.2到Android 5.x的很多版本的API，那么怎么选择呢。这里我建议，新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了（因为下载安装的速度实在太慢啦。。。）。所以如上图所示，这里我只选择了下载当前最新的Android 5.1.1(&lt;span class="caps"&gt;API&lt;/span&gt; 22)。这里需要说明的是，如果你以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装“system&amp;nbsp;images“了。不过新手的话，不知道怎么选择，还是建议直接全部勾上吧.&lt;/p&gt;
+&lt;p&gt;这里我只说几个必须要安装的，如上图所示的，Tools文件夹里面的Android &lt;span class="caps"&gt;SDK&lt;/span&gt; Tools（这个我们在之前的一步已经下载好了的，
+一般不会让你再安装了，不过有可能会让你更新），然后就是Android &lt;span class="caps"&gt;SDK&lt;/span&gt; Platform-tools和Android SDKBuild-tools，
+注意只需要下载最新的版本就行了。
+然后就是API的选择了。我们可以看到这里提供了很多很多从Android 2.2到Android 5.x的很多版本的API，那么怎么选择呢。
+这里我建议，新手的话，选择一个最新的版本就好了，因为Android是向下兼容的。其他的以后你要用到了在下载就行了
+（因为下载安装的速度实在太慢啦。。。）。所以如上图所示，这里我只选择了下载当前最新的Android 5.1.1(&lt;span class="caps"&gt;API&lt;/span&gt; 22)。
+这里需要说明的是，如果你以后不打算用模拟器调试，而是一直用真机来调试的话，那么就可以不用装“system images“了。&amp;nbsp;不过新手的话，不知道怎么选择，还是建议直接全部勾上吧.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;最后就是extras文件夹中的东西了，如下图所示:&lt;/li&gt;
 &lt;/ul&gt;
@@ -81,7 +86,185 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/vue-to-mobileapp-electron/gradle_install_4.png"&gt;&lt;/p&gt;
-&lt;p&gt;如图显示对应的gradle的信息,说明gradle的配置成功!&lt;/p&gt;</content><category term="Vuejs"></category><category term="electron"></category><category term="electron-builder"></category><category term="cordova"></category></entry><entry><title>Linux安装包遇到的问题</title><link href="https://pingbook.top/articles/python-error/" rel="alternate"></link><published>2018-08-11T22:08:13+08:00</published><updated>2018-08-11T22:08:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-11:/articles/python-error/</id><summary type="html">&lt;h3 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;如图显示对应的gradle的信息,说明gradle的配置成功!&lt;/p&gt;
+&lt;h4 id="14-genymotion"&gt;1.4 genymotion虚拟设备配置&lt;a class="headerlink" href="#14-genymotion" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;关于安装&lt;code&gt;genymotion&lt;/code&gt;的步骤这里就不再赘余了,网上一搜一大堆.这里主要记录一些遇到的问题.
+1. &lt;code&gt;genymotion&lt;/code&gt;安装成功后需要登录,这样才能使用它的增加device,下载镜像和设备android sdk的操作.
+2. 针对`android &lt;span class="caps"&gt;SDK&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;&amp;gt;=28以上,安装apk文件直接闪退,网上说的是genymotion是基于intel&amp;nbsp;pentium设计的,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;An error occured while deploying the file. &lt;/span&gt;
+&lt;span class="code-line"&gt;This probably means that the app contains ARM native code and your Genymotion device cannot run ARM instructions. You should either build your native code to x86 or install an ARM translation tool in your device.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;国内的就不要搜索, 都是一堆说使用&lt;code&gt;ARM_Translation.zip&lt;/code&gt;,结果版本要不就是 android 5.0的就是6.0的,拖进去模拟器中.再次安装app还是直接闪退不能运行.&lt;br&gt;
+&lt;a href="https://pan.baidu.com/s/1KvCbjCprPlMFEQs65xf5aA"&gt;ARM_Translation_oreo for&amp;nbsp;android8.0安装包下载&lt;/a&gt;&lt;/p&gt;</content><category term="Vuejs"></category><category term="electron"></category><category term="electron-builder"></category><category term="cordova"></category></entry><entry><title>How to build the ftp system</title><link href="https://pingbook.top/articles/vsftp_setup/" rel="alternate"></link><published>2018-08-27T16:06:29+08:00</published><updated>2018-08-27T16:06:29+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-27:/articles/vsftp_setup/</id><summary type="html">&lt;h1 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
+参考博客: 
+1. (smbd配置,忽略)https://www.conum …&lt;/p&gt;</summary><content type="html">&lt;h1 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
+参考博客: 
+1. (smbd配置,忽略)https://www.conum.cn/os/linux/210.html
+2. (vsftpdp配置)http://www.cnblogs.com/sunky/p/9418730.html&amp;nbsp;用到的操作命令如下:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. 安装vsftpd&lt;/span&gt;
+&lt;span class="code-line"&gt;$ apt-get install vsftpd &lt;/span&gt;
+&lt;span class="code-line"&gt;安装完成后,会新建一个用户组ftp和对应的用户名ftp,通过下面的命令查看他的配置&lt;/span&gt;
+&lt;span class="code-line"&gt;$ sudo nano /etc/passwd &lt;/span&gt;
+&lt;span class="code-line"&gt;已经设置成了/srv/ftp目录,这里把它改成 /ftp目录&lt;/span&gt;
+&lt;span class="code-line"&gt;2. 安装用户名和密码存放的数据库文件&lt;/span&gt;
+&lt;span class="code-line"&gt;$ aptitude search db | grep util&lt;/span&gt;
+&lt;span class="code-line"&gt;$ aptitude install db5.3-util&lt;/span&gt;
+&lt;span class="code-line"&gt;$ db5.3_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/vsftpd_login.db&lt;/span&gt;
+&lt;span class="code-line"&gt;3. 查看log&lt;/span&gt;
+&lt;span class="code-line"&gt;$ tail -f -n 50 /var/log/auth.log&lt;/span&gt;
+&lt;span class="code-line"&gt;4. 增加用户&lt;/span&gt;
+&lt;span class="code-line"&gt;4.1 先在login.txt文件中增加一行用户名记录,再另起一行加上对应的密码,保存.&lt;/span&gt;
+&lt;span class="code-line"&gt;4.2 然后在/etc/vsftpd/confs/ 文件夹中新建一个文件,文件名称是该用户名,例如用户名是`test`,那么执行如下命令:&lt;/span&gt;
+&lt;span class="code-line"&gt;sudo nano test  # 加入下面的配置代码&lt;/span&gt;
+&lt;span class="code-line"&gt;local_root=/ftp/vsftp/foldername&lt;/span&gt;
+&lt;span class="code-line"&gt;anon_world_readable_only=NO&lt;/span&gt;
+&lt;span class="code-line"&gt;write_enable=YES&lt;/span&gt;
+&lt;span class="code-line"&gt;anon_mkdir_write_enable=YES&lt;/span&gt;
+&lt;span class="code-line"&gt;anon_upload_enable=YES&lt;/span&gt;
+&lt;span class="code-line"&gt;anon_other_write_enable=YES&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="_2"&gt;常见错误&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id="500-oops-bad-bool-value-in-config-file-for-anon_world_readable_only"&gt;500 &lt;span class="caps"&gt;OOPS&lt;/span&gt;: bad bool value in config file for: anon_world_readable_only&lt;a class="headerlink" href="#500-oops-bad-bool-value-in-config-file-for-anon_world_readable_only" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;原因是你的配置文件中带有空格,使用下面的命令去除空格:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# sed -i &amp;#39;s,\r,,;s, *$,,&amp;#39; /etc/vsfttpd/confs/yourusername&lt;/span&gt;
+&lt;span class="code-line"&gt;# db5.3_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/vsftpd_login.db&lt;/span&gt;
+&lt;span class="code-line"&gt;# systemctl restart vsftpd.service&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="vsftpd"></category></entry><entry><title>Vue项目转成Cordova项目的注意事项和技巧</title><link href="https://pingbook.top/articles/cordova-android/" rel="alternate"></link><published>2018-08-27T14:33:07+08:00</published><updated>2018-08-27T14:33:07+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-27:/articles/cordova-android/</id><summary type="html">&lt;h3 id="cordova-build-android-timeout"&gt;&lt;code&gt;cordova build android&lt;/code&gt; 命令 timeout&lt;a class="headerlink" href="#cordova-build-android-timeout" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;修改对应的&lt;code&gt;build.gradle&lt;/code&gt;文件中的内容为如下内容: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;buildscript …&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3 id="cordova-build-android-timeout"&gt;&lt;code&gt;cordova build android&lt;/code&gt; 命令 timeout&lt;a class="headerlink" href="#cordova-build-android-timeout" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;修改对应的&lt;code&gt;build.gradle&lt;/code&gt;文件中的内容为如下内容: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;buildscript&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="err"&gt;repositories&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;//&lt;/span&gt;        &lt;span class="err"&gt;jcenter()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;        &lt;span class="err"&gt;maven&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;            &lt;span class="err"&gt;url&lt;/span&gt; &lt;span class="err"&gt;&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;maven&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;aliyun&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nexus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;content&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;groups&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;public&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;        }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;    dependencies {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;        // NOTE: Do not place your application dependencies here; they belong&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;        // in the individual module build.gradle files&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;        classpath &amp;#39;com.android.tools.build:gradle:3.0.0&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;allprojects {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;    repositories {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;//        jcenter()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;        maven {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;            url &amp;quot;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="n"&gt;maven&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;aliyun&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nexus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;content&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;groups&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;public&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;        }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;    //This replaces project.properties w.r.t. build settings&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;    project.ext {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="s2"&gt;      defaultBuildToolsVersion=&amp;quot;&lt;/span&gt;&lt;span class="mf"&gt;25.0.2&lt;/span&gt;&lt;span class="err"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;      &lt;span class="n"&gt;defaultMinSdkVersion&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;19&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Minimum&lt;/span&gt; &lt;span class="n"&gt;requirement&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;Android&lt;/span&gt; &lt;span class="mf"&gt;4.4&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;      &lt;span class="n"&gt;defaultTargetSdkVersion&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;We&lt;/span&gt; &lt;span class="n"&gt;ALWAYS&lt;/span&gt; &lt;span class="n"&gt;target&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;latest&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="kc"&gt;default&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;      &lt;span class="n"&gt;defaultCompileSdkVersion&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;We&lt;/span&gt; &lt;span class="n"&gt;ALWAYS&lt;/span&gt; &lt;span class="n"&gt;compile&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;latest&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="kc"&gt;default&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;task&lt;/span&gt; &lt;span class="nt"&gt;clean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;Delete&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="err"&gt;delete&lt;/span&gt; &lt;span class="err"&gt;rootProject.buildDir&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="_1"&gt;设置图标&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在cordova5.0版本以后，需要安装cordova-plugin-splashscreen插件以后才能修改和设置App的启动页面。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="splashscreen"&gt;安装splashscreen插件&lt;a class="headerlink" href="#splashscreen" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cordova plugin add cordova-plugin-splashscreen&lt;/span&gt;
+&lt;span class="code-line"&gt;或&lt;/span&gt;
+&lt;span class="code-line"&gt;cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id="_2"&gt;基本配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;在你的config.xml文件中(一般在如下目录类似:&amp;nbsp;projectname/config.xml)，添加以下代码:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;platform&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;android&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ldpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/android/icon-36-ldpi.png&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/android/icon-48-mdpi.png&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;hdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/android/icon-72-hdpi.png&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xhdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/android/icon-96-xhdpi.png&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xxhdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/android/icon-144-xxhdpi.png&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xxxhdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/android/icon-192-xxxhdpi.png&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;   &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;land-hdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-hdpi-landscape.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;land-ldpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-ldpi-landscape.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;land-mdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-mdpi-landscape.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;land-xhdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-xhdpi-landscape.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;port-hdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-hdpi-portrait.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;port-ldpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-ldpi-portrait.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;port-mdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-mdpi-portrait.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;density&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;port-xhdpi&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/android/screen-xhdpi-portrait.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;platform&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;platform&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ios&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iOS&lt;/span&gt; &lt;span class="mf"&gt;8.0&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iPhone&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="n"&gt;Plus&lt;/span&gt;  &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-60@3x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;180&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;180&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iOS&lt;/span&gt; &lt;span class="mf"&gt;7.0&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iPhone&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;iPod&lt;/span&gt; &lt;span class="n"&gt;Touch&lt;/span&gt;  &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-60.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;60&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;60&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-60@2x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;120&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;120&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iPad&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-76.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;76&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;76&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-76@2x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;152&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;152&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iOS&lt;/span&gt; &lt;span class="mf"&gt;6.1&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;Spotlight&lt;/span&gt; &lt;span class="n"&gt;Icon&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-40.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;40&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;40&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-40@2x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;80&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;80&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iPhone&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;iPod&lt;/span&gt; &lt;span class="n"&gt;Touch&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;57&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;57&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon@2x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;114&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;114&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iPad&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-72.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;72&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;72&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-72@2x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;144&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;144&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iPhone&lt;/span&gt; &lt;span class="n"&gt;Spotlight&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;Settings&lt;/span&gt; &lt;span class="n"&gt;Icon&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-small.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;29&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;29&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-small@2x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;58&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;58&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-small@3x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;87&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;87&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="n"&gt;iPad&lt;/span&gt; &lt;span class="n"&gt;Spotlight&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;Settings&lt;/span&gt; &lt;span class="n"&gt;Icon&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-50.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;50&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;50&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/icon/ios/icon-50@2x.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default~iphone.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;320&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;480&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default@2x~iphone.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;640&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;960&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-Portrait~ipad.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;768&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1024&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-Portrait@2x~ipad.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1536&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2048&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-Landscape~ipad.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1024&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;768&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-Landscape@2x~ipad.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2048&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1536&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-568h@2x~iphone.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;640&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1136&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-667h.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;750&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1334&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-736h.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1242&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2208&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;res/screen/ios/Default-Landscape-736h.png&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2208&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1242&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;  &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;platform&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id="_3"&gt;应用程序启动的图标和时间&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;参考文章:&amp;nbsp;https://www.jianshu.com/p/3ad9538cf5fe&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;  &amp;lt;!--自动隐藏启动页面AutoHideSplashScreen--&amp;gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &amp;lt;preference name=&amp;quot;AutoHideSplashScreen&amp;quot; value=&amp;quot;false&amp;quot; /&amp;gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &amp;lt;!--显示启动页面的时间长度SplashScreenDelay--&amp;gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &amp;lt;preference name=&amp;quot;SplashScreenDelay&amp;quot; value=&amp;quot;3000&amp;quot; /&amp;gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &amp;lt;!--是否显示淡入淡出效果--&amp;gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &amp;lt;preference name=&amp;quot;FadeSplashScreen&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &amp;lt;!--FadeSplashScreenDuration时间是包含在SplashScreenDelay的时间里的。--&amp;gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  &amp;lt;preference name=&amp;quot;FadeSplashScreenDuration&amp;quot; value=&amp;quot;750&amp;quot;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Cordova"></category><category term="Vuejs"></category></entry><entry><title>怎么放大缩小图片的尺寸和图片尺寸转换</title><link href="https://pingbook.top/articles/how-resize-image/" rel="alternate"></link><published>2018-08-27T13:18:11+08:00</published><updated>2018-08-27T13:18:11+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-27:/articles/how-resize-image/</id><summary type="html">&lt;h2 id="_1"&gt;分享一个好用的网站可以用于放大缩小图片&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: 
+ &lt;a href="http://resizeimage.net/"&gt;resize&amp;nbsp;images&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;分享一个好用的网站可以用于放大缩小图片&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: 
+ &lt;a href="http://resizeimage.net/"&gt;resize&amp;nbsp;images&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Linux安装包遇到的问题</title><link href="https://pingbook.top/articles/python-error/" rel="alternate"></link><published>2018-08-11T22:08:13+08:00</published><updated>2018-08-11T22:08:13+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-11:/articles/python-error/</id><summary type="html">&lt;h3 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;在尝试安装samba的时候,服务器端总是报如下的错误:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;error processing package python-dnspython&lt;/span&gt;
 &lt;span class="code-line"&gt; Sub-process /usr/bin …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -230,46 +413,7 @@ LC_ALL和LANG优先级的关系：LC_ALL &amp;gt; LC_* &amp;gt; &lt;span class="
 &lt;p&gt;命令行中英文切换,本地安装的是中文字符集
 $ export LC_ALL=C&lt;br&gt;
 $ unset&amp;nbsp;LC_ALL&lt;/p&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>How to build the ftp system</title><link href="https://pingbook.top/articles/vsftp_setup/" rel="alternate"></link><published>2018-08-10T11:41:48+08:00</published><updated>2018-08-10T11:41:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-10:/articles/vsftp_setup/</id><summary type="html">&lt;h1 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
-参考博客:&amp;nbsp;https://www.conum.cn/os/linux …&lt;/p&gt;</summary><content type="html">&lt;h1 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
-参考博客:&amp;nbsp;https://www.conum.cn/os/linux/210.html&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1. 安装vsftpd&lt;/span&gt;
-&lt;span class="code-line"&gt;$ apt-get install vsftpd &lt;/span&gt;
-&lt;span class="code-line"&gt;安装完成后,会新建一个用户组ftp和对应的用户名ftp,通过下面的命令查看他的配置&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano /etc/passwd &lt;/span&gt;
-&lt;span class="code-line"&gt;已经设置成了/srv/ftp目录,这里把它改成 /ftp目录&lt;/span&gt;
-&lt;span class="code-line"&gt;$ aptitude search db | grep util&lt;/span&gt;
-&lt;span class="code-line"&gt;$ aptitude install db5.3-util&lt;/span&gt;
-&lt;span class="code-line"&gt;$ db5.3_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/vsftpd_login.db&lt;/span&gt;
-&lt;span class="code-line"&gt;$ chmod 600 /etc/vsftpd/ftpusers.db&lt;/span&gt;
-&lt;span class="code-line"&gt;2. 查看log&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tail -f -n 50 /var/log/auth.log&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;http://www.cnblogs.com/sunky/p/9418730.html
- useradd -d /srv/ftp/shares yaoliang
- passwd yaoliang
- usermod -s /sbin/nologin yaoliang
- usermod -s /sbin/bash yaoliang
- usermod -d /srv/ftp/shares yaoliang
- walterhu
- 123456
-yaoliang&lt;br&gt;
-123456
-zhouruoting
-123456
-wangguorong
-123456
-shidajiang
-123456
-liyixuan
-123456
-zhengze&amp;nbsp;123456&lt;/p&gt;
-&lt;p&gt;查看端口号&lt;/p&gt;
-&lt;p&gt;netstat&amp;nbsp;-npl&lt;/p&gt;</content><category term="vsftpd"></category></entry><entry><title>[面试] 5. 性能测试相关的涉及内容</title><link href="https://pingbook.top/articles/5-software-performance-testing/" rel="alternate"></link><published>2018-07-26T21:40:09+08:00</published><updated>2018-07-26T21:40:09+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-26:/articles/5-software-performance-testing/</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>[面试] 5. 性能测试相关的涉及内容</title><link href="https://pingbook.top/articles/5-software-performance-testing/" rel="alternate"></link><published>2018-07-26T21:40:09+08:00</published><updated>2018-07-26T21:40:09+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-26:/articles/5-software-performance-testing/</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&amp;nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -1264,316 +1408,4 @@ Visit Windows Update again, and then check for and install&amp;nbsp;updates.&lt;
 
 
 &lt;h2 id="_2"&gt;基本概念&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;pass&lt;/p&gt;</content><category term="bigdata"></category><category term="hadoop"></category></entry><entry><title>[树莓派] 树莓派国内镜像</title><link href="https://pingbook.top/articles/pi-mirrors/" rel="alternate"></link><published>2018-07-13T20:45:03+08:00</published><updated>2018-07-13T20:45:03+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-mirrors/</id><summary type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2 id="_1"&gt;前因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id="_2"&gt;为树莓派更换国内镜像源&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;(2018-07-07更新: 清华的镜像源已经不能使用: Cannot …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2 id="_1"&gt;前因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自己在Github&amp;nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id="_2"&gt;为树莓派更换国内镜像源&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;(2018-07-07更新: 清华的镜像源已经不能使用: Cannot initiate the connection to mirrors.tuna.tsinghua.edu.cn:80)
-可用的官方镜像源: http://www.raspbian.org/RaspbianMirrors&lt;br&gt;&amp;nbsp;使用管理员权限（经由sudo），编辑/etc/apt/sources.list文件。参考命令行为：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/apt/sources.list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;用#注释掉原文件内容，用以下内容取代使用上海大学或者是中科大(https://mirrors.ustc.edu.cn/archive.raspberrypi.org/)的镜像：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.shu.edu.cn/raspbian/raspbian/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;contrib&lt;/span&gt; &lt;span class="kp"&gt;non-free&lt;/span&gt; &lt;span class="kp"&gt;rpi&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;使用管理员权限（经由sudo），编辑/etc/apt/sources.list.d/raspi.list文件。参考命令行为：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/apt/sources.list.d/raspi.list&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;用#注释掉原文件内容，用以下内容取代：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;deb&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;deb-src&lt;/span&gt; &lt;span class="s"&gt;https://mirrors.ustc.edu.cn/archive.raspberrypi.org/&lt;/span&gt; &lt;span class="kp"&gt;stretch&lt;/span&gt; &lt;span class="kp"&gt;main&lt;/span&gt; &lt;span class="kp"&gt;ui&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;注意： 网址末尾的raspbian重复两次是必须的。因为Raspbian的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。&lt;br&gt;
-编辑镜像站后，请使用&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;命令，更新软件源列表，同时检查您的编辑是否正确。
-使用HTTPS可以有效避免国内运营商的缓存劫持，但需要事先安装&lt;code&gt;apt-transport-https&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="树莓派"></category><category term="nat123"></category><category term="树莓派镜像"></category></entry><entry><title>[环境搭建] Debian安装编译和安装nginx服务器</title><link href="https://pingbook.top/articles/pi-nginx/" rel="alternate"></link><published>2018-07-13T20:44:35+08:00</published><updated>2018-07-13T20:44:35+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-13:/articles/pi-nginx/</id><summary type="html">&lt;h2 id="debiannginx"&gt;Debian安装配置nginx服务器&lt;a class="headerlink" href="#debiannginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;下载解压缩安装包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://nginx.org/download/nginx-1.15 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="debiannginx"&gt;Debian安装配置nginx服务器&lt;a class="headerlink" href="#debiannginx" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;下载解压缩安装包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://nginx.org/download/nginx-1.15.1.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf nginx-1.15.1.tar.gz &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重新配置nginx的服务器名称servername和对应版本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano  src/http/ngx_http_header_filter_module.c&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano  src/core/nginx.h&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano nginx-1.15.1-openbook.top.tar.gz nginx-1.15.1/&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;安装对应的nginx的所有依赖的包, gcc环境, pcre, zlib and&amp;nbsp;openssl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install build-essential -y&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf pcre-8.41.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget http://www.zlib.net/zlib-1.2.11.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar -zxvf zlib-1.2.11.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz &lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar zxvf openssl-1.1.0g.tar.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; openssl-1.1.0g&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./config -Wl,--enable-new-dtags,-rpath,&lt;span class="s1"&gt;&amp;#39;$(LIBRPATH)&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make  &lt;span class="c1"&gt;# 大约五六分钟左右&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ openssl version -a&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;安装nginx
-参考说明文档: &lt;a href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04"&gt;https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; nginx-1.15.1&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --sbin-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/sbin/nginx &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --modules-path&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib/nginx/modules &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --conf-path&lt;span class="o"&gt;=&lt;/span&gt;/etc/nginx/nginx.conf &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --error-log-path&lt;span class="o"&gt;=&lt;/span&gt;/var/log/nginx/error.log &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-log-path&lt;span class="o"&gt;=&lt;/span&gt;/var/log/nginx/access.log &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --pid-path&lt;span class="o"&gt;=&lt;/span&gt;/run/nginx.pid &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --lock-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lock/nginx.lock &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --user&lt;span class="o"&gt;=&lt;/span&gt;www-data &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --group&lt;span class="o"&gt;=&lt;/span&gt;www-data &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-client-body-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/body &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-fastcgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/fastcgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-proxy-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/proxy &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-scgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/scgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --http-uwsgi-temp-path&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/nginx/uwsgi &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl&lt;span class="o"&gt;=&lt;/span&gt;../openssl-1.1.0g &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;enable-ec_nistp_64_gcc_128 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-nextprotoneg &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-weak-ssl-ciphers &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-openssl-opt&lt;span class="o"&gt;=&lt;/span&gt;no-ssl3 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-pcre&lt;span class="o"&gt;=&lt;/span&gt;../pcre-8.41 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-pcre-jit &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-zlib&lt;span class="o"&gt;=&lt;/span&gt;../zlib-1.2.11 &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-compat &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-file-aio &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-threads &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_addition_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_auth_request_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_dav_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_flv_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_gunzip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_gzip_static_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_mp4_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_random_index_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_realip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_slice_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_sub_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_stub_status_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_v2_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-http_secure_link_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-mail &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-mail_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream_realip_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream_ssl_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-stream_ssl_preread_module &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-debug &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-cc-opt&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            --with-ld-opt&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make   &lt;span class="c1"&gt;#这个操作需要花费十分钟左右&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo systemctl start nginx.service &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; nginx.service&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="_1"&gt;遇到的问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;nginx: [emerg] mkdir() &amp;quot;/var/lib/nginx/body&amp;quot; failed&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Just create directory
-&lt;code&gt;$ sudo mkdir -p /var/lib/nginx &amp;amp;&amp;amp; sudo nginx -t&lt;/code&gt;
-&lt;code&gt;$ sudo nano /lib/systemd/system/nginx.service&lt;/code&gt;
-输入如下内容&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;# Stop dance for nginx&lt;/span&gt;
-&lt;span class="code-line"&gt;# =======================&lt;/span&gt;
-&lt;span class="code-line"&gt;#&lt;/span&gt;
-&lt;span class="code-line"&gt;# ExecStop sends SIGSTOP (graceful stop) to the nginx process.&lt;/span&gt;
-&lt;span class="code-line"&gt;# If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control&lt;/span&gt;
-&lt;span class="code-line"&gt;# and sends SIGTERM (fast shutdown) to the main process.&lt;/span&gt;
-&lt;span class="code-line"&gt;# After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends&lt;/span&gt;
-&lt;span class="code-line"&gt;# SIGKILL to all the remaining processes in the process group (KillMode=mixed).&lt;/span&gt;
-&lt;span class="code-line"&gt;#&lt;/span&gt;
-&lt;span class="code-line"&gt;# nginx signals reference doc:&lt;/span&gt;
-&lt;span class="code-line"&gt;# http://nginx.org/en/docs/control.html&lt;/span&gt;
-&lt;span class="code-line"&gt;#&lt;/span&gt;
-&lt;span class="code-line"&gt;[Unit]&lt;/span&gt;
-&lt;span class="code-line"&gt;Description=A high performance web server and a reverse proxy server&lt;/span&gt;
-&lt;span class="code-line"&gt;Documentation=man:nginx(8)&lt;/span&gt;
-&lt;span class="code-line"&gt;After=network.target&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;[Service]&lt;/span&gt;
-&lt;span class="code-line"&gt;Type=forking&lt;/span&gt;
-&lt;span class="code-line"&gt;PIDFile=/run/nginx.pid&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecStartPre=/usr/sbin/nginx -t -q -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecStart=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecReload=/usr/sbin/nginx -g &amp;#39;daemon on; master_process on;&amp;#39; -s reload&lt;/span&gt;
-&lt;span class="code-line"&gt;ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid&lt;/span&gt;
-&lt;span class="code-line"&gt;TimeoutStopSec=5&lt;/span&gt;
-&lt;span class="code-line"&gt;KillMode=mixed&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;[Install]&lt;/span&gt;
-&lt;span class="code-line"&gt;WantedBy=multi-user.target&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重启nginx服务
-&lt;code&gt;sudo systemctl start nginx.service &amp;amp;&amp;amp; sudo systemctl enable nginx.service&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;check nginx service is&amp;nbsp;up&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo systemctl status nginx.service&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ps aux &lt;span class="p"&gt;|&lt;/span&gt; grep nginx&lt;/span&gt;
-&lt;span class="code-line"&gt;$ curl -I &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重启nginx出现&lt;code&gt;Directory index of "/www/pingbook.top/pingbook.top/output/" is forbidden,&lt;/code&gt;
-解决方法是在location里面设置index&amp;nbsp;index.html,如下: &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;  location / {&lt;/span&gt;
-&lt;span class="code-line"&gt;     # 使用alias时，目录名后面一定要加”/“&lt;/span&gt;
-&lt;span class="code-line"&gt;     alias /www/pingbook.top/pingbook.top/output/;&lt;/span&gt;
-&lt;span class="code-line"&gt;     index index.html;&lt;/span&gt;
-&lt;span class="code-line"&gt;     try_files $uri $uri/ index.html last;&lt;/span&gt;
-&lt;span class="code-line"&gt;  }&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="https"&gt;Https 加密你的网站&lt;a class="headerlink" href="#https" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;参考文档:&amp;nbsp;https://certbot.eff.org/lets-encrypt/debianother-nginx&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$  sudo wget https://dl.eff.org/certbot-auto&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo chmod a+x certbot-auto&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="c1"&gt;# 获取证书&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo ./certbot-auto certonly --standalone --email alterhu2020@gmail.com -d pingbook.top -d www.pingbook.top&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;报错如下,很多的依赖没有安装成功:&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package python-zope.component &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;Setting up libaugeas0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.8.0-1+deb9u1&lt;span class="o"&gt;)&lt;/span&gt; ...&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of python-mock:&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock depends on python-funcsigs &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-funcsigs is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock depends on python-pbr &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.3&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-pbr is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock depends on python-six &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.9&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-six is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package python-mock &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of python-requests:&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests depends on python-urllib3 &lt;span class="o"&gt;(&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.19.1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-urllib3 is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests depends on python-chardet&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-chardet is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests depends on python-urllib3 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt; 1.1&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;.2&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-urllib3 is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package python-requests &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: dependency problems prevent configuration of certbot:&lt;/span&gt;
-&lt;span class="code-line"&gt; certbot depends on python-certbot &lt;span class="o"&gt;(=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;.10.2-1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; however:&lt;/span&gt;
-&lt;span class="code-line"&gt;  Package python-certbot is not configured yet.&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;dpkg: error processing package certbot &lt;span class="o"&gt;(&lt;/span&gt;--configure&lt;span class="o"&gt;)&lt;/span&gt;:&lt;/span&gt;
-&lt;span class="code-line"&gt; dependency problems - leaving unconfigured&lt;/span&gt;
-&lt;span class="code-line"&gt;Processing triggers &lt;span class="k"&gt;for&lt;/span&gt; libc-bin &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.24-11+deb9u3&lt;span class="o"&gt;)&lt;/span&gt; ...&lt;/span&gt;
-&lt;span class="code-line"&gt;Errors were encountered &lt;span class="k"&gt;while&lt;/span&gt; processing:&lt;/span&gt;
-&lt;span class="code-line"&gt; python-dnspython&lt;/span&gt;
-&lt;span class="code-line"&gt; python-idna&lt;/span&gt;
-&lt;span class="code-line"&gt; python-parsedatetime&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pyasn1&lt;/span&gt;
-&lt;span class="code-line"&gt; python-tz&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pkg-resources&lt;/span&gt;
-&lt;span class="code-line"&gt; python-configargparse&lt;/span&gt;
-&lt;span class="code-line"&gt; python-six&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.interface&lt;/span&gt;
-&lt;span class="code-line"&gt; python-psutil&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pbr&lt;/span&gt;
-&lt;span class="code-line"&gt; python-enum34&lt;/span&gt;
-&lt;span class="code-line"&gt; python-cryptography&lt;/span&gt;
-&lt;span class="code-line"&gt; python-virtualenv&lt;/span&gt;
-&lt;span class="code-line"&gt; python-funcsigs&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.hookable&lt;/span&gt;
-&lt;span class="code-line"&gt; python-ipaddress&lt;/span&gt;
-&lt;span class="code-line"&gt; python-pyicu&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.event&lt;/span&gt;
-&lt;span class="code-line"&gt; python-rfc3339&lt;/span&gt;
-&lt;span class="code-line"&gt; python-setuptools&lt;/span&gt;
-&lt;span class="code-line"&gt; python-urllib3&lt;/span&gt;
-&lt;span class="code-line"&gt; python-configobj&lt;/span&gt;
-&lt;span class="code-line"&gt; python-chardet&lt;/span&gt;
-&lt;span class="code-line"&gt; python-acme&lt;/span&gt;
-&lt;span class="code-line"&gt; python-openssl&lt;/span&gt;
-&lt;span class="code-line"&gt; python-certbot&lt;/span&gt;
-&lt;span class="code-line"&gt; python-zope.component&lt;/span&gt;
-&lt;span class="code-line"&gt; python-mock&lt;/span&gt;
-&lt;span class="code-line"&gt; python-requests&lt;/span&gt;
-&lt;span class="code-line"&gt; certbot&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Sub-process /usr/bin/dpkg returned an error code&amp;nbsp;(1)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /var/cache/apt/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; archives/&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo rm -rf *&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;所以我想起以前用的一个网友的脚本,不用安装一堆繁杂的包,地址:
-&lt;a href="https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/README-CN.md"&gt;https://github.com/xdtianyu/scripts/blob/master/lets-encrypt/&lt;span class="caps"&gt;README&lt;/span&gt;-&lt;span class="caps"&gt;CN&lt;/span&gt;.md&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;
-1. 在nginx的配置文件里面配置location:
- &amp;#8220;`
-  # https 配置Let’s&amp;nbsp;Encrypt&lt;/p&gt;
-&lt;p&gt;location ^~ /.well-known/acme-challenge/ {
-   allow all;
-   default_type &amp;ldquo;text/plain&amp;rdquo;;
-   root /www;&amp;nbsp;}&lt;/p&gt;
-&lt;p&gt;$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
-$ sudo wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
-$ sudo chmod +x letsencrypt.sh
-$ sudo nano letsencrypt.conf
-$ sudo ./letsencrypt.sh&amp;nbsp;letsencrypt.conf&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;###  删除已经安装的nginx&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1 id="sudo-apt-update-sudo-apt-upgrade-y-update-all-package-index"&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y  # update all package index&lt;a class="headerlink" href="#sudo-apt-update-sudo-apt-upgrade-y-update-all-package-index" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id="sudo-apt-get-purge-nginx-nginx-common-removes-everything"&gt;sudo apt-get purge nginx nginx-common # Removes everything.&lt;a class="headerlink" href="#sudo-apt-get-purge-nginx-nginx-common-removes-everything" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;nginx 采用的C语言编写的,需要对应的C编译器(&lt;span class="caps"&gt;GCC&lt;/span&gt;):&lt;/p&gt;
-&lt;h1 id="sudo-apt-install-build-essential-y"&gt;sudo apt install build-essential -y&lt;a class="headerlink" href="#sudo-apt-install-build-essential-y" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="nginx"></category></entry></feed>
+&lt;p&gt;pass&lt;/p&gt;</content><category term="bigdata"></category><category term="hadoop"></category></entry></feed>

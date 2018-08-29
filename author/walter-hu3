@@ -122,7 +122,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <p>到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.
   <span class="caps">AI</span> = <span class="caps">ML …</span></p></blockquote> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -152,7 +152,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <blockquote>
 <p>(2018-07-07更新: 清华的镜像源已经不能使用: Cannot …</p></blockquote> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/pi-mirrors/" rel="bookmark" title="Permalink to [树莓派] 树莓派国内镜像"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-mirrors/" rel="bookmark" title="Permalink to [树莓派] 树莓派国内镜像">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -180,7 +180,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </ul>
 <div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15 …</span></pre></div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -206,7 +206,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <em> <a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/">https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/</a><br>
 </em> 推荐: <a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33">https …</a></p></blockquote> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -237,7 +237,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <ol start="2">
 <li>启动 <code>svn …</code></li></ol> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/pi-svn/" rel="bookmark" title="Permalink to [环境搭建] svn 安装配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-svn/" rel="bookmark" title="Permalink to [环境搭建] svn 安装配置">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -260,7 +260,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <div class="entry-content"> <h2 id="_1">安装步骤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download …</a></p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -289,7 +289,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <ol>
 <li><span class="caps">67MB</span>&nbsp;vfat格式的引导分区（系统启动后被挂载在/boot目录 …</li></ol> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to [树莓派] 树莓派3B安装"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to [树莓派] 树莓派3B安装">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -319,7 +319,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 <li>百度站长  </li>
 <li>Google …</li></ol></blockquote> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [Pelican高级] pelican 博客高级配置"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [Pelican高级] pelican 博客高级配置">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -345,7 +345,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 </blockquote>
 <h2 id="_1">关键字 …</h2> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [Pelican初级] pelican 博客搭建"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [Pelican初级] pelican 博客搭建">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -368,7 +368,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                 <div class="entry-content"> <p>参考博客: <a href="https://www.cnblogs.com/molrang/p/6420918.html">https://www.cnblogs.com/molrang/p/6420918.html</a></p>
 <h2 id="_1">自动化测试 …</h2> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 4. 白盒测试需要关注的知识点"><i class="icon-arrow-right"></i>Read More<i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 4. 白盒测试需要关注的知识点">Read More<i class="icon-arrow-right"></i></a></div>
 
 
 
@@ -431,6 +431,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <h4>Tags</h4>
             <ul class="blank">
                     <li class="tag-4"><a href="../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../tag/intellij-idea/">IntelliJ Idea</a></li>
                     <li class="tag-4"><a href="../tag/javascript/">JavaScript</a></li>
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
                     <li class="tag-2"><a href="../tag/vuejs/">Vuejs</a></li>
@@ -439,27 +440,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../tag/electron/">electron</a></li>
                     <li class="tag-4"><a href="../tag/electron-builder/">electron-builder</a></li>
-                    <li class="tag-4"><a href="../tag/hadoop/">hadoop</a></li>
-                    <li class="tag-1"><a href="../tag/java/">java</a></li>
-                    <li class="tag-4"><a href="../tag/license/">license</a></li>
-                    <li class="tag-4"><a href="../tag/linux/">linux</a></li>
-                    <li class="tag-4"><a href="../tag/list/">list</a></li>
-                    <li class="tag-4"><a href="../tag/machine-learning/">machine learning</a></li>
-                    <li class="tag-4"><a href="../tag/mysql/">mysql</a></li>
-                    <li class="tag-4"><a href="../tag/mysqlbei-fen/">mysql备份</a></li>
-                    <li class="tag-2"><a href="../tag/nat123/">nat123</a></li>
-                    <li class="tag-4"><a href="../tag/nginx/">nginx</a></li>
-                    <li class="tag-2"><a href="../tag/pelican/">pelican</a></li>
-                    <li class="tag-4"><a href="../tag/performance-testing/">performance testing</a></li>
-                    <li class="tag-4"><a href="../tag/python3/">python3</a></li>
-                    <li class="tag-4"><a href="../tag/tensorflow/">tensorflow</a></li>
-                    <li class="tag-4"><a href="../tag/uninstall-netframework/">uninstall .netframework</a></li>
-                    <li class="tag-4"><a href="../tag/vsftpd/">vsftpd</a></li>
-                    <li class="tag-4"><a href="../tag/fen-ceng/">分层</a></li>
-                    <li class="tag-1"><a href="../tag/shu-mei-pai/">树莓派</a></li>
-                    <li class="tag-4"><a href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a></li>
-                    <li class="tag-4"><a href="../tag/mian-xiang-dui-xiang/">面向对象</a></li>
-                    <li class="tag-1"><a href="../tag/mian-shi/">面试</a></li>
             </ul>
         </nav>
 
@@ -500,13 +480,13 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 <div class="container.nopad bg">
 
-    <footer id="credits" class="row" style="margin-bottom: 0px">
+    <footer id="credits" class="row" style="margin-bottom: 0px;text-align: center;">
         <div class="seven columns left-center">
 
             <address id="about" class="vcard body">
                 ©
                 <script>document.write(new Date().getFullYear())</script>
-                PingBook.Inc. Powered by <a href="http://getpelican.com/">Pelican</a>.
+                PingBook.top. Powered by <a href="http://getpelican.com/">Pelican</a>.
                 <!--<br />-->
                 <div>
                     <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,

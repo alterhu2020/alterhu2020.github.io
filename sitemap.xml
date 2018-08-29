@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-08-29T17:34:21-00:00</lastmod>
+<lastmod>2018-08-29T18:19:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-08-29T17:34:21-00:00</lastmod>
+<lastmod>2018-08-29T18:19:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/about</loc>
-<lastmod>2018-08-25T23:38:19+08:00</lastmod>
+<lastmod>2018-08-29T18:12:35+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/change-log</loc>
-<lastmod>2018-08-25T23:39:52+08:00</lastmod>
+<lastmod>2018-08-29T18:13:12+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
+<loc>https://pingbook.top/articles/jetbrain-idea-licenseserver/</loc>
+<lastmod>2018-08-29T18:16:46+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
 <loc>https://pingbook.top/articles/random_string/</loc>
-<lastmod>2018-08-29T17:34:14+08:00</lastmod>
+<lastmod>2018-08-29T17:46:12+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -90,13 +97,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/articles/sql-best-tips/</loc>
 <lastmod>2018-07-25T23:46:15+08:00</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/articles/jetbrain-idea-licenseserver/</loc>
-<lastmod>2018-07-25T21:40:38+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -299,14 +299,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/javascript/</loc>
-<lastmod>2018-08-29T17:34:14+08:06</lastmod>
+<lastmod>2018-08-29T17:46:12+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/category/java/</loc>
-<lastmod>2018-07-25T21:40:38+08:06</lastmod>
+<lastmod>2018-08-29T18:16:46+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -319,8 +319,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pingbook.top/tag/intellij-idea/</loc>
+<lastmod>2018-08-29T18:16:46+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://pingbook.top/tag/javascript/</loc>
-<lastmod>2018-08-29T17:34:14+08:06</lastmod>
+<lastmod>2018-08-29T17:46:12+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -377,13 +384,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/tag/mian-shi/</loc>
 <lastmod>2018-07-26T21:40:09+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://pingbook.top/tag/license/</loc>
-<lastmod>2018-07-25T21:40:38+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -565,7 +565,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/author/walter-hu</loc>
-<lastmod>2018-08-29T17:34:14+08:06</lastmod>
+<lastmod>2018-08-29T18:16:46+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-04T13:46:47+08:00</updated><entry><title>VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-04T13:46:47+08:00</published><updated>2018-09-04T13:46:47+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;测试时间: 2018.09.02
-VirtualBox版本: 5.2.18
-MacOS版本 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;测试时间: 2018.09.02
-VirtualBox版本: 5.2.18
-MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&amp;nbsp;https://blog.csdn.net/icarus666/article/details/79536388中下载的镜像&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-04T17:48:48+08:00</updated><entry><title>七牛云配置详解(2018-09-04)</title><link href="https://pingbook.top/articles/qiniu-upload-config/" rel="alternate"></link><published>2018-09-04T17:48:48+08:00</published><updated>2018-09-04T17:48:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/qiniu-upload-config/</id><summary type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&amp;nbsp;可以保存用户的数据的安全.&lt;/p&gt;
+&lt;h4 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用到的参数:
+1. appKey
+2 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&amp;nbsp;可以保存用户的数据的安全.&lt;/p&gt;
+&lt;h4 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用到的参数:
+1. appKey
+2. appSecret
+3.&amp;nbsp;BucketName&lt;/li&gt;
+&lt;/ul&gt;</content><category term="七牛"></category></entry><entry><title>VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-04T17:00:08+08:00</published><updated>2018-09-04T17:00:08+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;测试时间:&amp;nbsp;2018.09.02&lt;/li&gt;
+&lt;li&gt;VirtualBox版本:&amp;nbsp;5.2.18&lt;/li&gt;
+&lt;li&gt;MacOS版本 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;测试时间:&amp;nbsp;2018.09.02&lt;/li&gt;
+&lt;li&gt;VirtualBox版本:&amp;nbsp;5.2.18&lt;/li&gt;
+&lt;li&gt;MacOS版本：macOS High Sierra 10.13.iso, 下载地址:   https://blog.csdn.net/icarus666/article/details/79536388中下载的镜像
+,可以到我的网盘下载: &lt;a href="https://pan.baidu.com/s/1QJmfh9iV273bDA-fy9UfCg"&gt;macOS High Sierra&amp;nbsp;10.13.iso&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="_2"&gt;参考地址&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://blog.csdn.net/xiangyuecn/article/details/79867173"&gt;总结的参考博客&lt;/a&gt;  &lt;/li&gt;
@@ -15,20 +33,38 @@ MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&amp;nbsp;https://blog.c
 &lt;h3 id="_3"&gt;用到的修改命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd &amp;quot;C:\Program Files\Oracle\VirtualBox\&amp;quot;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage.exe modifyvm &amp;quot;MacOS1012&amp;quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage.exe modifyvm &amp;quot;MacOS10.13&amp;quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;quot; &amp;quot;iMac11,3&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;quot; &amp;quot;iMac11,3&amp;quot;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;quot; &amp;quot;1.0&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;quot; &amp;quot;1.0&amp;quot;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;quot; &amp;quot;Iloveapple&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;quot; &amp;quot;Iloveapple&amp;quot;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;quot; &amp;quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;quot; &amp;quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;quot;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;quot; 1&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;quot; 1&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3 id="_4"&gt;可能的错误&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;错误提示 `Querying &amp;ldquo;&lt;span class="caps"&gt;UUID&lt;/span&gt;&amp;rdquo; failed&amp;nbsp;(VERR_CFGM_VALUE_NOT_FOUND)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Solution: because of &lt;span class="caps"&gt;EFI&lt;/span&gt; settings. If you already tried all combinations of &lt;span class="caps"&gt;EFI&lt;/span&gt; and Chipset (4 cases) and it still doesn’t help then just give up. The &lt;span class="caps"&gt;VM&lt;/span&gt; won’t work on your machine. 只需要在如下设置里面勾选&amp;rdquo;&lt;strong&gt;启用EFI&lt;/strong&gt;&amp;ldquo;即可.如下截图:
+&lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;When install &amp;rdquo; there is no enough free space on sierra custom installer to install &amp;ldquo;&lt;blockquote&gt;
+&lt;p&gt;Solution: From the top menu, choose &amp;ldquo;Utilities&amp;rdquo;=&amp;gt; &amp;ldquo;Disk Utility&amp;rdquo;,and open the dialog, see below screnenshot:
+&lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error_2.png"&gt;
+  then from the right check the virtualbox&amp;rsquo;s disk and select &amp;ldquo;Erasing&amp;rdquo;,and input the new disk name and format.etc. see below screenshot:
+  &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error_3.png"&gt;
+  Go back the install screenshot, or restart the virtualmachine, then you could see &amp;ldquo;&lt;span class="caps"&gt;YOUR&lt;/span&gt; &lt;span class="caps"&gt;DISK&lt;/span&gt; &lt;span class="caps"&gt;NAME&lt;/span&gt;&amp;rdquo; as an option on &amp;ldquo;Install &lt;span class="caps"&gt;OS&lt;/span&gt; X&amp;rdquo; screen as shown&amp;nbsp;above.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id="nodejs"&gt;安装nodejs&lt;a class="headerlink" href="#nodejs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;control + space&amp;nbsp;打开spotlight,输入“终端”，就打开了终端，类似win下的cmd;&lt;/li&gt;
@@ -44,7 +80,7 @@ MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&amp;nbsp;https://blog.c
 &lt;blockquote&gt;
 &lt;p&gt;如果没有sudo则会报错，原因：由于 root 用户在 &lt;span class="caps"&gt;OS&lt;/span&gt; X 中具有特殊权限，因此对于特定的管理或故障诊断任务可能非常有用，但不适合日常使用。如果使用不慎，root 用户作出的更改可能只有通过重装 &lt;span class="caps"&gt;OS&lt;/span&gt; X 才能修复。考虑使用其他方式（如 sudo 命令）来代替启用 root&amp;nbsp;用户。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id="_4"&gt;安装依赖&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="_5"&gt;安装依赖&lt;a class="headerlink" href="#_5" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;sudo npm install -g ios-deploy - -unsafe-perm=t    //代表真机运行环境  &lt;/span&gt;
 &lt;span class="code-line"&gt;sudo npm install -g ios-sim                       //代表模拟器运行环境  &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1224,38 +1260,4 @@ how—如何去做，使用哪些测试工具以及测试方法进行测试&amp;
 
 &lt;ol start="2"&gt;
 &lt;li&gt;python没有array,只有list,直接使用&lt;code&gt;sort&lt;/code&gt;方法即可,如果是倒序可以用reverse=True指定&lt;/li&gt;
-&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category><category term="java"></category></entry><entry><title>安装dbforge SQL 8.0</title><link href="https://pingbook.top/articles/install-dbforgesql/" rel="alternate"></link><published>2018-07-22T14:19:31+08:00</published><updated>2018-07-22T14:19:31+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/install-dbforgesql/</id><summary type="html">&lt;h2 id="dbforge-mysql"&gt;安装dbforge Mysql&lt;a class="headerlink" href="#dbforge-mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;安装最新的dbforge Mysql: &lt;a href="https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe"&gt;https://www.devart.com/dbforge/mysql …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="dbforge-mysql"&gt;安装dbforge Mysql&lt;a class="headerlink" href="#dbforge-mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;安装最新的dbforge Mysql: &lt;a href="https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe"&gt;https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe&lt;/a&gt;,总是弹出一个错误 &lt;code&gt;Application requires .NET Framework 4.5.2 or higher. currently installed version is 4.5.1 or less.&lt;/code&gt;.
-于是我就直接到官方下载最新的.&lt;span class="caps"&gt;NET&lt;/span&gt; Frameowrk 安装,但是安装总是失败. &lt;br&gt;
-实在没办法看到一个论坛说的说明方法如何卸载.&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 然后安装对应的版本: 
-&lt;a href="https://answers.microsoft.com/en-us/windows/forum/all/unable-to-install-net-framework-40-or-45-on-the/6727320a-01a3-4619-a5f2-2a684c320904"&gt;https://answers.microsoft.com/en-us/windows/forum/all/unable-to-install-net-framework-40-or-45-on-the/6727320a-01a3-4619-a5f2-2a684c320904&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;A:&lt;br&gt;
-Step 1:
-Hope your ran the same Fixit, if not then run this  Microsoft Fix it&amp;nbsp;50123&lt;/p&gt;
-&lt;p&gt;Step&amp;nbsp;2:&lt;/p&gt;
-&lt;p&gt;Repair the version of the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework that did not update. To do this, follow these steps:
-Visit the following blog post:
-.&lt;span class="caps"&gt;NET&lt;/span&gt; Framework Cleanup Tool User&amp;rsquo;s Guide
-Download dotnetfx_cleanup_tool.zip from the following site:
-http://blogs.msdn.com/cfs-file.ashx/__key/CommunityServer-Components-PostAttachments/00-08-90-44-93/dotnetfx_5F00_cleanup_5F00_tool.zip
-When you are prompted, click Open, and then click Extract Now.
-In the files that you extracted, double-click cleanup_tool.exe.
-If you are prompted for an administrator password or for a confirmation, provide the password, and then clickContinue.
-In the Do you want to run the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework Setup Cleanup Utility? message, click Yes.
- Image
-Note This tool may be in English only, but it also works for other language versions of Windows.
-Click Yes to accept the license agreement.
-In the Product to cleanup window, click the drop-down list, select a .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework version that you want to remove, and then click Cleanup Now.
- Image
-Note The cleanup tool does not let you remove the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 2.0 in Windows Vista or later versions of Windows because the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework is installed as an operating system component.
-After the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework is removed, restart the computer.
-Download and install the following components:
-.&lt;span class="caps"&gt;NET&lt;/span&gt; Framework&amp;nbsp;1.1&lt;/p&gt;
-&lt;p&gt;Microsoft .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework Version 1.1 Redistributable&amp;nbsp;Package&lt;/p&gt;
-&lt;p&gt;.&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 1.1 Service Pack 1 (&lt;span class="caps"&gt;SP1&lt;/span&gt;)&lt;/p&gt;
-&lt;p&gt;Microsoft .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 1.1 Service Pack&amp;nbsp;1&lt;/p&gt;
-&lt;p&gt;.&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 3.5 &lt;span class="caps"&gt;SP1&lt;/span&gt; (this will also install the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 2.0 &lt;span class="caps"&gt;SP2&lt;/span&gt; and the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 3.0 &lt;span class="caps"&gt;SP2&lt;/span&gt;)
-Microsoft .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 3.5 Service Pack 1
-Restart the computer.
-Visit Windows Update again, and then check for and install&amp;nbsp;updates.&lt;/p&gt;</content><category term="dbforge mysql"></category><category term="uninstall .netframework"></category></entry></feed>
+&lt;/ol&gt;</content><category term="面试"></category><category term="list"></category><category term="java"></category></entry></feed>

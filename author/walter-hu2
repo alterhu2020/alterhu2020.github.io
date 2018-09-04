@@ -110,6 +110,31 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to vuejs項目转为android/IOS App(Cordova)">vuejs項目转为android/<span class="caps">IOS</span>&nbsp;App(Cordova)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-27T17:19:43.105619+08:00">
+                                        Posted on 2018-08-27 17:19:43,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="how-to-build-android-or-ios-app-from-vue-project">How to build android or <span class="caps">IOS</span> app from Vue project …</h2> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to vuejs項目转为android/IOS App(Cordova)">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
+                                            <a class="danger label" href="../tag/electron/">electron</a>
+                                            <a class="danger label" href="../tag/electron-builder/">electron-builder</a>
+                                            <a class="danger label" href="../tag/cordova/">cordova</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">How to build the ftp&nbsp;system</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-08-27T16:06:29.708097+08:00">
@@ -242,31 +267,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/5-software-performance-testing/" rel="bookmark" title="Permalink to [面试] 5. 性能测试相关的涉及内容">[面试] 5.&nbsp;性能测试相关的涉及内容</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-26T21:40:09.531297+08:00">
-                                        Posted on 2018-07-26 21:40:09,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点 …</p></blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/5-software-performance-testing/" rel="bookmark" title="Permalink to [面试] 5. 性能测试相关的涉及内容">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/performance-testing/">performance testing</a>
-                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -322,10 +322,10 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../tag/sdk/">SDK</a></li>
                     <li class="tag-2"><a href="../tag/vuejs/">Vuejs</a></li>
-                    <li class="tag-4"><a href="../tag/bigdata/">bigdata</a></li>
                     <li class="tag-2"><a href="../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../tag/electron/">electron</a></li>
+                    <li class="tag-4"><a href="../tag/electron-builder/">electron-builder</a></li>
             </ul>
         </nav>
 

@@ -110,17 +110,46 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/qiniu-upload-config/" rel="bookmark" title="Permalink to 七牛云配置详解(2018-09-04)">七牛云配置详解(2018-09-04)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-04T17:48:48.389150+08:00">
+                                        Posted on 2018-09-04 17:48:48,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h4 id="_1">问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&nbsp;可以保存用户的数据的安全.</p>
+<h4 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>用到的参数:
+1. appKey
+2 …</li></ul> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/qiniu-upload-config/" rel="bookmark" title="Permalink to 七牛云配置详解(2018-09-04)">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/qi-niu/">七牛</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/install-mac-virtuabox/" rel="bookmark" title="Permalink to VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)">VirtualBox安装黑苹果MacOS&nbsp;10.13(2018-09-04更新)</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2018-09-04T13:46:47.441741+08:00">
-                                        Posted on 2018-09-04 13:46:47,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+                                    <abbr class="published" title="2018-09-04T17:00:08.735795+08:00">
+                                        Posted on 2018-09-04 17:00:08,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
 
                                     </abbr>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <h3 id="_1">准备条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>测试时间: 2018.09.02
-VirtualBox版本: 5.2.18
-MacOS版本 …</p> </div><!-- /.entry-content -->
+<ul>
+<li>测试时间:&nbsp;2018.09.02</li>
+<li>VirtualBox版本:&nbsp;5.2.18</li>
+<li>MacOS版本 …</li></ul> </div><!-- /.entry-content -->
 
                                 <div class="medium primary btn"><a href="../articles/install-mac-virtuabox/" rel="bookmark" title="Permalink to VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)">Read More<i class="icon-arrow-right"></i></a></div>
 
@@ -237,31 +266,6 @@ MacOS版本 …</p> </div><!-- /.entry-content -->
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to vuejs項目转为android/IOS App(Cordova)">vuejs項目转为android/<span class="caps">IOS</span>&nbsp;App(Cordova)</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-08-27T17:19:43.105619+08:00">
-                                        Posted on 2018-08-27 17:19:43,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="how-to-build-android-or-ios-app-from-vue-project">How to build android or <span class="caps">IOS</span> app from Vue project …</h2> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to vuejs項目转为android/IOS App(Cordova)">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
-                                            <a class="danger label" href="../tag/electron/">electron</a>
-                                            <a class="danger label" href="../tag/electron-builder/">electron-builder</a>
-                                            <a class="danger label" href="../tag/cordova/">cordova</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -317,10 +321,10 @@ MacOS版本 …</p> </div><!-- /.entry-content -->
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../tag/sdk/">SDK</a></li>
                     <li class="tag-2"><a href="../tag/vuejs/">Vuejs</a></li>
-                    <li class="tag-4"><a href="../tag/bigdata/">bigdata</a></li>
                     <li class="tag-2"><a href="../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../tag/electron/">electron</a></li>
+                    <li class="tag-4"><a href="../tag/electron-builder/">electron-builder</a></li>
             </ul>
         </nav>
 

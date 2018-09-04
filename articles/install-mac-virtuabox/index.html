@@ -6,7 +6,7 @@
         <meta charset="utf-8"/>
         <meta name="description" content="
 
-准备条件¶ 测试时间: 2018.09.02 VirtualBox版本: 5.2.18 MacOS版本 …">
+准备条件¶ 测试时间: 2018.09.02 VirtualBox版本: 5.2.18 MacOS版本 …">
         <meta name="keywords"
               content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
 
@@ -123,8 +123,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-09-04T13:46:47.441741+08:00">-->
-                    <!--2018-09-04 13:46:47-->
+                    <!--<abbr class="published" title="2018-09-04T17:00:08.735795+08:00">-->
+                    <!--2018-09-04 17:00:08-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-09-04 13:46:47
+                        Posted on 2018-09-04 17:00:08
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -145,9 +145,12 @@
                 </footer><!-- /.post-info -->
                 <div class="entry-content">
                     <h3 id="_1">准备条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>测试时间: 2018.09.02
-VirtualBox版本: 5.2.18
-MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&nbsp;https://blog.csdn.net/icarus666/article/details/79536388中下载的镜像</p>
+<ul>
+<li>测试时间:&nbsp;2018.09.02</li>
+<li>VirtualBox版本:&nbsp;5.2.18</li>
+<li>MacOS版本：macOS High Sierra 10.13.iso, 下载地址:   https://blog.csdn.net/icarus666/article/details/79536388中下载的镜像
+,可以到我的网盘下载: <a href="https://pan.baidu.com/s/1QJmfh9iV273bDA-fy9UfCg">macOS High Sierra&nbsp;10.13.iso</a></li>
+</ul>
 <h3 id="_2">参考地址<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://blog.csdn.net/xiangyuecn/article/details/79867173">总结的参考博客</a>  </li>
@@ -157,20 +160,38 @@ MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&nbsp;https://blog.csdn.
 <h3 id="_3">用到的修改命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span class="code-line"><span></span>cd &quot;C:\Program Files\Oracle\VirtualBox\&quot;</span>
 <span class="code-line"></span>
-<span class="code-line">VBoxManage.exe modifyvm &quot;MacOS1012&quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff</span>
+<span class="code-line">VBoxManage.exe modifyvm &quot;MacOS10.13&quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff</span>
 <span class="code-line"></span>
-<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&quot; &quot;iMac11,3&quot;</span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS10.13&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&quot; &quot;iMac11,3&quot;</span>
 <span class="code-line"></span>
-<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&quot; &quot;1.0&quot;</span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS10.13&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&quot; &quot;1.0&quot;</span>
 <span class="code-line"></span>
-<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&quot; &quot;Iloveapple&quot;</span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS10.13&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&quot; &quot;Iloveapple&quot;</span>
 <span class="code-line"></span>
-<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&quot; &quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&quot;</span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS10.13&quot; &quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&quot; &quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&quot;</span>
 <span class="code-line"></span>
-<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&quot; 1</span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS10.13&quot; &quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&quot; 1</span>
 </pre></div>
 
 
+<h3 id="_4">可能的错误<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>错误提示 `Querying &ldquo;<span class="caps">UUID</span>&rdquo; failed&nbsp;(VERR_CFGM_VALUE_NOT_FOUND)</li>
+</ol>
+<blockquote>
+<p>Solution: because of <span class="caps">EFI</span> settings. If you already tried all combinations of <span class="caps">EFI</span> and Chipset (4 cases) and it still doesn’t help then just give up. The <span class="caps">VM</span> won’t work on your machine. 只需要在如下设置里面勾选&rdquo;<strong>启用EFI</strong>&ldquo;即可.如下截图:
+<img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_error.png"></p>
+</blockquote>
+<ol start="2">
+<li>When install &rdquo; there is no enough free space on sierra custom installer to install &ldquo;<blockquote>
+<p>Solution: From the top menu, choose &ldquo;Utilities&rdquo;=&gt; &ldquo;Disk Utility&rdquo;,and open the dialog, see below screnenshot:
+<img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_error_2.png">
+  then from the right check the virtualbox&rsquo;s disk and select &ldquo;Erasing&rdquo;,and input the new disk name and format.etc. see below screenshot:
+  <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_error_3.png">
+  Go back the install screenshot, or restart the virtualmachine, then you could see &ldquo;<span class="caps">YOUR</span> <span class="caps">DISK</span> <span class="caps">NAME</span>&rdquo; as an option on &ldquo;Install <span class="caps">OS</span> X&rdquo; screen as shown&nbsp;above.</p>
+</blockquote>
+</li>
+</ol>
 <h3 id="nodejs">安装nodejs<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
 <ol>
 <li>control + space&nbsp;打开spotlight,输入“终端”，就打开了终端，类似win下的cmd;</li>
@@ -186,7 +207,7 @@ MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&nbsp;https://blog.csdn.
 <blockquote>
 <p>如果没有sudo则会报错，原因：由于 root 用户在 <span class="caps">OS</span> X 中具有特殊权限，因此对于特定的管理或故障诊断任务可能非常有用，但不适合日常使用。如果使用不慎，root 用户作出的更改可能只有通过重装 <span class="caps">OS</span> X 才能修复。考虑使用其他方式（如 sudo 命令）来代替启用 root&nbsp;用户。</p>
 </blockquote>
-<h3 id="_4">安装依赖<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">安装依赖<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span class="code-line"><span></span>sudo npm install -g ios-deploy - -unsafe-perm=t    //代表真机运行环境  </span>
 <span class="code-line">sudo npm install -g ios-sim                       //代表模拟器运行环境  </span>
 </pre></div>
@@ -221,6 +242,11 @@ MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&nbsp;https://blog.csdn.
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
                             <a href="../../articles/baiduyun-download-limit/">
                                 ◄&nbsp;&nbsp;百度网盘不限速工具方式(2018-09-04更新)
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/qiniu-upload-config/">
+                                七牛云配置详解(2018-09-04)&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -311,10 +337,10 @@ MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&nbsp;https://blog.csdn.
                     <li class="tag-4"><a href="../../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../../tag/sdk/">SDK</a></li>
                     <li class="tag-2"><a href="../../tag/vuejs/">Vuejs</a></li>
-                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
                     <li class="tag-2"><a href="../../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../../tag/electron/">electron</a></li>
+                    <li class="tag-4"><a href="../../tag/electron-builder/">electron-builder</a></li>
             </ul>
         </nav>
 

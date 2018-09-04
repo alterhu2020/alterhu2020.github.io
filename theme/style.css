@@ -241,7 +241,7 @@ a:focus { color: #34495E; }
   font: 13px/1.6 'open sans', sans-serif;
   color: #333;
   padding: 12px 12px 12px 40px;
-  width: 170px;
+  width: 270px !important;
   border: 1px solid #e2e2e2;
   border-radius: 0;
   -moz-appearance: none;

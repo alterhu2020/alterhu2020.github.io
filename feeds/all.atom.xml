@@ -1,5 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-08-29T18:16:46+08:00</updated><entry><title>Available license server</title><link href="https://pingbook.top/articles/jetbrain-idea-licenseserver/" rel="alternate"></link><published>2018-08-29T18:16:46+08:00</published><updated>2018-08-29T18:16:46+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-29:/articles/jetbrain-idea-licenseserver/</id><summary type="html">&lt;h4 id="0x01-intellij-idea-license-servers"&gt;#0x01 IntelliJ Idea license servers&lt;a class="headerlink" href="#0x01-intellij-idea-license-servers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-04T13:46:47+08:00</updated><entry><title>VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-04T13:46:47+08:00</published><updated>2018-09-04T13:46:47+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;测试时间: 2018.09.02
+VirtualBox版本: 5.2.18
+MacOS版本 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;测试时间: 2018.09.02
+VirtualBox版本: 5.2.18
+MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&amp;nbsp;https://blog.csdn.net/icarus666/article/details/79536388中下载的镜像&lt;/p&gt;
+&lt;h3 id="_2"&gt;参考地址&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://blog.csdn.net/xiangyuecn/article/details/79867173"&gt;总结的参考博客&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cnblogs.com/ios9/p/7519302.html"&gt;下载地址二&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.jianshu.com/p/249d4998aa0c"&gt;Cordova安装配置&lt;/a&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="_3"&gt;用到的修改命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd &amp;quot;C:\Program Files\Oracle\VirtualBox\&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage.exe modifyvm &amp;quot;MacOS1012&amp;quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;quot; &amp;quot;iMac11,3&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;quot; &amp;quot;1.0&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;quot; &amp;quot;Iloveapple&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;quot; &amp;quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS1012&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;quot; 1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="nodejs"&gt;安装nodejs&lt;a class="headerlink" href="#nodejs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;control + space&amp;nbsp;打开spotlight,输入“终端”，就打开了终端，类似win下的cmd;&lt;/li&gt;
+&lt;li&gt;输入 node -v ,&amp;nbsp;回车;&lt;/li&gt;
+&lt;li&gt;输入 npm -v ,&amp;nbsp;回车;&lt;/li&gt;
+&lt;li&gt;若无错，则显示版本号;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="cordova"&gt;安装cordova&lt;a class="headerlink" href="#cordova" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; sudo npm install -g cordova   &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;如果没有sudo则会报错，原因：由于 root 用户在 &lt;span class="caps"&gt;OS&lt;/span&gt; X 中具有特殊权限，因此对于特定的管理或故障诊断任务可能非常有用，但不适合日常使用。如果使用不慎，root 用户作出的更改可能只有通过重装 &lt;span class="caps"&gt;OS&lt;/span&gt; X 才能修复。考虑使用其他方式（如 sudo 命令）来代替启用 root&amp;nbsp;用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="_4"&gt;安装依赖&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;sudo npm install -g ios-deploy - -unsafe-perm=t    //代表真机运行环境  &lt;/span&gt;
+&lt;span class="code-line"&gt;sudo npm install -g ios-sim                       //代表模拟器运行环境  &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="virtualboxmac-os-x"&gt;virtualbox设置MAC &lt;span class="caps"&gt;OS&lt;/span&gt; X共享剪切板&lt;a class="headerlink" href="#virtualboxmac-os-x" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;设置-&amp;gt;高级-&amp;gt;共享剪切板 双向，拖拽&amp;nbsp;双向 &lt;/li&gt;
+&lt;li&gt;虚拟机设置-存储-控制器SATA-勾选”使用主机输入输出(I/O)缓存” &lt;/li&gt;
+&lt;li&gt;存储-控制器SATA-点击*.vdi-勾选”固态驱动器” &lt;/li&gt;
+&lt;li&gt;启动虚拟机-&amp;gt;左上角divices-&amp;gt;insert additional&amp;nbsp;… &lt;/li&gt;
+&lt;li&gt;重启虚拟机&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="mac"&gt;Mac大小写切换，中英文切换&lt;a class="headerlink" href="#mac" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;中文小写英文切换：&lt;br&gt;
+    &amp;ndash;按一下caps&amp;nbsp;lock键就可以实现中文小写英文切换&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大小写切换：&lt;/p&gt;
+&lt;p&gt;&amp;ndash;不管是在中文状态下还是小写英文状态下，只要按住&lt;strong&gt;shift&lt;/strong&gt;键就可以实现大写输入
+* 大小写切换其他方式：&lt;br&gt;
+&amp;ndash;长按住caps lock键2s，caps lock灯亮即可切换到大写输入状态，这种情况适合于连续输入好多大写字母。输完了轻点一下caps&amp;nbsp;lock就可以切换到非大写状态&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="how-update-macos-x"&gt;How update MacOS X&lt;a class="headerlink" href="#how-update-macos-x" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;发现使用过iphone的就知道了,直接进入App Store 里面,然后搜索&lt;code&gt;MacOS&lt;/code&gt;,里面会看到对应的版本,或者它这里会提示你是否有新的版本可以下载,确实很方便. &lt;/p&gt;</content></entry><entry><title>百度网盘不限速工具方式(2018-09-04更新)</title><link href="https://pingbook.top/articles/baiduyun-download-limit/" rel="alternate"></link><published>2018-09-04T13:46:27+08:00</published><updated>2018-09-04T13:46:27+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/baiduyun-download-limit/</id><summary type="html">&lt;h3 id="_1"&gt;参考&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;参考的网页地址是: &lt;a href="https://www.runningcheese.com/baiduyun"&gt;https://www.runningcheese.com/baiduyun&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;测试发现好用的是这款软件:&lt;a href="https://github.com/proxyee-down-org/proxyee-down/releases"&gt;https://github …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3 id="_1"&gt;参考&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;参考的网页地址是: &lt;a href="https://www.runningcheese.com/baiduyun"&gt;https://www.runningcheese.com/baiduyun&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;测试发现好用的是这款软件:&lt;a href="https://github.com/proxyee-down-org/proxyee-down/releases"&gt;https://github.com/proxyee-down-org/proxyee-down/releases&lt;/a&gt;,绿色免安装,直接点击即可运行.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="百度网盘"></category></entry><entry><title>萤石云SDK接入学习路线(更新中)</title><link href="https://pingbook.top/articles/ys-sdk-learn/" rel="alternate"></link><published>2018-09-04T13:46:11+08:00</published><updated>2018-09-04T13:46:11+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/ys-sdk-learn/</id><summary type="html">&lt;h3 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公司需要接入摄像头的接口到我们自己的APP中,这样大家都可以在APP中查看施工现场的各个摄像头的情况动态.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="_2"&gt;考察&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;考察了国内和国外使用的摄像头设备供应商和相关的二次开发提供方案,发现也是部分网友的推荐,有两个摄像头做得比较好,一个是海康威视的萤石平台和对应的海康平台,萤石平台主打的是中小型规模的,比如住宅商铺工厂什么的 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="_1"&gt;起因&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公司需要接入摄像头的接口到我们自己的APP中,这样大家都可以在APP中查看施工现场的各个摄像头的情况动态.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="_2"&gt;考察&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;考察了国内和国外使用的摄像头设备供应商和相关的二次开发提供方案,发现也是部分网友的推荐,有两个摄像头做得比较好,一个是海康威视的萤石平台和对应的海康平台,萤石平台主打的是中小型规模的,比如住宅商铺工厂什么的,二对应大规模使用,比如施工现场,公共交通,治安防控和教育培训什么等等,推荐的是海康,他们有一套的系统解决方案.&amp;nbsp;还有一个厂家是大华,他们都是杭州本土的好像,做得比较成功在全国.在对比了他们相关的设备和产品的普遍性和二次开发方面的特性后,我们选择使用海康威视的监控设备.&lt;/p&gt;
+&lt;h3 id="_3"&gt;开发文档&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;海康威视的开发文档, 进入海康威视官网&lt;a href="https://www.hikvision.com/cn/index.html"&gt;https://www.hikvision.com/cn/index.html&lt;/a&gt;,点击菜单的&amp;rdquo;服务支持&amp;rdquo;=&amp;gt;&amp;rdquo;下载&amp;rdquo;=&amp;gt;&amp;rdquo;SDK开发&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;萤石开发文档,进入萤石开发中心&lt;a href="https://open.ys7.com/"&gt;https://open.ys7.com/&lt;/a&gt;,选择&amp;rdquo;开发者服务&amp;rdquo;进入即可.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="_4"&gt;接入步骤&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;进入&amp;rdquo;开发者服务&amp;rdquo;页面,点击&amp;rdquo;我的应用&amp;rdquo;,这里新建一个你的应用,他们自动生成对应的OAuth对应的AppKey和Secret.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="萤石云"></category><category term="SDK"></category></entry><entry><title>Available license server</title><link href="https://pingbook.top/articles/jetbrain-idea-licenseserver/" rel="alternate"></link><published>2018-08-29T18:16:46+08:00</published><updated>2018-08-29T18:16:46+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-29:/articles/jetbrain-idea-licenseserver/</id><summary type="html">&lt;h4 id="0x01-intellij-idea-license-servers"&gt;#0x01 IntelliJ Idea license servers&lt;a class="headerlink" href="#0x01-intellij-idea-license-servers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;http://xidea.online/servers.html …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h4 id="0x01-intellij-idea-license-servers"&gt;#0x01 IntelliJ Idea license servers&lt;a class="headerlink" href="#0x01-intellij-idea-license-servers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;http://xidea.online/servers.html&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1160,199 +1258,4 @@ Download and install the following components:
 &lt;p&gt;.&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 3.5 &lt;span class="caps"&gt;SP1&lt;/span&gt; (this will also install the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 2.0 &lt;span class="caps"&gt;SP2&lt;/span&gt; and the .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 3.0 &lt;span class="caps"&gt;SP2&lt;/span&gt;)
 Microsoft .&lt;span class="caps"&gt;NET&lt;/span&gt; Framework 3.5 Service Pack 1
 Restart the computer.
-Visit Windows Update again, and then check for and install&amp;nbsp;updates.&lt;/p&gt;</content><category term="dbforge mysql"></category><category term="uninstall .netframework"></category></entry><entry><title>[环境搭建] tensorflow的基础学习</title><link href="https://pingbook.top/articles/tensorflow-basic/" rel="alternate"></link><published>2018-07-22T10:51:35+08:00</published><updated>2018-07-22T10:51:35+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/tensorflow-basic/</id><summary type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id="source"&gt;source 安装编译&lt;a class="headerlink" href="#source" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="tensorflow"&gt;tensorflow 安装&lt;a class="headerlink" href="#tensorflow" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这里参考的是官方的文档: &lt;a href="https://www.tensorflow.org/install/install_raspbian"&gt;Installing TensorFlow on&amp;nbsp;Raspbian&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id="source"&gt;source 安装编译&lt;a class="headerlink" href="#source" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get install - git&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel&lt;/span&gt;
-&lt;span class="code-line"&gt;$ git clone https://github.com/tensorflow/tensorflow &lt;/span&gt;
-&lt;span class="code-line"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; tensorflow&lt;/span&gt;
-&lt;span class="code-line"&gt;$  git checkout master&lt;/span&gt;
-&lt;span class="code-line"&gt;未完待续&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3 id="python-pip"&gt;python pip安装&lt;a class="headerlink" href="#python-pip" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Python,pip环境的搭建这里就不罗嗦了,可以参考我的另外一篇博客: &lt;a href="https://pingbook.top/articles/pi-python3"&gt;python3安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;新建一个virtual environment(推荐使用&lt;code&gt;pipenv&lt;/code&gt;)用于存放对应的pip的包,执行如下命令:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;venvBigData&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;venBigData&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;libatlas&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="c1"&gt;# 安装numpy需要依赖的包&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PIPENV_VENV_IN_PROJECT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pipenv&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pipenv&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;  &lt;span class="c1"&gt;# 接下来是命令行验证tensorflow安装正确与否&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tensorflow&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tf&lt;/span&gt;   &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello, TensorFlow!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="n"&gt;sess&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="tensorflow"></category><category term="machine learning"></category></entry><entry><title>[环境搭建] MYSQL 的安装配置</title><link href="https://pingbook.top/articles/pi-mysql/" rel="alternate"></link><published>2018-07-22T10:49:36+08:00</published><updated>2018-07-22T10:49:36+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-22:/articles/pi-mysql/</id><summary type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install mysql-server&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql_secure_installation&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;第二条命令将会配置mysql的 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;安装&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;执行如下命令进行安装和基本的配置:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get -y install mysql-server&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql_secure_installation&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;第二条命令将会配置mysql的&lt;code&gt;root&lt;/code&gt;密码,删除掉&lt;code&gt;test&lt;/code&gt;数据库,不允许匿名登录等等操作. 按照上面的操作mysql的配置是没有问题的了,但是你会发现,如果你运行如下命令:
-&lt;code&gt;mysql -u root -p&lt;/code&gt;, 这里的root不用输入密码,明明上面的已经设置了密码???&lt;br&gt;&amp;nbsp;进行如下的命令进行配置:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ update user &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mysql_native_password&amp;#39;&lt;/span&gt; where &lt;span class="nv"&gt;user&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;span class="code-line"&gt;$ quit&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;&lt;code&gt;root&lt;/code&gt;密码的更改,可以采用下面的操作步骤:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
-&lt;span class="code-line"&gt;增加一行代码: skip-grant-tables 参见 https://www.jb51.net/article/100925.htm&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ UPDATE mysql.user SET &lt;span class="nv"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;YanZhi123!@#)0x&amp;amp;*&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="3"&gt;
-&lt;li&gt;增加用户名和授权远程登录:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf&lt;/span&gt;
-&lt;span class="code-line"&gt;注释掉 bind-address          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo mysql -u root -p &lt;/span&gt;
-&lt;span class="code-line"&gt;$ use mysql&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ CREATE USER &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ GRANT ALL PRIVILEGES ON *.* TO &lt;span class="s1"&gt;&amp;#39;yanzhi&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;yanzhi123!@#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    -- 远程连接权限所有的数据库.&lt;/span&gt;
-&lt;span class="code-line"&gt;$ flush privileges&lt;span class="p"&gt;;&lt;/span&gt; &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="4"&gt;
-&lt;li&gt;创建数据库,支持中文:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;UTF8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;test2&lt;/span&gt; &lt;span class="n"&gt;DEFAULT&lt;/span&gt; &lt;span class="n"&gt;CHARACTER&lt;/span&gt; &lt;span class="n"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="n"&gt;COLLATE&lt;/span&gt; &lt;span class="n"&gt;utf8_general_ci&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="5"&gt;
-&lt;li&gt;自动备份数据库,每天备份一次
-* 新建文件: &lt;code&gt;sudo nano /usr/sbin/mysqlbackup.sh&lt;/code&gt;,内容如下:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;1&lt;/span&gt;
-&lt;span class="code-line"&gt;2&lt;/span&gt;
-&lt;span class="code-line"&gt;3&lt;/span&gt;
-&lt;span class="code-line"&gt;4&lt;/span&gt;
-&lt;span class="code-line"&gt;5&lt;/span&gt;
-&lt;span class="code-line"&gt;6&lt;/span&gt;
-&lt;span class="code-line"&gt;7&lt;/span&gt;
-&lt;span class="code-line"&gt;8&lt;/span&gt;
-&lt;span class="code-line"&gt;9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# Name:mysql_backup.sh&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# This is a ShellScript For Auto DB Backup and Delete old Backup&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;backupdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/www/backups&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date +%Y-%m-%d_%H%M%S&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;/usr/bin/mysqldump --routines -u&lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; -p&lt;span class="s1"&gt;&amp;#39;test!@#&amp;#39;&lt;/span&gt; pingbook &lt;span class="p"&gt;|&lt;/span&gt; gzip &amp;gt; &lt;span class="nv"&gt;$backupdir&lt;/span&gt;/yanzhi&lt;span class="nv"&gt;$time&lt;/span&gt;.sql.gz&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c1"&gt;# 删除七天前的备份&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;find &lt;span class="nv"&gt;$backupdir&lt;/span&gt; -name &lt;span class="s2"&gt;&amp;quot;*.sql.gz&amp;quot;&lt;/span&gt; -type f -mtime +7 -exec rm &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;&amp;gt; /dev/null &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;ul&gt;
-&lt;li&gt;添加可执行权限对应sh文件.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo chmod +x /usr/sbin/mysqlbackup.sh&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;增加定时任务在&lt;code&gt;sudo nano /etc/crontab&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;#创建一个mysql备份的操作&lt;/span&gt;
-&lt;span class="code-line"&gt;2 1   * * * root  /usr/sbin/mysqlbackup.sh &amp;gt;&amp;gt; /var/log/crontab/backup.log 2&amp;gt;&amp;amp;1  &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;重启&lt;code&gt;crontab&lt;/code&gt;以便生效
-&lt;code&gt;sudo systemctl restart cron.service&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="mysql-startup-error"&gt;mysql startup error&lt;a class="headerlink" href="#mysql-startup-error" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;https://blog.csdn.net/mr_raptor/article/details/70576117
-[&lt;span class="caps"&gt;ERROR&lt;/span&gt;] Can&amp;rsquo;t init tc log
- innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to &lt;span class="caps"&gt;20MB&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;解决方法是删除mysql的log文件,因为磁盘满了不能写log了:
- &lt;code&gt;$ cd /var/lib/mysql
- $ rm -f ib_logfile*
- $ rm -f tc.log&lt;/code&gt;&lt;/p&gt;</content><category term="mysql"></category><category term="mysql备份"></category></entry><entry><title>[环境搭建] 如何完整卸载python2/3 在debain上</title><link href="https://pingbook.top/articles/pi-python3/" rel="alternate"></link><published>2018-07-19T20:36:43+08:00</published><updated>2018-07-19T20:36:43+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-19:/articles/pi-python3/</id><summary type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="remove-python3"&gt;卸载 remove python3&lt;a class="headerlink" href="#remove-python3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt-get remove &lt;span class="s1"&gt;&amp;#39;python3.*&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;其实这里的python的包是: &lt;span class="sb"&gt;`&lt;/span&gt;python3.5-minimal&lt;span class="sb"&gt;`&lt;/span&gt;,&lt;span class="sb"&gt;`&lt;/span&gt;python3.5-venv&lt;span class="sb"&gt;`&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="install-python37"&gt;安装 install python3.7&lt;a class="headerlink" href="#install-python37" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;因为默认的debian仓库里面是python3.5,所以如果需要安装最新的python,按照如下步骤进行安装,
-参考文档: &lt;a href="https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6"&gt;https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;需要用到的命令如下:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;安装依赖包&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \&lt;/span&gt;
-&lt;span class="code-line"&gt;xz-utils tk-dev libffi-dev&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;$ tar xvf Python-3.7.0.tgz&lt;/span&gt;
-&lt;span class="code-line"&gt;// 下面的步骤安装会跑测试来判定机器的性能,从而进行性能的提高&lt;/span&gt;
-&lt;span class="code-line"&gt;$ ./configure --enable-optimizations --with-ensurepip=install&lt;/span&gt;
-&lt;span class="code-line"&gt;$ make -j8&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo make altinstall&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 50&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 50&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="pippipenvpipenv"&gt;安装pip,pipenv并设置全局可用命令&lt;code&gt;pipenv&lt;/code&gt;&lt;a class="headerlink" href="#pippipenvpipenv" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;$ wget https://bootstrap.pypa.io/get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo python get-pip.py&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pip install --user pipenv&lt;/span&gt;
-&lt;span class="code-line"&gt; /home/pi/.local/bin&lt;/span&gt;
-&lt;span class="code-line"&gt;$ python -m site --user-base&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo nano ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.local/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;$ sudo &lt;span class="nb"&gt;source&lt;/span&gt; ~/.profile&lt;/span&gt;
-&lt;span class="code-line"&gt;$ pipenv --update&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="uwsgi"&gt;uwsgi 配置详解&lt;a class="headerlink" href="#uwsgi" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;问题是我们的服务器后台部署在uwsgi上,今天突然有很大量的用户访问,结果导致了发到&lt;code&gt;uwsgi&lt;/code&gt;的所有请求都是&lt;code&gt;Pending&lt;/code&gt;的状态.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id="_1"&gt;概念&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;emperor翻译为中文的意思其实就是皇帝的意思，那么既然有皇帝，那就肯定有“臣子”（vassals），其中“臣子”就是指实际运行的一个app实例，在这里就是uwsgi_test.ini配置文件了。&lt;/p&gt;
-&lt;p&gt;emperor模式开启的命令是：&lt;/p&gt;
-&lt;p&gt;sudo uwsgi &amp;ndash;emperor /path/to/vassals/ 
-其中，vassals文件夹里包含了各个app的配置文件，这个文件夹将会被emperor一直监视，只要有配置文件的修改或新建，app实例就会被重新加载或新建，可以通过软链接将实际项目中的配置文件链接到vassal文件夹目录下.&amp;nbsp;在文档中，emperor监视的是配置文件目录，但是问题来了，笔者希望每次Git仓库更新一次就重新启动实例，而如果这次更新并没有对配置文件进行修改，实例自然就不会重新启动了。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;uwsgi是用c语言写的一个webserver，可以启动多个进程，进程里面可以启动多个线程来服务。进程分为主进程和worker进程，worker里面可以有多个线程。&lt;/li&gt;
-&lt;/ol&gt;</content><category term="树莓派"></category><category term="python3"></category></entry></feed>
+Visit Windows Update again, and then check for and install&amp;nbsp;updates.&lt;/p&gt;</content><category term="dbforge mysql"></category><category term="uninstall .netframework"></category></entry></feed>

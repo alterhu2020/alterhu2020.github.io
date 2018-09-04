@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-08-29T18:44:05-00:00</lastmod>
+<lastmod>2018-09-04T13:46:53-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-08-29T18:44:05-00:00</lastmod>
+<lastmod>2018-09-04T13:46:53-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -29,6 +29,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2018-08-29T18:13:12+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/install-mac-virtuabox/</loc>
+<lastmod>2018-09-04T13:46:47+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/baiduyun-download-limit/</loc>
+<lastmod>2018-09-04T13:46:27+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/ys-sdk-learn/</loc>
+<lastmod>2018-09-04T13:46:11+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -250,7 +271,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/tools/</loc>
-<lastmod>2018-08-27T13:18:11+08:06</lastmod>
+<lastmod>2018-09-04T13:46:47+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -272,6 +293,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/category/shu-mei-pai/</loc>
 <lastmod>2018-07-22T10:49:36+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/category/qi-ta/</loc>
+<lastmod>2018-09-04T13:46:11+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -314,6 +342,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/category/bo-ke-da-jian/</loc>
 <lastmod>2018-07-13T19:28:28+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/bai-du-wang-pan/</loc>
+<lastmod>2018-09-04T13:46:27+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/ying-shi-yun/</loc>
+<lastmod>2018-09-04T13:46:11+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/sdk/</loc>
+<lastmod>2018-09-04T13:46:11+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -565,7 +614,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/author/walter-hu</loc>
-<lastmod>2018-08-29T18:16:46+08:06</lastmod>
+<lastmod>2018-09-04T13:46:47+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

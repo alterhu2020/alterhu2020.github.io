@@ -110,6 +110,82 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/install-mac-virtuabox/" rel="bookmark" title="Permalink to VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)">VirtualBox安装黑苹果MacOS&nbsp;10.13(2018-09-04更新)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-04T13:46:47.441741+08:00">
+                                        Posted on 2018-09-04 13:46:47,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="_1">准备条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>测试时间: 2018.09.02
+VirtualBox版本: 5.2.18
+MacOS版本 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/install-mac-virtuabox/" rel="bookmark" title="Permalink to VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/baiduyun-download-limit/" rel="bookmark" title="Permalink to 百度网盘不限速工具方式(2018-09-04更新)">百度网盘不限速工具方式(2018-09-04更新)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-04T13:46:27.611938+08:00">
+                                        Posted on 2018-09-04 13:46:27,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="_1">参考<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>参考的网页地址是: <a href="https://www.runningcheese.com/baiduyun">https://www.runningcheese.com/baiduyun</a></li>
+<li>测试发现好用的是这款软件:<a href="https://github.com/proxyee-down-org/proxyee-down/releases">https://github …</a></li></ul> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/baiduyun-download-limit/" rel="bookmark" title="Permalink to 百度网盘不限速工具方式(2018-09-04更新)">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/bai-du-wang-pan/">百度网盘</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/ys-sdk-learn/" rel="bookmark" title="Permalink to 萤石云SDK接入学习路线(更新中)">萤石云SDK接入学习路线(更新中)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-04T13:46:11.552672+08:00">
+                                        Posted on 2018-09-04 13:46:11,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>公司需要接入摄像头的接口到我们自己的APP中,这样大家都可以在APP中查看施工现场的各个摄像头的情况动态.</p>
+</blockquote>
+<h3 id="_2">考察<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>考察了国内和国外使用的摄像头设备供应商和相关的二次开发提供方案,发现也是部分网友的推荐,有两个摄像头做得比较好,一个是海康威视的萤石平台和对应的海康平台,萤石平台主打的是中小型规模的,比如住宅商铺工厂什么的 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/ys-sdk-learn/" rel="bookmark" title="Permalink to 萤石云SDK接入学习路线(更新中)">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/ying-shi-yun/">萤石云</a>
+                                            <a class="danger label" href="../tag/sdk/">SDK</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/jetbrain-idea-licenseserver/" rel="bookmark" title="Permalink to Available license server">Available license&nbsp;server</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-08-29T18:16:46.531229+08:00">
@@ -186,78 +262,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">How to build the ftp&nbsp;system</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-08-27T16:06:29.708097+08:00">
-                                        Posted on 2018-08-27 16:06:29,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h1 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
-参考博客: 
-1. (smbd配置,忽略)https://www.conum …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/vsftpd/">vsftpd</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/cordova-android/" rel="bookmark" title="Permalink to Vue项目转成Cordova项目的注意事项和技巧">Vue项目转成Cordova项目的注意事项和技巧</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-08-27T14:33:07.071099+08:00">
-                                        Posted on 2018-08-27 14:33:07,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h3 id="cordova-build-android-timeout"><code>cordova build android</code> 命令 timeout<a class="headerlink" href="#cordova-build-android-timeout" title="Permanent link">&para;</a></h3>
-<p>修改对应的<code>build.gradle</code>文件中的内容为如下内容: </p>
-<div class="highlight"><pre><span class="code-line"><span></span><span class="nt">buildscript …</span></span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/cordova-android/" rel="bookmark" title="Permalink to Vue项目转成Cordova项目的注意事项和技巧">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/cordova/">Cordova</a>
-                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/how-resize-image/" rel="bookmark" title="Permalink to 怎么放大缩小图片的尺寸和图片尺寸转换">怎么放大缩小图片的尺寸和图片尺寸转换</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-08-27T13:18:11.165002+08:00">
-                                        Posted on 2018-08-27 13:18:11,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">分享一个好用的网站可以用于放大缩小图片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: 
- <a href="http://resizeimage.net/">resize&nbsp;images</a></p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/how-resize-image/" rel="bookmark" title="Permalink to 怎么放大缩小图片的尺寸和图片尺寸转换">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -292,6 +296,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                         <li><a href="../category/sql/">SQL</a></li>
                         <li><a href="../category/softwaretesting/">SoftwareTesting</a></li>
                         <li><a href="../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../category/qi-ta/">其他</a></li>
                         <li><a href="../category/python/">Python</a></li>
                         <li><a href="../category/mian-shi/">面试</a></li>
                         <li><a href="../category/linux/">Linux</a></li>
@@ -310,12 +315,12 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/intellij-idea/">IntelliJ Idea</a></li>
                     <li class="tag-4"><a href="../tag/javascript/">JavaScript</a></li>
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
+                    <li class="tag-4"><a href="../tag/sdk/">SDK</a></li>
                     <li class="tag-2"><a href="../tag/vuejs/">Vuejs</a></li>
                     <li class="tag-4"><a href="../tag/bigdata/">bigdata</a></li>
                     <li class="tag-2"><a href="../tag/cordova/">cordova</a></li>
                     <li class="tag-4"><a href="../tag/dbforge-mysql/">dbforge mysql</a></li>
                     <li class="tag-4"><a href="../tag/electron/">electron</a></li>
-                    <li class="tag-4"><a href="../tag/electron-builder/">electron-builder</a></li>
             </ul>
         </nav>
 

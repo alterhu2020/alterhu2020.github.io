@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+
+        <title>VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="
+
+准备条件¶ 测试时间: 2018.09.02 VirtualBox版本: 5.2.18 MacOS版本 …">
+        <meta name="keywords"
+              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+
+
+            <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="PingBook Blog Full Atom Feed"/>
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../theme/gumby.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../theme/pygment.css"/>
+
+
+        <script src="../../theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "ca-pub-1893384651266286",
+                    enable_page_level_ads: true
+                });
+            </script>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122219517-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-122219517-1');
+            </script>
+
+
+        <!---->
+
+</head>
+
+<body id="index" class="home">
+
+
+<div class="container">
+    <div class="row">
+
+        <header id="banner" class="body">
+
+            <h1><a href="../..">PingBook Blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+            <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+            <ul class="columns" style="width: 100%">
+
+                    <li ><a href="/">Home</a></li>
+                    <li ><a href="/categories">Category</a></li>
+                    <li ><a href="/archives">Archive</a></li>
+                    <li ><a href="/tags">Tags</a></li>
+                    <li ><a href="/about">About</a></li>
+                    <li ><a href="/change-log">Changes</a></li>
+            <li >
+                <div style="display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;
+    height: 60px;
+    line-height: 58px;
+    font-size: 16px;
+    font-size: 1rem;">
+                <form class="navbar-search" action="../../search.html"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+                </div>
+            </li>
+
+            </ul>
+
+
+        </div>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-6q+ed+2h-1m-4v"
+                 data-ad-client="ca-pub-1893384651266286"
+                 data-ad-slot="9234880829"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+    <section id="content" class="body">
+
+        <div class="row">
+
+            <div class="eleven columns">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="3627740042"
+                    ></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                <header>
+                    <h2 class="entry-title">
+                        <a href="../../articles/install-mac-virtuabox/" rel="bookmark"
+                           title="Permalink to VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)">VirtualBox安装黑苹果MacOS&nbsp;10.13(2018-09-04更新)</a></h2>
+                    
+                </header>
+                <footer class="post-info">
+                    <!--<abbr class="published" title="2018-09-04T13:46:47.441741+08:00">-->
+                    <!--2018-09-04 13:46:47-->
+                    <!--</abbr>-->
+                    <!---->
+                        <!--<address class="vcard author">By -->
+                        <!---->
+                            <!--<a class="url fn" href="../../author/walter-hu"> Walter Hu</a>-->
+                            <!---->
+                        <!--</address>-->
+                        <!---->
+                    <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
+                        Posted on 2018-09-04 13:46:47
+                            &nbsp;&nbsp;By
+                            <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
+
+                        <span id="busuanzi_container_page_pv">, <i class="icon-eye icon-large"></i><span
+                                id="busuanzi_value_page_pv"></span></span>
+                    </address>
+                    <hr/>
+                </footer><!-- /.post-info -->
+                <div class="entry-content">
+                    <h3 id="_1">准备条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>测试时间: 2018.09.02
+VirtualBox版本: 5.2.18
+MacOS版本：macOS High Sierra 10.13.iso, 下载地址:&nbsp;https://blog.csdn.net/icarus666/article/details/79536388中下载的镜像</p>
+<h3 id="_2">参考地址<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://blog.csdn.net/xiangyuecn/article/details/79867173">总结的参考博客</a>  </li>
+<li><a href="https://www.cnblogs.com/ios9/p/7519302.html">下载地址二</a>  </li>
+<li><a href="https://www.jianshu.com/p/249d4998aa0c">Cordova安装配置</a>  </li>
+</ul>
+<h3 id="_3">用到的修改命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>cd &quot;C:\Program Files\Oracle\VirtualBox\&quot;</span>
+<span class="code-line"></span>
+<span class="code-line">VBoxManage.exe modifyvm &quot;MacOS1012&quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff</span>
+<span class="code-line"></span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&quot; &quot;iMac11,3&quot;</span>
+<span class="code-line"></span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&quot; &quot;1.0&quot;</span>
+<span class="code-line"></span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&quot; &quot;Iloveapple&quot;</span>
+<span class="code-line"></span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&quot; &quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&quot;</span>
+<span class="code-line"></span>
+<span class="code-line">VBoxManage setextradata &quot;MacOS1012&quot; &quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&quot; 1</span>
+</pre></div>
+
+
+<h3 id="nodejs">安装nodejs<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
+<ol>
+<li>control + space&nbsp;打开spotlight,输入“终端”，就打开了终端，类似win下的cmd;</li>
+<li>输入 node -v ,&nbsp;回车;</li>
+<li>输入 npm -v ,&nbsp;回车;</li>
+<li>若无错，则显示版本号;</li>
+</ol>
+<h3 id="cordova">安装cordova<a class="headerlink" href="#cordova" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span> sudo npm install -g cordova   </span>
+</pre></div>
+
+
+<blockquote>
+<p>如果没有sudo则会报错，原因：由于 root 用户在 <span class="caps">OS</span> X 中具有特殊权限，因此对于特定的管理或故障诊断任务可能非常有用，但不适合日常使用。如果使用不慎，root 用户作出的更改可能只有通过重装 <span class="caps">OS</span> X 才能修复。考虑使用其他方式（如 sudo 命令）来代替启用 root&nbsp;用户。</p>
+</blockquote>
+<h3 id="_4">安装依赖<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>sudo npm install -g ios-deploy - -unsafe-perm=t    //代表真机运行环境  </span>
+<span class="code-line">sudo npm install -g ios-sim                       //代表模拟器运行环境  </span>
+</pre></div>
+
+
+<h3 id="virtualboxmac-os-x">virtualbox设置MAC <span class="caps">OS</span> X共享剪切板<a class="headerlink" href="#virtualboxmac-os-x" title="Permanent link">&para;</a></h3>
+<ol>
+<li>设置-&gt;高级-&gt;共享剪切板 双向，拖拽&nbsp;双向 </li>
+<li>虚拟机设置-存储-控制器SATA-勾选”使用主机输入输出(I/O)缓存” </li>
+<li>存储-控制器SATA-点击*.vdi-勾选”固态驱动器” </li>
+<li>启动虚拟机-&gt;左上角divices-&gt;insert additional&nbsp;… </li>
+<li>重启虚拟机</li>
+</ol>
+<h3 id="mac">Mac大小写切换，中英文切换<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h3>
+<ul>
+<li>中文小写英文切换：<br>
+    &ndash;按一下caps&nbsp;lock键就可以实现中文小写英文切换</li>
+<li>
+<p>大小写切换：</p>
+<p>&ndash;不管是在中文状态下还是小写英文状态下，只要按住<strong>shift</strong>键就可以实现大写输入
+* 大小写切换其他方式：<br>
+&ndash;长按住caps lock键2s，caps lock灯亮即可切换到大写输入状态，这种情况适合于连续输入好多大写字母。输完了轻点一下caps&nbsp;lock就可以切换到非大写状态</p>
+</li>
+</ul>
+<h3 id="how-update-macos-x">How update MacOS X<a class="headerlink" href="#how-update-macos-x" title="Permanent link">&para;</a></h3>
+<p>发现使用过iphone的就知道了,直接进入App Store 里面,然后搜索<code>MacOS</code>,里面会看到对应的版本,或者它这里会提示你是否有新的版本可以下载,确实很方便. </p>
+                </div><!-- /.entry-content -->
+                <br>
+                <div><span>Categories:</span>Tools</div>
+                <br>
+                <ul style="list-style-type: none;">
+                        <li style="display: inline;margin-left: 10px; margin-right: auto;">
+                            <a href="../../articles/baiduyun-download-limit/">
+                                ◄&nbsp;&nbsp;百度网盘不限速工具方式(2018-09-04更新)
+                            </a>
+                        </li>
+                </ul>
+                <hr/>
+                <div class="comments">
+                    <h3>Recommended for you</h3>
+                </div>
+                <hr/>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-1893384651266286"
+                         data-ad-slot="1372702676"
+                    ></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_identifier = "articles/install-mac-virtuabox/";
+                            (function () {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = 'https://pingbook.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus</a>.
+                        </noscript>
+                    </div>
+
+            </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+    <nav class="widget sidebarbg">
+        <h4>Navigation</h4>
+        <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Category</a></li>
+                <li><a href="/archives">Archive</a></li>
+                <li><a href="/tags">Tags</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/change-log">Changes</a></li>
+        </ul>
+    </nav>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-6t+ed+2i-1n-4w"
+             data-ad-client="ca-pub-1893384651266286"
+             data-ad-slot="5737546993"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <div class="sidebarbg">
+            <nav class="widget">
+                <h4>Categories</h4>
+                <ul class="blank">
+                        <li><a href="../../category/tools/">Tools</a></li>
+                        <li><a href="../../category/sql/">SQL</a></li>
+                        <li><a href="../../category/softwaretesting/">SoftwareTesting</a></li>
+                        <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
+                        <li><a href="../../category/qi-ta/">其他</a></li>
+                        <li><a href="../../category/python/">Python</a></li>
+                        <li><a href="../../category/mian-shi/">面试</a></li>
+                        <li><a href="../../category/linux/">Linux</a></li>
+                        <li><a href="../../category/javascript/">JavaScript</a></li>
+                        <li><a href="../../category/java/">Java</a></li>
+                        <li><a href="../../category/bo-ke-da-jian/">博客搭建</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <nav class="widget sidebarbg">
+            <h4>Tags</h4>
+            <ul class="blank">
+                    <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../../tag/intellij-idea/">IntelliJ Idea</a></li>
+                    <li class="tag-4"><a href="../../tag/javascript/">JavaScript</a></li>
+                    <li class="tag-4"><a href="../../tag/review/">Review</a></li>
+                    <li class="tag-4"><a href="../../tag/sdk/">SDK</a></li>
+                    <li class="tag-2"><a href="../../tag/vuejs/">Vuejs</a></li>
+                    <li class="tag-4"><a href="../../tag/bigdata/">bigdata</a></li>
+                    <li class="tag-2"><a href="../../tag/cordova/">cordova</a></li>
+                    <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
+                    <li class="tag-4"><a href="../../tag/electron/">electron</a></li>
+            </ul>
+        </nav>
+
+        <div class="social sidebarbg">
+
+            <nav class="widget">
+                <h4>Social</h4>
+                <ul class="blank">
+                        <li><a target="_blank" href="mailto:alterhu2020@gmail.com?subject=From PingBook question">gmail</a></li>
+                        <li><a target="_blank" href="https://twitter.com/alterhu2020">twitter</a></li>
+                        <li><a target="_blank" href="https://github.com/alterhu2020/alterhu2020.github.io">github</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="widget sidebarbg">
+            <h4>Friends</h4>
+            <ul>
+                    <li><a target="_blank" href="http://www.cnblogs.com/alterhu/">我的博客园</a></li>
+                    <li><a target="_blank" href="http://xiaohanyu.me/about/">[运维]Xiao Hanyu</a></li>
+                    <li><a target="_blank" href="http://huangxuan.me/">[前端]黄玄的博客</a></li>
+                    <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">[前端]阮一峰</a></li>
+                    <li><a target="_blank" href="https://kevin.deldycke.com/">[Python]Data Engineer</a></li>
+            </ul>
+        </nav>
+
+</div>        </div><!-- /.row -->
+
+
+    </section>
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<div class="container.nopad bg">
+
+    <footer id="credits" class="row" style="margin-bottom: 0px;text-align: center;">
+        <div class="seven columns left-center">
+
+            <address id="about" class="vcard body">
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                PingBook.top. Powered by <a href="http://getpelican.com/">Pelican</a>.
+                <!--<br />-->
+                <div>
+                    <span id="busuanzi_container_site_pv">Site Views: <span id="busuanzi_value_site_pv"></span></span>,
+                    <span id="busuanzi_container_site_uv">Total Vistors: <span
+                            id="busuanzi_value_site_uv"></span></span>
+                </div>
+            </address>
+        </div>
+
+
+        <div class="seven columns">
+            <div class="row">
+                <ul class="socbtns">
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'pingbook';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<script src="../../theme/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../../theme/js/libs/gumby.min.js"></script>
+<script>
+    function validateForm(query) {
+        return (query.length > 0);
+    }
+</script>
+<script async src="../../theme/js/libs/busuanzi.pure.mini.js"></script>
+<script src="../../theme/js/plugins.js"></script>
+</body>
+</html>

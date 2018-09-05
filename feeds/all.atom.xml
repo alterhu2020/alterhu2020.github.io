@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-05T15:45:18+08:00</updated><entry><title>VirtualBox安装苹果虚拟机镜像MacOS 10.13/10.14 Beta6(2018-09-05更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-05T15:45:18+08:00</published><updated>2018-09-05T15:45:18+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-05:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备工作&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-05T17:50:15+08:00</updated><entry><title>VirtualBox安装苹果虚拟机镜像MacOS 10.13/10.14 Beta6(2018-09-05更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-05T17:50:15+08:00</published><updated>2018-09-05T17:50:15+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-05:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备工作&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;测试时间:&amp;nbsp;2018.09.05&lt;/li&gt;
 &lt;li&gt;VirtualBox版本:&amp;nbsp;5.2.18&lt;/li&gt;
@@ -17,7 +17,7 @@
 &lt;li&gt;MacOS vmdk镜像版本: MacOS Mojave 10.14 Beta&amp;nbsp;6&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;百度网盘下载地址: &lt;a href=""&gt;百度网盘 Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 10.14&amp;nbsp;Beta6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;百度网盘下载地址: &lt;a href="https://pan.baidu.com/s/1XX-m7VG02_NL0rDmtuW7hQ"&gt;百度网盘 Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 10.14 Beta6&lt;/a&gt;&amp;nbsp;,密码：ni2b&lt;/li&gt;
 &lt;li&gt;Google Driver下载地址: &lt;a href="https://drive.google.com/drive/folders/11YdpDxm32Odk9lBeBj7HLeN4XEZP59sd?usp=sharing"&gt;Google Driver for Mac 10.14&amp;nbsp;Beta6&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;

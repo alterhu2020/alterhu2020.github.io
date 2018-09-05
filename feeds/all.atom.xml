@@ -1,53 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-04T17:48:48+08:00</updated><entry><title>七牛云配置详解(2018-09-04)</title><link href="https://pingbook.top/articles/qiniu-upload-config/" rel="alternate"></link><published>2018-09-04T17:48:48+08:00</published><updated>2018-09-04T17:48:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/qiniu-upload-config/</id><summary type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&amp;nbsp;可以保存用户的数据的安全.&lt;/p&gt;
-&lt;h4 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-05T15:45:18+08:00</updated><entry><title>VirtualBox安装苹果虚拟机镜像MacOS 10.13/10.14 Beta6(2018-09-05更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-05T15:45:18+08:00</published><updated>2018-09-05T15:45:18+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-05:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备工作&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;用到的参数:
-1. appKey
-2 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&amp;nbsp;可以保存用户的数据的安全.&lt;/p&gt;
-&lt;h4 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;用到的参数:
-1. appKey
-2. appSecret
-3.&amp;nbsp;BucketName&lt;/li&gt;
-&lt;/ul&gt;</content><category term="七牛"></category></entry><entry><title>VirtualBox安装黑苹果MacOS 10.13(2018-09-04更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-04T17:00:08+08:00</published><updated>2018-09-04T17:00:08+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;测试时间:&amp;nbsp;2018.09.02&lt;/li&gt;
+&lt;li&gt;测试时间:&amp;nbsp;2018.09.05&lt;/li&gt;
 &lt;li&gt;VirtualBox版本:&amp;nbsp;5.2.18&lt;/li&gt;
-&lt;li&gt;MacOS版本 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3 id="_1"&gt;准备条件&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;li&gt;MacOS镜像版本 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3 id="_1"&gt;准备工作&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;测试时间:&amp;nbsp;2018.09.02&lt;/li&gt;
+&lt;li&gt;测试时间:&amp;nbsp;2018.09.05&lt;/li&gt;
 &lt;li&gt;VirtualBox版本:&amp;nbsp;5.2.18&lt;/li&gt;
-&lt;li&gt;MacOS版本：macOS High Sierra 10.13.iso, 下载地址:   https://blog.csdn.net/icarus666/article/details/79536388中下载的镜像
-,可以到我的网盘下载: &lt;a href="https://pan.baidu.com/s/1QJmfh9iV273bDA-fy9UfCg"&gt;macOS High Sierra&amp;nbsp;10.13.iso&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MacOS镜像版本：MacOS High Sierra&amp;nbsp;10.13&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;下载地址:   &lt;a href="https://blog.csdn.net/icarus666/article/details/79536388"&gt;https://blog.csdn.net/icarus666/article/details/79536388&lt;/a&gt;中下载的镜像&lt;/li&gt;
+&lt;li&gt;网盘下载: &lt;a href="https://pan.baidu.com/s/1QJmfh9iV273bDA-fy9UfCg"&gt;macOS High Sierra&amp;nbsp;10.13.iso&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;MacOS vmdk镜像版本: MacOS Mojave 10.14 Beta&amp;nbsp;6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;百度网盘下载地址: &lt;a href=""&gt;百度网盘 Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 10.14&amp;nbsp;Beta6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Google Driver下载地址: &lt;a href="https://drive.google.com/drive/folders/11YdpDxm32Odk9lBeBj7HLeN4XEZP59sd?usp=sharing"&gt;Google Driver for Mac 10.14&amp;nbsp;Beta6&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;测试结果: VirtualBox中&lt;strong&gt;成功安装MacOS 10.13/10.14 Beta&amp;nbsp;6&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="_2"&gt;参考地址&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://blog.csdn.net/xiangyuecn/article/details/79867173"&gt;总结的参考博客&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.cnblogs.com/ios9/p/7519302.html"&gt;下载地址二&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://techsviewer.com/install-macos-10-14-mojave-virtualbox-windows/"&gt;MacOS 10.14 beta 6安装步骤博客,更新日期 2018-09-04(&lt;strong&gt;推荐&lt;/strong&gt;)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://techsviewer.com/install-macos-high-sierra-virtualbox-windows/"&gt;MacOS 10.13.6安装步骤博客,更新日期&amp;nbsp;2018-09-04&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://blog.csdn.net/xiangyuecn/article/details/79867173"&gt;MacOS&amp;nbsp;10.13安装步骤博客&lt;/a&gt;  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cnblogs.com/ios9/p/7519302.html"&gt;MacOS&amp;nbsp;10.13镜像下载地址&lt;/a&gt;  &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.jianshu.com/p/249d4998aa0c"&gt;Cordova安装配置&lt;/a&gt;  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="_3"&gt;用到的修改命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd &amp;quot;C:\Program Files\Oracle\VirtualBox\&amp;quot;&lt;/span&gt;
+&lt;h3 id="mac-dmg-to-iso-format"&gt;Mac dmg to iso format&lt;a class="headerlink" href="#mac-dmg-to-iso-format" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DMG&lt;/span&gt; is Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X native disk image format while virtual machines (VmWare, Parallels or VirtualBox) are able to mount &lt;span class="caps"&gt;ISO&lt;/span&gt; images only. With &lt;a href="https://www.crystalidea.com/anytoiso/download"&gt;AnyToISO&lt;/a&gt; program you can convert &lt;span class="caps"&gt;DMG&lt;/span&gt; to &lt;span class="caps"&gt;ISO&lt;/span&gt; and mount the resulting &lt;span class="caps"&gt;ISO&lt;/span&gt; image to your virtual machine (running Mac &lt;span class="caps"&gt;OS&lt;/span&gt;&amp;nbsp;X).&lt;/p&gt;
+&lt;h3 id="_3"&gt;镜像安装前用到的修改命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;----- For Mac OS 10.14 Beta 6&lt;/span&gt;
+&lt;span class="code-line"&gt;cd &amp;quot;C:\Program Files\Oracle\VirtualBox\&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage.exe modifyvm &amp;quot;MacOS10.14Beta6&amp;quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.14Beta6&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;quot; &amp;quot;iMac11,3&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.14Beta6&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;quot; &amp;quot;1.0&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.14Beta6&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;quot; &amp;quot;Iloveapple&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.14Beta6&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;quot; &amp;quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.14Beta6&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;quot; 1&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage.exe modifyvm &amp;quot;MacOS10.13&amp;quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;quot; &amp;quot;iMac11,3&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;quot; &amp;quot;1.0&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;quot; &amp;quot;Iloveapple&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;quot; &amp;quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;quot;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;quot; 1&lt;/span&gt;
+&lt;span class="code-line"&gt;---- For Mac OS 10.13.6&lt;/span&gt;
+&lt;span class="code-line"&gt;cd &amp;quot;C:\Program Files\Oracle\VirtualBox\&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage.exe modifyvm &amp;quot;MacOS10.13.6&amp;quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13.6&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;quot; &amp;quot;iMac11,3&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13.6&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;quot; &amp;quot;1.0&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13.6&amp;quot; &amp;quot;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;quot; &amp;quot;Iloveapple&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13.6&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;quot; &amp;quot;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata &amp;quot;MacOS10.13.6&amp;quot; &amp;quot;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;quot; 1&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3 id="_4"&gt;可能的错误&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="mac-os"&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 安装遇到的问题&lt;a class="headerlink" href="#mac-os" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;错误提示 `Querying &amp;ldquo;&lt;span class="caps"&gt;UUID&lt;/span&gt;&amp;rdquo; failed&amp;nbsp;(VERR_CFGM_VALUE_NOT_FOUND)&lt;/li&gt;
 &lt;/ol&gt;
@@ -61,32 +74,41 @@
 &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error_2.png"&gt;
   then from the right check the virtualbox&amp;rsquo;s disk and select &amp;ldquo;Erasing&amp;rdquo;,and input the new disk name and format.etc. see below screenshot:
   &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error_3.png"&gt;
-  Go back the install screenshot, or restart the virtualmachine, then you could see &amp;ldquo;&lt;span class="caps"&gt;YOUR&lt;/span&gt; &lt;span class="caps"&gt;DISK&lt;/span&gt; &lt;span class="caps"&gt;NAME&lt;/span&gt;&amp;rdquo; as an option on &amp;ldquo;Install &lt;span class="caps"&gt;OS&lt;/span&gt; X&amp;rdquo; screen as shown&amp;nbsp;above.&lt;/p&gt;
+  Go back the install screenshot, or restart the virtualmachine, then you could see &amp;ldquo;&lt;span class="caps"&gt;YOUR&lt;/span&gt; &lt;span class="caps"&gt;DISK&lt;/span&gt; &lt;span class="caps"&gt;NAME&lt;/span&gt;&amp;rdquo; as an option on &amp;ldquo;Install &lt;span class="caps"&gt;OS&lt;/span&gt; X&amp;rdquo; screen as shown above.
+- Stuck at first screen: Open virtualbox, change Guest Version to Other 64bit, select tab &amp;ldquo;Storage&amp;rdquo; and enable &lt;strong&gt;&amp;ldquo;Use Host I/O Cache&amp;rdquo;&lt;/strong&gt;.
+- Mouse and Keyboard not working: Install &amp;ldquo;Oracle &lt;span class="caps"&gt;VM&lt;/span&gt; VirtualBox Extension Pack&amp;rdquo; download from virtualbox website. Open VirtualBox, select tab &amp;ldquo;&lt;span class="caps"&gt;USB&lt;/span&gt;&amp;rdquo;, click enable &lt;span class="caps"&gt;USB&lt;/span&gt; 3.0 Controller and add your Mouse to VirtualBox.
+&lt;img alt="测试图片显示" src="https://i1.wp.com/techsviewer.com/wp-content/uploads/2018/06/Enable-USB-3.0-in-VirtualBox.jpg?w=647&amp;amp;ssl=1"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="nodejs"&gt;安装nodejs&lt;a class="headerlink" href="#nodejs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="mac-os-nodejs"&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 安装nodejs&lt;a class="headerlink" href="#mac-os-nodejs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;control + space&amp;nbsp;打开spotlight,输入“终端”，就打开了终端，类似win下的cmd;&lt;/li&gt;
 &lt;li&gt;输入 node -v ,&amp;nbsp;回车;&lt;/li&gt;
 &lt;li&gt;输入 npm -v ,&amp;nbsp;回车;&lt;/li&gt;
 &lt;li&gt;若无错，则显示版本号;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="cordova"&gt;安装cordova&lt;a class="headerlink" href="#cordova" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="mac-os-cordova"&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 安装cordova&lt;a class="headerlink" href="#mac-os-cordova" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; sudo npm install -g cordova   &lt;/span&gt;
+&lt;span class="code-line"&gt;1. cordova  create VRPanoApp com.yitieyilu.app VRPanoApp&lt;/span&gt;
+&lt;span class="code-line"&gt;# 参数名称对应的是: 文件夹名称 包名称 和app名称&lt;/span&gt;
+&lt;span class="code-line"&gt;2. cordova platforms add android&lt;/span&gt;
+&lt;span class="code-line"&gt;   cordova platforms add ios&lt;/span&gt;
+&lt;span class="code-line"&gt;   cordova plugin add cordova-plugin-splashscreen --save&lt;/span&gt;
+&lt;span class="code-line"&gt;   cordova plugin add cordova-plugin-console --save&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;blockquote&gt;
 &lt;p&gt;如果没有sudo则会报错，原因：由于 root 用户在 &lt;span class="caps"&gt;OS&lt;/span&gt; X 中具有特殊权限，因此对于特定的管理或故障诊断任务可能非常有用，但不适合日常使用。如果使用不慎，root 用户作出的更改可能只有通过重装 &lt;span class="caps"&gt;OS&lt;/span&gt; X 才能修复。考虑使用其他方式（如 sudo 命令）来代替启用 root&amp;nbsp;用户。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id="_5"&gt;安装依赖&lt;a class="headerlink" href="#_5" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="mac-os-cordova_1"&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 安装cordova依赖&lt;a class="headerlink" href="#mac-os-cordova_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;sudo npm install -g ios-deploy - -unsafe-perm=t    //代表真机运行环境  &lt;/span&gt;
 &lt;span class="code-line"&gt;sudo npm install -g ios-sim                       //代表模拟器运行环境  &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3 id="virtualboxmac-os-x"&gt;virtualbox设置MAC &lt;span class="caps"&gt;OS&lt;/span&gt; X共享剪切板&lt;a class="headerlink" href="#virtualboxmac-os-x" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="virtualboxmac-os-x"&gt;virtualbox设置MAC &lt;span class="caps"&gt;OS&lt;/span&gt; X虚拟机共享剪切板&lt;a class="headerlink" href="#virtualboxmac-os-x" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;设置-&amp;gt;高级-&amp;gt;共享剪切板 双向，拖拽&amp;nbsp;双向 &lt;/li&gt;
 &lt;li&gt;虚拟机设置-存储-控制器SATA-勾选”使用主机输入输出(I/O)缓存” &lt;/li&gt;
@@ -94,19 +116,68 @@
 &lt;li&gt;启动虚拟机-&amp;gt;左上角divices-&amp;gt;insert additional&amp;nbsp;… &lt;/li&gt;
 &lt;li&gt;重启虚拟机&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="mac"&gt;Mac大小写切换，中英文切换&lt;a class="headerlink" href="#mac" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="mac-os_1"&gt;Mac OS虚拟机大小写切换，中英文切换&lt;a class="headerlink" href="#mac-os_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;中文小写英文切换：&lt;br&gt;
-    &amp;ndash;按一下caps&amp;nbsp;lock键就可以实现中文小写英文切换&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;大小写切换：&lt;/p&gt;
+&lt;p&gt;中文小写英文切换：  &lt;/p&gt;
+&lt;p&gt;&amp;ndash;按一下caps lock键就可以实现中文小写英文切换
+*&amp;nbsp;大小写切换：&lt;/p&gt;
 &lt;p&gt;&amp;ndash;不管是在中文状态下还是小写英文状态下，只要按住&lt;strong&gt;shift&lt;/strong&gt;键就可以实现大写输入
-* 大小写切换其他方式：&lt;br&gt;
-&amp;ndash;长按住caps lock键2s，caps lock灯亮即可切换到大写输入状态，这种情况适合于连续输入好多大写字母。输完了轻点一下caps&amp;nbsp;lock就可以切换到非大写状态&lt;/p&gt;
+*&amp;nbsp;大小写切换其他方式：  &lt;/p&gt;
+&lt;p&gt;&amp;ndash;长按住caps lock键2s，caps lock灯亮即可切换到大写输入状态，这种情况适合于连续输入好多大写字母。输完了轻点一下caps&amp;nbsp;lock就可以切换到非大写状态&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="how-update-macos-x"&gt;How update MacOS X&lt;a class="headerlink" href="#how-update-macos-x" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;发现使用过iphone的就知道了,直接进入App Store 里面,然后搜索&lt;code&gt;MacOS&lt;/code&gt;,里面会看到对应的版本,或者它这里会提示你是否有新的版本可以下载,确实很方便. &lt;/p&gt;</content></entry><entry><title>百度网盘不限速工具方式(2018-09-04更新)</title><link href="https://pingbook.top/articles/baiduyun-download-limit/" rel="alternate"></link><published>2018-09-04T13:46:27+08:00</published><updated>2018-09-04T13:46:27+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/baiduyun-download-limit/</id><summary type="html">&lt;h3 id="_1"&gt;参考&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="how-to-update-macos-x"&gt;How to update MacOS X&lt;a class="headerlink" href="#how-to-update-macos-x" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;发现使用过iphone的就知道了,直接进入App Store 里面,然后搜索&lt;code&gt;MacOS&lt;/code&gt;,里面会看到对应的版本,或者它这里会提示你是否有新的版本可以下载,确实很方便. &lt;br&gt;
+参考地址: &lt;a href="https://jingyan.baidu.com/article/647f0115e342b97f2148a8ad.html"&gt;https://jingyan.baidu.com/article/647f0115e342b97f2148a8ad.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="install-xcode-10-beta-6"&gt;Install XCode 10 beta 6&lt;a class="headerlink" href="#install-xcode-10-beta-6" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Need to upgrade Mac to the latest version, because XCode 10 Beta 6 need the Mac Version is Mac 10.13.6 or&amp;nbsp;later.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://developer.apple.com/news/releases/"&gt;XCode对应的Mac版本列表&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="how-to-change-the-display-resolution"&gt;How to change the display resolution&lt;a class="headerlink" href="#how-to-change-the-display-resolution" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://techsviewer.com/how-to-enter-full-screen-mode-macos-virtualbox/"&gt;参考地址&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Virtualbox&amp;rsquo;s virtual machine screen is too small, the below command to change the display&amp;nbsp;resolution: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;cd &amp;quot;C:\Program Files\Oracle\VirtualBox\&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;--- For Mac OS 10.14 beta 6&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage setextradata “MacOS10.14Beta6” VBoxInternal2/EfiGraphicsResolution 1920x1080&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;--- For Mac OS 10.13&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage.exe setextradata global GUI/MaxGuestResolution any&lt;/span&gt;
+&lt;span class="code-line"&gt;VBoxManage.exe setextradata &amp;quot;MacOS10.13&amp;quot; &amp;quot;CustomVideoMode1&amp;quot; &amp;quot;1920x1080x32&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;vboxmanage.exe controlvm &amp;quot;MacOS10.13&amp;quot; setvideomodehint 1920 1080 32&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="google-driver"&gt;如何下载Google Driver中的文件&lt;a class="headerlink" href="#google-driver" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;不要使用迅雷, 使用这个工具 &lt;a href="http://mirror2.internetdownloadmanager.com/idman631build3.exe"&gt;Internet Download Manager 6.31 build 3&lt;/a&gt;, 需要用到的 &lt;a href="http://11269771.ch1.data.tv002.com:443/down/323cc5a8d9d9b98164e9f2a82a4dc3a3-46166/IDM_6.2x_Crack_v16.1.7z?cts=f-D60A191A142A27F70ae9&amp;amp;ctp=60A191A142A27&amp;amp;ctt=1536152168&amp;amp;limit=1&amp;amp;spd=90000&amp;amp;ctk=53d40088971e808d5f50e97b9c3c9ad9&amp;amp;chk=323cc5a8d9d9b98164e9f2a82a4dc3a3-46166&amp;amp;mtd=1"&gt;破解补丁&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;然后打开你的代理软件,回到Internet Download&amp;nbsp;Manager中,选择&amp;rdquo;选项&amp;rdquo;=&amp;gt;&amp;rdquo;代理服务器&amp;rdquo;,再在里面设置刚才对应的代理软件的主机和端口号.&lt;/li&gt;
+&lt;li&gt;使用感觉: &lt;code&gt;这个工具使用起来发现比迅雷的下载速度还要快&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="virtualbox"&gt;Virtualbox桥接上网&lt;a class="headerlink" href="#virtualbox" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;原理： 
+1.   通过主机网卡，架设一条桥，直接连入到网络中。它使得虚拟机能被分配到一个网络中独立的IP，所有网络功能完全和在网络中的真实机器一样。&amp;nbsp;(虚拟机是通过主机所在网络中的DHCP服务得到ip地址的，所以按理来说，两者是完全独立的，但事实却是虚拟机是没有独立硬件的，它还是要依靠主机的网卡，因此，主机要断开网络，虚拟机也就没法拿到ip了，所以呵呵~~所有特点全消失咯）&lt;/li&gt;
+&lt;/ul&gt;</content></entry><entry><title>七牛云配置详解(2018-09-04)</title><link href="https://pingbook.top/articles/qiniu-upload-config/" rel="alternate"></link><published>2018-09-04T17:48:48+08:00</published><updated>2018-09-04T17:48:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/qiniu-upload-config/</id><summary type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&amp;nbsp;可以保存用户的数据的安全.&lt;/p&gt;
+&lt;h4 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用到的参数:
+1. appKey
+2 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&amp;nbsp;可以保存用户的数据的安全.&lt;/p&gt;
+&lt;h4 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用到的参数:
+1. appKey
+2. appSecret
+3.&amp;nbsp;BucketName&lt;/li&gt;
+&lt;/ul&gt;</content><category term="七牛"></category></entry><entry><title>百度网盘不限速工具方式(2018-09-04更新)</title><link href="https://pingbook.top/articles/baiduyun-download-limit/" rel="alternate"></link><published>2018-09-04T13:46:27+08:00</published><updated>2018-09-04T13:46:27+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/baiduyun-download-limit/</id><summary type="html">&lt;h3 id="_1"&gt;参考&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;参考的网页地址是: &lt;a href="https://www.runningcheese.com/baiduyun"&gt;https://www.runningcheese.com/baiduyun&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;测试发现好用的是这款软件:&lt;a href="https://github.com/proxyee-down-org/proxyee-down/releases"&gt;https://github …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3 id="_1"&gt;参考&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;

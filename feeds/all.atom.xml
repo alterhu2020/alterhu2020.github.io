@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-05T17:50:15+08:00</updated><entry><title>VirtualBox安装苹果虚拟机镜像MacOS 10.13/10.14 Beta6(2018-09-05更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-05T17:50:15+08:00</published><updated>2018-09-05T17:50:15+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-05:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备工作&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-06T09:06:55+08:00</updated><entry><title>VirtualBox安装苹果虚拟机镜像MacOS 10.13/10.14 Beta6(2018-09-05更新)</title><link href="https://pingbook.top/articles/install-mac-virtuabox/" rel="alternate"></link><published>2018-09-06T09:06:55+08:00</published><updated>2018-09-06T09:06:55+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-06:/articles/install-mac-virtuabox/</id><summary type="html">&lt;h3 id="_1"&gt;准备工作&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;测试时间:&amp;nbsp;2018.09.05&lt;/li&gt;
 &lt;li&gt;VirtualBox版本:&amp;nbsp;5.2.18&lt;/li&gt;
@@ -37,9 +37,13 @@
 &lt;li&gt;&lt;a href="https://www.cnblogs.com/ios9/p/7519302.html"&gt;MacOS&amp;nbsp;10.13镜像下载地址&lt;/a&gt;  &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.jianshu.com/p/249d4998aa0c"&gt;Cordova安装配置&lt;/a&gt;  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="mac-dmg-to-iso-format"&gt;Mac dmg to iso format&lt;a class="headerlink" href="#mac-dmg-to-iso-format" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;span class="caps"&gt;DMG&lt;/span&gt; is Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X native disk image format while virtual machines (VmWare, Parallels or VirtualBox) are able to mount &lt;span class="caps"&gt;ISO&lt;/span&gt; images only. With &lt;a href="https://www.crystalidea.com/anytoiso/download"&gt;AnyToISO&lt;/a&gt; program you can convert &lt;span class="caps"&gt;DMG&lt;/span&gt; to &lt;span class="caps"&gt;ISO&lt;/span&gt; and mount the resulting &lt;span class="caps"&gt;ISO&lt;/span&gt; image to your virtual machine (running Mac &lt;span class="caps"&gt;OS&lt;/span&gt;&amp;nbsp;X).&lt;/p&gt;
+&lt;h3 id="mac-os"&gt;创建Mac OS虚拟机镜像&lt;a class="headerlink" href="#mac-os" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;在VirtualBox中新建一个虚拟机,名称需要跟下面的命令行中的一样,例如本例中的:&lt;strong&gt;MacOS10.14Beta6&lt;/strong&gt;,虚拟机类型为: &lt;strong&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X&lt;/strong&gt;, 版本为: &lt;strong&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X(64 bit)&lt;/strong&gt;, 设置一个内存,最好大于3G,在虚拟硬盘中选择&amp;rdquo;使用已有的虚拟硬盘&amp;rdquo;,然后选择上面提供的vmdk虚拟机文件,如下截图:
+&lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_install.png"&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id="_3"&gt;镜像安装前用到的修改命令&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;关闭虚拟机在命令行对新建的虚拟机进行如下配置:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;----- For Mac OS 10.14 Beta 6&lt;/span&gt;
 &lt;span class="code-line"&gt;cd &amp;quot;C:\Program Files\Oracle\VirtualBox\&amp;quot;&lt;/span&gt;
 &lt;span class="code-line"&gt;VBoxManage.exe modifyvm &amp;quot;MacOS10.14Beta6&amp;quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&lt;/span&gt;
@@ -60,7 +64,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3 id="mac-os"&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 安装遇到的问题&lt;a class="headerlink" href="#mac-os" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="mac-os_1"&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 安装遇到的问题&lt;a class="headerlink" href="#mac-os_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;错误提示 `Querying &amp;ldquo;&lt;span class="caps"&gt;UUID&lt;/span&gt;&amp;rdquo; failed&amp;nbsp;(VERR_CFGM_VALUE_NOT_FOUND)&lt;/li&gt;
 &lt;/ol&gt;
@@ -69,16 +73,22 @@
 &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol start="2"&gt;
-&lt;li&gt;When install &amp;rdquo; there is no enough free space on sierra custom installer to install &amp;ldquo;&lt;blockquote&gt;
+&lt;li&gt;
+&lt;p&gt;When install &amp;rdquo; there is no enough free space on sierra custom installer to install&amp;nbsp;&amp;ldquo;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Solution: From the top menu, choose &amp;ldquo;Utilities&amp;rdquo;=&amp;gt; &amp;ldquo;Disk Utility&amp;rdquo;,and open the dialog, see below screnenshot:
 &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error_2.png"&gt;
   then from the right check the virtualbox&amp;rsquo;s disk and select &amp;ldquo;Erasing&amp;rdquo;,and input the new disk name and format.etc. see below screenshot:
   &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_error_3.png"&gt;
-  Go back the install screenshot, or restart the virtualmachine, then you could see &amp;ldquo;&lt;span class="caps"&gt;YOUR&lt;/span&gt; &lt;span class="caps"&gt;DISK&lt;/span&gt; &lt;span class="caps"&gt;NAME&lt;/span&gt;&amp;rdquo; as an option on &amp;ldquo;Install &lt;span class="caps"&gt;OS&lt;/span&gt; X&amp;rdquo; screen as shown above.
-- Stuck at first screen: Open virtualbox, change Guest Version to Other 64bit, select tab &amp;ldquo;Storage&amp;rdquo; and enable &lt;strong&gt;&amp;ldquo;Use Host I/O Cache&amp;rdquo;&lt;/strong&gt;.
-- Mouse and Keyboard not working: Install &amp;ldquo;Oracle &lt;span class="caps"&gt;VM&lt;/span&gt; VirtualBox Extension Pack&amp;rdquo; download from virtualbox website. Open VirtualBox, select tab &amp;ldquo;&lt;span class="caps"&gt;USB&lt;/span&gt;&amp;rdquo;, click enable &lt;span class="caps"&gt;USB&lt;/span&gt; 3.0 Controller and add your Mouse to VirtualBox.
-&lt;img alt="测试图片显示" src="https://i1.wp.com/techsviewer.com/wp-content/uploads/2018/06/Enable-USB-3.0-in-VirtualBox.jpg?w=647&amp;amp;ssl=1"&gt;&lt;/p&gt;
+  Go back the install screenshot, or restart the virtualmachine, then you could see &amp;ldquo;&lt;span class="caps"&gt;YOUR&lt;/span&gt; &lt;span class="caps"&gt;DISK&lt;/span&gt; &lt;span class="caps"&gt;NAME&lt;/span&gt;&amp;rdquo; as an option on &amp;ldquo;Install &lt;span class="caps"&gt;OS&lt;/span&gt; X&amp;rdquo; screen as shown&amp;nbsp;above.&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Stuck at first screen: Open virtualbox, change Guest Version to Other 64bit, select tab &amp;ldquo;Storage&amp;rdquo; and enable &lt;strong&gt;&amp;ldquo;Use Host I/O Cache&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mouse and Keyboard not working: Install &amp;ldquo;Oracle &lt;span class="caps"&gt;VM&lt;/span&gt; VirtualBox Extension Pack&amp;rdquo; download from virtualbox website. Open VirtualBox, select tab &amp;ldquo;&lt;span class="caps"&gt;USB&lt;/span&gt;&amp;rdquo;, click enable &lt;span class="caps"&gt;USB&lt;/span&gt; 3.0 Controller and add your Mouse to VirtualBox or in the &lt;span class="caps"&gt;USB&lt;/span&gt; 3.0 Controller Device Filters leave &lt;strong&gt;Empty&lt;/strong&gt;.
+&lt;img alt="测试图片显示" src="https://i1.wp.com/techsviewer.com/wp-content/uploads/2018/06/Enable-USB-3.0-in-VirtualBox.jpg?w=647&amp;amp;ssl=1"&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="mac-os-nodejs"&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt; 安装nodejs&lt;a class="headerlink" href="#mac-os-nodejs" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -116,7 +126,7 @@
 &lt;li&gt;启动虚拟机-&amp;gt;左上角divices-&amp;gt;insert additional&amp;nbsp;… &lt;/li&gt;
 &lt;li&gt;重启虚拟机&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="mac-os_1"&gt;Mac OS虚拟机大小写切换，中英文切换&lt;a class="headerlink" href="#mac-os_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="mac-os_2"&gt;Mac OS虚拟机大小写切换，中英文切换&lt;a class="headerlink" href="#mac-os_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;中文小写英文切换：  &lt;/p&gt;
@@ -159,11 +169,49 @@
 &lt;li&gt;然后打开你的代理软件,回到Internet Download&amp;nbsp;Manager中,选择&amp;rdquo;选项&amp;rdquo;=&amp;gt;&amp;rdquo;代理服务器&amp;rdquo;,再在里面设置刚才对应的代理软件的主机和端口号.&lt;/li&gt;
 &lt;li&gt;使用感觉: &lt;code&gt;这个工具使用起来发现比迅雷的下载速度还要快&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="virtualbox"&gt;Virtualbox桥接上网&lt;a class="headerlink" href="#virtualbox" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="virtualbox"&gt;Virtualbox桥接上网连接配置&lt;a class="headerlink" href="#virtualbox" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;原理： 
-1.   通过主机网卡，架设一条桥，直接连入到网络中。它使得虚拟机能被分配到一个网络中独立的IP，所有网络功能完全和在网络中的真实机器一样。&amp;nbsp;(虚拟机是通过主机所在网络中的DHCP服务得到ip地址的，所以按理来说，两者是完全独立的，但事实却是虚拟机是没有独立硬件的，它还是要依靠主机的网卡，因此，主机要断开网络，虚拟机也就没法拿到ip了，所以呵呵~~所有特点全消失咯）&lt;/li&gt;
-&lt;/ul&gt;</content></entry><entry><title>七牛云配置详解(2018-09-04)</title><link href="https://pingbook.top/articles/qiniu-upload-config/" rel="alternate"></link><published>2018-09-04T17:48:48+08:00</published><updated>2018-09-04T17:48:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/qiniu-upload-config/</id><summary type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;li&gt;原理： &lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通过主机网卡，架设一条桥，直接连入到网络中。它使得虚拟机能被分配到一个网络中独立的IP，所有网络功能完全和在网络中的真实机器一样。&amp;nbsp;(虚拟机是通过主机所在网络中的DHCP服务得到ip地址的，所以按理来说，两者是完全独立的，但事实却是虚拟机是没有独立硬件的，它还是要依靠主机的网卡，因此，主机要断开网络，虚拟机也就没法拿到ip了，所以呵呵~~所有特点全消失咯）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设置步骤&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.1 Windows&amp;nbsp;Host主机配置&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; 在Windows中的网络连接(控制面板\网络和 Internet\网络连接),查看Virtualbox自动生成的Host-Only网络,这里不需要做任何的修改,按照默认的配置即可.Host主机中自动生成的配置如下:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_share_bridge_4.png"&gt;&lt;/p&gt;
+&lt;p&gt;2.2&amp;nbsp;VirtualBox中配置&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;点击VirtualBox的&amp;rdquo;管理&amp;rdquo;菜单,进入子菜单&amp;rdquo;主机网络管理器&amp;rdquo;,然后在里面会自动创建一个Host Only Network,只启用这一个网络,这里的配置同控制面板\网络和 Internet\网络连接中VritualBox自动生成的Host-Only网络信息是一样的.如下截图:  &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_share_bridge_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;ldquo;&lt;/span&gt;主机网络管理器&amp;rdquo;中选中这个新建的网络,然后在底部配置网卡和DHCP服务器,这里网卡选择&amp;rdquo;手动配置网卡&amp;rdquo;, &amp;ldquo;DHCP服务器&amp;rdquo;按照默认配置不用再配置,如下截图: &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_share_bridge_3.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2.3 虚拟机Mac &lt;span class="caps"&gt;OS&lt;/span&gt;&amp;nbsp;Guest配置信息&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;进入Mac系统, 点击左上角的苹果标志,选择&amp;rdquo;System Preferences&amp;rdquo;=&amp;gt; &amp;ldquo;Network&amp;rdquo;,点击进入查看对应的网络设置信息,默认情况下会采用DHCP自动获取IP地址,配置的网络信息同Host主机的网络信息一致,在同一个网络内.如下截图: &lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_share_bridge_1.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="save-xcode-space"&gt;Save XCode space&lt;a class="headerlink" href="#save-xcode-space" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;XCode had installed with &lt;span class="caps"&gt;15GB&lt;/span&gt; in my disk ,that&amp;rsquo;s terrible, try to use below guideline to free the&amp;nbsp;space:  &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://macperformanceguide.com/blog/2016/20161031_1600-XCode-saving-space.html"&gt;Saving up to 8.&lt;span class="caps"&gt;5GB&lt;/span&gt; of Space After Every Apple Xcode&amp;nbsp;Update&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="share-file-from-windows-host-to-mac-os-guest"&gt;Share file from Windows Host to Mac &lt;span class="caps"&gt;OS&lt;/span&gt; Guest&lt;a class="headerlink" href="#share-file-from-windows-host-to-mac-os-guest" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The main problem is that how we can setup the Brige connection from host to guest machine? the steps for this you can refer above &lt;strong&gt;Virtualbox桥接上网连接配置&lt;/strong&gt; Section. Then following below&amp;nbsp;steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在Mac电脑中,点击左上角的苹果标志,选择&amp;rdquo;System Preferences&amp;rdquo;=&amp;gt; &amp;ldquo;Sharing&amp;rdquo;, 选择 &amp;ldquo;File Sharing&amp;rdquo;,你也可以点击&amp;rdquo;Options&amp;hellip;&amp;rdquo;按钮进行高级的配置,如下截图:
+&lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_share_bridge_5.png"&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在Windows主机上,直接在地址栏中输入地址: &lt;strong&gt;&amp;#92;你的Mac &lt;span class="caps"&gt;OS&lt;/span&gt; Guest的IP Addess&lt;/strong&gt;, 按照提示输入对应的账号密码即可访问Mac OS中的文件系统,如下截图:
+&lt;img alt="测试图片显示" src="https://pingbook.top/articles/install-mac-virtuabox/mac_share_bridge_6.png"&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="_4"&gt;未完待续&lt;a class="headerlink" href="#_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;</content></entry><entry><title>七牛云配置详解(2018-09-04)</title><link href="https://pingbook.top/articles/qiniu-upload-config/" rel="alternate"></link><published>2018-09-04T17:48:48+08:00</published><updated>2018-09-04T17:48:48+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-04:/articles/qiniu-upload-config/</id><summary type="html">&lt;h4 id="_1"&gt;问题&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;针对不同的公司设置不同的对象存储空间参数,这样不同的公司他们的资源存放在他们的服务器上,我们不接触用户的数据.&amp;nbsp;可以保存用户的数据的安全.&lt;/p&gt;
 &lt;h4 id="_2"&gt;配置&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
 &lt;ul&gt;

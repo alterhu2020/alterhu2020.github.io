@@ -123,8 +123,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-09-05T17:50:15.082308+08:00">-->
-                    <!--2018-09-05 17:50:15-->
+                    <!--<abbr class="published" title="2018-09-06T09:06:55.620019+08:00">-->
+                    <!--2018-09-06 09:06:55-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-09-05 17:50:15
+                        Posted on 2018-09-06 09:06:55
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -178,9 +178,13 @@
 <li><a href="https://www.cnblogs.com/ios9/p/7519302.html">MacOS&nbsp;10.13镜像下载地址</a>  </li>
 <li><a href="https://www.jianshu.com/p/249d4998aa0c">Cordova安装配置</a>  </li>
 </ul>
-<h3 id="mac-dmg-to-iso-format">Mac dmg to iso format<a class="headerlink" href="#mac-dmg-to-iso-format" title="Permanent link">&para;</a></h3>
-<p><span class="caps">DMG</span> is Mac <span class="caps">OS</span> X native disk image format while virtual machines (VmWare, Parallels or VirtualBox) are able to mount <span class="caps">ISO</span> images only. With <a href="https://www.crystalidea.com/anytoiso/download">AnyToISO</a> program you can convert <span class="caps">DMG</span> to <span class="caps">ISO</span> and mount the resulting <span class="caps">ISO</span> image to your virtual machine (running Mac <span class="caps">OS</span>&nbsp;X).</p>
+<h3 id="mac-os">创建Mac OS虚拟机镜像<a class="headerlink" href="#mac-os" title="Permanent link">&para;</a></h3>
+<ol>
+<li>在VirtualBox中新建一个虚拟机,名称需要跟下面的命令行中的一样,例如本例中的:<strong>MacOS10.14Beta6</strong>,虚拟机类型为: <strong>Mac <span class="caps">OS</span> X</strong>, 版本为: <strong>Mac <span class="caps">OS</span> X(64 bit)</strong>, 设置一个内存,最好大于3G,在虚拟硬盘中选择&rdquo;使用已有的虚拟硬盘&rdquo;,然后选择上面提供的vmdk虚拟机文件,如下截图:
+<img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_install.png"></li>
+</ol>
 <h3 id="_3">镜像安装前用到的修改命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>关闭虚拟机在命令行对新建的虚拟机进行如下配置:</p>
 <div class="highlight"><pre><span class="code-line"><span></span>----- For Mac OS 10.14 Beta 6</span>
 <span class="code-line">cd &quot;C:\Program Files\Oracle\VirtualBox\&quot;</span>
 <span class="code-line">VBoxManage.exe modifyvm &quot;MacOS10.14Beta6&quot; --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff</span>
@@ -201,7 +205,7 @@
 </pre></div>
 
 
-<h3 id="mac-os">Mac <span class="caps">OS</span> 安装遇到的问题<a class="headerlink" href="#mac-os" title="Permanent link">&para;</a></h3>
+<h3 id="mac-os_1">Mac <span class="caps">OS</span> 安装遇到的问题<a class="headerlink" href="#mac-os_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>错误提示 `Querying &ldquo;<span class="caps">UUID</span>&rdquo; failed&nbsp;(VERR_CFGM_VALUE_NOT_FOUND)</li>
 </ol>
@@ -210,16 +214,22 @@
 <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_error.png"></p>
 </blockquote>
 <ol start="2">
-<li>When install &rdquo; there is no enough free space on sierra custom installer to install &ldquo;<blockquote>
+<li>
+<p>When install &rdquo; there is no enough free space on sierra custom installer to install&nbsp;&ldquo;</p>
+<blockquote>
 <p>Solution: From the top menu, choose &ldquo;Utilities&rdquo;=&gt; &ldquo;Disk Utility&rdquo;,and open the dialog, see below screnenshot:
 <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_error_2.png">
   then from the right check the virtualbox&rsquo;s disk and select &ldquo;Erasing&rdquo;,and input the new disk name and format.etc. see below screenshot:
   <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_error_3.png">
-  Go back the install screenshot, or restart the virtualmachine, then you could see &ldquo;<span class="caps">YOUR</span> <span class="caps">DISK</span> <span class="caps">NAME</span>&rdquo; as an option on &ldquo;Install <span class="caps">OS</span> X&rdquo; screen as shown above.
-- Stuck at first screen: Open virtualbox, change Guest Version to Other 64bit, select tab &ldquo;Storage&rdquo; and enable <strong>&ldquo;Use Host I/O Cache&rdquo;</strong>.
-- Mouse and Keyboard not working: Install &ldquo;Oracle <span class="caps">VM</span> VirtualBox Extension Pack&rdquo; download from virtualbox website. Open VirtualBox, select tab &ldquo;<span class="caps">USB</span>&rdquo;, click enable <span class="caps">USB</span> 3.0 Controller and add your Mouse to VirtualBox.
-<img alt="测试图片显示" src="https://i1.wp.com/techsviewer.com/wp-content/uploads/2018/06/Enable-USB-3.0-in-VirtualBox.jpg?w=647&amp;ssl=1"></p>
+  Go back the install screenshot, or restart the virtualmachine, then you could see &ldquo;<span class="caps">YOUR</span> <span class="caps">DISK</span> <span class="caps">NAME</span>&rdquo; as an option on &ldquo;Install <span class="caps">OS</span> X&rdquo; screen as shown&nbsp;above.</p>
 </blockquote>
+</li>
+<li>
+<p>Stuck at first screen: Open virtualbox, change Guest Version to Other 64bit, select tab &ldquo;Storage&rdquo; and enable <strong>&ldquo;Use Host I/O Cache&rdquo;</strong>.</p>
+</li>
+<li>
+<p>Mouse and Keyboard not working: Install &ldquo;Oracle <span class="caps">VM</span> VirtualBox Extension Pack&rdquo; download from virtualbox website. Open VirtualBox, select tab &ldquo;<span class="caps">USB</span>&rdquo;, click enable <span class="caps">USB</span> 3.0 Controller and add your Mouse to VirtualBox or in the <span class="caps">USB</span> 3.0 Controller Device Filters leave <strong>Empty</strong>.
+<img alt="测试图片显示" src="https://i1.wp.com/techsviewer.com/wp-content/uploads/2018/06/Enable-USB-3.0-in-VirtualBox.jpg?w=647&amp;ssl=1"></p>
 </li>
 </ol>
 <h3 id="mac-os-nodejs">Mac <span class="caps">OS</span> 安装nodejs<a class="headerlink" href="#mac-os-nodejs" title="Permanent link">&para;</a></h3>
@@ -257,7 +267,7 @@
 <li>启动虚拟机-&gt;左上角divices-&gt;insert additional&nbsp;… </li>
 <li>重启虚拟机</li>
 </ol>
-<h3 id="mac-os_1">Mac OS虚拟机大小写切换，中英文切换<a class="headerlink" href="#mac-os_1" title="Permanent link">&para;</a></h3>
+<h3 id="mac-os_2">Mac OS虚拟机大小写切换，中英文切换<a class="headerlink" href="#mac-os_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>中文小写英文切换：  </p>
@@ -300,11 +310,49 @@
 <li>然后打开你的代理软件,回到Internet Download&nbsp;Manager中,选择&rdquo;选项&rdquo;=&gt;&rdquo;代理服务器&rdquo;,再在里面设置刚才对应的代理软件的主机和端口号.</li>
 <li>使用感觉: <code>这个工具使用起来发现比迅雷的下载速度还要快</code></li>
 </ol>
-<h3 id="virtualbox">Virtualbox桥接上网<a class="headerlink" href="#virtualbox" title="Permanent link">&para;</a></h3>
+<h3 id="virtualbox">Virtualbox桥接上网连接配置<a class="headerlink" href="#virtualbox" title="Permanent link">&para;</a></h3>
 <ul>
-<li>原理： 
-1.   通过主机网卡，架设一条桥，直接连入到网络中。它使得虚拟机能被分配到一个网络中独立的IP，所有网络功能完全和在网络中的真实机器一样。&nbsp;(虚拟机是通过主机所在网络中的DHCP服务得到ip地址的，所以按理来说，两者是完全独立的，但事实却是虚拟机是没有独立硬件的，它还是要依靠主机的网卡，因此，主机要断开网络，虚拟机也就没法拿到ip了，所以呵呵~~所有特点全消失咯）</li>
+<li>原理： </li>
 </ul>
+<ol>
+<li>
+<p>通过主机网卡，架设一条桥，直接连入到网络中。它使得虚拟机能被分配到一个网络中独立的IP，所有网络功能完全和在网络中的真实机器一样。&nbsp;(虚拟机是通过主机所在网络中的DHCP服务得到ip地址的，所以按理来说，两者是完全独立的，但事实却是虚拟机是没有独立硬件的，它还是要依靠主机的网卡，因此，主机要断开网络，虚拟机也就没法拿到ip了，所以呵呵~~所有特点全消失咯）</p>
+</li>
+<li>
+<p>设置步骤</p>
+</li>
+</ol>
+<p>2.1 Windows&nbsp;Host主机配置</p>
+<div class="highlight"><pre><span class="code-line"><span></span>&gt; 在Windows中的网络连接(控制面板\网络和 Internet\网络连接),查看Virtualbox自动生成的Host-Only网络,这里不需要做任何的修改,按照默认的配置即可.Host主机中自动生成的配置如下:</span>
+</pre></div>
+
+
+<p><img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_share_bridge_4.png"></p>
+<p>2.2&nbsp;VirtualBox中配置</p>
+<blockquote>
+<p>点击VirtualBox的&rdquo;管理&rdquo;菜单,进入子菜单&rdquo;主机网络管理器&rdquo;,然后在里面会自动创建一个Host Only Network,只启用这一个网络,这里的配置同控制面板\网络和 Internet\网络连接中VritualBox自动生成的Host-Only网络信息是一样的.如下截图:  <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_share_bridge_2.png"></p>
+<p><span class="dquo">&ldquo;</span>主机网络管理器&rdquo;中选中这个新建的网络,然后在底部配置网卡和DHCP服务器,这里网卡选择&rdquo;手动配置网卡&rdquo;, &ldquo;DHCP服务器&rdquo;按照默认配置不用再配置,如下截图: <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_share_bridge_3.png"> </p>
+</blockquote>
+<p>2.3 虚拟机Mac <span class="caps">OS</span>&nbsp;Guest配置信息</p>
+<blockquote>
+<p>进入Mac系统, 点击左上角的苹果标志,选择&rdquo;System Preferences&rdquo;=&gt; &ldquo;Network&rdquo;,点击进入查看对应的网络设置信息,默认情况下会采用DHCP自动获取IP地址,配置的网络信息同Host主机的网络信息一致,在同一个网络内.如下截图: <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_share_bridge_1.png"> </p>
+</blockquote>
+<h3 id="save-xcode-space">Save XCode space<a class="headerlink" href="#save-xcode-space" title="Permanent link">&para;</a></h3>
+<p>XCode had installed with <span class="caps">15GB</span> in my disk ,that&rsquo;s terrible, try to use below guideline to free the&nbsp;space:  </p>
+<p><a href="https://macperformanceguide.com/blog/2016/20161031_1600-XCode-saving-space.html">Saving up to 8.<span class="caps">5GB</span> of Space After Every Apple Xcode&nbsp;Update</a></p>
+<h3 id="share-file-from-windows-host-to-mac-os-guest">Share file from Windows Host to Mac <span class="caps">OS</span> Guest<a class="headerlink" href="#share-file-from-windows-host-to-mac-os-guest" title="Permanent link">&para;</a></h3>
+<p>The main problem is that how we can setup the Brige connection from host to guest machine? the steps for this you can refer above <strong>Virtualbox桥接上网连接配置</strong> Section. Then following below&nbsp;steps:</p>
+<ol>
+<li>
+<p>在Mac电脑中,点击左上角的苹果标志,选择&rdquo;System Preferences&rdquo;=&gt; &ldquo;Sharing&rdquo;, 选择 &ldquo;File Sharing&rdquo;,你也可以点击&rdquo;Options&hellip;&rdquo;按钮进行高级的配置,如下截图:
+<img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_share_bridge_5.png"> </p>
+</li>
+<li>
+<p>在Windows主机上,直接在地址栏中输入地址: <strong>&#92;你的Mac <span class="caps">OS</span> Guest的IP Addess</strong>, 按照提示输入对应的账号密码即可访问Mac OS中的文件系统,如下截图:
+<img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_share_bridge_6.png"> </p>
+</li>
+</ol>
+<h3 id="_4">未完待续<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
                 </div><!-- /.entry-content -->
                 <br>
                 <div><span>Categories:</span>Tools</div>

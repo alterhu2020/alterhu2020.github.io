@@ -72,7 +72,7 @@ html * {
 }
 
 body {
-  font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun;
   color: #333;
   background-color: #fffff9;
   line-height: 1.6;
@@ -136,7 +136,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+  font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun;
   color: #333;
   text-rendering: optimizeLegibility;
   padding-top: 0.273em;
@@ -217,7 +217,7 @@ h6 {
 
   ======================================================*/
 p {
-  font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun;
   color: #333;
   font-weight: 400;
   font-size: 16px;
@@ -1476,7 +1476,7 @@ img {
   width: auto;
   background: #f2f2f2;
   -webkit-appearance: none;
-  font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun;
   font-weight: 600;
   padding: 0 !important;
   text-align: center;
@@ -5359,7 +5359,7 @@ form fieldset legend {
 .badge, .label {
   height: 20px;
   display: inline-block;
-  font-family: Helvetica, arial, verdana, sans-serif;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun;
   font-weight: bold;
   line-height: 20px;
   text-align: center;

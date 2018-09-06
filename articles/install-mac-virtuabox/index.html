@@ -123,8 +123,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-09-06T09:06:55.620019+08:00">-->
-                    <!--2018-09-06 09:06:55-->
+                    <!--<abbr class="published" title="2018-09-06T20:24:45.230178+08:00">-->
+                    <!--2018-09-06 20:24:45-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -134,7 +134,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-09-06 09:06:55
+                        Posted on 2018-09-06 20:24:45
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -336,6 +336,7 @@
 <p>2.3 虚拟机Mac <span class="caps">OS</span>&nbsp;Guest配置信息</p>
 <blockquote>
 <p>进入Mac系统, 点击左上角的苹果标志,选择&rdquo;System Preferences&rdquo;=&gt; &ldquo;Network&rdquo;,点击进入查看对应的网络设置信息,默认情况下会采用DHCP自动获取IP地址,配置的网络信息同Host主机的网络信息一致,在同一个网络内.如下截图: <img alt="测试图片显示" src="../../articles/install-mac-virtuabox/mac_share_bridge_1.png"> </p>
+<p>更新日志: 反复测试发现,虚拟机中的IP地址最好是<strong>静态设置的IP</strong>,发现DHCP形式的再桥接模式下,IP地址会变成: 165.254.<em>.</em>,这个肯定是不能正常通信的.&nbsp;注意一定要是静态的IP地址.</p>
 </blockquote>
 <h3 id="save-xcode-space">Save XCode space<a class="headerlink" href="#save-xcode-space" title="Permanent link">&para;</a></h3>
 <p>XCode had installed with <span class="caps">15GB</span> in my disk ,that&rsquo;s terrible, try to use below guideline to free the&nbsp;space:  </p>
@@ -361,6 +362,11 @@
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
                             <a href="../../articles/qiniu-upload-config/">
                                 ◄&nbsp;&nbsp;七牛云配置详解(2018-09-04)
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/mybatis-poolableconnectionfactory/">
+                                mybatis connection error Cannot create PoolableConnectionFactory (Access denied for user &#8216;root&nbsp;&#8216;@&#8217;local&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -448,13 +454,13 @@
                     <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
                     <li class="tag-4"><a href="../../tag/intellij-idea/">IntelliJ Idea</a></li>
                     <li class="tag-4"><a href="../../tag/javascript/">JavaScript</a></li>
+                    <li class="tag-4"><a href="../../tag/mybatis/">Mybatis</a></li>
+                    <li class="tag-1"><a href="../../tag/oracle/">Oracle</a></li>
                     <li class="tag-4"><a href="../../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../../tag/sdk/">SDK</a></li>
+                    <li class="tag-2"><a href="../../tag/selenium/">Selenium</a></li>
                     <li class="tag-2"><a href="../../tag/vuejs/">Vuejs</a></li>
                     <li class="tag-2"><a href="../../tag/cordova/">cordova</a></li>
-                    <li class="tag-4"><a href="../../tag/dbforge-mysql/">dbforge mysql</a></li>
-                    <li class="tag-4"><a href="../../tag/electron/">electron</a></li>
-                    <li class="tag-4"><a href="../../tag/electron-builder/">electron-builder</a></li>
             </ul>
         </nav>
 

@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-09-06T09:07:19-00:00</lastmod>
+<lastmod>2018-09-07T00:11:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-09-06T09:07:19-00:00</lastmod>
+<lastmod>2018-09-07T00:11:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -32,8 +32,50 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://pingbook.top/articles/selenium-sourcecode/</loc>
+<lastmod>2018-09-07T00:10:33+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/selenium-currenturl/</loc>
+<lastmod>2018-09-07T00:00:10+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/pldeveloper-tips/</loc>
+<lastmod>2018-09-06T23:52:43+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/oracle-ora-28547/</loc>
+<lastmod>2018-09-06T23:47:51+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/oracle-decode/</loc>
+<lastmod>2018-09-06T23:34:45+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/mybatis-poolableconnectionfactory/</loc>
+<lastmod>2018-09-06T23:26:35+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
 <loc>https://pingbook.top/articles/install-mac-virtuabox/</loc>
-<lastmod>2018-09-06T09:06:55+08:00</lastmod>
+<lastmod>2018-09-06T20:24:45+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -278,7 +320,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/tools/</loc>
-<lastmod>2018-09-06T09:06:55+08:06</lastmod>
+<lastmod>2018-09-06T20:24:45+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -292,7 +334,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/softwaretesting/</loc>
-<lastmod>2018-07-24T20:39:58+08:06</lastmod>
+<lastmod>2018-09-07T00:10:33+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -341,7 +383,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/java/</loc>
-<lastmod>2018-08-29T18:16:46+08:06</lastmod>
+<lastmod>2018-09-06T23:52:43+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -349,6 +391,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pingbook.top/category/bo-ke-da-jian/</loc>
 <lastmod>2018-07-13T19:28:28+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/ruan-jian-ce-shi/</loc>
+<lastmod>2018-09-07T00:10:33+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/selenium/</loc>
+<lastmod>2018-09-07T00:10:33+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/oracle/</loc>
+<lastmod>2018-09-06T23:52:43+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/tag/mybatis/</loc>
+<lastmod>2018-09-06T23:26:35+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -613,13 +683,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://pingbook.top/tag/ruan-jian-ce-shi/</loc>
-<lastmod>2018-07-13T19:27:53+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://pingbook.top/tag/software-testing/</loc>
 <lastmod>2018-07-13T19:27:48+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -628,7 +691,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/author/walter-hu</loc>
-<lastmod>2018-09-06T09:06:55+08:06</lastmod>
+<lastmod>2018-09-07T00:10:33+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

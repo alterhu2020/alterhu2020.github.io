@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-07T00:10:33+08:00</updated><entry><title>Selenium3笔记-WebDriver源码初探</title><link href="https://pingbook.top/articles/selenium-sourcecode/" rel="alternate"></link><published>2018-09-07T00:10:33+08:00</published><updated>2018-09-07T00:10:33+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-07:/articles/selenium-sourcecode/</id><summary type="html">&lt;h3 id="selenium3"&gt;Selenium3 有哪些变化？&lt;a class="headerlink" href="#selenium3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-07T19:53:47+08:00</updated><entry><title>datetime时间模块有用的函数整理笔记</title><link href="https://pingbook.top/articles/time-module/" rel="alternate"></link><published>2018-09-07T19:53:47+08:00</published><updated>2018-09-07T19:53:47+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-07:/articles/time-module/</id><summary type="html">&lt;h3 id="ox01-datetime"&gt;ox01 毫秒时间戳转换成&lt;code&gt;datetime&lt;/code&gt;时间对象&lt;a class="headerlink" href="#ox01-datetime" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;使用&lt;code&gt;datetime.fromtimestamp(seconds)&lt;/code&gt;函数的时候需要注意:
+1 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="ox01-datetime"&gt;ox01 毫秒时间戳转换成&lt;code&gt;datetime&lt;/code&gt;时间对象&lt;a class="headerlink" href="#ox01-datetime" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;使用&lt;code&gt;datetime.fromtimestamp(seconds)&lt;/code&gt;函数的时候需要注意:
+1. 参数是秒不是毫秒
+2. windows平台在Python 3.6版本的时候,如果时间在这个范围: 0 &amp;lt;= t &amp;lt;= 86399, 将会报
+&lt;code&gt;OSError: [Errno 22] Invalid argument&lt;/code&gt;,这是一个已知的&lt;a href="https://bugs.python.org/issue29097"&gt;bug&lt;/a&gt;,目前已经在2018-07-27得到修复了.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;microSeconds_to_Datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unixTimestampMicroSeconds&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    fromtimestamp 对应的参数是秒,而大部分情况我们用的都是毫秒,所以这里需要转换下&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    :param unixTimestampMicroSeconds: 毫秒数&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    :return: datetime 对象&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    错误: https://bugs.python.org/issue29097 ,已经修复: 2018-07-27&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    datetime.fromtimestamp(t) when 0 &amp;lt;= t &amp;lt;= 86399 fails on Python 3.6 -&amp;gt; [Windows] datetime.fromtimestamp(t) when 0 &amp;lt;= t &amp;lt;= 86399 fails on Python 3.6&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    注意: OSError: [Errno 22] Invalid argument&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    On Windows platform, this range can sometimes be restricted to years in 1970 through 2038. I have never seen this problem on a Linux system.&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    如果还是失败,尝试使用 fromutctimestamp 函数&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="sd"&gt;    &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="n"&gt;unixTimestampSeconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;unixTimestampMicroSeconds&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="n"&gt;newDate&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fromtimestamp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unixTimestampSeconds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="c1"&gt;# otherStyleTime = time.strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;, timearr)&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;newDate&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="ox02-datetime"&gt;ox02 &lt;code&gt;datetime&lt;/code&gt;对象转换成毫秒时间戳&lt;a class="headerlink" href="#ox02-datetime" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;代码如下:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;current_timeMicroSeconds&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="c1"&gt;# current_milli_time = lambda: int(round(time.time() * 1000))&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="n"&gt;totalSeconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timestamp&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="n"&gt;totalMicroSeconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;totalSeconds&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;totalMicroSeconds&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="ox03-datetime"&gt;ox03 计算两个时间datetime对象的间隔&lt;a class="headerlink" href="#ox03-datetime" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;直接进行符号计算两个时间的间隔,使用&lt;code&gt;dir&lt;/code&gt;发现有以下的几个属性,没有&lt;strong&gt;毫秒&lt;/strong&gt;的属性注意:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt; dir(end - start)&lt;/span&gt;
+&lt;span class="code-line"&gt;[&amp;#39;__abs__&amp;#39;, &amp;#39;__add__&amp;#39;, &amp;#39;__class__&amp;#39;, &amp;#39;__delattr__&amp;#39;, &amp;#39;__div__&amp;#39;, &amp;#39;__doc__&amp;#39;, &amp;#39;__eq__&amp;#39;, &amp;#39;__floordiv__&amp;#39;, &amp;#39;__format__&amp;#39;, &amp;#39;__ge__&amp;#39;, &amp;#39;__getattribute__&amp;#39;, &amp;#39;__gt__&amp;#39;, &amp;#39;__hash__&amp;#39;, &amp;#39;__init__&amp;#39;, &amp;#39;__le__&amp;#39;, &amp;#39;__lt__&amp;#39;, &amp;#39;__mul__&amp;#39;, &amp;#39;__ne__&amp;#39;, &amp;#39;__neg__&amp;#39;, &amp;#39;__new__&amp;#39;, &amp;#39;__nonzero__&amp;#39;, &amp;#39;__pos__&amp;#39;, &amp;#39;__radd__&amp;#39;, &amp;#39;__rdiv__&amp;#39;, &amp;#39;__reduce__&amp;#39;, &amp;#39;__reduce_ex__&amp;#39;, &amp;#39;__repr__&amp;#39;, &amp;#39;__rfloordiv__&amp;#39;, &amp;#39;__rmul__&amp;#39;, &amp;#39;__rsub__&amp;#39;, &amp;#39;__setattr__&amp;#39;, &amp;#39;__sizeof__&amp;#39;, &amp;#39;__str__&amp;#39;, &amp;#39;__sub__&amp;#39;, &amp;#39;__subclasshook__&amp;#39;, &amp;#39;days&amp;#39;, &amp;#39;max&amp;#39;, &amp;#39;microseconds&amp;#39;, &amp;#39;min&amp;#39;, &amp;#39;resolution&amp;#39;, &amp;#39;seconds&amp;#39;, &amp;#39;total_seconds&amp;#39;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;所以一般使用如下几个方法:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1  diff.days  # 间隔的天数&lt;/span&gt;
+&lt;span class="code-line"&gt;2. diff.seconds  # 间隔的秒数&lt;/span&gt;
+&lt;span class="code-line"&gt;3. diff.microseconds # 间隔的秒数&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;所以函数如下:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;def compare_two_date(firstdate,seconddate):&lt;/span&gt;
+&lt;span class="code-line"&gt;    diff=seconddate-firstdate&lt;/span&gt;
+&lt;span class="code-line"&gt;    # totalSeconds=diff.microseconds&lt;/span&gt;
+&lt;span class="code-line"&gt;    totalSeconds=diff.seconds&lt;/span&gt;
+&lt;span class="code-line"&gt;    return totalSeconds&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Python"></category></entry><entry><title>MySQL 语句级避免重复插入—— Insert Select Not Exist</title><link href="https://pingbook.top/articles/insert-prevent-duplicate/" rel="alternate"></link><published>2018-09-07T16:19:23+08:00</published><updated>2018-09-07T16:19:23+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-07:/articles/insert-prevent-duplicate/</id><summary type="html">&lt;h3 id="_1"&gt;语法如下&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="gd"&gt;--- 单条记录插入&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;INSERT INTO table(column1,column2,column3 ...columnN)  &lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3 id="_1"&gt;语法如下&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="gd"&gt;--- 单条记录插入&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;INSERT INTO table(column1,column2,column3 ...columnN)  &lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT value1,value2,value3 ...valueN  &lt;/span&gt;
+&lt;span class="code-line"&gt;FROM dual  &lt;/span&gt;
+&lt;span class="code-line"&gt;WHERE NOT EXISTS(  &lt;/span&gt;
+&lt;span class="code-line"&gt;      SELECT *  &lt;/span&gt;
+&lt;span class="code-line"&gt;      FROM table  &lt;/span&gt;
+&lt;span class="code-line"&gt;      WHERE value = ?  &lt;/span&gt;
+&lt;span class="code-line"&gt;);  &lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="gd"&gt;--- 多条记录插入&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;INSERT INTO table(column1,column2,column3 ...columnN)  &lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT value1,value2,value3 ...valueN  &lt;/span&gt;
+&lt;span class="code-line"&gt;FROM anothertable  &lt;/span&gt;
+&lt;span class="code-line"&gt;WHERE NOT EXISTS(  &lt;/span&gt;
+&lt;span class="code-line"&gt;      SELECT *  &lt;/span&gt;
+&lt;span class="code-line"&gt;      FROM table  &lt;/span&gt;
+&lt;span class="code-line"&gt;      WHERE value = ?  &lt;/span&gt;
+&lt;span class="code-line"&gt;);  &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;使用 &lt;code&gt;dual&lt;/code&gt; 做表名可以让你在 select&amp;nbsp;语句后面直接跟上要插入字段的值，即使这些值还不存在当前表中&lt;/p&gt;</content><category term="MYSQL"></category></entry><entry><title>Selenium3笔记-WebDriver源码初探</title><link href="https://pingbook.top/articles/selenium-sourcecode/" rel="alternate"></link><published>2018-09-07T00:10:33+08:00</published><updated>2018-09-07T00:10:33+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-07:/articles/selenium-sourcecode/</id><summary type="html">&lt;h3 id="selenium3"&gt;Selenium3 有哪些变化？&lt;a class="headerlink" href="#selenium3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;其实相对于与Selenium2，Selenium3没有做太多的改动。下面给出官方的文档说明，供参考。&lt;/p&gt;
 &lt;p&gt;参考文档：https://seleniumhq.wordpress …&lt;/p&gt;</summary><content type="html">&lt;h3 id="selenium3"&gt;Selenium3 有哪些变化？&lt;a class="headerlink" href="#selenium3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;其实相对于与Selenium2，Selenium3没有做太多的改动。下面给出官方的文档说明，供参考。&lt;/p&gt;
@@ -1331,97 +1413,4 @@ LC_ALL和LANG优先级的关系：LC_ALL &amp;gt; LC_* &amp;gt; &lt;span class="
 &lt;p&gt;命令行中英文切换,本地安装的是中文字符集
 $ export LC_ALL=C&lt;br&gt;
 $ unset&amp;nbsp;LC_ALL&lt;/p&gt;
-&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>[面试] 5. 性能测试相关的涉及内容</title><link href="https://pingbook.top/articles/5-software-performance-testing/" rel="alternate"></link><published>2018-07-26T21:40:09+08:00</published><updated>2018-07-26T21:40:09+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-26:/articles/5-software-performance-testing/</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&amp;nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h2 id="_1"&gt;前言&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;今天到一家初创型的公司去参加了一轮面试,面试了好久性能测试相关的东西,好多年没有做这个了,突然问起来,感觉好痛苦. 可是也无奈,&amp;nbsp;因为自己选择了这个行业.还是需要自己重拾这些遗忘的东西,所以我这里就梳理一下自己所知道的重要的检查点.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="_2"&gt;关键字&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class="caps"&gt;TPS&lt;/span&gt;(Transaction Per&amp;nbsp;Second)&lt;/li&gt;
-&lt;li&gt;&lt;span class="caps"&gt;PV&lt;/span&gt;(Page&amp;nbsp;View)&lt;/li&gt;
-&lt;li&gt;&lt;span class="caps"&gt;PR&lt;/span&gt;(Page&amp;nbsp;Response)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="2017-07-26"&gt;2017-07-26 反馈&lt;a class="headerlink" href="#2017-07-26" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;深拷贝和浅拷贝的区别?&lt;/li&gt;
-&lt;li&gt;Appinum的使用,能在测试吗?&lt;/li&gt;
-&lt;li&gt;静态方法中可以使用&lt;code&gt;this&lt;/code&gt;和&lt;code&gt;super&lt;/code&gt;吗?&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="2017-07-25"&gt;2017-07-25 反馈&lt;a class="headerlink" href="#2017-07-25" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;span class="caps"&gt;UI&lt;/span&gt;&amp;nbsp;测试用到哪些工具?&lt;/li&gt;
-&lt;li&gt;你对所列到的python和java语言哪种最擅长?&lt;/li&gt;
-&lt;li&gt;Http和接口有什么区别?&lt;/li&gt;
-&lt;li&gt;抽象类和普通类有什么区别?&lt;/li&gt;
-&lt;li&gt;java的overload和override的区别?&lt;/li&gt;
-&lt;li&gt;java中的Error和Exception的区别?&lt;/li&gt;
-&lt;li&gt;给一个测试方法,里面有十个入参,每个参数都有十种不同的值,按照普通的思路可能会涉及10*10的测试用例,怎么设计测试用例可以用最少的用例覆盖更多的功能?&lt;/li&gt;
-&lt;li&gt;给一个数组,然后返回一个没有重复的新的数组,要求不借助其他任何第三方包或者库(包括Set,ArrayList)?&lt;/li&gt;
-&lt;li&gt;Python中的装饰器谈谈你的理解?&lt;/li&gt;
-&lt;li&gt;java中的顶级类是什么?&lt;/li&gt;
-&lt;li&gt;Python中的list,tuple,set,dict的区别作用,写出对应的他们的增删改查操作?&lt;/li&gt;
-&lt;/ol&gt;</content><category term="performance testing"></category><category term="面试"></category></entry><entry><title>[SQL]收集的一些好的SQL snippets</title><link href="https://pingbook.top/articles/sql-best-tips/" rel="alternate"></link><published>2018-07-25T23:46:15+08:00</published><updated>2018-07-25T23:46:15+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-07-25:/articles/sql-best-tips/</id><summary type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql
-1. 用户变量: 基于会话变量实现的, 可以暂存值, 并传递给同一连接里的下一条sql使用的变量.当客户端连接退出时,变量会被释放。只针对当前的存储过程或者当前的执行环境有效.&lt;br&gt;
-&lt;strong&gt;对于SET，可以使用=或:=来赋值，对于SELECT只能使用:=来赋值.&lt;/strong&gt;
-    我们可以使用一条简单的select语句查询定义的用户变量的值。
-2. 系统变量: MySQL可以访问许多系统变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET &lt;span class="caps"&gt;GLOBAL&lt;/span&gt; var_name语句，可以动态更改这些全局变量。
-3. 局部变量:&amp;nbsp;作用范围在begin到end语句块之间。在该语句块里设置的变量成为局部变量。&lt;/p&gt;
-&lt;h3 id="_1"&gt;基本的排序显示&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 3; &lt;/span&gt;
-&lt;span class="code-line"&gt;-- SQL SERVER 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT TOP 3 * FROM SCore s ORDER BY s.score DESC;  &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;查询分数排名第二的人(排序第二)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL方式, LIMIT第一参数是查询的条数,第二个数是查询的索引值,从0开始&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 1,1; &lt;/span&gt;
-&lt;span class="code-line"&gt;-- SQL Server 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT TOP 1 * FROM Score s WHERE s.id NOT IN (&lt;/span&gt;
-&lt;span class="code-line"&gt;    SELECT TOP 1 * FROM Score ORDER BY s.score DESC&lt;/span&gt;
-&lt;span class="code-line"&gt;) ORDER BY s.score DESC;   &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;显示排名名次或者说对应的行号&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;--&lt;/span&gt; &lt;span class="nt"&gt;MYSQL方式&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;username&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;score&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;FROM&lt;/span&gt; &lt;span class="nt"&gt;Score&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt; &lt;span class="nt"&gt;join&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;ranK&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;r&lt;/span&gt; &lt;span class="nt"&gt;order&lt;/span&gt; &lt;span class="nt"&gt;by&lt;/span&gt; &lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="4"&gt;
-&lt;li&gt;查询父节点下的所有子节点集合&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;CREATE DEFINER = &amp;#39;test&amp;#39;@&amp;#39;%&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;FUNCTION test.func_getMyFollowings(inputuserKey INT(11))&lt;/span&gt;
-&lt;span class="code-line"&gt;  RETURNS varchar(5000) CHARSET utf8&lt;/span&gt;
-&lt;span class="code-line"&gt;BEGIN&lt;/span&gt;
-&lt;span class="code-line"&gt;  DECLARE rootNode varchar(100);&lt;/span&gt;
-&lt;span class="code-line"&gt;  DECLARE tempChilds varchar(5000);&lt;/span&gt;
-&lt;span class="code-line"&gt;  SET tempChilds =&amp;#39;&amp;#39;;&lt;/span&gt;
-&lt;span class="code-line"&gt;  SET rootNode=CAST(inputuserKey AS CHAR);&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  WHILE rootNode IS NOT NULL DO   -- 遍历节点操作&lt;/span&gt;
-&lt;span class="code-line"&gt;     SET tempChilds = concat(tempChilds,rootNode,&amp;#39;,&amp;#39;);&lt;/span&gt;
-&lt;span class="code-line"&gt;      SELECT group_concat(um.EmployeeUserKey) INTO rootNode &lt;/span&gt;
-&lt;span class="code-line"&gt;      FROM UserManager um where FIND_IN_SET(um.ManagerSUserKey,rootNode)&amp;gt;0;  -- 找到当前节点的子节点&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt; END WHILE;&lt;/span&gt;
-&lt;span class="code-line"&gt; RETURN tempChilds;&lt;/span&gt;
-&lt;span class="code-line"&gt;END&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="5"&gt;
-&lt;li&gt;MYSQL中的&lt;code&gt;concat&lt;/code&gt;和&lt;code&gt;concat_ws&lt;/code&gt;和&lt;code&gt;group_concat&lt;/code&gt;的区别&lt;/li&gt;
-&lt;/ol&gt;</content></entry></feed>
+&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;`&lt;/p&gt;</content><category term="linux"></category></entry></feed>

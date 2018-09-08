@@ -124,6 +124,58 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/algorithm-best/" rel="bookmark" title="Permalink to 需要知道的一些算法">需要知道的一些算法</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T20:18:57.345773+08:00">
+                                        Posted on 2018-07-24 20:18:57,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">费布拉切数列<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>1 1 2 3 5 8 13&nbsp;21 </p>
+</blockquote>
+<div class="highlight"><pre><span class="code-line"><span></span>public …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/algorithm-best/" rel="bookmark" title="Permalink to 需要知道的一些算法">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/java/">Java</a>
+                                            <a class="danger label" href="../tag/algorithm/">Algorithm</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/review-questions/" rel="bookmark" title="Permalink to [面试]测试面试的问题整理">[面试]测试面试的问题整理</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T19:25:08.713970+08:00">
+                                        Posted on 2018-07-24 19:25:08,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>1、问：你在测试中发现了一个bug，但是开发经理认为这不是一个bug，你应该怎样解决？</p>
+<p>首先，将问题提交到缺陷管理库里面进行备案。</p>
+<p>然后，要获取判断的依据和标准：</p>
+<p>根据需求说明书 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/review-questions/" rel="bookmark" title="Permalink to [面试]测试面试的问题整理">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/review/">Review</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">vuejs中使用的一些重要技巧</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-23T22:26:58.365000+08:00">
@@ -224,63 +276,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置">[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-22T10:49:36.649682+08:00">
-                                        Posted on 2018-07-22 10:49:36,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>执行如下命令进行安装和基本的配置:</li>
-</ol>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install mysql-server</span>
-<span class="code-line">$ sudo mysql_secure_installation</span>
-</pre></div>
-
-
-<p>第二条命令将会配置mysql的 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/mysql/">mysql</a>
-                                            <a class="danger label" href="../tag/mysqlbei-fen/">mysql备份</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上">[环境搭建] 如何完整卸载python2/3&nbsp;在debain上</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-19T20:36:43.635322+08:00">
-                                        Posted on 2018-07-19 20:36:43,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="remove-python3">卸载 remove python3<a class="headerlink" href="#remove-python3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get remove <span class="s1">&#39;python3.*&#39;</span></span>
-<span class="code-line">其实这里的python的包是: <span class="sb">`</span>python3.5-minimal …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-python3/" rel="bookmark" title="Permalink to [环境搭建] 如何完整卸载python2/3 在debain上">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
-                                            <a class="danger label" href="../tag/python3/">python3</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -333,13 +328,13 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/algorithm/">Algorithm</a></li>
                     <li class="tag-4"><a href="../tag/intellij-idea/">IntelliJ Idea</a></li>
                     <li class="tag-4"><a href="../tag/javascript/">JavaScript</a></li>
+                    <li class="tag-2"><a href="../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../tag/mybatis/">Mybatis</a></li>
                     <li class="tag-1"><a href="../tag/oracle/">Oracle</a></li>
+                    <li class="tag-4"><a href="../tag/python/">Python</a></li>
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../tag/sdk/">SDK</a></li>
                     <li class="tag-2"><a href="../tag/selenium/">Selenium</a></li>
-                    <li class="tag-2"><a href="../tag/vuejs/">Vuejs</a></li>
-                    <li class="tag-2"><a href="../tag/cordova/">cordova</a></li>
             </ul>
         </nav>
 
@@ -376,6 +371,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
             <a style="color: grey" href="#!">5</a>
                 <a href="../author/walt6.html">6</a>
                 <a href="../author/walt7.html">7</a>
+                <a href="../author/walt8.html">8</a>
         <a href="../author/walter-hu6.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->

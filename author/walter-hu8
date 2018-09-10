@@ -124,6 +124,57 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [Pelican初级] pelican 博客搭建">[Pelican初级] pelican&nbsp;博客搭建</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T19:28:22.628744+08:00">
+                                        Posted on 2018-07-13 19:28:22,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<blockquote>
+<p>我真是太折腾了,也没能坚持下去,去年陆陆续续用<code>hexo</code>写了一段时间的博客,最终没能坚持下去! 这个博客建立算是建立起来了,&nbsp;我会认真的去写博客,坚持到最后!</p>
+</blockquote>
+<h2 id="_1">关键字 …</h2> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [Pelican初级] pelican 博客搭建">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/pelican/">pelican</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 4. 白盒测试需要关注的知识点">[面试] 4.&nbsp;白盒测试需要关注的知识点</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T19:27:53.054350+08:00">
+                                        Posted on 2018-07-13 19:27:53,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>参考博客: <a href="https://www.cnblogs.com/molrang/p/6420918.html">https://www.cnblogs.com/molrang/p/6420918.html</a></p>
+<h2 id="_1">自动化测试 …</h2> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 4. 白盒测试需要关注的知识点">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/bai-he-ce-shi/">白盒测试</a>
+                                            <a class="danger label" href="../tag/ruan-jian-ce-shi/">软件测试</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 3. 黑盒测试需要注意的几个关注点">[面试] 3.&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-13T19:27:48.885060+08:00">
@@ -208,7 +259,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../tag/mybatis/">Mybatis</a></li>
                     <li class="tag-1"><a href="../tag/oracle/">Oracle</a></li>
-                    <li class="tag-4"><a href="../tag/python/">Python</a></li>
+                    <li class="tag-1"><a href="../tag/python/">Python</a></li>
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../tag/sdk/">SDK</a></li>
                     <li class="tag-2"><a href="../tag/selenium/">Selenium</a></li>

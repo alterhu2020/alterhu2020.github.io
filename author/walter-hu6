@@ -124,6 +124,56 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/install-dbforgesql/" rel="bookmark" title="Permalink to 安装dbforge SQL 8.0">安装dbforge <span class="caps">SQL</span>&nbsp;8.0</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-22T14:19:31.581736+08:00">
+                                        Posted on 2018-07-22 14:19:31,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="dbforge-mysql">安装dbforge Mysql<a class="headerlink" href="#dbforge-mysql" title="Permanent link">&para;</a></h2>
+<p>安装最新的dbforge Mysql: <a href="https://www.devart.com/dbforge/mysql/studio/dbforgemysql80ent.exe">https://www.devart.com/dbforge/mysql …</a></p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/install-dbforgesql/" rel="bookmark" title="Permalink to 安装dbforge SQL 8.0">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/dbforge-mysql/">dbforge mysql</a>
+                                            <a class="danger label" href="../tag/uninstall-netframework/">uninstall .netframework</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">[环境搭建]&nbsp;tensorflow的基础学习</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-22T10:51:35.407017+08:00">
+                                        Posted on 2018-07-22 10:51:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="tensorflow">tensorflow 安装<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
+<p>这里参考的是官方的文档: <a href="https://www.tensorflow.org/install/install_raspbian">Installing TensorFlow on&nbsp;Raspbian</a></p>
+<h3 id="source">source 安装编译<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/tensorflow-basic/" rel="bookmark" title="Permalink to [环境搭建] tensorflow的基础学习">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/tensorflow/">tensorflow</a>
+                                            <a class="danger label" href="../tag/machine-learning/">machine learning</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/pi-mysql/" rel="bookmark" title="Permalink to [环境搭建] MYSQL 的安装配置">[环境搭建] <span class="caps">MYSQL</span>&nbsp;的安装配置</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-22T10:49:36.649682+08:00">
@@ -237,58 +287,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器">[环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T20:44:35.606241+08:00">
-                                        Posted on 2018-07-13 20:44:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="debiannginx">Debian安装配置nginx服务器<a class="headerlink" href="#debiannginx" title="Permanent link">&para;</a></h2>
-<ul>
-<li>下载解压缩安装包</li>
-</ul>
-<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15 …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/nginx/">nginx</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9">[环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:29:26.471011+08:00">
-                                        Posted on 2018-07-13 19:29:26,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>参考文档:<br>
-<em> <a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/">https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/</a><br>
-</em> 推荐: <a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33">https …</a></p></blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/tomcat9/">Tomcat9</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -344,7 +342,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../tag/mybatis/">Mybatis</a></li>
                     <li class="tag-1"><a href="../tag/oracle/">Oracle</a></li>
-                    <li class="tag-4"><a href="../tag/python/">Python</a></li>
+                    <li class="tag-1"><a href="../tag/python/">Python</a></li>
                     <li class="tag-4"><a href="../tag/review/">Review</a></li>
                     <li class="tag-4"><a href="../tag/sdk/">SDK</a></li>
                     <li class="tag-2"><a href="../tag/selenium/">Selenium</a></li>

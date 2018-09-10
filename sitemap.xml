@@ -5,14 +5,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/</loc>
-<lastmod>2018-09-08T13:14:43-00:00</lastmod>
+<lastmod>2018-09-10T20:21:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://pingbook.top/404.html</loc>
-<lastmod>2018-09-08T13:14:43-00:00</lastmod>
+<lastmod>2018-09-10T20:21:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -29,6 +29,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2018-08-29T18:13:12+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/1000-line-learn-python/</loc>
+<lastmod>2018-09-10T20:21:38+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://pingbook.top/articles/urlencode-quote/</loc>
+<lastmod>2018-09-08T16:01:43+08:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -369,7 +383,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/category/python/</loc>
-<lastmod>2018-09-07T19:53:47+08:06</lastmod>
+<lastmod>2018-09-10T20:21:38+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -411,7 +425,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/tag/python/</loc>
-<lastmod>2018-09-07T19:53:47+08:06</lastmod>
+<lastmod>2018-09-10T20:21:38+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -712,7 +726,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://pingbook.top/author/walter-hu</loc>
-<lastmod>2018-09-07T19:53:47+08:06</lastmod>
+<lastmod>2018-09-10T20:21:38+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

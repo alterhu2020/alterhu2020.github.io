@@ -9,15 +9,14 @@
 
 PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vuejs、软件测试、测试自动化等的IT科技博客,希望大家一起交流学习!">
         <meta name="keywords"
-              content="Linux,pelican,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
-
+              content="Linux,pelican,Python自动化,Python笔记,Python,Python技巧,Python web,Python人工智能,Python后台,Python算法,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
+        <meta name="author" content="PingBook">       
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
             <link href="https://pingbook.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
                   title="PingBook Blog Full Atom Feed"/>
 
-
-        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
         <link rel="stylesheet" type="text/css" href="../theme/gumby.css"/>
         <link rel="stylesheet" type="text/css" href="../theme/style.css"/>
@@ -124,6 +123,31 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">How to build the ftp&nbsp;system</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-27T16:06:29.708097+08:00">
+                                        Posted on 2018-08-27 16:06:29,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h1 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
+参考博客: 
+1. (smbd配置,忽略)https://www.conum …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/vsftpd/">vsftpd</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/cordova-android/" rel="bookmark" title="Permalink to Vue项目转成Cordova项目的注意事项和技巧">Vue项目转成Cordova项目的注意事项和技巧</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-08-27T14:33:07.071099+08:00">
@@ -143,28 +167,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                         <span>Tags: </span>
                                             <a class="danger label" href="../tag/cordova/">Cordova</a>
                                             <a class="danger label" href="../tag/vuejs/">Vuejs</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/how-resize-image/" rel="bookmark" title="Permalink to 怎么放大缩小图片的尺寸和图片尺寸转换">怎么放大缩小图片的尺寸和图片尺寸转换</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-08-27T13:18:11.165002+08:00">
-                                        Posted on 2018-08-27 13:18:11,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">分享一个好用的网站可以用于放大缩小图片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: 
- <a href="http://resizeimage.net/">resize&nbsp;images</a></p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/how-resize-image/" rel="bookmark" title="Permalink to 怎么放大缩小图片的尺寸和图片尺寸转换">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
                                 </div>
 
 

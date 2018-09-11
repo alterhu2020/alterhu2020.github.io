@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-10T20:21:38+08:00</updated><entry><title>千行代码入门Python(转载)</title><link href="https://pingbook.top/articles/1000-line-learn-python/" rel="alternate"></link><published>2018-09-10T20:21:38+08:00</published><updated>2018-09-10T20:21:38+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-10:/articles/1000-line-learn-python/</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-11T20:43:42+08:00</updated><entry><title>怎么放大缩小图片的尺寸和图片尺寸转换</title><link href="https://pingbook.top/articles/how-resize-image/" rel="alternate"></link><published>2018-09-11T20:43:42+08:00</published><updated>2018-09-11T20:43:42+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-11:/articles/how-resize-image/</id><summary type="html">&lt;h2 id="_1"&gt;图片尺寸放大缩小网站推荐&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://resizeimage.net/"&gt;resize&amp;nbsp;images&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.iloveimg.com/zh-cn/resize-image"&gt;iloveimg图片尺寸放大缩小&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;###&amp;nbsp;图片大小压缩网站推荐&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.iloveimg.com/zh-cn/compress-image/compress-jpg"&gt;压缩图片(推荐 …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2 id="_1"&gt;图片尺寸放大缩小网站推荐&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://resizeimage.net/"&gt;resize&amp;nbsp;images&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.iloveimg.com/zh-cn/resize-image"&gt;iloveimg图片尺寸放大缩小&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;###&amp;nbsp;图片大小压缩网站推荐&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.iloveimg.com/zh-cn/compress-image/compress-jpg"&gt;压缩图片(推荐)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content></entry><entry><title>千行代码入门Python(转载)</title><link href="https://pingbook.top/articles/1000-line-learn-python/" rel="alternate"></link><published>2018-09-10T20:21:38+08:00</published><updated>2018-09-10T20:21:38+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-10:/articles/1000-line-learn-python/</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;作者：笑虎&lt;br&gt;
    链接：https://&amp;nbsp;zhuanlan.zhihu.com/p/22909144&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2633,8 +2650,4 @@ tnsping localhost 是通的，tnsping 192.168.18.8 则出错 &lt;span class="cap
 &lt;span class="code-line"&gt;  &amp;lt;preference name=&amp;quot;FadeSplashScreen&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;  &amp;lt;!--FadeSplashScreenDuration时间是包含在SplashScreenDelay的时间里的。--&amp;gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;  &amp;lt;preference name=&amp;quot;FadeSplashScreenDuration&amp;quot; value=&amp;quot;750&amp;quot;/&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Cordova"></category><category term="Vuejs"></category></entry><entry><title>怎么放大缩小图片的尺寸和图片尺寸转换</title><link href="https://pingbook.top/articles/how-resize-image/" rel="alternate"></link><published>2018-08-27T13:18:11+08:00</published><updated>2018-08-27T13:18:11+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-08-27:/articles/how-resize-image/</id><summary type="html">&lt;h2 id="_1"&gt;分享一个好用的网站可以用于放大缩小图片&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: 
- &lt;a href="http://resizeimage.net/"&gt;resize&amp;nbsp;images&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;分享一个好用的网站可以用于放大缩小图片&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: 
- &lt;a href="http://resizeimage.net/"&gt;resize&amp;nbsp;images&lt;/a&gt;&lt;/p&gt;</content></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Cordova"></category><category term="Vuejs"></category></entry></feed>

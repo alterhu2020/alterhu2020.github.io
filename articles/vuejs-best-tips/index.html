@@ -136,8 +136,8 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-23T22:26:58.365000+08:00">-->
-                    <!--2018-07-23 22:26:58-->
+                    <!--<abbr class="published" title="2018-09-12T15:31:20.534940+08:00">-->
+                    <!--2018-09-12 15:31:20-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -147,7 +147,7 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-07-23 22:26:58
+                        Posted on 2018-09-12 15:31:20
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -198,19 +198,38 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
 <span class="code-line"><span class="nt">&lt;template</span> <span class="na">v-for=</span><span class="s">&quot;(task,index) in tasks&quot;</span><span class="nt">&gt;</span></span>
 <span class="code-line"><span class="nt">&lt;/template&gt;</span></span>
 </pre></div>
+
+
+<h3 id="_1">匹配子字符串<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="cm">/**</span></span>
+<span class="code-line"><span class="cm"> * 匹配子字符串</span></span>
+<span class="code-line"><span class="cm"> * @param content</span></span>
+<span class="code-line"><span class="cm"> * @param substr</span></span>
+<span class="code-line"><span class="cm"> * @returns {boolean}</span></span>
+<span class="code-line"><span class="cm"> */</span><span class="w"></span></span>
+<span class="code-line">const<span class="w"> </span>matchSubString<span class="w"> </span><span class="o">=</span><span class="w"> </span>function<span class="w"> </span><span class="o">(</span>content<span class="o">,</span><span class="w"> </span>substr<span class="o">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span></span>
+<span class="code-line"><span class="w">  </span>let<span class="w"> </span>foundSubStr<span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="w"></span></span>
+<span class="code-line"><span class="w">  </span>const<span class="w"> </span>reg<span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>RegExp<span class="o">(</span><span class="s">&#39;.*&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>substr<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#39;.*&#39;</span><span class="o">,</span><span class="w"> </span><span class="s">&#39;g&#39;</span><span class="o">)</span><span class="w"></span></span>
+<span class="code-line"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="o">(</span>content<span class="o">.</span>match<span class="o">(</span>reg<span class="o">))</span><span class="w"> </span><span class="err">{</span><span class="w"></span></span>
+<span class="code-line"><span class="w">    </span><span class="cm">/* Match found */</span><span class="w"></span></span>
+<span class="code-line"><span class="w">    </span>foundSubStr<span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="w"></span></span>
+<span class="code-line"><span class="w">  </span><span class="err">}</span><span class="w"></span></span>
+<span class="code-line"><span class="w">  </span><span class="kr">return</span><span class="w"> </span>foundSubStr<span class="w"></span></span>
+<span class="code-line"><span class="err">}</span><span class="w"></span></span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <br>
                 <div><span>Categories:</span>JavaScript</div>
                 <br>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/2-list-methods/">
-                                ◄&nbsp;&nbsp;[面试] 2.&nbsp;有关list及其方法的使用
+                            <a href="../../articles/how-resize-image/">
+                                ◄&nbsp;&nbsp;怎么放大缩小图片的尺寸和图片尺寸转换
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/review-questions/">
-                                [面试]测试面试的问题整理&nbsp;&nbsp;►
+                            <a href="../../articles/idea-performance/">
+                                <span class="caps">IDEA</span>&nbsp;调优&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -296,15 +315,15 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
             <h4>Tags</h4>
             <ul class="blank">
                     <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../../tag/intellij-idea/">IntelliJ Idea</a></li>
+                    <li class="tag-1"><a href="../../tag/java/">Java</a></li>
                     <li class="tag-4"><a href="../../tag/javascript/">JavaScript</a></li>
                     <li class="tag-2"><a href="../../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../../tag/mybatis/">Mybatis</a></li>
                     <li class="tag-1"><a href="../../tag/oracle/">Oracle</a></li>
                     <li class="tag-1"><a href="../../tag/python/">Python</a></li>
                     <li class="tag-4"><a href="../../tag/review/">Review</a></li>
-                    <li class="tag-4"><a href="../../tag/sdk/">SDK</a></li>
-                    <li class="tag-2"><a href="../../tag/selenium/">Selenium</a></li>
             </ul>
         </nav>
 

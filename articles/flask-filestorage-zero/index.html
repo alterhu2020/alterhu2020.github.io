@@ -6,7 +6,7 @@
         <meta charset="utf-8"/>
         <meta name="description" content="
 
-问题¶ 我在使用Flask上传文件的时候,需要把文件一份保存到本地一份保存到七牛云. 在这里如果先调用如下代码,然后在保存到七牛云的时候发现保存的文件是0KB. file = request.files …">
+问题 File shows zero kb after upload in python flask …">
         <meta name="keywords"
               content="Linux,pelican,Python自动化,Python笔记,Python,Python技巧,Python web,Python人工智能,Python后台,Python算法,github,软件测试,测试框架,测试开发,白盒测试,Selenium,Selenium开发,Vuejs,树莓派,自动化测试,编程语言,大数据,人工智能,开源软件,创业,程序员找工作,移动互联网,生活时尚,情感交流,软件测试,技术博客">
         <meta name="author" content="PingBook">       
@@ -136,8 +136,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-09-14T21:04:55.799444+08:00">-->
-                    <!--2018-09-14 21:04:55-->
+                    <!--<abbr class="published" title="2018-09-14T21:10:52.936271+08:00">-->
+                    <!--2018-09-14 21:10:52-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -147,7 +147,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-09-14 21:04:55
+                        Posted on 2018-09-14 21:10:52
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -157,7 +157,7 @@
                     <hr/>
                 </footer><!-- /.post-info -->
                 <div class="entry-content">
-                    <h3 id="_1">问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+                    <h3 id="file-shows-zero-kb-after-upload-in-python-flask">问题 File shows zero kb after upload in python flask<a class="headerlink" href="#file-shows-zero-kb-after-upload-in-python-flask" title="Permanent link">&para;</a></h3>
 <p>我在使用<code>Flask</code>上传文件的时候,需要把文件一份保存到本地一份保存到七牛云.&nbsp;在这里如果先调用如下代码,然后在保存到七牛云的时候发现保存的文件是0KB.</p>
 <div class="highlight"><pre><span class="code-line"><span></span><span class="nb">file</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">)</span>  </span>
 <span class="code-line"><span class="nb">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filesavedpath</span><span class="p">)</span>  <span class="c1"># 此处保存到本地</span></span>
@@ -211,7 +211,7 @@
 </pre></div>
 
 
-<h3 id="_2">解决方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_1">解决方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span class="code-line"><span></span># 调用完save()或者read()后, 使用tell() 函数判断一下光标,然后使用seek(0)定位到开始的位置</span>
 <span class="code-line"></span>
 <span class="code-line">position=file.tell()</span>
@@ -226,6 +226,11 @@
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
                             <a href="../../articles/debug-vue/">
                                 ◄&nbsp;&nbsp;Vue项目调试总结-WebStorm+Chrome调试(2018-09-15)
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/1-know-ps/">
+                                PhotoShop学习笔记一认识PS&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -302,6 +307,7 @@
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/qi-ta/">其他</a></li>
                         <li><a href="../../category/python/">Python</a></li>
+                        <li><a href="../../category/photoshop/">PhotoShop</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
                         <li><a href="../../category/linux/">Linux</a></li>
                         <li><a href="../../category/javascript/">JavaScript</a></li>
@@ -315,7 +321,7 @@
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../../tag/debugger/">Debugger</a></li>
                     <li class="tag-4"><a href="../../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../../tag/intellij-idea/">IntelliJ Idea</a></li>
                     <li class="tag-1"><a href="../../tag/java/">Java</a></li>
@@ -323,8 +329,8 @@
                     <li class="tag-2"><a href="../../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../../tag/mybatis/">Mybatis</a></li>
                     <li class="tag-1"><a href="../../tag/oracle/">Oracle</a></li>
+                    <li class="tag-4"><a href="../../tag/photoshop/">PhotoShop</a></li>
                     <li class="tag-1"><a href="../../tag/python/">Python</a></li>
-                    <li class="tag-4"><a href="../../tag/review/">Review</a></li>
             </ul>
         </nav>
 

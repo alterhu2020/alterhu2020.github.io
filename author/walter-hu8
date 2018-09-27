@@ -123,6 +123,146 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念">[环境搭建]&nbsp;大数据hadoop,spark,hbase,hive概念</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-14T08:20:49.224912+08:00">
+                                        Posted on 2018-07-14 08:20:49,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="hadoopsparkhbasehive">Hadoop、Spark、HBase、Hive<a class="headerlink" href="#hadoopsparkhbasehive" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>到处都在谈论大数据,感觉自己再不去学习这些最新的技术,自己就要被淘汰了.好吧我也开始学习了.
+  <span class="caps">AI</span> = <span class="caps">ML …</span></p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/hadoop-spark-hbase-hive/" rel="bookmark" title="Permalink to [环境搭建] 大数据hadoop,spark,hbase,hive概念">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/bigdata/">bigdata</a>
+                                            <a class="danger label" href="../tag/hadoop/">hadoop</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-mirrors/" rel="bookmark" title="Permalink to [树莓派] 树莓派国内镜像">[树莓派]&nbsp;树莓派国内镜像</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T20:45:03.821442+08:00">
+                                        Posted on 2018-07-13 20:45:03,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p><br></p>
+<h2 id="_1">前因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>自己在Github&nbsp;Page搭建了一个博客,但是不能被百度收录.也就是百度搜索不能爬取网站的内容,也就不能被国内搜索到了.</p>
+</blockquote>
+<h3 id="_2">为树莓派更换国内镜像源<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>(2018-07-07更新: 清华的镜像源已经不能使用: Cannot …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-mirrors/" rel="bookmark" title="Permalink to [树莓派] 树莓派国内镜像">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
+                                            <a class="danger label" href="../tag/nat123/">nat123</a>
+                                            <a class="danger label" href="../tag/shu-mei-pai-jing-xiang/">树莓派镜像</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器">[环境搭建]&nbsp;Debian安装编译和安装nginx服务器</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T20:44:35.606241+08:00">
+                                        Posted on 2018-07-13 20:44:35,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="debiannginx">Debian安装配置nginx服务器<a class="headerlink" href="#debiannginx" title="Permanent link">&para;</a></h2>
+<ul>
+<li>下载解压缩安装包</li>
+</ul>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo wget https://nginx.org/download/nginx-1.15 …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-nginx/" rel="bookmark" title="Permalink to [环境搭建] Debian安装编译和安装nginx服务器">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/nginx/">nginx</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9">[环境搭建]&nbsp;Debian如何安装配置Tomcat9</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T19:29:26.471011+08:00">
+                                        Posted on 2018-07-13 19:29:26,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>参考文档:<br>
+<em> <a href="https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/">https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/</a><br>
+</em> 推荐: <a href="https://gist.github.com/jniltinho/a7bd30288342a5d352e6#file-install_tomcat-sh-L33">https …</a></p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-tomcat/" rel="bookmark" title="Permalink to [环境搭建] Debian如何安装配置Tomcat9">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/tomcat9/">Tomcat9</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-svn/" rel="bookmark" title="Permalink to [环境搭建] svn 安装配置">[环境搭建]  svn&nbsp;安装配置</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T19:29:21.212442+08:00">
+                                        Posted on 2018-07-13 19:29:21,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="svn"><span class="caps">SVN</span> 安装<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h2>
+<ol>
+<li>执行如下命令进行安装:</li>
+</ol>
+<div class="highlight"><pre><span class="code-line"><span></span>$ sudo apt-get -y install subversion</span>
+</pre></div>
+
+
+<ol start="2">
+<li>启动 <code>svn …</code></li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-svn/" rel="bookmark" title="Permalink to [环境搭建] svn 安装配置">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/svn/">svn</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署">[环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-13T19:29:03.055243+08:00">
@@ -141,145 +281,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                         <span>Tags: </span>
                                             <a class="danger label" href="../tag/nat123/">NAT123</a>
                                             <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to [树莓派] 树莓派3B安装">[树莓派]&nbsp;树莓派3B安装</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:28:39.041004+08:00">
-                                        Posted on 2018-07-13 19:28:39,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">树莓派安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>因为感觉空间越来越小了,不能使用现在的需要了,所以决定重新安装系统.</p>
-</blockquote>
-<p>安装完成后，TF卡被分成两个分区：</p>
-<ol>
-<li><span class="caps">67MB</span>&nbsp;vfat格式的引导分区（系统启动后被挂载在/boot目录 …</li></ol> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to [树莓派] 树莓派3B安装">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [Pelican高级] pelican 博客高级配置">[Pelican高级] pelican&nbsp;博客高级配置</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:28:28.331842+08:00">
-                                        Posted on 2018-07-13 19:28:28,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>继续上一篇的基本配置后,这里我将记录下涉及到的一些高级pelican的使用方法,也是自己摸索的一些网上的经验,还有一些自己自定义的功能.</p>
-<h2 id="_2">关键字<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<blockquote>
-<ol>
-<li>Google&nbsp;adsense  </li>
-<li>百度站长  </li>
-<li>Google …</li></ol></blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/pelican-advance/" rel="bookmark" title="Permalink to [Pelican高级] pelican 博客高级配置">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/pelican/">pelican</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [Pelican初级] pelican 博客搭建">[Pelican初级] pelican&nbsp;博客搭建</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:28:22.628744+08:00">
-                                        Posted on 2018-07-13 19:28:22,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p><br></p>
-<blockquote>
-<p>我真是太折腾了,也没能坚持下去,去年陆陆续续用<code>hexo</code>写了一段时间的博客,最终没能坚持下去! 这个博客建立算是建立起来了,&nbsp;我会认真的去写博客,坚持到最后!</p>
-</blockquote>
-<h2 id="_1">关键字 …</h2> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/try-pelican/" rel="bookmark" title="Permalink to [Pelican初级] pelican 博客搭建">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/pelican/">pelican</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 4. 白盒测试需要关注的知识点">[面试] 4.&nbsp;白盒测试需要关注的知识点</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:27:53.054350+08:00">
-                                        Posted on 2018-07-13 19:27:53,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>参考博客: <a href="https://www.cnblogs.com/molrang/p/6420918.html">https://www.cnblogs.com/molrang/p/6420918.html</a></p>
-<h2 id="_1">自动化测试 …</h2> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/4-software-testing-white/" rel="bookmark" title="Permalink to [面试] 4. 白盒测试需要关注的知识点">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/bai-he-ce-shi/">白盒测试</a>
-                                            <a class="danger label" href="../tag/ruan-jian-ce-shi/">软件测试</a>
-                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 3. 黑盒测试需要注意的几个关注点">[面试] 3.&nbsp;黑盒测试需要注意的几个关注点</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-13T19:27:48.885060+08:00">
-                                        Posted on 2018-07-13 19:27:48,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">基本理论概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>是软件工程中的一个非常重要的环节，是开发项目整体的一部分。<br>
-是有计划有组织的，是伴随软件工程的诞生而诞生的，软件测试不是万能的，<br>&nbsp;不可能发现全部缺陷，软件测试是有局限性的。</p>
-</blockquote>
-<h3 id="_2">测试的目的<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>1 …</p></blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/3-software-testing-black/" rel="bookmark" title="Permalink to [面试] 3. 黑盒测试需要注意的几个关注点">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/software-testing/">Software Testing</a>
-                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
                                 </div>
 
 
@@ -321,6 +322,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                         <li><a href="../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../category/qi-ta/">其他</a></li>
                         <li><a href="../category/python/">Python</a></li>
+                        <li><a href="../category/photoshop/">PhotoShop</a></li>
                         <li><a href="../category/mian-shi/">面试</a></li>
                         <li><a href="../category/linux/">Linux</a></li>
                         <li><a href="../category/javascript/">JavaScript</a></li>
@@ -334,7 +336,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../tag/debugger/">Debugger</a></li>
                     <li class="tag-4"><a href="../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../tag/intellij-idea/">IntelliJ Idea</a></li>
                     <li class="tag-1"><a href="../tag/java/">Java</a></li>
@@ -342,8 +344,8 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-2"><a href="../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../tag/mybatis/">Mybatis</a></li>
                     <li class="tag-1"><a href="../tag/oracle/">Oracle</a></li>
+                    <li class="tag-4"><a href="../tag/photoshop/">PhotoShop</a></li>
                     <li class="tag-1"><a href="../tag/python/">Python</a></li>
-                    <li class="tag-4"><a href="../tag/review/">Review</a></li>
             </ul>
         </nav>
 
@@ -381,6 +383,8 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <a href="../author/walt6.html">6</a>
                 <a href="../author/walt7.html">7</a>
             <a style="color: grey" href="#!">8</a>
+                <a href="../author/walt9.html">9</a>
+        <a href="../author/walter-hu9.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->
 

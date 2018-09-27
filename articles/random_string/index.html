@@ -136,8 +136,8 @@
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-08-29T17:46:12.428572+08:00">-->
-                    <!--2018-08-29 17:46:12-->
+                    <!--<abbr class="published" title="2018-09-21T19:13:34.196724+08:00">-->
+                    <!--2018-09-21 19:13:34-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -147,7 +147,7 @@
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-08-29 17:46:12
+                        Posted on 2018-09-21 19:13:34
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -171,19 +171,61 @@
 <span class="code-line"><span class="w">  </span><span class="kr">return</span><span class="w"> </span>arrayStr<span class="err">[</span>range<span class="err">]</span><span class="w"></span></span>
 <span class="code-line"><span class="err">}</span><span class="w"></span></span>
 </pre></div>
+
+
+<h3 id="array-contains-subarray">array contains subarray<a class="headerlink" href="#array-contains-subarray" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="cm">/**</span></span>
+<span class="code-line"><span class="cm"> * Returns TRUE if the first specified array contains all elements</span></span>
+<span class="code-line"><span class="cm"> * from the second one. FALSE otherwise.</span></span>
+<span class="code-line"><span class="cm"> *</span></span>
+<span class="code-line"><span class="cm"> * @param {array} superset</span></span>
+<span class="code-line"><span class="cm"> * @param {array} subset</span></span>
+<span class="code-line"><span class="cm"> *</span></span>
+<span class="code-line"><span class="cm"> * @returns {boolean}</span></span>
+<span class="code-line"><span class="cm"> */</span></span>
+<span class="code-line"><span class="kd">function</span> <span class="nx">arrayContainsArray</span> <span class="p">(</span><span class="nx">superset</span><span class="p">,</span> <span class="nx">subset</span><span class="p">)</span> <span class="p">{</span></span>
+<span class="code-line">  <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">subset</span><span class="p">.</span><span class="nx">length</span><span class="o">||</span><span class="nx">superset</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="nx">subset</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span></span>
+<span class="code-line">    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span></span>
+<span class="code-line">  <span class="p">}</span></span>
+<span class="code-line">  <span class="k">return</span> <span class="nx">subset</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span></span>
+<span class="code-line">    <span class="k">return</span> <span class="p">(</span><span class="nx">superset</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span></span>
+<span class="code-line">  <span class="p">});</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="p">}</span></span>
+</pre></div>
+
+
+<h3 id="how-to-remove-duplicates-from-javascript-array">How to Remove Duplicates from JavaScript Array<a class="headerlink" href="#how-to-remove-duplicates-from-javascript-array" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>refer:&nbsp;https://codehandbook.org/how-to-remove-duplicates-from-javascript-array/</p>
+</blockquote>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="kd">function</span> <span class="nx">removeDuplicateUsingFilter</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span></span>
+<span class="code-line">    <span class="kd">let</span> <span class="nx">unique_array</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">self</span><span class="p">)</span> <span class="p">{</span></span>
+<span class="code-line">        <span class="k">return</span> <span class="nx">index</span> <span class="o">==</span> <span class="nx">self</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span></span>
+<span class="code-line">    <span class="p">});</span></span>
+<span class="code-line">    <span class="k">return</span> <span class="nx">unique_array</span></span>
+<span class="code-line"><span class="p">}</span></span>
+</pre></div>
+
+
+<div class="highlight"><pre><span class="code-line"><span></span><span class="kd">function</span> <span class="nx">removeDuplicateUsingSet</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span></span>
+<span class="code-line">    <span class="kd">let</span> <span class="nx">unique_array</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="k">new</span> <span class="nx">Set</span><span class="p">(</span><span class="nx">arr</span><span class="p">))</span></span>
+<span class="code-line">    <span class="k">return</span> <span class="nx">unique_array</span></span>
+<span class="code-line"><span class="p">}</span></span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <br>
                 <div><span>Categories:</span>JavaScript</div>
                 <br>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/vue-to-mobileapp-electron/">
-                                ◄&nbsp;&nbsp;vuejs項目转为android/<span class="caps">IOS</span>&nbsp;App(Cordova)
+                            <a href="../../articles/python-common-tips/">
+                                ◄&nbsp;&nbsp;Python中用户的小技巧和代码
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/jetbrain-idea-licenseserver/">
-                                Available license&nbsp;server&nbsp;&nbsp;►
+                            <a href="../../articles/videojs-vue-plugin/">
+                                How to player video.js in&nbsp;Vue&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -255,6 +297,7 @@
                         <li><a href="../../category/shu-mei-pai/">树莓派</a></li>
                         <li><a href="../../category/qi-ta/">其他</a></li>
                         <li><a href="../../category/python/">Python</a></li>
+                        <li><a href="../../category/photoshop/">PhotoShop</a></li>
                         <li><a href="../../category/mian-shi/">面试</a></li>
                         <li><a href="../../category/linux/">Linux</a></li>
                         <li><a href="../../category/javascript/">JavaScript</a></li>
@@ -268,7 +311,7 @@
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../../tag/algorithm/">Algorithm</a></li>
+                    <li class="tag-4"><a href="../../tag/debugger/">Debugger</a></li>
                     <li class="tag-4"><a href="../../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../../tag/intellij-idea/">IntelliJ Idea</a></li>
                     <li class="tag-1"><a href="../../tag/java/">Java</a></li>
@@ -276,8 +319,8 @@
                     <li class="tag-2"><a href="../../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../../tag/mybatis/">Mybatis</a></li>
                     <li class="tag-1"><a href="../../tag/oracle/">Oracle</a></li>
+                    <li class="tag-4"><a href="../../tag/photoshop/">PhotoShop</a></li>
                     <li class="tag-1"><a href="../../tag/python/">Python</a></li>
-                    <li class="tag-4"><a href="../../tag/review/">Review</a></li>
             </ul>
         </nav>
 

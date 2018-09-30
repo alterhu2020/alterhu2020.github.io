@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-27T10:38:55+08:00</updated><entry><title>How to debug in real device for Android and IPhone</title><link href="https://pingbook.top/articles/mobile-debugger-feature/" rel="alternate"></link><published>2018-09-27T10:38:55+08:00</published><updated>2018-09-27T10:38:55+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-27:/articles/mobile-debugger-feature/</id><summary type="html">&lt;h3 id="steps"&gt;Steps&lt;a class="headerlink" href="#steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-29T20:42:32+08:00</updated><entry><title>A vue plugin to play m3u8 media file with video.js 7</title><link href="https://pingbook.top/articles/vue-videojs7/" rel="alternate"></link><published>2018-09-29T20:42:32+08:00</published><updated>2018-09-29T20:42:32+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-29:/articles/vue-videojs7/</id><summary type="html">&lt;h3 id="publish-link"&gt;Publish Link&lt;a class="headerlink" href="#publish-link" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Sample Page: &lt;a href="https://pingbook.top/vue-videojs7/"&gt;https://pingbook.top/vue-videojs7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source Code …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3 id="publish-link"&gt;Publish Link&lt;a class="headerlink" href="#publish-link" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Sample Page: &lt;a href="https://pingbook.top/vue-videojs7/"&gt;https://pingbook.top/vue-videojs7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source Code: &lt;a href="https://github.com/alterhu2020/vue-videojs7"&gt;https://github.com/alterhu2020/vue-videojs7&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Vue.js"></category><category term="Video.js"></category></entry><entry><title>[SQL]收集的一些好的SQL snippets</title><link href="https://pingbook.top/articles/sql-best-tips/" rel="alternate"></link><published>2018-09-29T10:55:57+08:00</published><updated>2018-09-29T10:55:57+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-29:/articles/sql-best-tips/</id><summary type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql
+1. 用户变量: 基于会话变量实现的, 可以暂存值, 并传递给同一连接里的下一条sql使用的变量.当客户端连接退出时,变量会被释放。只针对当前的存储过程或者当前的执行环境有效.&lt;br&gt;
+&lt;strong&gt;对于SET，可以使用=或:=来赋值，对于SELECT只能使用:=来赋值.&lt;/strong&gt;
+    我们可以使用一条简单的select语句查询定义的用户变量的值。
+2. 系统变量: MySQL可以访问许多系统变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET &lt;span class="caps"&gt;GLOBAL&lt;/span&gt; var_name语句，可以动态更改这些全局变量。
+3. 局部变量:&amp;nbsp;作用范围在begin到end语句块之间。在该语句块里设置的变量成为局部变量。&lt;/p&gt;
+&lt;h3 id="_1"&gt;基本的排序显示&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 3; &lt;/span&gt;
+&lt;span class="code-line"&gt;-- SQL SERVER 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT TOP 3 * FROM SCore s ORDER BY s.score DESC;  &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;查询分数排名第二的人(排序第二)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL方式, LIMIT第一参数是查询的条数,第二个数是查询的索引值,从0开始&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 1,1; &lt;/span&gt;
+&lt;span class="code-line"&gt;-- SQL Server 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT TOP 1 * FROM Score s WHERE s.id NOT IN (&lt;/span&gt;
+&lt;span class="code-line"&gt;    SELECT TOP 1 * FROM Score ORDER BY s.score DESC&lt;/span&gt;
+&lt;span class="code-line"&gt;) ORDER BY s.score DESC;   &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="2"&gt;
+&lt;li&gt;显示排名名次或者说对应的行号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;--&lt;/span&gt; &lt;span class="nt"&gt;MYSQL方式&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;username&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;score&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;FROM&lt;/span&gt; &lt;span class="nt"&gt;Score&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt; &lt;span class="nt"&gt;join&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;ranK&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;r&lt;/span&gt; &lt;span class="nt"&gt;order&lt;/span&gt; &lt;span class="nt"&gt;by&lt;/span&gt; &lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="4"&gt;
+&lt;li&gt;查询父节点下的所有子节点集合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;CREATE DEFINER = &amp;#39;test&amp;#39;@&amp;#39;%&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;FUNCTION test.func_getMyFollowings(inputuserKey INT(11))&lt;/span&gt;
+&lt;span class="code-line"&gt;  RETURNS varchar(5000) CHARSET utf8&lt;/span&gt;
+&lt;span class="code-line"&gt;BEGIN&lt;/span&gt;
+&lt;span class="code-line"&gt;  DECLARE rootNode varchar(100);&lt;/span&gt;
+&lt;span class="code-line"&gt;  DECLARE tempChilds varchar(5000);&lt;/span&gt;
+&lt;span class="code-line"&gt;  SET tempChilds =&amp;#39;&amp;#39;;&lt;/span&gt;
+&lt;span class="code-line"&gt;  SET rootNode=CAST(inputuserKey AS CHAR);&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  WHILE rootNode IS NOT NULL DO   -- 遍历节点操作&lt;/span&gt;
+&lt;span class="code-line"&gt;     SET tempChilds = concat(tempChilds,rootNode,&amp;#39;,&amp;#39;);&lt;/span&gt;
+&lt;span class="code-line"&gt;      SELECT group_concat(um.EmployeeUserKey) INTO rootNode &lt;/span&gt;
+&lt;span class="code-line"&gt;      FROM UserManager um where FIND_IN_SET(um.ManagerSUserKey,rootNode)&amp;gt;0;  -- 找到当前节点的子节点&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt; END WHILE;&lt;/span&gt;
+&lt;span class="code-line"&gt; RETURN tempChilds;&lt;/span&gt;
+&lt;span class="code-line"&gt;END&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="5"&gt;
+&lt;li&gt;MYSQL中的&lt;code&gt;concat&lt;/code&gt;和&lt;code&gt;concat_ws&lt;/code&gt;和&lt;code&gt;group_concat&lt;/code&gt;的区别&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="sql"&gt;SQL查询区分大小写&lt;a class="headerlink" href="#sql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1 select * from user where name like &amp;#39;%A%&amp;#39;;　　&lt;/span&gt;
+&lt;span class="code-line"&gt;2 select * from user where name like &amp;#39;%a%&amp;#39;;　　　　　　　　##与第一句执行效果一样&lt;/span&gt;
+&lt;span class="code-line"&gt;3 select * from user where binary name like &amp;#39;%A%&amp;#39;;　　　　--只匹配大写A　　&lt;/span&gt;
+&lt;span class="code-line"&gt;4 select * from user where binary name like &amp;#39;%a%&amp;#39;;　　　　--只匹配小写a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;见表时可以强制区分大小写&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; create table user (&lt;/span&gt;
+&lt;span class="code-line"&gt;      name varchar(10) binary&lt;/span&gt;
+&lt;span class="code-line"&gt; );&lt;/span&gt;
+&lt;span class="code-line"&gt; insert into user (name) values (&amp;#39;AAA&amp;#39;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>How to debug in real device for Android and IPhone</title><link href="https://pingbook.top/articles/mobile-debugger-feature/" rel="alternate"></link><published>2018-09-27T10:38:55+08:00</published><updated>2018-09-27T10:38:55+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-27:/articles/mobile-debugger-feature/</id><summary type="html">&lt;h3 id="steps"&gt;Steps&lt;a class="headerlink" href="#steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;http://elevenbeans.github.io/2017/06/06/%E7%A7 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="steps"&gt;Steps&lt;a class="headerlink" href="#steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;http://elevenbeans.github.io/2017/06/06/%E7%A7%&lt;span class="caps"&gt;BB&lt;/span&gt;%E5%8A%A8%E7%&lt;span class="caps"&gt;AB&lt;/span&gt;%&lt;span class="caps"&gt;AF&lt;/span&gt;%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%&lt;span class="caps"&gt;AF&lt;/span&gt;%95%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%&lt;span class="caps"&gt;BB&lt;/span&gt;/&lt;/p&gt;
 &lt;p&gt;Chrome -&amp;gt; remote device &amp;ndash;&amp;gt; not found the apple&amp;nbsp;phone&lt;/p&gt;
@@ -2308,124 +2390,4 @@ Tools-&amp;gt;Preferences-&amp;gt;User Interface-&amp;gt;Options
   菜单Tools -&amp;gt; Preferences -&amp;gt; User Interface-&amp;gt;Editor
   在右边的界面中&amp;rdquo;Syntax&amp;nbsp;Highlighting&amp;rdquo;下,去掉&amp;rdquo;Comment&amp;rdquo;右边的&amp;rdquo;Italic&amp;rdquo;的勾选.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="Oracle"></category></entry><entry><title>“ORA-28547：connection to server failed,probable Oracle Net admin error”的解决步骤（navicat,toad,plsql developer工具通用）</title><link href="https://pingbook.top/articles/oracle-ora-28547/" rel="alternate"></link><published>2018-09-06T23:47:51+08:00</published><updated>2018-09-06T23:47:51+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-06:/articles/oracle-ora-28547/</id><summary type="html">&lt;h3 id="_1"&gt;错误&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;连接oracle 11g突然蹦出了一个错误“&lt;strong&gt;&lt;span class="caps"&gt;ORA&lt;/span&gt;-28547：connection to server failed,probable …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;h3 id="_1"&gt;错误&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;连接oracle 11g突然蹦出了一个错误“&lt;strong&gt;&lt;span class="caps"&gt;ORA&lt;/span&gt;-28547：connection to server failed,probable Oracle Net admin error&lt;/strong&gt;”，见下图，我勒个去，真是郁闷死了，无奈在网上搜索了好久找到了解决方法，写下来了以便以后参考。
-&lt;img alt="测试图片显示" src="http://images.cnblogs.com/cnblogs_com/juddhu/201203/201203072158367496.png"&gt;&lt;/p&gt;
-&lt;h4 id="1"&gt;1. 第一个方法解决方案&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;listener.ora是服务器端的配置oracle的文件。&lt;/p&gt;
-&lt;p&gt;后来将listener.ora的这一行注释掉，就行了，， (&lt;span class="caps"&gt;PROGRAM&lt;/span&gt; = extproc)&amp;nbsp;修改为：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;SID_LIST_LISTENER =&lt;/span&gt;
-&lt;span class="code-line"&gt;  (SID_LIST =&lt;/span&gt;
-&lt;span class="code-line"&gt;  (SID_DESC =&lt;/span&gt;
-&lt;span class="code-line"&gt;  (SID_NAME = prod)&lt;/span&gt;
-&lt;span class="code-line"&gt;  (ORACLE_HOME = /u01/app/oracle/product/10.2.0/db_1)&lt;/span&gt;
-&lt;span class="code-line"&gt; # (PROGRAM = extproc)&lt;/span&gt;
-&lt;span class="code-line"&gt;  )&lt;/span&gt;
-&lt;span class="code-line"&gt;  )&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;LISTENER =&lt;/span&gt;
-&lt;span class="code-line"&gt;  (DESCRIPTION_LIST =&lt;/span&gt;
-&lt;span class="code-line"&gt;  (DESCRIPTION =&lt;/span&gt;
-&lt;span class="code-line"&gt;  (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.8)(PORT = 1522))&lt;/span&gt;
-&lt;span class="code-line"&gt;  (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC0))&lt;/span&gt;
-&lt;span class="code-line"&gt;  )&lt;/span&gt;
-&lt;span class="code-line"&gt;  )&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4 id="_2"&gt;第二种解决方案&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;参考文章：&lt;a href="https://forums.oracle.com/forums/message.jspa?messageID=693607"&gt;https://forums.oracle.com/forums/message.jspa?messageID=693607&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;整理如下：&lt;/p&gt;
-&lt;p&gt;客户端的配置文件sqlnet.ora中配置如下：&lt;/p&gt;
-&lt;p&gt;将&lt;code&gt;#SQLNET.AUTHENTICATION_SERVICES= (NTS)&lt;/code&gt;注释掉，改成如下即可！&lt;/p&gt;
-&lt;p&gt;如下:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;SQLNET.AUTHENTICATION_SERVICES= (NONE)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;同时修改监听器配置文件，具体做法是： 在oracle安装目录下搜索listener.ora文件，一般在$/&lt;span class="caps"&gt;NETWORK&lt;/span&gt;/ADMIN目录下，把主机名用ip地址代替，例如(&lt;span class="caps"&gt;ADDRESS&lt;/span&gt; = (&lt;span class="caps"&gt;PROTOCOL&lt;/span&gt; = &lt;span class="caps"&gt;TCP&lt;/span&gt;)(&lt;span class="caps"&gt;HOST&lt;/span&gt; = &lt;span class="caps"&gt;HBONLINE1&lt;/span&gt;)(&lt;span class="caps"&gt;PORT&lt;/span&gt; = 1523))改为(&lt;span class="caps"&gt;ADDRESS&lt;/span&gt; = (&lt;span class="caps"&gt;PROTOCOL&lt;/span&gt; = &lt;span class="caps"&gt;TCP&lt;/span&gt;)(&lt;span class="caps"&gt;HOST&lt;/span&gt; = 168.168.168.42)(&lt;span class="caps"&gt;PORT&lt;/span&gt; =&amp;nbsp;1523))。&lt;/p&gt;
-&lt;h4 id="_3"&gt;第三种解决方案&lt;a class="headerlink" href="#_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;如果你以上使用的是plsql&amp;nbsp;developer工具或者是toad工具，应该以上的操作就绝对可以解决你的问题，&lt;/p&gt;
-&lt;p&gt;但是如果你使用的是navicat工具，以上怕是还不能解决你的问题。具体的如果在navicat工具上使用就是如下的问题：&lt;/p&gt;
-&lt;p&gt;Oracle基本是默认安装，安装过程没出现过任何异常
-Oracle开启了两个服务：OracleServiceORCL和OracleOraDb11g_home1TNSListener
-Navicat一直都连接不上本地的Oracle
-网上搜了一大堆资料，大都是改那3个配置文件的
-最终还是没能解决这个问题
-最终的问题是：
-Navicat主机那里如果填本机IP地址（192.168.18.8），错误代码是：&lt;span class="caps"&gt;ORA&lt;/span&gt;-12541：&lt;span class="caps"&gt;TNS&lt;/span&gt;：no listener
-如果填localhost，错误代码是：&lt;strong&gt;&lt;span class="caps"&gt;ORA&lt;/span&gt;-28547：connection to server failed，probable Oracle Net admin error&lt;/strong&gt;
-tnsping localhost 是通的，tnsping 192.168.18.8 则出错 &lt;span class="caps"&gt;TNS&lt;/span&gt;-12541: &lt;span class="caps"&gt;TNS&lt;/span&gt;:&amp;nbsp;无监听程序&lt;/p&gt;
-&lt;p&gt;解决的方案是：&lt;/p&gt;
-&lt;p&gt;oci.dll的版本不对&lt;br&gt;
- 从 &lt;a href="http://www.oracle.com/technology/software/tech/oci/instantclient/index.html"&gt;http://www.oracle.com/technology/software/tech/oci/instantclient/index.html&lt;/a&gt; 下载client. 里面很多，根据你的版本来下，我下载的是instantclient_11_1。&lt;br&gt;
-在navicat的 工具-选项-其他-&lt;span class="caps"&gt;OCI&lt;/span&gt; ,选择刚下的client中的 oci.dll&lt;br&gt;&amp;nbsp;设置环境变量：  &lt;/p&gt;
-&lt;p&gt;1)在环境变量PATH中开头增加C:\Instantclient10_2;&lt;br&gt;
-  2)增加用户环境变量SQLPATH，值为C:\Instantclient10_2&lt;br&gt;
-  3)增加用户环境变量NLS_LANG，值为AMERICAN_AMERICA.&lt;span class="caps"&gt;UTF8&lt;/span&gt;&lt;br&gt;
-  选择 Basic&amp;nbsp;连接，就大概能连接上了  &lt;/p&gt;
-&lt;p&gt;以上的操作可以通过如下进行查找：&lt;/p&gt;
-&lt;p&gt;1、首先确认你的数据库已经启动了，可以用net start OracleServiceORCL&lt;br&gt;
-2、其次确认你的侦听启动了否，用lsnrctl status查看，如果没有启动，用lsnrctl start启动.   &lt;br&gt;&amp;nbsp;3、以上启动后，直接打开sqlplus，输入用户名密码，无需输入服务名，直接登录即可。  &lt;/p&gt;</content><category term="Oracle"></category></entry><entry><title>Oracle中的decode的使用</title><link href="https://pingbook.top/articles/oracle-decode/" rel="alternate"></link><published>2018-09-06T23:34:45+08:00</published><updated>2018-09-06T23:34:45+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-06:/articles/oracle-decode/</id><summary type="html">&lt;p&gt;Oracle 中 decode&amp;nbsp;函数用法&lt;/p&gt;
-&lt;h3 id="_1"&gt;含义解释&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;decode(条件,值1,返回值1,值2 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Oracle 中 decode&amp;nbsp;函数用法&lt;/p&gt;
-&lt;h3 id="_1"&gt;含义解释&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;decode(条件,值1,返回值1,值2,返回值2,&amp;hellip;值n,返回值n,缺省值)&lt;/p&gt;
-&lt;p&gt;该函数的含义如下：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;IF 条件=值1 THEN &lt;/span&gt;
-&lt;span class="code-line"&gt;　　　　RETURN(翻译值1) &lt;/span&gt;
-&lt;span class="code-line"&gt;ELSIF 条件=值2 THEN &lt;/span&gt;
-&lt;span class="code-line"&gt;　　　　RETURN(翻译值2)  &lt;/span&gt;
-&lt;span class="code-line"&gt;　　　　......&lt;/span&gt;
-&lt;span class="code-line"&gt;ELSIF 条件=值n THEN&lt;/span&gt;
-&lt;span class="code-line"&gt;　　　　RETURN(翻译值n)&lt;/span&gt;
-&lt;span class="code-line"&gt;ELSE&lt;/span&gt;
-&lt;span class="code-line"&gt;　　　　RETURN(缺省值)&lt;/span&gt;
-&lt;span class="code-line"&gt;END IF&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;decode(字段或字段的运算，值1，值2，值3）&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;这个函数运行的结果是，当字段或字段的运算的值等于值1时，该函数返回值2，否则返回值3&amp;nbsp;当然值1，值2，值3也可以是表达式，这个函数使得某些sql语句简单了许多&lt;/p&gt;
-&lt;h3 id="_2"&gt;使用方法&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;1、&lt;strong&gt;比较大小&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;select decode(sign(变量1-变量2),-1,变量1,变量2) from dual; --取较小值  &lt;/span&gt;
-&lt;span class="code-line"&gt;sign()函数根据某个值是0、正数还是负数，分别返回0、1、-1  &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;例如：&lt;br&gt;
-变量1=10，变量2=20&lt;br&gt;&amp;nbsp;则sign(变量1-变量2)返回-1，decode解码结果为“变量1”，达到了取较小值的目的。  &lt;/p&gt;
-&lt;p&gt;2、&lt;strong&gt;此函数用在SQL语句中，功能介绍如下：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Decode函数与一系列嵌套的 &lt;span class="caps"&gt;IF&lt;/span&gt;-&lt;span class="caps"&gt;THEN&lt;/span&gt;-ELSE语句相似。base_exp与compare1,compare2等等依次进行比较。如果base_exp和 第i 个compare项匹配，就返回第i 个对应的value 。如果base_exp与任何的compare值都不匹配，则返回default。每个compare值顺次求值，如果发现一个匹配，则剩下的compare值（如果还有的话）就都不再求值。一个为NULL的base_exp被认为和NULL compare值等价。如果需要的话，每一个compare值都被转换成和第一个compare&amp;nbsp;值相同的数据类型，这个数据类型也是返回值的类型。&lt;/p&gt;
-&lt;p&gt;Decode函数在实际开发中非常的有用&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结合Lpad函数，如何使主键的值自动加1并在前面补0&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;select LPAD(decode(count(记录编号),0,1,max(to_number(记录编号)+1)),14,&amp;#39;0&amp;#39;) 记录编号 from tetdmis&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;select decode(dir,1,0,1) from a1_interval&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;dir 的值是1变为0，是0则变为1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;比如我要查询某班男生和女生的数量分别是多少?&lt;/p&gt;
-&lt;p&gt;通常我们这么写:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;select count(*) from 表 where 性别 ＝ 男；&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;select count(*) from 表 where 性别 ＝ 女；&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;要想显示到一起还要union一下，太麻烦了&lt;/p&gt;
-&lt;p&gt;用decode呢，只需要一句话&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;select decode(性别，男，1，0），decode(性别，女，1，0） from 表&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;3、order&amp;nbsp;by对字符列进行特定的排序&lt;/p&gt;
-&lt;p&gt;大家还可以在Order&amp;nbsp;by中使用Decode。&lt;/p&gt;
-&lt;p&gt;例：表table_subject，有subject_name列。要求按照：语、数、外的顺序进行排序。这时，就可以非常轻松的使用Decode完成要求了。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;select * from table_subject order by decode(subject_name, &amp;#39;语文&amp;#39;, 1, &amp;#39;数学&amp;#39;, 2, , &amp;#39;外语&amp;#39;,3)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Oracle"></category></entry></feed>
+&lt;/ol&gt;</content><category term="Oracle"></category></entry></feed>

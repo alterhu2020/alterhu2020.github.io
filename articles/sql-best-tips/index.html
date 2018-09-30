@@ -136,8 +136,8 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-07-25T23:46:15.923671+08:00">-->
-                    <!--2018-07-25 23:46:15-->
+                    <!--<abbr class="published" title="2018-09-29T10:55:57.105633+08:00">-->
+                    <!--2018-09-29 10:55:57-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -147,7 +147,7 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-07-25 23:46:15
+                        Posted on 2018-09-29 10:55:57
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -218,19 +218,33 @@ MYSQL 用户变量,系统变量,局部变量¶ 参考文档: https://stackoverfl
 <ol start="5">
 <li>MYSQL中的<code>concat</code>和<code>concat_ws</code>和<code>group_concat</code>的区别</li>
 </ol>
+<h3 id="sql">SQL查询区分大小写<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>1 select * from user where name like &#39;%A%&#39;;　　</span>
+<span class="code-line">2 select * from user where name like &#39;%a%&#39;;　　　　　　　　##与第一句执行效果一样</span>
+<span class="code-line">3 select * from user where binary name like &#39;%A%&#39;;　　　　--只匹配大写A　　</span>
+<span class="code-line">4 select * from user where binary name like &#39;%a%&#39;;　　　　--只匹配小写a</span>
+</pre></div>
+
+
+<p>见表时可以强制区分大小写</p>
+<div class="highlight"><pre><span class="code-line"><span></span> create table user (</span>
+<span class="code-line">      name varchar(10) binary</span>
+<span class="code-line"> );</span>
+<span class="code-line"> insert into user (name) values (&#39;AAA&#39;);</span>
+</pre></div>
                 </div><!-- /.entry-content -->
                 <br>
                 <div><span>Categories:</span>SQL</div>
                 <br>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/fen-ceng/">
-                                ◄&nbsp;&nbsp;分层自动化测试
+                            <a href="../../articles/mobile-debugger-feature/">
+                                ◄&nbsp;&nbsp;How to debug in real device for Android and&nbsp;IPhone
                             </a>
                         </li>
                         <li style="display: inline;margin-left: 100px; margin-right: auto;">
-                            <a href="../../articles/5-software-performance-testing/">
-                                [面试] 5.&nbsp;性能测试相关的涉及内容&nbsp;&nbsp;►
+                            <a href="../../articles/vue-videojs7/">
+                                A vue plugin to play m3u8 media file with video.js&nbsp;7&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>

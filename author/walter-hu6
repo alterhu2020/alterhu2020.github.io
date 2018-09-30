@@ -123,6 +123,54 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/cordova-android/" rel="bookmark" title="Permalink to Vue项目转成Cordova项目的注意事项和技巧">Vue项目转成Cordova项目的注意事项和技巧</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-27T14:33:07.071099+08:00">
+                                        Posted on 2018-08-27 14:33:07,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="cordova-build-android-timeout"><code>cordova build android</code> 命令 timeout<a class="headerlink" href="#cordova-build-android-timeout" title="Permanent link">&para;</a></h3>
+<p>修改对应的<code>build.gradle</code>文件中的内容为如下内容: </p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="nt">buildscript …</span></span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/cordova-android/" rel="bookmark" title="Permalink to Vue项目转成Cordova项目的注意事项和技巧">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/cordova/">Cordova</a>
+                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/python-error/" rel="bookmark" title="Permalink to Linux安装包遇到的问题">Linux安装包遇到的问题</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-08-11T22:08:13.622607+08:00">
+                                        Posted on 2018-08-11 22:08:13,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在尝试安装samba的时候,服务器端总是报如下的错误:</p>
+<div class="highlight"><pre><span class="code-line"><span></span>error processing package python-dnspython</span>
+<span class="code-line"> Sub-process /usr/bin …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/python-error/" rel="bookmark" title="Permalink to Linux安装包遇到的问题">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/basic-command/" rel="bookmark" title="Permalink to [Linux] (持续更新中)一些常用的linux系统的操作命令">[Linux]&nbsp;(持续更新中)一些常用的linux系统的操作命令</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-08-11T09:30:31.280688+08:00">
@@ -186,27 +234,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/sql-best-tips/" rel="bookmark" title="Permalink to [SQL]收集的一些好的SQL snippets">[<span class="caps">SQL</span>]收集的一些好的SQL&nbsp;snippets</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-25T23:46:15.923671+08:00">
-                                        Posted on 2018-07-25 23:46:15,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h3 id="mysql"><span class="caps">MYSQL</span> 用户变量,系统变量,局部变量<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
-<p>参考文档: https://stackoverflow.com/questions/11754781 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/sql-best-tips/" rel="bookmark" title="Permalink to [SQL]收集的一些好的SQL snippets">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/fen-ceng/" rel="bookmark" title="Permalink to 分层自动化测试">分层自动化测试</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-24T20:39:58.482745+08:00">
@@ -256,33 +283,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                             <a class="danger label" href="../tag/mian-xiang-dui-xiang/">面向对象</a>
                                             <a class="danger label" href="../tag/mian-shi/">面试</a>
                                             <a class="danger label" href="../tag/java/">java</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/algorithm-best/" rel="bookmark" title="Permalink to 需要知道的一些算法">需要知道的一些算法</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-07-24T20:18:57.345773+08:00">
-                                        Posted on 2018-07-24 20:18:57,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="_1">费布拉切数列<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>1 1 2 3 5 8 13&nbsp;21 </p>
-</blockquote>
-<div class="highlight"><pre><span class="code-line"><span></span>public …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/algorithm-best/" rel="bookmark" title="Permalink to 需要知道的一些算法">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/java/">Java</a>
-                                            <a class="danger label" href="../tag/algorithm/">Algorithm</a>
                                 </div>
 
 

@@ -123,6 +123,30 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署">[环境搭建]&nbsp;配置采用NAT123进行树莓派部署</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-13T19:29:03.055243+08:00">
+                                        Posted on 2018-07-13 19:29:03,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="_1">安装步骤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>2018-07-09 更新,下面的方法如果安装失败,尝试官方的安装指南: <a href="http://www.mono-project.com/download/stable/#download-lin-raspbian">http://www.mono-project.com/download …</a></p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/pi-nat123/" rel="bookmark" title="Permalink to [环境搭建] 配置采用NAT123进行树莓派部署">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/nat123/">NAT123</a>
+                                            <a class="danger label" href="../tag/shu-mei-pai/">树莓派</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/pi-installation/" rel="bookmark" title="Permalink to [树莓派] 树莓派3B安装">[树莓派]&nbsp;树莓派3B安装</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-07-13T19:28:39.041004+08:00">

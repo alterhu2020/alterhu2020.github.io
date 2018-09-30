@@ -123,6 +123,52 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/python-common-tips/" rel="bookmark" title="Permalink to Python中用户的小技巧和代码">Python中用户的小技巧和代码</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-17T16:06:29.778758+08:00">
+                                        Posted on 2018-09-17 16:06:29,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="collectionsordereddict">collections.OrderedDict() 第一个和最后一个元素<a class="headerlink" href="#collectionsordereddict" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span class="code-line"><span></span>sortedDict=collections.OrderedDict(originalDict)</span>
+<span class="code-line">lastElementKey=next(reversed …</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/python-common-tips/" rel="bookmark" title="Permalink to Python中用户的小技巧和代码">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/aliyun-oss-sdk/" rel="bookmark" title="Permalink to Python访问阿里云OSS对象存储操作">Python访问阿里云OSS对象存储操作</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-17T16:05:56.915879+08:00">
+                                        Posted on 2018-09-17 16:05:56,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="_1">参考文档<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>官方OSS文档:&nbsp;https://help.aliyun.com/document_detail/32026.html?spm …</p></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/aliyun-oss-sdk/" rel="bookmark" title="Permalink to Python访问阿里云OSS对象存储操作">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/a-li-yun/">阿里云</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/1-know-ps/" rel="bookmark" title="Permalink to PhotoShop学习笔记一认识PS">PhotoShop学习笔记一认识PS</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-09-15T22:37:24.162958+08:00">
@@ -215,60 +261,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                                         <span>Tags: </span>
                                             <a class="danger label" href="../tag/idea/">IDEA</a>
                                             <a class="danger label" href="../tag/java/">Java</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/how-resize-image/" rel="bookmark" title="Permalink to 怎么放大缩小图片的尺寸和图片尺寸转换">怎么放大缩小图片的尺寸和图片尺寸转换</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-09-11T21:03:17.629913+08:00">
-                                        Posted on 2018-09-11 21:03:17,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h3 id="_1">图片尺寸放大缩小网站推荐<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>这个网站可以放大缩小图片的尺寸,方便调节图片的大小尺寸,网站地址: </p>
-<ul>
-<li><a href="http://resizeimage.net/">resize&nbsp;images</a>  </li>
-<li><a href="https://www.iloveimg.com/zh-cn/resize-image">iloveimg图片尺寸放大缩小</a></li>
-</ul>
-<h3 id="_2">图片大小压缩网站推荐<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://www.iloveimg.com/zh-cn/compress-image/compress-jpg">压缩图片(推荐 …</a></li></ul> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/how-resize-image/" rel="bookmark" title="Permalink to 怎么放大缩小图片的尺寸和图片尺寸转换">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/1000-line-learn-python/" rel="bookmark" title="Permalink to 千行代码入门Python(转载)">千行代码入门Python(转载)</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-09-10T20:21:38.920873+08:00">
-                                        Posted on 2018-09-10 20:21:38,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <blockquote>
-<p>作者：笑虎<br>
-   链接：https://&nbsp;zhuanlan.zhihu.com/p/22909144</p>
-</blockquote>
-<p>代码如下 …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/1000-line-learn-python/" rel="bookmark" title="Permalink to 千行代码入门Python(转载)">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/python/">Python</a>
                                 </div>
 
 

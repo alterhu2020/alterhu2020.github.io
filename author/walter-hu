@@ -123,6 +123,78 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">vuejs中使用的一些重要技巧</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-10-30T23:09:00.525657+08:00">
+                                        Posted on 2018-10-30 23:09:00,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2 id="stylebackground-color-background-image">style中配置<code>background-color</code>, <code>background-image</code> 变量<a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link">&para;</a></h2>
+<p>代码如下</p>
+<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;v-btn</span> <span class="na">color=</span><span class="s">&quot;primary&quot;</span> <span class="err">fab</span> <span class="err">dark …</span></span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/vue-v-model-usage/" rel="bookmark" title="Permalink to 自定义组件中在父组件中如何使用v-model属性">自定义组件中在父组件中如何使用v-model属性</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-10-28T20:28:16.351599+08:00">
+                                        Posted on 2018-10-28 20:28:16,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <blockquote>
+<p>最近发现使用的项目中大量使用了很多重复的代码，所以想要把重复的代码分离成为一个单独的子组件，后面父类直接使用。其中<code>v-model</code>的&nbsp;双向数据绑定可以实现将子组件的属性值返回到父组件中，这个是很重要的特性。所以需要这里了解一下。</p>
+</blockquote>
+<p>参考文章 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/vue-v-model-usage/" rel="bookmark" title="Permalink to 自定义组件中在父组件中如何使用v-model属性">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/debian-install-virtualbox/" rel="bookmark" title="Permalink to How to install Debian System in virtualbox">How to install Debian System in&nbsp;virtualbox</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-30T10:23:45.864597+08:00">
+                                        Posted on 2018-09-30 10:23:45,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="how-to-install">How to install<a class="headerlink" href="#how-to-install" title="Permanent link">&para;</a></h3>
+<ol>
+<li>download <span class="caps">DVD</span> <span class="caps">ISO</span> from place: <a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/">Debian Download …</a></li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/debian-install-virtualbox/" rel="bookmark" title="Permalink to How to install Debian System in virtualbox">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/debian/">Debian</a>
+                                            <a class="danger label" href="../tag/virtualbox/">VirtualBox</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/vue-videojs7/" rel="bookmark" title="Permalink to A vue plugin to play m3u8 media file with video.js 7">A vue plugin to play m3u8 media file with video.js&nbsp;7</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-09-29T20:42:32.208920+08:00">
@@ -192,82 +264,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">vuejs中使用的一些重要技巧</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-09-27T10:38:29.057796+08:00">
-                                        Posted on 2018-09-27 10:38:29,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="stylebackground-color-background-image">style中配置<code>background-color</code>, <code>background-image</code> 变量<a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link">&para;</a></h2>
-<p>代码如下</p>
-<div class="highlight"><pre><span class="code-line"><span></span> <span class="nt">&lt;v-btn</span> <span class="na">color=</span><span class="s">&quot;primary&quot;</span> <span class="err">fab</span> <span class="err">dark …</span></span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/vuejs-best-tips/" rel="bookmark" title="Permalink to vuejs中使用的一些重要技巧">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/videojs-vue-plugin/" rel="bookmark" title="Permalink to How to player video.js in Vue">How to player video.js in&nbsp;Vue</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-09-26T19:34:31.191680+08:00">
-                                        Posted on 2018-09-26 19:34:31,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h3 id="videojs-70">Video.js 7.0<a class="headerlink" href="#videojs-70" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>announce&nbsp;https://blog.videojs.com/video-js-7-is-here …</p></blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/videojs-vue-plugin/" rel="bookmark" title="Permalink to How to player video.js in Vue">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/videojs/">Video.js</a>
-                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/random_string/" rel="bookmark" title="Permalink to JavaScript字符串数组中随机选择字符串">JavaScript字符串数组中随机选择字符串</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-09-21T19:13:34.196724+08:00">
-                                        Posted on 2018-09-21 19:13:34,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h4 id="_1">代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span class="code-line"><span></span><span class="cm">/**</span></span>
-<span class="code-line"><span class="cm"> * 得到随机的字符串</span></span>
-<span class="code-line"><span class="cm"> * @param arrayStr</span></span>
-<span class="code-line"><span class="cm"> * @returns {*}</span></span>
-<span class="code-line"><span class="cm"> */</span><span class="w"></span></span>
-<span class="code-line">const<span class="w"> </span>randomStrPickUp<span class="w"> </span><span class="o">=</span><span class="w"> </span>function<span class="w"> </span><span class="o">(</span>arrayStr<span class="o">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span></span>
-<span class="code-line"><span class="w">  </span>const …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/random_string/" rel="bookmark" title="Permalink to JavaScript字符串数组中随机选择字符串">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/javascript/">JavaScript</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -318,6 +314,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
+                    <li class="tag-4"><a href="../tag/debian/">Debian</a></li>
                     <li class="tag-4"><a href="../tag/debugger/">Debugger</a></li>
                     <li class="tag-4"><a href="../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../tag/intellij-idea/">IntelliJ Idea</a></li>
@@ -325,9 +322,8 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/javascript/">JavaScript</a></li>
                     <li class="tag-2"><a href="../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../tag/mybatis/">Mybatis</a></li>
-                    <li class="tag-1"><a href="../tag/oracle/">Oracle</a></li>
+                    <li class="tag-2"><a href="../tag/oracle/">Oracle</a></li>
                     <li class="tag-4"><a href="../tag/photoshop/">PhotoShop</a></li>
-                    <li class="tag-1"><a href="../tag/python/">Python</a></li>
             </ul>
         </nav>
 
@@ -365,6 +361,7 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <a href="../author/walt7.html">7</a>
                 <a href="../author/walt8.html">8</a>
                 <a href="../author/walt9.html">9</a>
+                <a href="../author/walt10.html">10</a>
         <a href="../author/walter-hu2.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->

@@ -1,101 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-09-29T20:42:32+08:00</updated><entry><title>A vue plugin to play m3u8 media file with video.js 7</title><link href="https://pingbook.top/articles/vue-videojs7/" rel="alternate"></link><published>2018-09-29T20:42:32+08:00</published><updated>2018-09-29T20:42:32+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-29:/articles/vue-videojs7/</id><summary type="html">&lt;h3 id="publish-link"&gt;Publish Link&lt;a class="headerlink" href="#publish-link" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Sample Page: &lt;a href="https://pingbook.top/vue-videojs7/"&gt;https://pingbook.top/vue-videojs7/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Source Code …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3 id="publish-link"&gt;Publish Link&lt;a class="headerlink" href="#publish-link" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Sample Page: &lt;a href="https://pingbook.top/vue-videojs7/"&gt;https://pingbook.top/vue-videojs7/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Source Code: &lt;a href="https://github.com/alterhu2020/vue-videojs7"&gt;https://github.com/alterhu2020/vue-videojs7&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Vue.js"></category><category term="Video.js"></category></entry><entry><title>[SQL]收集的一些好的SQL snippets</title><link href="https://pingbook.top/articles/sql-best-tips/" rel="alternate"></link><published>2018-09-29T10:55:57+08:00</published><updated>2018-09-29T10:55:57+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-29:/articles/sql-best-tips/</id><summary type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql
-1. 用户变量: 基于会话变量实现的, 可以暂存值, 并传递给同一连接里的下一条sql使用的变量.当客户端连接退出时,变量会被释放。只针对当前的存储过程或者当前的执行环境有效.&lt;br&gt;
-&lt;strong&gt;对于SET，可以使用=或:=来赋值，对于SELECT只能使用:=来赋值.&lt;/strong&gt;
-    我们可以使用一条简单的select语句查询定义的用户变量的值。
-2. 系统变量: MySQL可以访问许多系统变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET &lt;span class="caps"&gt;GLOBAL&lt;/span&gt; var_name语句，可以动态更改这些全局变量。
-3. 局部变量:&amp;nbsp;作用范围在begin到end语句块之间。在该语句块里设置的变量成为局部变量。&lt;/p&gt;
-&lt;h3 id="_1"&gt;基本的排序显示&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 3; &lt;/span&gt;
-&lt;span class="code-line"&gt;-- SQL SERVER 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT TOP 3 * FROM SCore s ORDER BY s.score DESC;  &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;查询分数排名第二的人(排序第二)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL方式, LIMIT第一参数是查询的条数,第二个数是查询的索引值,从0开始&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 1,1; &lt;/span&gt;
-&lt;span class="code-line"&gt;-- SQL Server 方式&lt;/span&gt;
-&lt;span class="code-line"&gt;SELECT TOP 1 * FROM Score s WHERE s.id NOT IN (&lt;/span&gt;
-&lt;span class="code-line"&gt;    SELECT TOP 1 * FROM Score ORDER BY s.score DESC&lt;/span&gt;
-&lt;span class="code-line"&gt;) ORDER BY s.score DESC;   &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="2"&gt;
-&lt;li&gt;显示排名名次或者说对应的行号&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;--&lt;/span&gt; &lt;span class="nt"&gt;MYSQL方式&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;username&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;score&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;FROM&lt;/span&gt; &lt;span class="nt"&gt;Score&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt; &lt;span class="nt"&gt;join&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;ranK&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;r&lt;/span&gt; &lt;span class="nt"&gt;order&lt;/span&gt; &lt;span class="nt"&gt;by&lt;/span&gt; &lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="4"&gt;
-&lt;li&gt;查询父节点下的所有子节点集合&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;CREATE DEFINER = &amp;#39;test&amp;#39;@&amp;#39;%&amp;#39;&lt;/span&gt;
-&lt;span class="code-line"&gt;FUNCTION test.func_getMyFollowings(inputuserKey INT(11))&lt;/span&gt;
-&lt;span class="code-line"&gt;  RETURNS varchar(5000) CHARSET utf8&lt;/span&gt;
-&lt;span class="code-line"&gt;BEGIN&lt;/span&gt;
-&lt;span class="code-line"&gt;  DECLARE rootNode varchar(100);&lt;/span&gt;
-&lt;span class="code-line"&gt;  DECLARE tempChilds varchar(5000);&lt;/span&gt;
-&lt;span class="code-line"&gt;  SET tempChilds =&amp;#39;&amp;#39;;&lt;/span&gt;
-&lt;span class="code-line"&gt;  SET rootNode=CAST(inputuserKey AS CHAR);&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;  WHILE rootNode IS NOT NULL DO   -- 遍历节点操作&lt;/span&gt;
-&lt;span class="code-line"&gt;     SET tempChilds = concat(tempChilds,rootNode,&amp;#39;,&amp;#39;);&lt;/span&gt;
-&lt;span class="code-line"&gt;      SELECT group_concat(um.EmployeeUserKey) INTO rootNode &lt;/span&gt;
-&lt;span class="code-line"&gt;      FROM UserManager um where FIND_IN_SET(um.ManagerSUserKey,rootNode)&amp;gt;0;  -- 找到当前节点的子节点&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt; END WHILE;&lt;/span&gt;
-&lt;span class="code-line"&gt; RETURN tempChilds;&lt;/span&gt;
-&lt;span class="code-line"&gt;END&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol start="5"&gt;
-&lt;li&gt;MYSQL中的&lt;code&gt;concat&lt;/code&gt;和&lt;code&gt;concat_ws&lt;/code&gt;和&lt;code&gt;group_concat&lt;/code&gt;的区别&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="sql"&gt;SQL查询区分大小写&lt;a class="headerlink" href="#sql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1 select * from user where name like &amp;#39;%A%&amp;#39;;　　&lt;/span&gt;
-&lt;span class="code-line"&gt;2 select * from user where name like &amp;#39;%a%&amp;#39;;　　　　　　　　##与第一句执行效果一样&lt;/span&gt;
-&lt;span class="code-line"&gt;3 select * from user where binary name like &amp;#39;%A%&amp;#39;;　　　　--只匹配大写A　　&lt;/span&gt;
-&lt;span class="code-line"&gt;4 select * from user where binary name like &amp;#39;%a%&amp;#39;;　　　　--只匹配小写a&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;见表时可以强制区分大小写&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; create table user (&lt;/span&gt;
-&lt;span class="code-line"&gt;      name varchar(10) binary&lt;/span&gt;
-&lt;span class="code-line"&gt; );&lt;/span&gt;
-&lt;span class="code-line"&gt; insert into user (name) values (&amp;#39;AAA&amp;#39;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>How to debug in real device for Android and IPhone</title><link href="https://pingbook.top/articles/mobile-debugger-feature/" rel="alternate"></link><published>2018-09-27T10:38:55+08:00</published><updated>2018-09-27T10:38:55+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-27:/articles/mobile-debugger-feature/</id><summary type="html">&lt;h3 id="steps"&gt;Steps&lt;a class="headerlink" href="#steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;http://elevenbeans.github.io/2017/06/06/%E7%A7 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="steps"&gt;Steps&lt;a class="headerlink" href="#steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;http://elevenbeans.github.io/2017/06/06/%E7%A7%&lt;span class="caps"&gt;BB&lt;/span&gt;%E5%8A%A8%E7%&lt;span class="caps"&gt;AB&lt;/span&gt;%&lt;span class="caps"&gt;AF&lt;/span&gt;%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%&lt;span class="caps"&gt;AF&lt;/span&gt;%95%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%&lt;span class="caps"&gt;BB&lt;/span&gt;/&lt;/p&gt;
-&lt;p&gt;Chrome -&amp;gt; remote device &amp;ndash;&amp;gt; not found the apple&amp;nbsp;phone&lt;/p&gt;
-&lt;h3 id="_1"&gt;苹果手机模拟器&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;二、苹果手机的调试方法：
-对于苹果手机的调试，要想在电脑上进行，那必须要用苹果电脑（Mac）了！Mac 版的 Safari 浏览器早就可以连接 iPhone&amp;nbsp;进行测试了，可以看这里：通过Mac远程调试iPhone/iPad上的网页。&lt;/p&gt;
-&lt;p&gt;也就是说，你将 iPhone 连接 Mac 之后在 iPhone 的 Safari 打开网页，然后再打开 Mac 上的 Safari 浏览器，选择“开发”就可以看到你的 iPhone 上面的网页了，然后会打开 Console 这样的工具。就可以进行各种调试和检查，操作会实时改变在 iPhone 上。 这里如果没有 iPhone 或者觉得 iPhone 连接麻烦，其实也可以使用 Xcode 开发套装中的 iPhone&amp;nbsp;模拟器。&lt;/p&gt;
-&lt;p&gt;打开 Xcode 之后，在 “Xcode”-&amp;gt;“Open Developer Tool”-&amp;gt;“iOS Simulator” 即可打开一个 iPhone&amp;nbsp;模拟器。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Mac emulator&amp;nbsp;打开手机很慢,很卡&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;原因是：模拟本身有一个 slow animations&amp;nbsp;设置。&lt;/p&gt;
-&lt;p&gt;一定是无意间按了设置的快捷键： Command + t .见下图:
-&lt;img alt="https://img-blog.csdn.net/20171108210059951?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjgxNTk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" src="https://img-blog.csdn.net/20171108210059951?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjgxNTk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"&gt;&lt;/p&gt;</content><category term="Debugger"></category></entry><entry><title>vuejs中使用的一些重要技巧</title><link href="https://pingbook.top/articles/vuejs-best-tips/" rel="alternate"></link><published>2018-09-27T10:38:29+08:00</published><updated>2018-09-27T10:38:29+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-27:/articles/vuejs-best-tips/</id><summary type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PingBook Blog</title><link href="https://pingbook.top/" rel="alternate"></link><link href="https://pingbook.top/feeds/all.atom.xml" rel="self"></link><id>https://pingbook.top/</id><updated>2018-10-30T23:09:00+08:00</updated><entry><title>vuejs中使用的一些重要技巧</title><link href="https://pingbook.top/articles/vuejs-best-tips/" rel="alternate"></link><published>2018-10-30T23:09:00+08:00</published><updated>2018-10-30T23:09:00+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-10-30:/articles/vuejs-best-tips/</id><summary type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;代码如下&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;v-btn&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;primary&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;fab&lt;/span&gt; &lt;span class="err"&gt;dark …&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="stylebackground-color-background-image"&gt;style中配置&lt;code&gt;background-color&lt;/code&gt;, &lt;code&gt;background-image&lt;/code&gt; 变量&lt;a class="headerlink" href="#stylebackground-color-background-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;代码如下&lt;/p&gt;
@@ -201,7 +105,163 @@
 &lt;span class="code-line"&gt;&lt;span class="err"&gt;因为需求只需要分享当前页面的时候有自定义内容&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="err"&gt;其他页面分享出去是公众号都无所谓，主要是活动，所以就用了如下解决办法！！！！&lt;/span&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;/span&gt;
 &lt;span class="code-line"&gt;&lt;span class="err"&gt;因为&lt;/span&gt;&lt;span class="n"&gt;vue的history在IOS的微信分享时不会刷新&lt;/span&gt;&lt;span class="err"&gt;，但是我们又要做自定义分享。我在网上也看了很多，比如什么&lt;/span&gt;&lt;span class="n"&gt;beforerouteEnter的路由判断&lt;/span&gt;&lt;span class="err"&gt;，或者写在&lt;/span&gt;&lt;span class="n"&gt;Vue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;prototype&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Wxshare&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="err"&gt;的原型链中等，看起来都太麻烦，不够简单粗暴，但是这些方法可以好像可以做到判断每一个分享页面的自定义内容。而我只需要当前分享特定的单一页面，那么我们在&lt;/span&gt;&lt;span class="n"&gt;A页面跳转B页面&lt;/span&gt;&lt;span class="err"&gt;（需要分享的页面）就不用&lt;/span&gt;&lt;span class="n"&gt;vue的history的push来跳转传参&lt;/span&gt;&lt;span class="err"&gt;，我们用！我们用！我们用！&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;....&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;来跳转传参，重要的事情说三遍&lt;/span&gt;&lt;span class="o"&gt;!!!!&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>How to player video.js in Vue</title><link href="https://pingbook.top/articles/videojs-vue-plugin/" rel="alternate"></link><published>2018-09-26T19:34:31+08:00</published><updated>2018-09-26T19:34:31+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-26:/articles/videojs-vue-plugin/</id><summary type="html">&lt;h3 id="videojs-70"&gt;Video.js 7.0&lt;a class="headerlink" href="#videojs-70" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="vux-292-x-input-v-modelnumber"&gt;vux 2.9.2  &lt;code&gt;x-input&lt;/code&gt; v-model=number不能双向绑定值&lt;a class="headerlink" href="#vux-292-x-input-v-modelnumber" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在部分手机设备上，尤其是android手机上发现如下代码怎么都无法绑定&lt;code&gt;v-model&lt;/code&gt;的值：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;x-input&lt;/span&gt; &lt;span class="na"&gt;v-model=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;countnumber&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;number&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;&amp;lt;/x-input&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;崩溃啊，开始的时候，我很奇怪是什么原因导致的这个问题，也只在部分android手机上测试发现这个问题。 发现上面的代码对应的&lt;code&gt;countnumber&lt;/code&gt; 不能更新。 我勒个去啊！
+我反复测试修改代码，以为是哪里设置导致的，这个花了我将近6个小时的时间啊！&amp;nbsp;我去啊，这个问题bug为什么vux的团队不修复啊！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;经过测试发现的原因，是 input.selectionStart 在 type 为 number的时候部分浏览器不允许选择，所以报错触发不了 $emit(&amp;lsquo;input&amp;rsquo;)
+对照的bug：
+1. &lt;a href="https://github.com/airyland/vux/pull/3083"&gt;https://github.com/airyland/vux/pull/3083&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;解决方案： &lt;a href="https://github.com/airyland/vux/issues/2857"&gt;https://github.com/airyland/vux/issues/2857&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content></entry><entry><title>自定义组件中在父组件中如何使用v-model属性</title><link href="https://pingbook.top/articles/vue-v-model-usage/" rel="alternate"></link><published>2018-10-28T20:28:16+08:00</published><updated>2018-10-28T20:28:16+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-10-28:/articles/vue-v-model-usage/</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近发现使用的项目中大量使用了很多重复的代码，所以想要把重复的代码分离成为一个单独的子组件，后面父类直接使用。其中&lt;code&gt;v-model&lt;/code&gt;的&amp;nbsp;双向数据绑定可以实现将子组件的属性值返回到父组件中，这个是很重要的特性。所以需要这里了解一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考文章 …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;最近发现使用的项目中大量使用了很多重复的代码，所以想要把重复的代码分离成为一个单独的子组件，后面父类直接使用。其中&lt;code&gt;v-model&lt;/code&gt;的&amp;nbsp;双向数据绑定可以实现将子组件的属性值返回到父组件中，这个是很重要的特性。所以需要这里了解一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考文章：&lt;a href="https://www.cnblogs.com/coffeelovetea/p/8326115.html"&gt;https://www.cnblogs.com/coffeelovetea/p/8326115.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="v-model"&gt;有关&lt;code&gt;v-model&lt;/code&gt;的定义&lt;a class="headerlink" href="#v-model" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;其实v-model的语法糖是这样包装而成的：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;input&lt;/span&gt;
+&lt;span class="code-line"&gt;  :value=&amp;quot;something&amp;quot;&lt;/span&gt;
+&lt;span class="code-line"&gt;  @:input=&amp;quot;something = $event.target.value&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;而一个组件上使用时则会简化成这样子：&amp;nbsp;&amp;#8220;`$xslt&lt;/p&gt;
+&lt;p&gt;&lt;custom-component
+  :value="something"
+  @input="value =&gt; { something = value }&amp;rdquo;&amp;gt;
+&lt;/custom-input&gt;
+&amp;#8220;`&lt;/p&gt;
+&lt;p&gt;因此，对于一个带有 v-model&amp;nbsp;的组件（核心用法），它应该如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;带有v-model的父组件通过绑定的value值（即v-model的绑定值）传给子组件，子组件通过 prop接收一个&amp;nbsp;value;&lt;/li&gt;
+&lt;li&gt;子组件利用 $emit 触发 input 事件，并传入新值value给父组件；&lt;code&gt;this.$emit('input', value);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;p&gt;1.带有v-model绑定的父组件下的子组件不一定是要input标签的元素，其他元素都可以;　　&lt;/p&gt;
+&lt;p&gt;2.将prop属性绑定到data属性上，以便修改prop属性（Vue不允许直接修改prop属性的值）;&lt;/p&gt;
+&lt;p&gt;3.实现双向绑定是watch监听属性是一个不错的方法（实时监视值的变化）；&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;v-bind只能实现单向绑定&lt;/li&gt;
+&lt;li&gt;v-model（v-bind+触发的input事件）实现双向绑定&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Vuejs"></category></entry><entry><title>How to install Debian System in virtualbox</title><link href="https://pingbook.top/articles/debian-install-virtualbox/" rel="alternate"></link><published>2018-09-30T10:23:45+08:00</published><updated>2018-09-30T10:23:45+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-30:/articles/debian-install-virtualbox/</id><summary type="html">&lt;h3 id="how-to-install"&gt;How to install&lt;a class="headerlink" href="#how-to-install" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;download &lt;span class="caps"&gt;DVD&lt;/span&gt; &lt;span class="caps"&gt;ISO&lt;/span&gt; from place: &lt;a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/"&gt;Debian Download …&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3 id="how-to-install"&gt;How to install&lt;a class="headerlink" href="#how-to-install" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;download &lt;span class="caps"&gt;DVD&lt;/span&gt; &lt;span class="caps"&gt;ISO&lt;/span&gt; from place: &lt;a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/"&gt;Debian Download&amp;nbsp;Page&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;Install in&amp;nbsp;VirtualBox. &lt;/li&gt;
+&lt;li&gt;Choose the &lt;span class="caps"&gt;GNOME&lt;/span&gt; desktop&amp;nbsp;environment.&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Debian"></category><category term="VirtualBox"></category></entry><entry><title>A vue plugin to play m3u8 media file with video.js 7</title><link href="https://pingbook.top/articles/vue-videojs7/" rel="alternate"></link><published>2018-09-29T20:42:32+08:00</published><updated>2018-09-29T20:42:32+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-29:/articles/vue-videojs7/</id><summary type="html">&lt;h3 id="publish-link"&gt;Publish Link&lt;a class="headerlink" href="#publish-link" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Sample Page: &lt;a href="https://pingbook.top/vue-videojs7/"&gt;https://pingbook.top/vue-videojs7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source Code …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3 id="publish-link"&gt;Publish Link&lt;a class="headerlink" href="#publish-link" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Sample Page: &lt;a href="https://pingbook.top/vue-videojs7/"&gt;https://pingbook.top/vue-videojs7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Source Code: &lt;a href="https://github.com/alterhu2020/vue-videojs7"&gt;https://github.com/alterhu2020/vue-videojs7&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Vue.js"></category><category term="Video.js"></category></entry><entry><title>[SQL]收集的一些好的SQL snippets</title><link href="https://pingbook.top/articles/sql-best-tips/" rel="alternate"></link><published>2018-09-29T10:55:57+08:00</published><updated>2018-09-29T10:55:57+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-29:/articles/sql-best-tips/</id><summary type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="mysql"&gt;&lt;span class="caps"&gt;MYSQL&lt;/span&gt; 用户变量,系统变量,局部变量&lt;a class="headerlink" href="#mysql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;参考文档: https://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql
+1. 用户变量: 基于会话变量实现的, 可以暂存值, 并传递给同一连接里的下一条sql使用的变量.当客户端连接退出时,变量会被释放。只针对当前的存储过程或者当前的执行环境有效.&lt;br&gt;
+&lt;strong&gt;对于SET，可以使用=或:=来赋值，对于SELECT只能使用:=来赋值.&lt;/strong&gt;
+    我们可以使用一条简单的select语句查询定义的用户变量的值。
+2. 系统变量: MySQL可以访问许多系统变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET &lt;span class="caps"&gt;GLOBAL&lt;/span&gt; var_name语句，可以动态更改这些全局变量。
+3. 局部变量:&amp;nbsp;作用范围在begin到end语句块之间。在该语句块里设置的变量成为局部变量。&lt;/p&gt;
+&lt;h3 id="_1"&gt;基本的排序显示&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 3; &lt;/span&gt;
+&lt;span class="code-line"&gt;-- SQL SERVER 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT TOP 3 * FROM SCore s ORDER BY s.score DESC;  &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;查询分数排名第二的人(排序第二)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;-- MYSQL方式, LIMIT第一参数是查询的条数,第二个数是查询的索引值,从0开始&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT * FROM SCore s ORDER BY s.score DESC LIMIT 1,1; &lt;/span&gt;
+&lt;span class="code-line"&gt;-- SQL Server 方式&lt;/span&gt;
+&lt;span class="code-line"&gt;SELECT TOP 1 * FROM Score s WHERE s.id NOT IN (&lt;/span&gt;
+&lt;span class="code-line"&gt;    SELECT TOP 1 * FROM Score ORDER BY s.score DESC&lt;/span&gt;
+&lt;span class="code-line"&gt;) ORDER BY s.score DESC;   &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="2"&gt;
+&lt;li&gt;显示排名名次或者说对应的行号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;--&lt;/span&gt; &lt;span class="nt"&gt;MYSQL方式&lt;/span&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;username&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;score&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;rank&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;FROM&lt;/span&gt; &lt;span class="nt"&gt;Score&lt;/span&gt; &lt;span class="nt"&gt;s&lt;/span&gt; &lt;span class="nt"&gt;join&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;SELECT&lt;/span&gt; &lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="k"&gt;ranK&lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;r&lt;/span&gt; &lt;span class="nt"&gt;order&lt;/span&gt; &lt;span class="nt"&gt;by&lt;/span&gt; &lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="nt"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="4"&gt;
+&lt;li&gt;查询父节点下的所有子节点集合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;CREATE DEFINER = &amp;#39;test&amp;#39;@&amp;#39;%&amp;#39;&lt;/span&gt;
+&lt;span class="code-line"&gt;FUNCTION test.func_getMyFollowings(inputuserKey INT(11))&lt;/span&gt;
+&lt;span class="code-line"&gt;  RETURNS varchar(5000) CHARSET utf8&lt;/span&gt;
+&lt;span class="code-line"&gt;BEGIN&lt;/span&gt;
+&lt;span class="code-line"&gt;  DECLARE rootNode varchar(100);&lt;/span&gt;
+&lt;span class="code-line"&gt;  DECLARE tempChilds varchar(5000);&lt;/span&gt;
+&lt;span class="code-line"&gt;  SET tempChilds =&amp;#39;&amp;#39;;&lt;/span&gt;
+&lt;span class="code-line"&gt;  SET rootNode=CAST(inputuserKey AS CHAR);&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt;  WHILE rootNode IS NOT NULL DO   -- 遍历节点操作&lt;/span&gt;
+&lt;span class="code-line"&gt;     SET tempChilds = concat(tempChilds,rootNode,&amp;#39;,&amp;#39;);&lt;/span&gt;
+&lt;span class="code-line"&gt;      SELECT group_concat(um.EmployeeUserKey) INTO rootNode &lt;/span&gt;
+&lt;span class="code-line"&gt;      FROM UserManager um where FIND_IN_SET(um.ManagerSUserKey,rootNode)&amp;gt;0;  -- 找到当前节点的子节点&lt;/span&gt;
+&lt;span class="code-line"&gt;&lt;/span&gt;
+&lt;span class="code-line"&gt; END WHILE;&lt;/span&gt;
+&lt;span class="code-line"&gt; RETURN tempChilds;&lt;/span&gt;
+&lt;span class="code-line"&gt;END&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="5"&gt;
+&lt;li&gt;MYSQL中的&lt;code&gt;concat&lt;/code&gt;和&lt;code&gt;concat_ws&lt;/code&gt;和&lt;code&gt;group_concat&lt;/code&gt;的区别&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="sql"&gt;SQL查询区分大小写&lt;a class="headerlink" href="#sql" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;1 select * from user where name like &amp;#39;%A%&amp;#39;;　　&lt;/span&gt;
+&lt;span class="code-line"&gt;2 select * from user where name like &amp;#39;%a%&amp;#39;;　　　　　　　　##与第一句执行效果一样&lt;/span&gt;
+&lt;span class="code-line"&gt;3 select * from user where binary name like &amp;#39;%A%&amp;#39;;　　　　--只匹配大写A　　&lt;/span&gt;
+&lt;span class="code-line"&gt;4 select * from user where binary name like &amp;#39;%a%&amp;#39;;　　　　--只匹配小写a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;见表时可以强制区分大小写&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt; create table user (&lt;/span&gt;
+&lt;span class="code-line"&gt;      name varchar(10) binary&lt;/span&gt;
+&lt;span class="code-line"&gt; );&lt;/span&gt;
+&lt;span class="code-line"&gt; insert into user (name) values (&amp;#39;AAA&amp;#39;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>How to debug in real device for Android and IPhone</title><link href="https://pingbook.top/articles/mobile-debugger-feature/" rel="alternate"></link><published>2018-09-27T10:38:55+08:00</published><updated>2018-09-27T10:38:55+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-27:/articles/mobile-debugger-feature/</id><summary type="html">&lt;h3 id="steps"&gt;Steps&lt;a class="headerlink" href="#steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;http://elevenbeans.github.io/2017/06/06/%E7%A7 …&lt;/p&gt;</summary><content type="html">&lt;h3 id="steps"&gt;Steps&lt;a class="headerlink" href="#steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;http://elevenbeans.github.io/2017/06/06/%E7%A7%&lt;span class="caps"&gt;BB&lt;/span&gt;%E5%8A%A8%E7%&lt;span class="caps"&gt;AB&lt;/span&gt;%&lt;span class="caps"&gt;AF&lt;/span&gt;%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%&lt;span class="caps"&gt;AF&lt;/span&gt;%95%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%&lt;span class="caps"&gt;BB&lt;/span&gt;/&lt;/p&gt;
+&lt;p&gt;Chrome -&amp;gt; remote device &amp;ndash;&amp;gt; not found the apple&amp;nbsp;phone&lt;/p&gt;
+&lt;h3 id="_1"&gt;苹果手机模拟器&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;二、苹果手机的调试方法：
+对于苹果手机的调试，要想在电脑上进行，那必须要用苹果电脑（Mac）了！Mac 版的 Safari 浏览器早就可以连接 iPhone&amp;nbsp;进行测试了，可以看这里：通过Mac远程调试iPhone/iPad上的网页。&lt;/p&gt;
+&lt;p&gt;也就是说，你将 iPhone 连接 Mac 之后在 iPhone 的 Safari 打开网页，然后再打开 Mac 上的 Safari 浏览器，选择“开发”就可以看到你的 iPhone 上面的网页了，然后会打开 Console 这样的工具。就可以进行各种调试和检查，操作会实时改变在 iPhone 上。 这里如果没有 iPhone 或者觉得 iPhone 连接麻烦，其实也可以使用 Xcode 开发套装中的 iPhone&amp;nbsp;模拟器。&lt;/p&gt;
+&lt;p&gt;打开 Xcode 之后，在 “Xcode”-&amp;gt;“Open Developer Tool”-&amp;gt;“iOS Simulator” 即可打开一个 iPhone&amp;nbsp;模拟器。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Mac emulator&amp;nbsp;打开手机很慢,很卡&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;原因是：模拟本身有一个 slow animations&amp;nbsp;设置。&lt;/p&gt;
+&lt;p&gt;一定是无意间按了设置的快捷键： Command + t .见下图:
+&lt;img alt="https://img-blog.csdn.net/20171108210059951?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjgxNTk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" src="https://img-blog.csdn.net/20171108210059951?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjgxNTk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"&gt;&lt;/p&gt;</content><category term="Debugger"></category></entry><entry><title>How to player video.js in Vue</title><link href="https://pingbook.top/articles/videojs-vue-plugin/" rel="alternate"></link><published>2018-09-26T19:34:31+08:00</published><updated>2018-09-26T19:34:31+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-26:/articles/videojs-vue-plugin/</id><summary type="html">&lt;h3 id="videojs-70"&gt;Video.js 7.0&lt;a class="headerlink" href="#videojs-70" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;announce&amp;nbsp;https://blog.videojs.com/video-js-7-is-here …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h3 id="videojs-70"&gt;Video.js 7.0&lt;a class="headerlink" href="#videojs-70" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -2041,353 +2101,4 @@ https://sites.google.com/a/chromium.org/chromedriver/这里也有很多详细的
 &lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;JSON&lt;/span&gt;&amp;nbsp;Response:&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt="http://images2015.cnblogs.com/blog/345627/201608/345627-20160807113921700-1847416761.png" src="http://images2015.cnblogs.com/blog/345627/201608/345627-20160807113921700-1847416761.png"&gt;&lt;/p&gt;
-&lt;h5 id="_1"&gt;未完待续&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;</content><category term="软件测试"></category><category term="Selenium"></category></entry><entry><title>Selenium得到当前页面的URL</title><link href="https://pingbook.top/articles/selenium-currenturl/" rel="alternate"></link><published>2018-09-07T00:00:10+08:00</published><updated>2018-09-07T00:00:10+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-07:/articles/selenium-currenturl/</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;       &lt;span class="c"&gt;/**&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * getCurrentURL:(get the current page URL address). &lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * @author huchan&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * @param …&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;       &lt;span class="c"&gt;/**&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * getCurrentURL:(get the current page URL address). &lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * @author huchan&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * @param driver  --- the web driver instance&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * @return String ---the url of current page&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         * @since JDK 1.6&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="c"&gt;         */&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;        &lt;span class="nt"&gt;public&lt;/span&gt; &lt;span class="nt"&gt;String&lt;/span&gt; &lt;span class="nt"&gt;getCurrentPageURL&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            &lt;span class="err"&gt;String&lt;/span&gt; &lt;span class="err"&gt;pageurl=&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            &lt;span class="err"&gt;JavascriptExecutor&lt;/span&gt; &lt;span class="err"&gt;je=(JavascriptExecutor)&lt;/span&gt; &lt;span class="err"&gt;driver&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            &lt;span class="err"&gt;final&lt;/span&gt; &lt;span class="err"&gt;String&lt;/span&gt; &lt;span class="err"&gt;docstate=(String)&lt;/span&gt; &lt;span class="err"&gt;je.executeScript(&amp;quot;return&lt;/span&gt; &lt;span class="err"&gt;document.readyState&amp;quot;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            &lt;span class="err"&gt;logger.info(&amp;quot;Current&lt;/span&gt; &lt;span class="err"&gt;loading&lt;/span&gt; &lt;span class="err"&gt;page&lt;/span&gt; &lt;span class="err"&gt;state&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;+docstate);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;            WebDriverWait wait=new WebDriverWait(driver,120);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;            ExpectedCondition&amp;lt;Boolean&amp;gt; ec = new ExpectedCondition&amp;lt;Boolean&amp;gt;() {&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;                  @Override&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;                public Boolean apply(WebDriver d) {&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;                    return (docstate.equals(&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;complete&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;));&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;                  }&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;                };&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;            try{&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;               logger.info(&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;We&lt;/span&gt; &lt;span class="n"&gt;just&lt;/span&gt; &lt;span class="kc"&gt;wait&lt;/span&gt; &lt;span class="n"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;current&lt;/span&gt; &lt;span class="kc"&gt;page&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;correctly&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;               wait.until(ec);           &lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;               pageurl=driver.getCurrentUrl();&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;               logger.info(&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;current&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;+pageurl);&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;            }&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;            catch(TimeoutException e){&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;                pageurl=&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;120&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;span class="s2"&gt;                logger.error(&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;Sorry&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="kc"&gt;page&lt;/span&gt; &lt;span class="n"&gt;cannot&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;loaded&lt;/span&gt; &lt;span class="n"&gt;correctly&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;getMessage&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;driver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;getCurrentUrl&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            &lt;span class="p"&gt;}&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;            &lt;span class="nt"&gt;return&lt;/span&gt; &lt;span class="nt"&gt;pageurl&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;        &lt;span class="err"&gt;}&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;不多说，代码如上。关键点是一定要等待页面加载完成了再使用driver.getCurrentUrl()方法，否则的话可能得到的页面URL&amp;nbsp;不正确。&lt;/p&gt;</content><category term="软件测试"></category><category term="Selenium"></category></entry><entry><title>PL Developer 使用技巧整理</title><link href="https://pingbook.top/articles/pldeveloper-tips/" rel="alternate"></link><published>2018-09-06T23:52:43+08:00</published><updated>2018-09-06T23:52:43+08:00</updated><author><name>Walter Hu</name></author><id>tag:pingbook.top,2018-09-06:/articles/pldeveloper-tips/</id><summary type="html">&lt;p&gt;Shortcut:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;Edit/Undo     Ctrl+Z&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Redo     Shift+Ctrl+Z …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Shortcut:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;Edit/Undo     Ctrl+Z&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Redo     Shift+Ctrl+Z&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/PL/SQL Beautifier  Ctrl+W   (自定义)&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;       Shift+Home  选择光标位置到行首&lt;/span&gt;
-&lt;span class="code-line"&gt;       Shift+End  选择光标位置到行尾&lt;/span&gt;
-&lt;span class="code-line"&gt;       Ctrl+Shift+Home 选择光标位置到首行行首&lt;/span&gt;
-&lt;span class="code-line"&gt;       Ctrl+Shift+End 选择光标位置到尾行行尾&lt;/span&gt;
-&lt;span class="code-line"&gt;Object:View     Shift+Ctrl+V 查看 (自定义)&lt;/span&gt;
-&lt;span class="code-line"&gt;Object:Describe    Shift+Ctrl+D 结构 (自定义)&lt;/span&gt;
-&lt;span class="code-line"&gt;Object:Properties   Shift+Ctrl+P 属性 (自定义)&lt;/span&gt;
-&lt;span class="code-line"&gt;Object:Browse    Shift+Ctrl+B 浏览 (自定义)&lt;/span&gt;
-&lt;span class="code-line"&gt;Object:Edit Data   Shift+Ctrl+E 编辑数据(自定义)&lt;/span&gt;
-&lt;span class="code-line"&gt;Object:Standard Query  Shift+Ctrl+S 标准查询(自定义)&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Find Replace   Ctrl+F&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Find Next    Ctrl+L&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Find Previous   Shift+Ctrl+L&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Replace Next   Ctrl+P&lt;/span&gt;
-&lt;span class="code-line"&gt;EDIT/Full Screen   Ctrl+F11&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Go to Line    Ctrl+G&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Next Tab Page   Ctrl+H&lt;/span&gt;
-&lt;span class="code-line"&gt;Edit/Previous Tab Page  Shift+Ctrl+H&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;Session/Execute    F8&lt;/span&gt;
-&lt;span class="code-line"&gt;Session/Break    Shift+Esc&lt;/span&gt;
-&lt;span class="code-line"&gt;Session/Commit    F10&lt;/span&gt;
-&lt;span class="code-line"&gt;Session/Rollback   Shift+F10&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;Debug/Toggle Breakpoint  Ctrl+B&lt;/span&gt;
-&lt;span class="code-line"&gt;Debug/Start     F9&lt;/span&gt;
-&lt;span class="code-line"&gt;Debug/Run     Ctrl+R&lt;/span&gt;
-&lt;span class="code-line"&gt;Debug/Step Into    Ctrl+N&lt;/span&gt;
-&lt;span class="code-line"&gt;Debug/Step Over    Ctrl+O&lt;/span&gt;
-&lt;span class="code-line"&gt;Debug/Step Out    Ctrl+T&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;Tools/Explain Plan   F5&lt;/span&gt;
-&lt;span class="code-line"&gt;Tools/Code Assistant  F6&lt;/span&gt;
-&lt;span class="code-line"&gt;&lt;/span&gt;
-&lt;span class="code-line"&gt;Editor: Start of Document Ctrl+PgUp OR Ctrl+Home&lt;/span&gt;
-&lt;span class="code-line"&gt;Editor: End of Document  Ctrl+PgDn OR Ctrl+End&lt;/span&gt;
-&lt;span class="code-line"&gt;Editor: Delete Line   Ctrl+Y&lt;/span&gt;
-&lt;span class="code-line"&gt;Editor: Navigate Back  Alt+Left&lt;/span&gt;
-&lt;span class="code-line"&gt;Editor: Navigate Forward Alt+Right&lt;/span&gt;
-&lt;span class="code-line"&gt;SQL Window: Previous SQL Ctrl+Up&lt;/span&gt;
-&lt;span class="code-line"&gt;SQL Window: Next SQL  Ctrl+Down&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer记住登陆密码&lt;br&gt;
-在使用PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer时,
-为了工作方便希望PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer记住登录Oracle的用户名和密码;
-设置方法:&lt;br&gt;
-  &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer-&amp;gt;tools-&amp;gt;Preferences-&amp;gt;Oracle-&amp;gt;Logon History,
-  在右边界面的&amp;rdquo;Definition&amp;rdquo;中,&amp;rdquo;Store history&amp;rdquo;是默认勾选的,
-  再勾选上&amp;rdquo;Store with password&amp;rdquo;,即可.
-上述方法若不好用,使用下面的方式:
-在上面所说的界面中的&amp;rdquo;Fixed Users&amp;rdquo;中,
-添加需要直接选择后就可登录的用户名/密码@ORACLE_SID,
-  如:
-cbsdb/cbsdb@cbsdb
-  重新登录的时候,从Oracle Logon的登录界面的Username后面的&amp;hellip;按钮处,&amp;nbsp;选择需要登录的用户即可。&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;执行单条SQL语句(&lt;span class="caps"&gt;SQL&lt;/span&gt; Window中根据光标位置自动选择语句)
-在使用PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer的SQL Window时,按F8键,&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer默认是执行该窗口的所
-有SQL语句,需要设置为鼠标所在的那条SQL语句,即执行当前SQL语句;
-设置方法:&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer-&amp;gt;tools-&amp;gt;Preferences-&amp;gt;&lt;span class="caps"&gt;SQL&lt;/span&gt; Window-&amp;gt;Window types,
-勾上&amp;rdquo;AutoSelect Statement&amp;rdquo; 即可。&amp;nbsp;注意,每条语句后面要加分号。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;格式化SQL语句
-在使用PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer的SQL Window时,有时候输入的SQL语句太长或太乱,
-希望能用比较通用的写法格式话一下,这样看起来会好看些,也好分析;
-使用方法:
-  选中需要格式化的SQL语句,然后点击工具栏的PL/&lt;span class="caps"&gt;SQL&lt;/span&gt;&amp;nbsp;beautifier按钮即可.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;查看执行计划
-在使用PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer的SQL Window时,有时候输入的SQL语句执行的效率,分析下表结构,
-如何可以提高查询的效率,可以通过查看Oracle提供的执行计划;
-使用方法:
-  选中需要分析的SQL语句,然后点击工具栏的Explain plan按钮(即执行计划),&amp;nbsp;或者直接按F5即可。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;调试存储过程
-在使用PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer操作Oracle时,有时候调用某些存储过程,或者调试存储过程;
-调用存储过程的方法:
-  首先,在PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer左边的Browser中选择Procedures,
-  查找需要调用的存储过程;然后,选中调试的存储过程,点击右键,
-  选择Test,在弹出来的Test script窗口中,
-  对于定义为in类型的参数,需要给该参数的Value输入值;
-  最后点击上面的条数按钮:Start debugger或者按F9;
-  最后点击:RUN或者Ctrl+R。&amp;nbsp;(具体要调式一个存储过程,请参照操作手册,这个大概说明下应用)。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;oralce精简客户端的使用
-要想PL/SQL连接oracle数据库,除了PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer 之外还需要Oracle客户端,
-有一个更方便的方法就是使用Oracle精简客户端,很多地方可以下载,文件很小,耗资源也少。
-安装完成后修改安装目录下的\Oracle\ora90\network\&lt;span class="caps"&gt;ADMIN&lt;/span&gt;\tnsnames.ora文件:
-格式如下:
-  DATABASE_NAME =
-   (&lt;span class="caps"&gt;DESCRIPTION&lt;/span&gt; =
-    (ADDRESS_LIST =
-     (&lt;span class="caps"&gt;ADDRESS&lt;/span&gt; = (&lt;span class="caps"&gt;PROTOCOL&lt;/span&gt; = &lt;span class="caps"&gt;TCP&lt;/span&gt;)(&lt;span class="caps"&gt;HOST&lt;/span&gt; = 127.0.0.1)(&lt;span class="caps"&gt;PORT&lt;/span&gt; = 1521))
-    )
-    (CONNECT_DATA =
-     #(SERVICE_NAME = dealer)
-     (&lt;span class="caps"&gt;SID&lt;/span&gt; = SID_NAME)
-     #(&lt;span class="caps"&gt;SERVER&lt;/span&gt; = &lt;span class="caps"&gt;DEDICATED&lt;/span&gt;)
-    )&amp;nbsp;)&lt;/li&gt;
-&lt;li&gt;关键字自动大写:
-了解一点编程的常识的人都知道,编码风格很重要。
-在阅读代码方面,保持一致的编码风格,阅读起来比较容易;
-在执行效率方面,保持一致的编码风格,更有可能被放到共享SQL区中,&amp;nbsp;这样就提供了执行的效率。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;另外,信息系统的核心是数据库,系统出问题时最先要查的就是SQL语句,
-怎样在浩瀚的日志中快速找到那条SQL语句是件比较痛苦的事情。
-SQL语句全部大写并不能彻底解决这一问题,
-但在一堆代码中间找一行全部大写的字符相对容易些,你的眼睛会感谢你。
-设置也很简单:
-  Tools-&amp;gt;Preferences-&amp;gt;Editor,将Keyword case选择Uppercase。
-我一般是让关键字大写,其他比如表名,字段名等都是小写。&amp;nbsp;大家都应该养成一种自己的编码习惯,并保持下去。&lt;/p&gt;
-&lt;ol start="8"&gt;
-&lt;li&gt;
-&lt;p&gt;右键菜单
-在PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer(下面简称PLD)中的每一个文本编辑窗口,
-如SQL Window,Command Window和Porgram Window,
-右键点击某个对象名称,会弹出一个包含操作对象命令的菜单,我们这里称之为右键菜单。
-对象类型可以是表,视图,同义词,存储过程和函数等。
-根据对象类型的不同,弹出的菜单也有区别。
-表和视图有View, Edit, Rename, Drop, Query data 和Edit data等功能。
-View和Edit分别是查看和修改表的结构信息,如字段,主键,索引和约束等。
-Query data相当于新打开一个窗口,并执行select * from 表。
-Edit data相当于新打开一个窗口,并执行select * from 表 for update。
-存储过程和函数有Test功能,选中后可以进入调试状态。
-有时由于PLD识别错误,右键点击对象并不能出来正确的菜单,&amp;nbsp;可以在对象所在的DDL或DML语句的前面,加上分号,这样PLD就能正确的判断出对象的类型&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select for Update
-有时我们需要把一些数据导入数据库中,如果用UE拼Insert语句,会比较麻烦,而且操作性不强。
-PLD的SQL Window可以查询,新增,修改和删除表的内容。
-查询自不必说,而新增,删除和修改,只需在select语句后加入for update,
-对表进行行级锁定,然后点击窗口的锁型图标,即可进入编辑状态。
-下面介绍一下如何从Excel中提取文本插入到数据库中,
-我们的Excel文件中有三列,在数据库中建立临时表:
-  &lt;span class="caps"&gt;CREATE&lt;/span&gt; &lt;span class="caps"&gt;TABLE&lt;/span&gt; t1(
-   cino varchar2(100),
-   contno varchar2(100),
-   loanno varchar2(100)
-  )
-然后在SQL Window中输入select t1 for update,并点击锁型鼠标,进入编辑状态,
-用鼠标点击第一行的输入窗口,这时PLD会死锁几秒钟,
-然后可以见到光标在第一行的输入框中闪动,
-用鼠标把CINO, &lt;span class="caps"&gt;CONTNO&lt;/span&gt;, LOANNO选中,进入Excel中,把需要插入数据库的内容选中,
-然后切换到PLD,按Ctrl + V,点击√,然后再点击Commit按钮,
-则数据提交到表t1中,执行select * from&amp;nbsp;t1可以看到内容.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Beautifier(&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; 美化器)
-&lt;span class="caps"&gt;PLD&lt;/span&gt; 6以上版本有对DML代码格式化的功能。
-在SQL Window或Program Window中选中部分代码(如果不选则对整个窗口的代码操作),
-在菜单中选Edit -&amp;gt; &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Beautifier,得到格式化的代码。
-对于非法的DML语句或DDL语句,PLD将会在下方状态栏提示:
-&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Beautifier could not parse text。
-在缺省的状态下,PLD会把DML语句的每一个字段都排在单独的一行,这样不方便查看。
-在菜单中选Edit à &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Beautifier Options,进入Preferences窗口,
-选择Edit,进入配置文件编辑界面,在标签栏选DML,
-在窗口中部的Select, Insert和Update组框中把Fit选中,然后点击Save,
-把配置文件保存到PLD的安装目录下,点击Close关闭。
-在Rules file中输入配置文件所在位置,点击OK,完成配置文件切换。&amp;nbsp;这时再对代码进行格式化,就可以使每一个字段尽可能的在一行上了。&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span class="caps"&gt;TNS&lt;/span&gt; Names
-菜单Help-&amp;gt;Support Info-&amp;gt;&lt;span class="caps"&gt;TNS&lt;/span&gt;&amp;nbsp;Names,可以查看Oracle的tnsnames.ora。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Copy to Excel
-在SQL Window中执行Select语句,在结果出来以后,右键点击下面的数据区,
-选择Copy to Excel,可以把数据区的记录原样拷贝到Excel中。
-但有两点需要注意:
-(1) field中不能以=开始,否则Excel会误认为是函数;
-(2) 数字不要超过17位,否则后面的位数将会置为0,
-  但可以通过在数字前加&amp;rsquo;来使Excel认为该field是文本,&amp;nbsp;同时对于数据库中Numbe类型的字段,最好用to_char输出,不然可能会显示不正常;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;保持上次打开的SQL脚本
-重新进入PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer时,Window List能打开上次退出时的文档:
-(1) 将菜单Tools-&amp;gt;Window list选项勾上;
-(2) Tools-&amp;gt;Perferences-&amp;gt;User Interface-&amp;gt;Options的右边,
-  将&amp;rdquo;Autosave desktop&amp;rdquo;勾选.
-(3) 退出PL/&lt;span class="caps"&gt;SQL&lt;/span&gt;&amp;nbsp;Developer重新进入.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;快速找到已知表名的表或其他对象:
-在Tools菜单中,勾选上Object Browser,将对象浏览器打开,
-双击对象浏览器中的某个对象所处的文件夹,
-比如表都是在Tables文件夹中,&amp;nbsp;然后以尽快的速度输入表名,即可找到以你输入的几个字母开头的对象了.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;快速关闭打开于Windows List中的文档窗口:&amp;nbsp;按住Shift键,左键点击需要关闭的文档窗口.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; DEVELOPER中的专用复制(Special Copy)
-如果你正在用 &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer 写 &lt;span class="caps"&gt;SQL&lt;/span&gt; 和 &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; 代码,
-随后你又要在其它工具里使用代码,例如象 &lt;span class="caps"&gt;3GL&lt;/span&gt; 这样的程序设计语言,
-那么你可能需要把这些代码转换为稍微不同的格式。
-让我们假设你已经在 &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer 里写了并测试了这样一个SQL 语句:
-  select  deptno, sum(sal) mgr_sal
-  from  emp
-  where  job = &amp;lsquo;&lt;span class="caps"&gt;MANAGER&lt;/span&gt;&amp;rsquo;
-  group by deptno
-  order by mgr_sal&amp;nbsp;desc&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;例如,如果你要在Borland Delphi 里使用这个语句,你可能需要象这样的格式:
-  &lt;span class="caps"&gt;SQL&lt;/span&gt; := &amp;lsquo;select deptno, sum(sal) mgr_sal from emp&amp;rsquo; + #13#10 +
-    &amp;lsquo;where job = &amp;lsquo;&amp;rsquo;&lt;span class="caps"&gt;MANAGER&lt;/span&gt;&amp;rsquo;&amp;lsquo;&amp;rsquo; + #13#10 +
-    &amp;lsquo;group by deptno&amp;rsquo; + #13#10 +
-    &amp;lsquo;order by mgr_sal&amp;nbsp;desc&amp;rsquo;;&lt;/p&gt;
-&lt;p&gt;为了这个目的,在PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; DEVELOPER中选中已写好的SQL语句,鼠标右键,
-在弹出的菜单中找到 Special Copy。这个功能有一个子菜单,它显示了所有被定义的专用复制格式。
-在选择了格式之后,被转换的代码就被储存在剪贴板上了,
-这样你就可以粘贴它到相应工具的编辑器里了。
-专用复制格式被定义在 &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer 安装目录下的 SpecialCopy 子目录里。
-你可以改变预先确定的复制格式或者添加新的复制格式。
-仅仅简单地添加一个带有 .copy 扩展名的文本文件就可以了,
-它包含了一个针对 &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; 代码第一行的变量
-(&lt;line_1&gt;)、一个针对 &lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; 代码最后一行的变量(&lt;line_N&gt;)
-和一个针对所有其它行的变量(&lt;line_*&gt;)。下面是一个针对 Borland Delphi&amp;nbsp;的例子:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="code-line"&gt;&lt;span&gt;&lt;/span&gt;  ;PL/SQL Developer SpecialCopy definition for Borland Delphi&lt;/span&gt;
-&lt;span class="code-line"&gt;  ;&amp;lt;line_1&amp;gt; for first line&lt;/span&gt;
-&lt;span class="code-line"&gt;  ;&amp;lt;line_*&amp;gt; for all other lines&lt;/span&gt;
-&lt;span class="code-line"&gt;  ;&amp;lt;line_N&amp;gt; for last line&lt;/span&gt;
-&lt;span class="code-line"&gt;  ;&lt;/span&gt;
-&lt;span class="code-line"&gt;  SQL := &amp;#39;&amp;lt;line_1&amp;gt;&amp;#39; + #13#10 +&lt;/span&gt;
-&lt;span class="code-line"&gt;  &amp;#39;&amp;lt;line_*&amp;gt;&amp;#39; + #13#10 +&lt;/span&gt;
-&lt;span class="code-line"&gt;  &amp;#39;&amp;lt;line_n&amp;gt;&amp;#39;;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;第一行需要为指派到 &lt;span class="caps"&gt;SQL&lt;/span&gt; 的变量加上前言,接下来需要有一个 &lt;span class="caps"&gt;CR&lt;/span&gt;/&lt;span class="caps"&gt;LF&lt;/span&gt; 对。
-最后一行不需要有CR/&lt;span class="caps"&gt;LF&lt;/span&gt; 对,但需要用分号来终止。所有其它行仅仅需要 &lt;span class="caps"&gt;CR&lt;/span&gt;/&lt;span class="caps"&gt;LF&lt;/span&gt; 接在后面。
-如果 &lt;line_1&gt; 和 &lt;line_n&gt; 都与 &lt;line_*&gt; 一样,你可以忽略它们。
-在一些语言里,你需要对特定的字符使用换码序列。
-例如,在 C++ 里,你要对 tab字符(&lt;span class="caps"&gt;ASCII&lt;/span&gt; 码为 9)使用 \t 。
-要定义这些换码序列,请使用 #define 关键词:
-&lt;code&gt;#define char(9) = \t
-  #define \ = \\
-  String("&amp;lt;line_1&amp;gt;\n") +
-  String("&amp;lt;line_*&amp;gt;\n") +
-  String("&amp;lt;line_n&amp;gt;");&lt;/code&gt;
-你还可以使用 &amp;ldquo;#define compress&amp;rdquo;来指出你要从结果里移除所有多余的空字符(空格、制表符和换行)。
-注意,.copy&amp;nbsp;文件的名字将被包括在菜单里,所以你应该使用描述性的文件名。&lt;/p&gt;
-&lt;ol start="17"&gt;
-&lt;li&gt;
-&lt;p&gt;在PL/&lt;span class="caps"&gt;SQL&lt;/span&gt; DEVELOPER中复制行记录的简便方法
-(1) 单击要拷贝的行记录左边的黑色小三角,该行被选中,右键复制。
-(2) 粘贴至记事本里,然后复制刚才粘贴的内容。(该步骤不知何故不能缺)
-(3)&amp;nbsp;单击新记录左边的黑色小三角,右键粘贴即可。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;快捷键定义的位置:
-Tools-&amp;gt;Preferences-&amp;gt;User Interface-&amp;gt;Key configuration
-选中需要定义的Item,然后按一个快捷键组合即可,
-如果所按的快捷键已有定义,会有提示,这时候Cancel,另外选择快捷键组合即可;
-通常情况下,打开PLSQL Developer后,最经常干的事就是打开SQL Window和Command Window,
-就给这两个操作定义了快捷键, &lt;span class="caps"&gt;ALT&lt;/span&gt;+S 和 &lt;span class="caps"&gt;ALT&lt;/span&gt; + C,这样拿鼠标点三下的事情只需要按一下键。
-设置方法:
-  菜单Tools -&amp;gt; Preferences -&amp;gt; Key&amp;nbsp;Configuration&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;注意:
-  如果设置了快捷键不起作用,
-  回到Tools -&amp;gt; Preferences -&amp;gt; Key Configuration界面,
-  点击最上方的&amp;rdquo;Default Administrator&amp;rdquo;右边的&amp;rdquo;&amp;hellip;&amp;rdquo;按钮,
-  在弹出的&amp;rdquo;Preference Set&amp;rdquo;界面中,对&amp;rdquo;Personal Preferences&amp;rdquo;&amp;nbsp;以及下面的&amp;rdquo;Definition&amp;rdquo;-&amp;gt;&amp;rdquo;Description&amp;rdquo;进行一下设置.&lt;/p&gt;
-&lt;ol start="19"&gt;
-&lt;li&gt;
-&lt;p&gt;在窗口标题栏内显示文件的完全路径
-Tools-&amp;gt;Preferences-&amp;gt;User Interface-&amp;gt;Options
-勾选&amp;rdquo;Show complete file path in windows&amp;nbsp;titles&amp;rdquo;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Object Brower中自定义Object的顺序以及登录后默认自动选中My Objects&lt;br&gt;
-默认情况下,&lt;span class="caps"&gt;PL&lt;/span&gt;/&lt;span class="caps"&gt;SQL&lt;/span&gt; Developer登录后,Brower里会选择All objects,
-如果你登录的用户是dba,要展开tables目录,正常情况都需要Wait几秒钟,
-而选择My Objects后响应速率则是以毫秒计算的。
-设置方法:
-  Tools菜单 -&amp;gt; Object Brower Filters,会打开Define Browser Filters界面,
-  选中&amp;rdquo;My Objects&amp;rdquo;,并勾选 &amp;ldquo;Default&amp;rdquo; 设为默认即可。
-  Tools菜单 -&amp;gt; Object Brower Folders,会打开Define Browser Folders界面,
-  这里可以把经常用到的几个目录(比如:Tables Views Seq Functions Procedures)&amp;nbsp;移得靠上一点,并加上颜色区分,这样你的平均寻表时间会大大缩短,试试看。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;双击即显示表数据
-鼠标双击表或者视图时的默认响应实在让我感到失望,因为我最关心的是表结构和数据,
-但是双击后这两件事情都没有发生,也许默认响应是高手们需要的,
-但对我来说查看数据和表结构是最主要的,其他的我不关心。
-不过好的是这是可以设置的,你可以给鼠标双击和拖放绑定需要的事件,
-比如:双击编辑数据,拖放显示表结构,Yeah！
-设置方法:
-  菜单Tools -&amp;gt; Preferences -&amp;gt; Object Browser,
-  在右侧,为不同的Object&amp;nbsp;Type绑定双击和拖放操作。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;去掉注释的斜体样式:
-  菜单Tools -&amp;gt; Preferences -&amp;gt; User Interface-&amp;gt;Editor
-  在右边的界面中&amp;rdquo;Syntax&amp;nbsp;Highlighting&amp;rdquo;下,去掉&amp;rdquo;Comment&amp;rdquo;右边的&amp;rdquo;Italic&amp;rdquo;的勾选.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Oracle"></category></entry></feed>
+&lt;h5 id="_1"&gt;未完待续&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;</content><category term="软件测试"></category><category term="Selenium"></category></entry></feed>

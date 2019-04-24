@@ -136,8 +136,8 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
                     
                 </header>
                 <footer class="post-info">
-                    <!--<abbr class="published" title="2018-10-30T23:09:00.525657+08:00">-->
-                    <!--2018-10-30 23:09:00-->
+                    <!--<abbr class="published" title="2018-09-27T10:38:29.057796+08:00">-->
+                    <!--2018-09-27 10:38:29-->
                     <!--</abbr>-->
                     <!---->
                         <!--<address class="vcard author">By -->
@@ -147,7 +147,7 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
                         <!--</address>-->
                         <!---->
                     <address class="vcard author" style="font-style:italic;margin-bottom:-10px;">
-                        Posted on 2018-10-30 23:09:00
+                        Posted on 2018-09-27 10:38:29
                             &nbsp;&nbsp;By
                             <a class="url fn" href="../../author/walter-hu">Walter Hu</a>
 
@@ -262,34 +262,19 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
 <span class="code-line"></span>
 <span class="code-line"><span class="err">因为</span><span class="n">vue的history在IOS的微信分享时不会刷新</span><span class="err">，但是我们又要做自定义分享。我在网上也看了很多，比如什么</span><span class="n">beforerouteEnter的路由判断</span><span class="err">，或者写在</span><span class="n">Vue</span><span class="o">.</span><span class="na">prototype</span><span class="o">.</span><span class="na">Wxshare</span><span class="o">()</span><span class="err">的原型链中等，看起来都太麻烦，不够简单粗暴，但是这些方法可以好像可以做到判断每一个分享页面的自定义内容。而我只需要当前分享特定的单一页面，那么我们在</span><span class="n">A页面跳转B页面</span><span class="err">（需要分享的页面）就不用</span><span class="n">vue的history的push来跳转传参</span><span class="err">，我们用！我们用！我们用！</span><span class="n">window</span><span class="o">.</span><span class="na">location</span><span class="o">.</span><span class="na">href</span><span class="o">=</span><span class="s2">&quot;....&quot;</span><span class="err">来跳转传参，重要的事情说三遍</span><span class="o">!!!!</span></span>
 </pre></div>
-
-
-<h3 id="vux-292-x-input-v-modelnumber">vux 2.9.2  <code>x-input</code> v-model=number不能双向绑定值<a class="headerlink" href="#vux-292-x-input-v-modelnumber" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>在部分手机设备上，尤其是android手机上发现如下代码怎么都无法绑定<code>v-model</code>的值：</p>
-</blockquote>
-<div class="highlight"><pre><span class="code-line"><span></span><span class="nt">&lt;x-input</span> <span class="na">v-model=</span><span class="s">&#39;countnumber&#39;</span> <span class="na">type=</span><span class="s">&#39;number&#39;</span><span class="nt">&gt;</span> <span class="nt">&lt;/x-input&gt;</span></span>
-</pre></div>
-
-
-<p>崩溃啊，开始的时候，我很奇怪是什么原因导致的这个问题，也只在部分android手机上测试发现这个问题。 发现上面的代码对应的<code>countnumber</code> 不能更新。 我勒个去啊！
-我反复测试修改代码，以为是哪里设置导致的，这个花了我将近6个小时的时间啊！&nbsp;我去啊，这个问题bug为什么vux的团队不修复啊！</p>
-<blockquote>
-<p>经过测试发现的原因，是 input.selectionStart 在 type 为 number的时候部分浏览器不允许选择，所以报错触发不了 $emit(&lsquo;input&rsquo;)
-对照的bug：
-1. <a href="https://github.com/airyland/vux/pull/3083">https://github.com/airyland/vux/pull/3083</a></p>
-</blockquote>
-<ol start="2">
-<li>解决方案： <a href="https://github.com/airyland/vux/issues/2857">https://github.com/airyland/vux/issues/2857</a></li>
-</ol>
                 </div><!-- /.entry-content -->
                 <br>
                 <div><span>Categories:</span>JavaScript</div>
                 <br>
                 <ul style="list-style-type: none;">
                         <li style="display: inline;margin-left: 10px; margin-right: auto;">
-                            <a href="../../articles/vue-v-model-usage/">
-                                ◄&nbsp;&nbsp;自定义组件中在父组件中如何使用v-model属性
+                            <a href="../../articles/videojs-vue-plugin/">
+                                ◄&nbsp;&nbsp;How to player video.js in&nbsp;Vue
+                            </a>
+                        </li>
+                        <li style="display: inline;margin-left: 100px; margin-right: auto;">
+                            <a href="../../articles/mobile-debugger-feature/">
+                                How to debug in real device for Android and&nbsp;IPhone&nbsp;&nbsp;►
                             </a>
                         </li>
                 </ul>
@@ -375,7 +360,6 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../../tag/debian/">Debian</a></li>
                     <li class="tag-4"><a href="../../tag/debugger/">Debugger</a></li>
                     <li class="tag-4"><a href="../../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../../tag/intellij-idea/">IntelliJ Idea</a></li>
@@ -383,8 +367,9 @@ style中配置background-color, background-image 变量¶ 代码如下 <v-btn co
                     <li class="tag-4"><a href="../../tag/javascript/">JavaScript</a></li>
                     <li class="tag-2"><a href="../../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../../tag/mybatis/">Mybatis</a></li>
-                    <li class="tag-2"><a href="../../tag/oracle/">Oracle</a></li>
+                    <li class="tag-1"><a href="../../tag/oracle/">Oracle</a></li>
                     <li class="tag-4"><a href="../../tag/photoshop/">PhotoShop</a></li>
+                    <li class="tag-1"><a href="../../tag/python/">Python</a></li>
             </ul>
         </nav>
 

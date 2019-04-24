@@ -123,60 +123,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/videojs-vue-plugin/" rel="bookmark" title="Permalink to How to player video.js in Vue">How to player video.js in&nbsp;Vue</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-09-26T19:34:31.191680+08:00">
-                                        Posted on 2018-09-26 19:34:31,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h3 id="videojs-70">Video.js 7.0<a class="headerlink" href="#videojs-70" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>announce&nbsp;https://blog.videojs.com/video-js-7-is-here …</p></blockquote> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/videojs-vue-plugin/" rel="bookmark" title="Permalink to How to player video.js in Vue">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/videojs/">Video.js</a>
-                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/random_string/" rel="bookmark" title="Permalink to JavaScript字符串数组中随机选择字符串">JavaScript字符串数组中随机选择字符串</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-09-21T19:13:34.196724+08:00">
-                                        Posted on 2018-09-21 19:13:34,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h4 id="_1">代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span class="code-line"><span></span><span class="cm">/**</span></span>
-<span class="code-line"><span class="cm"> * 得到随机的字符串</span></span>
-<span class="code-line"><span class="cm"> * @param arrayStr</span></span>
-<span class="code-line"><span class="cm"> * @returns {*}</span></span>
-<span class="code-line"><span class="cm"> */</span><span class="w"></span></span>
-<span class="code-line">const<span class="w"> </span>randomStrPickUp<span class="w"> </span><span class="o">=</span><span class="w"> </span>function<span class="w"> </span><span class="o">(</span>arrayStr<span class="o">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span></span>
-<span class="code-line"><span class="w">  </span>const …</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/random_string/" rel="bookmark" title="Permalink to JavaScript字符串数组中随机选择字符串">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/javascript/">JavaScript</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/python-common-tips/" rel="bookmark" title="Permalink to Python中用户的小技巧和代码">Python中用户的小技巧和代码</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-09-17T16:06:29.778758+08:00">
@@ -272,6 +218,54 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/debug-vue/" rel="bookmark" title="Permalink to Vue项目调试总结-WebStorm+Chrome调试(2018-09-15)">Vue项目调试总结-WebStorm+Chrome调试(2018-09-15)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-14T20:18:25.041219+08:00">
+                                        Posted on 2018-09-14 20:18:25,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>转自: Vue项目调试总结(1)-WebStorm+Chrome调试 - 为程序员服务&nbsp;http://ju.outofmemory.cn …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/debug-vue/" rel="bookmark" title="Permalink to Vue项目调试总结-WebStorm+Chrome调试(2018-09-15)">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/idea-performance/" rel="bookmark" title="Permalink to IDEA 调优"><span class="caps">IDEA</span>&nbsp;调优</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-09-14T15:14:56.643317+08:00">
+                                        Posted on 2018-09-14 15:14:56,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3 id="idea"><span class="caps">IDEA</span> 运行缓慢<a class="headerlink" href="#idea" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>调优参考文档: <a href="https://blog.csdn.net/u013295276/article/details/78543190">https://blog.csdn.net/u013295276/article/details …</a></p></li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/idea-performance/" rel="bookmark" title="Permalink to IDEA 调优">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/idea/">IDEA</a>
+                                            <a class="danger label" href="../tag/java/">Java</a>
+                                </div>
+
+
+
+                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -322,7 +316,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../tag/debian/">Debian</a></li>
                     <li class="tag-4"><a href="../tag/debugger/">Debugger</a></li>
                     <li class="tag-4"><a href="../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../tag/intellij-idea/">IntelliJ Idea</a></li>
@@ -330,8 +323,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/javascript/">JavaScript</a></li>
                     <li class="tag-2"><a href="../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../tag/mybatis/">Mybatis</a></li>
-                    <li class="tag-2"><a href="../tag/oracle/">Oracle</a></li>
+                    <li class="tag-1"><a href="../tag/oracle/">Oracle</a></li>
                     <li class="tag-4"><a href="../tag/photoshop/">PhotoShop</a></li>
+                    <li class="tag-1"><a href="../tag/python/">Python</a></li>
             </ul>
         </nav>
 
@@ -370,7 +364,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <a href="../author/walt7.html">7</a>
                 <a href="../author/walt8.html">8</a>
                 <a href="../author/walt9.html">9</a>
-                <a href="../author/walt10.html">10</a>
         <a href="../author/walter-hu3.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->

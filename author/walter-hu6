@@ -123,56 +123,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to vuejs項目转为android/IOS App(Cordova)">vuejs項目转为android/<span class="caps">IOS</span>&nbsp;App(Cordova)</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-08-27T17:19:43.105619+08:00">
-                                        Posted on 2018-08-27 17:19:43,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2 id="how-to-build-android-or-ios-app-from-vue-project">How to build android or <span class="caps">IOS</span> app from Vue project …</h2> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/vue-to-mobileapp-electron/" rel="bookmark" title="Permalink to vuejs項目转为android/IOS App(Cordova)">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/vuejs/">Vuejs</a>
-                                            <a class="danger label" href="../tag/electron/">electron</a>
-                                            <a class="danger label" href="../tag/electron-builder/">electron-builder</a>
-                                            <a class="danger label" href="../tag/cordova/">cordova</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">How to build the ftp&nbsp;system</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2018-08-27T16:06:29.708097+08:00">
-                                        Posted on 2018-08-27 16:06:29,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
-
-                                    </abbr>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h1 id="_1">起因<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>需要搭建一个文件共享的服务器,这样可以方便的进行文件的共享和存取.
-参考博客: 
-1. (smbd配置,忽略)https://www.conum …</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="../articles/vsftp_setup/" rel="bookmark" title="Permalink to How to build the ftp system">Read More<i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tags: </span>
-                                            <a class="danger label" href="../tag/vsftpd/">vsftpd</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="../articles/cordova-android/" rel="bookmark" title="Permalink to Vue项目转成Cordova项目的注意事项和技巧">Vue项目转成Cordova项目的注意事项和技巧</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2018-08-27T14:33:07.071099+08:00">
@@ -283,6 +233,61 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
 
 
                         </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/fen-ceng/" rel="bookmark" title="Permalink to 分层自动化测试">分层自动化测试</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T20:39:58.482745+08:00">
+                                        Posted on 2018-07-24 20:39:58,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>这是第一次听到这个理念,其实描述的是各个阶段的测试.传统的自动化测试更关注的产品UI层的自动化测试，而分层的自动化测试
+倡导产品的不同阶段（层次）都需要自动化测试.&nbsp;能够帮助测试人员从重复、枯燥的手工测试中解放出来。</p>
+<p>最早是google进行的实践 …</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/fen-ceng/" rel="bookmark" title="Permalink to 分层自动化测试">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/fen-ceng/">分层</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">[面试] 1.&nbsp;面向对象的相关概念</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2018-07-24T20:38:24.462485+08:00">
+                                        Posted on 2018-07-24 20:38:24,                                     By                                     <a class="url fn" href="../author/walter-hu"> Walter Hu</a>
+
+                                    </abbr>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <blockquote>
+<p>这里整理的是针对面向对象的相关问题和面试中可能涉及的问题.</p>
+</blockquote>
+<h2 id="_1">达到目的<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>面向对象三大特性,封装 (Encapsulation) ,　继承 (Inheritance) 和多态&nbsp;(Polymorphism) </li>
+</ul>
+<p><img alt="测试图片显示" src="../articles/1-object-oriented-programming/JavaTopics.png"></p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="../articles/1-object-oriented-programming/" rel="bookmark" title="Permalink to [面试] 1. 面向对象的相关概念">Read More<i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tags: </span>
+                                            <a class="danger label" href="../tag/mian-xiang-dui-xiang/">面向对象</a>
+                                            <a class="danger label" href="../tag/mian-shi/">面试</a>
+                                            <a class="danger label" href="../tag/java/">java</a>
+                                </div>
+
+
+
+                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -333,7 +338,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
         <nav class="widget sidebarbg">
             <h4>Tags</h4>
             <ul class="blank">
-                    <li class="tag-4"><a href="../tag/debian/">Debian</a></li>
                     <li class="tag-4"><a href="../tag/debugger/">Debugger</a></li>
                     <li class="tag-4"><a href="../tag/idea/">IDEA</a></li>
                     <li class="tag-4"><a href="../tag/intellij-idea/">IntelliJ Idea</a></li>
@@ -341,8 +345,9 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                     <li class="tag-4"><a href="../tag/javascript/">JavaScript</a></li>
                     <li class="tag-2"><a href="../tag/mysql/">MYSQL</a></li>
                     <li class="tag-4"><a href="../tag/mybatis/">Mybatis</a></li>
-                    <li class="tag-2"><a href="../tag/oracle/">Oracle</a></li>
+                    <li class="tag-1"><a href="../tag/oracle/">Oracle</a></li>
                     <li class="tag-4"><a href="../tag/photoshop/">PhotoShop</a></li>
+                    <li class="tag-1"><a href="../tag/python/">Python</a></li>
             </ul>
         </nav>
 
@@ -381,7 +386,6 @@ PingBook是一个专注于开源软件、Linux、大数据、Python、Java、Vue
                 <a href="../author/walt7.html">7</a>
                 <a href="../author/walt8.html">8</a>
                 <a href="../author/walt9.html">9</a>
-                <a href="../author/walt10.html">10</a>
         <a href="../author/walter-hu7.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->

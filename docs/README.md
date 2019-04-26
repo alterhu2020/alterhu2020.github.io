@@ -11,7 +11,7 @@ footer: MIT Licensed | Copyright © 2018-present Walter Hu
     <p>最小化时间快速获取最新资讯，记录笔记.</p>
   </div>
   <div class="feature">
-    <h2>Vue支持</h2>
+    <h2>PWA支持</h2>
     <p>完美体验Vue的所有功能特性，创造更好的用户体验.</p>
   </div>
   <div class="feature">

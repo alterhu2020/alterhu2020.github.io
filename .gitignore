@@ -1,0 +1,24 @@
+_site
+.sass-cache
+.jekyll-metadata
+.vagrant
+node_modules
+project.pbxproj
+*.xcworkspacedata
+*.xcscmblueprint
+*.xcuserstate
+
+# Update process
+.external-resources
+
+# IntelliJ
+*.iml
+.idea
+
+#vscode
+.vscode
+
+# Built docs
+addons/integrations
+dist
+.temp

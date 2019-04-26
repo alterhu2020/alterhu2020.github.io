@@ -1,16 +1,16 @@
 const HighlightDsl = require('./public/js/highlight-dsl')
 const HighlightRules = require('./public/js/highlight-rules')
-const base = process.env.NODE_ENV ==='production' ? `/blog/` : '/blog/'
+const base = process.env.NODE_ENV ==='production' ? `/` : '/'
 const sidebar= require('./sidebar')
 module.exports = {
-  title: "Walter Hu博客",
+  title: "Walter博客",
   description: "点滴记录，贵在坚持",
   dest: "dist",
   host: "localhost",
   base: base,
   shouldPrefetch: () => false,
   head: [
-    ['link', { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: 'Walter Hu博客' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: 'Walter博客' }],
     ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
@@ -68,7 +68,7 @@ module.exports = {
     ['vuepress-plugin-rss-support', {
       site_url: 'https://vrpano.yitieyilu.com/docs',
       filter: page => /^\/201.+/.test(page.path),
-      copyright: '2019 Walter Hu博客',
+      copyright: '2019 Walter博客',
       count: 60
     }],
     ['@vssue/vuepress-plugin-vssue', {

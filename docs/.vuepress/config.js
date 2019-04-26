@@ -5,7 +5,7 @@ const sidebar= require('./sidebar')
 module.exports = {
   title: "Walter博客",
   description: "点滴记录，贵在坚持",
-  dest: "dist",
+  dest: "../pingbook-dist",
   host: "localhost",
   base: base,
   shouldPrefetch: () => false,

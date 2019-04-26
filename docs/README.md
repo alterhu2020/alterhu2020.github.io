@@ -2,7 +2,7 @@
 home: true
 heroImage:
 actionText: 我的博客 →
-actionLink: /blog
+actionLink: /blog/
 footer: MIT Licensed | Copyright © 2018-present Walter Hu
 ---
 <div class="features">

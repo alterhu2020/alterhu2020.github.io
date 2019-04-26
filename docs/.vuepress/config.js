@@ -71,9 +71,11 @@ module.exports = {
     '.vuepress/sidebar.js'
   ],
   plugins: [
-    ['@vuepress/back-to-top', true],
     ['@vuepress/google-analytics', {
       ga: 'UA-122219517-1'
+    }],
+    ['vuepress-plugin-sitemap', {
+      hostname: 'https://pingbook.top'
     }],
     ['vuepress-plugin-rss-support', {
       site_url: 'https://vrpano.yitieyilu.com/docs',
@@ -81,6 +83,7 @@ module.exports = {
       copyright: '2019 Walter博客',
       count: 60
     }],
+    ['@vuepress/back-to-top', true],
     ['@vssue/vuepress-plugin-vssue', {
       locale: 'zh',
       platform: 'github',

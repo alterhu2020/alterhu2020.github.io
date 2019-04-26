@@ -71,6 +71,19 @@ module.exports = {
     '.vuepress/sidebar.js'
   ],
   plugins: [
+    ['vuepress-plugin-seo',{
+      siteTitle: (_, $site) => $site.title,
+      title: $page => $page.title,
+      description: $page => $page.frontmatter.description,
+      author: (_, $site) => $site.themeConfig.author,
+      tags: $page => $page.frontmatter.tags,
+      twitterCard: _ => 'summary_large_image',
+      type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+      url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+      image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain || '') + $page.frontmatter.image),
+      publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+      modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
+    }],
     ['@vuepress/google-analytics', {
       ga: 'UA-122219517-1'
     }],
@@ -82,6 +95,9 @@ module.exports = {
       filter: page => /^\/201.+/.test(page.path),
       copyright: '2019 Walter博客',
       count: 60
+    }],
+    ['@vuepress/search', {
+      searchMaxSuggestions: 10
     }],
     ['vuepress-plugin-zooming', {
       // selector for images that you want to be zoomable

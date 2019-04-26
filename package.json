@@ -23,6 +23,7 @@
     "vuepress-plugin-flowchart": "^1.4.2",
     "vuepress-plugin-rss-support": "^1.0.2",
     "vuepress-plugin-sitemap": "^2.1.2",
+    "vuepress-plugin-zooming": "^1.1.0",
     "@vssue/vuepress-plugin-vssue": "^0.8.2",
     "standard-version": "^5.0.2",
     "lint-md": "^0.0.8",

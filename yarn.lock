@@ -9166,6 +9166,13 @@ vuepress-plugin-sitemap@^2.1.2:
   dependencies:
     sitemap "^2.0.1"
 
+vuepress-plugin-zooming@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-zooming/download/vuepress-plugin-zooming-1.1.0.tgz#b23a76a29efd0bb3ade08ada536e9d0c7e578e35"
+  integrity sha1-sjp2op79C7Ot4IraU26dDH5XjjU=
+  dependencies:
+    zooming "^2.1.1"
+
 vuepress@^1.0.0-alpha.47:
   version "1.0.0-alpha.47"
   resolved "https://registry.npm.taobao.org/vuepress/download/vuepress-1.0.0-alpha.47.tgz#b6f06a5569aaf0b4016f9eb1da5fd4e01f295d45"
@@ -9584,3 +9591,8 @@ zepto@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/zepto/download/zepto-1.2.0.tgz#e127bd9e66fd846be5eab48c1394882f7c0e4f98"
   integrity sha1-4Se9nmb9hGvl6rSME5SIL3wOT5g=
+
+zooming@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npm.taobao.org/zooming/download/zooming-2.1.1.tgz#3e05006b4e10335235ca626244d053d90a9c7e72"
+  integrity sha1-PgUAa04QM1I1ymJiRNBT2QqcfnI=

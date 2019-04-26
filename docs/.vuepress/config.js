@@ -3,8 +3,8 @@ const HighlightRules = require('./public/js/highlight-rules')
 const base = process.env.NODE_ENV === 'production' ? `/` : '/'
 const sidebar = require('./sidebar')
 module.exports = {
-  title: "Walter博客",
-  description: "点滴记录，贵在坚持",
+  title: "Walter博客🐇",
+  description: "人生处万类，知识最为贤。 —— 韩愈",
   dest: "../pingbook-dist",
   host: "localhost",
   base: base,
@@ -13,10 +13,10 @@ module.exports = {
     ['link', {rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: 'Walter博客'}],
     ['link', {rel: 'stylesheet', href: `/fonts/fonts.css`}],
     ['link', {rel: 'icon', href: `/favicon.ico`}],
-    ['link', {rel: 'shortcut icon', href: `/favicon.ico`}],
-    ['link', {rel: 'apple-touch-icon', href: `/logo.png`}],
-    // ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/css?family=Open+Sans:300,400` }],
-    ['meta', {property: 'og:type', content: 'website'}],
+    ['link', {rel: 'shortcut icon', href: `/img/favicon.ico`}],
+    ['link', {rel: 'apple-touch-icon', href: `/img/logo.png`}],
+    ['meta', {property: 'keywords', content: 'java,技术博客,分享,vuejs,python'}],
+    ['meta', {property: 'description', content: 'Walter博客，点滴记录贵在坚持'}],
     ['script', {
       id: 'cookieinfo',
       src: 'https://cookieinfoscript.com/js/cookieinfo.min.js',
@@ -83,6 +83,22 @@ module.exports = {
       copyright: '2019 Walter博客',
       count: 60
     }],
+    ['vuepress-plugin-zooming', {
+      // selector for images that you want to be zoomable
+      // default: '.content img'
+      selector: '.content img',
+
+      // make imgaes zoomable with delay after entering a page
+      // default: 500
+      delay: 500,
+
+      // options of zooming
+      // default: {}
+      options: {
+        bgColor: 'black',
+        zIndex: 10000,
+      },
+    }],
     ['@vuepress/back-to-top', true],
     ['@vssue/vuepress-plugin-vssue', {
       locale: 'zh',
@@ -97,7 +113,7 @@ module.exports = {
     }],
   ],
   themeConfig: {
-    repo: 'alterhu2020/alterhu2020.github.io',
+    // repo: 'alterhu2020/alterhu2020.github.io',
     docsDir: 'docs',
     docsBranch: 'develop',
     editLinks: true,

@@ -84,6 +84,9 @@ module.exports = {
       publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
       modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
     }],
+    ['@vuepress/search', {
+      searchMaxSuggestions: 10
+    }],
     ['@vuepress/google-analytics', {
       ga: 'UA-122219517-1'
     }],
@@ -95,9 +98,6 @@ module.exports = {
       filter: page => /^\/201.+/.test(page.path),
       copyright: '2019 Walter博客',
       count: 60
-    }],
-    ['@vuepress/search', {
-      searchMaxSuggestions: 10
     }],
     ['vuepress-plugin-zooming', {
       // selector for images that you want to be zoomable
@@ -137,7 +137,7 @@ module.exports = {
     lastUpdated: '上次更新',
     algolia: {
       apiKey: 'd9708b4d74ba98295f2a87341fae3f0c',
-      indexName: 'vrpano'
+      indexName: 'pingbook'
     },
     nav: [
       {

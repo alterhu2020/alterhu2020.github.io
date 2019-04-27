@@ -20,6 +20,7 @@ module.exports ={
       collapsable: false,
       path: '/blog/video/',
       children: [
+        'video/black-hawk-down',
         ['video/game-of-the-thrones','权利的游戏第八季(终结篇)']
       ],
     },

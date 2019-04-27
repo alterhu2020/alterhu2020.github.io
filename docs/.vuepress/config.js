@@ -32,6 +32,7 @@ module.exports = {
   ],
   markdown: {
     config: md => {
+      md.lineNumbers =true
       md.options.linkify = true
       const highlight = md.options.highlight
       md.options.highlight = (str, lang) => {

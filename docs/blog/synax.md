@@ -6,10 +6,15 @@ title: 语法参考手册
 
 ## 静态图片的引用
  
+## 警告注意语法
+
+::: warning 这是警告标题
+这是警告的内容部分
+:::
 
 ## `Emoji`语法
 
-[参考] [emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+直接复制 [参考] [emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet) 中的对应表情，或者也可以采用markdown语法来写表情，例如开心 :happy:
 
 ## 主题配置
 

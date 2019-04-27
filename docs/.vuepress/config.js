@@ -85,6 +85,7 @@ module.exports = {
       modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
     }],
     ['@vuepress/search', {
+      search: true,
       searchMaxSuggestions: 10
     }],
     ['@vuepress/google-analytics', {
@@ -135,10 +136,6 @@ module.exports = {
     editLinks: true,
     editLinkText: '发现错误？想参与编辑？在 GitHub 上编辑此页',
     lastUpdated: '上次更新',
-    algolia: {
-      apiKey: 'd9708b4d74ba98295f2a87341fae3f0c',
-      indexName: 'pingbook'
-    },
     nav: [
       {
         text: '博客',

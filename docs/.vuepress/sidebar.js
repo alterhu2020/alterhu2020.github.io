@@ -16,6 +16,14 @@ module.exports ={
       ]
     },
     {
+      title: '优秀电影电视作品',
+      collapsable: false,
+      path: '/blog/video/',
+      children: [
+        ['video/game-of-the-thrones','权利的游戏第八季(终结篇)']
+      ],
+    },
+    {
       title: '精选资源',
       collapsable: false,
       children: [

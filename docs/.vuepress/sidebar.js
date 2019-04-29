@@ -12,6 +12,8 @@ module.exports ={
       title: '2019年',
       collapsable: false,
       children: [
+        '2019/04-29-what',
+        '2019/04-28-message',
         ['2019/04-26-what','4月26日笔记']
       ]
     },
@@ -20,7 +22,8 @@ module.exports ={
       collapsable: false,
       path: '/blog/video/',
       children: [
-        'video/black-hawk-down',
+        'video/arctic',
+        'video/as-far-as-my-feet-carry-me',
         ['video/game-of-the-thrones','权利的游戏第八季(终结篇)']
       ],
     },

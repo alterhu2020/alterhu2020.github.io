@@ -13,3 +13,8 @@ title: 关于博客
 这个博客会以全栈技术体系为主要分享课题。
 
 博客主要内容会以文章、工具、新闻、视频等几大板块作为主要分类。
+
+
+## 关于博主
+
+[个人履历](https://profile-summary-for-github.com/user/alterhu2020)

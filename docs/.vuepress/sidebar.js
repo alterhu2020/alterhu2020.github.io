@@ -12,9 +12,10 @@ module.exports ={
       title: '2019年',
       collapsable: false,
       children: [
+        '2019/04-30-what',
         '2019/04-29-what',
         '2019/04-28-message',
-        ['2019/04-26-what','4月26日笔记']
+        '2019/04-26-what'
       ]
     },
     {

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.4.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.3.0...v1.4.0) (2019-05-01)
+
+
+### Features
+
+* 增加新的日志 ([55ca7af](https://github.com/alterhu2020/alterhu2020.github.io/commit/55ca7af))
+
+
+
 # [1.3.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.2.3...v1.3.0) (2019-04-29)
 
 

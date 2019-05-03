@@ -10,7 +10,7 @@ features:
   details: 完美体验离线的所有功能特性，创造更好的用户体验.
 - title: 🎉 动态化
   details: 把握最新动态，实时更新推送最新技术栈.
-footer: MIT Licensed | Copyright © 2018-present Walter Hu
+footer: MIT Licensed | Copyright © 2018-present Walter Hu <br/> 
 ---
 
 ### 从未如此简单, 如同1,2,3

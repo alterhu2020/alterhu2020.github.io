@@ -143,6 +143,10 @@ module.exports = {
         link: '/blog/'
       },
       {
+        text: 'ionic-vue',
+        link: '/ionic-vue/'
+      },
+      {
         text: '更新日志',
         link: '/CHANGELOG.html'
       },

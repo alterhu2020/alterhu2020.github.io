@@ -143,6 +143,10 @@ module.exports = {
         link: '/blog/'
       },
       {
+        text: 'ant-design-vue',
+        link: 'https://pingbook.top/ant-design-vue'
+      },
+      {
         text: 'ionic-vue',
         link: 'https://pingbook.top/ionic-vue'
       },

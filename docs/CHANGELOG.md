@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.6.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.5.0...v1.6.0) (2019-05-03)
+
+
+### Features
+
+* add ant-design-vue page ([c847328](https://github.com/alterhu2020/alterhu2020.github.io/commit/c847328))
+
+
+
 # [1.5.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.4.0...v1.5.0) (2019-05-03)
 
 

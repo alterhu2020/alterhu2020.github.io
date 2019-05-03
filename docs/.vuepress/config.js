@@ -144,7 +144,7 @@ module.exports = {
       },
       {
         text: 'ionic-vue',
-        link: '/ionic-vue/'
+        link: 'https://pingbook.top/ionic-vue'
       },
       {
         text: '更新日志',

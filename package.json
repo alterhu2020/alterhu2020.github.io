@@ -6,7 +6,7 @@
   "license": "MIT",
   "description": "Walter的个人博客",
   "scripts": {
-    "dev": "vuepress dev docs --temp .temp",
+    "serve": "vuepress dev docs --temp .temp",
     "build": "vuepress build docs --temp .temp",
     "release-version": "standard-version -i docs/CHANGELOG.md",
     "view-info": "vuepress view-info docs --temp .temp",

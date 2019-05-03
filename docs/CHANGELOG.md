@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.5.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.4.0...v1.5.0) (2019-05-03)
+
+
+### Bug Fixes
+
+* external link error. ([6bf6e11](https://github.com/alterhu2020/alterhu2020.github.io/commit/6bf6e11))
+* home content change. ([247d9a0](https://github.com/alterhu2020/alterhu2020.github.io/commit/247d9a0))
+
+
+### Features
+
+* 0503 update ([8007b88](https://github.com/alterhu2020/alterhu2020.github.io/commit/8007b88))
+* 新的日志更新 ([e4d5040](https://github.com/alterhu2020/alterhu2020.github.io/commit/e4d5040))
+* 更新内容 ([fc68647](https://github.com/alterhu2020/alterhu2020.github.io/commit/fc68647))
+
+
+
 # [1.4.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.3.0...v1.4.0) (2019-05-01)
 
 

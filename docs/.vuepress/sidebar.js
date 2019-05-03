@@ -35,6 +35,7 @@ module.exports ={
       children: [
         ['http://www.ruanyifeng.com/blog/','阮一峰博客'],
         ['https://github.com/vuejs/awesome-vue','awesome vue'],
+        ['https://ionicframework.com/docs/components','Ionic Vue Components'],
         ['https://github.com/vueComponent/ant-design-vue-awesome','awesome ant-design-vue'],
         ['https://github.com/ulivz/awesome-vuepress','awesome-vuepress']
       ]

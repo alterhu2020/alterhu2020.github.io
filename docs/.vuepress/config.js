@@ -15,7 +15,7 @@ module.exports = {
     ['link', {rel: 'icon', href: `/favicon.ico`}],
     ['link', {rel: 'shortcut icon', href: `/img/favicon.ico`}],
     ['link', {rel: 'apple-touch-icon', href: `/img/logo.png`}],
-    ['meta', {property: 'keywords', content: 'java,技术博客,分享,vuejs,python'}],
+    ['meta', {property: 'keywords', content: 'java,博客,技术培训,前端培训,后端培训,ionic,springboot,webstorm,vscode,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python'}],
     ['meta', {property: 'description', content: 'Walter博客，点滴记录贵在坚持'}],
     ['script', {
       id: 'cookieinfo',

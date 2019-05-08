@@ -28,7 +28,10 @@ module.exports = {
       'data-cookie': "CookieInfoScript",
       'data-text-align': "left",
       'data-close-text': "知道了!"
-    }]
+    }],
+    ['script', { async: true, src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" }],
+    ['script', {}, 
+    "(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });"]
   ],
   markdown: {
     config: md => {

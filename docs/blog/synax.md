@@ -7,6 +7,21 @@ title: 语法参考手册
 阅读导航目录
 <TOC/>
 
+## 如何更改github仓库的语言属性
+
+  当创建github项目的时候，github本身会根据提交文件的数量来自动推断工程的开发语言，有时这种推断结果会与实际情况不太相符。比如上传一个java的web工程，如果在工程里存在大量的html、javascript和css文件的话，该工程属性会被设置为javascript或html。
+
+  我们需要在工程根目录下手动增加一个.gitattributes文件来修正工程的语言属性，内容如下：
+
+``` sh
+*.js linguist-language=Java
+*.css linguist-language=Java
+*.html linguist-language=Java
+
+```
+
+
+
 ## 删除线
 
 ~~删除我吧~~

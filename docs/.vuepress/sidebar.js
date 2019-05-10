@@ -12,6 +12,7 @@ module.exports ={
       title: '2019年',
       collapsable: false,
       children: [
+        '2019/05-10-what',
         '2019/05-09-what',
         '2019/05-06-what',
         '2019/05-04-what',
@@ -20,6 +21,15 @@ module.exports ={
         '2019/04-29-what',
         '2019/04-28-what',
         '2019/04-26-what'
+      ]
+    },
+    {
+      title: '开发工具',
+      collapsable: false,
+      children: [
+          'tools/idea',
+          'tools/vscode',
+          'tools/ps'
       ]
     },
     {

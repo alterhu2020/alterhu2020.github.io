@@ -1,9 +1,10 @@
 ---
 home: true
-heroImage:
-actionText: 我的博客 →
+heroImage:  /hero.png
+heroText: 胡左胡右
+actionText: 我的博客
 actionLink: /blog/
-footer: MIT Licensed | Copyright © 2019 Walter Hu
+footer: Copyright © 2019 胡左胡右
 ---
 <!-- features:
 - title: ❤️精简主义
@@ -20,10 +21,10 @@ footer: MIT Licensed | Copyright © 2019 Walter Hu
 ```
 
 ::: warning 友情提示
-本博客所有内容未经作者同意署名，不得随便转载用于其他用途！
+本网站博客所有内容未经作者同意署名，不得随便转载用于其他用途！
 :::
 
 
 ## License 许可
 
-⚖ 本博客采用[知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/)进行许可。
+⚖ 本网站博客采用[知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-nd/4.0/)进行许可。

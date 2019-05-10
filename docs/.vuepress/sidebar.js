@@ -1,7 +1,7 @@
 module.exports ={
   '/blog/': [
     {
-      title: '写在前面',
+      title: '前序',
       collapsable: false,
       children: [
         '',
@@ -23,17 +23,17 @@ module.exports ={
       ]
     },
     {
-      title: '优秀电影电视作品',
+      title: '优秀影视作品集',
       collapsable: false,
       path: '/blog/video/',
       children: [
         'video/arctic',
         'video/as-far-as-my-feet-carry-me',
-        ['video/game-of-the-thrones','权利的游戏第八季(终结篇)']
+        ['video/game-of-the-thrones','权利的游戏(终结篇)']
       ],
     },
     {
-      title: '精选资源',
+      title: '友情链接',
       collapsable: false,
       children: [
         ['http://www.ruanyifeng.com/blog/','阮一峰博客'],

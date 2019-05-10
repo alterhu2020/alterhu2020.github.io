@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.7.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.6.2...v1.7.0) (2019-05-10)
+
+
+### Bug Fixes
+
+* add lang for github ([8123fc2](https://github.com/alterhu2020/alterhu2020.github.io/commit/8123fc2))
+* keyword ([c7b15be](https://github.com/alterhu2020/alterhu2020.github.io/commit/c7b15be))
+* new day update. ([72d70dc](https://github.com/alterhu2020/alterhu2020.github.io/commit/72d70dc))
+
+
+### Features
+
+* 5.10 udpate ([d18778f](https://github.com/alterhu2020/alterhu2020.github.io/commit/d18778f))
+* 主题修改，增加logo和名称更改。 ([dceeba3](https://github.com/alterhu2020/alterhu2020.github.io/commit/dceeba3))
+* 添加谷歌广告 ([766526a](https://github.com/alterhu2020/alterhu2020.github.io/commit/766526a))
+
+
+
 ## [1.6.2](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.6.1...v1.6.2) (2019-05-06)
 
 

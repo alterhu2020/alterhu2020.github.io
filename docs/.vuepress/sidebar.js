@@ -12,6 +12,7 @@ module.exports ={
       title: '2019年',
       collapsable: false,
       children: [
+        '2019/05-11-what',
         '2019/05-10-what',
         '2019/05-09-what',
         '2019/05-06-what',
@@ -37,6 +38,7 @@ module.exports ={
       collapsable: false,
       path: '/blog/video/',
       children: [
+        'video/the-thunder',
         'video/arctic',
         'video/as-far-as-my-feet-carry-me',
         ['video/game-of-the-thrones','权利的游戏(终结篇)']
@@ -46,11 +48,13 @@ module.exports ={
       title: '友情链接',
       collapsable: false,
       children: [
-        ['http://www.ruanyifeng.com/blog/','阮一峰博客'],
+        ['http://www.ruanyifeng.com/blog/','阮一峰博客-前端'],
+        ['https://www.jianshu.com/u/4ca93d60a9fe', 'IT晴天-前端'],
         ['https://github.com/vuejs/awesome-vue','awesome vue'],
         ['https://ionicframework.com/docs/components','Ionic Vue Components'],
         ['https://github.com/vueComponent/ant-design-vue-awesome','awesome ant-design-vue'],
-        ['https://github.com/ulivz/awesome-vuepress','awesome-vuepress']
+        ['https://github.com/ulivz/awesome-vuepress','awesome-vuepress'],
+        ['https://tool.lu/', '工具集']
       ]
     }
   ]

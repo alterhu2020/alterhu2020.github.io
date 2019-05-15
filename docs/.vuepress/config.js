@@ -122,7 +122,7 @@ module.exports = {
     }],
     ['@vuepress/back-to-top', true],
     ['@vssue/vuepress-plugin-vssue', {
-      locale: 'zh',
+      // locale: 'en',
       platform: 'github',
       owner: 'alterhu2020',
       repo: 'alterhu2020.github.io',
@@ -140,10 +140,10 @@ module.exports = {
     sidebarDepth: 2, // 侧边栏目录对应的 Markdown 标题，从二级标题开始显示两级。
     editLinks: true,
     editLinkText: '发现错误？想参与编辑？在 GitHub 上编辑此页',
-    lastUpdated: '上次更新',
+    lastUpdated: 'Last update',
     nav: [
       {
-        text: '我的博客',
+        text: 'My Blog',
         link: '/blog/'
       },
       {
@@ -155,11 +155,11 @@ module.exports = {
         link: 'https://pingbook.top/ionic-vue'
       },
       {
-        text: '更新日志',
+        text: 'CHANGE LOG',
         link: '/CHANGELOG.html'
       },
       {
-        text: '留言板',
+        text: 'COMMENTS',
         link: '/contact-me/'
       }
     ],

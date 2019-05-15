@@ -12,6 +12,7 @@ module.exports ={
       title: '2019年',
       collapsable: false,
       children: [
+        '2019/05-14-what',
         '2019/05-11-what',
         '2019/05-10-what',
         '2019/05-09-what',
@@ -48,6 +49,7 @@ module.exports ={
       title: '友情链接',
       collapsable: false,
       children: [
+        ['https://mybatis.plus/','Mybatis Plus'],
         ['http://www.ruanyifeng.com/blog/','阮一峰博客-前端'],
         ['https://www.jianshu.com/u/4ca93d60a9fe', 'IT晴天-前端'],
         ['https://github.com/vuejs/awesome-vue','awesome vue'],

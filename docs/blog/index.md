@@ -31,8 +31,8 @@ title: 关于博客
 - [ShardingSphere JDBC](https://shardingsphere.apache.org/document/current/cn/manual/sharding-jdbc/configuration/config-spring-boot/) 
 - [flowable-engine](https://github.com/flowable/flowable-engine)
 - [pinpoint](https://github.com/naver/pinpoint)
-- [Hutool](https://www.hutool.cn/docs/) 
-- [guava](https://github.com/google/guava/wiki)
+- [Hutools (国人开源的)](https://www.hutool.cn/docs/) 
+- [Google Guava & Apache Commons](https://github.com/google/guava/wiki)
 
 #### Containers
 

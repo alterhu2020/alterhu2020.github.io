@@ -12,3 +12,6 @@ title: 权利的游戏-第八季
 附链接:
  - [美剧天堂](https://www.meijutt.com/content/meiju23621.html)
  - [人人字幕](http://www.yyets.com/) (感觉网站基本废了，可能访问网站看神剧的流量太大...)
+
+
+> 烂尾了啊，最后的结局实在没有太多新意，也很牵强...

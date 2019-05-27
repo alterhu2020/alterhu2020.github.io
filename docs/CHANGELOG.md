@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.12.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.11.0...v1.12.0) (2019-05-27)
+
+
+### Bug Fixes
+
+* 增加新的the thunder ([b900018](https://github.com/alterhu2020/alterhu2020.github.io/commit/b900018))
+
+
+### Features
+
+* 05025 code ([c7a2686](https://github.com/alterhu2020/alterhu2020.github.io/commit/c7a2686))
+* 0520 updated ([e979360](https://github.com/alterhu2020/alterhu2020.github.io/commit/e979360))
+* 0526 upated. ([036c722](https://github.com/alterhu2020/alterhu2020.github.io/commit/036c722))
+* 0526 update notes. ([9741ca9](https://github.com/alterhu2020/alterhu2020.github.io/commit/9741ca9))
+
+
+
 # [1.11.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.10.0...v1.11.0) (2019-05-16)
 
 

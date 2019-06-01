@@ -12,6 +12,8 @@ module.exports ={
       title: '2019年',
       collapsable: false,
       children: [
+        '2019/05-31-what',
+        '2019/05-29-what',
         '2019/05-26-what',
         '2019/05-25-what',
         '2019/05-24-what',

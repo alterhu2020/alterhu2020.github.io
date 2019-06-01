@@ -143,7 +143,7 @@ module.exports = {
     lastUpdated: 'Last update',
     nav: [
       {
-        text: 'My Blog',
+        text: 'BLOG',
         link: '/blog/'
       },
       {

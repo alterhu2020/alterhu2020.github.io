@@ -65,6 +65,6 @@ title: 关于博客
 
 
 
-## About me
+## 关于作者
 
 [Github Profile](https://profile-summary-for-github.com/user/alterhu2020)

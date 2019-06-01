@@ -3,6 +3,6 @@ title: 给我留言
 ---
 
 
-## Thanks for your comments
+## 感谢您的宝贵留言
 
 <Vssue title="来自博客页面收集的留言" />

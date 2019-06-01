@@ -16,7 +16,7 @@
       </div>
       <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;">
          <span id="busuanzi_container_page_pv">
-          本文阅读量
+          本文浏览量
           <span id="busuanzi_value_page_pv"></span>次
         </span>
       </div>

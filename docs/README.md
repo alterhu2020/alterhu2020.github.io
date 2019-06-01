@@ -2,7 +2,7 @@
 home: true
 heroImage:  /hero.png
 heroText: 胡左胡右
-actionText:  My Blog
+actionText:  我的博客
 actionLink: /blog/
 footer: Copyright © 2019 胡左胡右
 ---

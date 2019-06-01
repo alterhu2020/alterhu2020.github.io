@@ -142,10 +142,10 @@ module.exports = {
     sidebarDepth: 2, // 侧边栏目录对应的 Markdown 标题，从二级标题开始显示两级。
     editLinks: true,
     editLinkText: '发现错误？想参与编辑？在 GitHub 上编辑此页',
-    lastUpdated: 'Last update',
+    lastUpdated: '最后更新',
     nav: [
       {
-        text: 'BLOG',
+        text: '我的博客',
         link: '/blog/'
       },
       {
@@ -157,11 +157,11 @@ module.exports = {
         link: 'https://pingbook.top/ionic-vue'
       },
       {
-        text: 'CHANGE LOG',
+        text: '历史更新',
         link: '/CHANGELOG.html'
       },
       {
-        text: 'COMMENTS',
+        text: '留言板',
         link: '/contact-me/'
       }
     ],

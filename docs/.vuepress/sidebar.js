@@ -9,7 +9,7 @@ module.exports ={
       ]
     },
     {
-      title: '2019年',
+      title: '2019年归档',
       collapsable: false,
       children: [
         '2019/06-01-what',
@@ -38,34 +38,32 @@ module.exports ={
       title: '开发工具',
       collapsable: false,
       children: [
-          'tools/idea',
-          'tools/vscode',
-          'tools/ps'
+          ['tools/idea', '【开发工具】IDEA'],
+          ['tools/vscode', '【开发工具】VS Code'],
+          ['tools/ps', '【设计工具】PhotoShop']
       ]
     },
     {
       title: '优秀影视作品集',
-      collapsable: false,
+      collapsable: true,
       path: '/blog/video/',
       children: [
-        'video/the-thunder',
-        'video/arctic',
-        'video/as-far-as-my-feet-carry-me',
-        ['video/game-of-the-thrones','权利的游戏(终结篇)']
+        ['video/the-thunder','【大陆剧】破冰行动'],
+        ['video/game-of-the-thrones','【美剧】权利的游戏(终结篇)']
       ],
     },
     {
       title: '友情链接',
       collapsable: false,
       children: [
-        ['https://mybatis.plus/','Mybatis Plus'],
-        ['http://www.ruanyifeng.com/blog/','阮一峰博客-前端'],
-        ['https://www.jianshu.com/u/4ca93d60a9fe', 'IT晴天-前端'],
-        ['https://github.com/vuejs/awesome-vue','awesome vue'],
-        ['https://ionicframework.com/docs/components','Ionic Vue Components'],
-        ['https://github.com/vueComponent/ant-design-vue-awesome','awesome ant-design-vue'],
-        ['https://github.com/ulivz/awesome-vuepress','awesome-vuepress'],
-        ['https://tool.lu/', '工具集']
+        ['https://mybatis.plus/','【后端】Mybatis Plus'],
+        ['http://www.ruanyifeng.com/blog/','【前端】阮一峰博客-前端'],
+        ['https://www.jianshu.com/u/4ca93d60a9fe', '【前端】IT晴天-前端'],
+        ['https://github.com/vuejs/awesome-vue','【前端】awesome vue'],
+        ['https://ionicframework.com/docs/components','【前端】Ionic Vue Components'],
+        ['https://github.com/vueComponent/ant-design-vue-awesome','【前端】awesome ant-design-vue'],
+        ['https://github.com/ulivz/awesome-vuepress','【前端】awesome-vuepress'],
+        ['https://tool.lu/', '【其它】程序员的工具集（国人）']
       ]
     }
   ]

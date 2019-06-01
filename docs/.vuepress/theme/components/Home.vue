@@ -45,7 +45,10 @@
       v-if="data.footer"
     >
       {{ data.footer }}
+      <p>
+       <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次,</span>
        <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人</span>
+      </p>
     </div>
   </main>
 </template>

@@ -4,7 +4,7 @@ heroImage:  /hero.png
 heroText: 胡左胡右
 actionText:  My Blog
 actionLink: /blog/
-footer: <v-html>Copyright © 2019 胡左胡右</v-html>
+footer: Copyright © 2019 胡左胡右
 ---
 <!-- features:
 - title: ❤️精简主义

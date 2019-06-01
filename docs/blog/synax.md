@@ -7,6 +7,11 @@ title: 语法参考手册
 阅读导航目录
 <TOC/>
 
+## 加入不蒜子计量
+
+参考文章：
+https://www.cnblogs.com/daoyi/p/jing-tai-wang-zhan-shi-yong-bu-suan-zi-xian-shi-li.html
+
 ## 表格
 
 如何生成一个markdown的表格

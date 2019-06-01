@@ -31,7 +31,8 @@ module.exports = {
     }],
     ['script', { async: true, src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" }],
     ['script', {}, 
-    "(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });"]
+    "(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });"],
+    ['script', { async: true, src: "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }],
   ],
   markdown: {
     config: md => {
@@ -133,6 +134,7 @@ module.exports = {
       clientSecret: 'bf6cfe43d956baf67f6816a7a1f17a42c1064eec'
     }],
   ],
+  // extend: '@vuepress/theme-default',
   themeConfig: {
     // repo: 'alterhu2020/alterhu2020.github.io',
     docsDir: 'docs',

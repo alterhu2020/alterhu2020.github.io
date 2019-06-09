@@ -12,6 +12,8 @@ module.exports ={
       title: '2019年归档',
       collapsable: false,
       children: [
+        '2019/06-09-what',
+        '2019/06-02-what',
         '2019/06-01-what',
         '2019/05-31-what',
         '2019/05-29-what',
@@ -48,6 +50,7 @@ module.exports ={
       collapsable: true,
       path: '/blog/video/',
       children: [
+        ['video/chernobyl','【美剧】切尔洛贝利'],
         ['video/the-thunder','【大陆剧】破冰行动'],
         ['video/game-of-the-thrones','【美剧】权利的游戏(终结篇)']
       ],
@@ -57,13 +60,13 @@ module.exports ={
       collapsable: false,
       children: [
         ['https://mybatis.plus/','【后端】Mybatis Plus'],
-        ['http://www.ruanyifeng.com/blog/','【前端】阮一峰博客-前端'],
-        ['https://www.jianshu.com/u/4ca93d60a9fe', '【前端】IT晴天-前端'],
+        ['http://www.ruanyifeng.com/blog/','【前端】阮一峰博客'],
+        ['https://www.jianshu.com/u/4ca93d60a9fe', '【前端】IT晴天'],
         ['https://github.com/vuejs/awesome-vue','【前端】awesome vue'],
         ['https://ionicframework.com/docs/components','【前端】Ionic Vue Components'],
         ['https://github.com/vueComponent/ant-design-vue-awesome','【前端】awesome ant-design-vue'],
         ['https://github.com/ulivz/awesome-vuepress','【前端】awesome-vuepress'],
-        ['https://tool.lu/', '【其它】程序员的工具集（国人）']
+        ['https://tool.lu/', '【其它】程序员的工具集']
       ]
     }
   ]

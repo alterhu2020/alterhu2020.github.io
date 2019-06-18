@@ -12,6 +12,9 @@ module.exports ={
       title: '2019年归档',
       collapsable: false,
       children: [
+        '2019/06-17-what',
+        '2019/06-13-what',
+        '2019/06-12-what',
         '2019/06-09-what',
         '2019/06-02-what',
         '2019/06-01-what',
@@ -47,13 +50,14 @@ module.exports ={
     },
     {
       title: '优秀影视作品集',
-      collapsable: true,
-      path: '/blog/video/',
-      children: [
-        ['video/chernobyl','【美剧】切尔洛贝利'],
-        ['video/the-thunder','【大陆剧】破冰行动'],
-        ['video/game-of-the-thrones','【美剧】权利的游戏(终结篇)']
-      ],
+      collapsable: false,
+      path: '/blog/video/'
+      // children: [
+      //   ['video/my-foot-will-carry-me', '【电影】极地重生'],
+      //   ['video/chernobyl','【美剧】切尔洛贝利'],
+      //   ['video/the-thunder','【大陆剧】破冰行动'],
+      //   ['video/game-of-the-thrones','【美剧】权利的游戏(终结篇)']
+      // ],
     },
     {
       title: '友情链接',

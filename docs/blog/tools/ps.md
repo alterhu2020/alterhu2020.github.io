@@ -14,3 +14,6 @@ title: PhotoShop CC 2018
 ![ps-resize](./img/ps-resize.png)
 
 ### 图片如何压缩大小？
+
+
+### 图片拼接，图片裁剪

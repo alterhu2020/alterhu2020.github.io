@@ -12,6 +12,7 @@ module.exports ={
       title: '2019年归档',
       collapsable: false,
       children: [
+        '2019/07-04-what',
         '2019/06-29-what',
         '2019/06-26-what',
         '2019/06-22-what',
@@ -42,6 +43,11 @@ module.exports ={
         '2019/04-28-what',
         '2019/04-26-what'
       ]
+    },
+    {
+      title: '亟待处理',
+      collapsable: false,
+      path: '/blog/todo/'
     },
     {
       title: '开发工具',

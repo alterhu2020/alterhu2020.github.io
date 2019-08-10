@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.14.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.13.0...v1.14.0) (2019-08-10)
+
+
+### Bug Fixes
+
+* issue ([1c4a453](https://github.com/alterhu2020/alterhu2020.github.io/commit/1c4a453))
+
+
+### Features
+
+* 0609 updates ([efc21e7](https://github.com/alterhu2020/alterhu2020.github.io/commit/efc21e7))
+* 0618 changes ([49d2401](https://github.com/alterhu2020/alterhu2020.github.io/commit/49d2401))
+* 0621 udpates ([e0224e0](https://github.com/alterhu2020/alterhu2020.github.io/commit/e0224e0))
+* 0629 updates ([9d90000](https://github.com/alterhu2020/alterhu2020.github.io/commit/9d90000))
+* dev- udpate 0622 ([a460ca6](https://github.com/alterhu2020/alterhu2020.github.io/commit/a460ca6))
+* update template ([002b3e7](https://github.com/alterhu2020/alterhu2020.github.io/commit/002b3e7))
+* 加入不蒜子计算。 ([5c32d62](https://github.com/alterhu2020/alterhu2020.github.io/commit/5c32d62))
+* 更新浏览量插件位置 ([cdba2b3](https://github.com/alterhu2020/alterhu2020.github.io/commit/cdba2b3))
+
+
+
 # [1.13.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.12.0...v1.13.0) (2019-06-01)
 
 

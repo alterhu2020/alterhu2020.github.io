@@ -9,7 +9,7 @@
 <style lang="stylus">
 .sidebar-button
   cursor pointer
-  display none
+  display block
   width 1.25rem
   height 1.25rem
   position absolute

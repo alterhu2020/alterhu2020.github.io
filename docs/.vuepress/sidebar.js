@@ -9,6 +9,21 @@ module.exports ={
       ]
     },
     {
+      title: '环境配置和部署',
+      collapsable: false,
+      children: [
+        'setup/raspberry',
+        'setup/linux',
+        'setup/nginx',
+        'setup/python',
+        'setup/mysql',
+        'setup/uwsgi',
+        'setup/tomcat',
+        'setup/redis',
+        'setup/sqlalchemy'
+      ]
+    },
+    {
       title: '2019年归档',
       collapsable: false,
       children: [

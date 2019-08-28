@@ -15,7 +15,7 @@ module.exports = {
     ['link', {rel: 'icon', href: `/favicon.ico`}],
     ['link', {rel: 'shortcut icon', href: `/img/favicon.ico`}],
     ['link', {rel: 'apple-touch-icon', href: `/img/logo.png`}],
-    ['meta', {property: 'keywords', content: '堆栈云,java,博客,技术培训,前端培训,后端培训,ionic,springboot,webstorm,vscode,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python'}],
+    ['meta', {property: 'keywords', content: '堆栈云,java,博客,技术培训,前端培训,后端培训,ionic,springboot,webstorm,vscode,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽'}],
     ['meta', {property: 'description', content: '堆栈云，点滴记录贵在坚持'}],
     ['script', {
       id: 'cookieinfo',
@@ -97,7 +97,7 @@ module.exports = {
       ga: 'UA-122219517-1'
     }],
     ['vuepress-plugin-sitemap', {
-      hostname: 'https://pingbook.top'
+      hostname: 'https://blog.pingbook.top'
     }],
     ['vuepress-plugin-rss-support', {
       site_url: 'https://vrpano.yitieyilu.com/docs',
@@ -150,11 +150,11 @@ module.exports = {
       },
       {
         text: 'ant-design-vue',
-        link: 'https://pingbook.top/ant-design-vue'
+        link: 'https://blog.pingbook.top/ant-design-vue'
       },
       {
         text: 'ionic-vue',
-        link: 'https://pingbook.top/ionic-vue'
+        link: 'https://blog.pingbook.top/ionic-vue'
       },
       {
         text: '历史更新',

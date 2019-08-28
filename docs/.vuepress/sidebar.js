@@ -9,6 +9,13 @@ module.exports ={
       ]
     },
     {
+      title: '技术版本更新',
+      collapsable: false,
+      children: [
+        'release/jdk'
+      ]
+    },
+    {
       title: '环境配置和部署',
       collapsable: false,
       children: [

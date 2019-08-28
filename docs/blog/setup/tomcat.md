@@ -7,7 +7,20 @@ title: Tomcat Linux安装及其环境配置
 
 [JDK安装步骤参考](https://www.digitalocean.com/community/tutorials/install-tomcat-9-debian-9)
 
-```shell script
+1. JDK11安装步骤
+```
+$ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jre_x64_linux_hotspot_11.0.4_11.tar.gz
+$ tar -zxvf OpenJDK11U-jre_x64_linux_hotspot_11.0.4_11.tar.gz
+$ nano /etc/profile
+export JAVA_HOME=/home/jdk-11.0.4+11-jre
+export PATH=$JAVA_HOME/bin:$PATH
+
+$ . /etc/profile
+$ java -version
+```
+
+2. JDK8安装步骤
+```shell
 $  wget  https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
 $  mkdir /opt/jdk
 $  tar -C /opt/jdk  -zxf /home/jdk-8u191-linux-x64.tar.gz
@@ -15,11 +28,16 @@ $  update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_191/bin/ja
 $  update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_191/bin/javac 1
 $  java -version
 $  javac 
+```
+
+
+```
 $  wget http://mirrors.advancedhosters.com/apache/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz
 $  useradd -rs /bin/false tomcat 注意如果部署到nginx最好这个用户是nginx的用户www-data用户，这样创建文件的时候UMask不会错误。
 $  mkdir /opt/tomcat
 $  chown -R www-data:www-data apache-tomcat
 ```
+
 ### tomcat启动脚本
 ```
 [Unit]

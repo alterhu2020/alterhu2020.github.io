@@ -81,10 +81,12 @@ index-url = https://mirrors.aliyun.com/pypi/simple/
 
 ```shell script
 $ pip install --user pipenv
-$ sudo python -m site --user-base
+$ python -m site --user-base
 $ sudo nano ~/.profile
  export PATH="$HOME/.local/bin:$PATH"
 $ sudo source ~/.profile
+$ pipenv --version
+
 $ pipenv --update
 $ export PIPENV_VENV_IN_PROJECT=1 (for linux) , SET PIPENV_VENV_IN_PROJECT=1(for windows)
 $ pipenv shell

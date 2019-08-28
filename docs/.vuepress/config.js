@@ -100,7 +100,7 @@ module.exports = {
       hostname: 'https://blog.pingbook.top'
     }],
     ['vuepress-plugin-rss-support', {
-      site_url: 'https://vrpano.yitieyilu.com/docs',
+      site_url: 'https://blog.pingbook.top',
       filter: page => /^\/201.+/.test(page.path),
       copyright: '2019 堆栈云',
       count: 60
@@ -109,11 +109,9 @@ module.exports = {
       // selector for images that you want to be zoomable
       // default: '.content img'
       selector: '.content img',
-
       // make imgaes zoomable with delay after entering a page
       // default: 500
       delay: 500,
-
       // options of zooming
       // default: {}
       options: {
@@ -137,6 +135,7 @@ module.exports = {
   // extend: '@vuepress/theme-default',
   themeConfig: {
     // repo: 'alterhu2020/alterhu2020.github.io',
+    // logo: '/img/logo.png',
     docsDir: 'docs',
     docsBranch: 'develop',
     sidebarDepth: 2, // 侧边栏目录对应的 Markdown 标题，从二级标题开始显示两级。
@@ -149,20 +148,20 @@ module.exports = {
         link: '/blog/'
       },
       {
-        text: 'ant-design-vue',
-        link: 'https://blog.pingbook.top/ant-design-vue'
-      },
-      {
-        text: 'ionic-vue',
-        link: 'https://blog.pingbook.top/ionic-vue'
-      },
-      {
         text: '历史更新',
         link: '/CHANGELOG.html'
       },
       {
         text: '留言板',
         link: '/contact-me/'
+      },
+      {
+        text: 'ant-design-vue',
+        link: 'https://blog.pingbook.top/ant-design-vue'
+      },
+      {
+        text: 'ionic-vue',
+        link: 'https://blog.pingbook.top/ionic-vue'
       }
     ],
     sidebar: sidebar

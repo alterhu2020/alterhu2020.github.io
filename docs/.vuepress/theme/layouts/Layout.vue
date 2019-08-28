@@ -85,8 +85,8 @@ export default {
       const { frontmatter } = this.$page
       return (
         !frontmatter.home
-        && frontmatter.sidebar !== false
-        && this.sidebarItems.length
+        && frontmatter.sidebar === true
+        // && this.sidebarItems.length
       )
     },
 
@@ -114,7 +114,7 @@ export default {
 
   mounted () {
     this.$router.afterEach(() => {
-      this.isSidebarOpen = false
+      this.isSidebarOpen = true
     })
   },
 

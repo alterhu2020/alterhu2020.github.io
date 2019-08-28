@@ -26,12 +26,12 @@
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
     >
+     <NavLinks class="can-hide"/>
       <AlgoliaSearchBox
         v-if="isAlgoliaSearch"
         :options="algolia"
       />
-      <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
-      <NavLinks class="can-hide"/>
+      <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/> 
     </div>
   </header>
 </template>
@@ -87,10 +87,10 @@ function css (el, property) {
 
 <style lang="stylus">
 $navbar-vertical-padding = 0.7rem
-$navbar-horizontal-padding = 4rem
+$navbar-horizontal-padding = 12rem
 
 .navbar
-  padding $navbar-vertical-padding $navbar-horizontal-padding
+  padding $navbar-vertical-padding 4rem
   line-height $navbarHeight - 1.4rem
   a, span, img
     display inline-block
@@ -111,18 +111,24 @@ $navbar-horizontal-padding = 4rem
     white-space nowrap
     font-size 0.9rem
     position absolute
-    right $navbar-horizontal-padding
+    left $navbar-horizontal-padding
     top $navbar-vertical-padding
     display flex
     .search-box
+      margin-left 4rem
       flex: 0 0 auto
       vertical-align top
 
 @media (max-width: $MQMobile)
   .navbar
     padding-left 4rem
+    // left 4rem
     .can-hide
       display none
     .links
+      left 8rem
       padding-left 1.5rem
+      .search-box
+         margin-left 1rem
+        
 </style>

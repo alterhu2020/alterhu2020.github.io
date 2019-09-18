@@ -23,3 +23,16 @@ $ echo 3 > /proc/sys/vm/drop_caches:表示清除pagecache和slab分配器中的�
 ```
 $ tzselect
 ```
+
+## 创建链接
+
+在当前目录创建一个链接名称`python`,这个链接指向的位置是: `/usr/local/bin/python`,命令如下:
+ln -s 源文件 目标目录
+```
+$ ln -s /usr/local/bin/python python
+```
+
+## 删除缓存的安装失败的包
+
+进入目录`/var/cache/apt/archives`,删除下面的所有.deb文件即可
+

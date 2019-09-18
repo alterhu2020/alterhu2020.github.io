@@ -9,10 +9,10 @@ title: Tomcat Linux安装及其环境配置
 
 1. JDK11安装步骤
 ```
-$ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jre_x64_linux_hotspot_11.0.4_11.tar.gz
-$ tar -zxvf OpenJDK11U-jre_x64_linux_hotspot_11.0.4_11.tar.gz
+$ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz
+$  tar -zxvf OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz 
 $ nano /etc/profile
-export JAVA_HOME=/home/jdk-11.0.4+11-jre
+export JAVA_HOME=/home/jdk-11.0.4+11
 export PATH=$JAVA_HOME/bin:$PATH
 
 $ . /etc/profile

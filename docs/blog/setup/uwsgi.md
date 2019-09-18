@@ -14,6 +14,9 @@ $ pip install uwsgi
 $ sudo pip install https://projects.unbit.it/downloads/uwsgi-lts.tar.gz
 $ uwsgi --version
 $ sudo mkdir /var/log/uwsgi
+$ sudo mkdir /etc/uwsgi
+$ sudo chown -R www-data:www-data  /var/log/uwsgi
+$ sudo chmod a+x /etc/uwsgi
 $ pip install uwsgitop
 
 ```
@@ -59,3 +62,10 @@ WantedBy=multi-user.target
 * uid=xxx # uWSGI服务器运行时的用户id
 * gid=xxx # uWSGI服务器运行时的用户组id
 * procname-prefix-spaced=xxx # 指定工作进程名称的前缀
+
+
+## 异常安装问题
+
+-  Unknown distribution option: 'descriptions'
+
+> 解决方法: apt-get install build-essential python3-dev

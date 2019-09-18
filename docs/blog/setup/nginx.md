@@ -7,7 +7,6 @@ title: Nginx Linux安装及其环境配置
 ## Nginx安装步骤
 
 ```
-$ mkdir /var/lib/nginx
 $ cd /opt
 $ sudo mkdir nginx-modules
 $ cd nginx-modules
@@ -34,6 +33,7 @@ $ cd nginx-1.17.3/src/http/
 $ nano ngx_http_header_filter_module.c
 $ sudo nano src/core/nginx.h
 $ sudo nano src/http/ngx_http_special_response.c
+$ sudo mkdir /var/lib/nginx
 $ ./configure --prefix=/usr/local/nginx \
             --sbin-path=/usr/sbin/nginx \
             --modules-path=/usr/lib/nginx/modules \
@@ -88,7 +88,7 @@ $ ./configure --prefix=/usr/local/nginx \
 
 $ make   #这个操作需要花费十分钟左右 
 $ sudo make install 
-$ useradd -d /etc/nginx/ -s /sbin/nologin nginx
+$ ~useradd -d /etc/nginx/ -s /sbin/nologin nginx~
 ```
 
 ## 安装nginx.service服务
@@ -132,11 +132,11 @@ systemctl restart nginx
 
 ```shell
 -- 参考地址[安装certbot](https://certbot.eff.org/lets-encrypt/debianstretch-nginx)
-$ sudo apt-get install certbot python-certbot-nginx
+$ sudo apt-get install certbot
 
 ```
 
-### 参考配置文件： [nginxconfig助手](hhttps://nginxconfig.io/?0.domain=pingbook.top&0.path=%2Fwww&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.proxy_path=%2Fproxy&0.proxy_pass=http:%2F%2F127.0.0.1:9000&0.fallback_html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&limit_req&brotli&log_not_found&client_max_body_size=32&symlink=false)
+### 参考配置文件： [nginxconfig助手](https://nginxconfig.io/?0.domain=pingbook.top&0.path=%2Fwww&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.proxy_path=%2Fproxy&0.proxy_pass=http:%2F%2F127.0.0.1:9000&0.fallback_html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&server_tokens&limit_req&brotli&log_not_found&client_max_body_size=32)
 ```
 ```
 注意: 在`Symlink vhost` 中不要勾选enable。
@@ -248,6 +248,19 @@ http {
 	# load configs
 	include /etc/nginx/conf.d/*.conf;
 	include /etc/nginx/sites-enabled/*;
+}
+
+```
+
+in the `/etc/nginx/nginxconfig.io/general.conf` file,as following:
+
+```
+error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 421 422 423 424 426 428 429 431 451 500 501 502 503 504 505 506 507 508 510 511 /error;
+
+location = /error {
+  ssi on;
+  internal;
+  root /www/_error;
 }
 
 ```

@@ -34,6 +34,9 @@ module.exports ={
       title: '2019年归档',
       collapsable: false,
       children: [
+        '2019/how-to-remove-search-index-forever',
+        '2019/spring-list-params-same-key',
+        '2019/how-to-cross-gfw',
         '2019/07-04-what',
         '2019/06-29-what',
         '2019/06-26-what',

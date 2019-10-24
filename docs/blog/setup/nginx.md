@@ -136,10 +136,13 @@ $ sudo apt-get install certbot
 
 ```
 
-### 参考配置文件： [nginxconfig助手](https://nginxconfig.io/?0.domain=pingbook.top&0.path=%2Fwww&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.proxy_path=%2Fproxy&0.proxy_pass=http:%2F%2F127.0.0.1:9000&0.fallback_html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&server_tokens&limit_req&brotli&log_not_found&client_max_body_size=32)
+### 参考配置文件： [nginxconfig助手](https://nginxconfig.io/?0.domain=pingbook.top&0.path=%2Fwww&0.document_root=%2Fpingbook.top&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy_path=%2Fproxy&0.proxy_pass=http:%2F%2F127.0.0.1:9000&0.fallback_html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&server_tokens&limit_req&brotli&log_not_found&client_max_body_size=320&symlink=false)
 ```
 ```
+
+::: warning Symlink vhost配置文件
 注意: 在`Symlink vhost` 中不要勾选enable。
+:::
 
 # 其他
 
@@ -252,12 +255,12 @@ http {
 
 ```
 
-in the `/etc/nginx/nginxconfig.io/general.conf` file,as following:
+in the `/etc/nginx/nginxconfig.io/general.conf` file, put code as following also create file: `error.html` in directory: `/www/_error`:
 
 ```
-error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 421 422 423 424 426 428 429 431 451 500 501 502 503 504 505 506 507 508 510 511 /error;
+error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 421 422 423 424 426 428 429 431 451 500 501 502 503 504 505 506 507 508 510 511 /error.html;
 
-location = /error {
+location = /error.html {
   ssi on;
   internal;
   root /www/_error;

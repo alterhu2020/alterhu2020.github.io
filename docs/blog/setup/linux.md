@@ -36,3 +36,10 @@ $ ln -s /usr/local/bin/python python
 
 进入目录`/var/cache/apt/archives`,删除下面的所有.deb文件即可
 
+## 改变当前用户组
+
+```
+$ sudo usermod -g www-data alterhu2020   (需要重启机器生效)
+$ groups alterhu2020
+``
+

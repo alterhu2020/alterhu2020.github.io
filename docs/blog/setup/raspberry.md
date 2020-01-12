@@ -97,7 +97,7 @@ $  java -version
 $  javac 
 ```
 
-# 安装selenium及其对应的chrome driver
+# 爬虫, 安装selenium及其对应的chrome driver
 
 参考网站： https://www.raspberrypi.org/forums/viewtopic.php?t=194176
 

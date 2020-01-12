@@ -2,21 +2,63 @@
 title: Debian MYSQL8安装及其环境配置
 ---
 
-## 安装步骤如下命令：
-安装的时候注意选择legecal password,否则wordpress不能访问mysql8数据库
+# 安装步骤如下命令：
 
-```
+::: warning mysql安装密码问题
+1. 安装的时候注意选择legecal password,否则wordpress不能访问mysql8数据库
+2. 如果是raspberry,则必须安装mariadb
+:::
+
+
+## 安装命令
+
+ **1. mysql8安装**
+
+``` 
 $ apt-get install lsb-release
 $ wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
 $ sudo dpkg -i mysql-apt-config*
 $ sudo apt-get update
 $ sudo apt-get install mysql-server
+```
+**2. mariadb安装**
 
 ```
-`$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf`
+$ sudo apt update
+$ sudo apt install mariadb-server
+$ sudo systemctl status mariadb
+// 如果不先设置mysql的密码策略登录的时候会包错误: ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+$ mysql -u root -p (直接不输入密码)
+
+> SELECT User, Host, plugin FROM mysql.user;
+> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+> FLUSH PRIVILEGES;
+> update mysql.user set authentication_string=PASSWORD('m3s1l@#3!'), plugin='mysql_native_password' where user='root';
+> FLUSH PRIVILEGES;
+
+//直接以上的命令后,然后设置mariadb
+
+$ sudo mysql_secure_installation
 
 ```
-# 修改数据
+
+## 配置参数
+
+**1. mysql配置**
+
+```
+$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+**2. mariadb安装**
+
+```
+$ sudo /etc/mysql/mariadb.conf.d/50-server.cnf
+
+```
+
+**修改以上的配置文件,注意一定要在`mysqld`区域放入以下的配置信息:**
+
+```
 port        = 4792
 default-time-zone='+08:00'
 # The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake. The default value is 10 seconds.
@@ -50,11 +92,16 @@ slow_query_log_file = /logs/mysql/slow.log
 ## 添加数据库和用户(包括修改用户密码)
 
 logged in mysql using `root / xxx`:
+
 ```
+$ create database abc;
 $ create user 'syscorer'@'%' identified by 'xxxxxx'; 
 $ GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%'; 
+
+--- 以下可能是mysql通用的
 $ GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%' IDENTIFIED BY 'xxxxxx' WITH GRANT OPTION;
 $ GRANT ALL PRIVILEGES ON heap_stack.* TO 'syscorer'@'%'  WITH GRANT OPTION;
+
 更改mysql用户密码:
 $ alter user 'syscorer'@'%' identified by 'xxxxxx1026A5yC1S';
 $ flush privileges;
@@ -70,6 +117,7 @@ $ sudo find / -name mysql
 
 ```
 
+## 错误异常
 
 > error processing package mysql-community-server (--configure):
  dependency problems - leaving unconfigured

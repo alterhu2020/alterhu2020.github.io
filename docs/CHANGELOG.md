@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.15.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.14.0...v1.15.0) (2020-01-12)
+
+
+### Bug Fixes
+
+* hero.png updated ([7f3d94e](https://github.com/alterhu2020/alterhu2020.github.io/commit/7f3d94e))
+* layout changed ([52f10d5](https://github.com/alterhu2020/alterhu2020.github.io/commit/52f10d5))
+* layout hide when open the page . ([47bf5f7](https://github.com/alterhu2020/alterhu2020.github.io/commit/47bf5f7))
+* logo changed ([506d3c1](https://github.com/alterhu2020/alterhu2020.github.io/commit/506d3c1))
+
+
+### Features
+
+* change to blog domain ([c4f7b75](https://github.com/alterhu2020/alterhu2020.github.io/commit/c4f7b75))
+* cname change ([d1c96a8](https://github.com/alterhu2020/alterhu2020.github.io/commit/d1c96a8))
+* update ads ([8f996cf](https://github.com/alterhu2020/alterhu2020.github.io/commit/8f996cf))
+* update for setup scripts ([289724e](https://github.com/alterhu2020/alterhu2020.github.io/commit/289724e))
+* update name ([80de6ed](https://github.com/alterhu2020/alterhu2020.github.io/commit/80de6ed))
+* update setup docs. ([add0207](https://github.com/alterhu2020/alterhu2020.github.io/commit/add0207))
+* 修改nginx安装步骤 ([bea79c4](https://github.com/alterhu2020/alterhu2020.github.io/commit/bea79c4))
+
+
+
 # [1.14.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.13.0...v1.14.0) (2019-08-10)
 
 

@@ -32,10 +32,10 @@ $ sudo apt install build-essential -y
 
 // nginx安装
 配置可参考： [Compile from source](https://github.com/jukbot/setup-nginx-webserver/blob/master/README.md)
-$ wget http://nginx.org/download/nginx-1.17.3.tar.gz
-$ tar zxvf nginx-1.17.3.tar.gz
-$ cd nginx-1.17.3/src/http/
-$ nano ngx_http_header_filter_module.c
+$ wget http://nginx.org/download/nginx-1.17.7.tar.gz
+$ tar zxvf nginx-1.17.7.tar.gz
+$ cd nginx-1.17.7
+$ sudo nano src/http/ngx_http_header_filter_module.c
 $ sudo nano src/core/nginx.h
 $ sudo nano src/http/ngx_http_special_response.c
 $ sudo mkdir /var/lib/nginx
@@ -93,7 +93,7 @@ $ ./configure --prefix=/usr/local/nginx \
             --with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now' \
             --add-module=../nginx-modules/ngx_brotli
 
-$ make   #这个操作需要花费十分钟左右 
+$ sudo make   #这个操作需要花费十分钟左右 
 $ sudo make install 
 ```
 
@@ -120,19 +120,22 @@ KillMode=mixed
 [Install]
 WantedBy=multi-user.target
 
+$ sudo systemctl enable nginx
 ```
 
-> nginx.service: Failed to read PID from file /run/nginx.pid: Invalid argument
+遇到异常的报错信息:
+
+> nginx.service: Failed to read PID from file `/run/nginx.pid`: Invalid argument
 
 That warning with the nginx.pid file is a know bug (at least for Ubutnu if not for other distros as well). More details here: https://bugs.launchpad.net/ubuntu/+source/nginx/+bug/1581864
 
 Workaround (on a ssh console, as root, use the commands bellow):
+
 ```shell
 mkdir /etc/systemd/system/nginx.service.d
 printf "[Service]\nExecStartPost=/bin/sleep 0.1\n" > /etc/systemd/system/nginx.service.d/override.conf
 systemctl daemon-reload
 systemctl restart nginx 
-
 ```
 
 # nginx配置助手
@@ -220,4 +223,19 @@ location = /error.html {
   root /www/_error;
 }
 
+```
+
+## 配置内网映射
+
+### frps 服务端配置脚本 `frps.ini`
+
+```
+[common]
+bind_port = 7000
+
+# 配置frps面板
+dashboard_port = 7500
+dashboard_user = alterhu2020
+dashboard_pwd = guchan1026
+ 
 ```

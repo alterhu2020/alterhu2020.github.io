@@ -4,6 +4,8 @@ title: Raspberry Linux安装及其环境配置
 
 ## 树莓派安装
 
+> 3b和3b+虽然是arm64 v8的芯片，但是raspbian是32的，所以只能安装arm v7的包
+
 1. 从官方下载最新的镜像，推荐下载最新的镜像： [下载首页地址](https://www.raspberrypi.org/downloads/raspbian/),在该网页中选择"
 Raspbian Buster Lite",截止到2019年8月12日，最新的树莓派版本是Buster版。此处选择的是最小镜像。
 

@@ -12,11 +12,12 @@ $ cp -r wordpress ../
 
 ## Install php
 
-```
-$ cd /opt   
-~$ wget https://www.php.net/distributions/php-7.3.10.tar.gz~
-~$ tar zxvf php-7.3.10.tar.gz~
 
+$ cd /opt   
+~~$ wget https://www.php.net/distributions/php-7.3.10.tar.gz~~
+~~$ tar zxvf php-7.3.10.tar.gz~~
+
+```
 ----------上面采用的php源码安装可以使用下面的几个命令替代-----------------------------
 $ sudo apt-get install php-fpm php-mysql 
    上面的命令会安装: php-common php7.3-cli php7.3-common php7.3-fpm php7.3-json php7.3-mysql php7.3-opcache php7.3-readline

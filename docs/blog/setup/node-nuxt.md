@@ -14,13 +14,15 @@ If you want to see whether your system supports 64-bit binaries, check the kerne
 $ uname -m
 此处树莓派4是ARMv7架构
 
-$ wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.xz
+$ 树莓派: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.xz
+$ amd64: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
 $ tar xvf node-v12.14.1-linux-armv7l.tar.xz
+$ tar xvf node-v12.14.1-linux-x64.tar.xz
 $ mv node-v12.14.1-linux-armv7l /opt/
-$ sudo vi /etc/profile
+$ sudo nano /etc/profile
 增加对应的node的PATH路径,例如如下:
-export path ="/opt/node-v12.14.1-linux-armv7l/bin:$PATH"
-
+export path=/opt/node-v12.14.1-linux-armv7l/bin:$PATH
+export path=/opt/node-v12.14.1-linux-x64/bin:$PATH
 执行如下命令使上面的PATH配置生效
 $ source /etc/profile 
 

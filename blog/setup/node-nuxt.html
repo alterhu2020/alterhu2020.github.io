@@ -16,8 +16,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="article:modified_time" content="Thu Oct 24 2019 10:30:02 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Node Nuxt安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/node-nuxt.html"><meta name="twitter:title" content="Node Nuxt安装及其环境配置"><meta name="twitter:url" content="/blog/setup/node-nuxt.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.1c5f9d78.js" as="script"><link rel="preload" href="/assets/js/4.aba833a4.js" as="script"><link rel="preload" href="/assets/js/3.107e6c4e.js" as="script"><link rel="preload" href="/assets/js/51.901871fc.js" as="script">
+    <meta property="article:modified_time" content="Sun Jan 12 2020 12:43:29 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Node Nuxt安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/node-nuxt.html"><meta name="twitter:title" content="Node Nuxt安装及其环境配置"><meta name="twitter:url" content="/blog/setup/node-nuxt.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.16a36f90.js" as="script"><link rel="preload" href="/assets/js/4.3f45a58f.js" as="script"><link rel="preload" href="/assets/js/3.40df3ca1.js" as="script"><link rel="preload" href="/assets/js/51.37d56828.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.e064409b.css">
   </head>
   <body>
@@ -36,13 +36,15 @@ If you want to see whether your system supports 64-bit binaries, check the kerne
 $ uname -m
 此处树莓派4是ARMv7架构
 
-$ wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.xz
+$ 树莓派: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.xz
+$ amd64: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
 $ tar xvf node-v12.14.1-linux-armv7l.tar.xz
+$ tar xvf node-v12.14.1-linux-x64.tar.xz
 $ mv node-v12.14.1-linux-armv7l /opt/
-$ sudo vi /etc/profile
+$ sudo nano /etc/profile
 增加对应的node的PATH路径,例如如下:
-export path =&quot;/opt/node-v12.14.1-linux-armv7l/bin:$PATH&quot;
-
+export path=/opt/node-v12.14.1-linux-armv7l/bin:$PATH
+export path=/opt/node-v12.14.1-linux-x64/bin:$PATH
 执行如下命令使上面的PATH配置生效
 $ source /etc/profile 
 
@@ -94,13 +96,13 @@ $ pm2 reload
           
           include nginxconfig.io/proxy.conf;
  }
-</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">10/24/2019, 10:30:02 AM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">1/12/2020, 12:43:29 PM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
         本文浏览量
         <span id="busuanzi_value_page_pv"></span>次
       </span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/mysql.html" class="prev">Debian MYSQL8安装及其环境配置</a></span> <span class="next"><a href="/blog/setup/uwsgi.html">Uwsgi Linux安装及其环境配置</a>→
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.1c5f9d78.js" defer></script><script src="/assets/js/4.aba833a4.js" defer></script><script src="/assets/js/3.107e6c4e.js" defer></script><script src="/assets/js/51.901871fc.js" defer></script>
+    <script src="/assets/js/app.16a36f90.js" defer></script><script src="/assets/js/4.3f45a58f.js" defer></script><script src="/assets/js/3.40df3ca1.js" defer></script><script src="/assets/js/51.37d56828.js" defer></script>
   </body>
 </html>

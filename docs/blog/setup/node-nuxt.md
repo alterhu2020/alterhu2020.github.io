@@ -112,3 +112,44 @@ $ pm2 reload
           include nginxconfig.io/proxy.conf;
  }
 ```
+-----------------------------------------------------
+## 安装`node-sass` 报错
+
+首先要知道的是，安装`node-sass`时在`node scripts/install`阶段会从 github.com 上下载一个.node文件，大部分安装不成功的原因都源自这里，因为 GitHub Releases 里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是_网络不稳定_，所以我们需要通过第三方服务器下载这个文件。（顺带一提，你可以看看[这个好玩的 commit](https://github.com/sass/node-sass/commit/b8050efbe0effb68b0617d28276c72eef1fb15ef)）
+
+1. 方法一： 
+ 
+ 直接翻墙安装；
+
+2. 方法二：
+
+2.1 查看当前环境适用的binding.node
+
+```
+node -p "[process.platform, process.arch, process.versions.modules].join('-')"
+```
+2.2  到[这里](https://github.com/sass/node-sass/releases)下载对应版本的文件。链接地址: https://github.com/sass/node-sass/releases
+2.3 将下载好的文件放入缓存目录中,查看缓存目录命令： 
+```
+> PS C:\Users\Administrator> npm config get cache
+E:\nodejs\node_cache
+
+```
+2.3.1 通常yarn缓存目录：C:Users\你的用户名\AppData\Local\Yarn\Cache
+2.3.2 通常npm缓存目录：C:Users\你的用户名\AppData\Roaming\npm-cache\node-sass
+此处我的下载文件目录是：` "E:\nodejs\node_cache\node-sass\4.13.1\win32-x64-72_binding.node" `
+
+
+到这里去根据版本号、系统环境，选择下载 .node 文件，然后安装时，指定变量 sass_binary_path，如：
+https://github.com/sass/node-sass/releases/download/v4.13.0/win32-x64-72_binding.node
+
+```
+npm i node-sass --sass_binary_path=D:/win32-x64-72_binding.node
+```
+按上面这么做确实没错，而且也是必须，但是当你再次去创建ionic项目时还是会提示同样的错误(如果不报错说明你运气好，那下面就不用看了)，那么原因到底是为什么呢？那是因为你的确安装了sass而且也成功下载了相关文件了，只是你在执行时候可能是因为运气不好或者当前软件没设计好的原因没给你自动添加sass的环境变量，所以这是我们得自己手动添加一下系统的环境变量(怎么添加系统环境变量我这就不提了，因为我认为很多人应该都会的，这里我只提一下要加什么环境变量，大概路径)，例如我的环境变量如下：(这里提醒一下配置的路径最好是根据你的实际情况，因为每个人安装nodejs的方式都不一样)
+
+解决方法设置环境变量：
+1. 设置系统变量名称: `SASS_BINARY_PATH`
+2. 系统变量值：`E:\nodejs\node_cache\node-sass\4.13.1\win32-x64-72_binding.node`
+
+![图片](https://img-blog.csdn.net/20180106162556616?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGY5ODEwMTE1MTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)

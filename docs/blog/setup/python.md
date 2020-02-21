@@ -79,21 +79,35 @@ $ sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 $  pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 ```
-切换源
+
+## 切换python镜像源
+
+a）Linux下，修改` ~/.pip/pip.conf`(没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)
+内容如下：
 ```
-#创建目录
-mkdir -p ~/.pip
-#修改配置文件
-vim  ~/.pip/pip.conf
-#写入以下内容并保存
 [global]
-index-url = https://mirrors.aliyun.com/pypi/simple/
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host = https://pypi.tuna.tsinghua.edu.cn
 ```
+(b) windows下，直接在user目录中创建一个pip目录，如：`C:\Users\xx\pip`，然后新建文件`pip.ini`，即 `%HOMEPATH%\pip\pip.ini`，在`pip.ini`文件中输入以下内容（以豆瓣镜像为例）：
 
+```
+[global]
+index-url = http://pypi.douban.com/simple
+[install]
+trusted-host = pypi.douban.com
+```
+(c) 如果是使用的`pipenv`,则可以在脚本目录下面修改`Pipfile`,修改为对应的镜像地址。
 
-2. `pipenv`安装
+常用镜像地址列表:
+1. https://pypi.tuna.tsinghua.edu.cn/simple
+2. http://pypi.douban.com/simple
+3. 
 
-```shell script
+##  `pipenv`安装及常用命令
+
+```
 $ pip install --user pipenv
 $ python -m site --user-base
 $ sudo nano ~/.profile
@@ -102,52 +116,27 @@ $ sudo source ~/.profile
 $ . /etc/profile
 $ pipenv --version
 
+常用pipenv命令
 $ pipenv --update
-$ export PIPENV_VENV_IN_PROJECT=1 (for linux) , SET PIPENV_VENV_IN_PROJECT=1(for windows)
+$ export PIPENV_VENV_IN_PROJECT=1 (for linux) / SET PIPENV_VENV_IN_PROJECT=1(for windows)
 $ pipenv shell
 $ pipenv install / pipenv install -r requirements.txt
+$ pipenv lock -r  (export to requirement.txt文件)
 $ pipenv update
+$ pipenv graph
 
 ```
-
-3. `pipenv`在Idea中环境搭建
-
-1. Start from IDEA to create a new project 
-2. Select the **Project SDK** with **System Intepreter**, if not just create one.
-3. Change pipenv source 
-`go to %appdata%\pip\pip.ini` default index: https://pypi.org/simple
-```ini
-[global]
-timeout = 6000
-index-url = http://pypi.douban.com/simple/ 
-[install]
-use-mirrors = true
-mirrors = http://pypi.douban.com/simple/ 
-trusted-host = pypi.douban.com
-```
-4. create .venv directory
- `export PIPENV_VENV_IN_PROJECT=1` or `SET PIPENV_VENV_IN_PROJECT=1`
-5. activate the pipenv
- `pipenv shell`
- 
-6. Change the pipenv url
- 
- Change the `Pipfile` url to `https://pypi.tuna.tsinghua.edu.cn/simple`
- 
-7. install package
- `pipenv install` or `pipenv install -r requirements.txt` (如果安装使用了老格式的virtualEnv)
-`pipenv install --verbose`
-8. pip update
- `pipenv update`
-
-9. graph show
- `pipenv graph`
-10. export to requirement:
-  `pipenv lock -r` or `pipenv lock -r --dev`
   
-
 ## 安装配置问题
 
 - zipimport.ZipImportError: can't decompress data; zlib not available 解决办法
 
 参考解决方案[zipimport.ZipImportError: can't decompress data; zlib not available 解决办法](https://www.cnblogs.com/zhangym/p/6226435.html)
+
+
+- Microsoft Visual C++ 14.0 is required
+
+python3 是用 VC++ 14 编译的, python27 是 VC++ 9 编译的, 安装 python3 的包需要编译的也是要 VC++ 14 以上支持的.
+Visual Studio 2013 ---> 12
+Visual Studio 2015 ---> 14
+Visual Studio 2017 ---> 15

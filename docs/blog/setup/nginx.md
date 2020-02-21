@@ -151,6 +151,11 @@ $ sudo apt-get install certbot
 参考配置文件,每次只需要修改对应的域名(Domain)和目录(Path):
  [nginxconfig助手](https://www.digitalocean.com/community/tools/nginx#?0.domain=pingbook.top&0.path=%2Fwww%2Fpingbook%2Fweb%2Fwww.pingbook.top&0.document_root=&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.index=index.html&0.fallback_html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&brotli&log_not_found&client_max_body_size=160&symlink=false)
 
+以后每次配置子域名，只需要配置好对应的conf文件然后执行如下命令:
+
+```
+$ certbot certonly --webroot -d spider.pingbook.top --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
+```
 
 ::: warning Symlink vhost配置文件
 注意: 在`Symlink vhost` 中不要勾选enable。

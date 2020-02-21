@@ -66,7 +66,28 @@ sudo connectd_installer
 ```
 2. 继续访问上面的网站就能看到自己的树莓派了。
 
+## 软件镜像源切换
 
+为了方便今后软件的安装，我们需要将软件源更换为国内源：
+输入以下代码
+
+```
+sudo nano /etc/apt/sources.list
+```
+内容修改为如下:
+```
+deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
+deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
+
+# deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
+# Uncomment line below then 'apt-get update' to enable 'apt-get source'
+#deb-src http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
+
+```
+ctrl+o键进行保存，回车确认，再ctrl+x退出.输入sodu reboot重启，待重启后再重新用PuTTY进行ssh连接。输入以下代码进行系统文件更新：
+```
+sudo apt-get update
+```
 
 ## jdk 安装
 
@@ -109,9 +130,9 @@ $  javac
 2. `sudo dpkg -i chromium-driver_72.0.3626.122-1~deb9u1_armhf.deb`
 
 ```
-        # sudo chmod +x /usr/local/bin/chromedriver
-        # sudo apt-get install libminizip1
-        # sudo apt-get install libwebpmux2
-        # sudo apt-get install libgtk-3-0
+# sudo chmod +x /usr/local/bin/chromedriver
+# sudo apt-get install libminizip1
+# sudo apt-get install libwebpmux2
+# sudo apt-get install libgtk-3-0
 
 ```

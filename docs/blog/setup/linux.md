@@ -96,6 +96,16 @@ $ sudo nano /etc/sudoers
 
 ```
 
+## unzip命令中文文件名乱码
+
+采用最新的unzip命令没有参数`-O`，网上提到的使用参数`-O`可以指定编码，所以这个访问不能使用。所以使用`unar`命令:
+
+```
+$ sudo apt-get install unar
+
+$ unar -e gb18030 gb18030.zip
+```
+
 ## 配置linux并发最大打开文件数
 
 进行目录`/etc/profile`添加如下配置信息:

@@ -50,13 +50,17 @@ $ gerapy runserver
 后台静默运行gerapy服务,注意一定要切换到新创建的gerapy目录下面
 $ nohup gerapy runserver 0.0.0.0:6000 &
 ```
+#### **安装问题**
+
+1. 无法安装`gevent`,直接下载编译好的安装包： https://www.lfd.uci.edu/~gohlke/pythonlib
+
 ### 2.2 `scrapyd`脚本执行机器环境配置
 
 * `scrapyd`不需要设置目录，可以同时管理多个爬虫,每个爬虫还可以有多个版本： 
 
 ```
 $ pip install scrapyd
-一般安装在类似目录： `/usr/local/lib/python3.8/dist-packages/scrapyd`
+一般安装在类似目录： `/usr/local/lib/python3.9/site-packages/scrapyd`
 $ find / -name "default_scrapyd.conf"
 $ nano default_scrapyd.conf
 1. 修改scrapyd服务的端口号，默认端口是`6800`
@@ -64,7 +68,7 @@ $ nano default_scrapyd.conf
 3. 修改日志存放目录
 ```
 
-上面需要修改的配置文件内容如下：
+上面提到配置，需要修改的配置文件内容如下：
 ```
 eggs_dir    = /www/spider/eggs
 logs_dir    = /logs
@@ -84,3 +88,11 @@ $ nohup scrapyd &
 ```
 pip install scrapy requests pymysql beautifulsoup4 lxml js2py selenium   
 ```
+
+
+所有的安装包默认安装在目录: `/usr/local/lib/python3.9/site-packages`
+
+::: warning 安装失败问题
+注意: 在`gerapy`安装中安装的lxml会出现错误： make sure the development packages of libxml2 and libxslt are installed 
+sudo apt-get install libxml2-dev libxslt-dev
+:::

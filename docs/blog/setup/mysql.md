@@ -166,8 +166,11 @@ $ flush privileges;
 
  1.2 slave节点数据库:   注意MASTER_LOG_FILE和MASTER_LOG_POS是master的正确值,命令如下:
 
+mysql> stop slave;
+
 mysql>  CHANGE MASTER TO
 MASTER_HOST='47.101.187.237',
+MASTER_PORT=1876,
 MASTER_USER='repdev',
 MASTER_PASSWORD='xxx',
 MASTER_LOG_FILE='mysql-bin.000001',

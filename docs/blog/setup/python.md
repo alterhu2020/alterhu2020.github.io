@@ -17,34 +17,64 @@ $ sudo make altinstall
 ```
 `make altinstall` is used to prevent replacing the default python binary file /usr/bin/python.
 
-# Python3.7 installation [更新到2019年8月10日]
+# Python3.8 apt安装步骤【更新2020年02月22日】
+
+01. Run the following commands as root or user with sudo access to update the packages list and install the prerequisites:
+```
+$ sudo apt update
+$ sudo apt install software-properties-common
+```
+02. Add the deadsnakes PPA to your system’s sources list:
+```
+$ sudo add-apt-repository ppa:deadsnakes/ppa
+```
+When prompted press Enter to continue:
+```
+Press [ENTER] to continue or Ctrl-c to cancel adding it.
+```
+03. Once the repository is enabled, install Python 3.8 with:
+```
+$ sudo apt install python3.8
+```
+04. Verify that the installation was successful by typing:
+```
+$ python3.8 --version
+```
+
+# Python3.9 installation [更新到2019年8月10日]
 
 [How to Install Python 3.7 on Debian 9](https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/)
 [Modify python command](https://jcutrer.com/linux/upgrade-python37-ubuntu1810)
 
 ```shell script
-$ sudo apt-get remove python3
-$ sudo apt-get purge python3
+$ sudo apt-get purge  python3
+$ sudo apt-get purge --auto-remove python3
 $ whereis python3 python3.5
 $ sudo apt update
 $ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
-$ wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
-$ tar -xf Python-3.7.4.tar.xz
-$ cd Python-3.7.4
-$ ./configure --enable-optimizations
+
+    以下的包bzip2 libbz2-dev解决问题: pip.exceptions.DistributionNotFound: No matching distribution found for Twisted,主要是因为如果包是：tar.bz2则pip不能安装
+$ sudo apt-get install bzip2 libbz2-dev
+    lxml安装出错误:  make sure the development packages of libxml2 and libxslt are installed 
+$ sudo apt install libxml2-dev libxslt-dev
+$ wget https://www.python.org/ftp/python/3.9.0/Python-3.9.0a3.tar.xz
+$ tar -xf Python-3.9.0a3.tar.xz
+$ cd Python-3.9.0a3
+$ ./configure --enable-optimizations --enable-ipv6
 $ nproc
 $ make -j 8  / make -j 4
 $ sudo make altinstall
-$ python3.7 -V
+$ python3.9 -V
 $ ls /usr/bin/python*
 $ update-alternatives --list python
 $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-$ sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.7 2
-$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.7 2
+$ sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.9 2
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.9 2
 $ update-alternatives --list python
 $ update-alternatives --config python
 
 ```
+
 ## `pip`, `pipenv` installation
 
 [How to install Pip](https://linuxize.com/post/how-to-install-pip-on-debian-9/)
@@ -60,13 +90,13 @@ $ sudo python3 get-pip.py
 
 如果出现错误： Command '('lsb_release', '-a')' returned non-zero
 参考 (https://stackoverflow.com/questions/44967202/pip-is-showing-error-lsb-release-a-returned-non-zero-exit-status-1)，
-使用命令： sudo nano  /usr/bin/lsb_release
+使用命令： `sudo nano  /usr/bin/lsb_release`
 edited the first line from #! /usr/bin/python3 to #! /usr/bin/python3.7
 
 ```
 如果出错：Package 'python3-distutils' has no installation candidat
 
-
+执行如下命令确认pip对应的python版本是2.7还是3.8
 $ pip -V
 ```
 
@@ -76,13 +106,13 @@ $ pip -V
 $ pip3 -V
 $ alias pip=pip3
 $ sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
-$  pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+$ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 ```
 
 ## 切换python镜像源
 
-a）Linux下，修改` ~/.pip/pip.conf`(没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)
+a）Linux下，修改` ~/.pip/pip.conf`(没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹,root用户安装时目录为：`/root/.config/pip/pip.conf`)
 内容如下：
 ```
 [global]

@@ -9,6 +9,7 @@ title: Tomcat Linux安装及其环境配置
 
 1. JDK11安装步骤
 ```
+$ 进入Jenkins目录：https://ci.adoptopenjdk.net/job/build-scripts/job/jobs/job/jdk11u/job/jdk11u-linux-x64-hotspot/
 $ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz
 $  tar -zxvf OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz 
 $ nano /etc/profile

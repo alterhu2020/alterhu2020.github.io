@@ -143,7 +143,7 @@ systemctl restart nginx
 1. 安装cerbot配置SSL
 
 ```
-$ sudo apt-get install certbot
+$ sudo apt-get install certbot -y
 ```
 
 2. 配置nginx和SSL

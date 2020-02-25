@@ -90,9 +90,60 @@ pip install scrapy requests pymysql beautifulsoup4 lxml js2py selenium
 ```
 
 
-所有的安装包默认安装在目录: `/usr/local/lib/python3.9/site-packages`
+所有的安装包默认安装在目录: `/usr/local/lib/python3.8/site-packages`
 
-::: warning 安装失败问题
-注意: 在`gerapy`安装中安装的lxml会出现错误： make sure the development packages of libxml2 and libxslt are installed 
+## 问题
+
+1. 在`gerapy`安装中安装的lxml会出现错误： make sure the development packages of libxml2 and libxslt are installed 
+```
 sudo apt-get install libxml2-dev libxslt-dev
-:::
+```
+
+2. 执行`gerapy init`命令出现错误：
+```
+# gerapy init
+:0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name 'opentype''.  Please install it from <https://pypi.python.org/pypi/service_identity> and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+Initialized workspace gerapy
+
+```
+原因是：本机上的service_identity模块太老旧，而通过install安装的时候不会更新到最新版本
+解决方法：
+
+- 强制升级,执行命令:  `pip install service_identity --force --upgrade`
+
+- 或者是找到最新版的安装包进行手动安装，最新包下载地址: `https://pypi.org/project/service_identity/#files`,下载对应的whl文件安装即可。
+
+
+3. 执行`pipenv install`出现错误：ImportError: cannot import name 'Mapping' from 'collections'
+
+原因是执行的包错误，重新安装即可
+
+4. 在gerapy中添加机器报错: `the JSON object must be str, not 'bytes'`
+可能是对应的scrapyd服务没有启动
+
+5. 执行scrapyd命令出错: `Failed to load application: No module named '_sqlite3'`
+
+原因是python采用编译安装的，导致没有加载对应的sqlite模块，重新编译安装加载sqlite模块，命令如下:
+```
+./configure --enable-optimizations --enable-ipv6 --enable-loadable-sqlite-extensions
+```
+
+6. 执行`pip -V`出错: `ModuleNotFoundError: No module named 'pip._internal.cli.main'`
+
+解决方法，修复pip，执行命令: `python -m pip install --upgrade pip`，或者如下命令: 
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py --force-reinstall
+```
+
+7. 执行命令: `sudo add-apt-repository ppa:deadsnakes/ppa` ,报错：` add-apt-repository gpg: keyserver receive failed: No dirmngr`,执行如下命令安装：dirmngr:
+```
+sudo apt install dirmngr
+```
+8.执行`apt update`命令报错:` Updating from such a repository can't be done securely, and is therefore disabled by default`,执行如下命令更新包：
+```
+$ sudo apt-get update --allow-unauthenticated
+```
+
+9. 安装scrapy中twisted安装报错
+解决方法，切换到目录： https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted，直接下载对应的whl包

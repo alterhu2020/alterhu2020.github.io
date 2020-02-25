@@ -23,10 +23,12 @@ $ sudo make altinstall
 ```
 $ sudo apt update
 $ sudo apt install software-properties-common
+$ sudo apt install dirmngr
 ```
-02. Add the deadsnakes PPA to your system’s sources list:
+02. Add the deadsnakes PPA to your system’s sources list,参考仓库：https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa
 ```
 $ sudo add-apt-repository ppa:deadsnakes/ppa
+$ sudo apt update
 ```
 When prompted press Enter to continue:
 ```
@@ -41,26 +43,26 @@ $ sudo apt install python3.8
 $ python3.8 --version
 ```
 
-# Python3.9 installation [更新到2019年8月10日]
+# Python3.8 installation [更新到2019年8月10日]
 
 [How to Install Python 3.7 on Debian 9](https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/)
 [Modify python command](https://jcutrer.com/linux/upgrade-python37-ubuntu1810)
 
 ```shell script
-$ sudo apt-get purge  python3
-$ sudo apt-get purge --auto-remove python3
+$ sudo apt-get purge  python3 -y
+$ sudo apt-get purge --auto-remove python3 -y
 $ whereis python3 python3.5
 $ sudo apt update
-$ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+$ sudo apt install make build-essential libssl-dev zlib1g-dev bzip2 libbz2-dev liblzma-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev  libncursesw5-dev libc6-dev libgdbm-dev libnss3-dev libffi-dev xz-utils openssl git tk-dev
 
     以下的包bzip2 libbz2-dev解决问题: pip.exceptions.DistributionNotFound: No matching distribution found for Twisted,主要是因为如果包是：tar.bz2则pip不能安装
 $ sudo apt-get install bzip2 libbz2-dev
     lxml安装出错误:  make sure the development packages of libxml2 and libxslt are installed 
 $ sudo apt install libxml2-dev libxslt-dev
-$ wget https://www.python.org/ftp/python/3.9.0/Python-3.9.0a3.tar.xz
-$ tar -xf Python-3.9.0a3.tar.xz
-$ cd Python-3.9.0a3
-$ ./configure --enable-optimizations --enable-ipv6
+$ wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tar.xz
+$ tar -xf Python-3.8.1.tar.xz
+$ cd Python-3.8.1
+$ ./configure --enable-optimizations --enable-ipv6 --enable-loadable-sqlite-extensions
 $ nproc
 $ make -j 8  / make -j 4
 $ sudo make altinstall
@@ -68,8 +70,8 @@ $ python3.9 -V
 $ ls /usr/bin/python*
 $ update-alternatives --list python
 $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-$ sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.9 2
-$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.9 2
+$ sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.8 2
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.8 2
 $ update-alternatives --list python
 $ update-alternatives --config python
 

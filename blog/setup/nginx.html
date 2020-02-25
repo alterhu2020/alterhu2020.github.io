@@ -16,8 +16,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="article:modified_time" content="Sat Jan 18 2020 20:54:20 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Nginx Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/nginx.html"><meta name="twitter:title" content="Nginx Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/nginx.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.b55e0414.js" as="script"><link rel="preload" href="/assets/js/4.3f45a58f.js" as="script"><link rel="preload" href="/assets/js/3.40df3ca1.js" as="script"><link rel="preload" href="/assets/js/52.83fb9f7c.js" as="script">
+    <meta property="article:modified_time" content="Sat Feb 22 2020 00:13:09 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Nginx Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/nginx.html"><meta name="twitter:title" content="Nginx Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/nginx.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.9cda18c5.js" as="script"><link rel="preload" href="/assets/js/4.980899de.js" as="script"><link rel="preload" href="/assets/js/3.349bdd6c.js" as="script"><link rel="preload" href="/assets/js/52.1267a54c.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.e064409b.css">
   </head>
   <body>
@@ -142,7 +142,7 @@ $ <span class="token function">sudo</span> systemctl <span class="token function
 <span class="token function">printf</span> <span class="token string">&quot;[Service]\nExecStartPost=/bin/sleep 0.1\n&quot;</span> <span class="token operator">&gt;</span> /etc/systemd/system/nginx.service.d/override.conf
 systemctl daemon-reload
 systemctl restart nginx 
-</code></pre></div><h1 id="nginx配置助手"><a href="#nginx配置助手" aria-hidden="true" class="header-anchor">#</a> nginx配置助手</h1> <ol><li>安装cerbot配置SSL</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo apt-get install certbot
+</code></pre></div><h1 id="nginx配置助手"><a href="#nginx配置助手" aria-hidden="true" class="header-anchor">#</a> nginx配置助手</h1> <ol><li>安装cerbot配置SSL</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo apt-get install certbot -y
 </code></pre></div><ol start="2"><li>配置nginx和SSL</li></ol> <p>参考配置文件,每次只需要修改对应的域名(Domain)和目录(Path):
 <a href="https://www.digitalocean.com/community/tools/nginx#?0.domain=pingbook.top&amp;0.path=%2Fwww%2Fpingbook%2Fweb%2Fwww.pingbook.top&amp;0.document_root=&amp;0.redirect=false&amp;0.email=alterhu2020@gmail.com&amp;0.php=false&amp;0.proxy&amp;0.index=index.html&amp;0.fallback_html&amp;0.access_log_domain&amp;0.error_log_domain&amp;directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&amp;brotli&amp;log_not_found&amp;client_max_body_size=160&amp;symlink=false" target="_blank" rel="noopener noreferrer">nginxconfig助手<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>以后每次配置子域名，只需要配置好对应的conf文件然后执行如下命令:</p> <div class="language- extra-class"><pre class="language-text"><code>$ certbot certonly --webroot -d spider.pingbook.top --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
 </code></pre></div><div class="warning custom-block"><p class="custom-block-title">Symlink vhost配置文件</p> <p>注意: 在<code>Symlink vhost</code> 中不要勾选enable。
@@ -209,13 +209,13 @@ dashboard_port = 7500
 dashboard_user = alterhu2020
 dashboard_pwd = guchan1026
  
-</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">1/18/2020, 8:54:20 PM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">2/22/2020, 12:13:09 AM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
         本文浏览量
         <span id="busuanzi_value_page_pv"></span>次
       </span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/linux.html" class="prev">Debian Linux命令其环境配置</a></span> <span class="next"><a href="/blog/setup/python.html">Python Linux安装及其环境配置</a>→
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.b55e0414.js" defer></script><script src="/assets/js/4.3f45a58f.js" defer></script><script src="/assets/js/3.40df3ca1.js" defer></script><script src="/assets/js/52.83fb9f7c.js" defer></script>
+    <script src="/assets/js/app.9cda18c5.js" defer></script><script src="/assets/js/4.980899de.js" defer></script><script src="/assets/js/3.349bdd6c.js" defer></script><script src="/assets/js/52.1267a54c.js" defer></script>
   </body>
 </html>

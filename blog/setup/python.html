@@ -16,8 +16,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="article:modified_time" content="Wed Sep 18 2019 13:45:55 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Python Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/python.html"><meta name="twitter:title" content="Python Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/python.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.b55e0414.js" as="script"><link rel="preload" href="/assets/js/4.3f45a58f.js" as="script"><link rel="preload" href="/assets/js/3.40df3ca1.js" as="script"><link rel="preload" href="/assets/js/55.f352302a.js" as="script">
+    <meta property="article:modified_time" content="Mon Feb 24 2020 09:56:54 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Python Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/python.html"><meta name="twitter:title" content="Python Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/python.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.9cda18c5.js" as="script"><link rel="preload" href="/assets/js/4.980899de.js" as="script"><link rel="preload" href="/assets/js/3.349bdd6c.js" as="script"><link rel="preload" href="/assets/js/55.b3c03209.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.e064409b.css">
   </head>
   <body>
@@ -35,24 +35,37 @@ $ sudo tar xzf Python-2.7.16.tgz
 $ cd Python-2.7.16
 $ sudo ./configure --enable-optimizations
 $ sudo make altinstall 
-</code></pre></div><p><code>make altinstall</code> is used to prevent replacing the default python binary file /usr/bin/python.</p> <h1 id="python3-7-installation-更新到2019年8月10日"><a href="#python3-7-installation-更新到2019年8月10日" aria-hidden="true" class="header-anchor">#</a> Python3.7 installation [更新到2019年8月10日]</h1> <p><a href="https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/" target="_blank" rel="noopener noreferrer">How to Install Python 3.7 on Debian 9<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <a href="https://jcutrer.com/linux/upgrade-python37-ubuntu1810" target="_blank" rel="noopener noreferrer">Modify python command<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-shell script extra-class"><pre class="language-shell"><code>$ <span class="token function">sudo</span> <span class="token function">apt-get</span> remove python3
-$ <span class="token function">sudo</span> <span class="token function">apt-get</span> purge python3
+</code></pre></div><p><code>make altinstall</code> is used to prevent replacing the default python binary file /usr/bin/python.</p> <h1 id="python3-8-apt安装步骤【更新2020年02月22日】"><a href="#python3-8-apt安装步骤【更新2020年02月22日】" aria-hidden="true" class="header-anchor">#</a> Python3.8 apt安装步骤【更新2020年02月22日】</h1> <ol><li>Run the following commands as root or user with sudo access to update the packages list and install the prerequisites:</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo apt install dirmngr
+</code></pre></div><ol start="2"><li>Add the deadsnakes PPA to your system’s sources list,参考仓库：https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo add-apt-repository ppa:deadsnakes/ppa
+$ sudo apt update
+</code></pre></div><p>When prompted press Enter to continue:</p> <div class="language- extra-class"><pre class="language-text"><code>Press [ENTER] to continue or Ctrl-c to cancel adding it.
+</code></pre></div><ol start="3"><li>Once the repository is enabled, install Python 3.8 with:</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo apt install python3.8
+</code></pre></div><ol start="4"><li>Verify that the installation was successful by typing:</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ python3.8 --version
+</code></pre></div><h1 id="python3-8-installation-更新到2019年8月10日"><a href="#python3-8-installation-更新到2019年8月10日" aria-hidden="true" class="header-anchor">#</a> Python3.8 installation [更新到2019年8月10日]</h1> <p><a href="https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/" target="_blank" rel="noopener noreferrer">How to Install Python 3.7 on Debian 9<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <a href="https://jcutrer.com/linux/upgrade-python37-ubuntu1810" target="_blank" rel="noopener noreferrer">Modify python command<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-shell script extra-class"><pre class="language-shell"><code>$ <span class="token function">sudo</span> <span class="token function">apt-get</span> purge  python3 -y
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> purge --auto-remove python3 -y
 $ <span class="token function">whereis</span> python3 python3.5
 $ <span class="token function">sudo</span> <span class="token function">apt</span> update
-$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev <span class="token function">wget</span>
-$ <span class="token function">wget</span> https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
-$ <span class="token function">tar</span> -xf Python-3.7.4.tar.xz
-$ <span class="token function">cd</span> Python-3.7.4
-$ ./configure --enable-optimizations
+$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">make</span> build-essential libssl-dev zlib1g-dev <span class="token function">bzip2</span> libbz2-dev liblzma-dev libreadline-dev libsqlite3-dev <span class="token function">wget</span> <span class="token function">curl</span> llvm libncurses5-dev  libncursesw5-dev libc6-dev libgdbm-dev libnss3-dev libffi-dev xz-utils openssl <span class="token function">git</span> tk-dev
+
+    以下的包bzip2 libbz2-dev解决问题: pip.exceptions.DistributionNotFound: No matching distribution found <span class="token keyword">for</span> Twisted,主要是因为如果包是：tar.bz2则pip不能安装
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">bzip2</span> libbz2-dev
+    lxml安装出错误:  <span class="token function">make</span> sure the development packages of libxml2 and libxslt are installed 
+$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libxml2-dev libxslt-dev
+$ <span class="token function">wget</span> https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tar.xz
+$ <span class="token function">tar</span> -xf Python-3.8.1.tar.xz
+$ <span class="token function">cd</span> Python-3.8.1
+$ ./configure --enable-optimizations --enable-ipv6 --enable-loadable-sqlite-extensions
 $ nproc
 $ <span class="token function">make</span> -j 8  / <span class="token function">make</span> -j 4
 $ <span class="token function">sudo</span> <span class="token function">make</span> altinstall
-$ python3.7 -V
+$ python3.9 -V
 $ <span class="token function">ls</span> /usr/bin/python*
 $ update-alternatives --list python
 $ <span class="token function">sudo</span> update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-$ <span class="token function">sudo</span> update-alternatives --install /usr/bin/python python /usr/local/bin/python3.7 2
-$ <span class="token function">sudo</span> update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.7 2
+$ <span class="token function">sudo</span> update-alternatives --install /usr/bin/python python /usr/local/bin/python3.8 2
+$ <span class="token function">sudo</span> update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.8 2
 $ update-alternatives --list python
 $ update-alternatives --config python
 
@@ -60,17 +73,17 @@ $ update-alternatives --config python
 $ <span class="token function">sudo</span> python3 get-pip.py
 </code></pre></div><p>如果出现错误： Command '('lsb_release', '-a')' returned non-zero
 参考 (https://stackoverflow.com/questions/44967202/pip-is-showing-error-lsb-release-a-returned-non-zero-exit-status-1)，
-使用命令： sudo nano  /usr/bin/lsb_release
+使用命令： <code>sudo nano /usr/bin/lsb_release</code>
 edited the first line from #! /usr/bin/python3 to #! /usr/bin/python3.7</p> <div class="language- extra-class"><pre class="language-text"><code>如果出错：Package 'python3-distutils' has no installation candidat
 
-
+执行如下命令确认pip对应的python版本是2.7还是3.8
 $ pip -V
 </code></pre></div><p>如果出现错误： ImportError: cannot import name 'main' from 'pip'，因为<code>pip</code>使用的是python2.7的命令，所以应该参考如下： https://stackoverflow.com/questions/44455001/how-to-change-pip3-command-to-be-pip/44455078</p> <div class="language- extra-class"><pre class="language-text"><code>$ pip3 -V
 $ alias pip=pip3
 $ sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
-$  pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+$ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
-</code></pre></div><h2 id="切换python镜像源"><a href="#切换python镜像源" aria-hidden="true" class="header-anchor">#</a> 切换python镜像源</h2> <p>a）Linux下，修改<code>~/.pip/pip.conf</code>(没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)
+</code></pre></div><h2 id="切换python镜像源"><a href="#切换python镜像源" aria-hidden="true" class="header-anchor">#</a> 切换python镜像源</h2> <p>a）Linux下，修改<code>~/.pip/pip.conf</code>(没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹,root用户安装时目录为：<code>/root/.config/pip/pip.conf</code>)
 内容如下：</p> <div class="language- extra-class"><pre class="language-text"><code>[global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 [install]
@@ -99,13 +112,13 @@ $ pipenv graph
 </code></pre></div><h2 id="安装配置问题"><a href="#安装配置问题" aria-hidden="true" class="header-anchor">#</a> 安装配置问题</h2> <ul><li>zipimport.ZipImportError: can't decompress data; zlib not available 解决办法</li></ul> <p>参考解决方案<a href="https://www.cnblogs.com/zhangym/p/6226435.html" target="_blank" rel="noopener noreferrer">zipimport.ZipImportError: can't decompress data; zlib not available 解决办法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li>Microsoft Visual C++ 14.0 is required</li></ul> <p>python3 是用 VC++ 14 编译的, python27 是 VC++ 9 编译的, 安装 python3 的包需要编译的也是要 VC++ 14 以上支持的.
 Visual Studio 2013 ---&gt; 12
 Visual Studio 2015 ---&gt; 14
-Visual Studio 2017 ---&gt; 15</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">9/18/2019, 1:45:55 PM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
+Visual Studio 2017 ---&gt; 15</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">2/24/2020, 9:56:54 AM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
         本文浏览量
         <span id="busuanzi_value_page_pv"></span>次
       </span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/nginx.html" class="prev">Nginx Linux安装及其环境配置</a></span> <span class="next"><a href="/blog/setup/mysql.html">Debian MYSQL8安装及其环境配置</a>→
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.b55e0414.js" defer></script><script src="/assets/js/4.3f45a58f.js" defer></script><script src="/assets/js/3.40df3ca1.js" defer></script><script src="/assets/js/55.f352302a.js" defer></script>
+    <script src="/assets/js/app.9cda18c5.js" defer></script><script src="/assets/js/4.980899de.js" defer></script><script src="/assets/js/3.349bdd6c.js" defer></script><script src="/assets/js/55.b3c03209.js" defer></script>
   </body>
 </html>

@@ -16,8 +16,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="article:modified_time" content="Sat Jan 18 2020 20:54:20 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Wordpress Linux命令其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/wordpress.html"><meta name="twitter:title" content="Wordpress Linux命令其环境配置"><meta name="twitter:url" content="/blog/setup/wordpress.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.b55e0414.js" as="script"><link rel="preload" href="/assets/js/4.3f45a58f.js" as="script"><link rel="preload" href="/assets/js/3.40df3ca1.js" as="script"><link rel="preload" href="/assets/js/61.34c1ca6a.js" as="script">
+    <meta property="article:modified_time" content="Sat Feb 22 2020 00:13:09 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Wordpress Linux命令其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/wordpress.html"><meta name="twitter:title" content="Wordpress Linux命令其环境配置"><meta name="twitter:url" content="/blog/setup/wordpress.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.9cda18c5.js" as="script"><link rel="preload" href="/assets/js/4.980899de.js" as="script"><link rel="preload" href="/assets/js/3.349bdd6c.js" as="script"><link rel="preload" href="/assets/js/61.c8b9cb48.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.e064409b.css">
   </head>
   <body>
@@ -153,13 +153,13 @@ require_once( ABSPATH . 'wp-settings.php' );
 
 </code></pre></div><p>否则会覆盖已经导入的mysql数据库数据,然后访问页面: http://xxx. 会自动加载配置文件信息跳转到首页。</p> <h2 id="请求style-css和app-js出现-block-mixed-content错误"><a href="#请求style-css和app-js出现-block-mixed-content错误" aria-hidden="true" class="header-anchor">#</a> 请求style.css和app.js出现 <code>block:mixed-content</code>错误</h2> <p>原因是全站采用了https后引用的相关css和js文件由于采用的是frp导致对应的协议是http的要求，此处可以修改git主题下面的<code>functions.php</code>中的<code>GIT_URL</code>参数为如下：</p> <div class="language- extra-class"><pre class="language-text"><code>define('GIT_URL', 'https://pingbook.top/wp-content/themes/git');
 
-</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">1/18/2020, 8:54:20 PM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">2/22/2020, 12:13:09 AM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
         本文浏览量
         <span id="busuanzi_value_page_pv"></span>次
       </span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/release/jdk.html" class="prev">JDK版本新特性</a></span> <span class="next"><a href="/blog/setup/raspberry.html">Raspberry Linux安装及其环境配置</a>→
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.b55e0414.js" defer></script><script src="/assets/js/4.3f45a58f.js" defer></script><script src="/assets/js/3.40df3ca1.js" defer></script><script src="/assets/js/61.34c1ca6a.js" defer></script>
+    <script src="/assets/js/app.9cda18c5.js" defer></script><script src="/assets/js/4.980899de.js" defer></script><script src="/assets/js/3.349bdd6c.js" defer></script><script src="/assets/js/61.c8b9cb48.js" defer></script>
   </body>
 </html>

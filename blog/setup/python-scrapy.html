@@ -16,8 +16,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Scrapy爬虫配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/python-scrapy.html"><meta name="twitter:title" content="Scrapy爬虫配置"><meta name="twitter:url" content="/blog/setup/python-scrapy.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.b55e0414.js" as="script"><link rel="preload" href="/assets/js/4.3f45a58f.js" as="script"><link rel="preload" href="/assets/js/3.40df3ca1.js" as="script"><link rel="preload" href="/assets/js/54.974a41da.js" as="script">
+    <meta property="article:modified_time" content="Mon Feb 24 2020 09:56:54 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Scrapy爬虫配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/python-scrapy.html"><meta name="twitter:title" content="Scrapy爬虫配置"><meta name="twitter:url" content="/blog/setup/python-scrapy.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.9cda18c5.js" as="script"><link rel="preload" href="/assets/js/4.980899de.js" as="script"><link rel="preload" href="/assets/js/3.349bdd6c.js" as="script"><link rel="preload" href="/assets/js/54.6da231b5.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.e064409b.css">
   </head>
   <body>
@@ -50,14 +50,14 @@ $ gerapy createsuperuser
 $ gerapy runserver
 后台静默运行gerapy服务,注意一定要切换到新创建的gerapy目录下面
 $ nohup gerapy runserver 0.0.0.0:6000 &amp;
-</code></pre></div><h3 id="_2-2-scrapyd脚本执行机器环境配置"><a href="#_2-2-scrapyd脚本执行机器环境配置" aria-hidden="true" class="header-anchor">#</a> 2.2 <code>scrapyd</code>脚本执行机器环境配置</h3> <ul><li><code>scrapyd</code>不需要设置目录，可以同时管理多个爬虫,每个爬虫还可以有多个版本：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>$ pip install scrapyd
-一般安装在类似目录： `/usr/local/lib/python3.8/dist-packages/scrapyd`
+</code></pre></div><h4 id="安装问题"><a href="#安装问题" aria-hidden="true" class="header-anchor">#</a> <strong>安装问题</strong></h4> <ol><li>无法安装<code>gevent</code>,直接下载编译好的安装包： https://www.lfd.uci.edu/~gohlke/pythonlib</li></ol> <h3 id="_2-2-scrapyd脚本执行机器环境配置"><a href="#_2-2-scrapyd脚本执行机器环境配置" aria-hidden="true" class="header-anchor">#</a> 2.2 <code>scrapyd</code>脚本执行机器环境配置</h3> <ul><li><code>scrapyd</code>不需要设置目录，可以同时管理多个爬虫,每个爬虫还可以有多个版本：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>$ pip install scrapyd
+一般安装在类似目录： `/usr/local/lib/python3.9/site-packages/scrapyd`
 $ find / -name &quot;default_scrapyd.conf&quot;
 $ nano default_scrapyd.conf
 1. 修改scrapyd服务的端口号，默认端口是`6800`
 2. 设置远程访问端口可以放行（`bind_address`由`127.0.0.1`改成0.0.0.0）
 3. 修改日志存放目录
-</code></pre></div><p>上面需要修改的配置文件内容如下：</p> <div class="language- extra-class"><pre class="language-text"><code>eggs_dir    = /www/spider/eggs
+</code></pre></div><p>上面提到配置，需要修改的配置文件内容如下：</p> <div class="language- extra-class"><pre class="language-text"><code>eggs_dir    = /www/spider/eggs
 logs_dir    = /logs
 items_dir   = /www/spider/items
 
@@ -68,10 +68,23 @@ username = deployer
 password = eaafbbdbe1494810b48a9065152cd95f245dz
 </code></pre></div><ul><li>上面的配置修改成功后执行以下脚本运行<code>scrapyd</code>后台启动服务：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>$ nohup scrapyd &amp;
 </code></pre></div><ul><li>脚本运行端需要安装对应的<code>scrapy</code>开发环境中提到的所有库，执行如下命令安装:</li></ul> <div class="language- extra-class"><pre class="language-text"><code>pip install scrapy requests pymysql beautifulsoup4 lxml js2py selenium   
-</code></pre></div></div> <footer class="page-edit"><!----> <!----> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
+</code></pre></div><p>所有的安装包默认安装在目录: <code>/usr/local/lib/python3.8/site-packages</code></p> <h2 id="问题"><a href="#问题" aria-hidden="true" class="header-anchor">#</a> 问题</h2> <ol><li>在<code>gerapy</code>安装中安装的lxml会出现错误： make sure the development packages of libxml2 and libxslt are installed</li></ol> <div class="language- extra-class"><pre class="language-text"><code>sudo apt-get install libxml2-dev libxslt-dev
+</code></pre></div><ol start="2"><li>执行<code>gerapy init</code>命令出现错误：</li></ol> <div class="language- extra-class"><pre class="language-text"><code># gerapy init
+:0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name 'opentype''.  Please install it from &lt;https://pypi.python.org/pypi/service_identity&gt; and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+Initialized workspace gerapy
+
+</code></pre></div><p>原因是：本机上的service_identity模块太老旧，而通过install安装的时候不会更新到最新版本
+解决方法：</p> <ul><li><p>强制升级,执行命令:  <code>pip install service_identity --force --upgrade</code></p></li> <li><p>或者是找到最新版的安装包进行手动安装，最新包下载地址: <code>https://pypi.org/project/service_identity/#files</code>,下载对应的whl文件安装即可。</p></li></ul> <ol start="3"><li>执行<code>pipenv install</code>出现错误：ImportError: cannot import name 'Mapping' from 'collections'</li></ol> <p>原因是执行的包错误，重新安装即可</p> <ol start="4"><li><p>在gerapy中添加机器报错: <code>the JSON object must be str, not 'bytes'</code>
+可能是对应的scrapyd服务没有启动</p></li> <li><p>执行scrapyd命令出错: <code>Failed to load application: No module named '_sqlite3'</code></p></li></ol> <p>原因是python采用编译安装的，导致没有加载对应的sqlite模块，重新编译安装加载sqlite模块，命令如下:</p> <div class="language- extra-class"><pre class="language-text"><code>./configure --enable-optimizations --enable-ipv6 --enable-loadable-sqlite-extensions
+</code></pre></div><ol start="6"><li>执行<code>pip -V</code>出错: <code>ModuleNotFoundError: No module named 'pip._internal.cli.main'</code></li></ol> <p>解决方法，修复pip，执行命令: <code>python -m pip install --upgrade pip</code>，或者如下命令:</p> <div class="language- extra-class"><pre class="language-text"><code>curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py --force-reinstall
+</code></pre></div><ol start="7"><li>执行命令: <code>sudo add-apt-repository ppa:deadsnakes/ppa</code> ,报错：<code>add-apt-repository gpg: keyserver receive failed: No dirmngr</code>,执行如下命令安装：dirmngr:</li></ol> <div class="language- extra-class"><pre class="language-text"><code>sudo apt install dirmngr
+</code></pre></div><p>8.执行<code>apt update</code>命令报错:<code>Updating from such a repository can't be done securely, and is therefore disabled by default</code>,执行如下命令更新包：</p> <div class="language- extra-class"><pre class="language-text"><code>$ sudo apt-get update --allow-unauthenticated
+</code></pre></div><ol start="9"><li>安装scrapy中twisted安装报错
+解决方法，切换到目录： https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted，直接下载对应的whl包</li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">2/24/2020, 9:56:54 AM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
         本文浏览量
         <span id="busuanzi_value_page_pv"></span>次
       </span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.b55e0414.js" defer></script><script src="/assets/js/4.3f45a58f.js" defer></script><script src="/assets/js/3.40df3ca1.js" defer></script><script src="/assets/js/54.974a41da.js" defer></script>
+    <script src="/assets/js/app.9cda18c5.js" defer></script><script src="/assets/js/4.980899de.js" defer></script><script src="/assets/js/3.349bdd6c.js" defer></script><script src="/assets/js/54.6da231b5.js" defer></script>
   </body>
 </html>

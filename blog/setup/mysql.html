@@ -16,8 +16,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="article:modified_time" content="Sat Jan 18 2020 20:54:20 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Debian MYSQL8安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/mysql.html"><meta name="twitter:title" content="Debian MYSQL8安装及其环境配置"><meta name="twitter:url" content="/blog/setup/mysql.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.b55e0414.js" as="script"><link rel="preload" href="/assets/js/4.3f45a58f.js" as="script"><link rel="preload" href="/assets/js/3.40df3ca1.js" as="script"><link rel="preload" href="/assets/js/51.262f91f0.js" as="script">
+    <meta property="article:modified_time" content="Mon Feb 24 2020 09:56:54 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="堆栈云"><meta property="og:title" content="Debian MYSQL8安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/mysql.html"><meta name="twitter:title" content="Debian MYSQL8安装及其环境配置"><meta name="twitter:url" content="/blog/setup/mysql.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.e064409b.css" as="style"><link rel="preload" href="/assets/js/app.9cda18c5.js" as="script"><link rel="preload" href="/assets/js/4.980899de.js" as="script"><link rel="preload" href="/assets/js/3.349bdd6c.js" as="script"><link rel="preload" href="/assets/js/51.a808bd46.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.e064409b.css">
   </head>
   <body>
@@ -133,8 +133,11 @@ $ flush privileges;
 
  1.2 slave节点数据库:   注意MASTER_LOG_FILE和MASTER_LOG_POS是master的正确值,命令如下:
 
+mysql&gt; stop slave;
+
 mysql&gt;  CHANGE MASTER TO
 MASTER_HOST='47.101.187.237',
+MASTER_PORT=1876,
 MASTER_USER='repdev',
 MASTER_PASSWORD='xxx',
 MASTER_LOG_FILE='mysql-bin.000001',
@@ -162,13 +165,13 @@ $ sudo rm /etc/mysql/ -R
 $ sudo apt-get autoremove mysql* --purge
 $ sudo apt-get remove apparmor
 $ sudo apt-get install mysql-server mysql-common
-</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">1/18/2020, 8:54:20 PM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">2/24/2020, 9:56:54 AM</span></div> <div style="text-align: center; margin-left: 20px;color: #2c3e50;font-weight: 300;font-size: 15px;"><span id="busuanzi_container_page_pv">
         本文浏览量
         <span id="busuanzi_value_page_pv"></span>次
       </span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/python.html" class="prev">Python Linux安装及其环境配置</a></span> <span class="next"><a href="/blog/setup/node-nuxt.html">Node Nuxt安装及其环境配置</a>→
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.b55e0414.js" defer></script><script src="/assets/js/4.3f45a58f.js" defer></script><script src="/assets/js/3.40df3ca1.js" defer></script><script src="/assets/js/51.262f91f0.js" defer></script>
+    <script src="/assets/js/app.9cda18c5.js" defer></script><script src="/assets/js/4.980899de.js" defer></script><script src="/assets/js/3.349bdd6c.js" defer></script><script src="/assets/js/51.a808bd46.js" defer></script>
   </body>
 </html>

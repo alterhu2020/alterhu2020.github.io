@@ -2,6 +2,15 @@
 title: Uwsgi Linux安装及其环境配置
 ---
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
+
 ## `uwsgi`Linux安装[更新到2019年8月10日]
 
 [How to install uwsgi](https://uwsgi-docs.readthedocs.io/en/latest/Install.html#installing-from-source)

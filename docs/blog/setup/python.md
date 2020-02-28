@@ -2,6 +2,14 @@
 title: Python Linux安装及其环境配置
 ---
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
 
 # Python2.7 installaction [更新到2019年9月1日]
 

@@ -2,6 +2,15 @@
 title: Node Nuxt安装及其环境配置
 ---
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
+
 ## 环境配置
 
 - 下载`node`,并执行命令安装node配置`PATH`路径:
@@ -113,6 +122,7 @@ $ pm2 reload
  }
 ```
 -----------------------------------------------------
+# 问题
 ## 安装`node-sass` 报错
 
 首先要知道的是，安装`node-sass`时在`node scripts/install`阶段会从 github.com 上下载一个.node文件，大部分安装不成功的原因都源自这里，因为 GitHub Releases 里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是_网络不稳定_，所以我们需要通过第三方服务器下载这个文件。（顺带一提，你可以看看[这个好玩的 commit](https://github.com/sass/node-sass/commit/b8050efbe0effb68b0617d28276c72eef1fb15ef)）
@@ -153,3 +163,38 @@ npm i node-sass --sass_binary_path=D:/win32-x64-72_binding.node
 2. 系统变量值：`E:\nodejs\node_cache\node-sass\4.13.1\win32-x64-72_binding.node`
 
 ![图片](https://img-blog.csdn.net/20180106162556616?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGY5ODEwMTE1MTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+## 执行`yarn create nuxt-app jvfast-site`报错`文件名、目录名或卷标语法不正确`
+报错信息如下：
+```
+yarn create v1.21.1
+[1/4] Resolving packages...
+info There appears to be trouble with your network connection. Retrying...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Installed "create-nuxt-app@2.14.0" with binaries:
+      - create-nuxt-app
+文件名、目录名或卷标语法不正确。
+error Command failed.
+Exit code: 1
+Command: E:\nodejs\node_global\bin\create-nuxt-app
+Arguments: jvfast-site
+Directory: D:\Workspace\jvfast\jvfast-site
+Output:
+```
+可以根据提示找到对应的命令目录：`Command: E:\nodejs\node_global\bin\create-nuxt-app`,打开对应的目录文件：`"E:\nodejs\node_global\bin\create-nuxt-app.cmd"`。查看到源码是: `@"%~dp0\C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\.bin\create-nuxt-app.cmd"   %*`,所以看到实际调用的是： `C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\.bin\create-nuxt-app.cmd`. 继续找到该文件: `\C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\.bin\create-nuxt-app.cmd`,打开该文件查看源码如下:
+```
+@IF EXIST "%~dp0\node.exe" (
+  "%~dp0\node.exe"  "%~dp0\..\create-nuxt-app\cli.js" %*
+) ELSE (
+  @SETLOCAL
+  @SET PATHEXT=%PATHEXT:;.JS;=;%
+  node  "%~dp0\..\create-nuxt-app\cli.js" %*
+)
+```
+所以知道真正调用的命令是: `node  "%~dp0\..\create-nuxt-app\cli.js" %*`, 所以构造后的命令行是:
+```
+node C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\create-nuxt-app\cli.js 你的nuxt项目名称
+```
+执行以上的命令按照提示操作即可。

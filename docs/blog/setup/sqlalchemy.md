@@ -2,6 +2,15 @@
 title: SQLAlchemy Linux安装及其环境配置
 ---
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
+
 ## SQLAlchemy model code generator[更新到2019年8月10日]
 
 Python环境下执行如下命令全局安装`sqlacodegen`

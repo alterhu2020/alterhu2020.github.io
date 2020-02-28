@@ -2,6 +2,15 @@
 title: Redis Linux安装及其环境配置
 ---
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
+
 ## 安装
 
 ```

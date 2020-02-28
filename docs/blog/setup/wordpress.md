@@ -3,6 +3,14 @@ title: Wordpress Linux命令其环境配置
 ---
 
 **更新日期： 2020/02/21**
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
 
 ## Install wordpress
 ```

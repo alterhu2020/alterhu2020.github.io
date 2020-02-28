@@ -18,11 +18,14 @@ module.exports = {
         title: '环境配置和部署',
         collapsable: false,
         children: [
+            'setup/artipub-setup',
             'setup/wordpress',
             'setup/raspberry',
             'setup/linux',
             'setup/nginx',
+            'setup/mail-setup',
             'setup/python',
+            'setup/python-scrapy',
             'setup/mysql',
             'setup/node-nuxt',
             'setup/uwsgi',
@@ -35,6 +38,8 @@ module.exports = {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/My-Brilliant-Friend',
+            '2020/scrapy-logging',
             '2020/wuhan-sick'
         ]
     },

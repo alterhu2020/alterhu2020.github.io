@@ -6,6 +6,15 @@ title: 各种主流邮件服务商配置发送服务
 
 1. 变量语法类似于javascript中的${} 语法
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
+
 ## Gmail
 
 用户密码设置：

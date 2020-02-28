@@ -2,6 +2,14 @@
 title: Debian Linux命令其环境配置
 ---
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
 
 ## Linux中Cache内存占用过高解决办法
 
@@ -92,8 +100,6 @@ On the server end, check the logs. `/var/log/auth.log` will give you a pretty go
 $ sudo usermod -g www-data alterhu2020   (需要重启机器生效)
 $ groups alterhu2020
 $ sudo nano /etc/sudoers
-
-
 ```
 
 ## unzip命令中文文件名乱码
@@ -144,3 +150,150 @@ ulimit -v unlimited
 * hard nofile 1048576
 
 ```
+
+## 定时备份mysql数据库，保存7天记录脚本
+
+ 脚本参考来源: 
+ * [mysql定时备份脚本(推荐)](https://gist.github.com/tleish/1c6e788c84f59200446b)
+ * [mysql备份脚本](https://graspingtech.com/schedule-backup-mysql-databases-ubuntu-16-04/)
+- mysql备份脚本：
+```shell
+#!/bin/bash
+#==============================================================================
+#TITLE:            mysql_backup.sh
+#DESCRIPTION:      script for automating the daily mysql backups on development computer
+#AUTHOR:           tleish
+#DATE:             2013-12-20
+#VERSION:          0.4
+#USAGE:            ./mysql_backup.sh
+#CRON:
+  # example cron for daily db backup @ 9:15 am
+  # min  hr mday month wday command
+  # 15   9  *    *     *    /opt/backup/scripts/mysql_backup.sh
+
+#RESTORE FROM BACKUP
+  #$ gunzip < [backupfile.sql.gz] | mysql -u [uname] -p[pass] [dbname]
+
+#==============================================================================
+# CUSTOM SETTINGS
+#==============================================================================
+
+# directory to put the backup files
+BACKUP_DIR=/opt/backup
+
+# MYSQL Parameters
+MYSQL_UNAME="syscorer"
+MYSQL_PWORD="s6stest2n3gz"
+
+# Don't backup databases with these names 
+# Example: starts with mysql (^mysql) or ends with _schema (_schema$)
+IGNORE_DB="(^mysql|_schema|sys$)"
+
+# include mysql and mysqldump binaries for cron bash user
+PATH=$PATH:/usr/local/mysql/bin
+
+# Number of days to keep backups
+KEEP_BACKUPS_FOR=7 #days
+
+#==============================================================================
+# METHODS
+#==============================================================================
+
+# YYYY-MM-DD
+TIMESTAMP=$(date +%F)
+
+function delete_old_backups()
+{
+  echo "Deleting $BACKUP_DIR/*.sql.gz older than $KEEP_BACKUPS_FOR days"
+  find $BACKUP_DIR -type f -name "*.sql.gz" -mtime +$KEEP_BACKUPS_FOR -exec rm {} \;
+}
+
+function mysql_login() {
+  local mysql_login="-u $MYSQL_UNAME" 
+  if [ -n "$MYSQL_PWORD" ]; then
+    local mysql_login+=" -p$MYSQL_PWORD" 
+  fi
+  echo $mysql_login
+}
+
+function database_list() {
+  local show_databases_sql="SHOW DATABASES WHERE \`Database\` NOT REGEXP '$IGNORE_DB'"
+  echo $(mysql $(mysql_login) -e "$show_databases_sql"|awk -F " " '{if (NR!=1) print $1}')
+}
+
+function echo_status(){
+  printf '\r'; 
+  printf ' %0.s' {0..100} 
+  printf '\r'; 
+  printf "$1"'\r'
+}
+
+function backup_database(){
+    backup_file="$BACKUP_DIR/$TIMESTAMP.$database.sql.gz" 
+    output+="$database => $backup_file\n"
+    echo_status "...backing up $count of $total databases: $database"
+    $(mysqldump $(mysql_login) $database | gzip -9 > $backup_file)
+}
+
+function backup_databases(){
+  local databases=$(database_list)
+  local total=$(echo $databases | wc -w | xargs)
+  local output=""
+  local count=1
+  for database in $databases; do
+    backup_database
+    local count=$((count+1))
+  done
+  echo -ne $output | column -t
+}
+
+function hr(){
+  printf '=%.0s' {1..100}
+  printf "\n"
+}
+
+#==============================================================================
+# RUN SCRIPT
+#==============================================================================
+delete_old_backups
+hr
+backup_databases
+hr
+printf "All backed up!\n\n"
+
+```
+
+- 复制上面的脚本文件到目录: `/opt/backup/scripts/mysql_backup.sh`,执行如下命令赋予执行权限：
+
+```shell
+$ sudo chmod +x mysql-backup.sh
+```
+- 执行如下命令，测试脚本是否正常:
+
+```shell
+$ sudo ./mysql-backup.sh
+```
+- 创建`Crontab`定时任务
+Usually, you should open your personal crontab file using `crontab -e` command, however if you are root user and decide to choose system wide crontab file, you need to edit the crontab file located in `/etc/crontab`.现在创建一个定时脚本每天夜里执行备份操作：
+```shell
+# 立即生效
+$ sudo crontab -e
+# 需要执行重启服务才能生效: sudo systemctl restart cron.service 
+$ sudo nano /etc/crontab
+```
+按照提示添加最后一行定时脚本：
+
+```shell
+# Running Cron job Daily
+@daily /opt/backup/scripts/mysql_backup.sh >> /var/log/mysql/mysql-backup.log 2>&1
+# Running Cron job at 2AM Daily
+0 2 * * * /opt/backup/scripts/mysql_backup.sh >> /var/log/mysql/mysql-backup.log 2>&1
+
+# Running Cron job at 12AM & 12PM Daily
+0 12,24 * * * /opt/backup/scripts/mysql_backup.sh >> /var/log/mysql/mysql-backup.log 2>&1
+
+```
+
+- 查看执行情况（crontab执行日志）
+
+执行结果不论是否成功，都会在 `/var/spool/mail/mail`文件中有`crontab`执行日志的记录,另外可以自己指定日志目录，参考后面的命令参数。

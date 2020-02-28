@@ -2,6 +2,15 @@
 title: Raspberry Linux安装及其环境配置
 ---
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+[[toc]]
+
 ## 树莓派安装
 
 > 3b和3b+虽然是arm64 v8的芯片，但是raspbian是32的，所以只能安装arm v7的包

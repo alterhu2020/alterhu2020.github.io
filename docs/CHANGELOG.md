@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.17.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.16.0...v1.17.0) (2020-02-28)
+
+
+### Features
+
+* update docs. ([39d4b28](https://github.com/alterhu2020/alterhu2020.github.io/commit/39d4b28))
+
+
+
 # [1.16.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.15.0...v1.16.0) (2020-02-25)
 
 

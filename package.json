@@ -1,6 +1,6 @@
 {
     "name": "Walter-Blog",
-    "version": "1.16.0",
+    "version": "1.17.0",
     "author": "Walter Hu",
     "private": false,
     "license": "MIT",
@@ -12,7 +12,10 @@
         "release-version": "standard-version -i docs/CHANGELOG.md"
     },
     "dependencies": {
-        "@vuepress/theme-default": "1.0.3"
+        "@vuepress/theme-default": "1.0.3",
+        "vue": "^2.6.10",
+        "vue-server-renderer": "^2.6.10",
+        "vue-script2": "^2.1.0"
     },
     "devDependencies": {
         "@vuepress/plugin-back-to-top": "1.0.3",

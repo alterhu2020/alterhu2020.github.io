@@ -297,3 +297,33 @@ $ sudo nano /etc/crontab
 - 查看执行情况（crontab执行日志）
 
 执行结果不论是否成功，都会在 `/var/spool/mail/mail`文件中有`crontab`执行日志的记录,另外可以自己指定日志目录，参考后面的命令参数。
+
+## SSH 或者telent登录linux后screen后台运行脚本
+
+Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。GNU Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。后台运行命令。
+
+在Screen环境下，所有的会话都独立的运行，并拥有各自的编号、输入、输出和窗口缓存。用户可以通过快捷键在不同的窗口下切换，并可以自由的重定向各个窗口的输入和输出。
+
+- 安装
+```shell
+$ sudo apt install screen
+```
+- 命令说明
+1. 执行`screen`即可打开一个session，或者加上参数`-s`设置一个session的名称（推荐):
+```shell
+$ screen
+$ screen -s download-movie
+$ screen -S yourname -> 新建一个叫yourname的session
+$ screen -ls         -> 列出当前所有的session
+$ screen -r yourname -> 回到切换yourname这个session
+$ screen -d yourname -> 远程detach某个session
+$ screen -d -r yourname -> 结束当前session并回到yourname这个session
+
+```
+- 快捷键
+CTRL - a+d ->(常用退出切换到后台运行) detach，暂时离开当前session，将目前的 screen session (可能含有多个 windows) 丢到后台执行，并会回到还没进 screen 时的状态，此时在 screen session 里，每个 window 内运行的 process (无论是前台/后台)都在继续执行，即使 logout 也不影响。 
+CTRL- a+z -> 把当前session放到后台执行，用 shell 的 fg 命令则可回去。
+
+
+
+

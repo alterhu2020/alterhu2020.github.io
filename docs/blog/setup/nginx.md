@@ -163,13 +163,40 @@ $ sudo apt-get install certbot -y
 以后每次配置子域名，只需要配置好对应的conf文件然后执行如下命令:
 
 ```
-$ certbot certonly --webroot -d spider.pingbook.top --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
+$ certbot certonly --webroot -d res.pingbook.top --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
 ```
 
 ::: warning Symlink vhost配置文件
 注意: 在`Symlink vhost` 中不要勾选enable。
 完成以上的配置后不行看任意修改文件
 :::
+
+3. 配置对应的location设置
+
+对于静态资源展示，提供了几种方式配置：
+- 简易配置Github风格：[autoindex.html - 一行配置美化 nginx 目录成 github 风格。](https://www.91yunbbs.com/discussion/441/autoindex-html-%E4%B8%80%E8%A1%8C%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96-nginx-%E7%9B%AE%E5%BD%95%E6%88%90-github-%E9%A3%8E%E6%A0%BC) 
+
+- 复杂配置，比较好看 [ngx-fancyindex](https://www.cnblogs.com/linkenpark/p/9184491.html)
+
+```
+# 代理配置
+location / {
+  proxy_pass http://127.0.0.1:8080;
+  include nginxconfig.io/proxy.conf;
+}
+# 静态资源配置
+location / {
+  autoindex on; #开启目录浏览
+  autoindex_format html; #以html风格将目录展示在浏览器中
+  autoindex_exact_size off; #切换为 off 后，以可读的方式显示文件大小，单位为 KB、MB 或者 GB
+  autoindex_localtime on; #以服务器的文件时间作为显示的时间
+  charset utf-8,gbk; #展示中文文件名
+  # 美化显示
+  add_after_body /autoindex.html;
+  # try_files $uri $uri/ index.html;
+}
+
+```
 
 
 ## 配置501,404默认页面

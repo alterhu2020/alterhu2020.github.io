@@ -38,6 +38,8 @@ module.exports = {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/The-Wild-Goose-Lake',
+            '2020/youtube-dl-download',
             '2020/My-Brilliant-Friend',
             '2020/scrapy-logging',
             '2020/wuhan-sick'

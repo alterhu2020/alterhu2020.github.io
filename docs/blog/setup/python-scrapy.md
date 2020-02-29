@@ -156,3 +156,33 @@ $ sudo apt-get update --allow-unauthenticated
 
 9. 安装scrapy中twisted安装报错
 解决方法，切换到目录： https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted，直接下载对应的whl包
+
+
+10. 如何设置scrapy的默认的user-agent和proxy代理
+在脚本目录下方有一个配置文件: `settings.py`, 如下配置：
+```python
+DOWNLOADER_MIDDLEWARES = {
+  'spider_yanzhi.middlewares.UserAgentMiddleware': 401,
+  'spider_yanzhi.middlewares.CookiesMiddleware': 402
+}
+```
+第二个参数可以参考`DOWNLOADER_MIDDLEWARES_BASE`里面的默认数值：
+```python
+{
+    'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware': 100,
+    'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware': 300,
+    'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware': 350,
+    'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware': 400,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': 500,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 550,
+    'scrapy.downloadermiddlewares.ajaxcrawl.AjaxCrawlMiddleware': 560,
+    'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware': 580,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 590,
+    'scrapy.downloadermiddlewares.redirect.RedirectMiddleware': 600,
+    'scrapy.downloadermiddlewares.cookies.CookiesMiddleware': 700,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 750,
+    'scrapy.downloadermiddlewares.stats.DownloaderStats': 850,
+    'scrapy.downloadermiddlewares.httpcache.HttpCacheMiddleware': 900,
+}
+
+```

@@ -174,7 +174,7 @@ $ certbot certonly --webroot -d res.pingbook.top --email alterhu2020@gmail.com -
 3. 配置对应的location设置
 
 对于静态资源展示，提供了几种方式配置：
-- 简易配置Github风格：[autoindex.html - 一行配置美化 nginx 目录成 github 风格。](https://www.91yunbbs.com/discussion/441/autoindex-html-%E4%B8%80%E8%A1%8C%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96-nginx-%E7%9B%AE%E5%BD%95%E6%88%90-github-%E9%A3%8E%E6%A0%BC) 
+- 简易配置Github风格：（推荐）[autoindex.html - 一行配置美化 nginx 目录成 github 风格。](https://www.91yunbbs.com/discussion/441/autoindex-html-%E4%B8%80%E8%A1%8C%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96-nginx-%E7%9B%AE%E5%BD%95%E6%88%90-github-%E9%A3%8E%E6%A0%BC) 
 
 - 复杂配置，比较好看 [ngx-fancyindex](https://www.cnblogs.com/linkenpark/p/9184491.html)
 

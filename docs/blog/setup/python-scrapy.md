@@ -23,6 +23,152 @@ $ pipenv install requests pymysql beautifulsoup4 lxml js2py selenium
 * 配置好数据库后，cmd进入程序所在目录，运行`scrapy crawl 项目名称即可；
 * 使用`scrapyd-client`中的`scrapyd-deploy`命令行工具可以将脚本部署到指定的`scrapyd`服务上；
 
+### 操作步骤
+
+1.创建项目
+
+在开始爬取之前，我们必须创建一个新的Scrapy项目，我这里命名为jianshu_article。打开Mac终端，cd到你打算存储代码的目录中，运行下列命令:
+```sh
+// 安装scrapy
+pip install scrapy
+scrapy --help
+//Mac终端运行如下命令：
+scrapy startproject spider_pingbook
+```
+2.创建爬虫程序
+```shell
+//cd到上面创建的文件目录
+cd spider_pingbook
+//创建爬虫程序
+scrapy genspider jianshu jianshu.com
+/*
+文件说明：
+  scrapy.cfg  项目的配置信息，主要为Scrapy命令行工具提供一个基础的配置信息。（真正爬虫相关的配置信息在settings.py文件中）
+  items.py    设置数据存储模型，用于结构化数据，如：Django的Model
+  pipelines    数据处理行为，如：一般结构化的数据持久化
+  settings.py 配置文件，如：USER_AGENT(模拟浏览器，应对网站反爬)，递归的层数、并发数，延迟下载等
+  spiders      爬虫目录，如：创建文件，编写爬虫规则
+*/
+```
+为了方便编写程序，我们用Pycharm打开项目，执行完上面的命令程序会自动创建目录及文件，其中生成了一个jianshu.py的文件，后面我们主要逻辑都将写在此文件中。
+
+3.设置数据模型
+双击items.py文件。
+找到你想爬取的简书作者首页，如我自己的首页https://www.jianshu.com/u/6b14223f1b58，用谷歌浏览器打开，空白处鼠标右击，单击“检查”进入控制台开发者模式：
+通过分析网页源码，我们大概需要这些内容：
+```py
+# -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# https://doc.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+class JianshuArticalItem(scrapy.Item):
+    avatar = scrapy.Field()     #头像
+    nickname = scrapy.Field()      #昵称
+    time = scrapy.Field()   #发表时间
+    wrap_img = scrapy.Field()   #封面（缺省值）
+    title = scrapy.Field()     #标题
+    abstract = scrapy.Field()   #正文部分显示
+    read = scrapy.Field()   #查看人数
+    comments = scrapy.Field()   #评论数
+    like = scrapy.Field()   #喜欢（点赞）
+    detail = scrapy.Field()   #文章详情url
+    pass
+
+```
+如此数据模型就创建好了，后面运行爬虫的时候，我得到的数据将存进模型对应的位置。
+
+4.分析网页源码，编写爬虫
+推荐一款chrome的xpath自动选择生成工具[ChroPath](https://www.crx4chrome.com/extensions/ljngjbnaijcbncmcnjfhigebomdlkcjo/)这里给出XPath表达式的例子及对应的含义:
+
+- `/html/head/title`: 选择HTML文档中 <head> 标签内的 <title> 元素
+- `/html/head/title/text()`: 选择上面提到的 <title> 元素的文字
+- `//td` `//li`: 选择所有的 <td> 元素
+- `//div[@class="mine"]`: 选择所有具有 class="mine" 属性的 div 元素
+
+上边仅仅是几个简单的XPath例子，XPath实际上要比这远远强大的多。 如果您想了解的更多，我们推荐 这篇XPath教程 。
+通过上面的介绍，相信你可以做接下来的爬虫工作了，下面贴上jianshu.py的全部代码，以供参考：
+
+```python
+# -*- coding: utf-8 -*-
+import scrapy
+from jianshu_article.items import JianshuArticleItem
+
+
+class JianshuSpider(scrapy.Spider):
+    name = 'jianshu'
+    allowed_domains = ['jianshu.com']
+    user_id = "1b4c832fb2ca" #替换此用户ID可获取你需要的数据，或者放开下一行的注释
+    #user_id = input('请输入作者id：\n')
+    url = "https://www.jianshu.com/u/{0}?page=1".format(user_id)
+    start_urls = [
+        url,
+    ]
+
+    def parse(self, response):
+        # [关注,粉丝,文章]
+        a = response.xpath('//div[@class="main-top"]/div[@class="info"]/ul/li/div/a/p/text()').extract()
+        print(a)
+        # [字数,收获喜欢]
+        b = response.xpath('//div[@class="main-top"]/div[@class="info"]/ul/li/div/p/text()').extract()
+        print(b)
+        # 大头像
+        c = response.xpath('//div[@class="main-top"]/a[@class="avatar"]/img/@src').extract_first()
+        print(c)
+        # 用户名
+        d = response.xpath('//div[@class="main-top"]/div[@class="title"]/a/text()').extract_first()
+        print(d)
+        # 性别
+        e = response.xpath('//div[@class="main-top"]/div[@class="title"]/i/@class').extract_first()
+        print(e)
+
+        # 获取文章总数，计算页数。（简书网站默认每页是9组数据）
+        temp = int(a[2])
+        if (temp % 9 > 0):
+            count = temp // 9 + 1
+        else:
+            count = temp // 9
+        print("总共" + str(count) + "页")
+
+        base_url = "https://www.jianshu.com/u/{0}?page={1}"
+        for i in range(1, count + 1):
+            i = count + 1 - i  #理论上正序1~count就是按顺序获取的，但是获取的数据是倒置的，所以我们获取count~1的数据，得到的数组就是按照网页形式1~count页码排序的了
+            yield scrapy.Request(base_url.format(self.user_id, i), dont_filter=True, callback=self.parse_page)
+
+    #迭代返回每页的内容
+    def parse_page(self, response):
+        for sel in response.xpath('//div[@id="list-container"]/ul/li'):
+            item = JianshuArticleItem()
+            item['wrap_img'] = sel.xpath('a/img/@src').extract_first()
+            item['avatar'] = sel.xpath('div//a[@class="avatar"]/img/@src').extract_first()
+            item['nickname'] = sel.xpath('div//a[@class="nickname"]/text()').extract_first()
+            item['time'] = sel.xpath('div//span[@class="time"]/@data-shared-at').extract_first()
+            item['title'] = sel.xpath('div/a[@class="title"]/text()').extract_first()
+            item['abstract'] = sel.xpath('div/p[@class="abstract"]/text()').extract_first()
+            item['read'] = sel.xpath('div/div[@class="meta"]/a[1]/text()').extract()[1]
+            item['comments'] = sel.xpath('div/div[@class="meta"]/a[2]/text()').extract()[1]
+            item['like'] = sel.xpath('div/div[@class="meta"]/span/text()').extract_first()
+            item['detail'] = sel.xpath('div/a[@class="title"]/@href').extract_first()
+            yield item
+
+至此爬虫代码编写完毕，如果要把获取的数据保存下来，你可以终端执行如下命令：
+
+/*
+此命令用于把爬取的数据保存为json文件格式，当然你也可以保存为别的文件格式。
+Scrapy官方列出的文件格式有如下几种：('json', 'jsonlines', 'jl', 'csv', 'xml', 'marshal', 'pickle')。
+温馨提示：如果要再次爬取，最好换一个文件名或者清空数据再爬取，因为第二还是写入上一个文件，数据不会覆盖，
+会堆积在上次获取的下面，造成json文件格式报错。
+*/
+scrapy crawl jianshu -o data.json
+```
+程序执行完后，我们可以在文件目录看到新生成的data.json文件，双击可以看到我们要获取的全部数据：
+
+
+
 ### 1.2 配置对应的`scrapy.cfg`文件中的`scrapyd`服务器(如果使用下面的gerapy则不需要配置这个部分),该部分主要是为了`scrapyd-deploy`使用：
 
 ```

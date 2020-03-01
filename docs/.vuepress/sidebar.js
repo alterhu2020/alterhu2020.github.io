@@ -38,6 +38,8 @@ module.exports = {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/How-To-Speed-Github',
+            '2020/vue-wow.js',
             '2020/The-Wild-Goose-Lake',
             '2020/youtube-dl-download',
             '2020/My-Brilliant-Friend',

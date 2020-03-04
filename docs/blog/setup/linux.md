@@ -278,9 +278,37 @@ Usually, you should open your personal crontab file using `crontab -e` command, 
 ```shell
 # 立即生效
 $ sudo crontab -e
-# 需要执行重启服务才能生效: sudo systemctl restart cron.service 
+# 需要执行重启服务才能生效: sudo systemctl restart cron.service ,不推荐。语法不一样，可能导致不执行
 $ sudo nano /etc/crontab
 ```
+我们知道定时任务可以写到/etc/crontab与crontab -e下面，但你知道两者的区别吗?
+
+语法不同
+
+/etc/crontab
+```sh
+# For details see man 4 crontabs
+ 
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+``` 
+ 
+ 
+crontab -e
+```sh
+*  *  *  *  *  command
+```
+使用范围
+修改`/etc/crontab`这种方法只有root用户能用，这种方法更加方便与直接直接给其他用户设置计划任务，而且还可以指定执行shell等等， `crontab -e`这种所有用户都可以使用，普通用户也只能为自己设置计划任务。然后自动写入/var/spool/cron/usename
+
+所以推荐使用： `sudo crontab -e`
+
 按照提示添加最后一行定时脚本：
 
 ```shell

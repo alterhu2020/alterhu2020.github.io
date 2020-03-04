@@ -165,8 +165,15 @@ Scrapy官方列出的文件格式有如下几种：('json', 'jsonlines', 'jl', '
 */
 scrapy crawl jianshu -o data.json
 ```
+
 程序执行完后，我们可以在文件目录看到新生成的data.json文件，双击可以看到我们要获取的全部数据：
 
+如果需要存放到数据库中，需要注释`settings.py`文件中`ITEM_PIPELINES`的如下代码：
+```python
+ITEM_PIPELINES = {
+   'spider_pingbook.pipelines.SpiderPingbookPipeline': 300,
+}
+```
 
 
 ### 1.2 配置对应的`scrapy.cfg`文件中的`scrapyd`服务器(如果使用下面的gerapy则不需要配置这个部分),该部分主要是为了`scrapyd-deploy`使用：
@@ -247,7 +254,7 @@ pip install scrapy requests pymysql beautifulsoup4 lxml js2py selenium
 
 所有的安装包默认安装在目录: `/usr/local/lib/python3.8/site-packages`
 
-## 问题
+## 问题整理
 
 1. 在`gerapy`安装中安装的lxml会出现错误： make sure the development packages of libxml2 and libxslt are installed 
 ```

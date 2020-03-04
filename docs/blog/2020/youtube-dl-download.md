@@ -11,14 +11,14 @@ title: youtube-dl视频下载神器
 
 [[toc]]
 
-# 介绍
+## 介绍
 youtube-dl 是一个命令行工具，对我所知的大部分视频网站有不错的支持，你可以选择下载视频，或是将视频流直接导出到自己想使用的播放器中，也可以以JSON的形式获取可下载资源的URL。
 
 使用方便、足够简洁，这是我在这里推荐的理由。
 
 youtube-dl 的 GitHub 页面：https://github.com/rg3/youtube-dl（喜欢的话给作者star哦~）
 
-# 安装
+## 安装
 
 - window用户：
 1. 下载文件[youtube-dl.exe](https://yt-dl.org/latest/youtube-dl.exe)。
@@ -35,17 +35,17 @@ $ sudo -H pip install --upgrade youtube-dl
 
 ```
 
-# 命令参考
+## 命令参考
 
 参数： `--ffmpeg-location `可以用来设置ffmpeg的路径，可以是可执行文件路径或者对应的执行文件路径的文件夹
 
-##  普通下载
+###  普通下载
 通过 Youtube-dl 下载视频十分简洁，例如你需要下载http://www.bilibili.com/video/av11728123/ 你可以这样：
 ```sh
 youtube-dl 'http://www.bilibili.com/video/av11728123/'
 ```
 
-## 输出文件的名字
+### 输出文件的名字
 如果你想指定输出文件的名字（有时对批量下载的人来说十分重要），你可以使用`-o`：
 ```sh
 youtube-dl 'http://www.bilibili.com/video/av11728123/' -o '你要的名字'
@@ -57,16 +57,16 @@ youtube-dl 'http://www.bilibili.com/video/av11728123/' -o '%(title)s.%(ext)s'
 # 下载至文件：【全明星freestyle】音浪.mp4
 ```
 
-## 使用代理下载
+### 使用代理下载
 youtube-dl 提供了使用代理的参数，你可以简单地将自己代理的地址填入：
 ```shell
 youtube-dl --proxy 127.0.0.1:1087 'https://www.youtube.com/watch\?v\=_fc_TLg3eQ4'
 # 成功通过ss在国内下载某不存在网站的视频
 ```
-## 其他下载选项
+### 其他下载选项
 youtube-dl 还提供很多其他的下载选项，如挑选合适的分辨率，下载一个播放列表等，你可以研究并自定义如何下载一个文件。
 
-# 国内的 youtube-dl： You-Get
+## 国内的 youtube-dl： You-Get
 
 You-Get的GitHub地址：https://github.com/soimort/you-get
 

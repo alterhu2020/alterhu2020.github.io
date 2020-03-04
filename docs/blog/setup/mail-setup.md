@@ -1,5 +1,5 @@
 ---
-title: 各种主流邮件服务商配置发送服务
+title: 各种主流邮件服务商配置
 ---
 
 相关参考模板说明： [freemarker使用](https://juejin.im/post/5b598eccf265da0f4e62dfbc)

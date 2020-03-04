@@ -38,6 +38,9 @@ module.exports = {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/Aliyun-OSS-CORS-Issues',
+            '2020/Vue-CountUp',
+            '2020/Vue-Toasted',
             '2020/How-To-Speed-Github',
             '2020/vue-wow.js',
             '2020/The-Wild-Goose-Lake',
@@ -49,7 +52,7 @@ module.exports = {
     },
     {
         title: '2019年归档',
-        collapsable: false,
+        collapsable: true,
         children: [
             '2019/spring-list-params-same-key',
             '2019/how-to-cross-gfw',
@@ -92,7 +95,7 @@ module.exports = {
     // },
     {
         title: '开发工具',
-        collapsable: false,
+        collapsable: true,
         children: [
             ['tools/idea', '【开发工具】IDEA'],
             ['tools/vscode', '【开发工具】VS Code'],
@@ -114,6 +117,7 @@ module.exports = {
         title: '友情链接',
         collapsable: false,
         children: [
+            ['https://www.yasminzy.com/nuxt/', '【前端】nuxt常用插件集成'],
             ['https://mybatis.plus/', '【后端】Mybatis Plus'],
             ['http://www.ruanyifeng.com/blog/', '【前端】阮一峰博客'],
             ['https://www.jianshu.com/u/4ca93d60a9fe', '【前端】IT晴天'],

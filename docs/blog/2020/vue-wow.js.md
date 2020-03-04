@@ -2,7 +2,7 @@
 title: WOW.js在页面滚动时展现动感的元素动画效果
 ---
 
-> 插件描述：WOW.js 是一款帮助你实现滚动页面时触发CSS 动画效果的插件
+~~> （已经不再维护，推荐使用aos） 插件描述：WOW.js 是一款帮助你实现滚动页面时触发CSS 动画效果的插件~~
 
 在一些网页上，当你滚动页面的时候会看到各式各样的元素动画效果，非常动感。WOW.js 就是一款帮助你实现这种 CSS 动画效果的插件，很容易定制，你可以改变动画设置喜欢的风格、延迟、长度、偏移和迭代等。
 
@@ -17,7 +17,7 @@ Github仓库: [https://github.com/matthieua/WOW](https://github.com/matthieua/WO
 
 [[toc]]
 
-# Vue中使用方法
+## Vue中使用方法
 
 由于其依赖于animate.css，所以可以不用再安装[animate.css](https://github.com/daneden/animate.css)
 - NPM
@@ -86,7 +86,7 @@ var wow = new WOW(
 wow.init();
 ```
 
-# nuxt中使用方法
+## nuxt中使用方法
 
 Vue和Nuxt中最大的差别是在Nuxt中不可以直接使用window和document对象，因为在Nuxt中代码要经过两遍打包，一遍是在客户端，client端是有window和document对象的，一遍是在server端，但是server端中是没有window和document对象的，打包就会报错。而Vue中不是，Vue只在client端打包一次，所以有window，不会报错。
 
@@ -120,6 +120,6 @@ Vue和Nuxt中最大的差别是在Nuxt中不可以直接使用window和document�
 
 其他参考： [How to use WOW.js with nuxt(https://github.com/nuxt/nuxt.js/issues/1064)](https://github.com/nuxt/nuxt.js/issues/1064)
 
-# 问题
+## 问题
 
 温馨提示：live为true时，浏览器调试器会弹出警告： [参考：WOW.js cannot detect dom mutations, please call .sync() after loading new content. · Issue #166 · matthieua/WOW](参考：WOW.js cannot detect dom mutations, please call .sync() after loading new content. · Issue #166 · matthieua/WOW)

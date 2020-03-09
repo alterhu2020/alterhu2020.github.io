@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>scrapy2版本新特性 | 堆栈云</title>
+    <meta name="description" content="人生处万类，知识最为贤。 —— 韩愈">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="堆栈云">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" href="/img/logo.png">
+  <meta property="keywords" content="堆栈云,java,博客,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫">
+  <meta property="description" content="堆栈云，点滴记录贵在坚持">
+  <script id="cookieinfo" src="https://cookieinfoscript.com/js/cookieinfo.min.js" data-message="我们使用cookies来提高用户体验,继续浏览网站表示同意我们使用cookies." data-linkmsg="了解更多" data-bg="#645862" data-fg="#FFFFFF" data-link="#F1D600" data-cookie="CookieInfoScript" data-text-align="left" data-close-text="知道了!"></script>
+  <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
+    <meta property="og:site_name" content="堆栈云"><meta property="og:title" content="scrapy2版本新特性"><meta property="og:type" content="article"><meta property="og:url" content="/blog/release/scrapy.html"><meta name="twitter:title" content="scrapy2版本新特性"><meta name="twitter:url" content="/blog/release/scrapy.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.020ad121.css" as="style"><link rel="preload" href="/assets/js/app.1c71255e.js" as="script"><link rel="preload" href="/assets/js/3.fa854ef5.js" as="script"><link rel="preload" href="/assets/js/59.0a11c924.js" as="script">
+    <link rel="stylesheet" href="/assets/css/0.styles.020ad121.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">堆栈云</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">博客</a></div><div class="nav-item"><a href="/CHANGELOG.html" class="nav-link">历史更新</a></div><div class="nav-item"><a href="/contact-me/" class="nav-link">留言板</a></div><div class="nav-item"><a href="https://code.pingbook.top/ant-design-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ant-design-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://code.pingbook.top/ionic-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ionic-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">博客</a></div><div class="nav-item"><a href="/CHANGELOG.html" class="nav-link">历史更新</a></div><div class="nav-item"><a href="/contact-me/" class="nav-link">留言板</a></div><div class="nav-item"><a href="https://code.pingbook.top/ant-design-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ant-design-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://code.pingbook.top/ionic-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ionic-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前序</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/" class="sidebar-link">关于博客</a></li><li><a href="/blog/synax.html" class="sidebar-link">语法参考手册</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>技术版本更新</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/release/scrapy.html" class="active sidebar-link">scrapy2版本新特性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/release/scrapy.html#新版特性" class="sidebar-link">新版特性</a></li><li class="sidebar-sub-header"><a href="/blog/release/scrapy.html#scrapy-2-0-0-2020-03-03" class="sidebar-link">Scrapy 2.0.0 (2020-03-03)</a></li></ul></li><li><a href="/blog/release/jdk.html" class="sidebar-link">JDK版本新特性</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>环境配置和部署</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/setup/fanqiang.html" class="sidebar-link">翻墙工具环境配置</a></li><li><a href="/blog/setup/artipub-setup.html" class="sidebar-link">artipub多平台博客发布工具使用配置</a></li><li><a href="/blog/setup/wordpress.html" class="sidebar-link">Wordpress Linux命令其环境配置</a></li><li><a href="/blog/setup/raspberry.html" class="sidebar-link">Raspberry Linux安装及其环境配置</a></li><li><a href="/blog/setup/linux.html" class="sidebar-link">Debian Linux命令其环境配置</a></li><li><a href="/blog/setup/nginx.html" class="sidebar-link">Nginx Linux安装及其环境配置</a></li><li><a href="/blog/setup/mail-setup.html" class="sidebar-link">各种主流邮件服务商配置</a></li><li><a href="/blog/setup/python.html" class="sidebar-link">Python Linux安装及其环境配置</a></li><li><a href="/blog/setup/python-scrapy.html" class="sidebar-link">Scrapy爬虫配置</a></li><li><a href="/blog/setup/mysql.html" class="sidebar-link">Debian MYSQL8安装及其环境配置</a></li><li><a href="/blog/setup/node-nuxt.html" class="sidebar-link">Node Nuxt安装及其环境配置</a></li><li><a href="/blog/setup/uwsgi.html" class="sidebar-link">Uwsgi Linux安装及其环境配置</a></li><li><a href="/blog/setup/tomcat.html" class="sidebar-link">Tomcat Linux安装及其环境配置</a></li><li><a href="/blog/setup/redis.html" class="sidebar-link">Redis Linux安装及其环境配置</a></li><li><a href="/blog/setup/sqlalchemy.html" class="sidebar-link">SQLAlchemy Linux安装及其环境配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>2020年归档</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/2020/Vue-$on-$emit-Useage.html" class="sidebar-link">Vue $on,$emit 父子组件不同组件时间通信</a></li><li><a href="/blog/2020/Vue-props-Model.html" class="sidebar-link">Vue 父子组件双向绑定</a></li><li><a href="/blog/2020/Aliyun-OSS-CORS-Issues.html" class="sidebar-link">如何提高国内访问Github的速度</a></li><li><a href="/blog/2020/Vue-CountUp.html" class="sidebar-link">Vue CountUp组件使用及其配置</a></li><li><a href="/blog/2020/Vue-Toasted.html" class="sidebar-link">Vue toast组件使用及其配置</a></li><li><a href="/blog/2020/How-To-Speed-Github.html" class="sidebar-link">如何提高国内访问Github的速度</a></li><li><a href="/blog/2020/vue-wow.js.html" class="sidebar-link">WOW.js在页面滚动时展现动感的元素动画效果</a></li><li><a href="/blog/2020/The-Wild-Goose-Lake.html" class="sidebar-link">【电影】南方车站的聚会</a></li><li><a href="/blog/2020/youtube-dl-download.html" class="sidebar-link">youtube-dl视频下载神器</a></li><li><a href="/blog/2020/My-Brilliant-Friend.html" class="sidebar-link">【意剧】我的天才女友</a></li><li><a href="/blog/2020/scrapy-logging.html" class="sidebar-link">scrapy logging模块配置</a></li><li><a href="/blog/2020/wuhan-sick.html" class="sidebar-link">2020武汉肺炎</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>2019年归档</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开发工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>友情链接</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="https://www.yasminzy.com/nuxt/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】nuxt常用插件集成<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://mybatis.plus/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【后端】Mybatis Plus<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】阮一峰博客<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://www.jianshu.com/u/4ca93d60a9fe" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】IT晴天<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】awesome vue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://ionicframework.com/docs/components" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】Ionic Vue Components<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://github.com/vueComponent/ant-design-vue-awesome" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】awesome ant-design-vue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://github.com/ulivz/awesome-vuepress" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】awesome-vuepress<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://tool.lu/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【其它】程序员的工具集<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>2020年3月3日发布了scrapy2.0.0版本，增加了一些新的特性功能。</p></blockquote> <!----> <p></p><div class="table-of-contents"><ul><li><a href="#新版特性">新版特性</a></li><li><a href="#scrapy-2-0-0-2020-03-03">Scrapy 2.0.0 (2020-03-03)</a></li></ul></div><p></p> <h2 id="新版特性"><a href="#新版特性" aria-hidden="true" class="header-anchor">#</a> 新版特性</h2> <h2 id="scrapy-2-0-0-2020-03-03"><a href="#scrapy-2-0-0-2020-03-03" aria-hidden="true" class="header-anchor">#</a> Scrapy 2.0.0 (2020-03-03)</h2> <p>Highlights:</p> <ul><li>去掉Python2支持 Python 2 support has been removed</li> <li>部分协程语法支持和实验性异步支持:<code>Partial &lt;topics/coroutines&gt;</code> :ref:<code>coroutine syntax &lt;async&gt;</code> support
+and :doc:<code>experimental &lt;topics/asyncio&gt;</code> :mod:<code>asyncio</code> support</li> <li>增加新的方法，支持多媒体:<code>Response.follow_all &lt;scrapy.http.Response.follow_all&gt;</code> method</li> <li>FTP对媒体管道的支持:<code>FTP support &lt;media-pipeline-ftp&gt;</code> for media pipelines</li> <li>增加新的属性:<code>Response.certificate &lt;scrapy.http.Response.certificate&gt;</code>
+attribute</li> <li>IPv6支持，通过设置参数:<code>DNS_RESOLVER</code></li></ul> <p>Backward-incompatible changes</p> <div class="language- extra-class"><pre class="language-text"><code>
+*   Python 2 support has been removed, following `Python 2 end-of-life on
+    January 1, 2020`_ (:issue:`4091`, :issue:`4114`, :issue:`4115`,
+    :issue:`4121`, :issue:`4138`, :issue:`4231`, :issue:`4242`, :issue:`4304`,
+    :issue:`4309`, :issue:`4373`)
+
+*   Retry gaveups (see :setting:`RETRY_TIMES`) are now logged as errors instead
+    of as debug information (:issue:`3171`, :issue:`3566`)
+
+*   File extensions that
+    :class:`LinkExtractor &lt;scrapy.linkextractors.lxmlhtml.LxmlLinkExtractor&gt;`
+    ignores by default now also include ``7z``, ``7zip``, ``apk``, ``bz2``,
+    ``cdr``, ``dmg``, ``ico``, ``iso``, ``tar``, ``tar.gz``, ``webm``, and
+    ``xz`` (:issue:`1837`, :issue:`2067`, :issue:`4066`)
+
+*   The :setting:`METAREFRESH_IGNORE_TAGS` setting is now an empty list by
+    default, following web browser behavior (:issue:`3844`, :issue:`4311`)
+
+*   The
+    :class:`~scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware`
+    now includes spaces after commas in the value of the ``Accept-Encoding``
+    header that it sets, following web browser behavior (:issue:`4293`)
+
+*   The ``__init__`` method of custom download handlers (see
+    :setting:`DOWNLOAD_HANDLERS`) or subclasses of the following downloader
+    handlers  no longer receives a ``settings`` parameter:
+
+    *   :class:`scrapy.core.downloader.handlers.datauri.DataURIDownloadHandler`
+
+    *   :class:`scrapy.core.downloader.handlers.file.FileDownloadHandler`
+
+    Use the ``from_settings`` or ``from_crawler`` class methods to expose such
+    a parameter to your custom download handlers.
+
+    (:issue:`4126`)
+
+*   We have refactored the :class:`scrapy.core.scheduler.Scheduler` class and
+    related queue classes (see :setting:`SCHEDULER_PRIORITY_QUEUE`,
+    :setting:`SCHEDULER_DISK_QUEUE` and :setting:`SCHEDULER_MEMORY_QUEUE`) to
+    make it easier to implement custom scheduler queue classes. See
+    :ref:`2-0-0-scheduler-queue-changes` below for details.
+
+*   Overridden settings are now logged in a different format. This is more in
+    line with similar information logged at startup (:issue:`4199`)
+
+.. _Python 2 end-of-life on January 1, 2020: https://www.python.org/doc/sunset-python-2/
+
+
+Deprecation removals
+~~~~~~~~~~~~~~~~~~~~
+
+*   The :ref:`Scrapy shell &lt;topics-shell&gt;` no longer provides a `sel` proxy
+    object, use :meth:`response.selector &lt;scrapy.http.Response.selector&gt;`
+    instead (:issue:`4347`)
+
+*   LevelDB support has been removed (:issue:`4112`)
+
+*   The following functions have been removed from :mod:`scrapy.utils.python`:
+    ``isbinarytext``, ``is_writable``, ``setattr_default``, ``stringify_dict``
+    (:issue:`4362`)
+
+
+Deprecations
+~~~~~~~~~~~~
+
+*   Using environment variables prefixed with ``SCRAPY_`` to override settings
+    is deprecated (:issue:`4300`, :issue:`4374`, :issue:`4375`)
+
+*   :class:`scrapy.linkextractors.FilteringLinkExtractor` is deprecated, use
+    :class:`scrapy.linkextractors.LinkExtractor
+    &lt;scrapy.linkextractors.lxmlhtml.LxmlLinkExtractor&gt;` instead (:issue:`4045`)
+
+*   The ``noconnect`` query string argument of proxy URLs is deprecated and
+    should be removed from proxy URLs (:issue:`4198`)
+
+*   The :meth:`next &lt;scrapy.utils.python.MutableChain.next&gt;` method of
+    :class:`scrapy.utils.python.MutableChain` is deprecated, use the global
+    :func:`next` function or :meth:`MutableChain.__next__
+    &lt;scrapy.utils.python.MutableChain.__next__&gt;` instead (:issue:`4153`)
+
+
+New features
+~~~~~~~~~~~~
+
+*   Added :doc:`partial support &lt;topics/coroutines&gt;` for Python’s
+    :ref:`coroutine syntax &lt;async&gt;` and :doc:`experimental support
+    &lt;topics/asyncio&gt;` for :mod:`asyncio` and :mod:`asyncio`-powered libraries
+    (:issue:`4010`, :issue:`4259`, :issue:`4269`, :issue:`4270`, :issue:`4271`,
+    :issue:`4316`, :issue:`4318`)
+
+*   The new :meth:`Response.follow_all &lt;scrapy.http.Response.follow_all&gt;`
+    method offers the same functionality as
+    :meth:`Response.follow &lt;scrapy.http.Response.follow&gt;` but supports an
+    iterable of URLs as input and returns an iterable of requests
+    (:issue:`2582`, :issue:`4057`, :issue:`4286`)
+
+*   :ref:`Media pipelines &lt;topics-media-pipeline&gt;` now support :ref:`FTP
+    storage &lt;media-pipeline-ftp&gt;` (:issue:`3928`, :issue:`3961`)
+
+*   The new :attr:`Response.certificate &lt;scrapy.http.Response.certificate&gt;`
+    attribute exposes the SSL certificate of the server as a
+    :class:`twisted.internet.ssl.Certificate` object for HTTPS responses
+    (:issue:`2726`, :issue:`4054`)
+
+*   A new :setting:`DNS_RESOLVER` setting allows enabling IPv6 support
+    (:issue:`1031`, :issue:`4227`)
+
+*   A new :setting:`SCRAPER_SLOT_MAX_ACTIVE_SIZE` setting allows configuring
+    the existing soft limit that pauses request downloads when the total
+    response data being processed is too high (:issue:`1410`, :issue:`3551`)
+
+*   A new :setting:`TWISTED_REACTOR` setting allows customizing the
+    :mod:`~twisted.internet.reactor` that Scrapy uses, allowing to
+    :doc:`enable asyncio support &lt;topics/asyncio&gt;` or deal with a
+    :ref:`common macOS issue &lt;faq-specific-reactor&gt;` (:issue:`2905`,
+    :issue:`4294`)
+
+*   Scheduler disk and memory queues may now use the class methods
+    ``from_crawler`` or ``from_settings`` (:issue:`3884`)
+
+*   The new :attr:`Response.cb_kwargs &lt;scrapy.http.Response.cb_kwargs&gt;`
+    attribute serves as a shortcut for :attr:`Response.request.cb_kwargs
+    &lt;scrapy.http.Request.cb_kwargs&gt;` (:issue:`4331`)
+
+*   :meth:`Response.follow &lt;scrapy.http.Response.follow&gt;` now supports a
+    ``flags`` parameter, for consistency with :class:`~scrapy.http.Request`
+    (:issue:`4277`, :issue:`4279`)
+
+*   :ref:`Item loader processors &lt;topics-loaders-processors&gt;` can now be
+    regular functions, they no longer need to be methods (:issue:`3899`)
+
+*   :class:`~scrapy.spiders.Rule` now accepts an ``errback`` parameter
+    (:issue:`4000`)
+
+*   :class:`~scrapy.http.Request` no longer requires a ``callback`` parameter
+    when an ``errback`` parameter is specified (:issue:`3586`, :issue:`4008`)
+
+*   :class:`~scrapy.logformatter.LogFormatter` now supports some additional
+    methods:
+
+    *   :class:`~scrapy.logformatter.LogFormatter.download_error` for
+        download errors
+
+    *   :class:`~scrapy.logformatter.LogFormatter.item_error` for exceptions
+        raised during item processing by :ref:`item pipelines
+        &lt;topics-item-pipeline&gt;`
+
+    *   :class:`~scrapy.logformatter.LogFormatter.spider_error` for exceptions
+        raised from :ref:`spider callbacks &lt;topics-spiders&gt;`
+
+    (:issue:`374`, :issue:`3986`, :issue:`3989`, :issue:`4176`, :issue:`4188`)
+
+*   The :setting:`FEED_URI` setting now supports :class:`pathlib.Path` values
+    (:issue:`3731`, :issue:`4074`)
+
+*   A new :signal:`request_left_downloader` signal is sent when a request
+    leaves the downloader (:issue:`4303`)
+
+*   Scrapy logs a warning when it detects a request callback or errback that
+    uses ``yield`` but also returns a value, since the returned value would be
+    lost (:issue:`3484`, :issue:`3869`)
+
+*   :class:`~scrapy.spiders.Spider` objects now raise an :exc:`AttributeError`
+    exception if they do not have a :class:`~scrapy.spiders.Spider.start_urls`
+    attribute nor reimplement :class:`~scrapy.spiders.Spider.start_requests`,
+    but have a ``start_url`` attribute (:issue:`4133`, :issue:`4170`)
+
+*   :class:`~scrapy.exporters.BaseItemExporter` subclasses may now use
+    ``super().__init__(**kwargs)`` instead of ``self._configure(kwargs)`` in
+    their ``__init__`` method, passing ``dont_fail=True`` to the parent
+    ``__init__`` method if needed, and accessing ``kwargs`` at ``self._kwargs``
+    after calling their parent ``__init__`` method (:issue:`4193`,
+    :issue:`4370`)
+
+*   A new ``keep_fragments`` parameter of
+    :func:`scrapy.utils.request.request_fingerprint` allows to generate
+    different fingerprints for requests with different fragments in their URL
+    (:issue:`4104`)
+
+*   Download handlers (see :setting:`DOWNLOAD_HANDLERS`) may now use the
+    ``from_settings`` and ``from_crawler`` class methods that other Scrapy
+    components already supported (:issue:`4126`)
+
+*   :class:`scrapy.utils.python.MutableChain.__iter__` now returns ``self``,
+    `allowing it to be used as a sequence &lt;https://lgtm.com/rules/4850080/&gt;`_
+    (:issue:`4153`)
+
+
+Bug fixes
+~~~~~~~~~
+
+*   The :command:`crawl` command now also exits with exit code 1 when an
+    exception happens before the crawling starts (:issue:`4175`, :issue:`4207`)
+
+*   :class:`LinkExtractor.extract_links
+    &lt;scrapy.linkextractors.lxmlhtml.LxmlLinkExtractor.extract_links&gt;` no longer
+    re-encodes the query string or URLs from non-UTF-8 responses in UTF-8
+    (:issue:`998`, :issue:`1403`, :issue:`1949`, :issue:`4321`)
+
+*   The first spider middleware (see :setting:`SPIDER_MIDDLEWARES`) now also
+    processes exceptions raised from callbacks that are generators
+    (:issue:`4260`, :issue:`4272`)
+
+*   Redirects to URLs starting with 3 slashes (``///``) are now supported
+    (:issue:`4032`, :issue:`4042`)
+
+*   :class:`~scrapy.http.Request` no longer accepts strings as ``url`` simply
+    because they have a colon (:issue:`2552`, :issue:`4094`)
+
+*   The correct encoding is now used for attach names in
+    :class:`~scrapy.mail.MailSender` (:issue:`4229`, :issue:`4239`)
+
+*   :class:`~scrapy.dupefilters.RFPDupeFilter`, the default
+    :setting:`DUPEFILTER_CLASS`, no longer writes an extra ``\r`` character on
+    each line in Windows, which made the size of the ``requests.seen`` file
+    unnecessarily large on that platform (:issue:`4283`)
+
+*   Z shell auto-completion now looks for ``.html`` files, not ``.http`` files,
+    and covers the ``-h`` command-line switch (:issue:`4122`, :issue:`4291`)
+
+*   Adding items to a :class:`scrapy.utils.datatypes.LocalCache` object
+    without a ``limit`` defined no longer raises a :exc:`TypeError` exception
+    (:issue:`4123`)
+
+*   Fixed a typo in the message of the :exc:`ValueError` exception raised when
+    :func:`scrapy.utils.misc.create_instance` gets both ``settings`` and
+    ``crawler`` set to ``None`` (:issue:`4128`)
+
+
+Documentation
+~~~~~~~~~~~~~
+
+*   API documentation now links to an online, syntax-highlighted view of the
+    corresponding source code (:issue:`4148`)
+
+*   Links to unexisting documentation pages now allow access to the sidebar
+    (:issue:`4152`, :issue:`4169`)
+
+*   Cross-references within our documentation now display a tooltip when
+    hovered (:issue:`4173`, :issue:`4183`)
+
+*   Improved the documentation about :meth:`LinkExtractor.extract_links
+    &lt;scrapy.linkextractors.lxmlhtml.LxmlLinkExtractor.extract_links&gt;` and
+    simplified :ref:`topics-link-extractors` (:issue:`4045`)
+
+*   Clarified how :class:`ItemLoader.item &lt;scrapy.loader.ItemLoader.item&gt;`
+    works (:issue:`3574`, :issue:`4099`)
+
+*   Clarified that :func:`logging.basicConfig` should not be used when also
+    using :class:`~scrapy.crawler.CrawlerProcess` (:issue:`2149`,
+    :issue:`2352`, :issue:`3146`, :issue:`3960`)
+
+*   Clarified the requirements for :class:`~scrapy.http.Request` objects
+    :ref:`when using persistence &lt;request-serialization&gt;` (:issue:`4124`,
+    :issue:`4139`)
+
+*   Clarified how to install a :ref:`custom image pipeline
+    &lt;media-pipeline-example&gt;` (:issue:`4034`, :issue:`4252`)
+
+*   Fixed the signatures of the ``file_path`` method in :ref:`media pipeline
+    &lt;topics-media-pipeline&gt;` examples (:issue:`4290`)
+
+*   Covered a backward-incompatible change in Scrapy 1.7.0 affecting custom
+    :class:`scrapy.core.scheduler.Scheduler` subclasses (:issue:`4274`)
+
+*   Improved the ``README.rst`` and ``CODE_OF_CONDUCT.md`` files
+    (:issue:`4059`)
+
+*   Documentation examples are now checked as part of our test suite and we
+    have fixed some of the issues detected (:issue:`4142`, :issue:`4146`,
+    :issue:`4171`, :issue:`4184`, :issue:`4190`)
+
+*   Fixed logic issues, broken links and typos (:issue:`4247`, :issue:`4258`,
+    :issue:`4282`, :issue:`4288`, :issue:`4305`, :issue:`4308`, :issue:`4323`,
+    :issue:`4338`, :issue:`4359`, :issue:`4361`)
+
+*   Improved consistency when referring to the ``__init__`` method of an object
+    (:issue:`4086`, :issue:`4088`)
+
+*   Fixed an inconsistency between code and output in :ref:`intro-overview`
+    (:issue:`4213`)
+
+*   Extended :mod:`~sphinx.ext.intersphinx` usage (:issue:`4147`,
+    :issue:`4172`, :issue:`4185`, :issue:`4194`, :issue:`4197`)
+
+*   We now use a recent version of Python to build the documentation
+    (:issue:`4140`, :issue:`4249`)
+
+*   Cleaned up documentation (:issue:`4143`, :issue:`4275`)
+
+
+Quality assurance
+~~~~~~~~~~~~~~~~~
+
+*   Re-enabled proxy ``CONNECT`` tests (:issue:`2545`, :issue:`4114`)
+
+*   Added Bandit_ security checks to our test suite (:issue:`4162`,
+    :issue:`4181`)
+
+*   Added Flake8_ style checks to our test suite and applied many of the
+    corresponding changes (:issue:`3944`, :issue:`3945`, :issue:`4137`,
+    :issue:`4157`, :issue:`4167`, :issue:`4174`, :issue:`4186`, :issue:`4195`,
+    :issue:`4238`, :issue:`4246`, :issue:`4355`, :issue:`4360`, :issue:`4365`)
+
+*   Improved test coverage (:issue:`4097`, :issue:`4218`, :issue:`4236`)
+
+*   Started reporting slowest tests, and improved the performance of some of
+    them (:issue:`4163`, :issue:`4164`)
+
+*   Fixed broken tests and refactored some tests (:issue:`4014`, :issue:`4095`,
+    :issue:`4244`, :issue:`4268`, :issue:`4372`)
+
+*   Modified the :doc:`tox &lt;tox:index&gt;` configuration to allow running tests
+    with any Python version, run Bandit_ and Flake8_ tests by default, and
+    enforce a minimum tox version programmatically (:issue:`4179`)
+
+*   Cleaned up code (:issue:`3937`, :issue:`4208`, :issue:`4209`,
+    :issue:`4210`, :issue:`4212`, :issue:`4369`, :issue:`4376`, :issue:`4378`)
+
+.. _Bandit: https://bandit.readthedocs.io/
+.. _Flake8: https://flake8.pycqa.org/en/latest/
+
+
+.. _2-0-0-scheduler-queue-changes:
+
+Changes to scheduler queue classes
+</code></pre></div><p>The following changes may impact any custom queue classes of all types:</p> <ul><li>The <code>push</code> method no longer receives a second positional parameter
+containing <code>request.priority * -1</code>. If you need that value, get it
+from the first positional parameter, <code>request</code>, instead, or use
+the new :meth:<code>~scrapy.core.scheduler.ScrapyPriorityQueue.priority</code>
+method in :class:<code>scrapy.core.scheduler.ScrapyPriorityQueue</code>
+subclasses.</li></ul> <p>The following changes may impact custom priority queue classes:</p> <ul><li><p>In the <code>__init__</code> method or the <code>from_crawler</code> or <code>from_settings</code>
+class methods:</p> <ul><li><p>The parameter that used to contain a factory function,
+<code>qfactory</code>, is now passed as a keyword parameter named
+<code>downstream_queue_cls</code>.</p></li> <li><p>A new keyword parameter has been added: <code>key</code>. It is a string
+that is always an empty string for memory queues and indicates the
+:setting:<code>JOB_DIR</code> value for disk queues.</p></li> <li><p>The parameter for disk queues that contains data from the previous
+crawl, <code>startprios</code> or <code>slot_startprios</code>, is now passed as a
+keyword parameter named <code>startprios</code>.</p></li> <li><p>The <code>serialize</code> parameter is no longer passed. The disk queue
+class must take care of request serialization on its own before
+writing to disk, using the
+:func:<code>~scrapy.utils.reqser.request_to_dict</code> and
+:func:<code>~scrapy.utils.reqser.request_from_dict</code> functions from the
+:mod:<code>scrapy.utils.reqser</code> module.</p></li></ul></li></ul> <p>The following changes may impact custom disk and memory queue classes:</p> <ul><li>The signature of the <code>__init__</code> method is now
+<code>__init__(self, crawler, key)</code>.</li></ul> <p>The following changes affect specifically the
+:class:<code>~scrapy.core.scheduler.ScrapyPriorityQueue</code> and
+:class:<code>~scrapy.core.scheduler.DownloaderAwarePriorityQueue</code> classes from
+:mod:<code>scrapy.core.scheduler</code> and may affect subclasses:</p> <ul><li><p>In the <code>__init__</code> method, most of the changes described above apply.</p> <p><code>__init__</code> may still receive all parameters as positional parameters,
+however:</p> <ul><li><p><code>downstream_queue_cls</code>, which replaced <code>qfactory</code>, must be
+instantiated differently.</p> <p><code>qfactory</code> was instantiated with a priority value (integer).</p> <p>Instances of <code>downstream_queue_cls</code> should be created using
+the new
+:meth:<code>ScrapyPriorityQueue.qfactory &lt;scrapy.core.scheduler.ScrapyPriorityQueue.qfactory&gt;</code>
+or
+:meth:<code>DownloaderAwarePriorityQueue.pqfactory &lt;scrapy.core.scheduler.DownloaderAwarePriorityQueue.pqfactory&gt;</code>
+methods.</p></li> <li><p>The new <code>key</code> parameter displaced the <code>startprios</code>
+parameter 1 position to the right.</p></li></ul></li> <li><p>The following class attributes have been added:</p> <ul><li><p>:attr:<code>~scrapy.core.scheduler.ScrapyPriorityQueue.crawler</code></p></li> <li><p>:attr:<code>~scrapy.core.scheduler.ScrapyPriorityQueue.downstream_queue_cls</code>
+(details above)</p></li> <li><p>:attr:<code>~scrapy.core.scheduler.ScrapyPriorityQueue.key</code> (details above)</p></li></ul></li> <li><p>The <code>serialize</code> attribute has been removed (details above)</p></li></ul> <p>The following changes affect specifically the
+:class:<code>~scrapy.core.scheduler.ScrapyPriorityQueue</code> class and may affect
+subclasses:</p> <ul><li><p>A new :meth:<code>~scrapy.core.scheduler.ScrapyPriorityQueue.priority</code>
+method has been added which, given a request, returns
+<code>request.priority * -1</code>.</p> <p>It is used in :meth:<code>~scrapy.core.scheduler.ScrapyPriorityQueue.push</code>
+to make up for the removal of its <code>priority</code> parameter.</p></li> <li><p>The <code>spider</code> attribute has been removed. Use
+:attr:<code>crawler.spider &lt;scrapy.core.scheduler.ScrapyPriorityQueue.crawler&gt;</code>
+instead.</p></li></ul> <p>The following changes affect specifically the
+:class:<code>~scrapy.core.scheduler.DownloaderAwarePriorityQueue</code> class and may
+affect subclasses:</p> <ul><li>A new :attr:<code>~scrapy.core.scheduler.DownloaderAwarePriorityQueue.pqueues</code>
+attribute offers a mapping of downloader slot names to the
+corresponding instances of
+:attr:<code>~scrapy.core.scheduler.DownloaderAwarePriorityQueue.downstream_queue_cls</code>.</li></ul> <p>(:issue:<code>3884</code>)</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/synax.html" class="prev">
+          语法参考手册
+        </a></span> <span class="next"><a href="/blog/release/jdk.html">
+          JDK版本新特性
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"><BackToTop></BackToTop></div></div>
+    <script src="/assets/js/app.1c71255e.js" defer></script><script src="/assets/js/3.fa854ef5.js" defer></script><script src="/assets/js/59.0a11c924.js" defer></script>
+  </body>
+</html>

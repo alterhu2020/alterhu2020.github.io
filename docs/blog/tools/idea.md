@@ -9,6 +9,10 @@ title: Jetbrains IntelliJ IDEA
 -Xmx750m
 ```
 
-## 使用技巧
+## 破解补丁
 
-待整理
+更新到最新显示版本：2019.3.3 ，截至时间为： 2020年3月8日。参考文档[IntelliJ IDEA 2019.3.3补丁失效问题](https://segmentfault.com/a/1190000021914963)。其实网上大多的补丁只要1353kb,而最新的却有2.1m
+
+> 切记通过启动idea进行修改参数,不要直接修改idea64.exe.文件，在vmoptions文件增加如下参数（绝对路径）:
+
+-javaagent:E:\ProgramFiles\JetBrains\IntelliJIDEA2019.2.1\bin\jetbrains-agent.jar

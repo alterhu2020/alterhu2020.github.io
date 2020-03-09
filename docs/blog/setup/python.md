@@ -145,6 +145,16 @@ trusted-host = pypi.douban.com
 2. http://pypi.douban.com/simple
 3. 
 
+##  pip install --upgrade升级安装包
+例如需要升级安装scrapy为2.0，如下：
+```shell
+$  pip install --upgrade scrapy
+```
+如果需要升级pip包，如下：
+```shell
+$ python -m pip install --upgrade pip
+```
+
 ##  `pipenv`安装及常用命令
 
 ```

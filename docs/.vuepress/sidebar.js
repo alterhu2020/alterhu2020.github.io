@@ -11,6 +11,7 @@ module.exports = {
         title: '技术版本更新',
         collapsable: false,
         children: [
+            'release/scrapy',
             'release/jdk'
         ]
     },
@@ -18,6 +19,7 @@ module.exports = {
         title: '环境配置和部署',
         collapsable: false,
         children: [
+            'setup/fanqiang',
             'setup/artipub-setup',
             'setup/wordpress',
             'setup/raspberry',
@@ -38,6 +40,8 @@ module.exports = {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/Vue-$on-$emit-Useage',
+            '2020/Vue-props-Model',
             '2020/Aliyun-OSS-CORS-Issues',
             '2020/Vue-CountUp',
             '2020/Vue-Toasted',

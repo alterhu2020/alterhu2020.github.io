@@ -205,7 +205,7 @@ TIMESTAMP=$(date +%F)
 function delete_old_backups()
 {
   echo "Deleting $BACKUP_DIR/*.sql.gz older than $KEEP_BACKUPS_FOR days"
-  find $BACKUP_DIR -type f -name "*.sql.gz" -mtime +$KEEP_BACKUPS_FOR -exec rm {} \;
+  find $BACKUP_DIR -type f -name "*.sql.gz" -mtime +$KEEP_BACKUPS_FOR -exec rm -rf {} \;
 }
 
 function mysql_login() {

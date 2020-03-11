@@ -42,6 +42,11 @@ title: Microsoft Visual Studio Code
 
 > 数学公式工具
 
+## 8. 语法高亮插件
+
+> [highlight.js](https://github.com/highlightjs/highlight.js),
+不同的CSS高亮样式参考:[样式参考](https://github.com/highlightjs/highlight.js/blob/master/src/styles/atom-one-dark-reasonable.css)
+
 ## 问题
 
 待整理

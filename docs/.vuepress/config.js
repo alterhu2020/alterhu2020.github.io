@@ -3,20 +3,20 @@ const HighlightRules = require('./public/js/highlight-rules')
 const base = process.env.NODE_ENV === 'production' ? `/` : '/'
 const sidebar = require('./sidebar')
 module.exports = {
-    title: "堆栈云",
+    title: "胡说博客",
     description: "人生处万类，知识最为贤。 —— 韩愈",
     dest: "../pingbook-dist",
     host: "localhost",
     base: base,
     shouldPrefetch: () => false,
     head: [
-        ['link', { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: '堆栈云' }],
+        ['link', { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: '胡说博客' }],
         ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
         ['link', { rel: 'icon', href: `/favicon.ico` }],
         ['link', { rel: 'shortcut icon', href: `/img/favicon.ico` }],
         ['link', { rel: 'apple-touch-icon', href: `/img/logo.png` }],
-        ['meta', { property: 'keywords', content: '堆栈云,java,博客,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫' }],
-        ['meta', { property: 'description', content: '堆栈云，点滴记录贵在坚持' }],
+        ['meta', { property: 'keywords', content: '胡说,java,胡说博客,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫' }],
+        ['meta', { property: 'description', content: '胡说博客，点滴记录贵在坚持' }],
         ['script', {
             id: 'cookieinfo',
             src: 'https://cookieinfoscript.com/js/cookieinfo.min.js',
@@ -103,7 +103,7 @@ module.exports = {
         ['vuepress-plugin-rss-support', {
             site_url: 'https://code.pingbook.top',
             filter: page => /^\/201.+/.test(page.path),
-            copyright: '2019 堆栈云',
+            copyright: '2019 胡说博客',
             count: 60
         }],
         ['vuepress-plugin-zooming', {
@@ -127,7 +127,7 @@ module.exports = {
             owner: 'alterhu2020',
             repo: 'alterhu2020.github.io',
             state: 'Vssue',
-            prefix: '[堆栈云]',
+            prefix: '[胡说博客]',
             labels: ['留言'],
             clientId: 'd9eac798d58806be2dbc',
             clientSecret: 'bf6cfe43d956baf67f6816a7a1f17a42c1064eec'
@@ -154,6 +154,10 @@ module.exports = {
             {
                 text: '留言板',
                 link: '/contact-me/'
+            },
+            {
+                text: 'JVFast管理框架',
+                link: 'https://jvfast.pingbook.top'
             },
             {
                 text: 'ant-design-vue',

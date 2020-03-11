@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage:  /hero.png
-heroText: 堆栈云
+heroText: 胡说博客
 actionText:  我的博客
 actionLink: /blog/
-footer: Copyright © 2019-2020 堆栈云
+footer: Copyright © 2019-2020 胡说博客
 ---
 <!-- features:
 - title: ❤️精简主义

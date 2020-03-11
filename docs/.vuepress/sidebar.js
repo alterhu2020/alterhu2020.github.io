@@ -40,6 +40,7 @@ module.exports = {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/IDEA-Maven-unable-to-find-valid-certification-path-to-requested-target',
             '2020/Running-on-Karma',
             '2020/Vue-$on-$emit-Useage',
             '2020/Vue-props-Model',

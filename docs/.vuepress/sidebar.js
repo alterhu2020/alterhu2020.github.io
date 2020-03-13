@@ -40,6 +40,7 @@ module.exports = {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/sh-binbashM-坏的解释器-没有那个文件或目录',
             '2020/IDEA-Maven-unable-to-find-valid-certification-path-to-requested-target',
             '2020/Running-on-Karma',
             '2020/Vue-$on-$emit-Useage',

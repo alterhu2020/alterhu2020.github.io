@@ -15,8 +15,9 @@ module.exports = {
         ['link', { rel: 'icon', href: `/favicon.ico` }],
         ['link', { rel: 'shortcut icon', href: `/img/favicon.ico` }],
         ['link', { rel: 'apple-touch-icon', href: `/img/logo.png` }],
-        ['meta', { property: 'keywords', content: '胡说,java,胡说博客,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫' }],
-        ['meta', { property: 'description', content: '胡说博客，点滴记录贵在坚持' }],
+        ['meta', { name: 'keywords', content: '胡说,java,胡说博客,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫' }],
+        ['meta', { name: 'description', content: '胡说博客，点滴记录贵在坚持' }],
+        ['meta', { name: "google-site-verification", content:"pyUtZja0WJ34YSL_6K0FkcYBU7pDR56XMU92nvDtz7k"} ],
         ['script', {
             id: 'cookieinfo',
             src: 'https://cookieinfoscript.com/js/cookieinfo.min.js',

@@ -40,7 +40,10 @@ $ node -v
 $ npm -v 
 
 设置npm和yarn的镜像为淘宝镜像
+$ npm config set prefix E:\nodejs\node_global
+$ npm config set cache E:\nodejs\node_cache
 $ npm config set registry https://registry.npm.taobao.org
+$ npm config list
 ```
 
 - 安装node的包管理器`yarn`(当然此处也可以不安装,直接使用node内置的`npm`来管理包):

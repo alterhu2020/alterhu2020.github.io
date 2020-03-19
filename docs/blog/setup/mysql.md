@@ -129,6 +129,9 @@ log_bin_trust_function_creators=1
 # 配置主从复制数据库,为了更好主从复制(io进程和sql进程的操作)低延迟，关闭binlog等
 server-id=2
 skip-log-bin
+# 1062 Duplicate entry
+slave-skip-errors=1062,1053,1146 #跳过指定error no类型的错误
+#slave-skip-errors=all #跳过所有错误
 # 配置慢查询
 slow_query_log = ON
 slow_query_log_file = /logs/mysql/slow.log

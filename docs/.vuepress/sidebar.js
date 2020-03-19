@@ -17,9 +17,10 @@ module.exports = {
     },
     {
         title: '环境配置和部署',
-        collapsable: false,
+        collapsable: true,
         children: [
             'setup/fanqiang',
+            'setup/Frp-Setup',
             'setup/artipub-setup',
             'setup/wordpress',
             'setup/raspberry',
@@ -33,13 +34,15 @@ module.exports = {
             'setup/uwsgi',
             'setup/tomcat',
             'setup/redis',
-            'setup/sqlalchemy'
+            'setup/sqlalchemy',
+            'setup/Win10-Setup'
         ]
     },
     {
         title: '2020年归档',
         collapsable: false,
         children: [
+            '2020/JPEG-Standard',
             '2020/sh-binbashM-坏的解释器-没有那个文件或目录',
             '2020/IDEA-Maven-unable-to-find-valid-certification-path-to-requested-target',
             '2020/Running-on-Karma',

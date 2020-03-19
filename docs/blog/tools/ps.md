@@ -2,9 +2,12 @@
 title: PhotoShop CC 2018
 ---
 
+
 ## 技巧
 
-### 图片尺寸如何放大缩小?
+JPEG 2000, JPEG XR, and WebP are image formats that have superior compression and quality characteristics compared to their older JPEG and PNG counterparts. Encoding your images in these formats rather than JPEG or PNG means that they will load faster and consume less cellular data.
+
+### ~~图片尺寸如何放大缩小?~~
 
 - 打开PS,打开对应的你需要调整的图片文件
 - 选择菜单 `导出`-> '导出为..',调整长度和宽度为自己需要的
@@ -15,7 +18,11 @@ title: PhotoShop CC 2018
 
 ### 图片如何压缩大小？
 
-
+1. 在ps中打开图片
+2. 选择“文件”-》“导出。。。”-》“存储为Web所用格式。。。”
+![20200313213655.png](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200313213655.png)
+3. 然后在弹出的对话框中“预设”选择“JPEG 低”，然后调整“品质”此参数可以调整到对应的大小。
+![20200313214036.png](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200313214036.png)
 ### 图片拼接，图片裁剪
 
 - 在ps中分别打开两张需要拼接的图片，然后在其中一张图片选框工具，选择一个分区，然后保存该图层（菜单图层->新建->通过拷贝的图层 CTRL+J)

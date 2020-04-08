@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.18.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.17.0...v1.18.0) (2020-04-08)
+
+
+### Bug Fixes
+
+* search console issues. ([3e6fb9b](https://github.com/alterhu2020/alterhu2020.github.io/commit/3e6fb9b567b74c1cc6f406fb4a596db3b5b9d251))
+
+
+### Features
+
+* 0309文档更新 ([c51d2a4](https://github.com/alterhu2020/alterhu2020.github.io/commit/c51d2a466ade12a2b50893876c7b9a93b1233578))
+* 28 docs. ([a80f85d](https://github.com/alterhu2020/alterhu2020.github.io/commit/a80f85dfc002906a4b641f55911c6b5271129f51))
+* del file ([01345fb](https://github.com/alterhu2020/alterhu2020.github.io/commit/01345fbdcc6a747811be85fbd75b548cbdac8d89))
+* update 0311 ([b698df6](https://github.com/alterhu2020/alterhu2020.github.io/commit/b698df6aec430d49d0f79bc08483f2fd434f5d30))
+* update 0319 ([58a1e15](https://github.com/alterhu2020/alterhu2020.github.io/commit/58a1e15f72d00cb2a22b08809c68d473c40f1466))
+* update blog ([3bb74e2](https://github.com/alterhu2020/alterhu2020.github.io/commit/3bb74e23157bb552919067aaca87db8676c6656d))
+* update doc 03/01 ([cdb6318](https://github.com/alterhu2020/alterhu2020.github.io/commit/cdb631878bba3542d47c85c6fbecf0ee1a6e76fe))
+
+
+
 # [1.17.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.16.0...v1.17.0) (2020-02-28)
 
 

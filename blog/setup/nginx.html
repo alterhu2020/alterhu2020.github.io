@@ -11,15 +11,14 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="apple-touch-icon" href="/img/logo.png">
-  <meta name="keywords" content="胡说,java,胡说博客,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫">
+  <meta name="keywords" content="胡说,胡说博客,java,python,vue,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫">
   <meta name="description" content="胡说博客，点滴记录贵在坚持">
   <meta name="google-site-verification" content="pyUtZja0WJ34YSL_6K0FkcYBU7pDR56XMU92nvDtz7k">
-  <script id="cookieinfo" src="https://cookieinfoscript.com/js/cookieinfo.min.js" data-message="我们使用cookies来提高用户体验,继续浏览网站表示同意我们使用cookies." data-linkmsg="了解更多" data-bg="#645862" data-fg="#FFFFFF" data-link="#F1D600" data-cookie="CookieInfoScript" data-text-align="left" data-close-text="知道了!"></script>
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="article:modified_time" content="Thu Mar 19 2020 22:58:43 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="胡说博客"><meta property="og:title" content="Nginx Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/nginx.html"><meta name="twitter:title" content="Nginx Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/nginx.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.7827605f.js" as="script"><link rel="preload" href="/assets/js/3.8c62cfad.js" as="script"><link rel="preload" href="/assets/js/72.ad23a5c2.js" as="script">
+    <meta property="article:modified_time" content="Wed Apr 08 2020 19:27:53 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="胡说博客"><meta property="og:title" content="Nginx Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/nginx.html"><meta name="twitter:title" content="Nginx Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/nginx.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.07da7e41.js" as="script"><link rel="preload" href="/assets/js/3.8c62cfad.js" as="script"><link rel="preload" href="/assets/js/74.1feaeffe.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -54,8 +53,8 @@ $ wget https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.gz
 $ tar xvf pcre-8.43.tar.gz
 
 // OpenSSL安装
-$ wget https://www.openssl.org/source/openssl-1.1.1c.tar.gz
-$ tar xvf openssl-1.1.1c.tar.gz
+$ wget https://www.openssl.org/source/openssl-1.1.1f.tar.gz
+$ tar xvf openssl-1.1.1f.tar.gz
 $ sudo apt install build-essential -y
 
 // nginx安装
@@ -84,7 +83,7 @@ $ ./configure --prefix=/usr/local/nginx \
             --http-proxy-temp-path=/var/lib/nginx/proxy \
             --http-scgi-temp-path=/var/lib/nginx/scgi \
             --http-uwsgi-temp-path=/var/lib/nginx/uwsgi \
-            --with-openssl=../nginx-modules/openssl-1.1.1c \
+            --with-openssl=../nginx-modules/openssl-1.1.1f \
             --with-openssl-opt=enable-ec_nistp_64_gcc_128 \
             --with-openssl-opt=no-nextprotoneg \
             --with-openssl-opt=no-weak-ssl-ciphers \
@@ -150,7 +149,7 @@ systemctl daemon-reload
 systemctl restart nginx 
 </code></pre></div><h1 id="nginx配置助手"><a href="#nginx配置助手" class="header-anchor">#</a> nginx配置助手</h1> <ol><li>安装cerbot配置SSL</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo apt-get install certbot -y
 </code></pre></div><ol start="2"><li>配置nginx和SSL</li></ol> <p>参考配置文件,每次只需要修改对应的域名(Domain)和目录(Path):
-<a href="https://www.digitalocean.com/community/tools/nginx#?0.domain=pingbook.top&amp;0.path=%2Fwww%2Fpingbook%2Fweb%2Fwww.pingbook.top&amp;0.document_root=&amp;0.redirect=false&amp;0.email=alterhu2020@gmail.com&amp;0.php=false&amp;0.proxy&amp;0.index=index.html&amp;0.fallback_html&amp;0.access_log_domain&amp;0.error_log_domain&amp;directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&amp;brotli&amp;log_not_found&amp;client_max_body_size=160&amp;symlink=false" target="_blank" rel="noopener noreferrer">nginxconfig助手<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>以后每次配置子域名，只需要配置好对应的conf文件然后执行如下命令:</p> <div class="language- extra-class"><pre class="language-text"><code>$ certbot certonly --webroot -d res.pingbook.top --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
+<a href="https://www.digitalocean.com/community/tools/nginx#?0.domain=pingbook.top&amp;0.path=%2Fwww%2Fweb%2Fwww.pingbook.top&amp;0.document_root=&amp;0.redirect=false&amp;0.email=alterhu2020@gmail.com&amp;0.php=false&amp;0.proxy&amp;0.index=index.html&amp;0.access_log_domain&amp;0.error_log_domain&amp;directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&amp;brotli&amp;log_not_found&amp;symlink=false" target="_blank" rel="noopener noreferrer">nginxconfig助手<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>以后每次配置子域名，只需要配置好对应的conf文件然后执行如下命令:</p> <div class="language- extra-class"><pre class="language-text"><code>$ certbot certonly --webroot -d res.pingbook.top --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
 </code></pre></div><div class="custom-block warning"><p class="custom-block-title">Symlink vhost配置文件</p> <p>注意: 在<code>Symlink vhost</code> 中不要勾选enable。
 完成以上的配置后不行看任意修改文件</p></div> <h2 id="配置静态域名：res-pingbook-top"><a href="#配置静态域名：res-pingbook-top" class="header-anchor">#</a> 配置静态域名：res.pingbook.top</h2> <p>对于静态资源展示，提供了几种方式配置：</p> <ul><li><p>简易配置Github风格：（推荐）<a href="https://www.91yunbbs.com/discussion/441/autoindex-html-%E4%B8%80%E8%A1%8C%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96-nginx-%E7%9B%AE%E5%BD%95%E6%88%90-github-%E9%A3%8E%E6%A0%BC" target="_blank" rel="noopener noreferrer">autoindex.html - 一行配置美化 nginx 目录成 github 风格。<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p>复杂配置，比较好看 <a href="https://www.cnblogs.com/linkenpark/p/9184491.html" target="_blank" rel="noopener noreferrer">ngx-fancyindex<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li></ul> <div class="language- extra-class"><pre class="language-text"><code># 代理配置
 location / {
@@ -824,7 +823,7 @@ dashboard_port = 7500
 dashboard_user = alterhu2020
 dashboard_pwd = guchan1026
  
-</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">3/19/2020, 10:58:43 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">4/8/2020, 7:27:53 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/linux.html" class="prev">
           Debian Linux命令其环境配置
@@ -833,6 +832,6 @@ dashboard_pwd = guchan1026
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><BackToTop></BackToTop></div></div>
-    <script src="/assets/js/app.7827605f.js" defer></script><script src="/assets/js/3.8c62cfad.js" defer></script><script src="/assets/js/72.ad23a5c2.js" defer></script>
+    <script src="/assets/js/app.07da7e41.js" defer></script><script src="/assets/js/3.8c62cfad.js" defer></script><script src="/assets/js/74.1feaeffe.js" defer></script>
   </body>
 </html>

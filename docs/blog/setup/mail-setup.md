@@ -33,7 +33,7 @@ Port for SSL: 465
     # ssl: 465 ,or 25
     port: 465
     username: alterhu2020@gmail.com
-    password: ENC(84rFTtest3pgmYMtestcwQxWWPXOZqjLqHq5wIbh0fCiqNM=)
+    password: ENC(84rFTtest3pgzhm494YfMtestcwQxWWPXOZqjLqHq5wIbh0fCiqNM=)
 
 ```
 

@@ -18,7 +18,7 @@ $ sudo apt-get install redis-server -y
 ```
 ## 修改配置文件
 
-只需要修改配置文件中的密码
+只需要修改配置文件中的密码,修改端口号为： **2963**
 
 ## 卸载redis
 

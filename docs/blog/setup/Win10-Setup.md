@@ -17,12 +17,18 @@ title: Windows10环境配置
 
 * 激活工具
 * [ Chrome Canary](https://www.google.com/chrome/?extra=canarychannel&standalone=1)
-   1. tampermonkey ( 懒人专用，全网VIP视频免费破解去广告、全网音乐直接下载、百度网盘直接下载、知乎视频下载等多合一版。长期更新，放心使用。)
+   1. tampermonkey 
+      - ( 懒人专用，全网VIP视频免费破解去广告、全网音乐直接下载、百度网盘直接下载、知乎视频下载等多合一版。长期更新，放心使用。)
+      - JAV老司机
    2. Free Download Manager
    3. Octotree
    4. Vue Devtools
    5. ChroPath
    6. 掘金
+   7. 谷歌上网助手
+   8. Wappalyzer
+   9. Momentum
+   
 * [VPN客户端](https://www.shrew.net/download/vpn/vpn-client-2.2.2-release.exe)   
 * [WPS](https://www.wps.cn/)   
 * [OneNote](https://www.microsoft.com/en-us/p/onenote/9wzdncrfhvjl)
@@ -45,17 +51,22 @@ title: Windows10环境配置
     5. MybatisCodeHelperPro
     6. Python
     7. Vue.js
+    8. Wake Time
 
 * [HBuilderX](https://dcloud.io/)
 * [VS Code](https://code.visualstudio.com/download)
 
-   - Markdown相关插件
+  - Markdown相关插件
      1.1 Markdown PDF
      1.2 Markdown Preview Enhanced
      1.3 Markdown Shortcuts
      1.4 markdownlint
      1.5 vscode-pdf
      1.6 PicGo
+     1.7 Visual Studio IntelliCode
+     1.8 Python
+     1.9 Impornt Cost
+     1.10 Settings Sync, token: 88b53e726d32e7125a784d90a2ba0d2e73678164, gist: 9a957602da106a377142305bcb2f3e65
 
          1. token: ab24b641120a723aa43e6a462a89980b1ea9c194
          2. Github Repo:alterhu2020/StorageHub
@@ -108,3 +119,7 @@ title: Windows10环境配置
 * [微信桌面版](https://pc.weixin.qq.com/)
 * [人人影视](http://www.rrys2019.com/)
 * [迅雷](https://www.xunlei.com/)
+  [Google Earth](https://www.google.com/earth/versions/)
+
+
+

@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage:  /hero.png
+heroImage:  /hero.webp
 heroText: 胡说博客
 actionText:  我的博客
 actionLink: /blog/

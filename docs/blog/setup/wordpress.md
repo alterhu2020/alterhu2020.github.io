@@ -14,7 +14,7 @@ title: Wordpress Linux命令其环境配置
 
 ## Install wordpress
 ```
-$ cd /www/pingbook
+$ cd /www/web/blog.pingbook.top
 $ wget https://wordpress.org/latest.tar.gz
 $ tar xpf latest.tar.gz
 $ cp -r wordpress ../
@@ -31,7 +31,7 @@ $ cp -r wordpress ../
 ```
 ----------上面采用的php源码安装可以使用下面的几个命令替代-----------------------------
 $ sudo apt update
-$ sudo apt-get install php-fpm php-mysql 
+$ sudo apt-get install php-fpm php-mysql -y
 
 上面的命令会安装: php-common php7.3-cli php7.3-common php7.3-fpm php7.3-json php7.3-mysql php7.3-opcache php7.3-readline
 可以看到对应的路径为: /run/php/php7.3-fpm.sock,另外安装了服务： sudo systemctl status php7.3-fpm
@@ -61,6 +61,52 @@ location ~ \.php$ {
     include fastcgi_params;
 }
 
+```
+有时候我们可以看到另外的一种配置，也是可行的，不过有点麻烦，如下代码:
+```
+server {
+        listen        80;
+        server_name  localhost;
+        root   "D:/WWW";
+        location / {
+            index index.php index.html;
+            error_page 400 /error/400.html;
+            error_page 403 /error/403.html;
+            error_page 404 /error/404.html;
+            error_page 500 /error/500.html;
+            error_page 501 /error/501.html;
+            error_page 502 /error/502.html;
+            error_page 503 /error/503.html;
+            error_page 504 /error/504.html;
+            error_page 505 /error/505.html;
+            error_page 506 /error/506.html;
+            error_page 507 /error/507.html;
+            error_page 509 /error/509.html;
+            error_page 510 /error/510.html;
+            autoindex  off;
+           # 修复phpstudy链接修改为固定链接后文章详情页面报404错误
+           if (-f $request_filename/index.html){
+               rewrite (.*) $1/index.html break;
+           }
+           if (-f $request_filename/index.php){
+               rewrite (.*) $1/index.php;
+           }
+           if (!-f $request_filename){
+               rewrite (.*) /index.php;
+           }
+        }
+        # 上面配置后后台不能访问了，仔细观察发现后台所有地址都缺少wp-admin目录
+        rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+        location ~ \.php(.*)$ {
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            fastcgi_split_path_info  ^((?U).+\.php)(/?.+)$;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            fastcgi_param  PATH_INFO  $fastcgi_path_info;
+            fastcgi_param  PATH_TRANSLATED  $document_root$fastcgi_path_info;
+            include        fastcgi_params;
+        }
+}
 ```
 
 ## 配置启动安装wordpress
@@ -92,10 +138,10 @@ location ~ \.php$ {
 define( 'DB_NAME', 'jvfast' );
 
 /** MySQL database username */
-define( 'DB_USER', 'syscorer' );
+define( 'DB_USER', 'test' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 's6s@#@!L0ngh' );
+define( 'DB_PASSWORD', 'ssd3434gf5d0ngh' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );

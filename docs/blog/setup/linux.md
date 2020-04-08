@@ -19,9 +19,9 @@ title: Debian Linux命令其环境配置
 2. 如何回收cache？
 
 ```
-$ echo 1 > /proc/sys/vm/drop_caches:表示清除pagecache。
-$ echo 2 > /proc/sys/vm/drop_caches:表示清除回收slab分配器中的对象（包括目录项缓存和inode缓存）。slab分配器是内核中管理内存的一种机制，其中很多缓存数据实现都是用的pagecache。
-$ echo 3 > /proc/sys/vm/drop_caches:表示清除pagecache和slab分配器中的缓存对象。
+$ sudo sh -c "echo 1 > /proc/sys/vm/drop_caches":表示清除pagecache。
+$ sudo sh -c "echo 2 > /proc/sys/vm/drop_caches":表示清除回收slab分配器中的对象（包括目录项缓存和inode缓存）。slab分配器是内核中管理内存的一种机制，其中很多缓存数据实现都是用的pagecache。
+$ sudo sh -c "echo 3 > /proc/sys/vm/drop_caches":表示清除pagecache和slab分配器中的缓存对象。
 ```
 
 ## 设置时区
@@ -36,6 +36,19 @@ $ tzselect
 
 ```
 $ du -sh *
+```
+## 查看linux的架构 32-bit or 64-bit
+
+```
+# 32位还是64位
+uname -a
+# 下面命令显示CPU架构
+lscpu
+$ cat /proc/cpuinfo 
+Processor       : ARMv7 Processor rev 10 (v7l)
+ARMv7 (and below) is 32-bit. ARMv8 introduces the 64-bit instruction set.
+If you want to see whether your system supports 64-bit binaries, check the kernel architecture:
+$ uname -m
 ```
 
 ## 查看本机打开的端口号
@@ -291,7 +304,7 @@ $ sudo nano /etc/crontab
  
 # Example of job definition:
 # .---------------- minute (0 - 59)
-# |  .------------- hour (0 - 23)
+# |  .------------- hour (0 ar- 23)
 # |  |  .---------- day of month (1 - 31)
 # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat

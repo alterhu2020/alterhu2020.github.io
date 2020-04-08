@@ -35,8 +35,8 @@ $ wget https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.gz
 $ tar xvf pcre-8.43.tar.gz
 
 // OpenSSL安装
-$ wget https://www.openssl.org/source/openssl-1.1.1c.tar.gz
-$ tar xvf openssl-1.1.1c.tar.gz
+$ wget https://www.openssl.org/source/openssl-1.1.1f.tar.gz
+$ tar xvf openssl-1.1.1f.tar.gz
 $ sudo apt install build-essential -y
 
 // nginx安装
@@ -65,7 +65,7 @@ $ ./configure --prefix=/usr/local/nginx \
             --http-proxy-temp-path=/var/lib/nginx/proxy \
             --http-scgi-temp-path=/var/lib/nginx/scgi \
             --http-uwsgi-temp-path=/var/lib/nginx/uwsgi \
-            --with-openssl=../nginx-modules/openssl-1.1.1c \
+            --with-openssl=../nginx-modules/openssl-1.1.1f \
             --with-openssl-opt=enable-ec_nistp_64_gcc_128 \
             --with-openssl-opt=no-nextprotoneg \
             --with-openssl-opt=no-weak-ssl-ciphers \
@@ -158,7 +158,7 @@ $ sudo apt-get install certbot -y
 2. 配置nginx和SSL
 
 参考配置文件,每次只需要修改对应的域名(Domain)和目录(Path):
- [nginxconfig助手](https://www.digitalocean.com/community/tools/nginx#?0.domain=pingbook.top&0.path=%2Fwww%2Fpingbook%2Fweb%2Fwww.pingbook.top&0.document_root=&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.index=index.html&0.fallback_html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&brotli&log_not_found&client_max_body_size=160&symlink=false)
+ [nginxconfig助手](https://www.digitalocean.com/community/tools/nginx#?0.domain=pingbook.top&0.path=%2Fwww%2Fweb%2Fwww.pingbook.top&0.document_root=&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.index=index.html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&brotli&log_not_found&symlink=false)
 
 以后每次配置子域名，只需要配置好对应的conf文件然后执行如下命令:
 

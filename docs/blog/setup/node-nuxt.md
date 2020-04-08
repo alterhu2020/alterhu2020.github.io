@@ -30,8 +30,8 @@ $ tar xvf node-v12.14.1-linux-x64.tar.xz
 $ mv node-v12.14.1-linux-armv7l /opt/
 $ sudo nano /etc/profile
 增加对应的node的PATH路径,例如如下:
-export path=/opt/node-v12.14.1-linux-armv7l/bin:$PATH
-export path=/opt/node-v12.14.1-linux-x64/bin:$PATH
+export PATH=/opt/node-v12.14.1-linux-armv7l/bin:$PATH
+export PATH=/opt/node-v12.14.1-linux-x64/bin:$PATH
 执行如下命令使上面的PATH配置生效
 $ source /etc/profile 
 

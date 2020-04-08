@@ -23,7 +23,7 @@ $ 进入Jenkins目录：https://ci.adoptopenjdk.net/job/build-scripts/job/jobs/j
 $ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz
 $  tar -zxvf OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz 
 $ nano /etc/profile
-export JAVA_HOME=/home/jdk-11.0.4+11
+export JAVA_HOME=/opt/jdk-11.0.6+10
 export PATH=$JAVA_HOME/bin:$PATH
 
 $ . /etc/profile
@@ -49,7 +49,7 @@ $  mkdir /opt/tomcat
 $  chown -R www-data:www-data apache-tomcat
 ```
 
-### tomcat启动脚本
+## tomcat启动脚本
 ```
 [Unit]
 Description=Tomcat9
@@ -332,11 +332,12 @@ org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.
 ### initial-server-setup-with-debian-9 初始化debian系统
 > 建用户和ufw
 
-#### -----------------------------------------------------错误参数-----------------------------------------------------------------------------------
+### -----------------------------------------------------错误参数------------------------------------------
 
 ### Caused by: org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [HikariDataSource (null)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException: com.zaxxer.hikari:name=dataSource,type=HikariDataSource
 
-# 同一个tomcat容器部署多个war包报错： : Unable to register MBean [HikariDataSource (null)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException:
+### Unable to register MBean [HikariDataSource (null)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException:
+
 spring.jmx.enabled=true
 spring.jmx.default-domain=com.yitieyilu.core
 

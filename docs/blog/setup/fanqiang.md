@@ -11,9 +11,21 @@ title: 翻墙工具环境配置
 
 [[toc]]
 
-## 操作步骤
+## V2Ray
 
-### Windows
+### 服务端配置
+
+2020/04/07： 采用一键脚本，[Github仓库multi-v2ray](https://github.com/Jrohy/multi-v2ray)
+
+
+## 客户端配置
+
+[Windows-V2rayN配置教程](https://www.hijk.pw/v2rayn-config-tutorial/)
+
+[V2rayW配置教程](https://www.hijk.pw/v2rayw-config-tutorial/)
+
+
+## ~~IPsec/L2TP客户端配置，目前采用v2ray~~
 
 **注：** 你也可以使用 [IPsec/L2TP 模式](clients-zh.md) 连接，无需安装额外的软件。
 
@@ -40,3 +52,10 @@ title: 翻墙工具环境配置
 1. 在 **Username** 字段中输入`你的 VPN 用户名`: **alterhu2020**
 1. 在 **Password** 字段中输入`你的 VPN 密码`: **1235674378778**
 1. 单击 **Connect**
+
+## V2Ray一键安装脚本
+
+[~~V2Ray一键安装脚本~~](https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC)
+
+
+

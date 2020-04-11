@@ -348,3 +348,87 @@ WantedBy=multi-user.target
 ```
 
 ## 客户端配置
+
+## `frpc.ini`配置文件
+1. 配置执行文件
+```
+$  chmod +x frpc
+```
+2. 直接修改`frpc.ini`配置文件内容如下: 
+```
+[common]
+## 对应的您的服务器的ip地址和端口号，端口号是上面的`frps.ini`中配置的`port`参数
+server_addr = 34.69.204.193
+server_port = 7000
+# 与服务器端通信协议
+# 支持 tcp and kcp and websocket, 默认是 tcp
+protocol = tcp
+pool_count = 5
+
+# 记录日志
+log_file = /opt/frp/logs/frpc.log
+log_level = info
+log_max_days = 3
+
+
+admin_port = 7400
+admin_user = alterhu2020
+admin_pwd = guchan102620
+# ssh访问
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 6000
+# -----------------------------域名配置---------------------------
+# 1. 通过域名访问设置,默认的remote_port已经在frps中设置
+[www.http]
+type = http
+use_encryption = false
+use_compression = true
+
+local_ip = 127.0.0.1
+local_port = 3000
+custom_domains= www.pingbook.top,pingbook.top
+
+# 2. blog.pingbook.top博客网站
+[blog.http]
+type = http
+use_encryption = false
+use_compression = true
+
+local_ip = 127.0.0.1
+local_port = 80
+custom_domains= blog.pingbook.top
+
+# 3. doc.pingbook.top文档网址
+[doc.http]
+type = http
+use_encryption = false
+use_compression = true
+
+local_ip = 127.0.0.1
+local_port = 3007
+custom_domains= doc.pingbook.top
+
+# 4. jvfast.pingbook.top演示网站
+[jvfast.http]
+type = http
+use_encryption = false
+use_compression = true
+
+local_ip = 127.0.0.1
+local_port = 3006
+custom_domains= jvfast.pingbook.top
+
+# 5. 后台接口open.pingbook.top配置
+[open.http]
+type = http
+use_encryption = false
+use_compression = true
+
+local_ip = 127.0.0.1
+local_port = 9090
+custom_domains = open.pingbook.top
+
+```

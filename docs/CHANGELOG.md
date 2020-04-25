@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.19.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.18.0...v1.19.0) (2020-04-25)
+
+
+### Features
+
+* frp update. ([8ae790a](https://github.com/alterhu2020/alterhu2020.github.io/commit/8ae790ad7975866a6b17dd96d47f03d8d2332b98))
+* update 0425 ([8dd70dd](https://github.com/alterhu2020/alterhu2020.github.io/commit/8dd70dd326888f190ce2421e9e431f988567a597))
+
+
+
 # [1.18.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.17.0...v1.18.0) (2020-04-08)
 
 

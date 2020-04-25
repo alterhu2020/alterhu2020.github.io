@@ -19,6 +19,7 @@ module.exports = {
             title: '环境配置和部署',
             collapsable: true,
             children: [
+                'setup/ux-tool-best',
                 'setup/fanqiang',
                 'setup/Frp-Setup',
                 'setup/artipub-setup',
@@ -42,6 +43,8 @@ module.exports = {
             title: '2020年归档',
             collapsable: false,
             children: [
+                '2020/vultr-setup',
+                '2020/5-best-wordpress-notification-plugins',
                 '2020/JPEG-Standard',
                 '2020/sh-binbashM-坏的解释器-没有那个文件或目录',
                 '2020/IDEA-Maven-unable-to-find-valid-certification-path-to-requested-target',

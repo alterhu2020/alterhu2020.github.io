@@ -72,6 +72,13 @@ title: Windows10环境配置
          2. Github Repo:alterhu2020/StorageHub
          3. Branch: master
          4. Github Path: img/
+    1.11 Live Server
+    1.12 Debugger for Chrome
+    1.13 Live Sass Compiler
+    1.14 Lorem ipsum
+    1.15 CSS Peek
+    1.16 IntelliSense for CSS class names in HTML
+
 * [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Node](https://nodejs.org/en/download/)
 * [Python 3.8.2](https://www.python.org/ftp/python/3.8.2/)

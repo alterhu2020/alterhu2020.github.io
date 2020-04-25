@@ -23,6 +23,37 @@ $ sudo sh -c "echo 1 > /proc/sys/vm/drop_caches":表示清除pagecache。
 $ sudo sh -c "echo 2 > /proc/sys/vm/drop_caches":表示清除回收slab分配器中的对象（包括目录项缓存和inode缓存）。slab分配器是内核中管理内存的一种机制，其中很多缓存数据实现都是用的pagecache。
 $ sudo sh -c "echo 3 > /proc/sys/vm/drop_caches":表示清除pagecache和slab分配器中的缓存对象。
 ```
+## 查看当前运行的进程的详细路径
+
+使用命令：
+
+```
+$ top -c
+```
+
+## 通过进程pid查看进程
+
+执行命令：
+```
+$ ls  -l /proc/pid
+例如：
+$ ls -ls /proc/1245
+```
+
+## 查看进程占用排序
+
+```
+$ ps -aux --sort=-pcpu|head -10
+
+```
+
+## 查看定时任务
+
+```
+$ crontab -l
+$ nano /etc/crontab
+```
+
 
 ## 设置时区
 

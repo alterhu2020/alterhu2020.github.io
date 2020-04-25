@@ -33,6 +33,8 @@ JPEG 2000, JPEG XR, and WebP are image formats that have superior compression an
 
 ### 图片颜色提取？
 
+1. ps中打开图片
+2. 采用吸管工具，然后点击颜色区域，可以查看到颜色hex值；
 
 ### 图片字体复制
 
@@ -40,3 +42,10 @@ https://jingyan.baidu.com/article/c74d6000c899e20f6a595de6.html
 
 1. 首先用仿制公章将字体部分覆盖删除掉
 2. 使用文字工具写上你需要添加的字，然后鼠标指针选中添加的字体调整它的大小样式
+
+### 如何去除水印
+
+1. 采用锁套工具或者矩形选择工具，然后右键选择的区域，选择“填充”
+2. 在弹出的填充对话框中，内容选择“内容识别”，模式“正常”，不透明度“100%”点击确认即可；
+
+参考视频: <https://www.youtube.com/watch?v=ZqJzWIt7hZc>

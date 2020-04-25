@@ -15,14 +15,23 @@ title: 翻墙工具环境配置
 
 ### 服务端配置
 
-2020/04/07： 采用一键脚本，[Github仓库multi-v2ray](https://github.com/Jrohy/multi-v2ray)
+2020/04/15： 推荐采用一键配置脚本，支持多用户[Github仓库multi-v2ray](https://github.com/Jrohy/multi-v2ray)
+
+安装步骤：
+
+```
+$ sudo -s
+$ source <(curl -sL https://multi.netlify.com/v2ray.sh) --zh
+```
 
 
 ## 客户端配置
 
-[Windows-V2rayN配置教程](https://www.hijk.pw/v2rayn-config-tutorial/)
+- [自己整理的V2rayN配置操作说明](/2020/vultr-setup)
 
-[V2rayW配置教程](https://www.hijk.pw/v2rayw-config-tutorial/)
+- [Windows-V2rayN配置教程](https://www.hijk.pw/v2rayn-config-tutorial/)
+
+- [V2rayW配置教程](https://www.hijk.pw/v2rayw-config-tutorial/)
 
 
 ## ~~IPsec/L2TP客户端配置，目前采用v2ray~~

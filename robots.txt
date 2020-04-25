@@ -1,0 +1,8 @@
+# robots.txt generated at https://www.sojson.com/robots/
+Disallow:https://code.pingbook.top/sitemap.xml
+Disallow:/ant-design-vue/*
+Disallow:/ionic-vue
+Disallow:/video/
+Disallow:/rss.xml
+User-agent: *
+Disallow:

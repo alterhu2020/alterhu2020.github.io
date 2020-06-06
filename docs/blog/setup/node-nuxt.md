@@ -124,6 +124,14 @@ $ pm2 reload
           include nginxconfig.io/proxy.conf;
  }
 ```
+
+## 4. 发布到npmjs.com中使用jsDelivr CDN加速
+
+```
+> npm login --registry=https://registry.npmjs.com/
+> npm publish --registry=https://registry.npmjs.com/
+```
+
 -----------------------------------------------------
 # 问题
 ## 安装`node-sass` 报错

@@ -144,8 +144,8 @@ log_bin_trust_function_creators=1
 server-id=2
 skip-log-bin
 # 1062 Duplicate entry
-slave-skip-errors=1062,1053,1146 #跳过指定error no类型的错误
-#slave-skip-errors=all #跳过所有错误
+# slave-skip-errors=1062,1053,1146 #跳过指定error no类型的错误
+slave-skip-errors=all #跳过所有错误，这个一定要配置，避免不必要的错误导致主从复制失败
 # 配置慢查询
 slow_query_log = ON
 slow_query_log_file = /logs/mysql/slow.log
@@ -241,12 +241,15 @@ NULL - 表示io_thread或是sql_thread有任何一个发生故障，也就是该
 ### 读写分离报错问题
 
 1.记录删除失败 `Could not execute Delete_rows event on table cvr.sys_user; Can't find record in 'sys_user', Error_code: 1032; handler error HA_ERR_KEY_NOT_FOUND; the event's master log mysql-bin.000005, end_log_pos 46653957`错误
-解决方法：master要删除一条记录，而slave上找不到报错，这种情况主都已经删除了，那么从机可以直接跳过。
-#将同步指针向下移动一个，如果多次不同步可以重复操作
+解决方法：master要删除一条记录，而slave上找不到报错，这种情况主都已经删除了，那么从机可以直接跳过指定数量的错误。
+#将同步指针向下移动一个，如果多次不同步可以重复操作：
+
 ```
-stop slave;set global sql_slave_skip_counter=1;start slave;
+stop slave;set global sql_slave_skip_counter=1;SELECT SLEEP(5);start slave;
 ```
+
 If the error is still there, set a bigger value in sql_slave_skip_counter like:
+
 ```
 mysql> set global sql_slave_skip_counter=1000;
 ```
@@ -266,6 +269,14 @@ mysql> start slave;
 Last_SQL_Error: Could not execute Write_rows event on table hcy.t1; Duplicate entry '2' for key 'PRIMARY', Error_code: 1062; handler error HA_ERR_FOUND_DUPP_KEY; the event's master log mysql-bin.000006, end_log_pos 924
 
 ```
+
+3. 终极解决所有的主从错误同步问题
+
+直接在`mysqld.cnf`文件中配置如下忽略所有的错误:
+```
+slave-skip-errors=all
+```
+
 ## 忘记root密码重置root密码
 
 ```

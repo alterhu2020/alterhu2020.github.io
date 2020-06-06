@@ -19,6 +19,7 @@ module.exports = {
             title: '环境配置和部署',
             collapsable: true,
             children: [
+                'setup/nuxt-setup',
                 'setup/ux-tool-best',
                 'setup/fanqiang',
                 'setup/Frp-Setup',

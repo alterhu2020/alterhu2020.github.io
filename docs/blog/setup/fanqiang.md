@@ -11,6 +11,10 @@ title: 翻墙工具环境配置
 
 [[toc]]
 
+## Github 翻墙速度提升
+
+<https://code.pingbook.top/blog/2020/How-To-Speed-Github.html>
+
 ## V2Ray
 
 ### 服务端配置

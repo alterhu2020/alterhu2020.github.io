@@ -15,6 +15,7 @@ title: Nginx Linux安装及其环境配置
 
 ## Nginx安装步骤
 
+有关各个安装类库的版本要求参见：<https://nginx.org/en/docs/configure.html>
 ```
 $ cd /opt
 $ sudo mkdir nginx-modules
@@ -874,4 +875,13 @@ dashboard_port = 7500
 dashboard_user = alterhu2020
 dashboard_pwd = guchan1026
  
+```
+
+## 文档备份
+
+备份文档脚本：
+
+```
+ sudo tar -zcvf backup-20200420.tar.gz /etc/profile /www/ /etc/nginx/ /etc/letsencrypt/ /etc/mysql/mysql.conf.d/mysqld.cnf /etc/redis/redis.conf
+
 ```

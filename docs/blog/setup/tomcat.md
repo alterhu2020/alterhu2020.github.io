@@ -12,6 +12,99 @@ title: Tomcat Linux安装及其环境配置
 
 [[toc]]
 
+## apr安装配置
+
+### 1. windows环境配置
+
+如果springboot开启apr模式后报错如下:
+```
+Caused by: org.apache.catalina.LifecycleException: The configured protocol [org.apache.coyote.http11.Http11AprProtocol] requires the APR/native library which is not available
+```
+则需要在classpath中添加`tcnative-1.dll`文件，该文件存在tomcat的安装包中的`bin`目录下面也可以单独下载`tomcat-native`(http://archive.apache.org/dist/tomcat/tomcat-connectors/native/)包，推荐第一种方式下载tomcat安装包。
+
+```
+$ wget https://mirrors.gigenet.com/apache/tomcat/tomcat-9/v9.0.36/bin/apache-tomcat-9.0.36-windows-x64.zip
+$ tar zxvf apache-tomcat-9.0.36-windows-x64.zip
+$ cd apache-tomcat-9.0.36-windows-x64/bin
+# 复制tcnative-1.dll到jdk的bin目录下，重启项目即可。
+```
+
+### 2. Linux环境配置
+
+- 2.1 下载资源
+
+1. 进入apr地址: <http://apr.apache.org/download.cgi>,里面有三个包： apr, apr-util,apr-iconv,把这三个包都安装了。
+
+```
+$ wget https://mirrors.ocf.berkeley.edu/apache//apr/apr-1.7.0.tar.gz
+$ wget https://mirrors.ocf.berkeley.edu/apache//apr/apr-util-1.6.1.tar.gz
+$ wget https://mirrors.ocf.berkeley.edu/apache//apr/apr-iconv-1.2.2.tar.gz
+#获取运行tomcat（无论内置还是外置，对应tomcat版本下的/bin/tomcat-native.tar.gz文件 ）
+$ wget https://apache.osuosl.org/tomcat/tomcat-9/v9.0.36/bin/apache-tomcat-9.0.36.tar.gz
+
+$ tar zxvf apr-1.7.0.tar.gz
+$ tar zxvf apr-util-1.6.1.tar.gz
+$ tar zxvf apr-iconv-1.2.2.tar.gz
+
+$ tar zxvf apache-tomcat-9.0.36.tar.gz
+$ cd apache-tomcat-9.0.36/bin
+$ tar zxvf tomcat-native.tar.gz
+```
+
+- 2.2 安装APR
+
+```
+$ cd apr-1.7.0
+$ ./configure --prefix=/usr/local/apr
+$ make && make install
+
+$ cd apr-util-1.6.1
+$ ./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr
+$ make && make install
+
+$ cd apr-iconv-1.2.2
+$ ./configure --prefix=/usr/local/apr-iconv --with-apr=/usr/local/apr
+$ make && make install
+
+$ cd tomcat-native-1.2.24-src/native/
+$ ./configure --prefix=/usr/local/apr --with-apr=/usr/local/apr --with-java-home=/opt/jdk/jdk-11.0.6+10
+#若报类似#include <expat.h>错误，需yum安装expat: yum install expat-devel
+$ make && make install
+#注意：要求系统OpenSSL library version >= 1.0.2
+#若版本太低，安装native会报错。
+  
+openssl version
+  
+#以下是安装openssl操作。若版本已达到1.0.2可以不用参考。
+#########################################################
+下载openssl
+wget https://www.openssl.org/source/openssl-1.0.2j.tar.gz
+tar zxvf openssl-1.0.2j.tar.gz
+cd openssl
+./config --prefix=/usr/local/openssl -fPIC
+make && make install
+mv /usr/bin/openssl ~   //备份
+ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl //替换最新openssl执行文件
+openssl version  //查看openssl版本是否已替换
+  
+#安装成功后，可再次执行tomcat-native
+
+```
+
+- 2.3配置环境变量
+
+```
+$ nano /etc/profile
+#添加：export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/apr/lib
+
+$ nano /etc/bashrc
+#添加：export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/apr/lib
+
+$ source /etc/profile
+$ source /etc/bashrc
+
+```
+
 ## JDK 和 tomcat 安装[更新到2019年8月10日]
 
 

@@ -17,7 +17,7 @@ module.exports = {
         },
         {
             title: '环境配置和部署',
-            collapsable: true,
+            collapsable: false,
             children: [
                 'setup/nuxt-setup',
                 'setup/ux-tool-best',

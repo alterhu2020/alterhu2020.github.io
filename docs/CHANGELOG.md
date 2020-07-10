@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.20.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.19.0...v1.20.0) (2020-07-10)
+
+
+### Features
+
+* nuxt update document. ([9b69807](https://github.com/alterhu2020/alterhu2020.github.io/commit/9b69807facb230f3fed75aae6be65219f56c7c9e))
+* tomcat setup script. ([84a4b88](https://github.com/alterhu2020/alterhu2020.github.io/commit/84a4b88d90cd282bf078cd83becc3f09bc30f201))
+
+
+
 # [1.19.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.18.0...v1.19.0) (2020-04-25)
 
 

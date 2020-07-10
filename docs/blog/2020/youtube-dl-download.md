@@ -40,6 +40,7 @@ $ sudo -H pip install --upgrade youtube-dl
 参数： `--ffmpeg-location `可以用来设置ffmpeg的路径，可以是可执行文件路径或者对应的执行文件路径的文件夹
 
 ###  普通下载
+
 通过 Youtube-dl 下载视频十分简洁，例如你需要下载http://www.bilibili.com/video/av11728123/ 你可以这样：
 ```sh
 youtube-dl 'http://www.bilibili.com/video/av11728123/'

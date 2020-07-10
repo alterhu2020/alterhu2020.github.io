@@ -62,16 +62,11 @@ title: Windows10机器新环境配置
      1.3 Markdown Shortcuts
      1.4 markdownlint
      1.5 vscode-pdf
-     1.6 PicGo
+     1.6 PicGo （配置操作: https://code.pingbook.top/blog/setup/how-setup-picgo-vscode.html )
      1.7 Visual Studio IntelliCode
      1.8 Python
      1.9 Impornt Cost
      1.10 Settings Sync, token: 88b53e726d32e7125a784d90a2ba0d2e73678164, gist: 9a957602da106a377142305bcb2f3e65
-
-         1. token: ab24b641120a723aa43e6a462a89980b1ea9c194
-         2. Github Repo:alterhu2020/StorageHub
-         3. Branch: master
-         4. Github Path: img/
     1.11 Live Server
     1.12 Debugger for Chrome
     1.13 Live Sass Compiler

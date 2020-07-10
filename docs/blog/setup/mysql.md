@@ -147,9 +147,9 @@ skip-log-bin
 # slave-skip-errors=1062,1053,1146 #跳过指定error no类型的错误
 slave-skip-errors=all #跳过所有错误，这个一定要配置，避免不必要的错误导致主从复制失败
 # 配置慢查询
-slow_query_log = ON
+slow_query_log = 1
 slow_query_log_file = /logs/mysql/slow.log
-
+long_query_time = 5
 ```
 
 ## 添加数据库和用户(包括修改用户密码)

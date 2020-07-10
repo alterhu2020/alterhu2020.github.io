@@ -11,6 +11,56 @@ title: Raspberry Linux安装及其环境配置
 
 [[toc]]
 
+## 树莓派架构
+
+```
+$ lscpu 
+$ cat /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 3 (v7l)
+BogoMIPS	: 108.00
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd08
+CPU revision	: 3
+```
+
+## 树莓派架构版本
+
+```
+cat /proc/device-tree/model
+Raspberry Pi 4 Model B Rev 1.2
+```
+
+## 检查Raspbian系统版本
+
+```
+$ cat /etc/os-release
+$ lsb_release -a
+```
+
+## 64位操作系统
+
+参考指导：https://www.raspberrypi.org/forums/viewtopic.php?t=208314&start=299
+脚本如下:
+
+```
+sudo raspi-config # enable OpenGL driver
+sudo apt install -y debootstrap schroot
+cat << EOF | sudo tee /etc/schroot/chroot.d/pi64
+[pi64]
+description=VC4 arm64 testing
+type=directory
+directory=/srv/chroot/pi64
+users=pi
+root-groups=root
+profile=desktop
+personality=linux
+```
+
+
 ## 树莓派安装
 
 > 3b和3b+虽然是arm64 v8的芯片，但是raspbian是32的，所以只能安装arm v7的包

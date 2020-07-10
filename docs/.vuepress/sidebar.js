@@ -19,6 +19,8 @@ module.exports = {
             title: '环境配置和部署',
             collapsable: false,
             children: [
+                'setup/bitcoin-mining',
+                'setup/how-setup-picgo-vscode',
                 'setup/nuxt-setup',
                 'setup/ux-tool-best',
                 'setup/fanqiang',
@@ -44,6 +46,8 @@ module.exports = {
             title: '2020年归档',
             collapsable: false,
             children: [
+                '2020/stripe-payment-setup',
+                '2020/software-ruankao',
                 '2020/vultr-setup',
                 '2020/5-best-wordpress-notification-plugins',
                 '2020/JPEG-Standard',

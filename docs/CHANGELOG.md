@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.21.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.20.0...v1.21.0) (2020-07-11)
+
+
+### Features
+
+* update document for bitcoin. ([82eb332](https://github.com/alterhu2020/alterhu2020.github.io/commit/82eb332a3efa10358965cece24d204a51f993f80))
+
+
+
 # [1.20.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.19.0...v1.20.0) (2020-07-10)
 
 

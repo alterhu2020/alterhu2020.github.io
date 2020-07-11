@@ -15,6 +15,7 @@ footer: Copyright © 2019-2020 胡说博客
   details: 把握最新动态，实时更新推送最新技术栈. -->
 
 ``` bash
+# git clone
 # mvn clean install
 # yarn run serve
 # scrapy crawl busy

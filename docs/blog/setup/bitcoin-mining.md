@@ -318,7 +318,9 @@ $ nohup ./xmrig --cpu-max-threads-hint 100 >/dev/null 2>&1 &
 
 2. 参考上面的**linux编译安装脚本xmrig零抽水** 安装脚本
 
+成功运行截图，注意零抽水**donate: 0%**：
 
+![20200711220304-2020-07-11](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200711220304-2020-07-11.png)
 
 
 ### ~~32位Raspian系统编译~~

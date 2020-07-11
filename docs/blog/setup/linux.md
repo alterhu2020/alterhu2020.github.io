@@ -11,6 +11,25 @@ title: Debian Linux命令其环境配置
 
 [[toc]]
 
+## 复制本地文件到服务器
+
+**scp - secure copy (remote file copy program)**
+
+1. 本地Windows下执行文件复制到指定目录
+the **.** just indicates the current directory path.
+```
+D:\linux> scp [source file] [username]@[destination server]:.
+D:\linux> scp cool_stuff.txt pi@192.168.1.17:.
+D:\linux> scp cool_stuff.txt pi@192.168.1.17:/this/path/right/here
+
+```
+
+2. 下载远程服务端文件到本地
+
+```
+$ scp sanjeev@example.com:cool_stuff.txt /this/path/right/here
+```
+
 ## 列出tar.gz压缩包的文件
 
 命令: ` tar tzf  test.tar.gz`

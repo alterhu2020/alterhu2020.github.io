@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue nuxtjs安装及其环境配置 | 胡说博客</title>
+    <meta name="description" content="人生处万类，知识最为贤。 —— 韩愈">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="胡说博客">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" href="/img/logo.png">
+  <meta name="keywords" content="胡说,胡说博客,java,python,vue,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫">
+  <meta name="description" content="胡说博客，点滴记录贵在坚持">
+  <meta name="google-site-verification" content="pyUtZja0WJ34YSL_6K0FkcYBU7pDR56XMU92nvDtz7k">
+  <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
+    <meta property="og:site_name" content="胡说博客"><meta property="og:title" content="Vue nuxtjs安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/node-nuxt-setup.html"><meta name="twitter:title" content="Vue nuxtjs安装及其环境配置"><meta name="twitter:url" content="/blog/setup/node-nuxt-setup.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.9c9380c3.js" as="script"><link rel="preload" href="/assets/js/3.8c62cfad.js" as="script"><link rel="preload" href="/assets/js/82.397aea2e.js" as="script">
+    <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">胡说博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">博客</a></div><div class="nav-item"><a href="/CHANGELOG.html" class="nav-link">历史更新</a></div><div class="nav-item"><a href="/contact-me/" class="nav-link">留言板</a></div><div class="nav-item"><a href="https://jvfast.pingbook.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JVFast管理框架
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://code.pingbook.top/ant-design-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ant-design-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://code.pingbook.top/ionic-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ionic-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">博客</a></div><div class="nav-item"><a href="/CHANGELOG.html" class="nav-link">历史更新</a></div><div class="nav-item"><a href="/contact-me/" class="nav-link">留言板</a></div><div class="nav-item"><a href="https://jvfast.pingbook.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JVFast管理框架
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://code.pingbook.top/ant-design-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ant-design-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://code.pingbook.top/ionic-vue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ionic-vue
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前序</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/" class="sidebar-link">关于博客</a></li><li><a href="/blog/synax.html" class="sidebar-link">语法参考手册</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>技术版本更新</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/release/scrapy.html" class="sidebar-link">scrapy2版本新特性</a></li><li><a href="/blog/release/jdk.html" class="sidebar-link">JDK版本新特性</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>环境配置和部署</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/setup/bitcoin-mining-setup.html" class="sidebar-link">比特币及其挖矿配置</a></li><li><a href="/blog/setup/how-picgo-vscode-setup.html" class="sidebar-link">如何在VSCode中配置PicGo图床</a></li><li><a href="/blog/setup/node-nuxt-setup.html" class="active sidebar-link">Vue nuxtjs安装及其环境配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/setup/node-nuxt-setup.html#环境配置" class="sidebar-link">环境配置</a></li><li class="sidebar-sub-header"><a href="/blog/setup/node-nuxt-setup.html#_1-测试环境运行调试" class="sidebar-link">1. 测试环境运行调试</a></li><li class="sidebar-sub-header"><a href="/blog/setup/node-nuxt-setup.html#_2-生产环境项目部署" class="sidebar-link">2. 生产环境项目部署</a></li><li class="sidebar-sub-header"><a href="/blog/setup/node-nuxt-setup.html#_3-重新发布-新版发布" class="sidebar-link">3. 重新发布/新版发布</a></li><li class="sidebar-sub-header"><a href="/blog/setup/node-nuxt-setup.html#_4-发布到npmjs-com中使用jsdelivr-cdn加速" class="sidebar-link">4. 发布到npmjs.com中使用jsDelivr CDN加速</a></li><li class="sidebar-sub-header"><a href="/blog/setup/node-nuxt-setup.html#安装node-sass-报错" class="sidebar-link">安装node-sass 报错</a></li><li class="sidebar-sub-header"><a href="/blog/setup/node-nuxt-setup.html#执行yarn-create-nuxt-app-jvfast-site报错文件名、目录名或卷标语法不正确" class="sidebar-link">执行yarn create nuxt-app jvfast-site报错文件名、目录名或卷标语法不正确</a></li></ul></li><li><a href="/blog/setup/nuxt-setup.html" class="sidebar-link">Vue nuxtjs插件类库配置集成</a></li><li><a href="/blog/setup/ux-tool-best-setup.html" class="sidebar-link">流行通用UX/UI工具对比整理2020</a></li><li><a href="/blog/setup/fanqiang-setup.html" class="sidebar-link">翻墙工具环境配置</a></li><li><a href="/blog/setup/frp-setup.html" class="sidebar-link">FRP内网穿透环境配置</a></li><li><a href="/blog/setup/artipub-setup.html" class="sidebar-link">artipub多平台博客发布工具使用配置</a></li><li><a href="/blog/setup/wordpress-setup.html" class="sidebar-link">Wordpress Linux命令其环境配置</a></li><li><a href="/blog/setup/raspberry-setup.html" class="sidebar-link">树莓派Linux安装及其环境配置</a></li><li><a href="/blog/setup/linux-setup.html" class="sidebar-link">Debian Linux命令其环境配置</a></li><li><a href="/blog/setup/nginx-setup.html" class="sidebar-link">Nginx Linux安装及其环境配置</a></li><li><a href="/blog/setup/python-setup.html" class="sidebar-link">Python Linux安装及其环境配置</a></li><li><a href="/blog/setup/python-scrapy-setup.html" class="sidebar-link">Scrapy爬虫配置</a></li><li><a href="/blog/setup/mysql-setup.html" class="sidebar-link">Debian MYSQL8安装及其环境配置</a></li><li><a href="/blog/setup/uwsgi-setup.html" class="sidebar-link">Python Uwsgi Linux安装及其环境配置</a></li><li><a href="/blog/setup/tomcat-setup.html" class="sidebar-link">Tomcat Linux安装及其环境配置</a></li><li><a href="/blog/setup/redis-setup.html" class="sidebar-link">Redis Linux安装及其环境配置</a></li><li><a href="/blog/setup/sqlalchemy-setup.html" class="sidebar-link">Python SQLAlchemy Linux安装及其环境配置</a></li><li><a href="/blog/setup/mail-setup.html" class="sidebar-link">各种主流邮件服务商配置</a></li><li><a href="/blog/setup/win10-setup.html" class="sidebar-link">Windows10机器新环境配置</a></li><li><a href="/blog/setup/mac-setup.html" class="sidebar-link">Mac机器或者虚拟机相关配置配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>2020年归档</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/2020/Aliyun-watchdog-uninstall.html" class="sidebar-link">如何卸载阿里云的watchdog等内置服务</a></li><li><a href="/blog/2020/Aliyun-disk-mount-copy.html" class="sidebar-link">阿里云云盘挂载和挂载后复制数据文件</a></li><li><a href="/blog/2020/Aliyun-OSS-CORS-Issues.html" class="sidebar-link">阿里云对象存储字体文件访问报跨域错误</a></li><li><a href="/blog/2020/stripe-payment-setup.html" class="sidebar-link">stripe 支付配置流程</a></li><li><a href="/blog/2020/software-ruankao.html" class="sidebar-link">软件测评师考试</a></li><li><a href="/blog/2020/vultr-setup.html" class="sidebar-link">Vultr客户端操作使用说明</a></li><li><a href="/blog/2020/5-best-wordpress-notification-plugins.html" class="sidebar-link">5个最佳WordPress通知栏插件</a></li><li><a href="/blog/2020/JPEG-Standard.html" class="sidebar-link">JPEG图片格式标准</a></li><li><a href="/blog/2020/sh-binbashM-坏的解释器-没有那个文件或目录.html" class="sidebar-link">/bin/bash^M 坏的解释器 没有那个文件或目录</a></li><li><a href="/blog/2020/IDEA-Maven-unable-to-find-valid-certification-path-to-requested-target.html" class="sidebar-link">IDEA maven安装包报错 unable to find valid certification path to requested target</a></li><li><a href="/blog/2020/Running-on-Karma.html" class="sidebar-link">【港片】大隻佬</a></li><li><a href="/blog/2020/Vue-$on-$emit-Useage.html" class="sidebar-link">Vue $on,$emit 父子组件不同组件时间通信</a></li><li><a href="/blog/2020/Vue-props-Model.html" class="sidebar-link">Vue 父子组件双向绑定</a></li><li><a href="/blog/2020/Aliyun-OSS-CORS-Issues.html" class="sidebar-link">阿里云对象存储字体文件访问报跨域错误</a></li><li><a href="/blog/2020/Vue-CountUp.html" class="sidebar-link">Vue CountUp组件使用及其配置</a></li><li><a href="/blog/2020/Vue-Toasted.html" class="sidebar-link">Vue toast组件使用及其配置</a></li><li><a href="/blog/2020/How-To-Speed-Github.html" class="sidebar-link">如何提高国内访问Github的速度</a></li><li><a href="/blog/2020/vue-wow.js.html" class="sidebar-link">WOW.js在页面滚动时展现动感的元素动画效果</a></li><li><a href="/blog/2020/The-Wild-Goose-Lake.html" class="sidebar-link">【电影】南方车站的聚会</a></li><li><a href="/blog/2020/youtube-dl-download.html" class="sidebar-link">youtube-dl视频下载神器</a></li><li><a href="/blog/2020/My-Brilliant-Friend.html" class="sidebar-link">【意剧】我的天才女友</a></li><li><a href="/blog/2020/scrapy-logging.html" class="sidebar-link">scrapy logging模块配置</a></li><li><a href="/blog/2020/wuhan-sick.html" class="sidebar-link">2020武汉肺炎</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>2019年归档</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开发工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>友情链接</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="https://www.yasminzy.com/nuxt/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】nuxt常用插件集成<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://mybatis.plus/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【后端】Mybatis Plus<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】阮一峰博客<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://www.jianshu.com/u/4ca93d60a9fe" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】IT晴天<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】awesome vue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://ionicframework.com/docs/components" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】Ionic Vue Components<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://github.com/vueComponent/ant-design-vue-awesome" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】awesome ant-design-vue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://github.com/ulivz/awesome-vuepress" target="_blank" rel="noopener noreferrer" class="sidebar-link">【前端】awesome-vuepress<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="https://tool.lu/" target="_blank" rel="noopener noreferrer" class="sidebar-link">【其它】程序员的工具集<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><!----> <p></p><div class="table-of-contents"><ul><li><a href="#环境配置">环境配置</a></li><li><a href="#_1-测试环境运行调试">1. 测试环境运行调试</a></li><li><a href="#_2-生产环境项目部署">2. 生产环境项目部署</a></li><li><a href="#_3-重新发布-新版发布">3. 重新发布/新版发布</a></li><li><a href="#_4-发布到npmjs-com中使用jsdelivr-cdn加速">4. 发布到npmjs.com中使用jsDelivr CDN加速</a></li><li><a href="#安装-node-sass-报错">安装node-sass 报错</a></li><li><a href="#执行-yarn-create-nuxt-app-jvfast-site-报错-文件名、目录名或卷标语法不正确">执行yarn create nuxt-app jvfast-site报错文件名、目录名或卷标语法不正确</a></li></ul></div><p></p> <h2 id="环境配置"><a href="#环境配置" class="header-anchor">#</a> 环境配置</h2> <ul><li>下载<code>node</code>,并执行命令安装node配置<code>PATH</code>路径:</li></ul> <div class="language-$shell extra-class"><pre class="language-text"><code>$ cat /proc/cpuinfo 
+Processor       : ARMv7 Processor rev 10 (v7l)
+ARMv7 (and below) is 32-bit. ARMv8 introduces the 64-bit instruction set.
+If you want to see whether your system supports 64-bit binaries, check the kernel architecture:
+$ uname -m
+此处树莓派4是ARMv7架构
+
+$ 树莓派: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.xz
+$ amd64: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
+$ tar xvf node-v12.14.1-linux-armv7l.tar.xz
+$ tar xvf node-v12.14.1-linux-x64.tar.xz
+$ mv node-v12.14.1-linux-armv7l /opt/
+$ sudo nano /etc/profile
+增加对应的node的PATH路径,例如如下:
+export PATH=/opt/node-v12.14.1-linux-armv7l/bin:$PATH
+export PATH=/opt/node-v12.14.1-linux-x64/bin:$PATH
+执行如下命令使上面的PATH配置生效
+$ source /etc/profile 
+
+执行如下命令确认node环境变量配置成功
+$ node -v
+$ npm -v 
+
+设置npm和yarn的镜像为淘宝镜像
+$ npm config set prefix E:\nodejs\node_global
+$ npm config set cache E:\nodejs\node_cache
+$ npm config set registry https://registry.npm.taobao.org
+$ npm config list
+</code></pre></div><ul><li>安装node的包管理器<code>yarn</code>(当然此处也可以不安装,直接使用node内置的<code>npm</code>来管理包):</li></ul> <div class="language-$shell extra-class"><pre class="language-text"><code>$ npm i yarn -g
+$ yarn config set registry https://registry.npm.taobao.org
+</code></pre></div><ul><li>安装<code>pm2</code>命令用于后台服务静默执行:</li></ul> <div class="language-$shell extra-class"><pre class="language-text"><code>$ npm i pm2 -g
+
+配置pm2开机启动脚本
+$ pm2 startup 
+</code></pre></div><h2 id="_1-测试环境运行调试"><a href="#_1-测试环境运行调试" class="header-anchor">#</a> 1. 测试环境运行调试</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># install dependencies</span>
+$ <span class="token function">yarn</span> <span class="token function">install</span>
+
+<span class="token comment"># serve with hot reload at localhost:3000</span>
+$ <span class="token function">yarn</span> dev
+
+<span class="token comment"># build for production and launch server</span>
+$ <span class="token function">yarn</span> build
+$ <span class="token function">yarn</span> start
+
+<span class="token comment"># generate static project</span>
+$ <span class="token function">yarn</span> generate
+</code></pre></div><h2 id="_2-生产环境项目部署"><a href="#_2-生产环境项目部署" class="header-anchor">#</a> 2. 生产环境项目部署</h2> <ul><li>复制当前所有包文件,解压,然后在当前文件夹下执行命令安装编译工程:</li></ul> <div class="language-$shell extra-class"><pre class="language-text"><code>$ yarn 
+$ yarn build
+
+编译程序, 然后配置pm2程序
+$ pm2 start  ecosystem.config.js --watch
+$ pm2 save
+</code></pre></div><h2 id="_3-重新发布-新版发布"><a href="#_3-重新发布-新版发布" class="header-anchor">#</a> 3. 重新发布/新版发布</h2> <div class="language-$shell extra-class"><pre class="language-text"><code># 首先复制源码目录文件到对应的服务器,然后直接如下命令:
+$ yarn build
+$ pm2 reload name| all
+$ pm2 restart all
+$ pm2 logs
+$ pm2 delete all
+
+</code></pre></div><ul><li>执行pm2相关命令确认程序启动没有问题:</li></ul> <div class="language-shell script extra-class"><pre class="language-shell"><code>$ pm2 list    <span class="token comment"># 查看所有的pm2程序</span>
+$ pm2 monit   <span class="token comment"># 查看pm2的所有程序的监控面板</span>
+$ pm2 reload
+</code></pre></div><p>如果上述配置都没有问题,可以访问地址: <code>http://127.0.0.0:3000</code>查看启动程序,然后我们只需要在nginx配置
+将所有请求反转到<code>nginx</code>,参考配置如下:</p> <div class="language- extra-class"><pre class="language-text"><code> # proxy for  project
+ location  / {
+          alias   /www/the project folder/;
+          proxy_pass http://127.0.0.1:3000/;
+          
+          include nginxconfig.io/proxy.conf;
+ }
+</code></pre></div><h2 id="_4-发布到npmjs-com中使用jsdelivr-cdn加速"><a href="#_4-发布到npmjs-com中使用jsdelivr-cdn加速" class="header-anchor">#</a> 4. 发布到npmjs.com中使用jsDelivr CDN加速</h2> <div class="language- extra-class"><pre class="language-text"><code>&gt; npm login --registry=https://registry.npmjs.com/
+&gt; npm publish --registry=https://registry.npmjs.com/
+</code></pre></div><hr> <h1 id="问题"><a href="#问题" class="header-anchor">#</a> 问题</h1> <h2 id="安装node-sass-报错"><a href="#安装node-sass-报错" class="header-anchor">#</a> 安装<code>node-sass</code> 报错</h2> <p>首先要知道的是，安装<code>node-sass</code>时在<code>node scripts/install</code>阶段会从 github.com 上下载一个.node文件，大部分安装不成功的原因都源自这里，因为 GitHub Releases 里的文件都托管在<code>s3.amazonaws.com</code>上面，而这个网址在国内总是_网络不稳定_，所以我们需要通过第三方服务器下载这个文件。（顺带一提，你可以看看<a href="https://github.com/sass/node-sass/commit/b8050efbe0effb68b0617d28276c72eef1fb15ef" target="_blank" rel="noopener noreferrer">这个好玩的 commit<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>）</p> <ol><li>方法一：</li></ol> <p>直接翻墙安装；</p> <ol start="2"><li>方法二：</li></ol> <p>2.1 查看当前环境适用的binding.node</p> <div class="language- extra-class"><pre class="language-text"><code>node -p &quot;[process.platform, process.arch, process.versions.modules].join('-')&quot;
+</code></pre></div><p>2.2  到<a href="https://github.com/sass/node-sass/releases" target="_blank" rel="noopener noreferrer">这里<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>下载对应版本的文件。链接地址: https://github.com/sass/node-sass/releases
+2.3 将下载好的文件放入缓存目录中,查看缓存目录命令：</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; PS C:\Users\Administrator&gt; npm config get cache
+E:\nodejs\node_cache
+
+</code></pre></div><p>2.3.1 通常yarn缓存目录：C:Users\你的用户名\AppData\Local\Yarn\Cache
+2.3.2 通常npm缓存目录：C:Users\你的用户名\AppData\Roaming\npm-cache\node-sass
+此处我的下载文件目录是：<code>&quot;E:\nodejs\node_cache\node-sass\4.13.1\win32-x64-72_binding.node&quot;</code></p> <p>到这里去根据版本号、系统环境，选择下载 .node 文件，然后安装时，指定变量 sass_binary_path，如：
+https://github.com/sass/node-sass/releases/download/v4.13.0/win32-x64-72_binding.node</p> <div class="language- extra-class"><pre class="language-text"><code>npm i node-sass --sass_binary_path=D:/win32-x64-72_binding.node
+</code></pre></div><p>按上面这么做确实没错，而且也是必须，但是当你再次去创建ionic项目时还是会提示同样的错误(如果不报错说明你运气好，那下面就不用看了)，那么原因到底是为什么呢？那是因为你的确安装了sass而且也成功下载了相关文件了，只是你在执行时候可能是因为运气不好或者当前软件没设计好的原因没给你自动添加sass的环境变量，所以这是我们得自己手动添加一下系统的环境变量(怎么添加系统环境变量我这就不提了，因为我认为很多人应该都会的，这里我只提一下要加什么环境变量，大概路径)，例如我的环境变量如下：(这里提醒一下配置的路径最好是根据你的实际情况，因为每个人安装nodejs的方式都不一样)</p> <p>解决方法设置环境变量：</p> <ol><li>设置系统变量名称: <code>SASS_BINARY_PATH</code></li> <li>系统变量值：<code>E:\nodejs\node_cache\node-sass\4.13.1\win32-x64-72_binding.node</code></li></ol> <p><img src="https://img-blog.csdn.net/20180106162556616?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGY5ODEwMTE1MTI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图片"></p> <h2 id="执行yarn-create-nuxt-app-jvfast-site报错文件名、目录名或卷标语法不正确"><a href="#执行yarn-create-nuxt-app-jvfast-site报错文件名、目录名或卷标语法不正确" class="header-anchor">#</a> 执行<code>yarn create nuxt-app jvfast-site</code>报错<code>文件名、目录名或卷标语法不正确</code></h2> <p>报错信息如下：</p> <div class="language- extra-class"><pre class="language-text"><code>yarn create v1.21.1
+[1/4] Resolving packages...
+info There appears to be trouble with your network connection. Retrying...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Installed &quot;create-nuxt-app@2.14.0&quot; with binaries:
+      - create-nuxt-app
+文件名、目录名或卷标语法不正确。
+error Command failed.
+Exit code: 1
+Command: E:\nodejs\node_global\bin\create-nuxt-app
+Arguments: jvfast-site
+Directory: D:\Workspace\jvfast\jvfast-site
+Output:
+</code></pre></div><p>可以根据提示找到对应的命令目录：<code>Command: E:\nodejs\node_global\bin\create-nuxt-app</code>,打开对应的目录文件：<code>&quot;E:\nodejs\node_global\bin\create-nuxt-app.cmd&quot;</code>。查看到源码是: <code>@&quot;%~dp0\C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\.bin\create-nuxt-app.cmd&quot; %*</code>,所以看到实际调用的是： <code>C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\.bin\create-nuxt-app.cmd</code>. 继续找到该文件: <code>\C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\.bin\create-nuxt-app.cmd</code>,打开该文件查看源码如下:</p> <div class="language- extra-class"><pre class="language-text"><code>@IF EXIST &quot;%~dp0\node.exe&quot; (
+  &quot;%~dp0\node.exe&quot;  &quot;%~dp0\..\create-nuxt-app\cli.js&quot; %*
+) ELSE (
+  @SETLOCAL
+  @SET PATHEXT=%PATHEXT:;.JS;=;%
+  node  &quot;%~dp0\..\create-nuxt-app\cli.js&quot; %*
+)
+</code></pre></div><p>所以知道真正调用的命令是: <code>node &quot;%~dp0\..\create-nuxt-app\cli.js&quot; %*</code>, 所以构造后的命令行是:</p> <div class="language- extra-class"><pre class="language-text"><code>node C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\create-nuxt-app\cli.js 你的nuxt项目名称
+</code></pre></div><p>执行以上的命令按照提示操作即可。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/setup/how-picgo-vscode-setup.html" class="prev">
+          如何在VSCode中配置PicGo图床
+        </a></span> <span class="next"><a href="/blog/setup/nuxt-setup.html">
+          Vue nuxtjs插件类库配置集成
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"><BackToTop></BackToTop></div></div>
+    <script src="/assets/js/app.9c9380c3.js" defer></script><script src="/assets/js/3.8c62cfad.js" defer></script><script src="/assets/js/82.397aea2e.js" defer></script>
+  </body>
+</html>

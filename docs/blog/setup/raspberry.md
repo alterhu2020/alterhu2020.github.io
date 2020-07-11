@@ -11,6 +11,13 @@ title: Raspberry Linux安装及其环境配置
 
 [[toc]]
 
+## 树莓派下载
+
+- 官方下载链接： https://www.raspberrypi.org/downloads/raspberry-pi-os/
+- 下载地址： https://downloads.raspberrypi.org/
+- 64位raspian系统下载：https://downloads.raspberrypi.org/raspios_arm64/
+
+
 ## 树莓派架构
 
 ```
@@ -41,7 +48,7 @@ $ cat /etc/os-release
 $ lsb_release -a
 ```
 
-## 64位操作系统
+## ~~配置成64位操作系统(不再使用，直接使用已经支持的64位系统）~~
 
 参考指导：https://www.raspberrypi.org/forums/viewtopic.php?t=208314&start=299
 脚本如下:
@@ -63,7 +70,9 @@ personality=linux
 
 ## 树莓派安装
 
-> 3b和3b+虽然是arm64 v8的芯片，但是raspbian是32的，所以只能安装arm v7的包
+> ~~3b和3b+虽然是arm64 v8的芯片，但是raspbian是32的，所以只能安装arm v7的包，目前2020年5月左右已经出来了64位系统镜像~~
+
+SDCard格式化工具： https://www.sdcard.org/downloads/formatter/eula_windows/index.html
 
 1. 从官方下载最新的镜像，推荐下载最新的镜像： [下载首页地址](https://www.raspberrypi.org/downloads/raspbian/),在该网页中选择"
 Raspbian Buster Lite",截止到2019年8月12日，最新的树莓派版本是Buster版。此处选择的是最小镜像。
@@ -113,6 +122,14 @@ $ ping raspberrypi.local
 1.2 通过手机端安装一个叫 Fing的app进行扫描局域网的所有机器，可以快速定位你的树莓派地址。
 
 1.3 通过电脑端安装[Free Advanced IP Scanner](https://www.advanced-ip-scanner.com/)或(Angry IP Scanner)[https://angryip.org/]扫描局域网的所有机器，也可以快速定位你的树莓派机器。（推荐此种方法）
+
+## 树莓派配置
+
+命令：
+
+```
+$ sudo raspi-config
+```
 
 ## 网页管理树莓派
 

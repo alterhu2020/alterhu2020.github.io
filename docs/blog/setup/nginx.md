@@ -103,8 +103,7 @@ $ ./configure --prefix=/usr/local/nginx \
             --with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now' \
             --add-module=../nginx-modules/ngx_brotli
 
-$ sudo make   #这个操作需要花费十分钟左右 
-$ sudo make install 
+$ sudo make & sudo make install  #这个操作需要花费十分钟左右 
 ```
 
 ## 安装nginx.service服务
@@ -131,6 +130,10 @@ KillMode=mixed
 WantedBy=multi-user.target
 
 $ sudo systemctl enable nginx
+$ sudo systemctl restart nginx
+$ sudo systemctl status nginx
+
+$ sudo rm -rf /usr/local/nginx/*
 ```
 
 遇到异常的报错信息:

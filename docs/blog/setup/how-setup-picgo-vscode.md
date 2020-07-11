@@ -15,7 +15,7 @@ title: 如何在VSCode中设置PicGo
 参考配置文档： https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A
 
 1. 仓库名： **alterhu2020/StorageHub**
-2. token名称： **f2e4f6da8042a373409037836ef82fdeb60ecba7**
+2. token名称： **32bf780d196739f8923d210a227135462eb2ceb2**
 3. 仓库分支： **master**
 4. Github Path: **img/**
 

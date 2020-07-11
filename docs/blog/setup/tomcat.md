@@ -36,6 +36,7 @@ $ cd apache-tomcat-9.0.36-windows-x64/bin
 1. 进入apr地址: <http://apr.apache.org/download.cgi>,里面有三个包： apr, apr-util,apr-iconv,把这三个包都安装了。
 
 ```
+$ mkdir apr
 $ wget https://mirrors.ocf.berkeley.edu/apache//apr/apr-1.7.0.tar.gz
 $ wget https://mirrors.ocf.berkeley.edu/apache//apr/apr-util-1.6.1.tar.gz
 $ wget https://mirrors.ocf.berkeley.edu/apache//apr/apr-iconv-1.2.2.tar.gz
@@ -58,17 +59,42 @@ $ cd apr-1.7.0
 $ ./configure --prefix=/usr/local/apr
 $ make && make install
 
-$ cd apr-util-1.6.1
+$ cd ../apr-util-1.6.1
 $ ./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr
+#若报类似#include <expat.h>错误，需要复制expat下的lib到对应的apr-util-1.6.1/xml/expat/lib目录，命令如下:
+$ wget https://github.com/libexpat/libexpat/releases/download/R_2_2_9/expat-2.2.9.tar.gz
+$ tar zxvf expat-2.2.9.tar.gz
+$ ./configure --prefix=/usr/local/expat/2_2_9
+$ make && make install
+// /usr/local/bin
+# ln -s /usr/local/expat/2_2_9/bin/xmlwf /usr/local/bin/
+
+// /usr/local/include
+# ln -s /usr/local/expat/2_2_9/include/expat.h /usr/local/include/
+# ln -s /usr/local/expat/2_2_9/include/expat_config.h /usr/local/include/
+# ln -s /usr/local/expat/2_2_9/include/expat_external.h /usr/local/include/
+
+// /usr/local/lib
+# ln -s  /usr/local/expat/2_2_9/lib/libexpat.a /usr/local/lib/
+# ln -s  /usr/local/expat/2_2_9/lib/libexpat.la /usr/local/lib/
+# ln -s  /usr/local/expat/2_2_9/lib/libexpat.so /usr/local/lib/
+# ln -s  /usr/local/expat/2_2_9/lib/libexpat.so.1 /usr/local/lib/
+# ln -s  /usr/local/expat/2_2_9/lib/libexpat.so.1.6.9 /usr/local/lib/
+
+// /usr/local/lib/pkgconfig
+# ln -s /usr/local/expat/2_2_9/lib/pkgconfig/expat.pc /usr/local/lib/pkgconfig/
+
 $ make && make install
 
-$ cd apr-iconv-1.2.2
+$ cd ../apr-iconv-1.2.2
 $ ./configure --prefix=/usr/local/apr-iconv --with-apr=/usr/local/apr
 $ make && make install
 
-$ cd tomcat-native-1.2.24-src/native/
-$ ./configure --prefix=/usr/local/apr --with-apr=/usr/local/apr --with-java-home=/opt/jdk/jdk-11.0.6+10
-#若报类似#include <expat.h>错误，需yum安装expat: yum install expat-devel
+$ sudo apt-get install libapr1-dev libssl-dev
+$ cd ../apache-tomcat-9.0.36/bin/tomcat-native-1.2.24-src/native/
+$ sudo make clean
+$ ./configure --prefix=/usr/local/apr --with-apr=/usr/local/apr -with-ssl=yes --with-java-home=/opt/jdk/jdk-11.0.6+10
+#若报类似#include <expat.h>错误，按照上面的操作安装expat
 $ make && make install
 #注意：要求系统OpenSSL library version >= 1.0.2
 #若版本太低，安装native会报错。
@@ -104,6 +130,20 @@ $ source /etc/profile
 $ source /etc/bashrc
 
 ```
+
+ ### 可能遇到的apr问题
+
+apache.catalina.core.AprLifecycleListener [175] : Failed to initialize the SSLEngine.
+org.apache.tomcat.jni.Error: 70023: This function has not been implemented on this platform
+
+需要安装对应的包： `sudo apt-get install libapr1-dev libssl-dev`, 然后在`tomcat-native-1.2.24-src/native/`中重新编译：
+```
+$ sudo make clean
+$ ./configure 
+$ make && make install
+```
+
+
 
 ## JDK 和 tomcat 安装[更新到2019年8月10日]
 

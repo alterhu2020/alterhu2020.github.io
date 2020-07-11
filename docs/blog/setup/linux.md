@@ -11,6 +11,109 @@ title: Debian Linux命令其环境配置
 
 [[toc]]
 
+## 列出tar.gz压缩包的文件
+
+命令: ` tar tzf  test.tar.gz`
+
+## Linux密钥登录和用户名密码登录
+
+对于Linux服务器，默认以密码登陆，安全性比较差，很早前就有计划修改为使用密钥登陆，一直觉得比较麻烦搁置着，其实步骤并不难，只是当时没觉得安全问题有那么严重而已。如果你也是这么认为，那么可以尝试登陆Linux服务器，输入以下命令：
+```
+lastb | less
+```
+可以看到几乎每天都会有大量的尝试登陆存在。为了服务器安全，禁止密码登陆，使用密钥方式登陆还是必要的。这里我尽量简单的记录下我设置的过程。
+
+配置方法
+
+### 1. 产生公钥和私钥文件
+
+1. 在服务器端使用如下命令产生公钥和私钥：
+```
+$  ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): <== 按 Enter
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): <== 输入密钥锁码，或直接按 Enter 留空
+Enter same passphrase again: <== 再输入一遍密钥锁码
+Your identification has been saved in /root/.ssh/id_rsa. <== 私钥
+Your public key has been saved in /root/.ssh/id_rsa.pub. <== 公钥
+The key fingerprint is:
+0f:d3:e7:1a:1c:bd:5c:03:f1:19:f1:22:df:9b:cc:08 root@host
+
+```
+在 当前 用户的家目录中生成了一个 `.ssh` 的隐藏目录，内含两个密钥文件。`id_rsa` 为私钥，`id_rsa.pub` 为公钥。
+
+- 关于此处操作对于阿里云服务器也可以直接在阿里云的“**网络与安全**”-> "**密钥对**"中由阿里云生成。阿里云： https://developer.aliyun.com/article/666688
+
+- 你也可以使用xshell或者puttygen工具等在你自己的机器上产生对应的公钥，然后把**公钥导出为私钥**。
+
+
+### 2. 在服务器上安装公钥
+
+登陆需要配置密钥登陆的服务器，将公钥内容填入~/.ssh/authorized_keys文件中：
+
+```
+$ cat /root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+# 或者如果是客户端自己产生的可以直接编辑
+$ nano ~/.ssh/authorized_keys
+```
+
+**注意**：保存后，对`.ssh`目录和其中的`authorized_keys`公钥文件设置相应的权限：
+
+```
+chown -R root:root ~/ssh
+chmod -R 700  ~/.ssh
+chmod -R 644  ~/.ssh/authorized_keys
+
+```
+
+### 3. 设置SSH，打开公钥登录功能
+
+接着修改ssh配置文件：
+
+```
+nano /etc/ssh/sshd_config
+```
+对以下内容去掉注释：
+
+```
+RSAAuthentication yes
+PubkeyAuthentication yes
+# The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+# but this is overridden so installations will only check .ssh/authorized_keys
+AuthorizedKeysFile      .ssh/authorized_keys
+# 记得最后面加上这个，否则无法进行密码登录
+PasswordAuthentication yes
+```
+
+保存后重启sshd服务：
+
+```
+systemctl restart sshd
+```
+
+### 4. XShell等客户端将私钥下载到客户端，然后使用 
+
+- 如果是通过`ssh-keygen`在服务器产生的公钥和私钥,从服务器下载私钥文件： `/root/.ssh/id_rsa`， 然后在xshell中进行连接使用。
+- 如果是自己的电脑上产生的公钥，需要将公钥导出为私钥被保存，然后登录时候使用该私钥。如下截图：
+![20200711175803-2020-07-11](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200711175803-2020-07-11.png)
+
+
+### 5. 关闭原密码登陆方式(小心注意)
+
+如果使用密钥登陆成功，可以继续修改ssh配置文件，关闭密码登陆：
+
+```
+nano /etc/ssh/sshd_config
+```
+设置：
+
+```
+PasswordAuthentication no
+```
+保存后重启sshd服务的步骤同上，这样就完成了密钥登陆的配置。
+
+
 ## Linux中Cache内存占用过高解决办法
 
 文章来源: [解决Linux buffer/cache内存占用过高的办法](https://blog.csdn.net/ailice001/article/details/80353924)
@@ -378,7 +481,7 @@ crontab -e
 
 ```
 
-- 查看执行情况（crontab执行日志）
+- 查看执行情况（crontab执行 日志）
 
 执行结果不论是否成功，都会在 `/var/spool/mail/mail`文件中有`crontab`执行日志的记录,另外可以自己指定日志目录，参考后面的命令参数。
 

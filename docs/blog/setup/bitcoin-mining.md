@@ -165,8 +165,8 @@ bitcoin core使用方法：
  所以推荐在打开Windows的时候就用哈鱼矿工挂着，它实际挖的是门罗币；
  然后在linux环境的时候参考https://blog.f2pool.com/zh/mining-tutorial/xmr，使用的是原版矿机：xmrig.
 
-## Windows编译安装脚本xmrig
-
+## Windows编译安装脚本xmrig零抽水
+> 2020/07: 推荐使用VS 2019编译，不推荐使用使用**MSYS2**
 > 2020/05： MSVC2015/MSVC2017 and MSYS 32 bit now deprecated and will no longer updated. 以后只支持Windows的64版本，而且只能使用`MSVC2019/MSYS2 64bit`进行编译。
 
 参考两个官方文档：
@@ -188,13 +188,34 @@ bitcoin core使用方法：
 
 3. 点击右下角的“安装”按钮，等待十分钟左右完成所有的安装操作。
 
-4. 将xmrig官方仓库的代码克隆到本地： 
+4. 将xmrig官方仓库的代码克隆到本地：` git clone https://github.com/xmrig/xmrig.git`
 
+> 注意此处你可以编辑文件`src/donate.h`,设置对应的捐赠抽水值为0
 
+5. 然后进入到代码仓库（不用VS2019,后面cmake编译的`xmrig.sln`需要用到VS2019)，打开Windows默认的命令行执行如下命令：
 
+```
+mkdir build
+cd build
+cmake .. -G "Visual Studio 15 2017 Win64" -DXMRIG_DEPS=c:\xmrig-deps\msvc2017\x64
+```
+上面的命令会在刚刚创建的`build`文件夹中创建Visual Studio解决方案文件`xmrig.sln`。
 
---------------------------------------------------------------------------------------
-载安装MSYS2（Minimal SYStem 2）。SYS2 是 MSYS 的一个升级版，准确的说是集成了 pacman 和 Mingw-w64 的 Cygwin 升级版，提供了bash shell 等 Linux 环境、版本控制软件（git/hg）和 MinGW-w64 工具链。与 MSYS 最大的区别是移植了 Arch Linux 的软件包管理系统 Pacman（其实是与Cygwin的区别）。
+6. 用VS2019打开上面创建的`xmrig.sln` 解决方案。如下截图：
+
+![release](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/release.jpg)
+
+7. 然后点击“**解决方案资源管理器**”中的“**ALL BUILD**”,右键选择“**生成**”如下截图：
+![build](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/build.png)
+
+8. 等待编译完成即可，回到`build/release`目录可以看到对应的安装包`xmrig.exe`。
+
+配置成功后的运行截图，注意零抽水：**donate: 0%** :
+
+![20200711183215-2020-07-11](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200711183215-2020-07-11.png)
+
+----------------------**以下的MSYS2安装方式没有验证成功**----------------------------------------------------------------
+下载安装MSYS2（Minimal SYStem 2）。SYS2 是 MSYS 的一个升级版，准确的说是集成了 pacman 和 Mingw-w64 的 Cygwin 升级版，提供了bash shell 等 Linux 环境、版本控制软件（git/hg）和 MinGW-w64 工具链。与 MSYS 最大的区别是移植了 Arch Linux 的软件包管理系统 Pacman（其实是与Cygwin的区别）。
 
 Cygwin,MSYS2,MinGW-w64等的区别： https://www.zhihu.com/question/22137175
 
@@ -237,21 +258,19 @@ $ pacman -R <package_names|package_groups>
 # git clone https://github.com/xmrig/xmrig.git
 # git clone https://github.com/xmrig/xmrig-deps.git
 
-
 ```
 
+## linux编译安装脚本xmrig零抽水
 
+1. 参考编译xmrig免抽水： https://sunsea.im/ubuntu-debian-make-install-xmrig-config-hugepages.html
+2. 参考xmrig定制设置： https://www.cnblogs.com/heycomputer/articles/10235542.html
 
-## linux编译安装脚本xmrig
-
-1. 编译xmrig免抽水： https://sunsea.im/ubuntu-debian-make-install-xmrig-config-hugepages.html
-2. xmrig定制设置： https://www.cnblogs.com/heycomputer/articles/10235542.html
-
-对应的挖矿命令：
+对应的所有操作安装命令如下：
 
 ```
 
 # Install xmrig depends	，官方源码编译帮助文档： https://xmrig.com/docs/miner/ubuntu-build
+
 $ sudo apt install -y software-properties-common git build-essential cmake libuv1-dev libssl-dev libmicrohttpd-dev libhwloc-dev gcc g++ 
 $ sudo apt install screen
 
@@ -263,7 +282,7 @@ $ cd xmrig && mkdir build && cd build
 # 1. 单独编译: Configure cmake scafolding
 $ cmake ..
 $ make -j$(nproc)
-# 2. 编译可复制到其他电脑使用的版本
+# 2. 编译可复制到其他电脑使用的版本（推荐方式)
 $ sudo apt-get install -y automake libtool autoconf
 $ cd ../xmrig/scripts && ./build_deps.sh
 $ cd ..
@@ -272,7 +291,7 @@ $ cmake .. -DXMRIG_DEPS=scripts/deps
 $ make -j$(nproc)
 
 
-# 调整 huge page,可以提高hashrate increase is 20-30%，https://xmrig.com/docs/miner/hugepages
+# 调整 huge page,可以提高hashrate increase to 20-30%，https://xmrig.com/docs/miner/hugepages
 # 1. 永久设置
 $ nproc --all
 $ sudo bash -c "echo vm.nr_hugepages=2 >> /etc/sysctl.conf"
@@ -282,16 +301,29 @@ $ sudo bash -c "echo vm.nr_hugepages=2 >> /etc/sysctl.conf"
 # num=$(($cores*3))
 # /sbin/sysctl -w vm.nr_hugepages=`$num`
 
-# 运行命令
+# 运行xmrig命令
 # proc=`grep -c ^processor /proc/cpuinfo`
 # percent=$((($proc-1)/$proc))
 # hint = $percent*100
 $ nohup ./xmrig --cpu-max-threads-hint 100 >/dev/null 2>&1 &
 ```
+成功运行截图，注意零抽水**donate: 0%**：
+![20200711182612-2020-07-11](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200711182612-2020-07-11.png)
 
-## 树莓派如何编译xmrig
+## 树莓派如何编译xmrig零抽水
 
-直接编译会报如下错误：
+### 64位Raspian系统编译
+
+1. 下载64位Raspian安装镜像，完成安装，参考另外的一个博客文章：[如何安装64位的树莓派系统](https://code.pingbook.top/blog/setup/raspberry.html)
+
+2. 参考上面的**linux编译安装脚本xmrig零抽水** 安装脚本
+
+
+
+
+### ~~32位Raspian系统编译~~
+
+32位的Raspian系统会报如下错误：
 
 ```
 [ 99%] Building CXX object CMakeFiles/xmrig.dir/src/base/net/https/HttpsServer.cpp.o
@@ -357,8 +389,8 @@ make[2]: *** [CMakeFiles/xmrig.dir/build.make:3195：xmrig] 错误 1
 make[1]: *** [CMakeFiles/Makefile2:74：CMakeFiles/xmrig.dir/all] 错误 2
 make: *** [Makefile:84：all] 错误 2
 
-
 ```
+上面的问题分析问题可能如下：
 
 1. 可能的cmake命令切换错误，[树莓派编译armv8l make error (using _x86 instead of _arm) 错误](https://github.com/xmrig/xmrig/issues/744)
 
@@ -388,8 +420,6 @@ $ sudo schroot -c pi64 -- apt install -y sudo gcc libssl-dev libuv1-dev libnuma-
 $ schroot -c pi64
 
 ```
-
-
 
 ## xmrig配置及其脚本
 
@@ -573,8 +603,6 @@ sed -i 's/kMinimumDonateLevel =.*/kMinimumDonateLevel = 0;/' src/donate.h
 mkdir build && cd build
 cmake ..
 make -j$(nproc)
-
-
 
 
 ````

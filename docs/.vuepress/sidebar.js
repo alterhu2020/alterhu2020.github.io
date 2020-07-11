@@ -46,6 +46,9 @@ module.exports = {
             title: '2020年归档',
             collapsable: false,
             children: [
+                '2020/Aliyun-watchdog-uninstall',
+                '2020/Aliyun-disk-mount-copy',
+                '2020/Aliyun-OSS-CORS-Issues',
                 '2020/stripe-payment-setup',
                 '2020/software-ruankao',
                 '2020/vultr-setup',

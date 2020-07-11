@@ -34,9 +34,8 @@ $ sudo systemctl stop mysql.service
 $ sudo rm -rf /var/lib/mysql
 $ 此处需要执行命令: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf`,添加下方的配置: ` lower_case_table_names = 1`
 $ sudo systemctl start mysql.service
+
 ```
-
-
 
 **2. mariadb安装**
 
@@ -44,33 +43,17 @@ $ sudo systemctl start mysql.service
 $ sudo apt update
 $ sudo apt install mariadb-server
 $ sudo systemctl status mariadb
-// 如果不先设置mysql的密码策略登录的时候会包错误: ERROR 1698 (28000): Access denied for user 'root'@'localhost'
-$ mysql -u root -p (直接不输入密码)
-
-> SELECT User, Host, plugin FROM mysql.user;
-> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
-> FLUSH PRIVILEGES;
-> update mysql.user set authentication_string=PASSWORD('m3s1l@#3!'), plugin='mysql_native_password' where user='root';
-> FLUSH PRIVILEGES;
-
-```
-## 配置mysql
-
-在mysql或者mariadb上运行如下命令进行配置数据库:
-
-```
-$ sudo mysql_secure_installation
 
 ```
 
-## 配置参数
+## mysqld.cnf配置参数
 
-**1. mysql配置**
+**1. mysql配置文件**
 
 ```
 $ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
-**2. mariadb安装**
+**2. mariadb配置文件**
 
 ```
 $ sudo /etc/mysql/mariadb.conf.d/50-server.cnf
@@ -79,7 +62,7 @@ $ sudo /etc/mysql/mariadb.conf.d/50-server.cnf
 
 **修改以上的配置文件,注意一定要在`mysqld`区域放入以下的配置信息:**
 
-1. `master`主数据库写数据<通用配置>:
+1. `**master**`主数据库写数据<通用配置>:
 
 ```
 port = 1876
@@ -114,7 +97,7 @@ slow_query_log_file = /logs/mysql/slow.log
 
 ```
 
-2. `slave`从数据库读数据库(可选):
+2. `**slave**`从数据库读数据库(可选):
 
 ```
 port = 1876
@@ -152,25 +135,61 @@ slow_query_log_file = /logs/mysql/slow.log
 long_query_time = 5
 ```
 
+
+## 配置mysql的用户和密码
+
+在mysql或者mariadb上运行如下命令进行配置数据库:
+
+```
+1. 初始化配置数据库
+#  sudo mysql_secure_installation
+
+注意： 此处root密码可以随便设置一个，因为下面的第三步会重新设置root密码
+
+-----------------------------------------------
+// 如果不先设置mysql的密码策略登录的时候会包错误: ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+$ mysql -u root -p (直接不输入密码)
+
+2. 查看用户密码设置方式
+> use mysql;
+> SELECT User, Host, plugin FROM mysql.user;
+
+3. 修改root用户密码插件和密码
+> use mysql;
+> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+> FLUSH PRIVILEGES;
+
+> use mysql;
+> ALTER USER 'root'@'localhost' IDENTIFIED BY 'test1';
+> FLUSH PRIVILEGES;
+
+
+```
+
 ## 添加数据库和用户(包括修改用户密码)
 
 logged in mysql using `root / xxx`:
 
 ```
-$ create database abc;
-$ create user 'syscorer'@'%' identified by 'xxxxxx'; 
-$ GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%'; 
+1. 创建用户
+> create user 'syscorer'@'%' identified by 'testh'; 
+> FLUSH PRIVILEGES;
 
---- 以下可能是mysql通用的
-$ GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%' IDENTIFIED BY 'xxxxxx' WITH GRANT OPTION;
-$ GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%'  WITH GRANT OPTION;
+2. 用户权限赋值
+WITH GRANT OPTION 这个选项表示该用户可以将自己拥有的权限授权给别人。注意：经常有人在创建操作用户的时候不指定WITH GRANT OPTION选项导致后来该用户不能使用GRANT命令创建用户或者给其它用户授权。
+如果不想这个用户有这个grant的权限，可以不加这句
 
-更改mysql用户密码:
-$ alter user 'syscorer'@'%' identified by 'xxxxxx1026A5yC1S';
-$ flush privileges;
+> GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%'; 
+> GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%' WITH GRANT OPTION;
+> FLUSH PRIVILEGES;
+
+3. (可选)修改mysql用户密码:
+> alter user 'syscorer'@'%' identified by 'testS';
+> FLUSH PRIVILEGES;
+
 ```
 
-## mysql8数据表大小写敏感
+## mysql8数据表大小写敏感（可选,上面第二步已经设置）
 
 查看大小写配置，大小写是否敏感:
 ```
@@ -200,7 +219,7 @@ lower_case_table_names can only be configured when initializing the server. Chan
 ```
  1.1 master数据库中执行如下命令: 
  
- mysql>  CREATE USER 'repdev'@'%' IDENTIFIED WITH mysql_native_password BY 'xxx';
+ mysql>  CREATE USER 'repdev'@'%' IDENTIFIED WITH mysql_native_password BY 'testh';
  mysql>  GRANT REPLICATION SLAVE ON *.* TO 'repdev'@'%';
  mysql>  flush privileges;
  
@@ -221,9 +240,9 @@ mysql>  CHANGE MASTER TO
 MASTER_HOST='47.101.187.237',
 MASTER_PORT=1876,
 MASTER_USER='repdev',
-MASTER_PASSWORD='xxx',
-MASTER_LOG_FILE='mysql-bin.000001',
-MASTER_LOG_POS=2035;
+MASTER_PASSWORD='testh',
+MASTER_LOG_FILE='mysql-bin.000009',
+MASTER_LOG_POS=17975043;
 
 mysql> start slave; 
 mysql> show slave status\G;
@@ -288,7 +307,7 @@ use mysql;
 SELECT User, Host, plugin FROM mysql.user;
 update user set plugin='mysql_native_password' where user='root';
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'm6s1l@#2!';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'test2';
 flush privileges;
 ```
 如果报： `ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement`,需要执行一下命令: `flush privileges`,然后再重新执行命令就好了。
@@ -326,4 +345,29 @@ $ sudo find / -name mysql
  $ sudo apt-get autoremove mysql* --purge
  $ sudo apt-get remove apparmor
  $ sudo apt-get install mysql-server mysql-common
+ ```
+
+ ## mysql8备份还原从数据文件， backup, restore
+
+ 1. （~~以下的操作没有成功~~）通常mysql的数据库文件目录为: **/var/lib/mysql**
+ ```
+$ sudo systemctl stop mysql
+# 复制数据盘的mysql的数据库文件夹（例如：cvr)到新的mysql数据库目录： /var/lib/mysql
+$ sudo cp -R /opt/mysql/cvr /var/lib/mysql/
+# 配置权限
+$ sudo chown -R mysql:mysql /var/lib/mysql/cvr
+$ sudo chmod -R 660 /var/lib/mysql/cvr
+$ sudo chown  mysql:mysql /var/lib/mysql/cvr 
+$ sudo chmod 700 /var/lib/mysql/cvr
+
+$ sudo systemctl restart mysql
+$ sudo mysql -u root -p
+> show databases;
+
+ ```
+
+ 2. 采用sql文件进行恢复数据库,注意不同数据库记得切换下
+
+ ```
+ $ mysql -u root -p cvr < cvr.sql
  ```

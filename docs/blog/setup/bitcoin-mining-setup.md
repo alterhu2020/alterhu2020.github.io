@@ -215,6 +215,7 @@ cmake .. -G "Visual Studio 15 2017 Win64" -DXMRIG_DEPS=c:\xmrig-deps\msvc2017\x6
 ![20200711183215-2020-07-11](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200711183215-2020-07-11.png)
 
 ----------------------**以下的MSYS2安装方式没有验证成功**----------------------------------------------------------------
+
 下载安装MSYS2（Minimal SYStem 2）。SYS2 是 MSYS 的一个升级版，准确的说是集成了 pacman 和 Mingw-w64 的 Cygwin 升级版，提供了bash shell 等 Linux 环境、版本控制软件（git/hg）和 MinGW-w64 工具链。与 MSYS 最大的区别是移植了 Arch Linux 的软件包管理系统 Pacman（其实是与Cygwin的区别）。
 
 Cygwin,MSYS2,MinGW-w64等的区别： https://www.zhihu.com/question/22137175

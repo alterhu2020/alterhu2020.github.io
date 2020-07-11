@@ -1,5 +1,5 @@
 ---
-title: 如何在VSCode中设置PicGo
+title: 如何在VSCode中配置PicGo图床
 ---
 <ClientOnly>
   <in-article-adsense

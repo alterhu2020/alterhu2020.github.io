@@ -1,5 +1,5 @@
 ---
-title: Raspberry Linux安装及其环境配置
+title: 树莓派Linux安装及其环境配置
 ---
 
 <ClientOnly>
@@ -13,9 +13,9 @@ title: Raspberry Linux安装及其环境配置
 
 ## 树莓派下载
 
-- 官方下载链接： https://www.raspberrypi.org/downloads/raspberry-pi-os/
-- 下载地址： https://downloads.raspberrypi.org/
-- 64位raspian系统下载：https://downloads.raspberrypi.org/raspios_arm64/
+- 官方下载链接： <https://www.raspberrypi.org/downloads/raspberry-pi-os/>
+- 下载地址： <https://downloads.raspberrypi.org/>
+- 64位raspian系统下载：<https://downloads.raspberrypi.org/raspios_arm64/>
 
 
 ## 树莓派架构

@@ -1,5 +1,5 @@
 ---
-title: Node Nuxt安装及其环境配置
+title: Vue nuxtjs安装及其环境配置
 ---
 
 <ClientOnly>

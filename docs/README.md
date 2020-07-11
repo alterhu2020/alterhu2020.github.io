@@ -15,9 +15,9 @@ footer: Copyright © 2019-2020 胡说博客
   details: 把握最新动态，实时更新推送最新技术栈. -->
 
 ``` bash
-# yarn
+# mvn clean install
 # yarn run serve
-# yarn run build
+# scrapy crawl busy
 ```
 
 ::: warning 友情提示

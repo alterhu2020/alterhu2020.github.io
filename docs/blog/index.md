@@ -17,6 +17,10 @@ title: 关于博客
 
 ## Technology Stack
 
+### BlockChain
+
+- [Monero Miner](https://github.com/xmrig/xmrig/)
+
 
 ### Java
 

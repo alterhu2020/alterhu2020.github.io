@@ -1,5 +1,5 @@
 ---
-title: nuxt-vue相关类库环境配置集成
+title: Vue nuxtjs插件类库配置集成
 ---
 
 <ClientOnly>

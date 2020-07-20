@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.23.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.22.0...v1.23.0) (2020-07-20)
+
+
+### Features
+
+* change hostname ([8e23546](https://github.com/alterhu2020/alterhu2020.github.io/commit/8e23546024c65dfa3a37195a479d644f60fbd132))
+
+
+
 # [1.22.0](https://github.com/alterhu2020/alterhu2020.github.io/compare/v1.21.0...v1.22.0) (2020-07-11)
 
 

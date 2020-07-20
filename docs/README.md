@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage:  /hero.webp
-heroText: 胡说博客
+heroText: 评布客博客
 actionText:  我的博客
 actionLink: /blog/
-footer: Copyright © 2019-2020 胡说博客
+footer: Copyright © 2019-2020 评布客博客
 ---
 <!-- features:
 - title: ❤️精简主义

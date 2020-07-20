@@ -24,7 +24,7 @@ $ uname -m
 此处树莓派4是ARMv7架构
 
 $ 树莓派: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.xz
-$ amd64: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
+$ linux64位架构: wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
 $ tar xvf node-v12.14.1-linux-armv7l.tar.xz
 $ tar xvf node-v12.14.1-linux-x64.tar.xz
 $ mv node-v12.14.1-linux-armv7l /opt/
@@ -117,11 +117,23 @@ $ pm2 reload
 
 ```
  # proxy for  project
- location  / {
-          alias   /www/the project folder/;
-          proxy_pass http://127.0.0.1:3000/;
-          
-          include nginxconfig.io/proxy.conf;
+ location  / { 
+         alias   /www/the project folder/;
+         proxy_pass http://127.0.0.1:3000/;
+
+
+          proxy_http_version      1.1;
+          proxy_cache_bypass      $http_upgrade;
+
+          proxy_set_header Upgrade                        $http_upgrade;
+          proxy_set_header Connection             "upgrade";
+          proxy_set_header Host                           $host;
+          proxy_set_header X-Real-IP                      $remote_addr;
+          proxy_set_header X-Forwarded-For        $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto      $scheme;
+          proxy_set_header X-Forwarded-Host       $host;
+          proxy_set_header X-Forwarded-Port       $server_port;
+
  }
 ```
 

@@ -11,6 +11,15 @@ title: Debian Linux命令其环境配置
 
 [[toc]]
 
+## Sudo apt-get error: flAbsPath on /var/lib/dpkg/status failed - No such file or directory
+
+执行安装包安装报错： Sudo apt-get error: flAbsPath on /var/lib/dpkg/status failed - No such file or directory
+
+```
+$ sudo touch /var/lib/dpkg/status
+$ sudo apt update && sudo apt upgrade
+```
+
 ## 复制本地文件到服务器
 
 **scp - secure copy (remote file copy program)**
@@ -72,7 +81,8 @@ The key fingerprint is:
 登陆需要配置密钥登陆的服务器，将公钥内容填入~/.ssh/authorized_keys文件中：
 
 ```
-$ cat /root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+$ mkdir ~/.ssh
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # 或者如果是客户端自己产生的可以直接编辑
 $ nano ~/.ssh/authorized_keys
 ```
@@ -80,7 +90,7 @@ $ nano ~/.ssh/authorized_keys
 **注意**：保存后，对`.ssh`目录和其中的`authorized_keys`公钥文件设置相应的权限：
 
 ```
-chown -R root:root ~/ssh
+chown -R root:root ~/.ssh
 chmod -R 700  ~/.ssh
 chmod -R 644  ~/.ssh/authorized_keys
 
@@ -677,8 +687,6 @@ crontab -r 表示删除用户的定时任务，当执行此命令后，所有用
  kdevtmpfsi | kdevtmpfs | kinsing |最根本的原因是自己的redis 6379配置不当导致的。大家可以参考阿里云的Redis服务安全加固
  Watchdogs  | Watchdog | 
  trace | trace |
-
-
 
 
 

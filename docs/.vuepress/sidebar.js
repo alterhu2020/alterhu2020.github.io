@@ -45,7 +45,7 @@ module.exports = {
         },
         {
             title: '2020年归档',
-            collapsable: false,
+            collapsable: true,
             children: [
                 '2020/Aliyun-watchdog-uninstall',
                 '2020/Aliyun-disk-mount-copy',

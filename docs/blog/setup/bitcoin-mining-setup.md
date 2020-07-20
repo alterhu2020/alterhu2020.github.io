@@ -44,7 +44,10 @@ Binance Coin 由 Binance 交易所于 2017 年创建和发行，即使在其存�
 
 特别是在 2018 年推出以来，该稳定币一直受到争议，但它不断打破纪录，尽管比其他代币出现晚一点，但仍主导了市场上的其他稳定币。 Tether 有时被称为“加密货币的中央银行”，其市值令人印象深刻且持续增长，目前已超过 46 亿美元，因此请密切注意其 2020 年的发展。
 
-5.门罗币(XMR)
+5. 门罗币(XMR)
+
+  高隐私，去中心化。黑客专用。
+
 --------------------------------------------------------------------------------------------------------
 
 ## 教程
@@ -192,16 +195,21 @@ bitcoin core使用方法：
 
 > 注意此处你可以编辑文件`src/donate.h`,设置对应的捐赠抽水值为0
 
-5. 然后进入到代码仓库（不用VS2019,后面cmake编译的`xmrig.sln`需要用到VS2019)，打开Windows默认的命令行执行如下命令：
+5. 然后从已经安装的VS2019的开始菜单中打开“Developer Command Prompt for VS 2019”，如下截图：
+
+![20200712132211-2020-07-12](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200712132211-2020-07-12.png)
+
+打开命令行后切换到克隆的“xmrig”目录执行如下命令：
 
 ```
 mkdir build
 cd build
-cmake .. -G "Visual Studio 15 2017 Win64" -DXMRIG_DEPS=c:\xmrig-deps\msvc2017\x64
+cmake .. -G "Visual Studio 16 2019" -A x64 -DXMRIG_DEPS=c:\xmrig-deps\msvc2019\x64
 ```
-上面的命令会在刚刚创建的`build`文件夹中创建Visual Studio解决方案文件`xmrig.sln`。
 
-6. 用VS2019打开上面创建的`xmrig.sln` 解决方案。如下截图：
+上面的命令会在刚刚创建的`build`文件夹中创建Visual Studio的解决方案文件`xmrig.sln`。
+
+6. 用VS2019打开上面创建的`xmrig.sln` 解决方案（在源码的`build`文件夹里面）。如下截图：
 
 ![release](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/release.jpg)
 
@@ -308,6 +316,20 @@ $ sudo bash -c "echo vm.nr_hugepages=2 >> /etc/sysctl.conf"
 # hint = $percent*100
 $ nohup ./xmrig --cpu-max-threads-hint 100 >/dev/null 2>&1 &
 ```
+
+算力增强配置：
+
+```
+$ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+$ sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+$ wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu2004-11-0-local_11.0.$ 2-450.51.05-1_amd64.deb
+$ sudo dpkg -i cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb
+$ sudo apt-key add /var/cuda-repo-ubuntu2004-11-0-local/7fa2af80.pub
+$ sudo apt-get update
+$ sudo apt-get -y install cuda
+```
+
+
 成功运行截图，注意零抽水**donate: 0%**：
 ![20200711182612-2020-07-11](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200711182612-2020-07-11.png)
 

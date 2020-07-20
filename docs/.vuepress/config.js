@@ -3,20 +3,20 @@ const HighlightRules = require('./public/js/highlight-rules')
 const base = process.env.NODE_ENV === 'production' ? `/` : '/'
 const sidebar = require('./sidebar')
 module.exports = {
-    title: "胡说博客",
+    title: "评布客博客",
     description: "人生处万类，知识最为贤。 —— 韩愈",
     dest: "../pingbook-dist",
     host: "localhost",
     base: base,
     shouldPrefetch: () => false,
     head: [
-        ['link', { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: '胡说博客' }],
+        ['link', { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: '评布客博客' }],
         ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
         ['link', { rel: 'icon', href: `/favicon.ico` }],
         ['link', { rel: 'shortcut icon', href: `/img/favicon.ico` }],
         ['link', { rel: 'apple-touch-icon', href: `/img/logo.png` }],
-        ['meta', { name: 'keywords', content: '胡说,胡说博客,java,python,vue,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫' }],
-        ['meta', { name: 'description', content: '胡说博客，点滴记录贵在坚持' }],
+        ['meta', { name: 'keywords', content: '评布客,评布客博客,java,python,vue,技术培训,前端培训,后端培训,ionic,springboot,vue,小程序,安卓app,苹果App,技术博客,分享,vuejs,python,灵鸽,爬虫,python爬虫' }],
+        ['meta', { name: 'description', content: '评布客博客，点滴记录贵在坚持' }],
         ['meta', { name: "google-site-verification", content: "pyUtZja0WJ34YSL_6K0FkcYBU7pDR56XMU92nvDtz7k" }],
         // ['script', {
         //     id: 'cookieinfo',
@@ -104,7 +104,7 @@ module.exports = {
         ['vuepress-plugin-rss-support', {
             site_url: 'https://code.pingbook.top',
             filter: page => /^\/201.+/.test(page.path),
-            copyright: '2019 胡说博客',
+            copyright: '2020 评布客博客',
             count: 60
         }],
         ['vuepress-plugin-zooming', {
@@ -128,7 +128,7 @@ module.exports = {
             owner: 'alterhu2020',
             repo: 'alterhu2020.github.io',
             state: 'Vssue',
-            prefix: '[胡说博客]',
+            prefix: '[评布客博客]',
             labels: ['留言'],
             clientId: 'd9eac798d58806be2dbc',
             clientSecret: 'bf6cfe43d956baf67f6816a7a1f17a42c1064eec'

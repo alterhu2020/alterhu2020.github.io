@@ -4,7 +4,7 @@
     "author": "Walter Hu",
     "private": false,
     "license": "MIT",
-    "description": "胡说博客",
+    "description": "评布客博客",
     "scripts": {
         "serve": "vuepress dev docs",
         "build": "vuepress build docs",

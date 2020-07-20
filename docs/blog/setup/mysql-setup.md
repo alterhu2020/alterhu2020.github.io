@@ -138,13 +138,15 @@ long_query_time = 5
 
 ## 配置mysql的用户和密码
 
-在mysql或者mariadb上运行如下命令进行配置数据库:
+在mysql或者mariadb上运行如下命令进行配置数据库，注意禁止: **VALIDATE PASSWORD COMPONENT**:
 
 ```
 1. 初始化配置数据库
 #  sudo mysql_secure_installation
 
-注意： 此处root密码可以随便设置一个，因为下面的第三步会重新设置root密码
+注意：
+1.  VALIDATE PASSWORD COMPONENT选择为no，这样不用验证password的加密程度
+2.  此处root密码可以随便设置一个，因为下面的第三步会重新设置root密码
 
 -----------------------------------------------
 // 如果不先设置mysql的密码策略登录的时候会包错误: ERROR 1698 (28000): Access denied for user 'root'@'localhost'
@@ -154,15 +156,13 @@ $ mysql -u root -p (直接不输入密码)
 > use mysql;
 > SELECT User, Host, plugin FROM mysql.user;
 
-3. 修改root用户密码插件和密码
+3. 修改root用户密码插件和密码,参考文档： 
+1. 推荐文档： https://www.tecmint.com/reset-root-password-in-mysql-8/
+2. 官方文档： https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html
 > use mysql;
-> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+> UPDATE mysql.user SET plugin='mysql_native_password' WHERE User='root';
+> ALTER USER 'root'@'localhost' IDENTIFIED BY 'testee=';
 > FLUSH PRIVILEGES;
-
-> use mysql;
-> ALTER USER 'root'@'localhost' IDENTIFIED BY 'test1';
-> FLUSH PRIVILEGES;
-
 
 ```
 
@@ -172,21 +172,25 @@ logged in mysql using `root / xxx`:
 
 ```
 1. 创建用户
-> create user 'syscorer'@'%' identified by 'testh'; 
+> create user 'testeruser'@'%' identified by 'teeee'; 
 > FLUSH PRIVILEGES;
 
 2. 用户权限赋值
 WITH GRANT OPTION 这个选项表示该用户可以将自己拥有的权限授权给别人。注意：经常有人在创建操作用户的时候不指定WITH GRANT OPTION选项导致后来该用户不能使用GRANT命令创建用户或者给其它用户授权。
 如果不想这个用户有这个grant的权限，可以不加这句
 
-> GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%'; 
-> GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%' WITH GRANT OPTION;
+> GRANT ALL PRIVILEGES ON *.* TO 'testeruser'@'%'; 
+> GRANT ALL PRIVILEGES ON *.* TO 'testeruser'@'%' WITH GRANT OPTION;
 > FLUSH PRIVILEGES;
 
-3. (可选)修改mysql用户密码:
-> alter user 'syscorer'@'%' identified by 'testS';
+3. (可选)修改普通用户密码:
+> update user set password=PASSWORD('cTpofe3IwUuzzuqk5Hw2fg=P*&35XO2@o)=0') where user='tester';
 > FLUSH PRIVILEGES;
 
+4. 授权特定数据库访问权限，例如数据库testdb
+
+> GRANT ALL PRIVILEGES ON testdb.* TO 'tester'@'%' WITH GRANT OPTION;
+> FLUSH PRIVILEGES;
 ```
 
 ## mysql8数据表大小写敏感（可选,上面第二步已经设置）
@@ -371,3 +375,69 @@ $ sudo mysql -u root -p
  ```
  $ mysql -u root -p cvr < cvr.sql
  ```
+
+ ## navicat连接mysql: navicat received invalid response to SSL negotiation: j
+
+ 最近通过navicat连接mysql遇到一个提示问题： `navicat received invalid response to SSL negotiation: j`,而通过其他的mysql客户端可以正常连接，比如 dbforge for MYSQL。 很奇怪，所以确定是navicat那里配置出了问题。
+
+ 网上查了一下一下这个问题，有的说在连接对话框中，查看下SSL和SSH是否勾选了。查了下确认没有勾选，如下：
+ ![20200718092633-2020-07-18](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200718092633-2020-07-18.png)
+ ![20200718092659-2020-07-18](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200718092659-2020-07-18.png)
+
+ 我就很奇怪了，于是删除这个连接，重新新建一个连接。点击“测试连接”，居然可以正常连接访问mysql。所以遇到问题时，千万不要钻牛角尖，换个思路看看，没准柳暗花明。
+ 
+
+ ## mysql字符集和排序规则
+
+ navicat中新建数据库中回选择对应的**字符集**和**排序规则**。
+
+ - 字符集，这里只要关注两个：utf8和utf8mb4。字符集以_ci（大小写不敏感）、_cs（大小写敏感）或_bin（二元）结束。
+ - mysql(字符串)排序规则区别
+
+名称 | 描述 
+---------|----------
+utf8_bin （utf8mb4_bin） | 将字符串中的每一个字符用二进制数据存储，区分大小写。
+utf8_general_ci（utf8mb4_general_ci） | 不区分大小写，ci为case insensitive的缩写，即大小写不敏感。
+utf8_general_cs（utf8mb4_general_cs） | 区分大小写，cs为case sensitive的缩写，即大小写敏感。
+  
+code varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '唯一码'
+
+## mysql密码策略不满足
+
+ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
+
+使用如下的命令检查mysql密码的验证策略：
+
+```
+SHOW VARIABLES LIKE 'validate_password%';
+```
+然后会输出类似如下的结果：
+```
++--------------------------------------+-------+
+| Variable_name                        | Value |
++--------------------------------------+-------+
+| validate_password.check_user_name    | ON    |
+| validate_password.dictionary_file    |       |
+| validate_password.length             | 8     |
+| validate_password.mixed_case_count   | 1     |
+| validate_password.number_count       | 1     |
+| validate_password.policy             |MEDIUM |
+| validate_password.special_char_count | 1     |
++--------------------------------------+-------+
+```
+如果需要删除这个校验规则，执行如下命令：
+
+```
+mysql> uninstall plugin validate_password;
+```
+
+
+## Could not open or create the system tablespace. If you tried to add new data files to the system tablespace, and it failed here, you should now edit innodb_data_file_path in my.cnf back to what it was, and remove the new ibdata files InnoDB created in this failed attempt. InnoDB only wrote those files full of zeros, but did not yet use them in any way. But be careful: do not remove old data files which contain your precious data
+
+进入mysql的数据目录,注意备份：
+
+```
+$ cd  /var/lib/mysql
+$ rm -rf ib_logfile*
+$ rm -rf ibdata1
+```

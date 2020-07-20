@@ -310,6 +310,8 @@ $ sudo bash -c "echo vm.nr_hugepages=2 >> /etc/sysctl.conf"
 # num=$(($cores*3))
 # /sbin/sysctl -w vm.nr_hugepages=`$num`
 
+# 设置1GB Page,参考脚本： https://github.com/xmrig/xmrig/blob/master/scripts/enable_1gb_pages.sh
+
 # 运行xmrig命令
 # proc=`grep -c ^processor /proc/cpuinfo`
 # percent=$((($proc-1)/$proc))

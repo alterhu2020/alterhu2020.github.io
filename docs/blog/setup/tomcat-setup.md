@@ -152,11 +152,10 @@ $ make && make install
 
 1. JDK11安装步骤
 ```
-$ 进入Jenkins目录：https://ci.adoptopenjdk.net/job/build-scripts/job/jobs/job/jdk11u/job/jdk11u-linux-x64-hotspot/
-$ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz
-$  tar -zxvf OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz 
+$ 进入Jenkins目录：https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.8%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz
+$  tar -zxvf OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz
 $ nano /etc/profile
-export JAVA_HOME=/opt/jdk-11.0.6+10
+export JAVA_HOME=/opt/jdk-11.0.8+10
 export PATH=$JAVA_HOME/bin:$PATH
 
 $ . /etc/profile

@@ -373,6 +373,13 @@ BACKUP_DIR=/opt/backup
 MYSQL_UNAME="syscorer"
 MYSQL_PWORD="s6stest2n3gz"
 
+
+credentialsFile="mysql-credentials.cnf"
+echo "[client]" > $credentialsFile
+echo "user=$MYSQL_UNAME" >> $credentialsFile
+echo "password=$MYSQL_PWORD" >> $credentialsFile
+echo "host=localhost" >> $credentialsFile
+
 # Don't backup databases with these names 
 # Example: starts with mysql (^mysql) or ends with _schema (_schema$)
 IGNORE_DB="(^mysql|_schema|sys$)"
@@ -397,11 +404,12 @@ function delete_old_backups()
 }
 
 function mysql_login() {
-  local mysql_login="-u $MYSQL_UNAME" 
-  if [ -n "$MYSQL_PWORD" ]; then
-    local mysql_login+=" -p$MYSQL_PWORD" 
-  fi
-  echo $mysql_login
+  # local mysql_login="-u $MYSQL_UNAME" 
+  # if [ -n "$MYSQL_PWORD" ]; then
+  #   local mysql_login+=" -p$MYSQL_PWORD" 
+  # fi
+  # echo $mysql_login
+  local mysql_login="--defaults-extra-file=$credentialsFile"
 }
 
 function database_list() {
@@ -454,12 +462,12 @@ printf "All backed up!\n\n"
 - 复制上面的脚本文件到目录: `/opt/backup/scripts/mysql_backup.sh`,执行如下命令赋予执行权限：
 
 ```shell
-$ sudo chmod +x mysql-backup.sh
+$ sudo chmod +x mysql_backup.sh
 ```
 - 执行如下命令，测试脚本是否正常:
 
 ```shell
-$ sudo ./mysql-backup.sh
+$ sudo ./mysql_backup.sh
 ```
 - 创建`Crontab`定时任务
 Usually, you should open your personal crontab file using `crontab -e` command, however if you are root user and decide to choose system wide crontab file, you need to edit the crontab file located in `/etc/crontab`.现在创建一个定时脚本每天夜里执行备份操作：

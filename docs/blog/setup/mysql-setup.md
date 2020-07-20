@@ -161,7 +161,7 @@ $ mysql -u root -p (直接不输入密码)
 2. 官方文档： https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html
 > use mysql;
 > UPDATE mysql.user SET plugin='mysql_native_password' WHERE User='root';
-> ALTER USER 'root'@'localhost' IDENTIFIED BY 'testee=';
+> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Evxx@90&2qvGJ6Q=';
 > FLUSH PRIVILEGES;
 
 ```
@@ -172,7 +172,7 @@ logged in mysql using `root / xxx`:
 
 ```
 1. 创建用户
-> create user 'testeruser'@'%' identified by 'teeee'; 
+> create user 'testeruser'@'%' identified by 'test'; 
 > FLUSH PRIVILEGES;
 
 2. 用户权限赋值
@@ -180,7 +180,7 @@ WITH GRANT OPTION 这个选项表示该用户可以将自己拥有的权限授�
 如果不想这个用户有这个grant的权限，可以不加这句
 
 > GRANT ALL PRIVILEGES ON *.* TO 'testeruser'@'%'; 
-> GRANT ALL PRIVILEGES ON *.* TO 'testeruser'@'%' WITH GRANT OPTION;
+> GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%' WITH GRANT OPTION;
 > FLUSH PRIVILEGES;
 
 3. (可选)修改普通用户密码:
@@ -189,7 +189,7 @@ WITH GRANT OPTION 这个选项表示该用户可以将自己拥有的权限授�
 
 4. 授权特定数据库访问权限，例如数据库testdb
 
-> GRANT ALL PRIVILEGES ON testdb.* TO 'tester'@'%' WITH GRANT OPTION;
+> GRANT ALL PRIVILEGES ON wp_data.* TO 'syscorer'@'%' WITH GRANT OPTION;
 > FLUSH PRIVILEGES;
 ```
 
@@ -441,3 +441,7 @@ $ cd  /var/lib/mysql
 $ rm -rf ib_logfile*
 $ rm -rf ibdata1
 ```
+
+
+## mysql shell 脚本Using a password on the command line interface can be insecure
+

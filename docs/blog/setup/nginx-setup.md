@@ -42,9 +42,9 @@ $ sudo apt install build-essential -y
 
 // nginx安装
 配置可参考： [Compile from source](https://github.com/jukbot/setup-nginx-webserver/blob/master/README.md)
-$ wget http://nginx.org/download/nginx-1.17.7.tar.gz
-$ tar zxvf nginx-1.17.7.tar.gz
-$ cd nginx-1.17.7
+$ wget http://nginx.org/download/nginx-1.18.0.tar.gz
+$ tar zxvf nginx-1.18.0.tar.gz
+$ cd nginx-1.18.0
 $ sudo nano src/http/ngx_http_header_filter_module.c
 $ sudo nano src/core/nginx.h
 $ sudo nano src/http/ngx_http_special_response.c
@@ -133,6 +133,7 @@ $ sudo systemctl enable nginx
 $ sudo systemctl restart nginx
 $ sudo systemctl status nginx
 
+// 删除默认的nginx网站目录
 $ sudo rm -rf /usr/local/nginx/*
 ```
 

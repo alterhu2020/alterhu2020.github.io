@@ -22,7 +22,7 @@ $ cp -r wordpress ../
 
 ## Install php
 
-
+以下方法不再推荐使用， 2020-07-20
 ~~$ cd /opt~~   
 ~~$ wget https://www.php.net/distributions/php-7.3.10.tar.gz~~
 ~~$ tar zxvf php-7.3.10.tar.gz~~
@@ -38,6 +38,8 @@ $ sudo apt-get install php-fpm php-mysql -y
 
 $ sudo apt install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
 $ sudo nano /etc/php/7.3/fpm/php.ini
+
+;  Paths and Directories
 
 cgi.fix_pathinfo = 0
 
@@ -63,6 +65,7 @@ location ~ \.php$ {
 
 ```
 有时候我们可以看到另外的一种配置，也是可行的，不过有点麻烦，如下代码:
+
 ```
 server {
         listen        80;

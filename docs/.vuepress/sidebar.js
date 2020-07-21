@@ -25,7 +25,7 @@ module.exports = {
                 'setup/nuxt-setup',
                 'setup/ux-tool-best-setup',
                 'setup/fanqiang-setup',
-                'setup/frp-setup',
+                'setup/frp-linux-setup',
                 'setup/artipub-setup',
                 'setup/wordpress-setup',
                 'setup/raspberry-setup',

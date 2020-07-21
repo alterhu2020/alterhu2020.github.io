@@ -45,6 +45,13 @@ dashboard_pwd = xxtestd231lx0)
 
 ```
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
 
 ### 配置全局404错误页面
 

@@ -28,6 +28,13 @@ $ sudo -s
 $ source <(curl -sL https://multi.netlify.com/v2ray.sh) --zh
 ```
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
 
 ## 客户端配置
 

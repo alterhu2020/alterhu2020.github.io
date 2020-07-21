@@ -39,7 +39,7 @@ module.exports = {
                 'setup/redis-setup',
                 'setup/sqlalchemy-setup',
                 'setup/mail-setup',
-                'setup/win10-setup',
+                'setup/win10-environment-setup',
                 'setup/mac-setup'
             ]
         },

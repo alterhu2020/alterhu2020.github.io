@@ -169,6 +169,14 @@ bitcoin core使用方法：
  然后在linux环境的时候参考https://blog.f2pool.com/zh/mining-tutorial/xmr，使用的是原版矿机：xmrig.
 
 ## Windows编译安装脚本xmrig零抽水
+
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
 > 2020/07: 推荐使用VS 2019编译，不推荐使用使用**MSYS2**
 > 2020/05： MSVC2015/MSVC2017 and MSYS 32 bit now deprecated and will no longer updated. 以后只支持Windows的64版本，而且只能使用`MSVC2019/MSYS2 64bit`进行编译。
 
@@ -271,6 +279,12 @@ $ pacman -R <package_names|package_groups>
 
 ## linux编译安装脚本xmrig零抽水
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
 1. 参考编译xmrig免抽水： https://sunsea.im/ubuntu-debian-make-install-xmrig-config-hugepages.html
 2. 参考xmrig定制设置： https://www.cnblogs.com/heycomputer/articles/10235542.html
 
@@ -338,7 +352,12 @@ $ sudo apt-get -y install cuda
 ## 树莓派如何编译xmrig零抽水
 
 ### 64位Raspian系统编译
-
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
 1. 下载64位Raspian安装镜像，完成安装，参考另外的一个博客文章：[如何安装64位的树莓派系统](https://code.pingbook.top/blog/setup/raspberry.html)
 
 2. 参考上面的**linux编译安装脚本xmrig零抽水** 安装脚本

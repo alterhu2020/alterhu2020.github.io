@@ -165,7 +165,12 @@ $ mysql -u root -p (直接不输入密码)
 > FLUSH PRIVILEGES;
 
 ```
-
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
 ## 添加数据库和用户(包括修改用户密码)
 
 logged in mysql using `root / xxx`:

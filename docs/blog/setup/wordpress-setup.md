@@ -111,6 +111,13 @@ server {
         }
 }
 ```
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
 
 ## 配置启动安装wordpress
 

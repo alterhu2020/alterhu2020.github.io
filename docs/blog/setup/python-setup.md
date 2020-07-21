@@ -157,6 +157,13 @@ $ python -m pip install --upgrade pip
 
 ##  `pipenv`安装及常用命令
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
 ```
 $ pip install --user pipenv
 $ python -m site --user-base

@@ -70,6 +70,13 @@ personality=linux
 
 ## 树莓派安装
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
 > ~~3b和3b+虽然是arm64 v8的芯片，但是raspbian是32的，所以只能安装arm v7的包，目前2020年5月左右已经出来了64位系统镜像~~
 
 SDCard格式化工具： https://www.sdcard.org/downloads/formatter/eula_windows/index.html

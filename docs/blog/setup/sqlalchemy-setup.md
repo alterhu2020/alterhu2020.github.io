@@ -23,3 +23,10 @@ $ sqlacodegen --noviews --noindexes --nojoined --noinflect --noclasses --outfile
 $ sqlacodegen --tables abc --noviews --noindexes --nojoined --noinflect --noclasses --outfile models.py  mysql+pymysql://syscorer:s6s@#@!L0ngh@192.168.1.7:3306/heapstack 
 
 ```
+
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>

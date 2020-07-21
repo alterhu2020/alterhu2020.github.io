@@ -105,7 +105,12 @@ $ ./configure --prefix=/usr/local/nginx \
 
 $ sudo make & sudo make install  #这个操作需要花费十分钟左右 
 ```
-
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
 ## 安装nginx.service服务
 
 ```shell

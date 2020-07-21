@@ -339,3 +339,11 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 ```
+
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+

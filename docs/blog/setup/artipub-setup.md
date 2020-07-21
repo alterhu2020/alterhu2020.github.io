@@ -48,3 +48,9 @@ npm run start:backend
 
 如果您部署的服务不在本机，需要在`./src/config/config.ts`中将`apiEndpoint`改成对应的IP地址+端口。
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>

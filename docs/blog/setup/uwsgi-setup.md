@@ -54,6 +54,14 @@ WantedBy=multi-user.target
 
 ```
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
+
 ## uwsgi参数
 
 * chdir=/xxx/xxx # 指定项目目录

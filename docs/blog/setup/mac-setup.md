@@ -28,3 +28,10 @@ title: Mac机器或者虚拟机相关配置配置
 1. 查看安装日志文件`/private/var/log/install.log`,或者“访达”-》“应用工具”-》“实用工具”-> "控制台"-》“日志报告”
 
 目前没有找到解决方法，直接使用百度网盘暂时。
+
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>

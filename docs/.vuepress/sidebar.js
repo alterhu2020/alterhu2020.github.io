@@ -19,6 +19,7 @@ module.exports = {
             title: '环境配置和部署',
             collapsable: false,
             children: [
+                'setup/genymotion-setup',
                 'setup/bitcoin-mining-setup',
                 'setup/how-picgo-vscode-setup',
                 'setup/node-nuxt-setup',

@@ -10,9 +10,7 @@ title: 关于博客
 
 学习加整理信息这个过程是非常耗时的，所以我希望有一个像阮一峰老师的[每周分享](http://www.ruanyifeng.com/blog/2018/12/weekly-issue-36.html)或者蚂蚁金服[陈成](https://github.com/sorrycc/)一样的微信群，来快速的学习和记录有价值的东西。
 
-这个博客会以全栈技术体系为主要分享课题。
-
-博客主要内容会以文章、工具、新闻、视频等几大板块作为主要分类。
+这个博客会以全栈技术体系为主要分享课题。博客主要内容会以文章、工具、新闻、视频等几大板块作为主要分类。
 
 
 ## Technology Stack
@@ -74,3 +72,10 @@ title: 关于博客
 ## 关于作者
 
 [Github Profile](https://profile-summary-for-github.com/user/alterhu2020)
+
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>

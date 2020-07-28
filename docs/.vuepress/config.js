@@ -149,16 +149,16 @@ module.exports = {
                 link: '/blog/'
             },
             {
-                text: '历史更新',
-                link: '/CHANGELOG.html'
-            },
-            {
                 text: '留言板',
                 link: '/contact-me/'
             },
             {
+                text: '历史更新',
+                link: '/CHANGELOG.html'
+            },
+            {
                 text: 'JVFast管理框架',
-                link: 'https://jvfast.pingbook.top'
+                link: 'https://pingbook.top'
             },
             {
                 text: 'ant-design-vue',

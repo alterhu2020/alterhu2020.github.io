@@ -25,6 +25,13 @@ footer: Copyright © 2019-2020 评布客博客
 本网站博客所有内容未经作者同意署名，不得随便转载用于其他用途！
 :::
 
+<ClientOnly>
+  <in-article-adsense
+    ins-style="display:block; text-align:center;"
+    data-ad-slot="7727965566"
+  />
+</ClientOnly>
+
 
 ## License 许可
 

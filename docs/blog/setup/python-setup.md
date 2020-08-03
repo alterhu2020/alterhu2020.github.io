@@ -108,6 +108,7 @@ edited the first line from #! /usr/bin/python3 to #! /usr/bin/python3.7
 
 执行如下命令确认pip对应的python版本是2.7还是3.8
 $ pip -V
+
 ```
 
 如果出现错误： ImportError: cannot import name 'main' from 'pip'，因为`pip`使用的是python2.7的命令，所以应该参考如下： https://stackoverflow.com/questions/44455001/how-to-change-pip3-command-to-be-pip/44455078
@@ -197,3 +198,11 @@ python3 是用 VC++ 14 编译的, python27 是 VC++ 9 编译的, 安装 python3 
 Visual Studio 2013 ---> 12
 Visual Studio 2015 ---> 14
 Visual Studio 2017 ---> 15
+
+
+## requests报错 RequestsDependencyWarning: urllib3 (1.25.10) or chardet (3.0.4) doesn't match a supported version
+
+```
+pip install --upgrade requests
+
+```

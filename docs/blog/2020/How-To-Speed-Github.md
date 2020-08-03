@@ -133,7 +133,7 @@ windows系统：
 
 2、右击->hosts->打开方式->选定记事本（或者你喜欢的编辑器）->在末尾处添加以下内容：
 ```
-199.232.69.194 https://github.global.ssl.fastly.net
+199.232.69.194 github.global.ssl.fastly.net
 
-140.82.114.4 https://github.com
+140.82.114.4 github.com
 ```

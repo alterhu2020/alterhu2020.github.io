@@ -19,6 +19,7 @@ module.exports = {
             title: '环境配置和部署',
             collapsable: false,
             children: [
+                'setup/video-edit-setup',
                 'setup/genymotion-setup',
                 'setup/bitcoin-mining-setup',
                 'setup/how-picgo-vscode-setup',
@@ -48,6 +49,7 @@ module.exports = {
             title: '2020年归档',
             collapsable: true,
             children: [
+                '2020/element-still-there',
                 '2020/Aliyun-watchdog-uninstall',
                 '2020/Aliyun-disk-mount-copy',
                 '2020/Aliyun-OSS-CORS-Issues',

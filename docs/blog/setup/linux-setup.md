@@ -11,6 +11,14 @@ title: Debian Linux命令其环境配置
 
 [[toc]]
 
+## nano命令查找字符串search
+
+当你想搜索某特定文字时，只要想成"WhereIs"而不是"Search"，事情就简单了。只要按下**Ctrl+W**，键入你要搜索的字符串，再按Enter就可以了。想再次搜索相同的字符串，可以直接按Alt+W。也就是搜索下一个。
+
+注意:在nano帮助文档里，Ctrl-键被表示为一个脱字符（^），因此**Ctrl+W**被写成了^W，等等。Alt-键被表示为一个M（从"Meta"而来），因此Alt+W被写成了M-W。
+
+
+
 ## Sudo apt-get error: flAbsPath on /var/lib/dpkg/status failed - No such file or directory
 
 执行安装包安装报错： Sudo apt-get error: flAbsPath on /var/lib/dpkg/status failed - No such file or directory

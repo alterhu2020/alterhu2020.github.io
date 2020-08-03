@@ -44,9 +44,21 @@ $ sudo -H pip install --upgrade youtube-dl
 通过 Youtube-dl 下载视频十分简洁，例如你需要下载http://www.bilibili.com/video/av11728123/ 你可以这样：
 ```sh
 youtube-dl 'http://www.bilibili.com/video/av11728123/'
-```
 
+```
+### 下载最好的音视频格式
+
+```
+> youtube-dl -F https://www.youtube.com/watch?v=zbGZufWXJDA
+会显示不同的格式和质量的视频,然后执行下方命令下载对应的质量视频
+
+> youtube-dl -f 22 https://www.youtube.com/watch?v=zbGZufWXJDA
+
+
+youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4  https://www.youtube.com/watch?v=zbGZufWXJDA
+```
 ### 输出文件的名字
+
 如果你想指定输出文件的名字（有时对批量下载的人来说十分重要），你可以使用`-o`：
 ```sh
 youtube-dl 'http://www.bilibili.com/video/av11728123/' -o '你要的名字'
@@ -59,12 +71,14 @@ youtube-dl 'http://www.bilibili.com/video/av11728123/' -o '%(title)s.%(ext)s'
 ```
 
 ### 使用代理下载
+
 youtube-dl 提供了使用代理的参数，你可以简单地将自己代理的地址填入：
 ```shell
 youtube-dl --proxy 127.0.0.1:1087 'https://www.youtube.com/watch\?v\=_fc_TLg3eQ4'
 # 成功通过ss在国内下载某不存在网站的视频
 ```
 ### 其他下载选项
+
 youtube-dl 还提供很多其他的下载选项，如挑选合适的分辨率，下载一个播放列表等，你可以研究并自定义如何下载一个文件。
 
 ## 国内的 youtube-dl： You-Get
@@ -72,3 +86,5 @@ youtube-dl 还提供很多其他的下载选项，如挑选合适的分辨率，
 You-Get的GitHub地址：https://github.com/soimort/you-get
 
 事实上而言，我发现You-Get对国内视频网站的支持更加全面，但是由于作者已经有大约两个月的时间没有维护了，我在这里不作推荐。但是如果你遇到无法使用youtube-dl下载的视频页面，不妨试试这个同类小工具。
+
+

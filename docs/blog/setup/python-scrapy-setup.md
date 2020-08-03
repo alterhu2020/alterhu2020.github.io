@@ -15,8 +15,8 @@
 
 ```
 $ pip install pipenv
-$ pipenv install scrapy scrapyd-client
-$ pipenv install requests pymysql beautifulsoup4 lxml js2py selenium  
+$ pip install scrapy scrapyd-client
+$ pip install requests pymysql beautifulsoup4 lxml js2py selenium  
 ```
 
 * 数据库主机、数据库名称、用户名、密码等信息在`settings.py`文件中配置；
@@ -199,9 +199,15 @@ ITEM_PIPELINES = {
 初始化完成后会生成一个文件夹`gerapy`，该文件夹下面会生成一个`projects`文件夹.进入到该创建的`gerapy`文件夹下，再输入`gerapy migrate`完成`gerapy`初始化工作. 将scrapy脚本项目放到`projects`目录下,利用`gerapy runserver`，启动`gerapy`. 刷新即可看到部署的脚本。
 
 ```
+
 $ mkdir spider-gerapy
 $ cd spider-gerapy
-$ pip install gerapy
+
+# 注意如果gerapy环境和执行及其scrpayd在同一个机器，他们需要配置不同的python virtualenv,因为
+# gerapy需要的pymysql==0.7.10，但是这个版本的pymysql不兼容MySQL8，将会导致utf8mb4字符串不支持，出现： KeyError: 255
+$ pipenv shell
+$ pipenv install gerapy
+
 $ gerapy init
 $ cd gerapy
 $ gerapy migrate 
@@ -210,7 +216,12 @@ $ gerapy createsuperuser
 创建超级用户，用于登录界面
 $ gerapy runserver
 后台静默运行gerapy服务,注意一定要切换到新创建的gerapy目录下面
-$ nohup gerapy runserver 0.0.0.0:6000 &
+$ nohup gerapy runserver 0.0.0.0:6000 > /dev/null 2>&1 &
+
+复制对应的脚本到服务端目录 projects
+$ cd gerapy
+$ mkdir projects
+
 ```
 #### **安装问题**
 
@@ -233,18 +244,18 @@ $ nano default_scrapyd.conf
 上面提到配置，需要修改的配置文件内容如下：
 ```
 eggs_dir    = /www/spider/eggs
-logs_dir    = /logs
+logs_dir    = /www/spider/logs
 items_dir   = /www/spider/items
 
 bind_address = 0.0.0.0
 http_port   = 6800
 
-username = deployer
-password = eaafbbdbe1494810b48a9065152cd95f245dz
+username = deployertester
+password = eaatestf%5dz
 ```
 * 上面的配置修改成功后执行以下脚本运行`scrapyd`后台启动服务：
 ```
-$ nohup scrapyd &
+$ nohup scrapyd > /dev/null 2>&1 &
 ```
 * 脚本运行端需要安装对应的`scrapy`开发环境中提到的所有库，执行如下命令安装:
 ```
@@ -256,12 +267,32 @@ pip install scrapy requests pymysql beautifulsoup4 lxml js2py selenium
 
 ## 问题整理
 
-1. 在`gerapy`安装中安装的lxml会出现错误： make sure the development packages of libxml2 and libxslt are installed 
+## Error Keyerror 255 when executing pymysql.connect
+
+原因是在进行连接的时候选择的字符与服务器的字符不一致，连接的使用使用的是`utf8`,而实际mysql8使用的字符是: `utf8mb4`.
+需要执行如下两步操作:
+
+1. 需要修改下面的参数: `charset="utf8mb4"`. 如下:
+![20200730215024-2020-07-30](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200730215024-2020-07-30.png)
+
+2. 升级对应的`pymysql`到最新的版本
+
+```
+$ pip install --upgrade pymysql
+或者
+$ pip install 'pymysql>=0.10.0' --force-reinstall
+```
+
+### scrapyd客户端日志查找
+
+查看对应的scrapyd的配置中的log文件目录是: `/www/spider/logs`,然后进入查看对应的日志
+
+### 在`gerapy`安装中安装的lxml会出现错误： make sure the development packages of libxml2 and libxslt are installed 
 ```
 sudo apt-get install libxml2-dev libxslt-dev
 ```
 
-2. 执行`gerapy init`命令出现错误：
+### 执行`gerapy init`命令出现错误：
 ```
 # gerapy init
 :0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name 'opentype''.  Please install it from <https://pypi.python.org/pypi/service_identity> and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
@@ -276,21 +307,21 @@ Initialized workspace gerapy
 - 或者是找到最新版的安装包进行手动安装，最新包下载地址: `https://pypi.org/project/service_identity/#files`,下载对应的whl文件安装即可。
 
 
-3. 执行`pipenv install`出现错误：ImportError: cannot import name 'Mapping' from 'collections'
+### 执行`pipenv install`出现错误：ImportError: cannot import name 'Mapping' from 'collections'
 
 原因是执行的包错误，重新安装即可
 
-4. 在gerapy中添加机器报错: `the JSON object must be str, not 'bytes'`
+### 在gerapy中添加机器报错: `the JSON object must be str, not 'bytes'`
 可能是对应的scrapyd服务没有启动
 
-5. 执行scrapyd命令出错: `Failed to load application: No module named '_sqlite3'`
+### 执行scrapyd命令出错: `Failed to load application: No module named '_sqlite3'`
 
 原因是python采用编译安装的，导致没有加载对应的sqlite模块，重新编译安装加载sqlite模块，命令如下:
 ```
 ./configure --enable-optimizations --enable-ipv6 --enable-loadable-sqlite-extensions
 ```
 
-6. 执行`pip -V`出错: `ModuleNotFoundError: No module named 'pip._internal.cli.main'`
+### 执行`pip -V`出错: `ModuleNotFoundError: No module named 'pip._internal.cli.main'`
 
 解决方法，修复pip，执行命令: `python -m pip install --upgrade pip`，或者如下命令: 
 ```
@@ -298,7 +329,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py --force-reinstall
 ```
 
-7. 执行命令: `sudo add-apt-repository ppa:deadsnakes/ppa` ,报错：` add-apt-repository gpg: keyserver receive failed: No dirmngr`,执行如下命令安装：dirmngr:
+### 执行命令: `sudo add-apt-repository ppa:deadsnakes/ppa` ,报错：` add-apt-repository gpg: keyserver receive failed: No dirmngr`,执行如下命令安装：dirmngr:
 ```
 sudo apt install dirmngr
 ```
@@ -307,11 +338,12 @@ sudo apt install dirmngr
 $ sudo apt-get update --allow-unauthenticated
 ```
 
-9. 安装scrapy中twisted安装报错
+### 安装scrapy中twisted安装报错
+
 解决方法，切换到目录： https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted，直接下载对应的whl包
+执行命令: `pip install Twisted‑20.3.0‑cp38‑cp38‑win32.whl`
 
-
-10. 如何设置scrapy的默认的user-agent和proxy代理
+### 如何设置scrapy的默认的user-agent和proxy代理
 在脚本目录下方有一个配置文件: `settings.py`, 如下配置：
 ```python
 DOWNLOADER_MIDDLEWARES = {

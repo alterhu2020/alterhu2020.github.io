@@ -45,7 +45,7 @@ title: 如何提高国内访问Github的速度到2MB/s以上
 
 <https://github.zhlh6.cn>
 
-输入 Github 仓库地址，使用生成的地址进行 git ssh 操作即可
+输入 Github 仓库地址，使用生成的地址进行 git ssh 等操作
 
 ## 5. 谷歌浏览器GitHub加速插件(推荐)
 
@@ -121,7 +121,7 @@ GitHub 我们都知道是世界上最大的开源及私有软件项目的托管�
 
 得到：140.82.114.4 http://github.com
 
-### 第三步：修改host文件
+### 第三步：修改host文件映射上面查找到的IP
 windows系统：
 
 1、修改[C:\Windows\System32\drivers\etc\hosts](C:\Windows\System32\drivers\etc\hosts)文件的权限，指定可写入：

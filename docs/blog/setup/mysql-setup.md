@@ -177,14 +177,14 @@ logged in mysql using `root / xxx`:
 
 ```
 1. 创建用户
-> create user 'testeruser'@'%' identified by 'test'; 
+> create user 'syscorer'@'%' identified by 'test%'; 
 > FLUSH PRIVILEGES;
 
 2. 用户权限赋值
 WITH GRANT OPTION 这个选项表示该用户可以将自己拥有的权限授权给别人。注意：经常有人在创建操作用户的时候不指定WITH GRANT OPTION选项导致后来该用户不能使用GRANT命令创建用户或者给其它用户授权。
 如果不想这个用户有这个grant的权限，可以不加这句
 
-> GRANT ALL PRIVILEGES ON *.* TO 'testeruser'@'%'; 
+> GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%'; 
 > GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%' WITH GRANT OPTION;
 > FLUSH PRIVILEGES;
 
@@ -316,10 +316,21 @@ use mysql;
 SELECT User, Host, plugin FROM mysql.user;
 update user set plugin='mysql_native_password' where user='root';
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'test2';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'cTpofe3IwUuzzuOq0k5Hw2fg=';
 flush privileges;
+
+reboot
 ```
 如果报： `ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement`,需要执行一下命令: `flush privileges`,然后再重新执行命令就好了。
+
+```
+# mysql_config_editor set \
+    --login-path=dev\
+    --host=localhost \
+    --user=root \
+    --password
+# mysql --login-path=dev
+```
 
 ## 卸载mysql操作
 

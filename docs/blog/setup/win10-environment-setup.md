@@ -52,6 +52,7 @@ title: Windows10机器新环境配置
     6. Python
     7. Vue.js
     8. Wake Time
+    9. Any Rule
 
 * [HBuilderX](https://dcloud.io/)
 * [VS Code](https://code.visualstudio.com/download)

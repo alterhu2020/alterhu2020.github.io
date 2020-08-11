@@ -17,8 +17,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="article:modified_time" content="Tue Jul 21 2020 21:40:51 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Debian Linux命令其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/linux-setup.html"><meta name="twitter:title" content="Debian Linux命令其环境配置"><meta name="twitter:url" content="/blog/setup/linux-setup.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.644b4d31.js" as="script"><link rel="preload" href="/assets/js/3.8c62cfad.js" as="script"><link rel="preload" href="/assets/js/79.57035d28.js" as="script">
+    <meta property="article:modified_time" content="Mon Aug 03 2020 16:38:10 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Debian Linux命令其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/linux-setup.html"><meta name="twitter:title" content="Debian Linux命令其环境配置"><meta name="twitter:url" content="/blog/setup/linux-setup.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.53d7b707.js" as="script"><link rel="preload" href="/assets/js/3.8c62cfad.js" as="script"><link rel="preload" href="/assets/js/79.8730ea47.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -357,7 +357,7 @@ crontab -r 表示删除用户的定时任务，当执行此命令后，所有用
 ② 尽量使用docker版本(docker pull redis)
 ③ 隐藏重要的命令</p> <p>5.3 使用busybox删除</p> <p>5.4 屏蔽<code>pastebin.com</code>、thrysi.com等广泛被挖矿蠕虫利用的网站，达到阻断入侵的目的</p> <p>5.6 <code>netstat -natp</code> 命令查看是否有异常陌生IP的TCP连接，查询到有来自国外的陌生IP，做了白名单处理</p> <p>5.7 启用ssh公钥登陆，禁用密码登陆。
 5.8 云主机：完善安全策略，入口流量，一般只开放 80 443 端口就行，出口流量默认可以不限制，如果有需要根据需求来限制。物理机：可以通过硬件防火墙或者机器上iptables 来开放出入口流量规则。
-5.9 本机不是直接需要对外提供服务，可以拒绝外网卡入口所有流量，通过 jumper 机器内网登陆业务机器。</p> <h3 id="常见非法的木马病毒"><a href="#常见非法的木马病毒" class="header-anchor">#</a> 常见非法的木马病毒</h3> <table><thead><tr><th>挖矿病毒</th> <th>正常文件</th> <th>关联文件</th> <th>原因</th></tr></thead> <tbody><tr><td>kdevtmpfsi</td> <td>kdevtmpfs</td> <td>kinsing</td> <td>最根本的原因是自己的redis 6379配置不当导致的。大家可以参考阿里云的Redis服务安全加固</td></tr> <tr><td>Watchdogs</td> <td>Watchdog</td> <td></td> <td></td></tr> <tr><td>trace</td> <td>trace</td> <td></td> <td></td></tr></tbody></table></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">7/21/2020, 9:40:51 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+5.9 本机不是直接需要对外提供服务，可以拒绝外网卡入口所有流量，通过 jumper 机器内网登陆业务机器。</p> <h3 id="常见非法的木马病毒"><a href="#常见非法的木马病毒" class="header-anchor">#</a> 常见非法的木马病毒</h3> <table><thead><tr><th>挖矿病毒</th> <th>正常文件</th> <th>关联文件</th> <th>原因</th></tr></thead> <tbody><tr><td>kdevtmpfsi</td> <td>kdevtmpfs</td> <td>kinsing</td> <td>最根本的原因是自己的redis 6379配置不当导致的。大家可以参考阿里云的Redis服务安全加固</td></tr> <tr><td>Watchdogs</td> <td>Watchdog</td> <td></td> <td></td></tr> <tr><td>trace</td> <td>trace</td> <td></td> <td></td></tr></tbody></table></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">8/3/2020, 4:38:10 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/raspberry-setup.html" class="prev">
           树莓派Linux安装及其环境配置
@@ -366,6 +366,6 @@ crontab -r 表示删除用户的定时任务，当执行此命令后，所有用
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.644b4d31.js" defer></script><script src="/assets/js/3.8c62cfad.js" defer></script><script src="/assets/js/79.57035d28.js" defer></script>
+    <script src="/assets/js/app.53d7b707.js" defer></script><script src="/assets/js/3.8c62cfad.js" defer></script><script src="/assets/js/79.8730ea47.js" defer></script>
   </body>
 </html>

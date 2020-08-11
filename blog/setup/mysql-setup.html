@@ -18,7 +18,7 @@
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
     <meta property="article:modified_time" content="Tue Jul 21 2020 21:40:51 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Debian MYSQL8安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/mysql-setup.html"><meta name="twitter:title" content="Debian MYSQL8安装及其环境配置"><meta name="twitter:url" content="/blog/setup/mysql-setup.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.644b4d31.js" as="script"><link rel="preload" href="/assets/js/3.8c62cfad.js" as="script"><link rel="preload" href="/assets/js/82.1df6a6e8.js" as="script">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.53d7b707.js" as="script"><link rel="preload" href="/assets/js/3.8c62cfad.js" as="script"><link rel="preload" href="/assets/js/82.73631112.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -141,14 +141,14 @@ $ mysql -u root -p (直接不输入密码)
 </code></pre></div><!---->
 ## 添加数据库和用户(包括修改用户密码)
 <p>logged in mysql using <code>root / xxx</code>:</p> <div class="language- extra-class"><pre class="language-text"><code>1. 创建用户
-&gt; create user 'testeruser'@'%' identified by 'test'; 
+&gt; create user 'syscorer'@'%' identified by 'test%'; 
 &gt; FLUSH PRIVILEGES;
 
 2. 用户权限赋值
 WITH GRANT OPTION 这个选项表示该用户可以将自己拥有的权限授权给别人。注意：经常有人在创建操作用户的时候不指定WITH GRANT OPTION选项导致后来该用户不能使用GRANT命令创建用户或者给其它用户授权。
 如果不想这个用户有这个grant的权限，可以不加这句
 
-&gt; GRANT ALL PRIVILEGES ON *.* TO 'testeruser'@'%'; 
+&gt; GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%'; 
 &gt; GRANT ALL PRIVILEGES ON *.* TO 'syscorer'@'%' WITH GRANT OPTION;
 &gt; FLUSH PRIVILEGES;
 
@@ -219,9 +219,17 @@ use mysql;
 SELECT User, Host, plugin FROM mysql.user;
 update user set plugin='mysql_native_password' where user='root';
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'test2';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'cTpofe3IwUuzzuOq0k5Hw2fg=';
 flush privileges;
-</code></pre></div><p>如果报： <code>ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement</code>,需要执行一下命令: <code>flush privileges</code>,然后再重新执行命令就好了。</p> <h2 id="卸载mysql操作"><a href="#卸载mysql操作" class="header-anchor">#</a> 卸载mysql操作</h2> <div class="language- extra-class"><pre class="language-text"><code>$ cd /var/lib/dpkg
+
+reboot
+</code></pre></div><p>如果报： <code>ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement</code>,需要执行一下命令: <code>flush privileges</code>,然后再重新执行命令就好了。</p> <div class="language- extra-class"><pre class="language-text"><code># mysql_config_editor set \
+    --login-path=dev\
+    --host=localhost \
+    --user=root \
+    --password
+# mysql --login-path=dev
+</code></pre></div><h2 id="卸载mysql操作"><a href="#卸载mysql操作" class="header-anchor">#</a> 卸载mysql操作</h2> <div class="language- extra-class"><pre class="language-text"><code>$ cd /var/lib/dpkg
 $ sudo mv info info.bak
 $ sudo mkdir info
 $ sudo dpkg --configure -a
@@ -284,6 +292,6 @@ $ rm -rf ibdata1
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.644b4d31.js" defer></script><script src="/assets/js/3.8c62cfad.js" defer></script><script src="/assets/js/82.1df6a6e8.js" defer></script>
+    <script src="/assets/js/app.53d7b707.js" defer></script><script src="/assets/js/3.8c62cfad.js" defer></script><script src="/assets/js/82.73631112.js" defer></script>
   </body>
 </html>

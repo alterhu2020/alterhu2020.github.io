@@ -49,6 +49,7 @@ module.exports = {
             title: '2020年归档',
             collapsable: true,
             children: [
+                '2020/Aliyun-oss-cert-change',
                 '2020/program-freelancer-compare',
                 '2020/flash-swf-to-html5',
                 '2020/element-still-there',

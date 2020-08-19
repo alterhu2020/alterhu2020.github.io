@@ -11,6 +11,20 @@ title: Debian Linux命令其环境配置
 
 [[toc]]
 
+## -bash: sudo: command not found
+
+在debian系统中可能会报这个错误，执行如下安装`sudo`:
+
+```shell
+$ apt install sudo 
+$ nano /etc/sudoers
+# 检查对应的sudo组是否有所有的权限：
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+
+# 以上的设置说明sudo已经有所有的权限，这样设置即可。
+```
+
 ## nano命令查找字符串search
 
 当你想搜索某特定文字时，只要想成"WhereIs"而不是"Search"，事情就简单了。只要按下**Ctrl+W**，键入你要搜索的字符串，再按Enter就可以了。想再次搜索相同的字符串，可以直接按Alt+W。也就是搜索下一个。

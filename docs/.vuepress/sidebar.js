@@ -49,6 +49,8 @@ module.exports = {
             title: '2020年归档',
             collapsable: true,
             children: [
+                '2020/dbforge-studio-mysql',
+                '2020/cheapest-domain-list',
                 '2020/Do-not-mutate-vuex-store-state-outside-mutation-handlers',
                 '2020/Aliyun-oss-cert-change',
                 '2020/program-freelancer-compare',

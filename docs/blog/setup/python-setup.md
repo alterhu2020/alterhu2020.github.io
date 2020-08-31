@@ -165,6 +165,18 @@ $ python -m pip install --upgrade pip
   />
 </ClientOnly>
 
+## pipenv命令操作
+
+2020年0826永久更新改变默认的pipenv的路径：
+
+在windows下使用pipenv shell时，虚拟环境文件夹会在C：\Users\Administrator\.virtualenvs\目录下默认创建，为了方便管理，将这个虚环境的文件的位置更改一下。
+
+新建一个名为“ **WORKON_HOME** ”的环境变量（如果已存在就忽略此步骤），然后将环境变量的值设置为“ **.virtualenvs** ”
+
+以后所有的虚拟环境都会在当前python项目下面创建一个.virtualenvs目录。
+
+
+
 ```
 $ pip install --user pipenv
 $ python -m site --user-base
@@ -184,6 +196,7 @@ $ pipenv update
 $ pipenv graph
 
 ```
+
   
 ## 安装配置问题
 
@@ -206,3 +219,29 @@ Visual Studio 2017 ---> 15
 pip install --upgrade requests
 
 ```
+
+## THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
+
+这个问题主要是在使用pipenv命令进行安装twisted出现的: 
+
+```
+pipenv install "C:\Users\Administrator\Downloads\Twisted-20.3.0-cp38-cp38-win32.whl"
+```
+解决方法是首先进入pipenv环境，然后替换使用pip命令进行更新操作：
+```
+> pipenv shell
+> pip install --upgrade "C:\Users\Administrator\Downloads\Twisted-20.3.0-cp38-cp38-win32.whl"
+或者
+> pip install --no-cache-dir "C:\Users\Administrator\Downloads\Twisted-20.3.0-cp38-cp38-win32.whl"
+```
+
+## ImportError: attempted relative import with no known parent package
+
+Pycharm或者编译器打开项目，过多一层或者过少一层打开目录都会导致导入错误，是因为编译器打开那个目录，就将python的工作目录设置那一层，只有正确的目录结构才能导入正确包。
+
+. 和 ..导入 相对位置是执行文件的当前目录
+
+
+因为python的相对导入需要用到父级包作为相对的参考位置
+而这个位置是通过__name__属性和__package__属性进行决定的，
+当 __name__ 等于 __main__和 __package__ = None的时候导致的问题没有父级包

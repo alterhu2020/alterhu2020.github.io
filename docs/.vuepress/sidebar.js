@@ -19,6 +19,8 @@ module.exports = {
             title: '环境配置和部署',
             collapsable: false,
             children: [
+                'setup/windows-terminal-setup',
+                'setup/appium-windows-setup',
                 'setup/video-edit-setup',
                 'setup/genymotion-setup',
                 'setup/bitcoin-mining-setup',
@@ -49,6 +51,8 @@ module.exports = {
             title: '2020年归档',
             collapsable: true,
             children: [
+                '2020/how-to-download-douyin-video-audio',
+                '2020/Aliyun-access-denied',
                 '2020/jidong-printer-helper',
                 '2020/dbforge-studio-mysql',
                 '2020/cheapest-domain-list',

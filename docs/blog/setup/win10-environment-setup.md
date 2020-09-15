@@ -117,7 +117,7 @@ title: Windows10机器新环境配置
 * [ m3u8 downloader-youtube-dl.exe](https://github.com/ytdl-org/youtube-dl)
 * [PotPlayer](https://daumpotplayer.com/download/)
 * [百度网盘](https://pan.baidu.com/download)
-* [PanDownload](https://pandownload.com/)
+* ~~[PanDownload](https://pandownload.com/)~~
 * [QQ](https://im.qq.com/download/)
 * [微信桌面版](https://pc.weixin.qq.com/)
 * [人人影视](http://www.rrys2019.com/)

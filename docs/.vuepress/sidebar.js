@@ -37,11 +37,12 @@ module.exports = {
                 'setup/nginx-setup',
                 'setup/python-setup',
                 'setup/python-scrapy-setup',
-                'setup/mysql-setup',
-                'setup/uwsgi-setup',
-                'setup/tomcat-setup',
-                'setup/redis-setup',
                 'setup/sqlalchemy-setup',
+                'setup/uwsgi-setup',
+                'setup/mysql-setup',
+              
+                'setup/tomcat-setup',
+                'setup/redis-setup',        
                 'setup/mail-setup',
                 'setup/win10-environment-setup',
                 'setup/mac-setup'

@@ -11,7 +11,7 @@ title: Vue nuxtjs安装及其环境配置
 
 [[toc]]
 
-## 环境配置
+## nodejs环境配置
 
 - 下载`node`,并执行命令安装node配置`PATH`路径:
 

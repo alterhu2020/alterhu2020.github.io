@@ -17,8 +17,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="og:site_name" content="评布客博客"><meta property="og:title" content="6月17日整理"><meta property="og:type" content="article"><meta property="og:url" content="/blog/2019/06-17-what.html"><meta name="twitter:title" content="6月17日整理"><meta name="twitter:url" content="/blog/2019/06-17-what.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.cfbf1b1d.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/34.2a04d1d6.js" as="script">
+    <meta property="article:modified_time" content="Fri Jun 21 2019 21:53:23 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="6月17日整理"><meta property="og:type" content="article"><meta property="og:url" content="/blog/2019/06-17-what.html"><meta name="twitter:title" content="6月17日整理"><meta name="twitter:url" content="/blog/2019/06-17-what.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.a512de07.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/34.5b693599.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -107,7 +107,7 @@ Using config: /opt/apache-zookeeper-3.5.5/bin/../conf/zoo.cfg
 错误: 找不到或无法加载主类 org.apache.zookeeper.server.quorum.QuorumPeerMain
 </code></pre></div><p>发现原来是自己下载的zookeeper版本是源码版本，正确的版本应该是: <a href="http://mirror.bit.edu.cn/apache/zookeeper/current/apache-zookeeper-3.5.5-bin.tar.gz" target="_blank" rel="noopener noreferrer">http://mirror.bit.edu.cn/apache/zookeeper/current/apache-zookeeper-3.5.5-bin.tar.gz<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ol start="2"><li>执行<code>systemctl start zookeeper</code>报错: <code>zkServer.sh[985]: Error: JAVA_HOME is not set and java could not be found in PATH.</code></li></ol> <blockquote><p>尽管配置了JAVA_HOME在<code>/etc/profile</code>中，但是还是需要下面的命令执行：</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code># update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_211/bin/java 1
 # update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_211/bin/javac 1
-</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">6/21/2019, 9:53:23 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/2019/06-21-what.html" class="prev">
           6月21日整理
@@ -116,6 +116,6 @@ Using config: /opt/apache-zookeeper-3.5.5/bin/../conf/zoo.cfg
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.cfbf1b1d.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/34.2a04d1d6.js" defer></script>
+    <script src="/assets/js/app.a512de07.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/34.5b693599.js" defer></script>
   </body>
 </html>

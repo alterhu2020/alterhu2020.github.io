@@ -17,8 +17,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Windows Terminal 安装与配置指南"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/windows-terminal-setup.html"><meta name="twitter:title" content="Windows Terminal 安装与配置指南"><meta name="twitter:url" content="/blog/setup/windows-terminal-setup.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.cfbf1b1d.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/106.169ddfc1.js" as="script">
+    <meta property="article:modified_time" content="Tue Sep 15 2020 18:01:38 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Windows Terminal 安装与配置指南"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/windows-terminal-setup.html"><meta name="twitter:title" content="Windows Terminal 安装与配置指南"><meta name="twitter:url" content="/blog/setup/windows-terminal-setup.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.a512de07.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/106.169ddfc1.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -41,7 +41,7 @@ New-Item -Path &quot;$basePath\wt&quot; -Force -Value &quot;Windows Terminal her
 New-ItemProperty -Path &quot;$basePath\wt&quot; -Force -Name &quot;Icon&quot; -PropertyType ExpandString -Value &quot;%LOCALAPPDATA%\Microsoft\WindowsApps\terminal.ico&quot;
 New-Item -Path &quot;$basePath\wt\command&quot; -Force -Type ExpandString -Value '&quot;%LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe&quot; -p Ubuntu -d &quot;%V&quot;'
 
-</code></pre></div><p>如果你足够熟练，也可以自行通过其他方式修改注册表，反正就那么些字段，路径正确就行了。Windows Terminal 的图标可以在 <a href="https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico" target="_blank" rel="noopener noreferrer">这里<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 获取 。</p> <blockquote><p>2020/03/14 更新：Windows Terminal 0.9 版本之后添加了 wt.exe 的命令行参数，可以直接指定启动目录，不需要再修改 profiles.json 中的 <code>startingDirectory</code> 字段了。</p></blockquote> <p>另外 wt.exe 支持通过<code>-p</code>参数指定要打开的 Profile，所以除了 WSL，我还添加了一个在当前目录下打开 PowerShell 的菜单项（注册表中添加一个 Extended 项可以让该右键菜单项仅在按住 Shift 右键时才显示）。你甚至可以通过二级菜单的方式实现更多功能，具体可以参考上面给出的 issue 中的讨论。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><p>如果你足够熟练，也可以自行通过其他方式修改注册表，反正就那么些字段，路径正确就行了。Windows Terminal 的图标可以在 <a href="https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico" target="_blank" rel="noopener noreferrer">这里<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 获取 。</p> <blockquote><p>2020/03/14 更新：Windows Terminal 0.9 版本之后添加了 wt.exe 的命令行参数，可以直接指定启动目录，不需要再修改 profiles.json 中的 <code>startingDirectory</code> 字段了。</p></blockquote> <p>另外 wt.exe 支持通过<code>-p</code>参数指定要打开的 Profile，所以除了 WSL，我还添加了一个在当前目录下打开 PowerShell 的菜单项（注册表中添加一个 Extended 项可以让该右键菜单项仅在按住 Shift 右键时才显示）。你甚至可以通过二级菜单的方式实现更多功能，具体可以参考上面给出的 issue 中的讨论。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">9/15/2020, 6:01:38 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/release/jdk.html" class="prev">
           JDK版本新特性
@@ -50,6 +50,6 @@ New-Item -Path &quot;$basePath\wt\command&quot; -Force -Type ExpandString -Value
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.cfbf1b1d.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/106.169ddfc1.js" defer></script>
+    <script src="/assets/js/app.a512de07.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/106.169ddfc1.js" defer></script>
   </body>
 </html>

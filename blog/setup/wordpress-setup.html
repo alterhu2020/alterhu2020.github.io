@@ -17,8 +17,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Wordpress Linux命令其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/wordpress-setup.html"><meta name="twitter:title" content="Wordpress Linux命令其环境配置"><meta name="twitter:url" content="/blog/setup/wordpress-setup.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.cfbf1b1d.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/107.44cc6c9d.js" as="script">
+    <meta property="article:modified_time" content="Tue Jul 21 2020 21:40:51 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Wordpress Linux命令其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/wordpress-setup.html"><meta name="twitter:title" content="Wordpress Linux命令其环境配置"><meta name="twitter:url" content="/blog/setup/wordpress-setup.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.a512de07.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/107.f0b05c30.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -204,7 +204,7 @@ require_once( ABSPATH . 'wp-settings.php' );
 
 </code></pre></div><p>否则会覆盖已经导入的mysql数据库数据,然后访问页面: http://xxx. 会自动加载配置文件信息跳转到首页。</p> <h2 id="请求style-css和app-js出现-block-mixed-content错误"><a href="#请求style-css和app-js出现-block-mixed-content错误" class="header-anchor">#</a> 请求style.css和app.js出现 <code>block:mixed-content</code>错误</h2> <p>原因是全站采用了https后引用的相关css和js文件由于采用的是frp导致对应的协议是http的要求，此处可以修改git主题下面的<code>functions.php</code>中的<code>GIT_URL</code>参数为如下：</p> <div class="language- extra-class"><pre class="language-text"><code>define('GIT_URL', 'https://pingbook.top/wp-content/themes/git');
 
-</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">7/21/2020, 9:40:51 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/artipub-setup.html" class="prev">
           artipub多平台博客发布工具使用配置
@@ -213,6 +213,6 @@ require_once( ABSPATH . 'wp-settings.php' );
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.cfbf1b1d.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/107.44cc6c9d.js" defer></script>
+    <script src="/assets/js/app.a512de07.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/107.f0b05c30.js" defer></script>
   </body>
 </html>

@@ -17,8 +17,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Debian MYSQL8安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/mysql-setup.html"><meta name="twitter:title" content="Debian MYSQL8安装及其环境配置"><meta name="twitter:url" content="/blog/setup/mysql-setup.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.cfbf1b1d.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/92.6a0b2bbf.js" as="script">
+    <meta property="article:modified_time" content="Tue Aug 11 2020 19:58:41 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Debian MYSQL8安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/mysql-setup.html"><meta name="twitter:title" content="Debian MYSQL8安装及其环境配置"><meta name="twitter:url" content="/blog/setup/mysql-setup.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.a512de07.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/92.1dbe8306.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -283,7 +283,7 @@ $ sudo mysql -u root -p
 </code></pre></div><h2 id="could-not-open-or-create-the-system-tablespace-if-you-tried-to-add-new-data-files-to-the-system-tablespace-and-it-failed-here-you-should-now-edit-innodb-data-file-path-in-my-cnf-back-to-what-it-was-and-remove-the-new-ibdata-files-innodb-created-in-this-failed-attempt-innodb-only-wrote-those-files-full-of-zeros-but-did-not-yet-use-them-in-any-way-but-be-careful-do-not-remove-old-data-files-which-contain-your-precious-data"><a href="#could-not-open-or-create-the-system-tablespace-if-you-tried-to-add-new-data-files-to-the-system-tablespace-and-it-failed-here-you-should-now-edit-innodb-data-file-path-in-my-cnf-back-to-what-it-was-and-remove-the-new-ibdata-files-innodb-created-in-this-failed-attempt-innodb-only-wrote-those-files-full-of-zeros-but-did-not-yet-use-them-in-any-way-but-be-careful-do-not-remove-old-data-files-which-contain-your-precious-data" class="header-anchor">#</a> Could not open or create the system tablespace. If you tried to add new data files to the system tablespace, and it failed here, you should now edit innodb_data_file_path in my.cnf back to what it was, and remove the new ibdata files InnoDB created in this failed attempt. InnoDB only wrote those files full of zeros, but did not yet use them in any way. But be careful: do not remove old data files which contain your precious data</h2> <p>进入mysql的数据目录,注意备份：</p> <div class="language- extra-class"><pre class="language-text"><code>$ cd  /var/lib/mysql
 $ rm -rf ib_logfile*
 $ rm -rf ibdata1
-</code></pre></div><h2 id="mysql-shell-脚本using-a-password-on-the-command-line-interface-can-be-insecure"><a href="#mysql-shell-脚本using-a-password-on-the-command-line-interface-can-be-insecure" class="header-anchor">#</a> mysql shell 脚本Using a password on the command line interface can be insecure</h2></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><h2 id="mysql-shell-脚本using-a-password-on-the-command-line-interface-can-be-insecure"><a href="#mysql-shell-脚本using-a-password-on-the-command-line-interface-can-be-insecure" class="header-anchor">#</a> mysql shell 脚本Using a password on the command line interface can be insecure</h2></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">8/11/2020, 7:58:41 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/uwsgi-setup.html" class="prev">
           Python Uwsgi Linux安装及其环境配置
@@ -292,6 +292,6 @@ $ rm -rf ibdata1
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.cfbf1b1d.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/92.6a0b2bbf.js" defer></script>
+    <script src="/assets/js/app.a512de07.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/92.1dbe8306.js" defer></script>
   </body>
 </html>

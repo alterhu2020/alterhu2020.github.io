@@ -17,8 +17,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Python Uwsgi Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/uwsgi-setup.html"><meta name="twitter:title" content="Python Uwsgi Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/uwsgi-setup.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.cfbf1b1d.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/102.08c6c3ec.js" as="script">
+    <meta property="article:modified_time" content="Tue Jul 21 2020 21:40:51 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="Python Uwsgi Linux安装及其环境配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/setup/uwsgi-setup.html"><meta name="twitter:title" content="Python Uwsgi Linux安装及其环境配置"><meta name="twitter:url" content="/blog/setup/uwsgi-setup.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.a512de07.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/102.08c6c3ec.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -65,7 +65,7 @@ NotifyAccess=all
 WantedBy=multi-user.target
 
 
-</code></pre></div><!----> <h2 id="uwsgi参数"><a href="#uwsgi参数" class="header-anchor">#</a> uwsgi参数</h2> <ul><li>chdir=/xxx/xxx # 指定项目目录</li> <li>home=/xxx/xxx # 指定虚拟环境变量</li> <li>wsgi-file=xxx # 指定加载WSGI文件</li> <li>socket=xxx # 指定uwsgi的客户端将要连接的socket的路径（使用UNIX socket的情况）或者地址（使用网络地址的情况）。</li> <li>callable=xxx # uWSGI加载的模块中哪个变量将被调用</li> <li>master=true # 指定启动主进程</li> <li>processes=4 # 设置工作进程的数量</li> <li>threads=2 # 设置每个工作进程的线程数</li> <li>vacuum=true # 当服务器退出时自动删除unix socket文件和pid文件</li> <li>logfile-chmod=644 # 指定日志文件的权限</li> <li>daemonize=%(chdir)/xxx.log # 进程在后台运行，并将日志打印到指定文件</li> <li>pidfile=%(chdir)/xxx.pid # 在失去权限前，将主进程pid写到指定的文件</li> <li>uid=xxx # uWSGI服务器运行时的用户id</li> <li>gid=xxx # uWSGI服务器运行时的用户组id</li> <li>procname-prefix-spaced=xxx # 指定工作进程名称的前缀</li></ul> <h2 id="异常安装问题"><a href="#异常安装问题" class="header-anchor">#</a> 异常安装问题</h2> <ul><li>Unknown distribution option: 'descriptions'</li></ul> <blockquote><p>解决方法: apt-get install build-essential python3-dev</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><!----> <h2 id="uwsgi参数"><a href="#uwsgi参数" class="header-anchor">#</a> uwsgi参数</h2> <ul><li>chdir=/xxx/xxx # 指定项目目录</li> <li>home=/xxx/xxx # 指定虚拟环境变量</li> <li>wsgi-file=xxx # 指定加载WSGI文件</li> <li>socket=xxx # 指定uwsgi的客户端将要连接的socket的路径（使用UNIX socket的情况）或者地址（使用网络地址的情况）。</li> <li>callable=xxx # uWSGI加载的模块中哪个变量将被调用</li> <li>master=true # 指定启动主进程</li> <li>processes=4 # 设置工作进程的数量</li> <li>threads=2 # 设置每个工作进程的线程数</li> <li>vacuum=true # 当服务器退出时自动删除unix socket文件和pid文件</li> <li>logfile-chmod=644 # 指定日志文件的权限</li> <li>daemonize=%(chdir)/xxx.log # 进程在后台运行，并将日志打印到指定文件</li> <li>pidfile=%(chdir)/xxx.pid # 在失去权限前，将主进程pid写到指定的文件</li> <li>uid=xxx # uWSGI服务器运行时的用户id</li> <li>gid=xxx # uWSGI服务器运行时的用户组id</li> <li>procname-prefix-spaced=xxx # 指定工作进程名称的前缀</li></ul> <h2 id="异常安装问题"><a href="#异常安装问题" class="header-anchor">#</a> 异常安装问题</h2> <ul><li>Unknown distribution option: 'descriptions'</li></ul> <blockquote><p>解决方法: apt-get install build-essential python3-dev</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">7/21/2020, 9:40:51 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/setup/sqlalchemy-setup.html" class="prev">
           Python SQLAlchemy Linux安装及其环境配置
@@ -74,6 +74,6 @@ WantedBy=multi-user.target
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.cfbf1b1d.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/102.08c6c3ec.js" defer></script>
+    <script src="/assets/js/app.a512de07.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/102.08c6c3ec.js" defer></script>
   </body>
 </html>

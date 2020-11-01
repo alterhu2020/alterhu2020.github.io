@@ -17,8 +17,8 @@
   <script async="true" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: 'ca-pub-1893384651266286',  enable_page_level_ads: true });</script>
-    <meta property="og:site_name" content="评布客博客"><meta property="og:title" content="scrapy logging模块配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/2020/scrapy-logging.html"><meta name="twitter:title" content="scrapy logging模块配置"><meta name="twitter:url" content="/blog/2020/scrapy-logging.html"><meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.cfbf1b1d.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/70.59d81697.js" as="script">
+    <meta property="article:modified_time" content="Wed Mar 04 2020 14:08:40 GMT+0800 (GMT+08:00)"><meta property="og:site_name" content="评布客博客"><meta property="og:title" content="scrapy logging模块配置"><meta property="og:type" content="article"><meta property="og:url" content="/blog/2020/scrapy-logging.html"><meta name="twitter:title" content="scrapy logging模块配置"><meta name="twitter:url" content="/blog/2020/scrapy-logging.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.998fa698.css" as="style"><link rel="preload" href="/assets/js/app.a512de07.js" as="script"><link rel="preload" href="/assets/js/3.5bbf39f9.js" as="script"><link rel="preload" href="/assets/js/70.955d5a73.js" as="script">
     <link rel="stylesheet" href="/assets/css/0.styles.998fa698.css">
   </head>
   <body>
@@ -56,7 +56,7 @@ logger<span class="token punctuation">.</span>warning<span class="token punctuat
     <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'Parse function called on %s'</span><span class="token punctuation">,</span> response<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
 </code></pre></div><h2 id="问题"><a href="#问题" class="header-anchor">#</a> 问题</h2> <h3 id="设置了log-file参数后控制台将不会产生日志？"><a href="#设置了log-file参数后控制台将不会产生日志？" class="header-anchor">#</a> 设置了<code>LOG_FILE</code>参数后控制台将不会产生日志？</h3> <p>官方说明是设置了该参数后会重定向所有的日志到文件，所以控制台没有日志。如果需要控制台有日志，需要配置不同环境设置该参数为<code>None</code>或者文件目录。</p> <h3 id="通过scrapyd调度的egg执行的爬虫日志文件在哪里"><a href="#通过scrapyd调度的egg执行的爬虫日志文件在哪里" class="header-anchor">#</a> 通过<code>scrapyd</code>调度的egg执行的爬虫日志文件在哪里?</h3> <p>找到<code>scrapyd</code>的配置文件，通过如下命令：</p> <div class="language- extra-class"><pre class="language-text"><code>find / -name &quot;default_scrapyd.conf&quot;
-</code></pre></div><p>里面有一个配置<code>logs_dir = /logs</code>,这个配置对应的就是存放日志的目录，然后切换到该目录下面会找到对应的scrapyd项目下面的爬虫目录对应的日志文件。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><p>里面有一个配置<code>logs_dir = /logs</code>,这个配置对应的就是存放日志的目录，然后切换到该目录下面会找到对应的scrapyd项目下面的爬虫目录对应的日志文件。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">3/4/2020, 2:08:40 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/blog/2020/My-Brilliant-Friend.html" class="prev">
           【意剧】我的天才女友
@@ -65,6 +65,6 @@ logger<span class="token punctuation">.</span>warning<span class="token punctuat
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.cfbf1b1d.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/70.59d81697.js" defer></script>
+    <script src="/assets/js/app.a512de07.js" defer></script><script src="/assets/js/3.5bbf39f9.js" defer></script><script src="/assets/js/70.955d5a73.js" defer></script>
   </body>
 </html>

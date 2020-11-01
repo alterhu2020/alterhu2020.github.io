@@ -17,7 +17,7 @@ title: 阿里云对象存储自定义证书切换操作步骤
 
 ## 操作步骤
 
-1. 回到阿里云的域名解析服务中,将对应的对象存储绑定的域名解析到服务器的ip而非对应的对象存储设置的域名，类似于: `xxx.com.w.kunlunca.com`
+1. 回到阿里云的**域名解析服务**中,将对应的对象存储**绑定的域名解析到服务器的ip**而**非对应的对象存储设置的域名**，类似于: `xxx.com.w.kunlunca.com`
 
 ```
 res.yitieyilu.com.w.kunlunca.com
@@ -31,17 +31,16 @@ $ certbot renew
 
 根据提示找到对应的renew后新的公钥私钥文件，例如: `etc/letsencrypt/live/xxx.com` 目录下面的公钥私钥文件: `fullchain.pem`, `privkey.pem`.
 
-
-3. (此步可省略，第四步会自动生成该证书)~~切换到阿里云的“**SSL证书**”页面~~: https://yundunnext.console.aliyun.com/?spm=5176.11785003.0.0.28cf142fN9jJ9N&p=cas#/overview/cn-hangzhou
-
-点击“**上传证书**”，然后在"证书文件"中输入对应的: `fullchain.pem`文件中的内容，在“证书私钥”中输入: `privkey.pem`中的内容。
-
-![20200819085857-2020-08-19](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200819085857-2020-08-19.png)
-
-4. 回到CDN配置页面： https://cdnnext.console.aliyun.com/overview，在对应的域名下点击“管理”进行配置页面
+3. 回到CDN配置页面： https://cdnnext.console.aliyun.com/overview，在对应的域名下点击“管理”进行配置页面
 
 ![20200819090154-2020-08-19](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20200819090154-2020-08-19.png)
 
 切换到"HTTPS配置”，点击“修改配置”, 在弹出的对话框中选择“自定义上传（证书+私钥）”，在内容中输入`fullchain.pem`文件中的内容，在“私钥”中输入: `privkey.pem`中的内容。点击确认即可完成。
+
+
+4. 重新回到阿里云的域名解析服务中,将上面配置的对应的对象存储**绑定的域名解析到服务器的ip**改成**对应的对象存储设置的域名**，例如： 
+`res.yitieyilu.com.w.kunlunca.com`
+
+5. 回到对象存储页面点击一个上传的图片，通过自定义域名访问确认配置时候已经生效。
 
 

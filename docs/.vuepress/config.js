@@ -5,7 +5,7 @@ const sidebar = require('./sidebar')
 module.exports = {
     title: "评布客博客",
     description: "人生处万类，知识最为贤。 —— 韩愈",
-    dest: "../seniortesting.club-dist",
+    dest: "../seniortesting-dist",
     host: "localhost",
     base: base,
     shouldPrefetch: () => false,

@@ -1,5 +1,5 @@
 # robots.txt generated at https://www.sojson.com/robots/
-Disallow:https://code.pingbook.top/sitemap.xml
+Disallow:https://code.seniortesting.club/sitemap.xml
 Disallow:/ant-design-vue/*
 Disallow:/ionic-vue
 Disallow:/video/

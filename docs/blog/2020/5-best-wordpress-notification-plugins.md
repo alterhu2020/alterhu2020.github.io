@@ -11,7 +11,7 @@ title: 5个最佳WordPress通知栏插件
 
 [[toc]]
 **作者**：品博客
-**链接**：[https://blog.pingbook.top/328/](https://blog.pingbook.top/328/)
+**链接**：[https://seniortesting.club/328/](https://seniortesting.club/328/)
 **来源**：品博客
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 

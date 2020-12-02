@@ -168,12 +168,12 @@ $ sudo apt-get install certbot -y
 2. 配置nginx和SSL
 
 参考配置文件,每次只需要修改对应的域名(Domain)和目录(Path):
- [nginxconfig助手](https://www.digitalocean.com/community/tools/nginx#?0.domain=pingbook.top&0.path=%2Fwww%2Fweb%2Fwww.pingbook.top&0.document_root=&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.index=index.html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&brotli&log_not_found&symlink=false)
+ [nginxconfig助手](https://www.digitalocean.com/community/tools/nginx#?0.domain=seniortesting.club&0.path=%2Fwww%2Fweb%2Fseniortesting.club&0.document_root=&0.redirect=false&0.email=alterhu2020@gmail.com&0.php=false&0.proxy&0.index=index.html&0.access_log_domain&0.error_log_domain&directory_letsencrypt=%2Fwww%2F_letsencrypt%2F&brotli&log_not_found&symlink=false)
 
 以后每次配置子域名，只需要配置好对应的conf文件然后执行如下命令:
 
 ```
-$ certbot certonly --webroot -d res.pingbook.top --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
+$ certbot certonly --webroot -d res.seniortesting.club --email alterhu2020@gmail.com -w /www/_letsencrypt -n --agree-tos --force-renewal
 ```
 
 ::: warning Symlink vhost配置文件
@@ -181,7 +181,7 @@ $ certbot certonly --webroot -d res.pingbook.top --email alterhu2020@gmail.com -
 完成以上的配置后不行看任意修改文件
 :::
 
-## 配置静态域名：res.pingbook.top
+## 配置静态域名：res.seniortesting.club
 
 对于静态资源展示，提供了几种方式配置：
 - 简易配置Github风格：（推荐）[autoindex.html - 一行配置美化 nginx 目录成 github 风格。](https://www.91yunbbs.com/discussion/441/autoindex-html-%E4%B8%80%E8%A1%8C%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96-nginx-%E7%9B%AE%E5%BD%95%E6%88%90-github-%E9%A3%8E%E6%A0%BC) 

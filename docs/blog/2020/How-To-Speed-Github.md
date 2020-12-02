@@ -94,7 +94,7 @@ jsdelivr 唯一美中不足的就是它不能获取 exe 文件以及 Release 处
 
 ## 9. 通过修改HOSTS文件进行加速
 
-[参考如下详细介绍](https://code.pingbook.top/blog/2020/How-To-Speed-Github.html#如何提高github的下载速度？)
+[参考如下详细介绍](https://code.seniortesting.club/blog/2020/How-To-Speed-Github.html#如何提高github的下载速度？)
 
 -------------------------------------------
 

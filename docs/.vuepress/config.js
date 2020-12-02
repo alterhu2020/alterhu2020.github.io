@@ -5,7 +5,7 @@ const sidebar = require('./sidebar')
 module.exports = {
     title: "评布客博客",
     description: "人生处万类，知识最为贤。 —— 韩愈",
-    dest: "../pingbook-dist",
+    dest: "../seniortesting.club-dist",
     host: "localhost",
     base: base,
     shouldPrefetch: () => false,
@@ -99,10 +99,10 @@ module.exports = {
             ga: 'UA-122219517-1'
         }],
         ['vuepress-plugin-sitemap', {
-            hostname: 'https://code.pingbook.top'
+            hostname: 'https://code.seniortesting.club'
         }],
         ['vuepress-plugin-rss-support', {
-            site_url: 'https://code.pingbook.top',
+            site_url: 'https://code.seniortesting.club',
             filter: page => /^\/201.+/.test(page.path),
             copyright: '2020 评布客博客',
             count: 60
@@ -158,15 +158,15 @@ module.exports = {
             },
             {
                 text: 'JVFast管理框架',
-                link: 'https://pingbook.top'
+                link: 'https://seniortesting.club'
             },
             {
                 text: 'ant-design-vue',
-                link: 'https://code.pingbook.top/ant-design-vue'
+                link: 'https://code.seniortesting.club/ant-design-vue'
             },
             {
                 text: 'ionic-vue',
-                link: 'https://code.pingbook.top/ionic-vue'
+                link: 'https://code.seniortesting.club/ionic-vue'
             }
         ],
         sidebar: sidebar

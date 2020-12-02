@@ -41,7 +41,7 @@ dashboard_port = 7500
 dashboard_user = admin
 dashboard_pwd = xxtestd231lx0)
 
-# subdomain_host = pingbook.top
+# subdomain_host = seniortesting.club
 
 ```
 
@@ -396,9 +396,9 @@ use_compression = true
 
 local_ip = 127.0.0.1
 local_port = 3000
-custom_domains= www.pingbook.top,pingbook.top
+custom_domains= www.seniortesting.club,seniortesting.club
 
-# 2. blog.pingbook.top博客网站
+# 2. code.seniortesting.club博客网站
 [blog.http]
 type = http
 use_encryption = false
@@ -406,9 +406,9 @@ use_compression = true
 
 local_ip = 127.0.0.1
 local_port = 80
-custom_domains= blog.pingbook.top
+custom_domains= code.seniortesting.club
 
-# 3. doc.pingbook.top文档网址
+# 3. doc.seniortesting.club文档网址
 [doc.http]
 type = http
 use_encryption = false
@@ -416,9 +416,9 @@ use_compression = true
 
 local_ip = 127.0.0.1
 local_port = 3007
-custom_domains= doc.pingbook.top
+custom_domains= doc.seniortesting.club
 
-# 4. jvfast.pingbook.top演示网站
+# 4. jvfast.seniortesting.club演示网站
 [jvfast.http]
 type = http
 use_encryption = false
@@ -426,9 +426,9 @@ use_compression = true
 
 local_ip = 127.0.0.1
 local_port = 3006
-custom_domains= jvfast.pingbook.top
+custom_domains= jvfast.seniortesting.club
 
-# 5. 后台接口open.pingbook.top配置
+# 5. 后台接口open.seniortesting.club配置
 [open.http]
 type = http
 use_encryption = false
@@ -436,6 +436,6 @@ use_compression = true
 
 local_ip = 127.0.0.1
 local_port = 9090
-custom_domains = open.pingbook.top
+custom_domains = open.seniortesting.club
 
 ```

@@ -19,6 +19,7 @@ module.exports = {
             title: '环境配置和部署',
             collapsable: false,
             children: [
+                'setup/docker-docker',
                 'setup/windows-terminal-setup',
                 'setup/appium-windows-setup',
                 'setup/video-edit-setup',

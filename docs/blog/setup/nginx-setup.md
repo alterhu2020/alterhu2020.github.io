@@ -13,6 +13,15 @@ title: Nginx Linux安装及其环境配置
 
 [[toc]]
 
+
+## docker setup
+
+```bash
+# docker pull nginx
+# docker run     -p 80:80     -v /opt/nginx/html:/usr/share/nginx/html     -v  /opt/nginx/config/nginx.conf:/etc/nginx/nginx.conf     -v /opt/nginx/config/conf.d:/etc/nginx/conf.d      -v /opt/nginx/logs:/var/log/nginx     --name nginx     -d nginx
+
+```
+
 ## Nginx安装步骤
 
 有关各个安装类库的版本要求参见：<https://nginx.org/en/docs/configure.html>

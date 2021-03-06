@@ -129,10 +129,10 @@ ENV MY_VAR my-value
  为容器指定默认执行命令。 有两种格式的配置， 分别是：
 
 ```bash
-ENTRYPOINT [“executable”, “param1”, “param2”] (exec 格式, 推荐)
+ENTRYPOINT ["executable", "param1", "param2"] (exec 格式, 推荐)
 ENTRYPOINT command param1 param2 (shell 格式)
 ```
-
+注意：Note: The exec form is parsed as a JSON array, which means that you must use double-quotes (“) around words not single-quotes (‘). **exec格式的会作为json格式解析，所以必需是双引号，而不是单引号。否则单引号会报错误：entrypoint file not found**
 
 CMD命令当后面加上一个命令，比如 docker run -it [image] /bin/bash，CMD 会被忽略掉，命令 bash 将被执行：
 
@@ -258,6 +258,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ```shell
 # jdk11
 # docker pull adoptopenjdk/openjdk11:jdk-11.0.10_9-slim
+# docker pull adoptopenjdk/openjdk11:jdk-11.0.10_9-debianslim
 # docker pull adoptopenjdk/openjdk11:jdk-11.0.10_9-debianslim-slim
 
 # jdk15
@@ -271,11 +272,18 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![docker](https://raw.githubusercontent.com/alterhu2020/StorageHub/master/img/20210305092831.png)
 
+**如何退出jshell命令？答案：输入`/exit`命令**
+
 
 3.1 配置springboot的一个安装包的`Dockerfile`脚本：
 
 ```shell
+FROM adoptopenjdk/openjdk11:jdk-11.0.10_9-slim
+WORKDIR /opt
 
+# entrypoint script
+COPY entrypoint.sh /opt/
+ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 

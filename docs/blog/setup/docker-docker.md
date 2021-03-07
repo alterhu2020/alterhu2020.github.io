@@ -17,21 +17,110 @@ title: Docker容器化技术
 
 那么如何安装docker呢？
 
-### 方法一（推荐）
+### Docker安装方法一（推荐）
 
 参考链接： <https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-container-on-ubuntu-14-04>
 
 只需要执行一个命令即可：
 
 ```shell
+# 1. docker安装
 $ sudo curl -sSL https://get.docker.com/ | sh
-$ sudo curl -L --fail https://github.com/docker/compose/releases/download/1.28.5/run.sh -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose
+$ sudo systemctl status docker
+$ docker info
+
+# 修改docker的镜像源为阿里云
+$ sudo nano /etc/docker/daemon.json
+
+  {
+    "registry-mirrors": ["https://jbj2tyqj.mirror.aliyuncs.com"]
+  }
+
+### 修改docker的tcp连接 
+
+docker默认只提供本地unix，sock文件的连接方式，让docker能够监听tcp端口还需要进行一些配置。
+1.1 首先编辑docker的宿主机文件: `nano /lib/systemd/system/docker.service`
+
+# #ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
+
+保存配置。
+
+1.2 重新加载系统服务配置文件（包含刚刚修改的文件）
+
+systemctl daemon-reload
+systemctl restart docker
+
+1.3 aliyp安全组防火墙添加开放2375端口
+
+1.4 在Windows系统上测试端口是否可以使用:
+
+```shell
+curl http://localhost:2375/version
 ```
 
-### 方法二
+# 2. docker compose 安装
 
-服务器端采用的是debian系统，安装如下步骤：
+$ sudo curl -L --fail https://github.com/docker/compose/releases/download/1.28.5/run.sh -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+$ rm /usr/local/bin/docker-compose # 使用curl安装的
+
+
+# 3. docker swarm初始化
+
+参考文档：<https://www.lidong.xin/devops/S4-Swarm-Aliyun.html>
+
+在集群manager上执行命令：
+
+```shell
+# 初始化swarm集群
+$ docker swarm init
+在输出的命令上复制执行命令在对应的node上执行加入对应的swarm
+```
+注意上面的输出加入命令中机器需要打开对应的端口
+` docker swarm join --token SWMTKN-1-1xxz8cw5pyolpvy91edt7ranyjsnu2qjbyn3sjsp65fcx-0vkpilpqppe41ncnoapd319l0 172.19.82.347:2377`
+
+所以上面的命令需要在manager机器上打开2377端口。
+
+```shell
+#docker swarm：集群管理
+init          #初始化集群
+join          #将节点加入集群
+join-token    #管理加入令牌
+leave         #从集群中删除某个节点，强制删除加参数--force 
+update        #更新集群
+unlock        #解锁集群
+
+docker node：节点管理，
+demote      #将集群中一个或多个节点降级
+inspect     #显示一个或多个节点的详细信息
+ls          #列出集群中的节点
+promote     #将一个或多个节点提升为管理节点
+rm          #从集群中删除停止的节点，--force强制删除参数
+ps          #列出一个或多个节点上运行的任务
+update      #更新节点
+
+docker service：服务管理，
+create      #创建一个新的服务
+inspect     #列出一个或多个服务的详细信息
+ps          #列出一个或多个服务中的任务信息
+ls          #列出服务
+rm          #删除一个或多个服务
+scale       #扩展一个或多个服务
+update      #更新服务
+
+```
+
+
+# 4. docker轻量容器集群管理工具portainer
+
+$ docker pull portainer/portainer-ce
+$ docker run -d -p 9000:9000 -v /opt/portainer:/data -v /var/run/docker.sock:/var/run/docker.sock --name portainer portainer/portainer-ce
+
+
+### Docker安装方法二
+
+~~服务器端采用的是debian系统，安装如下步骤：~~
 <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-10>
 
 ```shell
@@ -54,44 +143,37 @@ $ nano /etc/docker/daemon.json
 
 修改为如下：
 
-```json
-{
-  "registry-mirrors": ["https://jbj2tyqj.mirror.aliyuncs.com"]
-}
-```
 
 -----------------------------------------**分割线**---------------------------------------------------
 
-### docker的tcp连接 
+### docker相关集群工具
 
-docker默认只提供本地unix，sock文件的连接方式，让docker能够监听tcp端口还需要进行一些配置。
-1.1 首先编辑docker的宿主机文件: `nano /lib/systemd/system/docker.service`
+- 三剑客， compose， machine， swarm
 
-```shell
-# #ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
-ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
-```
-保存配置。
+`compose` 使用 YAML 文件来定义多容器之间的关系。一个 `docker-compose up` 就可以把完整的应用跑起来。 本质上， compose 把 YAML 文件解析成 docker 命令的参数，然后调用相应的 docker 命令行接口，从而将应用以容器化的方式管理起来。它通过解析容器间的依赖关系顺序地启动容器。而容器间的依赖关系由 YAML 文件中的 `links` 标记指定。
 
-1.2 重新加载系统服务配置文件（包含刚刚修改的文件）
+在 docker-compose.yml 文件中，服务的名称由用户自定义，每个定义的服务都至少包含 build或image 其中之一，其他 "links" 标记对应 docker run 的 "--links"选项。
 
-```shell
-systemctl daemon-reload
-```
+`Docker Machine` 是一个简化Docker 安装的命令行工具。通过一个简单的命令行即可在相应的平台上安装 Docker，为用户提供了灵活的功能，使得用户可以在任一主机上运行 Docker 容器。简单说，一个 Docker Machine 就是一个 Docker host 主机和经过配置的 Docker client 的结合体。
 
-重启docker服务
+docker-swarm是解决多主机多个容器调度部署得问题。
+
+
+- 轻量级的Kubernetes，K3S : [k3s.io](https://k3s.io/)
+- 集群管理工具Rancher：
 
 ```shell
-systemctl restart docker
+$ docker pull rancher/server
+$ sudo docker run -d --name rancher -v /etc/localtime:/etc/localtime -v /opt/rancher/mysql:/var/lib/mysql --restart=unless-stopped -p 8080:8080 rancher/server
+
+$ docker ps -a
+$ docker exec -it rancher /bin/bash
+$ ps -ef
+$ docker logs -f rancher
 ```
 
-1.3 防火墙添加开放2375端口
+访问 http://10.245.231.119:8080
 
-1.4 在Windows系统上测试端口是否可以使用:
-
-```shell
-curl http://localhost:2375/version
-```
 
 ### docker的alpine和slim镜像
 

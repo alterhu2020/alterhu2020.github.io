@@ -157,16 +157,16 @@ module.exports = {
                 link: '/CHANGELOG.html'
             },
             {
-                text: 'JVFast管理框架',
-                link: 'https://seniortesting.club'
+                text: 'Java技术文档',
+                link: 'https://java.seniortesting.club'
             },
             {
-                text: 'ant-design-vue',
-                link: 'https://code.seniortesting.club/ant-design-vue'
+                text: 'python技术文档',
+                link: 'https://python.seniortesting.club'
             },
             {
-                text: 'ionic-vue',
-                link: 'https://code.seniortesting.club/ionic-vue'
+                text: 'JavaScript技术文档',
+                link: 'https://javascript.seniortesting.club'
             }
         ],
         sidebar: sidebar

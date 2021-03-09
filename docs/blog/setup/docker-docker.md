@@ -41,7 +41,7 @@ $ sudo nano /etc/docker/daemon.json
 docker默认只提供本地unix，sock文件的连接方式，让docker能够监听tcp端口还需要进行一些配置。
 1.1 首先编辑docker的宿主机文件: `nano /lib/systemd/system/docker.service`
 
-# #ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+#;#ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
 
 保存配置。
